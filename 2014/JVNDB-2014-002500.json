@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2014-002500",
+  "vulinfodata": {
+    "title": "Debian squeeze および wheezy 用 dpkg におけるディレクトリトラバーサル攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Debian squeeze および wheezy 用 dpkg は、\"C スタイルでエンコードされたファイル名 (C-style encoded filename)\" をサポートしているがパッチプログラムはサポートしていないことにより、インタラクションエラー (interaction error) が発生するため、ディレクトリトラバーサル攻撃を実行され、目的のディレクトリ以外にファイルを作成される脆弱性が存在します。  本脆弱性は、CVE-2014-0471 の修正が不完全だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "dpkg",
+          "cpe": {
+            "text": "cpe:/a:debian:dpkg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.15.10 未満の 1.15.x",
+            "1.16.14 未満の 1.16.x",
+            "1.17.9 未満の 1.17.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工されたパッケージを介して、ディレクトリトラバーサル攻撃を実行され、目的のディレクトリ以外にファイルを作成される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian",
+          "vulinfoid": "dpkg_1.15.10_changelog",
+          "url": "http://metadata.ftp-master.debian.org/changelogs//main/d/dpkg/dpkg_1.15.10_changelog"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "Debian Bug report logs - #746306",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=746306"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3127",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3127"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3127",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3127"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE request: directory traversal in DSA-2915-1-patched dpkg in Debian squeeze",
+          "url": "http://seclists.org/oss-sec/2014/q2/191"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE request: directory traversal in DSA-2915-1-patched dpkg in Debian squeeze",
+          "url": "http://seclists.org/oss-sec/2014/q2/227"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年05月16日]\\n  掲載\\n[2014年06月17日]\\n  ベンダ情報：Debian (dpkg_1.15.10_changelog) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-05-16T15:17:04+09:00",
+    "datelastupdated": "2014-06-17T17:19:59+09:00",
+    "datepublic": "2014-04-28T00:00:00+09:00"
+  }
+}

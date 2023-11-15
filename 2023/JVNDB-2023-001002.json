@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2023-001002",
+  "vulinfodata": {
+    "title": "OpenAM Web Policy Agent (OpenAMコンソーシアム版) におけるパストラバーサル脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenAM Web Policy Agent (OpenAMコンソーシアム版) には、URL のパース処理の不備に起因するパストラバーサルの脆弱性 (CWE-22) が存在します。 さらに、本脆弱性を悪用するような URL に対し、アクセスポリシーの判定が正しく行われない場合があります。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenAM コンソーシアム",
+          "productname": "OpenAM Web Policy Agent",
+          "cpe": {
+            "text": "cpe:/a:osstech:openam_web_policy_agent",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(OpenAM コンソーシアム版) バージョン 4.1.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者がドキュメントルート外のファイルにアクセスする可能性があります。 また、アクセスを許可されていない第三者が、保護されたリソースにアクセスする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。  [ワークアラウンドを実施する] WAF(Web Application Firewall) や IPS(Intrusion Prevention System) などにより、不審な通信を検知・遮断してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "issue#3: CVE-2023-22320",
+          "url": "https://github.com/openam-jp/web-agents/issues/3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "web-agents リポジトリ",
+          "url": "https://github.com/openam-jp/web-agents"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22320",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22320"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91740661",
+          "url": "http://jvn.jp/vu/JVNVU91740661/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-01-11T16:34:17+09:00",
+          "description": "[2023年01月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-01-11T16:34:17+09:00",
+    "datelastupdated": "2023-01-11T16:34:17+09:00",
+    "datepublic": "2023-01-10T00:00:00+09:00"
+  }
+}

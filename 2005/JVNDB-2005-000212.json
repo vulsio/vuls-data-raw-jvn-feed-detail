@@ -1,0 +1,99 @@
+{
+  "vulinfoid": "JVNDB-2005-000212",
+  "vulinfodata": {
+    "title": "Linux Kernel の futex 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の futex 関数において、他のスレッドによって mmap() などの関数が実行されている最中に、futex 関数によって呼び出された get_user() 関数が失敗した場合に、do_page_fault() 関数においてデッドロック状態が発生する脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.2",
+          "vector": "AV:L/AC:H/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "システムがサービス運用妨害 (DoS) 状態となる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:420",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-420.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:420",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-420J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0937",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0937"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0937",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0937"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12959",
+          "url": "http://www.securityfocus.com/bid/12959"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1013616",
+          "url": "http://securitytracker.com/alerts/2005/Mar/1013616.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-03-31T00:00:00+09:00"
+  }
+}

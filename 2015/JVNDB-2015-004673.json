@@ -1,0 +1,268 @@
+{
+  "vulinfoid": "JVNDB-2015-004673",
+  "vulinfodata": {
+    "title": "UPnP を実装した複数のルータ製品にセキュリティ機能の実装が不十分な問題",
+    "vulinfodescription": {
+      "overview": "UPnP を実装した複数の家庭用ルータ製品において、UPnP Control URL で使われる UUID のランダム化や他のセキュリティ対策が十分に実施されていない問題があります。  UPnP は、ネットワーク上の機器の自動検出や機器間の通信を規定したプロトコルです。設計当初 UPnP は、WAN 側からのアクセスがなく信頼できるユーザのみが使用しているプライベートネットワーク内での使用を想定していたため、デフォルトでは認証機能を規定していません。その後 UPnP のセキュリティ機能が規定されましたが、UPnP Forum のドキュメント Device Protection Service では、使用時の手間が増えること、PKI (公開鍵基盤) のような高度な機能の実装が進まないことから、「この機能の普及は非常に限定的であった」と記載されています。  UPnP http://upnp.org/index.php/sdcps-and-certification/standards/device-architecture-documents/  WAN 側からのアクセスがない (UPnP Forum FAQ) http://upnp.org/sdcps-and-certification/documents/technical_faq/#9.0  Device Protection Service http://upnp.org/specs/gw/UPnP-gw-DeviceProtection-v1-Service.pdf   本件の報告者によれば、セキュリティ機能の実装が進まない状況では、市場の多くの製品の UPnP Control URL を容易に推測できる可能性があります。UPnP Control URL が推測できれば、UPnP 機能を使用して例えば家庭用ルータの設定を変更し、ポートを開放したり、機能を有効化したりすることが可能になります。異なる開発者の製品で同じような UPnP Control URL が使われていることが多いため、推測は容易になると考えられます。  一部の開発者からは、UUID をランダム化して UPnP Control URL の推測を困難にするような実装を行っているとの報告を受けていますが、多くの開発者はこのような対策を実施していません。詳しくは本アドバイザリの【ベンダ情報】のセクションや、CERT/CC Vulnerability Note VU#361684 の Vendor Information に掲載されている情報を参照してください。UPnP のセキュリティ機能がどの程度普及しているのか、現時点では不明です。  Vendor Information https://www.kb.cert.org/vuls/id/361684#vendors   外部からプライベートネットワークへのアクセスを得る攻撃手法の一つとして、「DNS リバインディング」が知られています。過去には、Flash を使用して UPnP の制御を奪取する手法が報告されています。  DNS リバインディング https://crypto.stanford.edu/dns/  UPnP の制御を奪取する手法 http://www.gnucitizen.org/blog/hacking-the-interwebs   本件の報告者は、詳しい情報を http://www.filet-o-firewall.com で公開しています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/1000",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_1000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.8.01.07以降"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/107e",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_107e",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/1100",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_1100",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/1200",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_1200",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/1210",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_1210",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/1500",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_1500",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/55i",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_55i",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.4.06.19b以降"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/57i",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_57i",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.8.00.87以前",
+            "Rev.8.00.89以降"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/58i",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_58i",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.9.01.29以前",
+            "Rev.9.01.33以降"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/810",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_810",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/FW120",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_fw120",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/N500",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_n500",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/SR100",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_sr100",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP38X/V700",
+          "cpe": {
+            "text": "cpe:/h:nec:ip38x_v700",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全てのリビジョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "細工されたウェブページにアクセスすることで、気づかないうちにファイアウォールのポートを開放されたり、ルータに対して任意の操作を実行されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年9月1日現在、この問題を完全に解消する対策は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、この問題を軽減することが可能です。  　* 不明な URL にアクセスしない 　　接続先が不明な URL のアクセスの際には注意が必要です。 　* UPnP を無効にする 　　家庭内ネットワークで使用しているネットワーク機器の UPnP 機能を無効化する 　　ことを検討してください。UPnP を使用する場合は、使用目的とリスクを十分に 　　比較検討して判断してください。  [開発者による対策] UPnP を実装する機器の開発者は、次の対策を検討してください。  　* UPnP Control URL の UUID をランダム化する 　　UPnP の UUID と URL を適切にランダム化することで、総当たり攻撃への耐性を 　　向上させることができます。ただしこれは完全な対策ではありません。 　* 最新の UPnP セキュリティ機能を実装する 　　UPnP を使用する機器のセキュリティ向上のため、最新の UPnP セキュリティ機 　　能の実装を検討してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FITELnet",
+          "vulinfoid": "UPnP機能を外部から操作される可能性がある問題",
+          "url": "http://www.furukawa.co.jp/fitelnet/topic/vulnera_20150911.html"
+        },
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "アライドテレシス株式会社からの情報",
+          "url": "http://jvn.jp/vu/JVNVU99671861/522154/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV15-018",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv15-018.html"
+        },
+        {
+          "type": "vendor",
+          "name": "RTシリーズのセキュリティに関するFAQ",
+          "vulinfoid": "UPnP機能に関する脆弱性について",
+          "url": "http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/VU347812.html"
+        },
+        {
+          "type": "vendor",
+          "name": "サポート＆技術情報",
+          "vulinfoid": "UPnP機能に悪用の脆弱性",
+          "url": "http://www.seil.jp/support/security/vu361684.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99671861",
+          "url": "http://jvn.jp/vu/JVNVU99671861/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#361684",
+          "url": "https://www.kb.cert.org/vuls/id/361684"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Awesome Inc. - Filet-o-Firewall",
+          "url": "http://www.filet-o-firewall.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "UPnP Forum - Device Architecture Documents",
+          "url": "http://upnp.org/index.php/sdcps-and-certification/standards/device-architecture-documents/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月11日]\\n  掲載\\n[2015年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV15-018) を追加 "
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-11T16:36:42+09:00",
+    "datelastupdated": "2015-10-28T11:40:09+09:00",
+    "datepublic": "2015-08-31T00:00:00+09:00"
+  }
+}

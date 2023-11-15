@@ -1,0 +1,165 @@
+{
+  "vulinfoid": "JVNDB-2004-000522",
+  "vulinfodata": {
+    "title": "wget の リダイレクションURLをフィルタリングする処理における任意のファイルが上書きされる脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  wget は、HTTP または FTP を使用してファイルのダウンロードを行うユーティリティです。  Wget 1.8.2 以前/1.9.1 以前には、以下の複数のセキュリティ上の問題が存在します。  1）リモートサーバがユーザのカレントディレクトリおよびそのサブディレクトリへ任意のファイルを作成、あるいは上書きできる問題が存在します。  2）リダイレクトされた URL のサニタイズ処理に不備が存在するため、\"..\" を含む URL にリダイレクトされた場合に、特定のファイルが上書きされてしまう問題が存在します。 (CAN-2004-1487)  3）HTTP レスポンスを出力表示する際に、特定の制御文字をフィルタできないために、任意のコードが挿入されて実行されてしまう問題が存在します。 (CAN-2004-1488)  これらの問題を利用するリモートの攻撃者は、攻撃者のサーバ上のファイルを wget を用いてダウンロードするよう標的ユーザを誘導し、意図的な URL あるいは HTTP レスポンスを処理させることにより、wget を実行するユーザの権限で任意のファイルの作成および上書き、あるいは任意のコードを実行する可能性があります。  尚、wget 1.10 がこれらの問題の影響を受けるかは現時点では不明です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "AXSA-2005-127:1",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=207"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:771",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-771.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-66",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-66.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:771",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-771J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-66",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-66j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-1487",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1487"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "18421",
+          "url": "http://xforce.iss.net/xforce/xfdb/18421"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "18420",
+          "url": "http://xforce.iss.net/xforce/xfdb/18420"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-1487",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1487"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11871",
+          "url": "http://www.securityfocus.com/bid/11871"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012472",
+          "url": "http://securitytracker.com/alerts/2004/Dec/1012472.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-12-10T00:00:00+09:00"
+  }
+}

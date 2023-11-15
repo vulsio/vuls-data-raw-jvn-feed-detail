@@ -1,0 +1,136 @@
+{
+  "vulinfoid": "JVNDB-2015-004367",
+  "vulinfodata": {
+    "title": "net-snmp の snmp_api.c の snmp_pdu_parse 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "net-snmp の snmp_api.c の snmp_pdu_parse 関数は、SNMP PDU の構文解析に失敗した場合、netsnmp_variable_list のアイテムの varBind 引数を削除しないため、サービス運用妨害 (クラッシュ) 状態にされる、および任意のコードを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Net-SNMP",
+          "productname": "Net-SNMP",
+          "cpe": {
+            "text": "cpe:/a:net-snmp:net-snmp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.7.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "HA8000V シリーズ",
+          "cpe": {
+            "text": "cpe:/h:hitachi:ha8000v",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "RV3000",
+          "cpe": {
+            "text": "cpe:/h:hitachi:rv3000",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたパケットを介して、サービス運用妨害 (クラッシュ) 状態にされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1212408",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1212408"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1636",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1636.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SourceForge",
+          "vulinfoid": "#2615: Don't return incompletely parsed varbinds",
+          "url": "http://sourceforge.net/p/net-snmp/code/ci/f23bcd3ac6ddee5d0a48f9703007ccc738914791/"
+        },
+        {
+          "type": "vendor",
+          "name": "サーバ・クライアント製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-204",
+          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_204.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5621",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5621"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-042-02",
+          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-042-02"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5621",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5621"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月25日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2020-02-12T17:25:40+09:00",
+          "description": "[2020年02月12日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-042-02) を追加"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-03-09T11:18:18+09:00",
+          "description": "[2022年03月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-204) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-25T12:30:31+09:00",
+    "datelastupdated": "2022-03-09T13:43:57+09:00",
+    "datepublic": "2015-04-11T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "vulinfoid": "JVNDB-2020-006468",
+  "vulinfodata": {
+    "title": "OpenClinic GA に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "財務管理、臨床、薬局などのデータ管理を行える病院向け情報管理システムである OpenClinic GA には複数の脆弱性が存在します。  OpenClinic GA には次の脆弱性が存在します。  * 別のパスやチャンネルを介した認証回避 (CWE-288) - CVE-2020-14485 * 過度な認証試行の不適切な制限 (CWE-307) - CVE-2020-14484 * 不適切な認証 (CWE-287) - CVE-2020-14494 * 認証の欠如 (CWE-862) - CVE-2020-14491 * 不要な特権による実行 (CWE-250) - CVE-2020-14493 * 危険なタイプのファイルの無制限アップロード (CWE-434) - CVE-2020-14488 * パス・トラバーサル(CWE-22) - CVE-2020-14490 * 不適切な認可処理 (CWE-285) - CVE-2020-14486 * クロスサイトスクリプティング(CWE-79) - CVE-2020-14492 * メンテナンスされていないサードパーティ製品の使用 (CWE-1104) - CVE-2020-14495、CVE-2016-1181、CVE-2016-1182 に起因 * 認証情報の不十分な保護 (CWE-522) - CVE-2020-14489 * 隠れた機能 (CWE-912) - CVE-2020-14487 ※ただし、本脆弱性は Version 5.89.05b には影響しません"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenClinic GA project",
+          "productname": "OpenClinic GA",
+          "cpe": {
+            "text": "cpe:/a:openclinic_ga_project:openclinic_ga",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 5.09.02",
+            "Version 5.89.05b"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.4",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受けるおそれがあります。  * 遠隔の攻撃者により、クライアント側のアクセス制御をバイパスされたり、細工したリクエストを送信されたりすることによってセッションが開始され、SQLクエリの実行など管理者機能を実行される- CVE-2020-14485 * 遠隔の攻撃者により、システムのアカウントロック機能がバイパスされ、総当たり攻撃 (ブルートフォースアタック) を実行される - CVE-2020-14484 * 当該システムでは、総当たり攻撃 (ブルートフォースアタック) の保護機構が十分ではないため、認証を経ていない攻撃者により、最大試行回数以上のアクセスを実行され、システムにアクセスされる- CVE-2020-14494 * 当該システムは SQL クエリの実行権限の確認を行わないため、権限の低いユーザによって、より上位の権限が必要な情報へアクセスされる - CVE-2020-14491 * 当該システムでは、比較的低い権限での SQL の実行により任意のファイルを書き込むことが可能なため、結果として、システム上で任意のコマンドが実行される - CVE-2020-14493 * 当該システムでは、アップロードされたファイルの検証が適切に行われないため、低い権限を取得した攻撃者により、システム上に任意のファイルをアップロードされ、実行される - CVE-2020-14488 * パラメータで指定された任意のローカルファイルを含むファイルを実行されることにより、機密情報が公開されたり、アップロードされた悪意のあるファイルが実行されたりする - CVE-2020-14490 * 認証が失敗した時に実行されるリダイレクト処理を回避することができるため、認証を経ていない攻撃者により、コマンドを不正に実行される - CVE-2020-14486 * ユーザによる入力値を適切に検証していないため、ユーザのブラウザ上で悪意のあるコードが実行される - CVE-2020-14492 * 当該システムが使用している、サポートが終了したサードパーティ製のソフトウェアに含まれる既知の脆弱性 (CVE-2014-0114、CVE-2016-1181、CVE-2016-1182) に起因して、遠隔の攻撃者により悪意のあるコードが実行される  * パスワードを保存する際のハッシュ処理に不備があり、辞書攻撃によりパスワードを窃取される - CVE-2020-14489 * 当該システムには、デフォルトで設定されたユーザアカウントがアクセス可能な状態で存在しており、攻撃者によってそのアカウントを利用され、任意のコマンドを実行される - CVE-2020-14487"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は Version 5.170.5 以降のバージョンにアップデートすることを推奨しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "SourceForge",
+          "vulinfoid": "OpenClinic GA",
+          "url": "https://sourceforge.net/projects/open-clinic/files/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14490",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14490"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14486",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14486"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14485",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14485"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14492",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14492"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14484",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14484"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14489",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14489"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14494",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14494"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14487",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14487"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14491",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14491"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14493",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14493"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14488",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14488"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT",
+          "vulinfoid": "CISA Recommended Practices",
+          "url": "https://www.us-cert.gov/ics/Recommended-Practices"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSMA-20-184-01",
+          "url": "https://www.us-cert.gov/ics/advisories/icsma-20-184-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96290700",
+          "url": "http://jvn.jp/vu/JVNVU96290700/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "FDA Cybersecurity",
+          "url": "https://www.fda.gov/medical-devices/digital-health/cybersecurity"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-1104",
+          "url": "https://cwe.mitre.org/data/definitions/1104.html",
+          "title": "メンテナンスされていないサードパーティ製コンポーネントの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-307",
+          "url": "https://cwe.mitre.org/data/definitions/307.html",
+          "title": "過度な認証試行の不適切な制限"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-434",
+          "url": "https://cwe.mitre.org/data/definitions/434.html",
+          "title": "危険なタイプのファイルの無制限アップロード"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-288",
+          "url": "https://cwe.mitre.org/data/definitions/288.html",
+          "title": "代替パスまたはチャネルを使用した認証回避"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-862",
+          "url": "https://cwe.mitre.org/data/definitions/862.html",
+          "title": "認証の欠如"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-522",
+          "url": "https://cwe.mitre.org/data/definitions/522.html",
+          "title": "認証情報の不十分な保護"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-912",
+          "url": "https://cwe.mitre.org/data/definitions/912.html",
+          "title": "非公開の機能"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-285",
+          "url": "https://cwe.mitre.org/data/definitions/285.html",
+          "title": "不適切な認可"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-250",
+          "url": "https://cwe.mitre.org/data/definitions/250.html",
+          "title": "不要な特権による実行"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-07-09T14:36:32+09:00",
+          "description": "[2020年07月09日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2020-09-01T16:06:34+09:00",
+          "description": "[2020年09月01日]\\n  概要：内容を更新\\n  想定される影響：内容を更新\\n  参考情報：内容を更新"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2021-06-17T15:40:37+09:00",
+          "description": "[2021年06月17日]\\n  対策：内容を更新\\n  ベンダ情報：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-07-09T14:36:32+09:00",
+    "datelastupdated": "2020-09-01T16:30:38+09:00",
+    "datepublic": "2020-07-03T00:00:00+09:00"
+  }
+}

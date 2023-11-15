@@ -1,0 +1,184 @@
+{
+  "vulinfoid": "JVNDB-2013-002496",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/compat_ioctl.c における重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "不特定のアーキテクチャ上の Linux Kernel の fs/compat_ioctl.c 内の do_video_set_spu_palette 関数は、特定のエラーチェックが欠けているため、カーネルスタックメモリから重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.6.5 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/dev/dvb device 上の巧妙に細工された VIDEO_SET_SPU_PALETTE ioctl コールを介して、カーネルスタックメモリから重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.6.5",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.6.5"
+        },
+        {
+          "type": "vendor",
+          "name": "CVE データベース",
+          "vulinfoid": "CVE-2013-1928",
+          "url": "https://access.redhat.com/security/cve/CVE-2013-1928"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "fs/compat_ioctl.c: VIDEO_SET_SPU_PALETTE missing error check",
+          "url": "https://github.com/torvalds/linux/commit/12176503366885edd542389eed3aaf94be163fdb"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux.git",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=12176503366885edd542389eed3aaf94be163fdb"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2013:0856",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00000.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2013:0847",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-05/msg00018.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 949567",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=949567"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1645",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1645.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1829-1",
+          "url": "http://www.ubuntu.com/usn/USN-1829-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1928",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1928"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1928",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1928"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年04月30日]\\n  掲載\\n[2013年06月03日]\\n  ベンダ情報：Ubuntu (USN-1829-1) を追加\\n[2013年06月21日]\\n  ベンダ情報：Novell (SUSE-SU-2013:0856) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:0847) を追加\\n[2014年02月20日]\\n  影響を受けるシステム：レッドハット (RHSA-2013:1645) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1645) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-04-30T18:30:45+09:00",
+    "datelastupdated": "2014-02-20T18:03:24+09:00",
+    "datepublic": "2013-04-08T00:00:00+09:00"
+  }
+}

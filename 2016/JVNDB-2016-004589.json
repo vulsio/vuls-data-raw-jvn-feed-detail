@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2016-004589",
+  "vulinfodata": {
+    "title": "Wireshark の UMTS FP ディセクタの epan/dissectors/packet-umts_fp.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Wireshark の UMTS FP ディセクタの epan/dissectors/packet-umts_fp.c は、メモリが特定のデータ構造に配置されていることを確認しないため、サービス運用妨害 (不正な書き込みアクセスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-787: Out-of-bounds Write (境界外書き込み) と識別されています。 http://cwe.mitre.org/data/definitions/787.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Wireshark",
+          "productname": "Wireshark",
+          "cpe": {
+            "text": "cpe:/a:wireshark:wireshark",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0.6 未満の 2.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたパケットを介して、サービス運用妨害 (不正な書き込みアクセスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Code Review",
+          "vulinfoid": "FP: ensure that mac and rlc structures are always allocated",
+          "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=315bba7c645b75af24215c6303d187b188610bba"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Review",
+          "vulinfoid": "Change 17094 - FP: ensure that mac and rlc structures are always allocated",
+          "url": "https://code.wireshark.org/review/#/c/17094/"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark Bug Database",
+          "vulinfoid": "Bug 12751",
+          "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=12751"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark Security Advisories",
+          "vulinfoid": "wnpa-sec-2016-53",
+          "url": "https://www.wireshark.org/security/wnpa-sec-2016-53.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-7178",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7178"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-7178",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-7178"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-12T16:18:56+09:00",
+    "datelastupdated": "2016-09-12T16:18:56+09:00",
+    "datepublic": "2016-09-08T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2013-005177",
+  "vulinfodata": {
+    "title": "Google Chrome などで使用される WebRTC の libjingle の voice_engine/channel.cc におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Google Chrome およびその他の製品で使用される WebRTC の libjingle の voice_engine/channel.cc 内の Channel::SendRTCPPacket 関数には、解放済みメモリの使用 (Use-after-free) により、サービス運用妨害 (ヒープメモリ破損) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use After Free (メモリ解放後の使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "31.0.1650.48 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、必要な DeRegisterExternalTransport コールをスキップされることで、サービス運用妨害 (ヒープメモリ破損) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian セキュリティ勧告",
+          "vulinfoid": "DSA-2799",
+          "url": "http://www.debian.org/security/2013/dsa-2799"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "http://www.google.co.jp/chrome/intl/ja/landing_ff_yt.html?hl=ja&hl=ja"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update",
+          "url": "http://googlechromereleases.blogspot.jp/2013/11/stable-channel-update.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Revision: r4827",
+          "url": "https://code.google.com/p/webrtc/source/detail?r=4827"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2013:1776",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00025.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2013:1777",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00026.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2013:1861",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-12/msg00002.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6631",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6631"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6631",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6631"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Issue 2275008: Fix for Heap-use-after-free in webrtc::voe::Channel::SendRTCPPacket (Closed)",
+          "url": "https://webrtc-codereview.appspot.com/2275008"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月20日]\\n  掲載\\n[2014年01月10日]\\n  ベンダ情報：Debian (DSA-2799) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1776) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1777) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1861) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-20T17:01:09+09:00",
+    "datelastupdated": "2014-01-10T18:44:31+09:00",
+    "datepublic": "2013-11-12T00:00:00+09:00"
+  }
+}

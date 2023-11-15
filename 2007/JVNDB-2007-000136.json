@@ -1,0 +1,155 @@
+{
+  "vulinfoid": "JVNDB-2007-000136",
+  "vulinfodata": {
+    "title": "Sun Solaris の in.telnetd におけるログイン認証回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "Sun Solaris の in.telnetd には、正規のユーザ名に文字列 \"-f\" を含む USER 環境変数の誤った解釈により、ログイン認証が回避可能となる問題が存在します。  なお、サン・マイクロシステムズの情報によると、本脆弱性を悪用するワーム型ウイルスの活動が報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (sparc) ",
+            "10 (x86) ",
+            "11 (sparc) (Nevada)",
+            "11 (x86) (Nevada)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "システム上の telnet サービスにパスワードなしで特定のアカウントでログインされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。 なおベンダの情報によると、回避策としてサービスを削除する際に生じる不具合が報告されています (Sun Alert 102799)。  また 2007/03/01 時点においてサン・マイクロシステムからワーム駆除スクリプト (inoculate.local) が提供されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Security Sun Alert Feed",
+          "vulinfoid": "28 Feb 2007 Solaris in.telnetd worm seen in the wild + inoculation script",
+          "url": "http://blogs.sun.com/security/entry/solaris_in_telnetd_worm_seen"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "102802",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102802-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "102799",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102799-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "102802",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102802-3"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-0882",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0882"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2007-0560",
+          "url": "http://www.frsirt.com/english/advisories/2007/0560"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2007-0007",
+          "url": "http://www.jpcert.or.jp/at/2007/at070007.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA07-059A",
+          "url": "http://jvn.jp/cert/JVNTA07-059A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA07-059A",
+          "url": "http://jvn.jp/tr/TRTA07-059A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-0882",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-0882"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "22512",
+          "url": "http://www.securityfocus.com/bid/22512"
+        },
+        {
+          "type": "advisory",
+          "name": "Symantec Security Response",
+          "vulinfoid": "Solaris.Wanuk.Worm",
+          "url": "http://www.symantec.com/enterprise/security_response/writeup.jsp?docid=2007-022810-3637-99"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA07-059A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA07-059A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#881872",
+          "url": "http://www.kb.cert.org/vuls/id/881872"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2007-02-12T00:00:00+09:00"
+  }
+}

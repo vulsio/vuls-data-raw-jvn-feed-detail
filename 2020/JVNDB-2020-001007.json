@@ -1,0 +1,156 @@
+{
+  "vulinfoid": "JVNDB-2020-001007",
+  "vulinfodata": {
+    "title": "複数の CDN サービスプロバイダに HTTP キャッシュポイズニングの影響を受ける問題",
+    "vulinfodescription": {
+      "overview": "コンテンツデリバリネットワーク (CDN) は、バックエンドに置かれた Web サーバのコンテンツを配信するためのプロキシサーバのネットワークであり、効率的な配信のために、コンテンツを一時的なローカルストレージにキャッシュします。 プロキシサーバやバックエンドの Web サーバによる HTTP ヘッダの処理を悪用し、遠隔から細工した HTTP ヘッダを使用して任意のコンテンツを CDN のキャッシュに注入する攻撃を HTTP キャッシュポイズニングと呼びます。 CDN のキャッシュに悪意あるコンテンツが注入されると、対象の Web サイトへのアクセスに対して悪意あるスクリプトが配信され、閲覧者の環境で実行される可能性があります。  CDN は高可用性、高パフォーマンスのサービスを提供するために、HTTP キャッシングソフトウェアが動作する複数のプロキシサーバからなるネットワークを構成しており、バックエンドに置かれた Web サーバのコンテンツを Web サイト閲覧者(Web クライアント)からネットワーク的に近いプロキシサーバ経由で配信します。この配信処理においては、HTTP リクエストに含まれる HTTP ヘッダを解釈して、プロキシサーバのローカルキャッシュまたはバックエンドの Web サーバから適切なコンテンツを選択し、配信します。  バックエンドにある Web サーバの処理と HTTP キャッシングソフトウェアの処理の組み合わせによっては、細工された HTTP ヘッダを含む HTTP リクエストを送信された場合に、悪意あるコンテンツがレスポンスに混入する可能性があります。 これによって、閲覧者の環境で意図しないスクリプトを実行させる等の攻撃が可能となります。  Host ヘッダや X-Forwarded-Host ヘッダ等を使用した攻撃手法がすでに知られていますが、近年、X-Forwarded-Proto や Referer、Upgrade-Insecure-Request、X-DNS-Prefetch-Control 等新しい HTTP ヘッダが使用されるようになったことに加え、クラウド CDN サービスが拡大したことにより、よりスケールが大きく、長期的な影響を及ぼす攻撃が可能になっています。  攻撃に用いられる可能性のあるヘッダの例としては以下のようなものがあります:  * Content-Security-Policy-Report-Only * Forwarded * Server-Timing * Set-Cookie * Strict-Transport-Security * X-Forwarded-Proto * Location * Accept-Language * Cookie * X-Forwarded-For * X-Forwarded-Host * Referer * Max-Forwards   このような攻撃が可能となる状況として、少なくとも以下の2つが挙げられます。    1. 一部の HTTP ヘッダは、リバースプロキシや CDN によって生成もしくは変更されるものと想定して、バックエンドの Web サーバがその値を信頼してそのまま受け入れてしまう   2. 一部の HTTP ヘッダは、CDN による無害化が行われずに Web サーバに送信される"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Cloudflare, Inc",
+          "productname": "(複数の製品)",
+          "cpe": {
+            "text": "cpe:/a:misc:cloudflare_multiple_product",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された HTTP ヘッダを含む HTTP リクエストを処理することで、CDN のキャッシュが汚染され、Web サイト閲覧者に悪意あるコンテンツが配信される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[CDN における対策]   1. バックエンドの Web サーバへ HTTP リクエストを転送する前に、HTTP ヘッダに対して適切な検証処理および無害化処理を行う  2. CDN が生成したり検証したりすると期待されている一部の HTTP ヘッダが外部からの HTTP リクエストに含まれている場合には、適切な無害化処理を施す  [Web サーバにおける対策] HTTP リクエストに含まれる内容を信頼しない。また、レスポンスには適切かつ安全なエンコーディングを用いる  [CDN における回避策] 悪意あるコンテンツの配信を防ぐため、HTTP リクエストのヘッダに不審な内容が含まれていたらキャッシュしない  [Web サーバにおける回避策] 悪意あるコンテンツの配信を防ぐため、動的に生成したコンテンツが CDN にキャッシュされないよう、Cache-Control や Expiry ヘッダなどを活用して、CDN にキャッシュされることを防ぐ"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Akamai Technologies",
+          "vulinfoid": "HTTP CACHE POISONING ADVISORY",
+          "url": "https://blogs.akamai.com/sitr/2020/01/http-cache-poisoning-advisory.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Cloudflare",
+          "vulinfoid": "Cloudflare response to CPDoS exploits",
+          "url": "https://blog.cloudflare.com/cloudflare-response-to-cpdos-exploits/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98141012",
+          "url": "https://jvn.jp/vu/JVNVU98141012/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#335217",
+          "url": "https://www.kb.cert.org/vuls/id/335217/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "Vendor Information of Amazon for VU#335217",
+          "url": "https://www.kb.cert.org/vuls/vendor/VU%23335217/#CHEU-BGMKM9"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "Vendor Information of Cloudflare for VU#335217",
+          "url": "https://www.kb.cert.org/vuls/vendor/VU%23335217/#CHEU-BGYK4X"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "Vendor Information of Akamai for VU#335217",
+          "url": "https://www.kb.cert.org/vuls/vendor/VU%23335217/#CHEU-BGMKMB"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "HTTP Request/Response Smuggling",
+          "url": "https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_HTTP_Request/Response_Smuggling"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Cache Poisoning",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Host of Troubles: Multiple Host Ambiguities in HTTP Implementations",
+          "url": "https://dl.acm.org/doi/10.1145/2976749.2978394"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "HTTP Cache Poisoning via Host Header Injection",
+          "url": "http://carlos.bueno.org/2008/06/host-header-injection.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Practical HTTP Host header attacks",
+          "url": "https://www.skeletonscribe.net/2013/05/practical-http-host-header-attacks.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Practical Web Cache Poisoning",
+          "url": "https://portswigger.net/research/practical-web-cache-poisoning"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Host of Troubles Vulnerabilities",
+          "url": "https://hostoftroubles.com/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-01-16T12:20:33+09:00",
+          "description": "[2020年01月16日]\\n  掲載"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2020-06-01T13:38:33+09:00",
+          "description": "[2020年06月01日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  詳細情報：内容を更新\\n  想定される影響：内容を更新\\n  対策方法：内容を更新\\n  ベンダ情報：Cloudflare (Cloudflare response to CPDoS exploits) を追加 \\n  ベンダ情報：Akamai Technologies (HTTP CACHE POISONING ADVISORY) を追加\\n  参考情報：US-CERT Vulnerability Note (Vendor Information of Amazon for VU#335217) を追加\\n  参考情報：US-CERT Vulnerability Note (Vendor Information of Cloudflare for VU#335217) を追加\\n  参考情報：US-CERT Vulnerability Note (Vendor Information of Akamai for VU#335217) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-01-16T12:20:33+09:00",
+    "datelastupdated": "2020-06-01T14:09:46+09:00",
+    "datepublic": "2020-01-14T00:00:00+09:00"
+  }
+}

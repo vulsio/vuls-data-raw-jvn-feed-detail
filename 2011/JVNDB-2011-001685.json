@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2011-001685",
+  "vulinfodata": {
+    "title": "Erlang/OTP SSH ライブラリで生成される乱数が推測可能な問題",
+    "vulinfodescription": {
+      "overview": "Erlang/OTP SSH ライブラリには、生成される乱数が推測可能な問題が存在します。  Erlang/OTP SSH ライブラリは、生成した乱数を用いて様々な暗号化処理を行います。Erlang/OTP SSH ライブラリで実装されている乱数生成の手法には、生成された乱数が推測可能な問題が存在します。  発見者の報告では以下のように記載されています。  The Erlang/OTP ssh library implements a number of cryptographic operations that depend on cryptographically strong random numbers. Unfortunately the RNG used by the library is not cryptographically strong, and is further weakened by the use of predictable seed material. The RNG (Wichman-Hill) is not mixed with an entropy source.  The seed used for all ssh connections in the library is the current time (to approximately microsecond resolution). By observing the time a connection from this library is established, the first two components of the three RNG seed can be guessed.The third component can be recovered by brute-force; trying each possible value (1..1000000).  Guessing the exact seed is made easier by the 16 byte random session cookie that the library will send in its plaintext kexinit message. This cookie will be bytes 17-32 of the RNG sequence.  Once the session RNG seed is recovered, an attacker can simply perform the same DH key exchange operation as the SSH library and recover the session secret. Additionally, if the ssh library is used on the server side of the connection and DSA host key is used, the private key can be recovered from the kex_dh messages. The secret signing value k is known from the RNG seed (bytes 170 - 190 of the sequence), so with the public DSA key data in the kex_dh_reply message the private part can be recovered by inverting the signature operation."
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ERLANG",
+          "productname": "Erlang/OTP",
+          "cpe": {
+            "text": "cpe:/a:erlang:erlang%2Fotp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン R14B03 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により SSH セッションキーや DSA ホストキーなどが取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとにアップデートを適用してください。  アップデートの適用後、SSH セッションキーや DSA ホストキーなどを変更することが推奨されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Erlang",
+          "vulinfoid": "Top Page",
+          "url": "http://www.erlang.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Erlang",
+          "vulinfoid": "erlang is using GitHub to share code with you!",
+          "url": "https://github.com/erlang/otp/commit/f228601de45c5b53241b103af6616453c50885a5"
+        },
+        {
+          "type": "vendor",
+          "name": "Erlang",
+          "vulinfoid": "Download Erlang/OTP R14B03",
+          "url": "http://www.erlang.org/download.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0766",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0766"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#178990",
+          "url": "http://jvn.jp/cert/JVNVU178990"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0766",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0766"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA44709",
+          "url": "http://secunia.com/advisories/44709"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "47980",
+          "url": "http://www.securityfocus.com/bid/47980"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#178990",
+          "url": "https://www.kb.cert.org/vuls/id/178990"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年06月08日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-06-08T11:54:47+09:00",
+    "datelastupdated": "2011-06-08T11:54:47+09:00",
+    "datepublic": "2011-05-26T00:00:00+09:00"
+  }
+}

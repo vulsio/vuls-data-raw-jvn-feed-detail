@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2014-002189",
+  "vulinfodata": {
+    "title": "QEMU の virtio_net_handle_mac 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "QEMU の hw/net/virtio-net.c 内の virtio_net_handle_mac 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 およびそれ以前"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:A/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルのゲストユーザにより、MAC アドレステーブルの更新リクエストを介して、ヒープベースのバッファオーバーフローを誘発されることで、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "QEMU",
+          "vulinfoid": "Main Page",
+          "url": "http://wiki.qemu.org/Main_Page"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1078846",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1078846"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-0150",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0150"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-0150",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0150"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-23T18:00:14+09:00",
+    "datelastupdated": "2014-04-23T18:00:14+09:00",
+    "datepublic": "2014-03-20T00:00:00+09:00"
+  }
+}

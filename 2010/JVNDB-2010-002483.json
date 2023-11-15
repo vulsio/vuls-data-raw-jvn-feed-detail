@@ -1,0 +1,182 @@
+{
+  "vulinfoid": "JVNDB-2010-002483",
+  "vulinfodata": {
+    "title": "Linux kernel の KVM 実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の KVM 実装には、FS および GS のセグメントレジスタサービスを適切にリロードしないため、サービス運用妨害 (DoS) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.36 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Multi OS",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_multi_os",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Virtualization",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_virtualization",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (server) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:S/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ホスト OS ユーザにより、編集された Local Descriptor Table (LDT) と連動する KVM_RUN ioctl コールを介して、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "ChangeLog-2.6.35.12",
+          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/longterm/v2.6.35/ChangeLog-2.6.35.12"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "ChangeLog-2.6.36",
+          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.36"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2010:0842",
+          "url": "https://rhn.redhat.com/errata/RHSA-2010-0842.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2010:0898",
+          "url": "https://rhn.redhat.com/errata/RHSA-2010-0898.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-3698",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3698"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-3698",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-3698"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "44500",
+          "url": "http://www.securityfocus.com/bid/44500"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年12月13日]\\n  掲載\\n[2011年04月08日]\\n  ベンダ情報：kernel.org (ChangeLog-2.6.35.12) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-12-13T15:59:47+09:00",
+    "datelastupdated": "2011-04-08T11:23:38+09:00",
+    "datepublic": "2010-10-20T00:00:00+09:00"
+  }
+}

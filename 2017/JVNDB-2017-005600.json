@@ -1,0 +1,131 @@
+{
+  "vulinfoid": "JVNDB-2017-005600",
+  "vulinfodata": {
+    "title": "PHP FormMail Generator で作成した PHP コードに複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP FormMail Generator は、PHP アプリケーションや WordPress を使って作成されているウェブサイト上に簡易なウェブフォームを埋め込むための PHP コードを生成するウェブサービスです。PHP FormMail Generator によって作成された PHP コードには、複数の脆弱性が存在します。  危険なタイプのファイルの無制限アップロード (CWE-434) - CVE-2016-9492 生成されたファイル form.lib.php では、ハードコードされた危険なファイル拡張子リストにもとづいて、アップロードされるファイルのチェックを行っています。また、アップロードファイルの末尾に短いランダムな文字列を追加するような処理を行っています。ファイル拡張子リストは PHP ファイルを示すファイル拡張子をすべて含んでいるわけではないので、アップロードされるファイル名を推測された場合、PHP コードを実行される可能性があります。  クロスサイトスクリプティング (CWE-80) - CVE-2016-9493 生成された PHP フォームには name および message フィールドの入力を適切に検証しない問題があります。任意のスクリプトを含む投稿内容がアプリケーションに格納され、管理者が管理画面にアクセスした際に、管理者のウェブブラウザ上で当該スクリプトが実行される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "PHP Form Mail Maker",
+          "productname": "PHP FormMail Generator",
+          "cpe": {
+            "text": "cpe:/a:jqueryform:php_formmail_generator",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "で2016年12月17日より前に生成した PHP コード"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "PHP フォームの管理者のウェブブラウザ上で任意のスクリプトが実行される可能性があります。また、アップロードされるファイル名が推測された場合、サーバ上で PHP コードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。   * 2016年12月17日以降の PHP FormMail Generator では CVE-2016-9492 の問題に対応した PHP コードを生成します。影響のあるユーザはフォームを再生成するか、手動でパッチを適用してください。 * 2017年3月8日現在、CVE-2016-9493 の対応が行われているか確認できていません。 問題となるフィールドの処理において PHP htmlentities() を適用する形に変更するなどの対策を行ってください。あるいは、当該製品以外のフォームを使用することを検討してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP Form Mail Maker",
+          "vulinfoid": "PHP FormMail Generator",
+          "url": "http://www.formmail-maker.com/generator.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9492",
+          "url": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2016-9492"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9493",
+          "url": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2016-9493"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96141589",
+          "url": "http://jvn.jp/vu/JVNVU96141589/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9492",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-9492"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9493",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-9493"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#608591",
+          "url": "http://www.kb.cert.org/vuls/id/608591"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-80",
+          "url": "https://cwe.mitre.org/data/definitions/80.html",
+          "title": "クロスサイトスクリプティング (Basic XSS)"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-434",
+          "url": "https://cwe.mitre.org/data/definitions/434.html",
+          "title": "危険なタイプのファイルの無制限アップロード"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年08月02日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2019-07-05T16:57:45+09:00",
+          "description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-9492) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-9493) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-08-02T10:58:06+09:00",
+    "datelastupdated": "2019-07-05T16:58:09+09:00",
+    "datepublic": "2017-03-07T00:00:00+09:00"
+  }
+}

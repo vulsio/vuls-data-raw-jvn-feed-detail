@@ -1,0 +1,123 @@
+{
+  "vulinfoid": "JVNDB-2018-000004",
+  "vulinfodata": {
+    "title": "「フレッツ・ウイルスクリア 申込・設定ツール」および「フレッツ・ウイルスクリアv6 申込・設定ツール」のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "東日本電信電話株式会社（ＮＴＴ東日本）が提供する「フレッツ・ウイルスクリア 申込・設定ツール」および「フレッツ・ウイルスクリアv6 申込・設定ツール」のインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "東日本電信電話株式会社",
+          "productname": "フレッツ・ウイルスクリア 申込・設定ツール",
+          "cpe": {
+            "text": "cpe:/a:ntt_east:flet%27s_virus_clear_easy_setup_%26_application_tool",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "ver.11 およびそれ以前"
+          ]
+        },
+        {
+          "name": "東日本電信電話株式会社",
+          "productname": "フレッツ・ウイルスクリアv6 申込・設定ツール",
+          "cpe": {
+            "text": "cpe:/a:ntt_east:flet%27s_virus_clear_v6_easy_setup_%26_application_tool",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "ver.11 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 本脆弱性は、2017年3月28日にリリースした最新バージョン（ver.12）で修正されています。 「フレッツ・ウイルスクリア 申込・設定ツール」ないし「フレッツ・ウイルスクリアv6 申込・設定ツール」を新たにインストールする際は、開発者が提供する情報をもとに、最新のインストーラを使用してください。 また、2017年3月28日以前にウェブから入手した古い 「フレッツ・ウイルスクリア 申込・設定ツール」ないし「フレッツ・ウイルスクリアv6 申込・設定ツール」が保存されている場合は、速やかに削除してください。  本脆弱性の影響を受けるのはインストーラの起動時のみです。既に製品をインストール済みの場合は影響を受けません。  詳しくは、開発者が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "東日本電信電話株式会社",
+          "vulinfoid": "セットアップ│フレッツ・ウイルスクリア｜サービス別サポート情報｜サポート｜NTT東日本フレッツ公式",
+          "url": "https://flets.com/customer/tec/fvc/setup/difference.html"
+        },
+        {
+          "type": "vendor",
+          "name": "東日本電信電話株式会社",
+          "vulinfoid": "セットアップ｜フレッツ・ウイルスクリアv6｜サービス別サポート情報｜サポート｜NTT東日本フレッツ公式",
+          "url": "https://flets.com/customer/next/sec/setup/difference.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0507",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0507"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#26255241",
+          "url": "http://jvn.jp/jp/JVN26255241/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0507",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0507"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2018年01月22日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-04-11T10:24:45+09:00",
+          "description": "[2018年04月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0507) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-01-22T12:10:18+09:00",
+    "datelastupdated": "2018-04-11T11:43:36+09:00",
+    "datepublic": "2018-01-22T00:00:00+09:00"
+  }
+}

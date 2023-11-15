@@ -1,0 +1,140 @@
+{
+  "vulinfoid": "JVNDB-2005-000824",
+  "vulinfodata": {
+    "title": "VERITAS Backup Exec の認証情報に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "VERITAS Backup Exec Remote Agent には、認証情報がハードコードされているため、この認証情報を悪用されると、結果として脆弱なシステム上の様々なファイルの操作が行なわれる可能性があります。  VERITAS Backup Exec Remote Agent は、データバックアップおよびリカバリを行なうための製品で、データバックアップやリカバリのためのプロトコル NDMP (Network Data Management Protocol) をサポートしています。  ネットワーク経由のアクセスには、標準で TCP 10000 番ポートが用いられています。あらかじめ設定されている認証情報を悪用することで、脆弱なシステムへの不正アクセスが可能となり、その結果、SYSTEM 権限にて様々なァイルを操作される可能性があります。  exploit コードが既に公開されており、TCP 10000 番ポートへのスキャンも観察されていますので、以下の対策を施すことを推奨します。      * Firewall などで 外部ネットワークから TCP 10000 番ポートへの接続を拒否する。     * 周辺ネットワークを含めた総合的な対策を行なう。     * ポート番号を標準の 10000 番ポートからその他のポートに変更する。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ベリタス",
+          "productname": "Backup Exec",
+          "cpe": {
+            "text": "cpe:/a:veritas:backup_exec",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for NetWare Servers",
+            "for Windows Servers",
+            "Remote Agent for NetWare Servers",
+            "Remote Agent for Unix or Linux Servers",
+            "Remote Agent for Windows Servers"
+          ]
+        },
+        {
+          "name": "ベリタス",
+          "productname": "Veritas NetBackup",
+          "cpe": {
+            "text": "cpe:/a:veritas:netbackup",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for NetWare Media Server Option"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者がハードコードされている認証情報を悪用することで、脆弱なシステムの様々なファイルを操作される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {}
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Support",
+          "vulinfoid": "VERITAS support document 278434",
+          "url": "http://seer.support.veritas.com/docs/278434.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Support",
+          "vulinfoid": "VERITAS support document 255831",
+          "url": "http://seer.support.veritas.com/docs/255831.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Support",
+          "vulinfoid": "VERITAS support document 258334",
+          "url": "http://seer.support.veritas.com/docs/258334.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Support",
+          "vulinfoid": "VERITAS support document 255174",
+          "url": "http://seer.support.veritas.com/docs/255174.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Support",
+          "vulinfoid": "Backup Exec 9.x for Windows Servers has improved support for backups of remote computers. ",
+          "url": "http://seer.support.veritas.com/docs/255831.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Symantec Security Advisory",
+          "vulinfoid": "SYM05-011",
+          "url": "http://securityresponse.symantec.com/avcenter/security/Content/2005.08.12b.html"
+        },
+        {
+          "type": "vendor",
+          "name": "シマンテック セキュリティ・アドバイザリー",
+          "vulinfoid": "SYM05-011",
+          "url": "http://www.symantec.com/region/jp/avcenter/security/content/2005.08.12b.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-2611",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2611"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA05-224A",
+          "url": "http://jvn.jp/cert/JVNTA05-224A/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-2611",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2005-2611"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#378957",
+          "url": "http://www.kb.cert.org/vuls/id/378957"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2009年04月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2009-04-03T10:11:27+09:00",
+    "datelastupdated": "2009-04-03T10:11:27+09:00",
+    "datepublic": "2005-08-13T00:00:00+09:00"
+  }
+}

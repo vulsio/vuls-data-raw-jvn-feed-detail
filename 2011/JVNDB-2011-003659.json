@@ -1,0 +1,170 @@
+{
+  "vulinfoid": "JVNDB-2011-003659",
+  "vulinfodata": {
+    "title": "Apache HTTP Server の log_cookie 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server の mod_log_config モジュールにある mod_log_config.c 内の log_cookie 関数は、スレッド化された MPM が使用されている際、%{}C 形式の文字列を適切に処理しないため、サービス運用妨害 (デーモンクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.17 から 2.2.21"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.6.8",
+            "v10.7 から v10.7.4"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X Server",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.6.8",
+            "v10.7 から v10.7.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、名前と値を持たない cookie を介して、サービス運用妨害 (デーモンクラッシュ) 状態となる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Bugzilla",
+          "vulinfoid": "Bug 52256",
+          "url": "https://issues.apache.org/bugzilla/show_bug.cgi?id=52256"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache httpd 2.2 vulnerabilities",
+          "vulinfoid": "Fixed in Apache httpd 2.2.22-dev",
+          "url": "http://httpd.apache.org/security/vulnerabilities_22.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "1227292",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1227292"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2012-09-19-2",
+          "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT5501",
+          "url": "http://support.apple.com/kb/HT5501"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT5501",
+          "url": "http://support.apple.com/kb/HT5501?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Support document",
+          "vulinfoid": "HPSBMU02786 SSRT100877",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c03360041"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2012",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2012-392727.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 785065",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=785065"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2012-0021 Improper Input Validation vulnerability in Apache HTTP Server",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2012_0021_improper_input"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-0021",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0021"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#381963",
+          "url": "http://jvn.jp/cert/JVNVU381963/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-0021",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0021"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年02月01日]\\n  掲載\\n[2012年04月20日]\\n  ベンダ情報：オラクル (CVE-2012-0021 Improper Input Validation vulnerability in Apache HTTP Server) を追加\\n[2012年07月25日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU02786 SSRT100877) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2012) を追加\\n[2012年10月15日]\\n  ベンダ情報：アップル (HT5501) を追加\\n[2014年02月03日]\\n  影響を受けるシステム：アップル (HT5501) の情報を追加\\n  ベンダ情報：Apache Software Foundation (Bug 52256) を追加\\n  ベンダ情報：アップル (APPLE-SA-2012-09-19-2) を追加\\n  ベンダ情報：レッドハット (Bug 785065) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-02-01T16:21:42+09:00",
+    "datelastupdated": "2014-02-03T18:00:23+09:00",
+    "datepublic": "2011-11-28T00:00:00+09:00"
+  }
+}

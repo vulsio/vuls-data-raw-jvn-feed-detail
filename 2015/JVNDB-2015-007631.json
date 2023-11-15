@@ -1,0 +1,188 @@
+{
+  "vulinfoid": "JVNDB-2015-007631",
+  "vulinfodata": {
+    "title": "自動バグ報告ツールにおける任意のファイルを読まれ所有権を変更される脆弱性",
+    "vulinfodescription": {
+      "overview": "自動バグ報告ツール (ABRT) には、ファイルを読まれ所有権を変更されるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.1)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.1)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "自動バグ報告ツール",
+          "cpe": {
+            "text": "cpe:/a:redhat:automatic_bug_reporting_tool",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、以下へのシンボリックリンク攻撃を介して、ファイルを読まれ所有権を変更されるなど、不特定の影響を受ける可能性があります。  (1) /var/tmp/abrt/*/maps (2) /tmp/jvm-*/hs_error.log (3) /proc/*/exe (4)  chroot の /etc/os-release (5) librpm に関連した不特定の root ディレクトリ"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ccpp: stop reading hs_error.log from /tmp",
+          "url": "https://github.com/abrt/abrt/commit/17cb66b13997b0159b4253b3f5722db79f476d68"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ccpp: do not read data from root directories",
+          "url": "https://github.com/abrt/abrt/commit/4f2c1ddd3e3b81d2d5146b883115371f1cada9f9"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ccpp: fix symlink race conditions",
+          "url": "https://github.com/abrt/abrt/commit/80408e9e24a1c10f85fd969e1853e0f192157f92"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ccpp: open file for dump_fd_info with O_EXCL",
+          "url": "https://github.com/abrt/abrt/commit/d6e2f6f128cef4c21cb80941ae674c9842681aa7"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1211835",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1211835"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1083",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-1083.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3315",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3315"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3315",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-3315"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-59",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-59.html",
+          "title": "リンク解釈の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年07月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-07-20T16:58:56+09:00",
+    "datelastupdated": "2017-07-20T16:58:56+09:00",
+    "datepublic": "2015-04-15T00:00:00+09:00"
+  }
+}

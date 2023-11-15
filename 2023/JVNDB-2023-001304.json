@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2023-001304",
+  "vulinfodata": {
+    "title": "ジェイテクトエレクトロニクス製 Kostac PLC Programming Software における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社ジェイテクトエレクトロニクスが提供する Kostac PLC Programming Software には、次の複数の脆弱性が存在します。  　* 境界外読み込み（CWE-125）- CVE-2023-22419、CVE-2023-22421 　* 解放済みメモリの使用（Use-after-free）（CWE-416）- CVE-2023-22424  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: Michael Heinzl 氏 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社ジェイテクトエレクトロニクス",
+          "productname": "Kostac PLC Programming Software",
+          "cpe": {
+            "text": "cpe:/a:misc:jtekt_electronics_kostac_plc_programming_software",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(旧名称： Koyo PLC Programming Software) Version 1.6.9.0 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された Kostac PLC Programming Software のプロジェクトファイルをユーザが開いた際、次のような影響を受けて、情報が漏えいしたり、任意のコードが実行されたりする可能性があります。  CVE-2023-22419 ステージ情報内のコメントブロックを処理する中でデータの終端を確認できず、境界外メモリ読み込みが発生。  CVE-2023-22421 PLC プログラムの命令が使用するバッファサイズが不足し、境界外メモリ読み込みが発生。  CVE-2023-22424 PLC プログラムを配置する最大列数が異常値になり、解放済みメモリへのアクセスが発生。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] <a href=\"https://www.electronics.jtekt.co.jp/jp/topics/2023030313639/\"target=\"blank\">開発者が提供する情報</a>をもとに、Kostac PLC Programming Software をアップデートしてください。 開発者は、次のバージョンにおいて本脆弱性の対策を行っています。  　* Kostac PLC Programming Software Version 1.6.10.0 およびそれ以降 　 アップデートは開発者が提供する次のダウンロードサイトから入手できます。  　* <a href=\"https://www.electronics.jtekt.co.jp/jp/download/plc/\"target=\"blank\">PLCの資料を探す - ダウンロード｜株式会社ジェイテクトエレクトロニクス(旧 光洋電子工業）</a> 　* <a href=\"https://www.electronics.jtekt.co.jp/en/download/plc/\"target=\"blank\">PLC - Download｜JTEKT ELECTRONICS CORPORATION</a> "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ジェイテクトエレクトロニクス",
+          "vulinfoid": "株式会社ジェイテクトエレクトロニクス の告知ページ",
+          "url": "https://www.electronics.jtekt.co.jp/jp/topics/2023030313639/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22421",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22421"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22424",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22424"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22419",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22419"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-096-03",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-096-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94966432",
+          "url": "http://jvn.jp/vu/JVNVU94966432/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-416",
+          "url": "https://cwe.mitre.org/data/definitions/416.html",
+          "title": "解放済みメモリの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-03-06T14:11:44+09:00",
+          "description": "[2023年03月06日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-04-10T11:41:58+09:00",
+          "description": "[2023年04月10日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-096-03) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-03-06T14:45:00+09:00",
+    "datelastupdated": "2023-04-10T15:31:28+09:00",
+    "datepublic": "2023-03-03T00:00:00+09:00"
+  }
+}

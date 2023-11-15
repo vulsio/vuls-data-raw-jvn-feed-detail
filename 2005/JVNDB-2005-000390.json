@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2005-000390",
+  "vulinfodata": {
+    "title": "Microsoft ISA Server の NetBIOS パケットフィルタにおけるパケットフィルタ制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft ISA Server 2000 は、ファイアウォールおよび高パフォーマンスの Web キャッシュ機能を提供します。 ISA Server は「ファイアウォール モード」、「キャッシュ モード」および「統合モード」の 3 つのモードを選択してインストールすることができます。   Microsoft ISA Server 2000 SP2 以前には、以下の複数のセキュリティ上の問題が存在します。  1) HTTP Content-Length ヘッダの取扱いに不備が存在するため、複数の Content-Length ヘッダを持つ HTTP リクエストにより ISA Server 上の Web キャッシュが汚染される問題が存在します。(CAN-2005-1215)  この問題を利用するリモートの攻撃者は、意図的に作成した HTTP リクエストを送りつけることにより、悪意あるコンテンツで標的 ISA Server の Web キャッシュを汚染する可能性があります。その結果、ユーザを不正な Web サイトに誘導する、あるいは、別のクロスサイトスクリプティングの問題と組み合わせ認証情報などを奪取する可能性があることが Microsoft より報告されています。  尚、ファイアウォールモードでインストールしている場合は、この問題の影響を受けません。  2) 定義済みの NetBIOS パケットフィルタ「NetBIOS (all) predefined packet filter」の実装において、NetBIOS 接続の検証が不適切であるため、パケットフィルタによる制限を回避可能な問題が存在します。(CAN-2005-1216)  この問題を利用するリモートの攻撃者は、NetBIOS パケットフィルタの制限を回避して、この制限を使用する ISA Server 上の NetBIOS プロトコルを使用するローカルサービスに不正に接続を試みることで、NetBIOS 接続を確立する可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Internet Security and Acceleration Server",
+          "cpe": {
+            "text": "cpe:/a:microsoft:isa_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2000"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS05-034",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS05-034.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS05-034",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/MS05-034.mspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1216",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1216"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1216",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1216"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA15693",
+          "url": "http://secunia.com/advisories/15693/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13956",
+          "url": "http://www.securityfocus.com/bid/13956"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13954",
+          "url": "http://www.securityfocus.com/bid/13954"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#367077",
+          "url": "http://www.kb.cert.org/vuls/id/367077"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-06-14T00:00:00+09:00"
+  }
+}

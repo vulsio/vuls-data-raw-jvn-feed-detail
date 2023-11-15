@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2014-003667",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/sctp/associola.c 内の sctp_assoc_update 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/sctp/associola.c 内の sctp_assoc_update 関数は、SCTP 認証が有効になっている場合、サービス運用妨害 (NULL ポインタデリファレンスおよび OOPS) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.15.8 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.4",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、逆方向のエンドポイント間の以前の関連付けを確立するために INIT および INIT ACK チャンクを交換した後、2 つのエンドポイント間の関連付けの確立を直ちに開始されることで、サービス運用妨害 (NULL ポインタデリファレンスおよび OOPS) 状態にされる可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "net: sctp: inherit auth_capable on INIT collisions",
+          "url": "https://github.com/torvalds/linux/commit/1be9a950c646c9092fb3618197f7b6bfb50e82aa"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "net: sctp: inherit auth_capable on INIT collisions",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=1be9a950c646c9092fb3618197f7b6bfb50e82aa"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1122982",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1122982"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1668",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1668.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1763",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-1763.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1083",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-1083.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5077",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5077"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5077",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5077"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月04日]\\n  掲載\\n[2014年11月21日]\\n  ベンダ情報：レッドハット (RHSA-2014:1668) を追加\\n[2014年11月28日]\\n  ベンダ情報：レッドハット (RHSA-2014:1763) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1083) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-04T16:08:05+09:00",
+    "datelastupdated": "2014-11-28T18:02:38+09:00",
+    "datepublic": "2014-07-22T00:00:00+09:00"
+  }
+}

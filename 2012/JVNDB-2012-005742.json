@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2012-005742",
+  "vulinfodata": {
+    "title": "Adobe Shockwave Player における Shockwave ランタイムのインストールに関する問題",
+    "vulinfodescription": {
+      "overview": "Adobe Shockwave Player には、Shockwave ランタイムのインストールに関する問題が存在します。  Shockwave 11 向けであることを明示していない Shockwave コンテンツを閲覧した場合、古いバージョンの Shockwave ランタイムが、ユーザに断りなく自動的にインストールされます。  なお、開発者が提供する Director 11 and Shockwave 11 Release White paper (http://www.adobe.com/support/director/ts/documents/kb403195/Director11_Whitepaper.pdf) には、以下のように記載されています。  \"When the user launches Shockwave content from a browser, the Shockwave 11 ActiveX control is downloaded to the <%System%>/Adobe/Shockwave 11 folder. If the HTML page does not specify the playerVersion as 11, the Shockwave 10.4.0.025 ActiveX control is downloaded silently, and installed in the <%System%>/Macromed/Shockwave10 folder.\"  \"The Shockwave auto-update mechanism installs Shockwave 11 only. The compatibility components of Shockwave 10.4.0.025 player are installed only when the user tries to play old Shockwave content with the compatibility parameter set to 10 or blank.\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アドビ",
+          "productname": "Adobe Shockwave Player",
+          "cpe": {
+            "text": "cpe:/a:adobe:shockwave_player",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "Shockwave 11 向けであることを明示していない Shockwave コンテンツを閲覧することで、旧バージョンの Shockwave ランタイムをインストールさせられる可能性があります。結果として、遠隔の第三者によって、既知の脆弱性を使用した様々な攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2012年12月19日現在、対策方法はありません。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。      * Shockwave コンテンツへのアクセスを制限する     * Internet Explorer のユーザは Shockwave Player の ActiveX コントロールを無効にする     * Enhanced Mitigation Experience Toolkit (EMET) を適用する 　　　　(http://support.microsoft.com/kb/2458544)     * Data Execution Prevention (DEP) を有効にする 　　　　(http://blogs.technet.com/b/srd/archive/2010/12/08/on-the-effectiveness-of-dep-and-aslr.aspx)"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Adobe",
+          "vulinfoid": "Director 11 and Shockwave 11 Release White paper",
+          "url": "http://www.adobe.com/support/director/ts/documents/kb403195/Director11_Whitepaper.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Adobe",
+          "vulinfoid": "Adobe Shockwave Player",
+          "url": "https://www.adobe.com/jp/products/shockwaveplayer/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-6270",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6270"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91076352",
+          "url": "http://jvn.jp/cert/JVNVU91076352/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-6270",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6270"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#546769",
+          "url": "http://www.kb.cert.org/vuls/id/546769"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月19日]\\n  掲載\\n[2012年12月21日]\\n  CVSS による深刻度：基本値と脆弱性評価基準を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-19T16:46:12+09:00",
+    "datelastupdated": "2012-12-21T15:48:42+09:00",
+    "datepublic": "2012-12-19T00:00:00+09:00"
+  }
+}

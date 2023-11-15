@@ -1,0 +1,260 @@
+{
+  "vulinfoid": "JVNDB-2016-002889",
+  "vulinfodata": {
+    "title": "Linux Kernel の drivers/net/ppp/ppp_generic.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の drivers/net/ppp/ppp_generic.c には、解放済みメモリの使用 (Use-after-free) により、サービス運用妨害 (メモリ破損、システムクラッシュ、またはスピンロック) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use After Free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.5.2 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Debuginfo"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Desktop",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_desktop",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Live Patching",
+          "cpe": {
+            "text": "cpe:/a:suse:suse_linux_enterprise_live_patching",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Module for Public Cloud",
+          "cpe": {
+            "text": "cpe:/a:suse:suse_linux_enterprise_module_for_public_cloud",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Real Time Extension",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_real_time_extension",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Server",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Software Development Kit",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_software_development_kit",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Workstation Extension",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_workstation_extension",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Linux",
+          "cpe": {
+            "text": "cpe:/o:oracle:linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ネットワークの名前空間を削除されることで、サービス運用妨害 (メモリ破損、システムクラッシュ、またはスピンロック) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 980371",
+          "url": "https://bugzilla.opensuse.org/show_bug.cgi?id=980371"
+        },
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.5.2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ppp: take reference on channels netns",
+          "url": "https://github.com/torvalds/linux/commit/1f461dcdd296eecedaffffc6bae2bfa90bd7eb89"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ppp: take reference on channels netns",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=1f461dcdd296eecedaffffc6bae2bfa90bd7eb89"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1672",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00052.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1690",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00054.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1937",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00000.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1335803",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1335803"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-3021-1",
+          "url": "http://www.ubuntu.com/usn/USN-3021-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-3021-2",
+          "url": "http://www.ubuntu.com/usn/USN-3021-2"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4805",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4805"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4805",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4805"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月26日]\\n  掲載\\n[2016年10月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Canonical (USN-3021-1) を追加\\n  ベンダ情報：Canonical (USN-3021-2) を追加\\n  ベンダ情報：openSUSE project (Bug 980371) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1690) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1937) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1672) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-26T15:23:00+09:00",
+    "datelastupdated": "2016-10-27T13:45:35+09:00",
+    "datepublic": "2016-04-20T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "vulinfoid": "JVNDB-2021-001291",
+  "vulinfodata": {
+    "title": "複数の General Electric 製品に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "General Electric 社が提供する MU320E には次の複数の脆弱性が存在します。  　* ハードコードされたパスワードの使用 (CWE-259) - CVE-2021-27452 　* 不要な特権による実行 (CWE-250) - CVE-2021-27448 　* 不適切な暗号強度 (CWE-326) - CVE-2021-27450  General Electric 社が提供する Reason DR60 には次の複数の脆弱性が存在します。  　* ハードコードされたパスワードの使用 (CWE-259) - CVE-2021-27440 　* コードインジェクション (CWE-94) - CVE-2021-27438 　* 不要な特権による実行 (CWE-250) - CVE-2021-27454"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "General Electric Company",
+          "productname": "MU320E ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:ge:mu320e_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v04A00.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "General Electric Company",
+          "productname": "Reason DR60 ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:ge:reason_dr60_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v02A04.1 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、ハードコードされた資格情報を使用され、マージングユニットを制御される - CVE-2021-27452 　* 当該機器にアクセス可能な第三者によって、特権に昇格される - CVE-2021-27448 　* SSH プロトコルの暗号強度が不十分なため、さらなる不適切な設定を招いたり、他の攻撃の踏み台として利用されたりする - CVE-2021-27450 　* 遠隔の第三者によって、ハードコードされた資格情報を使用され、不正に認証されたり、外部コンポーネントと不正に通信されたりする - CVE-2021-27440 　* 遠隔の第三者によって、悪意のある入力をされ、コードセグメントの構文や動作内容を変更される - CVE-2021-27438 　* ソフトウェアが不必要な特権レベルで操作を実施するため、他の脆弱性が生じたり、他の脆弱性の影響が拡大したりする - CVE-2021-27454"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　* MU320E v04A00.1 　* Reason DR60 v02A04.1"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "General Electric",
+          "vulinfoid": "GES-2021-002（要ログイン）",
+          "url": "https://www.gegridsolutions.com/app/viewfiles.aspx?prod=DR60&type=21"
+        },
+        {
+          "type": "vendor",
+          "name": "General Electric",
+          "vulinfoid": "GES-2021-003（要ログイン）",
+          "url": "https://www.gegridsolutions.com/app/viewfiles.aspx?prod=MU320E&type=21"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27450",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27450"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27452",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27452"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27454",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27454"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27438",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27438"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27440",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27440"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27448",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27448"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-082-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-082-02"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-082-03",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-082-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98539192",
+          "url": "http://jvn.jp/cert/JVNVU98539192"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-259",
+          "url": "https://cwe.mitre.org/data/definitions/259.html",
+          "title": "ハードコードされたパスワードの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-326",
+          "url": "https://cwe.mitre.org/data/definitions/326.html",
+          "title": "不適切な暗号強度"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-250",
+          "url": "https://cwe.mitre.org/data/definitions/250.html",
+          "title": "不要な特権による実行"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-03-25T16:23:11+09:00",
+          "description": "[2021年03月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-03-25T16:23:11+09:00",
+    "datelastupdated": "2021-03-25T16:23:11+09:00",
+    "datepublic": "2021-03-24T00:00:00+09:00"
+  }
+}

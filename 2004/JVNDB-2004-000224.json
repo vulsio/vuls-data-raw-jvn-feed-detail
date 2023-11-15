@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2004-000224",
+  "vulinfodata": {
+    "title": "CVS の serve_notify() 関数における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  CVS (Concurrent Versions System) はファイルの共有および共同作業を可能にするバージョン管理システムです。  CVS 1.11.16/1.12.8 以前には、以下の複数のセキュリティ上の問題が存在します。  1. 不正な Entry ラインが与えられた場合、終端文字 NULL が欠落することにより、CVS Server がクラッシュする問題 (CAN-2004-0414)  2. error_prog_name 変数を処理する ArgumentX コマンドに不備が存在し、読み込む引数リストに引数が存在しない場合、メモリを二重開放してしまう問題 (CAN-2004-0416)  3. Argument コマンドで整数オーバーフローが生じる問題 (CAN-2004-0417)  4. serve_notify() 関数に不備が存在し、割り当てられた領域外のメモリに書き込み可能な問題 (CAN-2004-0418)  5. CVS Wrapper ファイル wrapper.c におけるフォーマットストリングの問題 (CAN-2004-1471)  6. CVS プロトコルコマンド Max-dotdot で整数オーバーフローが生じる問題  7. CVSROOT から設定ファイルを読み出す際に、空行が指定されていた場合、アンダーフローが生じる問題  これらの問題を利用するローカルの攻撃者は、結果として CVS サーバをサービス不能状態に陥らせる、あるいは、CVS サーバの実行権限で任意のコードを実行する可能性があります。  尚、上記 5 および 7 の問題を利用するには、攻撃者は CVSROOT に Commit できる権限を所持している必要があることが報告されています。  また、上記の 7 の問題は、ビッグエンディアン形式のプロセッサを利用するシステムでのみ発生することも報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1 ",
+            "2.0 ",
+            "2.1 ",
+            "3.0 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "cvs",
+          "url": "http://www.miraclelinux.com/support/update/data/cvs.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:233",
+          "url": "http://rhn.redhat.com/errata/RHSA-2004-233.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ターボリナックス株式会社",
+          "vulinfoid": "Top Page",
+          "url": "http://www.turbolinux.co.jp/"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:233",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-233J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-0418",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0418"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA セキュリティセンター",
+          "vulinfoid": "20040603-cvs",
+          "url": "http://www.ipa.go.jp/security/ciadr/vul/20040603-cvs.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-0418",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0418"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "10499",
+          "url": "http://www.securityfocus.com/bid/10499"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1010440",
+          "url": "http://www.securitytracker.com/alerts/2004/Jun/1010440.html"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1010438",
+          "url": "http://www.securitytracker.com/alerts/2004/Jun/1010438.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-06-09T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2014-002906",
+  "vulinfodata": {
+    "title": "GnuTLS の lib/x509/common.c の gnutls_x509_dn_oid_name 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "GnuTLS の lib/x509/common.c の gnutls_x509_dn_oid_name 関数には、DN を出力する際に OID に対する LDAP の description の不足に関する処理に不備があるため、サービス運用妨害 (NULL ポインタデリファレンス) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GnuTLS",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnutls",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 以上 3.1.20 未満",
+            "3.2.10 未満の 3.2.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された X.509 証明書を介して、サービス運用妨害 (NULL ポインタデリファレンス) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gitorious",
+          "vulinfoid": "fixed null pointer derefence when printing a name and an LDAP description isn't present for the OID",
+          "url": "https://www.gitorious.org/gnutls/gnutls/commit/d3648ebb04b650e6d20a2ec1fb839256b30b9fc6"
+        },
+        {
+          "type": "vendor",
+          "name": "gnutls-help",
+          "vulinfoid": "gnutls 3.1.20",
+          "url": "http://lists.gnutls.org/pipermail/gnutls-help/2014-January/003327.html"
+        },
+        {
+          "type": "vendor",
+          "name": "gnutls-help",
+          "vulinfoid": "gnutls 3.2.10",
+          "url": "http://lists.gnutls.org/pipermail/gnutls-help/2014-January/003326.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1101734",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1101734"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in GnuTLS",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_gnutls"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3465",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3465"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3465",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3465"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年06月13日]\\n  掲載\\n[2014年07月28日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in GnuTLS) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-06-13T18:11:49+09:00",
+    "datelastupdated": "2014-07-28T17:04:32+09:00",
+    "datepublic": "2014-01-31T00:00:00+09:00"
+  }
+}

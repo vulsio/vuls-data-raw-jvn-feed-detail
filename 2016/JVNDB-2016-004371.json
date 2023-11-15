@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2016-004371",
+  "vulinfodata": {
+    "title": "Linux Kernel の include/trace/events/writeback.h の trace_writeback_dirty_page の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の include/trace/events/writeback.h の trace_writeback_dirty_page の実装は、適切にmm/migrate.c との対話処理を行わないため、サービス運用妨害 (NULL ポインタデリファレンスおよびシステムクラッシュ) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、特定のページの移動を誘発されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびシステムクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mm: migrate dirty page without clear_page_dirty_for_io etc",
+          "url": "https://github.com/torvalds/linux/commit/42cb14b110a5698ccf26ce59c4441722605a3743"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "mm: migrate dirty page without clear_page_dirty_for_io etc",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=42cb14b110a5698ccf26ce59c4441722605a3743"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1308846",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1308846"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Bug Tracker",
+          "vulinfoid": "CVE-2016-3070",
+          "url": "https://security-tracker.debian.org/tracker/CVE-2016-3070"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3070",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3070"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3070",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3070"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-18T14:18:04+09:00",
+    "datelastupdated": "2016-08-18T14:18:04+09:00",
+    "datepublic": "2016-02-16T00:00:00+09:00"
+  }
+}

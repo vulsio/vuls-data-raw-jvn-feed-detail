@@ -1,0 +1,137 @@
+{
+  "vulinfoid": "JVNDB-2011-001449",
+  "vulinfodata": {
+    "title": "policycoreutils パッケージの seunshare_mount 関数における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "policycoreutils パッケージの seunshare 内にある sandbox/seunshare.c のseunshare_mount 関数は、root の所有権およびスティッキービットの割り当てをしないまま /tmp トップ上にある新規ディレクトリのマウント処理を行うため、任意の /tmp ファイルを置き換えられたり、削除され、サービス運用妨害 (DoS) 状態となる、または権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/tmp に依存する setuid アプリケーションの実行を介して、サービス運用妨害 (DoS) 状態にされる、または権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0414",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0414.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1011",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1011"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "65641",
+          "url": "http://xforce.iss.net/xforce/xfdb/65641"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1011",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1011"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA43415",
+          "url": "http://secunia.com/advisories/43415"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "46510",
+          "url": "http://www.securityfocus.com/bid/46510"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年04月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-04-28T15:11:34+09:00",
+    "datelastupdated": "2011-04-28T15:11:34+09:00",
+    "datepublic": "2011-02-24T00:00:00+09:00"
+  }
+}

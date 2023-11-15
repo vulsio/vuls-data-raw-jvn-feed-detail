@@ -1,0 +1,142 @@
+{
+  "vulinfoid": "JVNDB-2017-001368",
+  "vulinfodata": {
+    "title": "Microsoft Windows の SMB Tree Connect Response パケットの処理にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft Windows には、SMB パケットの処理に起因するサービス運用妨害 (DoS) の脆弱性が存在します。  Microsoft Windows には、細工された SMB2 TREE_CONNECT レスポンスパケットの処理に問題があります。 悪意ある SMB サーバに接続した場合、mrxsmb20.sys においてシステムクラッシュが発生する可能性があります。  なお、本脆弱性を使用した攻撃コードが公開されています。  SMB2 TREE_CONNECT レスポンスパケット https://msdn.microsoft.com/en-us/library/cc246499.aspx"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 10",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_10",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 8.1",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_8.1",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2012",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2012",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R2"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2016",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2016",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、Windows システムを悪意のある SMB サーバに接続させられることで、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 2017年3月15日、本脆弱性は 2017 年 3 月のマイクロソフト セキュリティ情報の概要 に含まれる MS17-012 で修正されました。 開発者が提供する情報をもとに、アップデートを適用してください。  2017 年 3 月のマイクロソフト セキュリティ情報の概要 https://technet.microsoft.com/ja-jp/library/security/ms17-mar  MS17-012 https://technet.microsoft.com/ja-jp/library/security/ms17-012.aspx  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* LAN から外部に向かう SMB 接続をブロックする (宛先ポート 137/udp, 138/udp, 139/tcp, 445/tcp)"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft",
+          "vulinfoid": "[MS-SMB2]: 2.2.10 SMB2 TREE_CONNECT Response",
+          "url": "https://msdn.microsoft.com/en-us/library/cc246499.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS17-012",
+          "url": "https://technet.microsoft.com/ja-jp/library/security/ms17-012.aspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-0016",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0016"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2017-0011",
+          "url": "https://jvn.jp/vu/JVNVU95841181/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95841181",
+          "url": "http://jvn.jp/vu/JVNVU95841181/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Current Activity",
+          "vulinfoid": "SMB Security Best Practices",
+          "url": "https://www.us-cert.gov/ncas/current-activity/2017/01/16/SMB-Security-Best-Practices"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#867968",
+          "url": "https://www.kb.cert.org/vuls/id/867968"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "SMBv3 Tree Connect - GitHub",
+          "url": "https://github.com/lgandx/PoC/tree/master/SMBv3%20Tree%20Connect"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年02月07日]\\n  掲載\\n[2017年02月15日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n[2017年02月28日]\\n  影響を受けるシステム：内容を更新\\n[2017年03月16日]\\n  対策：内容を更新\\n  ベンダ情報：マイクロソフト (MS17-012) を追加\\n  共通脆弱性識別子(CVE)：CVE-ID を追加\\n  参考情報：JPCERT 注意喚起 (JPCERT-AT-2017-0011) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-02-07T14:58:40+09:00",
+    "datelastupdated": "2017-03-16T14:18:18+09:00",
+    "datepublic": "2017-02-02T00:00:00+09:00"
+  }
+}

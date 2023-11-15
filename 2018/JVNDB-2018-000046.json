@@ -1,0 +1,112 @@
+{
+  "vulinfoid": "JVNDB-2018-000046",
+  "vulinfodata": {
+    "title": "Windows版 PlayMemories Home のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "ソニー株式会社が提供する Windows版 PlayMemories Home は画像管理ソフトウェアです。Windows版 PlayMemories Home のインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL ファイルを読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: NTTコミュニケーションズ株式会社 東内裕二 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ソニー株式会社",
+          "productname": "PlayMemories Home",
+          "cpe": {
+            "text": "cpe:/a:sony:playmemories_home",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Windows版 ver.5.5.01 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 ・インストーラを実行する際には、インストーラと同じディレクトリに不審なファイルがないことを確認する  なお、本脆弱性の影響を受けるのはインストーラの起動時のみです。すでに製品をインストール済みの場合は影響を受けません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sony",
+          "vulinfoid": "PlayMemories Home",
+          "url": "http://www.sony.net/pm/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0600",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0600"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#13940333",
+          "url": "https://jvn.jp/jp/JVN13940333/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0600",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0600"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-05-18T14:01:33+09:00",
+          "description": "[2018年5月24日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-07-02T14:29:22+09:00",
+          "description": "[2019年07月02日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0600) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-05-24T12:07:35+09:00",
+    "datelastupdated": "2019-07-02T14:29:38+09:00",
+    "datepublic": "2018-05-24T00:00:00+09:00"
+  }
+}

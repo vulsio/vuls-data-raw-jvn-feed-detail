@@ -1,0 +1,263 @@
+{
+  "vulinfoid": "JVNDB-2011-001666",
+  "vulinfodata": {
+    "title": "Linux kernel の _ctl_do_mpt_command 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の drivers/scsi/mpt2sas/mpt2sas_ctl.c 内にある _ctl_do_mpt_command 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.38 およびそれ以前"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0.3",
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESXi",
+          "cpe": {
+            "text": "cpe:/a:vmware:esxi",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1",
+            "5.0"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (x86) ",
+            "3 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0 (client) ",
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.z (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Long Life",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_long_life",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 5.6 server)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.z  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ヒープベースのバッファオーバーフローを誘発する、巧妙に細工された値を指定する IOCTL コールを介して、権限を取得される、またはサービス運用妨害 (メモリ破損) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "kernel-2.6.18-194.13.AXS3",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1464"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "ChangeLog-2.6.39",
+          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.39"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0542",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0542.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0833",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0833.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0883",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0883.html"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0001",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2011-0012",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2011-0012.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1494",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1494"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1494",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1494"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "47185",
+          "url": "http://www.securityfocus.com/bid/47185"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年06月01日]\\n  掲載\\n[2011年06月06日]\\n  影響を受けるシステム：レッドハット (RHSA-2011:0833) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2011:0833) を追加\\n[2011年06月28日]\\n  影響を受けるシステム：レッドハット (RHSA-2011:0883) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2011:0883) を追加\\n[2011年08月10日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-194.13.AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (kernel-2.6.18-194.13.AXS3) を追加\\n[2012年12月20日]\\n  影響を受けるシステム：VMware (VMSA-2011-0012) の情報を追加\\n  影響を受けるシステム：VMware (VMSA-2012-0001) の情報を追加\\n  ベンダ情報：VMware (VMSA-2011-0012) を追加\\n  ベンダ情報：VMware (VMSA-2012-0001) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-06-01T11:15:50+09:00",
+    "datelastupdated": "2012-12-20T12:30:18+09:00",
+    "datepublic": "2011-05-03T00:00:00+09:00"
+  }
+}

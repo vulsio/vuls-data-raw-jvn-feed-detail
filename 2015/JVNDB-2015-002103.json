@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2015-002103",
+  "vulinfodata": {
+    "title": "Linux Kernel の IPv4 の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の IPv4 の実装は、キャッシュしない場合のルックアップのリダイレクトに対して Read-Copy Update (RCU) の猶予期間の長さを適切に考慮しないため、サービス運用妨害 (メモリ消費またはシステムクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.18.8 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、大量のパケットを介して、サービス運用妨害 (メモリ消費またはシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.18.8",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.18.8"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ipv4: try to cache dst_entries which would cause a redirect",
+          "url": "https://github.com/torvalds/linux/commit/df4d92549f23e1c037e83323aff58a21b3de7fe0"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ipv4: try to cache dst_entries which would cause a redirect",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=df4d92549f23e1c037e83323aff58a21b3de7fe0"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1183744",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1183744"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1465",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1465"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1465",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1465"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-07T18:16:15+09:00",
+    "datelastupdated": "2015-04-07T18:16:15+09:00",
+    "datepublic": "2015-02-26T00:00:00+09:00"
+  }
+}

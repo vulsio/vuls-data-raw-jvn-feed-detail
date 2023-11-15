@@ -1,0 +1,137 @@
+{
+  "vulinfoid": "JVNDB-2023-000021",
+  "vulinfodata": {
+    "title": "IT 資産管理ツール「SS1」および「らくらくPCクラウド」における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社ディー・オー・エスが提供する「SS1」は IT 資産管理ソフト、「らくらくPCクラウド」はクラウド型 PC 資産管理サービスです。「SS1」および「らくらくPCクラウド」のエージェントには、次の複数の脆弱性が存在します。 <ul><li>不適切なアクセス制御 (CWE-284) - CVE-2023-22335</li><li>パストラバーサル (CWE-22) - CVE-2023-22336</li><li>ハードコードされたパスワードの使用 (CWE-798) - CVE-2023-22344</li></ul> この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: GMOサイバーセキュリティ byイエラエ デニス ファウストヴ 氏、ルスラン サイフィエフ 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社ディー・オー・エス",
+          "productname": "SS1",
+          "cpe": {
+            "text": "cpe:/a:misc:dos_co_ltd_ss1",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "SS1 Ver.13.1.0.40 およびそれ以前（メディアバージョン：13.1.0c およびそれ以前）"
+          ]
+        },
+        {
+          "name": "株式会社ディー・オー・エス",
+          "productname": "らくらくPCクラウド エージェント",
+          "cpe": {
+            "text": "cpe:/a:misc:dos_co_ltd_rakupccloud-agent",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.2.1.8 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、遠隔の第三者によって、次のような影響を受ける可能性があります。 <ul><li>当該製品が動作するディレクトリ内の任意のファイルをダウンロードされる - CVE-2023-22335</li><li>細工されたファイルを任意のディレクトリにアップロードされる - CVE-2023-22336</li><li>デバッグツールのパスワードを窃取され、デバッグツールを実行される - CVE-2023-22344</li></ul> また、3 つの脆弱性を組み合わせると、遠隔の第三者によって細工されたスクリプトを送信され、SYSTEM 権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  開発者によると、「らくらくPCクラウド」のエージェントは、端末起動時に自動的にパッチが適用されるとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社ディー・オー・エス",
+          "vulinfoid": "弊社製品「SS1」「らくらくPCクラウド」の脆弱性に関するお知らせ",
+          "url": "https://www.dos-osaka.co.jp/news/2023/03/230301.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22344",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22344"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22335",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22335"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22336",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22336"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#57224029",
+          "url": "https://jvn.jp/jp/JVN57224029/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-02-21T13:57:17+09:00",
+          "description": "[2023年03月01日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-03-10T10:54:06+09:00",
+          "description": "[2023年03月10日]\\n  影響を受けるシステム：ベンダ情報 (株式会社ディー・オー・エス) の更新に伴い内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-03-01T14:04:24+09:00",
+    "datelastupdated": "2023-03-10T17:24:27+09:00",
+    "datepublic": "2023-03-01T00:00:00+09:00"
+  }
+}

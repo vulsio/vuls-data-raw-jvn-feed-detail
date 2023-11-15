@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2011-005220",
+  "vulinfodata": {
+    "title": "Linux Kernel におけるサービス運用妨害 (システムクラッシュ) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel は、/dev/zero の MAP_PRIVATE mmap システムコールに応答する際、Transparent Huge Page を適切に生成しないため、サービス運用妨害 (システムクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.39 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工されたアプリケーションを介して、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.39",
+          "url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.39"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mm: thp: fix /dev/zero MAP_PRIVATE and vm_flags cleanups",
+          "url": "https://github.com/torvalds/linux/commit/78f11a255749d09025f54d4e2df4fbcb031530e2"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux.git",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=78f11a255749d09025f54d4e2df4fbcb031530e2"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 714761",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=714761"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2479",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2479"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2479",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2479"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-05T13:53:43+09:00",
+    "datelastupdated": "2013-03-05T13:53:43+09:00",
+    "datepublic": "2011-05-18T00:00:00+09:00"
+  }
+}

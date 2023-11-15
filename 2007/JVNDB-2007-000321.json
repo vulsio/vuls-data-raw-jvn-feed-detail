@@ -1,0 +1,250 @@
+{
+  "vulinfoid": "JVNDB-2007-000321",
+  "vulinfodata": {
+    "title": "PostgreSQL における SECURITY DEFINER に関する権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "PostgreSQL には、スキーマ検索パス search_path 設定の処理に不備が存在するため、SECURITY DEFINER を指定した関数との組み合わせで悪用可能な権限昇格の脆弱性が存在します。  既定で SECURITY DEFINER が指定されている関数は存在せず、ユーザ定義関数で SECURITY DEFINER が利用されている場合に、問題となる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "PostgreSQL.org",
+          "productname": "PostgreSQL",
+          "cpe": {
+            "text": "cpe:/a:postgresql:postgresql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.3.18 およびそれ以前",
+            "7.4.16 およびそれ以前",
+            "8.0.12 およびそれ以前",
+            "8.1.8 およびそれ以前",
+            "8.2.3 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (sparc) ",
+            "10 (x86) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "4.0 ",
+            "5.0 (client) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "悪意あるローカルユーザにより、SECURITY DEFINER で定義されたユーザの権限で任意の SQL 関数を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PostgreSQL",
+          "vulinfoid": "[ANNOUNCE] Advisory on possibly insecure security definer functions",
+          "url": "http://archives.postgresql.org/pgsql-general/2007-02/msg00679.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL 8.2.3 から 8.2.4 への変更点",
+          "vulinfoid": "セキュリティに関する修正",
+          "url": "http://www.sraoss.co.jp/technology/postgresql/8.2.4/changes.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL NEWS",
+          "vulinfoid": "Security Update Releases",
+          "url": "http://www.postgresql.org/about/news.791"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-7-3-19",
+          "url": "http://www.postgresql.org/docs/8.1/static/release-7-3-19.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-7-4-17",
+          "url": "http://www.postgresql.org/docs/8.1/static/release-7-4-17.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-8-0-13",
+          "url": "http://www.postgresql.org/docs/8.1/static/release-8-0-13.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-8-1-9",
+          "url": "http://www.postgresql.org/docs/current/static/release-8-1-9.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-8-2-4",
+          "url": "http://www.postgresql.org/docs/current/static/release-8-2-4.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Security Information",
+          "vulinfoid": "CVE-2007-2138",
+          "url": "http://www.postgresql.org/support/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2007:0336",
+          "url": "https://rhn.redhat.com/errata/RHSA-2007-0336.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "102894",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102894-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "102894",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102894-3"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2007:0336",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0336J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-2138",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2138"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2007-1549",
+          "url": "http://www.frsirt.com/english/advisories/2007/1549"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2007-1497",
+          "url": "http://www.frsirt.com/english/advisories/2007/1497"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "33842",
+          "url": "http://xforce.iss.net/xforce/xfdb/33842"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-2138",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2138"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA25019",
+          "url": "http://secunia.com/advisories/25019"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA25037",
+          "url": "http://secunia.com/advisories/25037"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "23618",
+          "url": "http://www.securityfocus.com/bid/23618"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1017974",
+          "url": "http://www.securitytracker.com/id?1017974"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年05月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-05-21T11:58:46+09:00",
+    "datelastupdated": "2007-05-21T11:58:46+09:00",
+    "datepublic": "2007-04-23T00:00:00+09:00"
+  }
+}

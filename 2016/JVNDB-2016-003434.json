@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2016-003434",
+  "vulinfodata": {
+    "title": "phpMyAdmin における任意の PHP コードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "phpMyAdmin は、preg_replace の e 修飾子 (別名 eval) の使用を制限する区切り文字を適切に選択しないため、任意の PHP コードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The phpMyAdmin Project",
+          "productname": "phpMyAdmin",
+          "cpe": {
+            "text": "cpe:/a:phpmyadmin:phpmyadmin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.10.16 未満の 4.0.x",
+            "4.4.15.7 未満の 4.4.x",
+            "4.6.3 未満の 4.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された文字列を介して、任意の PHP コードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Quote delimiter before using preg_replace",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/1cc7466db3a05e95fe57a6702f41773e6829d54b"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Always use delimiter not present in search expression",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/4bcc606225f15bac0b07780e74f667f6ac283da7"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY ANNOUNCEMENTS",
+          "vulinfoid": "PMASA-2016-27",
+          "url": "https://www.phpmyadmin.net/security/PMASA-2016-27/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5734",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5734"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5734",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5734"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-07T15:19:53+09:00",
+    "datelastupdated": "2016-07-07T15:19:53+09:00",
+    "datepublic": "2016-06-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2020-000036",
+  "vulinfodata": {
+    "title": "XACK DNS におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "XACK DNS は株式会社 XACK が提供する DNS サーバー向けソフトウェアです。XACK DNS には、一般に NXNSAttack と呼称される問題に起因して、サービス運用妨害 (DoS) 攻撃が可能となる脆弱性が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社 XACK",
+          "productname": "XACK DNS",
+          "cpe": {
+            "text": "cpe:/h:xack:xack_dns",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.10.0 から 1.10.8 まで",
+            "1.11.0 から 1.11.4 まで",
+            "1.7.0 から 1.7.18 まで",
+            "1.7.0 より前の全てのバージョン",
+            "1.8.0 から 1.8.23 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.6",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、以下に示すようなサービス運用妨害 (DoS) 攻撃を受ける可能性があります。 ・当該フルリゾルバーの負荷を上昇させ、パフォーマンスを低下させる ・当該フルリゾルバーを、リフレクション攻撃の踏み台として悪用する"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、以下のバージョンにアップデートしてください。 ・XACK DNS 1.11.5 以上 ・XACK DNS 1.10.9 以上 ・XACK DNS 1.8.24 以上 ・XACK DNS 1.7.19 以上 XACK DNS 1.6.x 以下をご使用の場合は、最新版にアップデートしてください。 上記バージョンにアップデートすることで、フルリゾルバーでの名前解決において、委任情報を処理するための権威 DNS サーバーへの問い合わせ回数を制限する設定項目 cache_ns_name_limit が新たに追加されます。  [ワークアラウンドを実施する] バージョンアップが困難な場合は、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 ・設定項目 cache_recursion_limit の値を小さく設定する 開発者によると、この設定項目はルートやトップレベルドメインを含むすべてのドメインに対して有効ですが、あまりに小さく設定すると名前解決の成功率が下がる可能性があるとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社 XACK",
+          "vulinfoid": "CVE-2020-8616 (NXNSAttack) について",
+          "url": "https://xack.co.jp/info/?ID=622"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5591",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5591"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性（パフォーマンスの低下・リフレクション攻撃の踏み台化）について（CVE-2020-8616） - バージョンアップを強く推奨 -",
+          "url": "https://jprs.jp/tech/security/2020-05-20-bind9-vuln-processing-referrals.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#40208370",
+          "url": "https://jvn.jp/jp/JVN40208370/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "NXNSAttack",
+          "url": "http://www.nxnsattack.com/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-06-03T16:03:39+09:00",
+          "description": "[2020年06月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-06-05T12:07:12+09:00",
+    "datelastupdated": "2020-06-05T12:07:12+09:00",
+    "datepublic": "2020-06-05T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2008-005197",
+  "vulinfodata": {
+    "title": "Linux kernel の arch/mips/kernel/scall64-o32.S におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "64-bit MIPS プラットフォーム上で稼動する Linux kernel の arch/mips/kernel/scall64-o32.S は、配列インデックスエラーにより、サービス運用妨害 (システムクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.28-rc8 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、過度に小さい syscall の数値を伴う o32 syscall を介して、syscall テーブルの範囲外で読み込み操作の試行を誘発され、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "MIPS: Fix potential DOS by untrusted user app.",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e807f9574e37a3f202e677feaaad1b7c5d2c0db8"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-5701",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5701"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-5701",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-5701"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:17:36+09:00",
+    "datelastupdated": "2012-09-25T17:17:36+09:00",
+    "datepublic": "2008-12-04T00:00:00+09:00"
+  }
+}

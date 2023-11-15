@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2015-007623",
+  "vulinfodata": {
+    "title": "Ruby の Net::SMTP における SMTP コマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Ruby の Net::SMTP には、SMTP コマンドインジェクションの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Ruby-lang.org",
+          "productname": "Ruby",
+          "cpe": {
+            "text": "cpe:/a:ruby-lang:ruby",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "RCPT TO または MAIL FROM コマンドの CRLF シーケンスを介して、SMTP コマンドインジェクション攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "* lib/net/smtp.rb (getok, get_response): raise an ArgumentError when CR or LF is included in a line",
+          "url": "https://github.com/ruby/ruby/commit/0827a7e52ba3d957a634b063bf5a391239b9ffee"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Add advisory for SMTP injection vulnerability in mail <2.6.0 #215",
+          "url": "https://github.com/rubysec/ruby-advisory-db/issues/215"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-9096",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-9096"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-9096",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-9096"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-93",
+          "url": "https://cwe.mitre.org/data/definitions/93.html",
+          "title": "CRLF インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年07月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-07-18T18:03:48+09:00",
+    "datelastupdated": "2017-07-18T18:03:48+09:00",
+    "datepublic": "2015-12-11T00:00:00+09:00"
+  }
+}

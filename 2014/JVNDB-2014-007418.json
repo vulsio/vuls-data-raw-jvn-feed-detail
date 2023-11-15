@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2014-007418",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/isofs/rock.c の rock_continue 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/isofs/rock.c の rock_continue 関数は、Rock Ridge の継続エントリ (continuation entry) の数を制限しないため、サービス運用妨害 (無限ループ、およびシステムクラッシュまたはハング) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.18.1 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された iso9660 イメージを介して、サービス運用妨害 (無限ループ、およびシステムクラッシュまたはハング) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "isofs: Fix infinite looping over CE entries",
+          "url": "https://github.com/torvalds/linux/commit/f54e18f1b831c92f6512d2eedb224cd63d607d3d"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "isofs: Fix infinite looping over CE entries",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f54e18f1b831c92f6512d2eedb224cd63d607d3d"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1175235",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1175235"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9420",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9420"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9420",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9420"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-05T18:55:42+09:00",
+    "datelastupdated": "2015-01-05T18:55:42+09:00",
+    "datepublic": "2014-12-15T00:00:00+09:00"
+  }
+}

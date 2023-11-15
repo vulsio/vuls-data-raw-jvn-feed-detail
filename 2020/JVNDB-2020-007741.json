@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2020-007741",
+  "vulinfodata": {
+    "title": "NCR SelfServ ATM における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "NCR が提供する SelfServ ATM には、次の複数の脆弱性が存在します。  　* バッファオーバーフロー - CVE-2020-9063 当該機器とホストコンピュータ間の USB HID 通信に認証機構が存在せず、完全性の保護機構も欠如しているため、攻撃者により不正なデータを送信され、ホストコンピュータ上でバッファオーバーフローが発生する可能性があります。 　 　* セッション鍵生成要求の検証不備 - CVE-2020-10123 ホストコンピュータからのセッション鍵生成要求の検証処理に不備があり、攻撃者により不正なセッション鍵が生成される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "NCR",
+          "productname": "APTRA XFS",
+          "cpe": {
+            "text": "cpe:/o:ncr:aptra_xfs",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 当該機器に物理的にアクセス可能な攻撃者により、ホストコンピュータ上で任意のコードが実行される - CVE-2020-9063  　* 当該機器に物理的にアクセス可能な攻撃者により、不正に現金が引き出される - CVE-2020-10123  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[製品の刷新または使用停止を検討する] APTRA XFS 05.01 は 2015年にサポートが終了しています。古いバージョンが動作する機器を使用している場合、当該機器の刷新を検討してください。  [ファームウェアをアップデートする] NCR から APTRA XFS Dispenser Security Update 01.00.00 が提供されています。 このアップデートには、脆弱性を修正した以下のファームウェアが含まれてます。  　* USBCurrencyDispenser 04.01.01, firmware 0x0167 (for S1 dispensers) 　* USBMediaDispenser 03.04.00, firmware 0x0118 (for S2 dispensers)  [設定を変更する]  ファームウェアのアップデートに加えて以下の設定変更を行うことが NCR により推奨されています。詳細については NCR Secure Whitepaper を参照してください。  　* Dispenser Protection Level: Level 3 (Physical Protection) for S1 and S2 dispensers 　* Dispenser Authentication Sequence: Sequence 2 or higher (for S1 dispensers), or Sequence 1 or higher (for S2 dispensers)"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "NCR",
+          "vulinfoid": "Critical Platform Component Update for S1 and S2 Currency Dispenser",
+          "url": "https://www.ncr.com/content/dam/ncrcom/content-type/documents/NCR_Security_Alert-2018-10-S1_and_S2_Critical_Update.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "NCR",
+          "vulinfoid": "Warning of Logical (Jackpot) Attacks on ATMs in the United States",
+          "url": "https://www.ncr.com/content/dam/ncrcom/unsorted/jackpot_attacks_in_the_us_-_january_2018.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "NCR",
+          "vulinfoid": "APTRA XFS Platform Component Security Update",
+          "url": "https://www.ncr.com/content/dam/ncrcom/content-type/documents/NCR_Security_Alert-2018-13_APTRA_XFS_v5.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "NCR",
+          "vulinfoid": "Solution: Dispenser Security Solution - September 2018",
+          "url": "https://www.ncr.com/content/dam/ncrcom/content-type/documents/NCR_Secure_white_paper-Dispenser_Security_Solution_September_2018.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-9063",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9063"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-10123",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10123"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93330893",
+          "url": "https://jvn.jp/vu/JVNVU93330893/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#116713",
+          "url": "https://kb.cert.org/vuls/id/116713"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-08-25T14:42:06+09:00",
+          "description": "[2020年08月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-08-25T14:42:06+09:00",
+    "datelastupdated": "2020-08-25T14:42:06+09:00",
+    "datepublic": "2020-08-20T00:00:00+09:00"
+  }
+}

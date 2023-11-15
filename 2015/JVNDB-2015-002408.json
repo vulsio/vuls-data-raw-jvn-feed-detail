@@ -1,0 +1,79 @@
+{
+  "vulinfoid": "JVNDB-2015-002408",
+  "vulinfodata": {
+    "title": "Net Nanny が共有の秘密鍵とルート CA 証明書を使用している問題",
+    "vulinfodescription": {
+      "overview": "Net Nanny は共有の秘密鍵とルート CA 証明書を使用するため、システムに対する HTTPS スプーフィングが可能になる問題が存在します。  Net Nanny は、ルート CA 証明書とプロキシをインストールします。この証明書の生成に用いられる秘密鍵は、直接平文で取得できる形でプログラムに含まれています。攻撃者は、この秘密鍵を用いることで Net Nanny によって信頼される証明書を生成することが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ContentWatch, Inc.",
+          "productname": "Net Nanny",
+          "cpe": {
+            "text": "cpe:/a:misc:contentwatch_net_nanny",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 7.2.4.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:L/Au:S/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者が立ち上げた HTTPS サイトにアクセスしたり、HTTPS 通信を傍受されたりしても、ブラウザの警告が表示されません。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年4月21日現在、対策方法は不明です。以下のワークアラウンドの適用を検討してください。  [SSL フィルタリングを無効にし、証明書を削除する] プログラムのユーザインターフェースから SSL フィルタリングを無効にし、OS の証明書ストアから Net Nanny がインストールした証明書を手動で削除してください。このワークアラウンドによって、Net Nanny の大部分の機能を損なうことなく本脆弱性の影響を防ぐことが可能です。  [Net Nanny をアンインストールする] Net Nanny をアンインストールすることで、OS の証明書ストアから Net Nanny がインストールした証明書が削除されます。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ContentWatch, Inc.",
+          "vulinfoid": "Net Nanny",
+          "url": "http://www.netnanny.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90912447",
+          "url": "http://jvn.jp/vu/JVNVU90912447/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#260780",
+          "url": "http://www.kb.cert.org/vuls/id/260780"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-22T10:30:58+09:00",
+    "datelastupdated": "2015-04-22T10:30:58+09:00",
+    "datepublic": "2015-04-20T00:00:00+09:00"
+  }
+}

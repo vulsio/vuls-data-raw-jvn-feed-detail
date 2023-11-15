@@ -1,0 +1,144 @@
+{
+  "vulinfoid": "JVNDB-2015-004558",
+  "vulinfodata": {
+    "title": "複数の DSL ルータ製品がハードコードされたパスワードを使用する問題",
+    "vulinfodescription": {
+      "overview": "ASUS、DIGICOM、Observa Telecom、Philippine Long Distance Telephone (PLDT)、ZTE が提供する DSL ルータには、ハードコードされたパスワード \"XXXXaircon\" を使用する問題が存在します。  ASUS DSL-N12E、DIGICOM DG-5524T、Observa Telecom RTA01N、Philippine Long Distance Telephone (PLDT) SpeedSurf 504AN、ZTE ZXV10 W300S 等の DSL ルータには、telnet による機器へのアクセスに使用可能な認証情報がハードコードされている問題があります。ユーザ名は、ASUS、DIGICOM、Observa Telecom、ZTE の機器においては \"admin\" が、PLDT の機器においては \"adminpldt\" が使用され、パスワードは \"XXXXairocon\"（XXXX は機器の MAC アドレスの下四桁）が使用されます。MAC アドレスは SNMP コミュニティ文字列 public を介して取得できる可能性があります。  認証情報 (パスワード) がハードコードされている問題 (CWE-798) CWE-798: Use of Hard-coded Credentials https://cwe.mitre.org/data/definitions/798.html  本脆弱性は、ZTE ZXV10 W300 の問題として 2014年2月に JVNVU#99523838 にて公表され、CVE-2014-0329 が割り当てられています。今回、複数の他のベンダが提供する製品に同一の脆弱性があることが判明しています。Observa Telecom RTA01N の脆弱性については、2015年5月に Full Disclosure で公表されています。  JVNVU#99523838 https://jvn.jp/vu/JVNVU99523838/  Full Disclosure  http://seclists.org/fulldisclosure/2015/May/129"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ASUSTeK Computer Inc.",
+          "productname": "DSL-N12E",
+          "cpe": {
+            "text": "cpe:/h:asus:dsl-n12e",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "DIGICOM",
+          "productname": "DG-5524T",
+          "cpe": {
+            "text": "cpe:/h:digicom:dg-5524t",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Observa Telecom",
+          "productname": "RTA01N v2",
+          "cpe": {
+            "text": "cpe:/h:misc:observa_telecom_rta01n_v2",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Philippine Long Distance Telephone Company (PLDT)",
+          "productname": "SpeedSurf 504AN",
+          "cpe": {
+            "text": "cpe:/h:philippine_long_distance_telephone:pldt_speedsurf_504an",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ZTE",
+          "productname": "ZXV10 W300S",
+          "cpe": {
+            "text": "cpe:/h:zte:zxv10_w300s",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者に認証情報を使用され、管理者として機器にアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年8月26日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* ファイアウォールの設定で機器の telnet が信用できないソースからアクセスされないようにし、また、機器の SNMP を無効にする "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ASUS",
+          "vulinfoid": "DSL-N12E",
+          "url": "https://www.asus.com/Networking/DSLN12E/"
+        },
+        {
+          "type": "vendor",
+          "name": "DIGICOM",
+          "vulinfoid": "DG-5524T",
+          "url": "http://www.digicom.com.hk/index.php?section=products&action=details&id=156#.Vd5djH1K5ve"
+        },
+        {
+          "type": "vendor",
+          "name": "Observa Telecom",
+          "vulinfoid": "Router ADSL Observa RTA01N v2",
+          "url": "http://www.movistar.es/particulares/atencion-cliente/internet/adsl/equipamiento-adsl/routers/router-adsl-observa-rta01n-v2/"
+        },
+        {
+          "type": "vendor",
+          "name": "PLDT",
+          "vulinfoid": "PLDT - Philippine Long Distance Telephone Company (Top Page)",
+          "url": "http://www.pldt.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "ZTE",
+          "vulinfoid": "ZXV10 W300S",
+          "url": "http://wwwen.zte.com.cn/en/products/access/cpe/201302/t20130204_386351.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99523838",
+          "url": "https://jvn.jp/vu/JVNVU99523838/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90419607",
+          "url": "http://jvn.jp/vu/JVNVU90419607/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#950576",
+          "url": "https://www.kb.cert.org/vuls/id/950576"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "More than 60 undisclosed vulnerabilities affect 22 SOHO routers",
+          "url": "http://seclists.org/fulldisclosure/2015/May/129"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-04T10:48:56+09:00",
+    "datelastupdated": "2015-09-04T10:48:56+09:00",
+    "datepublic": "2015-08-25T00:00:00+09:00"
+  }
+}

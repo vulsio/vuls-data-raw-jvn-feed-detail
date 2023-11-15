@@ -1,0 +1,123 @@
+{
+  "vulinfoid": "JVNDB-2013-003914",
+  "vulinfodata": {
+    "title": "strongSwan の is_asn1 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "strongSwan の is_asn1 関数は、asn1_length 関数の戻り値を適切に検証しないため、サービス運用妨害 (セグメンテーション違反) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.4",
+            "12.2",
+            "12.3"
+          ]
+        },
+        {
+          "name": "strongSwan",
+          "productname": "strongSwan",
+          "cpe": {
+            "text": "cpe:/a:strongswan:strongswan",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1.11 から 5.0.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、整数オーバーフローを誘発する ASN.1 の length 値に続いて 0x04、0x30、または 0x31 の文字で始まる (1) XAuth ユーザ名、(2) EAP アイデンティティ、または (3) PEM エンコードファイルを介して、サービス運用妨害 (セグメンテーション違反) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1332",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00021.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1372",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00050.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1333",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00022.html"
+        },
+        {
+          "type": "vendor",
+          "name": "strongSwan",
+          "vulinfoid": "strongSwan Denial-of-Service Vulnerability (CVE-2013-5018)",
+          "url": "http://strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html"
+        },
+        {
+          "type": "vendor",
+          "name": "strongSwan",
+          "vulinfoid": "strongSwan 5.1.0 Released",
+          "url": "http://strongswan.org/blog/2013/08/01/strongswan-5.1.0-released.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-5018",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-5018"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-5018",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-5018"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-30T15:36:55+09:00",
+    "datelastupdated": "2013-08-30T15:36:55+09:00",
+    "datepublic": "2013-08-01T00:00:00+09:00"
+  }
+}

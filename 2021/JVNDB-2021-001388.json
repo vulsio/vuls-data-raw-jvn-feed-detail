@@ -1,0 +1,168 @@
+{
+  "vulinfoid": "JVNDB-2021-001388",
+  "vulinfodata": {
+    "title": "三菱電機製 GOT およびテンションコントローラの MODBUS/TCP スレーブ通信機能におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機製 GOT2000シリーズ、GOT SIMPLE シリーズ GS21 モデルおよび GT SoftGOT2000、ならびにテンションコントローラの MODBUS/TCP スレーブ通信機能には、不適切な長さの値によるバッファへのアクセス (CWE-805) に起因するサービス運用妨害 (DoS) の脆弱性 (CVE-2021-20589) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "GOT SIMPLE シリーズ GS21 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got_simple_series_gs21_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "通信ドライババージョン 01.21.000 〜 01.39.00"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT21 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt21_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "通信ドライババージョン 01.21.000 〜 01.39.000"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT23 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt23_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "通信ドライババージョン 01.19.000 〜 01.38.000"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT25 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt25_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "通信ドライババージョン 01.19.000 〜 01.38.000"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT27 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt27_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "通信ドライババージョン 01.19.000 〜 01.38.000"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GT SoftGOT2000",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:gt_softgot2000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 1.170C 〜 1.250L"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "LE7-40GU-L",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:le7_40gu_l",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "MODBUS/TCP 通信用画面パッケージデータ V1.00"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって細工された不正なパケットを受信した場合、当該機器の通信機能が停止する可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、適切な対策済みバージョンにアップデートしてください。  　* GOT2000 　　　* GT27モデル 通信ドライババージョン 01.39.000 およびそれ以降 　　　* GT25モデル 通信ドライババージョン 01.39.000 およびそれ以降 　　　* GT23モデル 通信ドライババージョン 01.39.000 およびそれ以降 　　　* GT21モデル 通信ドライババージョン 01.40.000 およびそれ以降 　* GOT SIMPLE 　　　* GS21 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　* GT SoftGOT2000 　　　* バージョン 1.255R およびそれ以降 　* テンションコントローラ 　　　* LE7-40GU-L MODBUS/TCP 通信用画面パッケージデータ V1.01 およびそれ以降  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。   　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* LAN 内で使用し、信頼できないネットワークやホストからアクセスできないようにする 　* 該当製品へアクセス可能なパソコンにウイルス対策ソフトを搭載する  詳しくは<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-002.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "GOTおよびテンションコントローラのMODBUS/TCPスレーブ通信機能におけるサービス拒否(DoS)の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-002.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20589",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20589"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-131-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-131-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99895108",
+          "url": "https://jvn.jp/vu/JVNVU99895108/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-805",
+          "url": "https://cwe.mitre.org/data/definitions/805.html",
+          "title": "不適切な長さの値によるバッファへのアクセス"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-05-12T15:34:59+09:00",
+          "description": "[2021年05月12日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-05-13T10:08:22+09:00",
+          "description": "[2021年05月13日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-131-02) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-01-21T13:07:59+09:00",
+          "description": "[2022年01月21日]\\n    対策：内容を更新\\n    "
+        }
+      ]
+    },
+    "datefirstpublished": "2021-05-12T15:34:59+09:00",
+    "datelastupdated": "2022-01-21T14:32:08+09:00",
+    "datepublic": "2021-05-11T00:00:00+09:00"
+  }
+}

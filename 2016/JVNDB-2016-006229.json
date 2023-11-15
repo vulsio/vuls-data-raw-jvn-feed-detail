@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2016-006229",
+  "vulinfodata": {
+    "title": "Apache Tomcat に情報漏えいの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tomcat には、情報漏えいの脆弱性が存在します。  【2017年1月6日 更新】 Apache Tomcat の NIO HTTP コネクタに含まれているファイル送信コードには、ファイルの送信処理にエラーがあった場合、現在の Processor オブジェクトが Processor キャッシュに複数回追加される問題が存在します。これは、複数のリクエストが同時に処理される場合に同一の Processor が使用される可能性があることを意味します。複数のリクエストの処理に同一の Processor が使用されることで、セッション ID やレスポンス本体などの情報が他のセッションに漏えいする可能性があります。  本脆弱性は Apache Tomcat 8.5.x で発見され、Apache Tomcat 8.5.x において行われた Connector コードのリファクタリングで作りこまれたものであると考えられていましたが、開発者によるさらなる調査の結果、現在サポートされているすべてのバージョンの Apache Tomcat に本脆弱性が存在することが判明しています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.5.0 から 8.5.8 まで",
+            "9.0.0.M1 から 9.0.0.M13 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "通信内容が漏えいする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする］ 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は本脆弱性の対策版として、次のバージョンをリリースしています。  　 Apache Tomcat 9.0.0.M15 　 Apache Tomcat 8.5.9  【2017年1月6日 追記】 開発者は、追加で次の対策バージョンをリリースします。 対策バージョンがリリースされ次第、最新版へアップデートしてください。  　　* Apache Tomcat 8.0.40 　　* Apache Tomcat 7.0.74 　　* Apache Tomcat 6.0.49 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Bugzilla",
+          "vulinfoid": "Bug 60409 - IllegalArgumentException at java.nio.Buffer.position at SocketWrapperBase.transfer()",
+          "url": "https://bz.apache.org/bugzilla/show_bug.cgi?id=60409"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 9.0.0.M15",
+          "url": "https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.0.M15"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 8.5.9",
+          "url": "https://tomcat.apache.org/security-8.html#Fixed_in_Apache_Tomcat_8.5.9"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 6.0.49",
+          "url": "https://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.49"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 7.0.74",
+          "url": "https://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.74"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 8.0.40",
+          "url": "https://tomcat.apache.org/security-8.html#Fixed_in_Apache_Tomcat_8.0.40"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8745",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8745"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97321122",
+          "url": "http://jvn.jp/vu/JVNVU97321122/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8745",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8745"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年12月15日]\\n  掲載\\n[2017年01月11日]\\n  概要：内容を更新\\n  ベンダ情報：Apache Software Foundation (Fixed in Apache Tomcat 8.0.40) を追加\\n  ベンダ情報：Apache Software Foundation (Fixed in Apache Tomcat 7.0.74) を追加\\n  ベンダ情報：Apache Software Foundation (Fixed in Apache Tomcat 6.0.49) を追加\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  対策：内容を更新\\n"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-02-28T10:54:03+09:00",
+          "description": "[2018年02月28日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8745) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-12-15T17:18:50+09:00",
+    "datelastupdated": "2018-02-28T11:53:55+09:00",
+    "datepublic": "2016-12-14T00:00:00+09:00"
+  }
+}

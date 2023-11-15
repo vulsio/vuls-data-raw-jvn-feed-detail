@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2010-003866",
+  "vulinfodata": {
+    "title": "gnome-screensaver で使用される GTK+ の gdk/gdkwindow.c における無人のワークステーションにアクセスされる脆弱性",
+    "vulinfodescription": {
+      "overview": "gnome-screensaver で使用される GTK+ の gdk/gdkwindow.c には、GDK_WINDOW_FOREIGN タイプのウィンドウ上で暗黙的なペイントを実行するため、スクリーンロックを迂回し、無人のワークステーションにアクセスされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNOME Project",
+          "productname": "gnome-screensaver",
+          "cpe": {
+            "text": "cpe:/a:gnome:screensaver",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.28.1 未満"
+          ]
+        },
+        {
+          "name": "GTK+",
+          "productname": "GTK+",
+          "cpe": {
+            "text": "cpe:/a:gtk:gtk%2B",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.18.45 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.2",
+          "vector": "AV:L/AC:H/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、特定の環境で X エラーを誘発され、エンターキーを多数連打されることで、スクリーンロックを回避される、および無人のワークステーションにアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GNOME",
+          "vulinfoid": "gnome-screensaver",
+          "url": "http://git.gnome.org/browse/gnome-screensaver/commit/?id=ab08cc93f2dc6223c8c00bfa1ca4f2d89069dbe0"
+        },
+        {
+          "type": "vendor",
+          "name": "GTK+",
+          "vulinfoid": "Top Page",
+          "url": "http://www.gtk.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-0732",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0732"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-0732",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0732"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T16:19:14+09:00",
+    "datelastupdated": "2012-06-26T16:19:14+09:00",
+    "datepublic": "2010-01-29T00:00:00+09:00"
+  }
+}

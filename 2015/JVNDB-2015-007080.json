@@ -1,0 +1,191 @@
+{
+  "vulinfoid": "JVNDB-2015-007080",
+  "vulinfodata": {
+    "title": "Git の git-remote-ext および不特定の他のリモートヘルパープログラムにおける任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Git の (1) git-remote-ext および (2) 不特定の他のリモートヘルパープログラムは、許可されるプロトコルを適切に制限しないため、任意のコードを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御) と識別されています。 http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "15.04",
+            "15.10"
+          ]
+        },
+        {
+          "name": "Git project",
+          "productname": "Git",
+          "cpe": {
+            "text": "cpe:/a:git_project:git",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.10 未満",
+            "2.4.10 未満の 2.4.x",
+            "2.5.4 未満の 2.5.x",
+            "2.6.1 未満の 2.6.x"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.1",
+            "13.2"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Software Collections",
+          "cpe": {
+            "text": "cpe:/a:redhat:software_collections",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1 for RHEL 6",
+            "1 for RHEL 7"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、サブモジュールの (a) .gitmodules ファイルまたは (b) 未確認の他のソースに含まれる URL を介して、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Git v2.3.10 Release Notes",
+          "url": "https://github.com/git/git/blob/master/Documentation/RelNotes/2.3.10.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Git v2.4.10 Release Notes",
+          "url": "https://github.com/git/git/blob/master/Documentation/RelNotes/2.4.10.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Git v2.5.4 Release Notes",
+          "url": "https://github.com/git/git/blob/master/Documentation/RelNotes/2.5.4.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Git v2.6.1 Release Notes",
+          "url": "https://github.com/git/git/blob/master/Documentation/RelNotes/2.6.1.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2015:1968",
+          "url": "https://lists.opensuse.org/opensuse-updates/2015-11/msg00066.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1269794",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1269794"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:2515",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-2515.html"
+        },
+        {
+          "type": "vendor",
+          "name": "The core git plumbing",
+          "vulinfoid": "submodule: allow only certain protocols for submodule fetches",
+          "url": "https://kernel.googlesource.com/pub/scm/git/git/+/33cfccbbf35a56e190b79bdec5c85457c952a021"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2835-1",
+          "url": "http://www.ubuntu.com/usn/USN-2835-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7545",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7545"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7545",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7545"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-21T16:40:09+09:00",
+    "datelastupdated": "2016-04-21T16:40:09+09:00",
+    "datepublic": "2015-09-29T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2016-001930",
+  "vulinfodata": {
+    "title": "Eaglesoft (Patterson Dental) でパスワードがハードコードされている問題",
+    "vulinfodescription": {
+      "overview": "Patterson Dental Supply, Inc. が提供する Eaglesoft (Patterson Dental) は、歯科医向けの情報管理ソフトウェアです。Eaglesoft には、データベースのパスワードがハードコードされています。  認証情報がハードコードされている問題 (CWE-798) - CVE-2016-2343 研究者によると、Eaglesoft にはバックエンドのデータベースの認証情報がハードコードされています。この認証情報はすべての Eaglesoft で共通です。Eaglesoft のデータベースには、患者に関する機微な情報が保存されています。この認証情報を変更すると、データベースへアクセスできなくなります。 研究者はさらに詳しい情報をブログポストで公開しています。  CWE-798: Use of Hard-coded Credentials http://cwe.mitre.org/data/definitions/798.html  ブログポスト http://justinshafer.blogspot.com/2016/02/moving-onto-eaglesoft-aka-patterson.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Patterson Dental Supply, Inc.",
+          "productname": "Eaglesoft",
+          "cpe": {
+            "text": "cpe:/a:patterson_dental:eaglesoft",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ハードコードされているパスワードを知る攻撃者が当該製品のデータベースにアクセスすることで、患者の機微な情報が取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2016年3月31日現在、有効な対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* アクセスを制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Eaglesoft",
+          "vulinfoid": "Dental Software - Eaglesoft - Dental Practice Management and Imaging Software",
+          "url": "http://patterson.eaglesoft.net/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2343",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2343"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91828421",
+          "url": "http://jvn.jp/vu/JVNVU91828421/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2343",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2343"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#344432",
+          "url": "http://www.kb.cert.org/vuls/id/344432"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Moving onto Eaglesoft aka Patterson Dental",
+          "url": "http://justinshafer.blogspot.jp/2016/02/moving-onto-eaglesoft-aka-patterson.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Eaglesoft 18 Security",
+          "url": "http://justinshafer.blogspot.jp/2016/03/eaglesoft-18-security.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月01日]\\n  掲載\\n[2016年04月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2343) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-01T12:01:51+09:00",
+    "datelastupdated": "2016-04-05T12:24:21+09:00",
+    "datepublic": "2016-03-30T00:00:00+09:00"
+  }
+}

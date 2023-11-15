@@ -1,0 +1,133 @@
+{
+  "vulinfoid": "JVNDB-2022-000066",
+  "vulinfodata": {
+    "title": "CentreCOM AR260S V2 における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "アライドテレシス株式会社が提供する CentreCOM AR260S V2 には、次の複数の脆弱性が存在します。 ・GUI 設定画面における OS コマンドインジェクション (CWE-78) - CVE-2022-35273 ・telnet 接続用の認証情報がハードコードされている問題 (CWE-798) - CVE-2022-38394 ・telnet 機能から実行できるドキュメントに記載されていない隠しコマンドが存在する問題 (CWE-912) - CVE-2022-34869 ・telnet 機能における OS コマンドインジェクション (CWE-78) - CVE-2022-38094  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ゼロゼロワン 早川　宙也 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アライドテレシス",
+          "productname": "CentreCOM AR260S V2 ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:allied_telesis_k.k.:centrecom_ar260s_v2_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.3.3.7 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、任意の OS コマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートし、パスワードを変更する] 開発者が提供する情報をもとに、ファームウェアを最新版にアップデートしてください。 アップデート後はゲストアカウントを含むすべてのアカウントのパスワードを変更してください。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 <ul><li>ファイアウォール機能を有効化し、アクセスを制限する</li><li>ゲストアカウントを含むすべてのアカウントのパスワードを変更する</li></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "アライドテレシス株式会社からの情報",
+          "url": "https://jvn.jp/jp/JVN45473612/522154/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティ・脆弱性について",
+          "vulinfoid": "CentreCOM AR260S V2 における複数の脆弱性について",
+          "url": "https://www.allied-telesis.co.jp/support/list/faq/vuls/20220829.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-34869",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-34869"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-38094",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-38094"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-35273",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-35273"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-38394",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-38394"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#45473612",
+          "url": "https://jvn.jp/jp/JVN45473612/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-08-25T10:50:27+09:00",
+          "description": "[2022年08月29日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-08-29T12:05:10+09:00",
+    "datelastupdated": "2022-08-29T12:05:10+09:00",
+    "datepublic": "2022-08-29T00:00:00+09:00"
+  }
+}

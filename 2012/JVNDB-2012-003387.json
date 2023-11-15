@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2012-003387",
+  "vulinfodata": {
+    "title": "Boehm-Demers-Weiser GC における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Boehm-Demers-Weiser GC (libgc) の以下の関数には、整数オーバーフローの脆弱性が存在します。  (1) malloc.c の GC_generic_malloc 関数 (2) malloc.c の calloc 関数 (3) mallocx.c の GC_generic_malloc_ignore_off_page 関数"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Boehm-Demers-Weiser",
+          "productname": "Boehm-Demers-Weiser Garbage Collector",
+          "cpe": {
+            "text": "cpe:/a:boehm-demers-weiser:garbage_collector",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、想定よりも過度に大きな値によってメモリ不足を誘発されることで、バッファオーバーフローのようなメモリ関連の攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2012-9637",
+          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-June/082988.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2012-9556",
+          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-June/082926.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "bdwgc / ChangeLog",
+          "url": "https://github.com/ivmai/bdwgc/blob/master/ChangeLog"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix calloc-related code to prevent SIZE_MAX redefinition in sys headers",
+          "url": "https://github.com/ivmai/bdwgc/commit/6a93f8e5bcad22137f41b6c60a1c7384baaec2b3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Speedup calloc size overflow check by preventing division if small values",
+          "url": "https://github.com/ivmai/bdwgc/commit/83231d0ab5ed60015797c3d1ad9056295ac3b2bb"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix calloc() overflow",
+          "url": "https://github.com/ivmai/bdwgc/commit/e10c1eb9908c2774c16b3148b30d2f3823d66a9a"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix allocation size overflows due to rounding.",
+          "url": "https://github.com/ivmai/bdwgc/commit/be9df82919960214ee4b9d3313523bff44fd99e1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1546-1",
+          "url": "http://www.ubuntu.com/usn/USN-1546-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2673",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2673"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2673",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2673"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月30日]\\n  掲載\\n[2012年09月14日]\\n  ベンダ情報：Ubuntu (USN-1546-1) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-30T10:30:58+09:00",
+    "datelastupdated": "2012-09-14T10:34:07+09:00",
+    "datepublic": "2012-07-25T00:00:00+09:00"
+  }
+}

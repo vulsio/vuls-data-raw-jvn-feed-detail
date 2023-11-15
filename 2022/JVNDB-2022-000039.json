@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2022-000039",
+  "vulinfodata": {
+    "title": "RevoWorks 製品における不十分な無害化処理の脆弱性",
+    "vulinfodescription": {
+      "overview": "ジェイズ・コミュニケーション株式会社が提供する RevoWorks SCVX、RevoWorks Browser および RevoWorks Desktop は、ウェブブラウザ実行時のドライブ、フォルダ、ファイルおよびレジストリへのアクセスを、ローカル環境とは異なる分離環境で実行する機能を提供します。当該製品のファイル無害化ライブラリまたはファイル無害化オプションを使用することで、インターネット上から分離環境にファイルをダウンロードし、無害化処理を経てローカル環境に保存することが可能です。 無害化処理は当該製品が使用するサードパーティ製コンポーネントで実行されますが、当該コンポーネントは Microsoft Excel 4.0 (XLM) Excel マクロの検出および除去ができません (CWE-791)。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ジェイズ・コミュニケーション株式会社",
+          "productname": "RevoWorks Browser",
+          "cpe": {
+            "text": "cpe:/a:jscom:revoworks_browser",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.67 およびそれ以前のバージョン (ファイル無害化オプションを利用する場合)"
+          ]
+        },
+        {
+          "name": "ジェイズ・コミュニケーション株式会社",
+          "productname": "RevoWorks Desktop",
+          "cpe": {
+            "text": "cpe:/a:jscom:revoworks_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.84 およびそれ以前のバージョン (ファイル無害化オプションを利用する場合)"
+          ]
+        },
+        {
+          "name": "ジェイズ・コミュニケーション株式会社",
+          "productname": "RevoWorks SCVX",
+          "cpe": {
+            "text": "cpe:/a:jscom:revoworks_scvx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "ファイル無害化ライブラリ 1.043 およびそれ以前のバージョンを利用する場合"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.2",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカル環境に持ち込んだファイルを開くことで、悪意のあるマクロが実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 <ul><li>RevoWorks SCVX ファイル無害化ライブラリ 1.044 およびそれ以降のバージョン</li><li>RevoWorks Browser 2.2.69 およびそれ以降のバージョン</li><li>RevoWorks Desktop 2.1.85 およびそれ以降のバージョン</li></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ジェイズ・コミュニケーション株式会社",
+          "vulinfoid": "【重要】RevoWorks製品におけるファイル無害化処理の脆弱性について ",
+          "url": "https://jscom.jp/news-20220527/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-27176",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-27176"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#27256219",
+          "url": "https://jvn.jp/jp/JVN27256219/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-05-24T15:39:57+09:00",
+          "description": "[2022年05月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-05-27T14:03:40+09:00",
+    "datelastupdated": "2022-05-27T14:03:40+09:00",
+    "datepublic": "2022-05-27T00:00:00+09:00"
+  }
+}

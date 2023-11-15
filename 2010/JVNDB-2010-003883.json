@@ -1,0 +1,162 @@
+{
+  "vulinfoid": "JVNDB-2010-003883",
+  "vulinfodata": {
+    "title": "GNU C Library の elf_get_dynamic_info 関数における整数符号化エラー脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU C Library の ld.so の elf/dynamic-link.h の elf_get_dynamic_info 関数には、--verify オプションが使用されている際、整数符号化エラー脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU C Library",
+          "cpe": {
+            "text": "cpe:/a:gnu:glibc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0.1 から 2.11.1"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESXi",
+          "cpe": {
+            "text": "cpe:/a:vmware:esxi",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、ELF ヘッダの特定の d_tag 構造体のメンバに対する負の値を持つ巧妙に細工された ELF プログラムを介して、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2058",
+          "url": "http://www.debian.org/security/2010/dsa-2058"
+        },
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201011-01 / glibc",
+          "url": "http://security.gentoo.org/glsa/glsa-201011-01.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "GNU C Library",
+          "vulinfoid": "Use correct type when casting d_tag.",
+          "url": "http://sourceware.org/git/?p=glibc.git;a=commit;h=db07e962b6ea963dbb345439f6ab9b0cf74d87c5"
+        },
+        {
+          "type": "vendor",
+          "name": "GNU C Library",
+          "vulinfoid": "Top Page",
+          "url": "http://www.gnu.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:0125",
+          "url": "https://rhn.redhat.com/errata/RHSA-2012-0125.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:0126",
+          "url": "https://rhn.redhat.com/errata/RHSA-2012-0126.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2010:111",
+          "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:111"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2010:112",
+          "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2010:112"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-944-1",
+          "url": "http://www.ubuntu.com/usn/USN-944-1"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0013",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0013.html"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0018",
+          "url": "http://www.vmware.com/security/advisories/VMSA-2012-0018.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-0830",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0830"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-0830",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0830"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載\\n[2012年12月17日]\\n  影響を受けるシステム：VMware (VMSA-2012-0013) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0013) を追加\\n[2012年12月26日]\\n  影響を受けるシステム：VMware (VMSA-2012-0018) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0018) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T16:19:15+09:00",
+    "datelastupdated": "2012-12-26T17:24:59+09:00",
+    "datepublic": "2010-06-01T00:00:00+09:00"
+  }
+}

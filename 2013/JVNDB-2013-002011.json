@@ -1,0 +1,154 @@
+{
+  "vulinfoid": "JVNDB-2013-002011",
+  "vulinfodata": {
+    "title": "複数の OpenStack 製品の v1 API における認証情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenStack Glance Essex、Folsom、および Grizzly の v1 API は、Swift をシングルテナントで使用している、または Amazon S3 Store を使用している場合、location フィールドを返すため、オペレータのバックエンド側の認証情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Amazon.com, Inc.",
+          "productname": "Amazon S3 Store",
+          "cpe": {
+            "text": "cpe:/a:amazon:s3_store",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Compute Folsom",
+          "cpe": {
+            "text": "cpe:/a:openstack:folsom",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2012.2"
+          ]
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Essex",
+          "cpe": {
+            "text": "cpe:/a:openstack:essex",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2012.1"
+          ]
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Glance",
+          "cpe": {
+            "text": "cpe:/a:openstack:glance",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Grizzly v1"
+          ]
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Swift",
+          "cpe": {
+            "text": "cpe:/a:openstack:swift",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、キャッシュされたイメージへのリクエストを介して、オペレータのバックエンド側の認証情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Launchpad",
+          "vulinfoid": "Bug #1135541",
+          "url": "https://bugs.launchpad.net/glance/+bug/1135541"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenStack",
+          "vulinfoid": "Change Ib16ad40d: Do not return location in headers",
+          "url": "https://review.openstack.org/#/c/24439/"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenStack",
+          "vulinfoid": "Change I3ec0a8f4: Do not return location in headers",
+          "url": "https://review.openstack.org/#/c/24438/"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenStack",
+          "vulinfoid": "Change Ie4077470: Do not return location in headers",
+          "url": "https://review.openstack.org/#/c/24437/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:0707",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0707.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1764-1",
+          "url": "http://www.ubuntu.com/usn/USN-1764-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1840",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1840"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1840",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1840"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月27日]\\n  掲載\\n[2013年04月26日]\\n  ベンダ情報：レッドハット (RHSA-2013:0707) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-27T14:43:14+09:00",
+    "datelastupdated": "2013-04-26T15:15:19+09:00",
+    "datepublic": "2013-03-15T00:00:00+09:00"
+  }
+}

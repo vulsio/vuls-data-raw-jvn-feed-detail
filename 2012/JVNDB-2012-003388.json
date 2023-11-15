@@ -1,0 +1,83 @@
+{
+  "vulinfoid": "JVNDB-2012-003388",
+  "vulinfodata": {
+    "title": "Android 用 Bionic の libc/bionic/malloc_debug_leak.c における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Android 用 Bionic (libc) の libc/bionic/malloc_debug_leak.c 内の (1) chk_malloc 関数、(2) leak_malloc 関数、および (3) leak_memalign 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Bionic",
+          "cpe": {
+            "text": "cpe:/a:google:bionic",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、想定よりも過度に大きな値によってメモリ不足を誘発されることで、バッファオーバーフローのようなメモリ関連の攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "bionic: fix integer overflows in chk_malloc(), leak_malloc(), and leak_memalign()",
+          "url": "https://github.com/android/platform_bionic/commit/7f5aa4f35e23fd37425b3a5041737cdf58f87385"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2674",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2674"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2674",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2674"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-30T10:32:53+09:00",
+    "datelastupdated": "2012-07-30T10:32:53+09:00",
+    "datepublic": "2012-07-25T00:00:00+09:00"
+  }
+}

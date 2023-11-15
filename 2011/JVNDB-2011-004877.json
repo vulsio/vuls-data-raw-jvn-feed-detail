@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2011-004877",
+  "vulinfodata": {
+    "title": "Gopher の gopherToHTML 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Gopher の gopher.cc の gopherToHTML 関数は、Squid 内のパーサーに返信するため、バッファオーバーフローの脆弱性が存在します。 本脆弱性は、CVE-2005-0094 のリグレッションに起因した脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Squid-cache.org",
+          "productname": "Squid",
+          "cpe": {
+            "text": "cpe:/a:squid-cache:squid",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0.STABLE26 未満の 3.0、3.1.15 未満の 3.1、および 3.2.0.11 未満の 3.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの Gopher サーバにより、レスポンス内の過度に長い行を介して、サービス運用妨害 (メモリの破損およびデーモン再起動) 状態にされる、または詳細不明な影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Buffer Overflow vulnerability in Squid",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2011_3205_buffer_overflow"
+        },
+        {
+          "type": "vendor",
+          "name": "squid-cache",
+          "vulinfoid": "SQUID-2011:3",
+          "url": "http://www.squid-cache.org/Advisories/SQUID-2011_3.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-3205",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3205"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-3205",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3205"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載\\n[2012年04月18日]\\n  ベンダ情報：オラクル (Buffer Overflow vulnerability in Squid) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:43:37+09:00",
+    "datelastupdated": "2012-04-18T17:28:52+09:00",
+    "datepublic": "2011-08-28T00:00:00+09:00"
+  }
+}

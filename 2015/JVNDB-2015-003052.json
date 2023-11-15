@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2015-003052",
+  "vulinfodata": {
+    "title": "PHP の pcntl_exec の実装における拡張子の制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の pcntl_exec の実装は、\\x00 文字が含まれている場合にパス名を切り捨てるため、拡張子の制限を回避され、想定外の名前のファイルを実行される脆弱性が存在します。  本脆弱性は、CVE-2006-7243 に対する修正が不十分だったことによる脆弱性です。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.4.41 未満",
+            "5.5.25 未満の 5.5.x",
+            "5.6.9 未満の 5.6.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.4",
+            "10.9.5"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された第一引数を介して、拡張子の制限を回避され、想定外の名前のファイルを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205031",
+          "url": "https://support.apple.com/en-us/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205031",
+          "url": "https://support.apple.com/ja-jp/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #68598",
+          "url": "https://bugs.php.net/bug.php?id=68598"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2015-15",
+          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-15j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-4026",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4026"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-4026",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4026"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年06月12日]\\n  掲載\\n[2015年07月30日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-15) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n  ベンダ情報：アップル (HT205031) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-06-12T11:45:28+09:00",
+    "datelastupdated": "2015-08-31T17:05:17+09:00",
+    "datepublic": "2015-05-14T00:00:00+09:00"
+  }
+}

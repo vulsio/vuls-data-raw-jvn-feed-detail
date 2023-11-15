@@ -1,0 +1,127 @@
+{
+  "vulinfoid": "JVNDB-2017-001917",
+  "vulinfodata": {
+    "title": "PCAUSA Rawether for Windows に権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "Printing Communications Assoc., Inc. (PCAUSA) の Rawether フレームワークは、Berkeley Packet Filter (BPF) データを適切に検証していないため、細工された BPF プログラムを使用することで、想定されている範囲を超えたメモリ内容を操作することが可能です。 この脆弱性を悪用することで、Windows システムにおいて権限昇格される可能性があります。  Printing Communications Assoc., Inc. (PCAUSA) が作成した Rawether for Windows は、アプリケーションから Network Driver Interface System (NDIS) プロトコルドライバを操作するためのフレームワークです。このフレームワークは多数の機器ベンダで、Wi-Fi 機器やルータを制御するアプリケーションに使用されています。 Rawether は Berkeley Packet Filter (BPF) メカニズムによるパケットフィルタリング機能を実装しています。BPF では、フィルタ内容を表現した小さなプログラムが BPF 仮想マシンによって実行されます。  Network Driver Interface System https://msdn.microsoft.com/en-us/windows/hardware/drivers/network/introduction-to-ndis-protocol-drivers  Berkeley Packet Filter https://www.kernel.org/doc/Documentation/networking/filter.txt  バッファオーバーフロー (CWE-119) - CVE-2017-3196 Rawether は、BPF プログラムを実行する前に適切な検証を行っていません。細工した BPF プログラムによって任意のメモリ内容を読み書きされたり、無限ループを引き起こされたりする可能性があります。スタック領域に置かれたリターンアドレスが上書きされることで、SYSTEM 権限で任意のコードを実行される可能性があります。  NDIS_PACKET_TYPE_ALL_LOCAL フラグをつけた NDIS の OID_GEN_CURRENT_PACKET_FILTER リクエストにより、細工された BPF プログラムを設定した後、最初に受信したネットワークパケットを読み込む際に当該 BPF プログラムが実行されます。  研究者は、ASUS の無線 LAN カード PCE-AC56 で使用されているドライバ PcaSp60.sys の 64bit バージョンに対する再現手順を公開しています。  再現手順 http://blog.rewolf.pl/blog/?p=1778 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "AV:L/AC:M/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルのユーザによって、細工された BPF プログラムを実行される可能性があります。結果として、SYSTEM 権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする、または影響を受けるソフトウェアをアンインストールする] 対象製品の開発者が提供する情報をもとに、Rawether ドライバを使用するソフトウェアをアップデートしてください。 または、影響を受けるソフトウェアをアンインストールしてください。 影響を受ける製品開発者の情報は、CERT/CC VU#600671 の Vendor Information をご確認ください。  CERT/CC VU#600671 の Vendor Information http://www.kb.cert.org/vuls/id/600671#vendors"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MSDN",
+          "vulinfoid": "Introduction to NDIS Protocol Drivers",
+          "url": "https://msdn.microsoft.com/en-us/windows/hardware/drivers/network/introduction-to-ndis-protocol-drivers"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-3196",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3196"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98590454",
+          "url": "http://jvn.jp/cert/JVNVU98590454"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-3196",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3196"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#600671",
+          "url": "https://www.kb.cert.org/vuls/id/600671"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "PCAUSA Rawether for Windows local privilege escalation",
+          "url": "http://blog.rewolf.pl/blog/?p=1778"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Rawether for Windows",
+          "url": "http://web.archive.org/web/20151128171809/http://www.rawether.net/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Linux Socket Filtering aka Berkeley Packet Filter (BPF)",
+          "url": "https://www.kernel.org/doc/Documentation/networking/filter.txt"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月23日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-04-11T13:51:53+09:00",
+          "description": "[2018年04月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3196) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-23T11:19:24+09:00",
+    "datelastupdated": "2018-04-11T13:52:32+09:00",
+    "datepublic": "2017-03-21T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2016-002377",
+  "vulinfodata": {
+    "title": "Linux Kernel の sound/core/timer.c の snd_timer_interrupt 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の sound/core/timer.c の snd_timer_interrupt 関数は、特定の連結リストを適切に維持しないため、サービス運用妨害 (競合状態およびシステムクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された ioctl コールを介して、サービス運用妨害 (競合状態およびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.4.1",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.4.1"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ALSA: timer: Fix double unlink of active_list",
+          "url": "https://github.com/torvalds/linux/commit/ee8413b01045c74340aa13ad5bdf905de32be736"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ALSA: timer: Fix double unlink of active_list",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ee8413b01045c74340aa13ad5bdf905de32be736"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1311560",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1311560"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2545",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2545"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2545",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2545"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-02T17:59:51+09:00",
+    "datelastupdated": "2016-05-02T17:59:51+09:00",
+    "datepublic": "2016-01-31T00:00:00+09:00"
+  }
+}

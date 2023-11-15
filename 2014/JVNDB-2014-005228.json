@@ -1,0 +1,207 @@
+{
+  "vulinfoid": "JVNDB-2014-005228",
+  "vulinfodata": {
+    "title": "libxml2 の parser.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libxml2 の parser.c は、エンティティの置き換えが無効な場合でもエンティティの拡張を適切に制限しないため、サービス運用妨害 (CPU 資源の消費) 状態にされる脆弱性が存在します。  本脆弱性は Billion Laughs 攻撃から変異した脆弱性です。  補足情報 : CWE による脆弱性タイプは、CWE-611: Improper Restriction of XML External Entity Reference ('XXE') (XML 外部エンティティ参照の不適切な制限) と識別されています。 http://cwe.mitre.org/data/definitions/611.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "xmlsoft.org",
+          "productname": "libxml2",
+          "cpe": {
+            "text": "cpe:/a:xmlsoft:libxml2",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.9.2 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.4",
+            "10.9.5"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "iOS",
+          "cpe": {
+            "text": "cpe:/o:apple:iphone_os",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.4.1 未満 (iPad 2 以降)",
+            "8.4.1 未満 (iPhone 4s 以降)",
+            "8.4.1 未満 (iPod touch 第 5 世代以降)"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10",
+            "11.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、多数のネストされたエンティティ参照を含む、巧妙に細工された XML 文書を介して、サービス運用妨害 (CPU 資源の消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-08-13-3 iOS 8.4.1",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00002.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205030",
+          "url": "https://support.apple.com/en-us/HT205030"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205031",
+          "url": "https://support.apple.com/en-us/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205030",
+          "url": "https://support.apple.com/ja-jp/HT205030"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205031",
+          "url": "https://support.apple.com/ja-jp/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2014:1330",
+          "url": "http://lists.opensuse.org/opensuse-updates/2014-10/msg00034.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Third Party Bulletin - January 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Attachment #944444",
+          "url": "https://bugzilla.redhat.com/attachment.cgi?id=944444&action=diff"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1149084",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1149084"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1885",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-1885.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1655",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1655.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2389-1",
+          "url": "http://www.ubuntu.com/usn/USN-2389-1/"
+        },
+        {
+          "type": "vendor",
+          "name": "xmlsoft.org",
+          "vulinfoid": "Top Page",
+          "url": "http://xmlsoft.org/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3660",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3660"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3660",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3660"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "libxml2 issue: billioun laughs variant (CVE-2014-3660)",
+          "url": "http://www.openwall.com/lists/oss-security/2014/10/17/7"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月06日]\\n  掲載\\n[2014年12月08日]\\n  ベンダ情報：レッドハット (RHSA-2014:1885) を追加\\n[2015年01月09日]\\n  CWE による脆弱性タイプ一覧：内容を更新\\n[2015年01月30日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205030) を追加\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-3 iOS 8.4.1) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-06T19:08:07+09:00",
+    "datelastupdated": "2015-08-31T16:36:36+09:00",
+    "datepublic": "2014-10-07T00:00:00+09:00"
+  }
+}

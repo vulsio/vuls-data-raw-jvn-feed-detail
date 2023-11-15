@@ -1,0 +1,140 @@
+{
+  "vulinfoid": "JVNDB-2010-002545",
+  "vulinfodata": {
+    "title": "ISC BIND named の allow-query の処理における脆弱性",
+    "vulinfodescription": {
+      "overview": "Internet Systems Consortium (ISC) が提供する BIND には、allow-query のアクセスコントロールの処理に脆弱性が存在します。  ISC から以下の脆弱性情報が公開されています。  When named is running as an authoritative server for a zone and receives a query for that zone data, it first checks for allow-query acls in the zone statement, then in that view, then in global options. If none of these exist, it defaults to allowing any query (allow-query {“any”};). With this bug, if the allow-query is not set in the zone statement, it failed to check in view or global options and fell back to the default of allowing any query. This means that queries that the zone owner did not wish to allow were incorrectly allowed. This bug doesn't affect allow-recursion or allow-query-cache acls, since they are not relevant to a zone for which the server is authoritative.  ISC によると、9.6ESV-R2 は本脆弱性の影響をうけないとされています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "BIND 9.7.2-P2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ACL が正しく適用されていないと、管理者が許可していないクエリが許可されてしまいます。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] この問題は、使用している OS のベンダや配布元が提供する修正済みのバージョンに更新することで解決します。詳細については、ベンダや配布元が提供する情報を参照してください。 ISC によると、EOL バージョンに対するパッチの提供はないとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Internet Systems Consortium Security Advisory",
+          "vulinfoid": "Guidance regarding Dec 1st 2010 Security Advisories",
+          "url": "http://www.isc.org/announcement/guidance-regarding-dec-1st-2010-security-advisories"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND",
+          "vulinfoid": "cve-2010-3615",
+          "url": "https://www.isc.org/software/bind/advisories/cve-2010-3615"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND",
+          "vulinfoid": "BIND-9.7.2-P3 Release Note (CVE-2010-3615)",
+          "url": "http://ftp.isc.org/isc/bind9/9.7.2-P3/RELEASE-NOTES-BIND-9.7.2-P3.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-3615",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3615"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#510208",
+          "url": "http://jvn.jp/cert/JVNVU510208"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-3615",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-3615"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "69568",
+          "url": "http://osvdb.org/69568"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA42458",
+          "url": "http://secunia.com/advisories/42458"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "45134",
+          "url": "http://www.securityfocus.com/bid/45134"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1024817",
+          "url": "http://securitytracker.com/id?1024817"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#510208",
+          "url": "http://www.kb.cert.org/vuls/id/510208"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2010-3102",
+          "url": "http://www.vupen.com/english/advisories/2010/3102"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年12月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-12-24T16:01:41+09:00",
+    "datelastupdated": "2010-12-24T16:01:41+09:00",
+    "datepublic": "2010-12-02T00:00:00+09:00"
+  }
+}

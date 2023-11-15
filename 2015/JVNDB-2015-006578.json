@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2015-006578",
+  "vulinfodata": {
+    "title": "Samba の AD LDAP サーバで使用される ldb におけるデーモンヒープメモリから重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Samba の AD LDAP サーバで使用される ldb は、文字列の長さを誤って処理するため、デーモンヒープメモリから重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Samba Project",
+          "productname": "Samba",
+          "cpe": {
+            "text": "cpe:/a:samba:samba",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1.22 未満の 4.x (ldb 1.1.24 未満)",
+            "4.2.7 未満の 4.2.x (ldb 1.1.24 未満)",
+            "4.3.3 未満の 4.3.x (ldb 1.1.24 未満)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたパケットを送信され、その後、(1) エラーメッセージまたは (2) データベースの値を読まれることで、デーモンヒープメモリから重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1281326",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1281326"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "CVE-2015-5330: ldb_dn_escape_value: use known string length, not strlen()",
+          "url": "https://git.samba.org/?p=samba.git;a=commit;h=0454b95657846fcecf0f51b6f1194faac02518bd"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "CVE-2015-5330: next_codepoint_handle_ext: don't short-circuit UTF16 low bytes",
+          "url": "https://git.samba.org/?p=samba.git;a=commit;h=538d305de91e34a2938f5f219f18bf0e1918763f"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "CVE-2015-5330: ldb_dn: simplify and fix ldb_dn_escape_internal()",
+          "url": "https://git.samba.org/?p=samba.git;a=commit;h=7f51ec8c4ed9ba1f53d722e44fb6fb3cde933b72"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "CVE-2015-5330: strupper_talloc_n_handle(): properly count characters",
+          "url": "https://git.samba.org/?p=samba.git;a=commit;h=a118d4220ed85749c07fb43c1229d9e2fecbea6b"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "CVE-2015-5330: Fix handling of unicode near string endings",
+          "url": "https://git.samba.org/?p=samba.git;a=commit;h=ba5dbda6d0174a59d221c45cca52ecd232820d48"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "CVE-2015-5330: ldb_dn_explode: copy strings by length, not terminators",
+          "url": "https://git.samba.org/?p=samba.git;a=commit;h=f36cb71c330a52106e36028b3029d952257baf15"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba Security Announcement",
+          "vulinfoid": "CVE-2015-5330.html",
+          "url": "https://www.samba.org/samba/security/CVE-2015-5330.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5330",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5330"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5330",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5330"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-05T13:57:16+09:00",
+    "datelastupdated": "2016-01-05T13:57:16+09:00",
+    "datepublic": "2015-12-10T00:00:00+09:00"
+  }
+}

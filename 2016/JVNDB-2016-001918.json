@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2016-001918",
+  "vulinfodata": {
+    "title": "Node.js のパッケージマネージャ npm が不正なパッケージの動作を制限しない問題",
+    "vulinfodescription": {
+      "overview": "npm には、ワームプログラムの感染拡大を許す問題が存在します。  npm は、サーバサイドのウェブアプリケーションを開発するための実行環境である Node.js のパッケージマネージャです。npm には、ワームプログラムの感染拡大を許す問題が存在します：  Node.js https://nodejs.org/  　1. npm はセマンティックバージョニング (semver) の使用を推奨しています。セマンティックバージョニングでは、依存関係にあるパッケージのバージョンは固定されておらず、依存パッケージの作者は、自由にアップデートバージョンをプッシュできるようになっています。 　 セマンティックバージョニング (semver) https://docs.npmjs.com/getting-started/semantic-versioning  　2. npm は、npm サーバへのログイン状態を維持しています。ログインすると、手動で操作しない限りログアウトすることはありません。ログイン済みユーザが npm install コマンドを実行することで、新たなバージョンのパッケージを publish させられる可能性があります。  　3.npm は、Node.js 環境で広く使われている集中型のレジストリをそのまま使用しています。npm publish コマンドを実行することで、レジストリサーバにコードを公開することができ、他のユーザがインストールできるようになります。  これら 3つの要素が揃うことで、自己複製型のワームプログラムが動作可能となります。Sam Saccone のレポートでは、ワームが動作するワークフローの概要を次のように例示しています：  Sam Saccone のレポート http://www.kb.cert.org/CERT_WEB/services/vul-notes.nsf/6eacfaeab94596f5852569290066a50b/018dbb99def6980185257f820013f175/$FILE/npmwormdisclosure.pdf  　1. ユーザを誘導し、細工したモジュールをユーザ自身の環境にインストールさせる  　2. ワームプログラムは、新しい npm モジュールを生成する  　3. ワームプログラムは、インストール時にワームプログラムが実行されるようにこのモジュールを設定する  　4. ワームプログラムは、このモジュールをユーザのアカウントで公開する  　5. ワームプログラムは、ユーザが publish 権限を持っている全てのモジュールに対して、新たに作成したモジュールに依存するよう改ざんする  　6. ワームプログラムは、これら改ざんしたモジュールを、semver の \"バグフィックス\" レベルを示すアップデートバージョンとして、publish する。これによって、依存するモジュールのバージョンを記号 ^ または ~ で指定している大多数のモジュールが、次回のインストール時に自己複製型のモジュールを埋め込まれる  semver の \"バグフィックス\" レベル https://docs.npmjs.com/misc/semver#tilde-ranges-123-12-1  Sam Saccone のレポートに記載されているタイムラインは次の通りです。  　　2016/01/01 悪用可能であることを発見 　　2016/01/04 再現手順と情報を npm に通知 　　2016/01/05 Facebook に通知 　　2016/01/07 npm から応答 　　2016/01/08 npm から、その時点で修正する予定はないとの意思表示 　　2016/02/05 レポートの公開"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Node.js Foundation",
+          "productname": "Node.js",
+          "cpe": {
+            "text": "cpe:/a:nodejs:node.js",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "のパッケージマネージャ npm"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ユーザのパッケージインストール操作によって感染を拡大する自己複製型のワームプログラムを作成される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2016年3月29日現在、有効な対策方法は不明です。npm プロジェクトの見解については、ブログを参照してください。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* npm サーバにログインしたままにしない 　　　 (npm logout コマンドでログアウト可能) 　　 　　* npm shrinkwrap コマンドで依存パッケージのバージョンを固定する 　　　shrinkwrap 　　　https://docs.npmjs.com/cli/shrinkwrap 　　 　　* インストール時に ignore-scripts オプションをつける:  　　　npm install <モジュール名> --ignore-scripts"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "npm",
+          "vulinfoid": "Node.js",
+          "url": "https://nodejs.org/en/"
+        },
+        {
+          "type": "vendor",
+          "name": "npm",
+          "vulinfoid": "Package install scripts vulnerability",
+          "url": "http://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability"
+        },
+        {
+          "type": "vendor",
+          "name": "npm",
+          "vulinfoid": "The semantic versioner for npm",
+          "url": "https://docs.npmjs.com/misc/semver#tilde-ranges-123-12-1"
+        },
+        {
+          "type": "vendor",
+          "name": "npm",
+          "vulinfoid": "Semantic versioning and npm",
+          "url": "https://docs.npmjs.com/getting-started/semantic-versioning"
+        },
+        {
+          "type": "vendor",
+          "name": "npm",
+          "vulinfoid": "npm-shrinkwrap",
+          "url": "https://docs.npmjs.com/cli/shrinkwrap"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96681018",
+          "url": "http://jvn.jp/cert/JVNVU96681018"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "npm Information for VU#319816",
+          "url": "http://www.kb.cert.org/vuls/id/BLUU-A73334"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "npm hydra worm disclosure",
+          "url": "http://www.kb.cert.org/CERT_WEB/services/vul-notes.nsf/6eacfaeab94596f5852569290066a50b/018dbb99def6980185257f820013f175/$FILE/npmwormdisclosure.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#319816",
+          "url": "http://www.kb.cert.org/vuls/id/319816"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-30T11:55:12+09:00",
+    "datelastupdated": "2016-03-30T11:55:12+09:00",
+    "datepublic": "2016-03-25T00:00:00+09:00"
+  }
+}

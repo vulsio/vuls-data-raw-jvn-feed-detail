@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2009-004952",
+  "vulinfodata": {
+    "title": "Linux kernel の kernel/perf_counter.c におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の kernel/perf_counter.c の perf_copy_attr 関数には、バッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.31-rc1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、perf_counter_open システム呼び出しへの \"過度に大きいデータサイズ\" を介して、サービス運用妨害 (クラッシュ) 状態にされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "Fix buffer overflow in perf_copy_attr()",
+          "url": "http://www.openwall.com/lists/oss-security/2009/09/17/13"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-3234",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3234"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-3234",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3234"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:27:43+09:00",
+    "datelastupdated": "2012-09-25T17:27:43+09:00",
+    "datepublic": "2009-09-17T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "vulinfoid": "JVNDB-2023-004294",
+  "vulinfodata": {
+    "title": "Advanced Micro Devices 製 Windows カーネルドライバーにおける IOCTL に対する不十分なアクセス制御の脆弱性",
+    "vulinfodescription": {
+      "overview": "Advanced Micro Devices Inc. の提供する複数の Windows カーネルドライバーには、IOCTL に対する不十分なアクセス制御の脆弱性（CWE-782、CVE-2023-20598）が存在します。  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: VMware 春山敬宏 氏  "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Advanced Micro Devices (AMD)",
+          "productname": "AMD Software Adrenalin",
+          "cpe": {
+            "text": "cpe:/a:amd:adrenalin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Edition 23.9.2より前のバージョン（搭載製品は以下の通り[1]）"
+          ]
+        },
+        {
+          "name": "Advanced Micro Devices (AMD)",
+          "productname": "AMD Software PRO",
+          "cpe": {
+            "text": "cpe:/a:amd:pro",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Edition 23.Q4より前のバージョン（搭載製品は以下の通り[2]）"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "システム権限を持たないユーザが特定の IOCTL リクエストを送付することで、任意のハードウェアポートや物理アドレス、仮想アドレスに対する入出力が可能となり、結果としてファームウェアを消去あるいは改ざんされたり、権限を昇格されたりする可能性があります。  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Advanced Micro Devices (AMD)",
+          "vulinfoid": "AMD Radeon(tm) Graphics Kernel Driver Privilege Management Vulnerability",
+          "url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-6009.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-20598",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-20598"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97149791",
+          "url": "https://jvn.jp/vu/JVNVU97149791/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-782",
+          "url": "https://cwe.mitre.org/data/definitions/782.html",
+          "title": "不十分なアクセス制御による IOCTL の公開"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-10-27T14:20:47+09:00",
+          "description": "[2023年10月27日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-10-27T15:23:55+09:00",
+    "datelastupdated": "2023-10-27T15:23:55+09:00",
+    "datepublic": "2023-10-26T00:00:00+09:00"
+  }
+}

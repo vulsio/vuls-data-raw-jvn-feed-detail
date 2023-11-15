@@ -1,0 +1,154 @@
+{
+  "vulinfoid": "JVNDB-2020-007706",
+  "vulinfodata": {
+    "title": "ISC BIND 9 に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC (Internet Systems Consortium) が提供する BIND には、複数の脆弱性が存在します。  　* 最大バッファサイズの不適切な設定による tcpdns.c でアサーションエラーが発生する - CVE-2020-8620  　* QNAME minimisation の意図しない許可により resolver.c でアサーションエラーが発生する - CVE-2020-8621  　* 切り詰められた TSIG レスポンスの確認不備によりアサーションエラーが発生する - CVE-2020-8622  　* pk11.c でアサーションエラーが発生する - CVE-2020-8623  　* \"update-policy\" ルールの \"subdomain\" タイプの誤った判定によるアクセス制限の不備 - CVE-2020-8624 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者が、特別に細工された大きな TCP ペイロードを送信することにより、サービス運用妨害 (DoS) 攻撃が行われる - CVE-2020-8620 　* 遠隔の第三者が、細工されたクエリを送信することにより、サービス運用妨害 (DoS) 攻撃が行われる - CVE-2020-8621 　* 遠隔の第三者が、TSIG 署名付きリクエストに対して、切り詰められたレスポンスを送信することにより、サービス運用妨害 (DoS) 攻撃が行われる- CVE-2020-8622 　* 遠隔の第三者が、RSA で署名されたゾーンに対して、特別に細工されたクエリを送信することにより、サービス運用妨害 (DoS) 攻撃が行われる - CVE-2020-8623 　* 遠隔の第三者によって、ゾーンデータを更新される - CVE-2020-8624 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする]  開発者が提供する情報をもとに、使用しているバージョンの最新版へアップデートしてください。開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　* BIND 9.17.4 　* BIND 9.16.6 　* BIND 9.11.22 　* BIND Supported Preview Edition 9.11.22-S1 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2020-8620: A specially crafted large TCP payload can trigger an assertion failure in tcpdns.c",
+          "url": "https://kb.isc.org/docs/cve-2020-8620"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2020-8621: Attempting QNAME minimization after forwarding can lead to an assertion failure in resolver.c",
+          "url": "https://kb.isc.org/docs/cve-2020-8621"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2020-8622: A truncated TSIG response can lead to an assertion failure",
+          "url": "https://kb.isc.org/docs/cve-2020-8622"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2020-8623: A flaw in native PKCS#11 code can lead to a remotely triggerable assertion failure in pk11.c",
+          "url": "https://kb.isc.org/docs/cve-2020-8623"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2020-8624: update-policy rules of type \"subdomain\" are enforced incorrectly",
+          "url": "https://kb.isc.org/docs/cve-2020-8624"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-8620",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8620"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-8621",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8621"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-8622",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8622"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-8623",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8623"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-8624",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8624"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2020-8622）- バージョンアップを推奨 -",
+          "url": "https://jprs.jp/tech/security/2020-08-21-bind9-vuln-tsig.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2020-8623）- ビルド時に「--enable-native-pkcs11」を指定した場合にのみ対象、バージョンアップを推奨 -",
+          "url": "https://jprs.jp/tech/security/2020-08-21-bind9-vuln-pkcs11.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（サービス提供者が意図しないDynamic Updateの許可）について（CVE-2020-8624）- バージョンアップを推奨 -",
+          "url": "https://jprs.jp/tech/security/2020-08-21-bind9-vuln-updatepolicy.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2020-8620）- バージョンアップを推奨 -",
+          "url": "https://jprs.jp/tech/security/2020-08-21-bind9-vuln-libuv.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2020-8621）- バージョンアップを推奨 -",
+          "url": "https://jprs.jp/tech/security/2020-08-21-bind9-vuln-forwarding.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98069467",
+          "url": "https://jvn.jp/vu/JVNVU98069467/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-08-24T14:53:09+09:00",
+          "description": "[2020年08月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-08-24T14:53:09+09:00",
+    "datelastupdated": "2020-08-24T14:53:09+09:00",
+    "datepublic": "2020-08-21T00:00:00+09:00"
+  }
+}

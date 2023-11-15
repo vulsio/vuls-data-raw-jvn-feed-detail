@@ -1,0 +1,157 @@
+{
+  "vulinfoid": "JVNDB-2021-001885",
+  "vulinfodata": {
+    "title": "ZOLL 製 Defibrillator Dashboard における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "ZOLL 社が提供する Defibrillator Dashboard は 除細動器の準備状況やメンテナンス状況を把握するためのソフトウェアです。 当該製品には、次の複数の脆弱性が存在します。  　* 危険なタイプのファイルの無制限アップロード (CWE-434) - CVE-2021-27489 　* ハードコードされた暗号鍵の使用 (CWE-321) - CVE-2021-27481 　* 重要な情報の平文保存 (CWE-312) - CVE-2021-27487 　* クロスサイトスクリプティング (CWE-79) - CVE-2021-27479 　* 復元可能な形式でのパスワード保存 (CWE-257) - CVE-2021-27485 　* 不適切な権限管理 (CWE-269) - CVE-2021-27483"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ゾール・メディカル",
+          "productname": "Defibrillator Dashboard",
+          "cpe": {
+            "text": "cpe:/a:zoll:defibrillator_dashboard",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2 より前のすべてのバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.9",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、細工されたファイルをアップロードされ、任意のコードを実行される - CVE-2021-27489 　* 第三者によって、ハードコーティングされた暗号化キーを用いて、機微な情報が窃取される - CVE-2021-27481 　* 第三者によって、平文で保存された認証情報を用いて、機微な情報が窃取される - CVE-2021-27487 　* 第三者によって、ユーザー権限で細工されたスクリプトをアプリケーションに挿入され、管理者のWebブラウザー上で任意のスクリプトが実行される - CVE-2021-27479 　* 第三者によって、復元可能な形式で保存された認証情報が、Webブラウザー経由で窃取される - CVE-2021-27485 　* 第三者によって、ファイルシステムのパーミッションの不備により、管理者権限への権限昇格が行われる - CVE-2021-27483"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は Defibrillator Dashboard 2.2 以降のバージョンにアップデートすることを推奨しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ZOLL Medical",
+          "vulinfoid": "Defibrillator Dashboard",
+          "url": "https://www.zoll.com/products/data/hospital/defibrillator-dashboard-r-series"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27485",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27485"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27483",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27483"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27489",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27489"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27481",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27481"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27487",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27487"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27479",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27479"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSMA-21-161-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsma-21-161-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99848546",
+          "url": "http://jvn.jp/cert/JVNVU99848546"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-321",
+          "url": "https://cwe.mitre.org/data/definitions/321.html",
+          "title": "ハードコードされた暗号鍵の使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-434",
+          "url": "https://cwe.mitre.org/data/definitions/434.html",
+          "title": "危険なタイプのファイルの無制限アップロード"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-312",
+          "url": "https://cwe.mitre.org/data/definitions/312.html",
+          "title": "重要な情報の平文保存"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-269",
+          "url": "https://cwe.mitre.org/data/definitions/269.html",
+          "title": "不適切な権限管理"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-257",
+          "url": "https://cwe.mitre.org/data/definitions/257.html",
+          "title": "復元可能な形式でのパスワード保存"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-14T16:48:24+09:00",
+          "description": "[2021年06月14日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-14T16:48:24+09:00",
+    "datelastupdated": "2021-06-14T16:48:24+09:00",
+    "datepublic": "2021-06-11T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "vulinfoid": "JVNDB-2007-001425",
+  "vulinfodata": {
+    "title": "Django の bin/compile-messages.py における任意のコマンドを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Django の bin/compile-messages.py は、os.system 関数を通して msgfmt プログラムを呼び出す前に引数文字列を引用しないため、任意のコマンドを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Django Software Foundation",
+          "productname": "Django",
+          "cpe": {
+            "text": "cpe:/a:djangoproject:django",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.95"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、(1) .po ファイルまたは (2) .mo ファイル内のシェルメタキャラクタを介して、任意のコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "djangoproject",
+          "vulinfoid": "Fixed small security hole in bin/compile-messages.py by escaping the ?c",
+          "url": "https://github.com/django/django/commit/518d406e53"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-0404",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0404"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-0404",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-0404"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T15:46:02+09:00",
+    "datelastupdated": "2012-06-26T15:46:02+09:00",
+    "datepublic": "2007-01-22T00:00:00+09:00"
+  }
+}

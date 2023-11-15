@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2016-004926",
+  "vulinfodata": {
+    "title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND 9 には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND 9 には、レスポンスパケットの生成処理に起因するサービス運用妨害 (DoS) の脆弱性が存在します。 特定の条件に一致するクエリに対するレスポンスパケットの生成処理に問題があり、buffer.c で例外が発生し、named が異常終了します。 この問題は、クエリの送信元アドレスが許可されていなくても発生します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.0.0 から 9.8 系まで",
+            "9.10.0 から 9.10.4-P2 まで",
+            "9.11.0a1 から 9.11.0rc1 まで",
+            "9.9.0 から 9.9.9-P2 まで",
+            "9.9.3-S1 から 9.9.9-S3 まで"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "Express5800",
+          "cpe": {
+            "text": "cpe:/h:nec:express5800",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "SG3600全シリーズ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、当該製品をサービス運用妨害 (DoS) 状態 (named の停止) にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性の対策版として次のバージョンをリリースしています。  　　* BIND 9.9.9-P3 　　* BIND 9.9.9-S5 　　* BIND 9.10.4-P3 　　* BIND 9.11.0rc3"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2016-2776: Assertion Failure in buffer.c While Building Responses to a Specifically Constructed Request",
+          "url": "https://kb.isc.org/article/AA-01419/74/CVE-2016-2776%3A-Assertion-Failure-in-buffer.c-While-Building-Responses-to-a-Specifically-Constructed-Request.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV17-006",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv17-006.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-27",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-27j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2776",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2776"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "DNS サーバ BIND の脆弱性対策について(CVE-2016-2776)",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20160929-bind.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2016-0037",
+          "url": "https://www.jpcert.or.jp/at/2016/at160037.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPNIC",
+          "vulinfoid": "BIND 9における不正なリクエストによるサーバ停止の脆弱性について(2016年9月)",
+          "url": "https://www.nic.ad.jp/ja/topics/2016/20160928-01.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2016-2776）",
+          "url": "https://jprs.jp/tech/security/2016-09-28-bind9-vuln-rendering.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90255292",
+          "url": "http://jvn.jp/cert/JVNVU90255292"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2776",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2776"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月29日]\\n  掲載\\n[2016年10月26日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-27) を追加\\n[2017年03月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-006) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-29T16:42:21+09:00",
+    "datelastupdated": "2017-03-09T15:27:16+09:00",
+    "datepublic": "2016-09-27T00:00:00+09:00"
+  }
+}

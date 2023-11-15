@@ -1,0 +1,229 @@
+{
+  "vulinfoid": "JVNDB-2004-000484",
+  "vulinfodata": {
+    "title": "Linux Kernel の open_exec() 関数における不正に ELF バイナリを読み込まれる脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  ELF (Executable and Linking Format) は、多くの Linux ディストリビューションで標準とされる、バイナリフォーマットです。   Linux Kernel に同梱されている ELF バイナリローダ には、setuid バイナリの処理において以下の複数のセキュリティ上の問題が存在します。   ・binfmt_elf.c の load_elf_binary() 関数内において、kernel_read() 関数の返り値のチェックが不適切である問題 (CVE-2004-1070)   ・mmap() 関数の呼び出しに失敗した際の処理が不適切である問題 (CVE-2004-1071)   ・プログラムインタプリタをメモリ空間にマッピングを行う際の返り値のチェックが不適切である問題   ・インタプリタをロードする処理において、NULL 文字で終端されていないインタプリタ名が存在する問題 (CVE-2004-1072)   ・exec.c の execve() に含まれる open_exec() に、読み込み禁止に設定されている ELF バイナリに対して読み込みアクセスを許可してしまう問題 (CVE-2004-1073)   これらの問題を利用するローカルの攻撃者は、意図的に作成した setuid バイナリをロードすることにより setuid バイナリの動作を操作し、潜在的に root 権限で任意のコードを実行できる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3.0 ",
+            "3.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "kernel_se20",
+          "url": "http://www.miraclelinux.com/support/update/data/kernel_se20.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "kernel",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=290"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:549",
+          "url": "http://rhn.redhat.com/errata/RHSA-2004-549.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:293",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-293.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0190",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0190.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0191",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0191.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:275",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-275.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:504",
+          "url": "https://rhn.redhat.com/errata/RHSA-2004-504.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:505",
+          "url": "https://rhn.redhat.com/errata/RHSA-2004-505.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2004-34",
+          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-34.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0190",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0191",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0191J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:504",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-504J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:505",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-505J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:275",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-275J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:549",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-549J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:293",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-293J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2004-34",
+          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-34j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-1073",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1073"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-1073",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1073"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13126",
+          "url": "http://secunia.com/advisories/13126/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11646",
+          "url": "http://www.securityfocus.com/bid/11646"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012165",
+          "url": "http://www.securitytracker.com/alerts/2004/Nov/1012165.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-11-10T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "vulinfoid": "JVNDB-2014-005523",
+  "vulinfodata": {
+    "title": "Microsoft Windows の Kerberos Key Distribution Center (KDC) に Privilege Attribute Certificate (PAC) 署名検証不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft Windows の Kerberos Key Distribution Center (KDC) には、Privilege Attribute Certificate (PAC) 署名検証不備の脆弱性が存在します。  Microsoft Windows の Kerberos Key Distribution Center (KDC) には、Kerberos チケットリクエストに含まれる Privilege Attribute Certificate (PAC) 署名を適切に検証しない問題があります (CWE-347)。PAC に含まれる情報を細工されることで、ドメインの資格情報を持つユーザに、より高い権限を取得される可能性があります。  CWE-347: Improper Verification of Cryptographic Signature https://cwe.mitre.org/data/definitions/347.html  開発者によると、本脆弱性を使用した攻撃活動を確認しているとのことです。  脆弱性に関するより詳しい情報は、Microsoft Security Research and Defense Blog に記載されています。  Microsoft Security Research and Defense Blog: Additional information about CVE-2014-6324 http://blogs.technet.com/b/srd/archive/2014/11/18/additional-information-about-cve-2014-6324.aspx"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP LoadRunner",
+          "cpe": {
+            "text": "cpe:/a:hp:loadrunner",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.01"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "Performance Center",
+          "cpe": {
+            "text": "cpe:/a:hp:performance_center",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.01"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2003",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2003",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for Itanium-based Systems SP2",
+            "SP2",
+            "x64 Edition SP2"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2008",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2008",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for 32-bit Systems SP2",
+            "for 32-bit Systems SP2 (Server Core インストール)",
+            "for Itanium-based Systems SP2",
+            "for x64-based Systems SP2",
+            "for x64-based Systems SP2 (Server Core インストール)",
+            "R2 for Itanium-based Systems SP1",
+            "R2 for x64-based Systems SP1",
+            "R2 for x64-based Systems SP1 (Server Core インストール)"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2012",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2012",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(Server Core インストール)",
+            "R2",
+            "R2 (Server Core インストール)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9",
+          "vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ドメインの資格情報を持つユーザによって、ドメインの管理者権限を取得され、ドメインコントローラを含むドメイン内の全てのコンピュータを乗っ取られる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Microsoft が提供する情報 (マイクロソフト セキュリティ情報 MS14-068) をもとにアップデートしてください。  マイクロソフト セキュリティ情報 MS14-068 https://technet.microsoft.com/ja-jp/library/security/ms14-068.aspx  なお、Windows Vista, Windows 7, Windows 8 および Windows 8.1 についても、多層防御強化のために更新プログラムが提供されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03224 SSRT101864",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04526330"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS14-068",
+          "url": "https://technet.microsoft.com/en-us/library/security/ms14-068.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "MSDN",
+          "vulinfoid": "Library [MS-PAC]: Privilege Attribute Certificate Data Structure",
+          "url": "http://msdn.microsoft.com/en-us/library/cc237955.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Research and Defense Blog",
+          "vulinfoid": "Additional information about CVE-2014-6324",
+          "url": "http://blogs.technet.com/b/srd/archive/2014/11/18/additional-information-about-cve-2014-6324.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS14-068",
+          "url": "https://technet.microsoft.com/ja-jp/library/security/ms14-068.aspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-6324",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6324"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "Microsoft Windows Server の脆弱性対策について(CVE-2014-6324)",
+          "url": "http://www.ipa.go.jp/security/ciadr/vul/20141119-ms.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2014-0048",
+          "url": "http://www.jpcert.or.jp/at/2014/at140048.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99458129",
+          "url": "http://jvn.jp/vu/JVNVU99458129/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-6324",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6324"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA14-323A",
+          "url": "https://www.us-cert.gov/ncas/alerts/TA14-323A"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#213119",
+          "url": "http://www.kb.cert.org/vuls/id/213119"
+        },
+        {
+          "type": "advisory",
+          "name": "警察庁 @police",
+          "vulinfoid": "マイクロソフト社のセキュリティ修正プログラムについて(MS14-068)(2014年11月19日)",
+          "url": "http://www.npa.go.jp/cyberpolice/topics/?seq=14971"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月20日]\\n  掲載\\n[2015年05月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03224 SSRT101864) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-20T12:35:20+09:00",
+    "datelastupdated": "2015-05-27T18:06:11+09:00",
+    "datepublic": "2014-11-18T00:00:00+09:00"
+  }
+}

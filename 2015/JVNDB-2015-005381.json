@@ -1,0 +1,102 @@
+{
+  "vulinfoid": "JVNDB-2015-005381",
+  "vulinfodata": {
+    "title": "Voice over LTE (VoLTE) の実装に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "モバイル端末向け通信網 Long Term Evolution (LTE) は、近年、世界中に普及しています。これら LTE 通信網はすべて IP 化され、以前のような回線交換方式ではなくパケット交換方式で通信を行います。この方式の変更により、過去には不可能であった攻撃が可能になります。LTE 通信網とモバイルアプリケーションの実装には、現時点で、プライバシーの侵害や不正な請求、なりすましに繋がる複数の問題を抱えているものが存在します。  現在の LTE 通信網は、前世代の回線交換方式ではなく、パケット交換方式で通信を行います。パケット交換と IP プロトコル、特に Session Initiation Protocol (SIP) を使用していることから、前世代に対しては不可能だった新たな種類の攻撃手法が可能になります。これらの攻撃手法はセキュリティの世界ではよく知られているものです。たとえば、Voice over IP (VoIP) に対する過去の攻撃などを参照してください。  いくつかの LTE 通信網に対してセキュリティ研究者が調査を行った結果、次に挙げるような脆弱性が発見されています。 LTE 通信網の実装は通信キャリアごとに異なっており、これらすべての脆弱性がひとつの LTE 通信網に存在するというわけではないことに注意してください。  重要な情報への不適切なアクセス権の割り当て (CW-732) Android OS のパーミッションモデルは、現状の LTE 通信網の利用形態に合っていません。CALL_PHONE パーミッションがなくても、INTERNET パーミッションだけあれば直接 SIP/IP パケットを送信することで発呼することができ、また、ユーザへの通知は行われません。このような発呼が連続的に行われることで、過剰な課金請求やサービス運用妨害 (DoS) につながる可能性があります。  CWE-732: Incorrect Permission Assignment for Critical Resource http://cwe.mitre.org/data/definitions/732.html  Apple は、iOS ではこの問題の影響を受けないと報告しています。  不適切なアクセス制御 (CWE-284) 一部のネットワークでは、2つの携帯電話間 (ピアツーピア) で直接セッションを確立し、SIP サーバの管理外の通信を行うことが可能です。これらの通信はプロバイダからの請求対象となりません。このような通信が、電話番号の詐称や、無料データ通信でのビデオ通話などに使用される可能性があります。  CWE-284: Improper Access Control http://cwe.mitre.org/data/definitions/284.html  認証不備 (CWE-287) いくつかの通信網では、SIP メッセージの認証が適切に行われていません。これにより、電話番号を詐称される可能性があります。  CWE-287: Improper Authentication http://cwe.mitre.org/data/definitions/287.html  セッションの固定化 (CWE-384) 一部の通信網では、1ユーザあたりの音声通信が 1 セッションに制限されておらず、複数の SIP セッションを確立することが可能です。これにより、通信網に対するサービス運用妨害 (DoS) 攻撃が可能になります。また、攻撃者がピアツーピアの通信を確立することに使われる可能性があります。  CWE-384: Session Fixation http://cwe.mitre.org/data/definitions/384.html  各プロバイダの通信網や LTE の実装は、これらの問題の一つまたは複数の影響を受ける可能性があります。  さらに詳しい情報は、ACM CCS 2015 で発表された Kim 氏らによる論文 \"Breaking and Fixing VoLTE: Exploiting Hidden Data Channels and Mis-Implementations\" を参照してください。  ACM CCS 2015 http://www.sigsac.org/ccs/CCS2015/pro_paper.html  Breaking and Fixing VoLTE: Exploiting Hidden Data Channels and Mis-Implementations http://dl.acm.org/citation.cfm?id=2813718"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "通信網を使用する攻撃者は、ピアツーピア通信を確立して他の端末からデータを取得したり、電話番号を詐称したりする可能性があります。また、悪意の Android アプリケーションは、端末ユーザに気づかれることなく通話を実行する可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年10月19日現在、これらの問題に対する具体的な解決策は不明です。  これらの問題を解決するためには、各プロバイダは必要に応じて自身の通信網を更新する必要があります。影響を受ける脆弱性はプロバイダごとに異なるため、対策に必要な作業や時間はプロバイダによって異なります。詳しい情報については、各サービスプロバイダへお問い合わせください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93463833",
+          "url": "http://jvn.jp/vu/JVNVU93463833/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#943167",
+          "url": "http://www.kb.cert.org/vuls/id/943167"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "The ACM Digital Library",
+          "url": "http://dl.acm.org/citation.cfm?id=2813718"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ACM/SIGSAC",
+          "url": "http://www.sigsac.org/ccs/CCS2015/pro_paper.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Publications - Systems Software and Security Lab",
+          "url": "https://sslab.gtisc.gatech.edu/pages/publications.html#kim:volte"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年10月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-10-21T14:04:31+09:00",
+    "datelastupdated": "2015-10-21T14:04:31+09:00",
+    "datepublic": "2015-10-16T00:00:00+09:00"
+  }
+}

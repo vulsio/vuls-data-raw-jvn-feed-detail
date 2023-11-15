@@ -1,0 +1,79 @@
+{
+  "vulinfoid": "JVNDB-2015-006005",
+  "vulinfodata": {
+    "title": "HP Photosmart B210 の SMB サーバにバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "HP が提供するプリンタ Photosmart B210 では、印刷キューの管理に SMB サーバを使用しています。細工された SMB パケットによってサービス運用妨害 (DoS) 状態を引き起こすことが可能であり、復旧するには、手動による再起動が必要となります。  先頭 296 byte を細工した SMB パケットを送る事で Photosmart B210 をサービス運用妨害 (DoS) 状態にする事が可能です。復旧するには、手動による再起動が必要となります。  HP は次のように述べています：  　\"HP has examined this issue reported on the Photosmart B210 and has verified the printer could become unresponsive when fuzzed with the code provided. At no time did we identify buffer overflows with this tool nor our code inspection. The attempted attack produces a non-permanent denial of service.  　HP's recommendation for existing models affected by this attack is to power cycle the device to return it to a working state.  　HP continually works to improve security and is taking steps to ensure current and future products are not susceptible to this attack.\"  　HP は Photosmart B210 について報告されたこの問題を検証し、提供されたコードを使用したファジングでプリンタが応答不能となることを確認しています。ただしこのファジングツールでも、また当社のコード検査においても、バッファオーバーフローの発生は確認していません。この攻撃により、非永続的なサービス運用妨害が発生します。  　この攻撃の影響を受ける既存の製品について、HP は機器を作業状態に戻すために電源を入れなおすことを推奨します。  　HP は継続して、セキュリティ向上と、現在および将来の製品がこの攻撃を受けにくくなるよう取り組んでいきます。  クラッシュの根本原因は依然として不明です。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP Photosmart Plus e-All-in-One Printer series",
+          "cpe": {
+            "text": "cpe:/h:hp:photosmart_plus_e-all-in-one_printer_series",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "- B210"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.1",
+          "vector": "AV:A/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品と同一 LAN 内の攻撃者により、当該製品がサービス運用妨害 (DoS) 状態にされる可能性があります。復旧のためには、当該製品の再起動が必要です。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年10月22日現在、この問題の完全な解決策は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * プリンタの電源を入れなおす   HP は、プリンタの電源を入れなおすことで通常動作に戻ると述べています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90756914",
+          "url": "http://jvn.jp/vu/JVNVU90756914/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#840844",
+          "url": "http://www.kb.cert.org/vuls/id/840844"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "SMB Negotiate SMB2 Dialect Corruption",
+          "url": "http://www.rapid7.com/db/modules/auxiliary/fuzzers/smb/smb2_negotiate_corrupt"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-24T17:55:01+09:00",
+    "datelastupdated": "2015-11-24T17:55:01+09:00",
+    "datepublic": "2015-10-21T00:00:00+09:00"
+  }
+}

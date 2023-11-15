@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-007322",
+  "vulinfodata": {
+    "title": "Ettercap における整数アンダーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Ettercap には、整数アンダーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-191: Integer Underflow (Wrap or Wraparound) (整数アンダーフロー) と識別されています。 http://cwe.mitre.org/data/definitions/191.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Ettercap Project",
+          "productname": "Ettercap",
+          "cpe": {
+            "text": "cpe:/a:ettercap_project:ettercap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.8.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、過度に小さな下記の値を介して、サービス運用妨害 (out-of-bounds write) 状態にされる、および任意のコードを実行される可能性があります。  (1) dissectors/ec_dhcp.c の dissector_dhcp 関数の size 変数値 (2) dissectors/ec_gg.c の dissector_gg 関数の length の値 (3) ec_utils.c の get_decode_len 関数の文字列長 (4) username 無しのリクエスト (5) dissectors/ec_TN3270.c の dissector_TN3270 関数のパスワード無しのリクエスト"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Ettercap Project",
+          "vulinfoid": "Downloads",
+          "url": "http://ettercap.github.io/ettercap/downloads.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix gg dissector arbitary length heap overflow #606",
+          "url": "https://github.com/Ettercap/ettercap/pull/606"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix arbitary length #602",
+          "url": "https://github.com/Ettercap/ettercap/pull/602"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix cvs signed pointer #609",
+          "url": "https://github.com/Ettercap/ettercap/pull/609"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix TN3270 out of bounds write #605\\",
+          "url": "https://github.com/Ettercap/ettercap/pull/605"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9376",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9376"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9376",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9376"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-22T17:26:53+09:00",
+    "datelastupdated": "2014-12-22T17:26:53+09:00",
+    "datepublic": "2014-12-16T00:00:00+09:00"
+  }
+}

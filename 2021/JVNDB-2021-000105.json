@@ -1,0 +1,114 @@
+{
+  "vulinfoid": "JVNDB-2021-000105",
+  "vulinfodata": {
+    "title": "PowerCMS の XMLRPC API における OS コマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "アルファサード株式会社が提供する PowerCMS の XMLRPC API には、OS コマンドインジェクション (CWE-78) の脆弱性が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アルファサード株式会社",
+          "productname": "PowerCMS",
+          "cpe": {
+            "text": "cpe:/a:alfasado:powercms",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.295 およびそれ以前のバージョン (PowerCMS 3系)",
+            "4.49 およびそれ以前のバージョン (PowerCMS 4系)",
+            "5.19 およびそれ以前のバージョン (PowerCMS 5系)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、任意の OS コマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "XMLRPC API を利用していない場合 <ul><li>PowerCMS を CGI/FastCGI で利用している場合</li><ul><li>mt-xmlrpc.cgi をサーバから削除、またはパーミッションを削除する</li><ul><li>開発者は PowerCMS の環境変数 XMLRPCScript を設定している場合、mt-xmlrpc.cgi をリネームして利用している可能性があるため、リネーム後のファイルを見つけ、本対策を実施するよう呼び掛けています</li></ul></ul><li>PowerCMS を PSGI で利用している場合</li><ul><li>環境変数 RestrictedPSGIApp xmlrpc を設定し、XMLRPC アプリケーションを禁止する</li></ul></ul> XMLRPC API を利用している場合 [アップグレードし、修正ファイルを適用する] 開発者が提供する情報をもとに PowerCMS を最新版へアップグレードし、修正ファイルを適用してください。 [ワークアラウンドを実施する] 開発者によると、アップグレードと修正ファイルの適用ができない場合、次の回避策を適用することで本脆弱性の影響を軽減することが可能とのことです。 <ul><li>mt-xmlrpc.cgi に対し、アクセス制限を実施する (信頼できる接続元のみに制限、または HTTP 認証を設定するなど)</li></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "アルファサード株式会社",
+          "vulinfoid": "XMLRPC API における OS コマンド・インジェクションの脆弱性について",
+          "url": "https://www.powercms.jp/news/xmlrpc-api-202110.html"
+        },
+        {
+          "type": "vendor",
+          "name": "アルファサード株式会社",
+          "vulinfoid": "PowerCMS 5.19 / 4.49 / 3.295 向けパッチについて (XMLRPC API における OS コマンド・インジェクションの脆弱性対策)",
+          "url": "https://www.powercms.jp/news/release-patch-xmlrpc-api-202110.html"
+        },
+        {
+          "type": "vendor",
+          "name": "アルファサード株式会社",
+          "vulinfoid": "XMLRPC API おける OS コマンド・インジェクションの脆弱性 (JVN#17645965) 対策の修正ファイルについて",
+          "url": "https://www.powercms.jp/news/release-fix-xmlrpc-api-202112.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20850",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20850"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#17645965",
+          "url": "https://jvn.jp/jp/JVN17645965/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-11-22T14:45:49+09:00",
+          "description": "[2021年11月24日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-12-17T13:30:28+09:00",
+          "description": "[2021年12月17日]\\n  影響を受けるシステム:内容を更新\\n  ベンダ情報:内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-11-24T12:00:33+09:00",
+    "datelastupdated": "2021-12-17T17:15:29+09:00",
+    "datepublic": "2021-11-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "vulinfoid": "JVNDB-2021-001898",
+  "vulinfodata": {
+    "title": "三菱電機製空調管理システムの WEB 機能における認証アルゴリズムの不適切な実装に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機製空調管理システムの WEB 機能には、認証アルゴリズムの不適切な実装に関する脆弱性 (CWE-303, CVE-2021-20593) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "AE-200J",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:ae-200j",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.7.93 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "AE-50J",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:ae-50j",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.7.93 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "EW-50J",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:ew-50j",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.7.93 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "G-150AD",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:g-150ad",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.3.20 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "G-50",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:g-50",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.2.50 から 3.35 まで"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "G-50-W",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:g-50-w",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.2.50 から 3.35 まで"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GB-50",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:gb-50",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.2.50 から 3.35 まで"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GB-50AD",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:gb-50ad",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.3.20 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "PAC-YG50EC",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:pac-yg50ec",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.2.20 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:L/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品の WEB 機能にログイン可能な遠隔の第三者によって、権限昇格により当該製品の管理者権限で操作されます。その結果、当該空調管理システムの設定情報を取得されたり、空調機器の運転操作や設定値といった設定情報を改ざんされたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 各製品および型番に対応したアップデートを適用してください。  　* 空調管理システム/集中コントローラー 　　　* G-50 Ver.3.36 およびそれ以降 　　　* G-50-W Ver.3.36 およびそれ以降 　　　* GB-50 Ver.3.36 およびそれ以降 　　　* G-150AD Ver.3.21 およびそれ以降 　　　* GB-50AD Ver.3.21 およびそれ以降 　　　* AE-200J Ver.7.95 およびそれ以降 　　　* AE-50J Ver.7.95 およびそれ以降 　　　* EW-50J Ver.7.95 およびそれ以降 　* 空調管理システム/拡張コントローラー 　　　* PAC-YG50EC Ver.2.21 およびそれ以降  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* インターネット等の外部ネットワークへ接続する場合は、VPN ルーター等を使用する 　* 該当製品へアクセス可能なパソコンにウイルス対策ソフトを搭載する 　* 該当製品へのアクセスを、信頼できるネットワークやホストからのアクセスのみに制限する 　* 工場出荷時のユーザー名とパスワードを変更する  詳しくは<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-004.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機エンジニアリング株式会社",
+          "vulinfoid": "CB型空調システム制御ボックスにおける権限昇格の脆弱性",
+          "url": "http://www.mee.co.jp/psirt/vulnerability/pdf/2021-001.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "空調管理システムのWEB機能における権限昇格の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-004.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20593",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20593"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-182-04",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-182-04"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96046575",
+          "url": "http://jvn.jp/cert/JVNVU96046575"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-303",
+          "url": "https://cwe.mitre.org/data/definitions/303.html",
+          "title": "認証アルゴリズムの不適切な実装"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-07-02T15:43:52+09:00",
+          "description": "[2021年07月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-07-02T15:43:52+09:00",
+    "datelastupdated": "2021-07-02T15:43:52+09:00",
+    "datepublic": "2021-07-01T00:00:00+09:00"
+  }
+}

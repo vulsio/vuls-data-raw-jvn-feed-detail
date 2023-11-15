@@ -1,0 +1,142 @@
+{
+  "vulinfoid": "JVNDB-2015-004308",
+  "vulinfodata": {
+    "title": "Dedicated Micros のデジタルビデオレコーダが、平文で通信し、パスワード認証をしていない問題",
+    "vulinfodescription": {
+      "overview": "Dedicated Micros のデジタルビデオレコーダ製品は、デフォルト設定では、暗号化されていない平文で通信し、また、パスワードによるユーザ認証を行いません。  センシティブなデータを暗号化しない (CWE-311) Dedicated Micros のデジタルビデオレコーダ製品は、デフォルト設定では、通信内容を暗号化しないプロトコルである HTTP、Telnet、FTP を用いており、よりセキュアなプロトコルを使用するよう設定するのはエンドユーザの責任としています。そのためデフォルト設定では、第三者によって通信が閲覧されたり改ざんされたりする可能性があります。  CWE-311: Missing Encryption of Sensitive Data https://cwe.mitre.org/data/definitions/311.html  不適切なアクセス制御 (CWE-284) - CVE-2015-2909 Dedicated Micros のデジタルビデオレコーダ製品は、デフォルト設定ではユーザ認証を要求しません。エンドユーザはデバイスにパスワードを設定することができますが、必須ではありません。デフォルト設定では、第三者によって自由にデバイスにアクセスされたりデータを改ざんされたりする可能性があります。  CWE-284: Improper Access Control https://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Dedicated Micros",
+          "productname": "Digital Sprite 2",
+          "cpe": {
+            "text": "cpe:/o:netvu:ds2_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(DS2)"
+          ]
+        },
+        {
+          "name": "Dedicated Micros",
+          "productname": "DV-IP Express",
+          "cpe": {
+            "text": "cpe:/o:netvu:dv-ip_express_firmware",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Dedicated Micros",
+          "productname": "EcoSense",
+          "cpe": {
+            "text": "cpe:/o:netvu:ecosense_firmware",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Dedicated Micros",
+          "productname": "SD",
+          "cpe": {
+            "text": "cpe:/o:netvu:sd_firmware",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Dedicated Micros",
+          "productname": "SD Advanced",
+          "cpe": {
+            "text": "cpe:/o:netvu:sd-advanced_firmware",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、センシティブなデータを閲覧されたり操作されたりする可能性があります。また、セキュアな設定を行っていないデバイスは完全に制御を奪われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年8月21日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* セキュアなプロトコルを使用する 　　開発者は「ユーザが希望する場合、HTTPS や SSH を使用するよう設定したり、 　　POST メソッドでのアップロードを HTTPS 経由にするよう設定したりすること 　　が可能」としています。 　　開発者が提供する情報をもとに、セキュアなプロトコルを使用するよう設定し 　　てください。 　* パスワードによるユーザ認証を有効にする 　　開発者は次のように述べています。  　　　　デフォルト設定のシステムでは、HTTP、Telnet、FTP でユーザ認証を 　　　　行っていません。デフォルトのユーザ名やパスワードを設定しておく 　　　　ことは安全ではないので、Dedicated Micros では、ユーザ自身がそれ 　　　　らを設定するようアドバイスしています。GUI 上には、ユーザ名とパス 　　　　ワードの設定を促す警告文が表示されます。  　　個々のデバイスのドキュメントや開発者が提供する情報をもとに、ユーザ認証 　　を有効にしてください。  [セキュアな設定をデフォルトにする] 開発者は、エンドユーザに設定をまかせるのではなく、合理的にセキュアなシステムをデフォルト設定で提供すべきです。Shodan の結果によると、複数の Dedicated Micros のデバイスがユーザ認証なしにアクセス可能な状態でインターネット上に存在しています。製品のセキュリティ向上のために、次のような項目の実装を検討してください。  　* デフォルトでセキュアなプロトコルを使用する。または、外部との接続が設定 　　されるときに、ユーザにセキュアなプロトコルを使用するよう促す。 　* ユニークなデフォルトパスワードを設定する。MAC アドレスから決定されるよ 　　うなものであってもかまわない。 　* セットアップ作業のなかで、パスワードの変更をユーザに求める。  Shodan の結果 https://www.shodan.io/search?query=command+line+processor+-username"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Dedicated Micros",
+          "vulinfoid": "Products Group",
+          "url": "http://www.dedicatedmicros.com/europe/products_group.php?product_group_id=1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2909",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2909"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97413676",
+          "url": "http://jvn.jp/vu/JVNVU97413676/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2909",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-2909"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#276148",
+          "url": "https://www.kb.cert.org/vuls/id/276148"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "command line processor -username",
+          "url": "https://www.shodan.io/search?query=command+line+processor+-username"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Interesting Shodan searches: Dedicated Micros DVRs",
+          "url": "http://cybergibbons.com/security-2/shodan-searches/interesting-shodan-searches-sd-advanced-dvrs/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-24T13:53:56+09:00",
+    "datelastupdated": "2015-08-24T13:53:56+09:00",
+    "datepublic": "2015-08-20T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2015-001968",
+  "vulinfodata": {
+    "title": "ANTlabs 製 InnGate の複数のモデルにおいて認証なしでファイルシステムへの読書きが可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "ANTlabs 製 InnGate は、Visitor Based Network (ホテルの宿泊客向けネットワークなど) を運用するためのゲートウェイ機器です。InnGate の複数のモデルおよび複数のバージョンのファームウェアには、遠隔の攻撃者が、設定の不適切な rsync デーモンを通じて、認証なしで機器のファイルシステムに対する読書きが可能な脆弱性が存在します。  不適切なデフォルトパーミッション (CWE-276) - CVE-2015-0932 InnGate のファームウェアに含まれる rsync は設定が適切に行われていないため、機器のファイルシステム全体に対して認証なしで読書きを行うことが可能です。そのため、遠隔の攻撃者によって、当該機器のファイルシステム上の任意のファイルを閲覧されたり、改ざんされたりする可能性があります。より詳しい情報は、Cylance, Inc. の blog post に記されています。  不適切なデフォルトパーミッション (CWE-276) https://cwe.mitre.org/data/definitions/276.html  blog post http://blog.cylance.com/spear-team-cve-2015-0932"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ANTlabs",
+          "productname": "IG 3100",
+          "cpe": {
+            "text": "cpe:/h:antlabs:inngate_ig_3100",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "model 3100",
+            "model 3101"
+          ]
+        },
+        {
+          "name": "ANTlabs",
+          "productname": "InnGate",
+          "cpe": {
+            "text": "cpe:/h:antlabs:inngate",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.00 E-Series",
+            "3.01 E-Series",
+            "3.01 G-Series",
+            "3.02 E-Series",
+            "3.10 E-Series",
+            "3.10 G-Series"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、当該機器のファイルシステム上の任意のファイルを閲覧されたり、改ざんされたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ファームウェアをアップデートする] ANTlabs Security Advisory によると、本脆弱性を修正したファームウェアアップデートが提供されています。当該機器のユーザは速やかにファームウェアをアップデートすることが推奨されています。本件の詳細やファームウェアアップデートの取得については、ANTlabs Support (tech-support@antlabs.com) に連絡してください。  ANTlabs Security Advisory http://www.antlabs.com/index.php?option=com_content&view=article&id=195:rsync-remote-file-system-access-vulnerability-cve-2015-0932&catid=54:advisories&Itemid=133  ファームウェアアップデートを適用できない場合、次のワークアラウンドを実施して本脆弱性の影響を軽減することを検討してください。  [rsync の接続をブロックする] 　* rsync で使われている 873/tcp へのアクセスを制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ANTlabs",
+          "vulinfoid": "ANTlabs Security Advisory",
+          "url": "http://www.antlabs.com/index.php?option=com_content&view=article&id=195:rsync-remote-file-system-access-vulnerability-cve-2015-0932&catid=54:advisories&Itemid=133"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0932",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0932"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91373232",
+          "url": "http://jvn.jp/vu/JVNVU91373232/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0932",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0932"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#930956",
+          "url": "http://www.kb.cert.org/vuls/id/930956"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Vulnerability: CVE-2015-0932",
+          "url": "http://blog.cylance.com/spear-team-cve-2015-0932"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Big Vulnerability in Hotel Wi-Fi Router Puts Guests at Risk",
+          "url": "http://www.wired.com/2015/03/big-vulnerability-hotel-wi-fi-router-puts-guests-risk/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年03月31日]\\n  掲載\\n[2015年04月08日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-0932) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-03-31T15:29:31+09:00",
+    "datelastupdated": "2015-04-08T14:31:02+09:00",
+    "datepublic": "2015-03-26T00:00:00+09:00"
+  }
+}

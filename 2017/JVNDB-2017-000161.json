@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2017-000161",
+  "vulinfodata": {
+    "title": "国土交通省国土技術政策総合研究所が提供する道路工事完成図等チェックプログラムのインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "国土交通省国土技術政策総合研究所が提供する道路工事完成図等チェックプログラムのインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏、Pink Flying Whale 黒翼猫 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "国土交通省",
+          "productname": "道路工事完成図等チェックプログラム",
+          "cpe": {
+            "text": "cpe:/a:mlit:mlit_roadworks_completion_drawing_check_program",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver3.1.2 (cdrw_checker_3.1.2.zip) およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新版のインストーラを使用し、ワークアラウンドを実施する] 2017年7月19日以前にホームページに掲載されていた道路工事完成図等チェックプログラム Ver3.1.2(cdrw_checker_3.1.2.zip) をダウンロードしているユーザは、インストールせず速やかに削除してください。インストールする場合は、最新版の道路工事完成図等チェックプログラム Ver3.1.3 (cdrw_checker_3.1.3.zip) をダウンロードしなおしてから、次の点に注意してインストーラを実行してください。  ・インストーラ(cdrw_checker_3.1.3.zip)を解凍すると作成される 「セットアッププログラム」ディレクトリに、\"setup.exe\" 以外の不審なファイルがないことを確認する。 ・\"setup.exe\" は、必ず 「セットアッププログラム」ディレクトリで実行する。  本脆弱性の影響を受けるのはインストーラの起動時のみです。道路工事完成図等チェックプログラムをインストール済みの既存ユーザは影響を受けません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "国土交通省",
+          "vulinfoid": "道路工事完成図等作成支援サイト",
+          "url": "http://www.nilim-cdrw.jp/"
+        },
+        {
+          "type": "vendor",
+          "name": "国土交通省",
+          "vulinfoid": "道路工事完成図等作成支援サイト ヘルプデスク",
+          "url": "http://www.nilim-cdrw.jp/index_help.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2230",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2230"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#82120115",
+          "url": "https://jvn.jp/jp/JVN82120115/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2230",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2230"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年07月04日]\\n   掲載\\n[2017年08月09日]\\n  概要、影響を受けるシステム、対策：内容を更新\\n[2018年02月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2230) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-07-04T12:05:50+09:00",
+    "datelastupdated": "2018-02-07T12:29:46+09:00",
+    "datepublic": "2017-07-04T00:00:00+09:00"
+  }
+}

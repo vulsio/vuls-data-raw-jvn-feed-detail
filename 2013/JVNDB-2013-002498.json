@@ -1,0 +1,186 @@
+{
+  "vulinfoid": "JVNDB-2013-002498",
+  "vulinfodata": {
+    "title": "Linux Kernel の ftrace の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の ftrace の実装には、サービス運用妨害 (NULL ポインタデリファレンスおよびシステムクラッシュ) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.8.8 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise MRG",
+          "cpe": {
+            "text": "cpe:/a:redhat:enterprise_mrg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、(1) set_ftrace_pid または (2) set_graph_function ファイルへの書き込みアクセスを行う CAP_SYS_ADMIN 機能を利用され、その後で lseek システムコールを発生されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびシステムクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.8.8",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.8.8"
+        },
+        {
+          "type": "vendor",
+          "name": "CVE データベース",
+          "vulinfoid": "CVE-2013-3301",
+          "url": "https://access.redhat.com/security/cve/CVE-2013-3301"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "tracing: Fix possible NULL pointer dereferences",
+          "url": "https://github.com/torvalds/linux/commit/6a76f8c0ab19f215af2a3442870eeb5f0e81998d"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux.git",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6a76f8c0ab19f215af2a3442870eeb5f0e81998d"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2013:1473",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-09/msg00003.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 952197",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=952197"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1080",
+          "url": "https://rhn.redhat.com/errata/RHSA-2013-1080.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1264",
+          "url": "https://rhn.redhat.com/errata/RHSA-2013-1264.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1051",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1051.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1838-1",
+          "url": "http://www.ubuntu.com/usn/USN-1838-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1836-1",
+          "url": "http://www.ubuntu.com/usn/USN-1836-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1835-1",
+          "url": "http://www.ubuntu.com/usn/USN-1835-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1834-1",
+          "url": "http://www.ubuntu.com/usn/USN-1834-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-3301",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3301"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-3301",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-3301"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年04月30日]\\n  掲載\\n[2013年07月02日]\\n  ベンダ情報：Ubuntu (USN-1838-1) を追加\\n  ベンダ情報：Ubuntu (USN-1836-1) を追加\\n  ベンダ情報：Ubuntu (USN-1835-1) を追加\\n  ベンダ情報：Ubuntu (USN-1834-1) を追加\\n[2013年10月31日]\\n  ベンダ情報：Novell (SUSE-SU-2013:1473) を追加\\n[2014年03月10日]\\n  ベンダ情報：レッドハット (RHSA-2013:1051) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1080) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1264) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-04-30T18:37:22+09:00",
+    "datelastupdated": "2013-10-31T19:01:29+09:00",
+    "datepublic": "2013-04-16T00:00:00+09:00"
+  }
+}

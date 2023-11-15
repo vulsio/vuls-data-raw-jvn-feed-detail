@@ -1,0 +1,236 @@
+{
+  "vulinfoid": "JVNDB-2018-000053",
+  "vulinfodata": {
+    "title": "サイボウズ Office における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "サイボウズ株式会社が提供するサイボウズ Office には、次の複数の脆弱性が存在します。  ・アプリケーション「メッセージ」に外部画像の展開による情報漏えい (CWE-200) - CVE-2018-0526 ・アプリケーション「メール」のメール詳細画面に格納型クロスサイトスクリプティング (CWE-79) - CVE2018-0527 ・アプリケーション「スケジュール」に関する閲覧制限回避 (CWE-264) - CVE-2018-0528 ・アプリケーション「メッセージ」のファイル添付処理に起因するサービス運用妨害 (DoS) (CWE-20) - CVE2018-0529 ・アプリケーション「報告書」に反射型クロスサイトスクリプティング (CWE-79) - CVE-2018-0565 ・アプリケーション「スケジュール」に関する閲覧制限回避 (CWE-264) - CVE-2018-0566 ・アプリケーション「掲示板」に関する操作制限回避 (CWE-264) - CVE-2018-0567  CVE-2018-0526 は、次の方が開発者に報告し、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 発見者: 小勝 純 氏  CVE-2018-0527 および CVE-2018-0565 は、次の方が開発者に報告し、製品利用者への周知を目的に、開発者がJPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 発見者: Masato Kinugawa 氏  CVE-2018-0528, CVE-2018-0529 および CVE-2018-0566 は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。  CVE-2018-0567 は、次の方が開発者に報告し、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 発見者: 東内 裕二 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイボウズ",
+          "productname": "サイボウズ Office",
+          "cpe": {
+            "text": "cpe:/a:cybozu:office",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0.0 から 10.7.0 まで (CVE-2018-0526, CVE-2018-0527, CVE-2018-0528, CVE-2018-0529)",
+            "10.0.0 から 10.8.0 まで (CVE-2018-0565, CVE-2018-0566, CVE-2018-0567)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品のユーザがメッセージを閲覧した際、添付されている外部サーバの画像がユーザの許可なく表示される - CVE-2018-0526 ・当該製品にログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2018-0527, CVE-2018-0565 ・当該製品のアカウントを持つユーザによって、本来アクセスできないスケジュールを閲覧される - CVE2018-0528 ・当該製品のユーザが、メッセージ送信画面において細工された画像ファイルを添付する操作を行うことでサービス運用妨害 (DoS) 状態になる - CVE-2018-0529 ・当該製品にログイン可能なユーザによって、本来閲覧権限のないユーザのスケジュールを取得される - CVE-2018-0566 ・当該製品にログイン可能なユーザによって、本来操作権限のない公開前のデータに書き込みされる - CVE2018-0567"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1296]メッセージに関する情報漏えいの脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/10030"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1309]HTMLメールに関するクロスサイトスクリプティングの脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/10029"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1360][CyVDB-1374]スケジュールに関する閲覧制限回避の脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/9812"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1513]添付ファイルに関するサービス運用妨害 (DoS) の脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/10052"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1523]報告書に関するクロスサイトスクリプティングの脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/10200"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1589]スケジュールに関する閲覧制限回避の脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/10195"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズ",
+          "vulinfoid": "[CyVDB-1660]掲示板に関する操作制限回避の脆弱性",
+          "url": "https://support.cybozu.com/ja-jp/article/10198"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0526",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0526"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0527",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0527"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0528",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0528"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0529",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0529"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0565",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0565"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0566",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0566"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0567",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0567"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#51737843",
+          "url": "https://jvn.jp/jp/JVN51737843/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0565",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0565"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0566",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0566"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0567",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0567"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0526",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0526"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0527",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0527"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0528",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0528"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0529",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0529"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-05-18T17:17:24+09:00",
+          "description": "[2018年05月22日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2018-08-30T15:58:29+09:00",
+          "description": "[2018年08月30日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0565) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0566) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0567) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0526) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0527) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0528) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0529) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-05-22T12:17:40+09:00",
+    "datelastupdated": "2018-08-30T15:58:53+09:00",
+    "datepublic": "2018-05-22T00:00:00+09:00"
+  }
+}

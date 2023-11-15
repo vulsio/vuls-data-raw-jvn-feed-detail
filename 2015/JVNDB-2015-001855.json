@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2015-001855",
+  "vulinfodata": {
+    "title": "Requests の sessions.py の resolve_redirects 関数におけるセッション固定攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Requests の sessions.py の resolve_redirects 関数には、セッション固定攻撃を実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-384: Session Fixation (セッションの固定化) と識別されています。 http://cwe.mitre.org/data/definitions/384.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "14.04 LTS",
+            "14.10"
+          ]
+        },
+        {
+          "name": "Kenneth Reitz",
+          "productname": "Requests",
+          "cpe": {
+            "text": "cpe:/a:python-requests:requests",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.0 から 2.5.3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、リダイレクトにおけるホストの値を持たない Cookie を介して、セッション固定攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Don't ascribe cookies to the target domain.",
+          "url": "https://github.com/kennethreitz/requests/commit/3bd8afbff29e50b38f889b2f688785a669b9aafc"
+        },
+        {
+          "type": "vendor",
+          "name": "Requests",
+          "vulinfoid": "Requests: HTTP for Humans Release v2.6.0",
+          "url": "http://docs.python-requests.org/en/latest/"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2531-1",
+          "url": "http://www.ubuntu.com/usn/USN-2531-1/"
+        },
+        {
+          "type": "vendor",
+          "name": "Warehouse (pypi.python.org)",
+          "vulinfoid": "requests 2.6.0",
+          "url": "https://warehouse.python.org/project/requests/2.6.0/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2296",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2296"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2296",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2296"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0120",
+          "url": "http://advisories.mageia.org/MGASA-2015-0120.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年03月19日]\\n  掲載\\n[2015年04月30日]\\n  参考情報：関連文書 (MGASA-2015-0120) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-03-19T16:00:46+09:00",
+    "datelastupdated": "2015-04-30T15:43:22+09:00",
+    "datepublic": "2015-03-14T00:00:00+09:00"
+  }
+}

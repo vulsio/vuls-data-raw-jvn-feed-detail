@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-003163",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/sctp/associola.c 内の sctp_association_free 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/sctp/associola.c 内の sctp_association_free 関数は、特定の backlog 値を適切に管理しないため、サービス運用妨害 (ソケットの停止) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.15.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された SCTP パケットを介して、サービス運用妨害 (ソケットの停止) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.15.2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.15.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sctp: Fix sk_ack_backlog wrap-around problem",
+          "url": "https://github.com/torvalds/linux/commit/d3217b15a19a4779c39b212358a5c71d725822ee"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "sctp: Fix sk_ack_backlog wrap-around problem",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=d3217b15a19a4779c39b212358a5c71d725822ee"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1113967",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1113967"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-4667",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4667"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-4667",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4667"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-07T16:53:24+09:00",
+    "datelastupdated": "2014-07-07T16:53:24+09:00",
+    "datepublic": "2014-06-26T00:00:00+09:00"
+  }
+}

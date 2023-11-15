@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2015-006820",
+  "vulinfodata": {
+    "title": "GNU C Library の elf/rtld.c の process_envvars 関数におけるポインタガード (pointer-guarding) 保護メカニズムを回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU C Library (別名 glibc または libc6) の elf/rtld.c の process_envvars 関数には、ポインタガード (pointer-guarding) 保護メカニズムを回避される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-254: Security Features (セキュリティ機能) と識別されています。 http://cwe.mitre.org/data/definitions/254.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU C Library",
+          "cpe": {
+            "text": "cpe:/a:gnu:glibc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.23 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、LD_POINTER_GUARD 環境変数のゼロ値を介して、ポインタガード (pointer-guarding) 保護メカニズムを回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sourceware Bugzilla",
+          "vulinfoid": "Bug 18928",
+          "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=18928"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-7",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-7j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8777",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8777"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8777",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8777"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月26日]\\n  掲載\\n[2016年03月01日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-7) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-26T11:22:38+09:00",
+    "datelastupdated": "2016-03-01T14:31:58+09:00",
+    "datepublic": "2015-10-15T00:00:00+09:00"
+  }
+}

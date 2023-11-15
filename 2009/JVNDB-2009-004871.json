@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2009-004871",
+  "vulinfodata": {
+    "title": "Linux kernel の kernel/posix-timers.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の kernel/posix-timers.c の init_posix_timers 関数には、サービス運用妨害 (OOPS) 状態となる、および権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.31-rc6 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、CLOCK_MONOTONIC_RAW clock_nanosleep 呼び出しを介して、NULL ポインタデリファレンスを誘発され、サービス運用妨害 (OOPS) 状態にされる、および権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "posix-timers: Fix oops in clock_nanosleep() with CLOCK_MONOTONIC_RAW",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=70d715fd0597f18528f389b5ac59102263067744"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-2767",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2767"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-2767",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-2767"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:27:38+09:00",
+    "datelastupdated": "2012-09-25T17:27:38+09:00",
+    "datepublic": "2009-08-03T00:00:00+09:00"
+  }
+}

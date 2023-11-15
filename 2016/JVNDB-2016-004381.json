@@ -1,0 +1,159 @@
+{
+  "vulinfoid": "JVNDB-2016-004381",
+  "vulinfodata": {
+    "title": "Linux Kernel のファイルシステムレイヤにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel のファイルシステムレイヤは、OverlayFS ファイルが自己のハードリンク (self-hardlink) にリネームされた後、リネーム後の操作 (post-rename operations) を続行するため、サービス運用妨害 (システムクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御) と識別されています。 http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.5.5 未満"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Linux",
+          "cpe": {
+            "text": "cpe:/o:oracle:linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle VM サーバー",
+          "cpe": {
+            "text": "cpe:/o:oracle:vm_server",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、リネームのシステムコールを介して、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.5.5",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.5.5"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "vfs: add vfs_select_inode() helper",
+          "url": "https://github.com/torvalds/linux/commit/54d5ca871e72f2bb172ec9323497f01cd5091ec7"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "vfs: rename: check backing inode being equal",
+          "url": "https://github.com/torvalds/linux/commit/9409e22acdfc9153f88d9b1ed2bd2a5b34d2d3ca"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "vfs: add vfs_select_inode() helper",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=54d5ca871e72f2bb172ec9323497f01cd5091ec7"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "vfs: rename: check backing inode being equal",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=9409e22acdfc9153f88d9b1ed2bd2a5b34d2d3ca"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1355654",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1355654"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6198",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6198"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6198",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6198"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月18日]\\n  掲載\\n[2016年11月16日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-18T14:18:13+09:00",
+    "datelastupdated": "2016-11-16T16:10:10+09:00",
+    "datepublic": "2016-05-18T00:00:00+09:00"
+  }
+}

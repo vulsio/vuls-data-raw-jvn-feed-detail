@@ -1,0 +1,80 @@
+{
+  "vulinfoid": "JVNDB-2011-001534",
+  "vulinfodata": {
+    "title": "Wireshark に脆弱性",
+    "vulinfodescription": {
+      "overview": "Wireshark の Digital Enhanced Cordless Telecommunications (DECT) 分析処理には、任意のコードが実行される脆弱性が存在します。  Wireshark DECT パケットの分析処理に起因する脆弱性が存在し、任意のコードを実行される可能性があります。  Paul Makowski 氏の報告では以下のように記載されています。 /epan/dissectors/packet-dect.c contains a stack-based buffer overflow via a call to memcpy() whose length is controlled by the attacker. Absent exploit mitigations independant of Wireshark's default build options, an attacker is able to execute arbitrary code in the context of the user running a packet capture. On *NIX systems, such capability is frequently reserved for the root user. The overflowable buffer is pkt_bfield.Data."
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Wireshark",
+          "productname": "Wireshark",
+          "cpe": {
+            "text": "cpe:/a:wireshark:wireshark",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.5 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受けたり、ユーザの権限で任意のコードを実行されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートを行ってください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Wireshark",
+          "vulinfoid": "Wireshark-announce",
+          "url": "http://www.wireshark.org/lists/wireshark-announce/201104/msg00002.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark",
+          "vulinfoid": "Wireshark 1.4.5 Release Notes",
+          "url": "http://www.wireshark.org/docs/relnotes/wireshark-1.4.5.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark",
+          "vulinfoid": "Download",
+          "url": "http://www.wireshark.org/download.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#243670",
+          "url": "http://jvn.jp/cert/JVNVU243670"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#243670",
+          "url": "http://www.kb.cert.org/vuls/id/243670"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年05月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-05-11T10:51:24+09:00",
+    "datelastupdated": "2011-05-11T10:51:24+09:00",
+    "datepublic": "2011-04-19T00:00:00+09:00"
+  }
+}

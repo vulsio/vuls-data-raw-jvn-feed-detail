@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2010-003379",
+  "vulinfodata": {
+    "title": "FreeBSD の pfs_getextattr 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeBSD の pfs_getextattr 関数は、以前よりロックされてないミューテックスをアンロックされるため、サービス運用妨害 (カーネルパニック) 状態にされ、任意のメモリ場所を上書きおよび任意のコードを実行される脆弱性が存在します。 本脆弱性は、pseudofs を使用するファイルシステムでファイルを開くことに関連します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3 7.3-RELEASE 未満の 7.x および 8.0-RC1 未満の 8.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、サービス運用妨害 (カーネルパニック) 状態にされ、任意のメモリ場所を上書きおよび任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "FreeBSD-SA-10:09",
+          "url": "http://security.FreeBSD.org/advisories/FreeBSD-SA-10:09.pseudofs.asc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-4210",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4210"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-4210",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4210"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:42:33+09:00",
+    "datelastupdated": "2012-03-27T18:42:33+09:00",
+    "datepublic": "2010-11-10T00:00:00+09:00"
+  }
+}

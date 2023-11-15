@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2015-003473",
+  "vulinfodata": {
+    "title": "HAProxy の buffer_slow_realign 関数における重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "HAProxy の buffer_slow_realign 関数は、保留している発信データに使用されるバッファを適切に再編成しないため、重要な情報 (前のリクエストの初期化されていないメモリコンテンツ) を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "HAProxy Technologies",
+          "productname": "HAProxy",
+          "cpe": {
+            "text": "cpe:/a:haproxy:haproxy",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.14 未満の 1.5.x",
+            "1.6-dev"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたリクエストを介して、重要な情報 (前のリクエストの初期化されていないメモリコンテンツ) を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3301",
+          "url": "https://www.debian.org/security/2015/dsa-3301"
+        },
+        {
+          "type": "vendor",
+          "name": "HAProxy",
+          "vulinfoid": "HAProxy",
+          "url": "http://www.haproxy.org/news.html"
+        },
+        {
+          "type": "vendor",
+          "name": "HAProxy",
+          "vulinfoid": "BUG/MAJOR: buffers: make the buffer_slow_realign() function respect output data",
+          "url": "http://git.haproxy.org/?p=haproxy-1.5.git;a=commit;h=7ec765568883b2d4e5a2796adbeb492a22ec9bd4"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3281",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3281"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3281",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3281"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-10T13:45:54+09:00",
+    "datelastupdated": "2015-07-10T13:45:54+09:00",
+    "datepublic": "2015-07-02T00:00:00+09:00"
+  }
+}

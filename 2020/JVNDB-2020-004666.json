@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2020-004666",
+  "vulinfodata": {
+    "title": "複数の Johnson Controls 製品に重要な情報の平文保存に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Johnson Controls が提供する複数の製品には、重要な情報の平文保存に関する脆弱性が存在します。  Johnson Controls が提供する Software House C CURE 9000 および American Dynamics victor VMS は産業用入退室管理システム、およびビデオ管理ソフトウエアです。当該製品には、重要な情報の平文保存の脆弱性 (CWE-312) が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ジョンソンコントロールズ",
+          "productname": "American Dynamics victor Video Management System",
+          "cpe": {
+            "text": "cpe:/a:johnsoncontrols:american_dynamics_victor_vVideo_management_system",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 5.2"
+          ]
+        },
+        {
+          "name": "ジョンソンコントロールズ",
+          "productname": "Software House C CURE",
+          "cpe": {
+            "text": "cpe:/a:johnsoncontrols:software_house_C_CURE",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 2.70"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.9",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品のインストールまたはアップグレードを実行したユーザの認証情報が、ログファイルに平文で保存され、インストール後も削除されないため、遠隔の第三者により認証情報を窃取される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　　* c:program\\data\\tyco\\installertemp のログファイルを削除し、Windows アカウントのパスワードを変更する  詳細については、開発者が提供するアドバイザリ JCI-PSA-2020-4 を参照ください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Johnson Controls",
+          "vulinfoid": "JCI-PSA-2020-4",
+          "url": "https://www.johnsoncontrols.com/cyber-solutions/security-advisories"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-9045",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9045"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-142-01",
+          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-142-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91294008",
+          "url": "https://jvn.jp/vu/JVNVU91294008/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-312",
+          "url": "https://cwe.mitre.org/data/definitions/312.html",
+          "title": "重要な情報の平文保存"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-05-25T15:29:55+09:00",
+          "description": "[2020年05月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-05-25T15:29:55+09:00",
+    "datelastupdated": "2020-05-25T15:29:55+09:00",
+    "datepublic": "2020-05-22T00:00:00+09:00"
+  }
+}

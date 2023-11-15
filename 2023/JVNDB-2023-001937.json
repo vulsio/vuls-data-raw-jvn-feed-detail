@@ -1,0 +1,123 @@
+{
+  "vulinfoid": "JVNDB-2023-001937",
+  "vulinfodata": {
+    "title": "三菱電機製 MELSEC シリーズの CPU ユニットにおけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC シリーズの CPU ユニットには、バッファオーバーフローの脆弱性（CWE-120、CVE-2023-1424）が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-F シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-f_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "FX5U-xMy/z x=32,64,80, y=T,R, z=ES,DS,ESS,DSS 製造番号 17X**** およびそれ以降 ファームウェアバージョン 1.220 から 1.281 まで",
+            "FX5UC-32MT/DS-TS, FX5UC-32MT/DSS-TS, FX5UC-32MR/DS-TS ファームウェアバージョン 1.220 から 1.281 まで",
+            "FX5UC-xMy/z x=32,64,96, y=T, z=D,DSS 製造番号 17X**** およびそれ以降 ファームウェアバージョン 1.220 から 1.281 まで"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-R シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R00/01/02CPU ファームウェアバージョン 35 およびそれ以前",
+            "R04/08/16/32/120(EN)CPU ファームウェアバージョン 12 から 68 まで",
+            "R08/16/32/120PCPU ファームウェアバージョン 3  から 37 まで",
+            "R08/16/32/120SFCPU ファームウェアバージョン 26 およびそれ以降"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって当該製品に対し不正なパケットを送信されることで、当該製品がサービス運用妨害（DoS）状態にされたり、任意のコードが実行されたりする可能があります。 開発者によると、任意のコードを実行するには、製品の内部構造を知る必要があり、容易には行えないとのことです。 なお、サービス運用妨害（DoS）状態からの復旧やコード実行された際の復旧には、当該製品のリセットが必要とのことです。  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-003.pdf\"target=\"blank\">開発者が提供する情報</a>をご確認ください。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 一部の製品については、アップデートが提供されています。<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-003.pdf\"target=\"blank\">開発者が提供する情報</a>をもとにファームウェアをアップデートしてください。 対策済ファームウェアは<a href=\"https://www.mitsubishielectric.co.jp/fa/download/index.html\"target=\"blank\">こちら</a>からダウンロードし入手できます。 ファームウェアのアップデート方法等詳細については、次の資料を参照してください。  　* MELSEC iQ-F FX5 ユーザーズマニュアル(応用編) 「5 ファームウェアアップデート機能」 　* MELSEC iQ-R ユニット構成マニュアル 「付2 ファームウェアアップデート機能」  [ワークアラウンドを実施する] アップデートが提供されていない製品については、次の軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク（VPN）等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能（*1）を使用し、信頼できないホストからのアクセスをブロックする 　* 当該製品が接続された LAN への物理的なアクセスを制限する  （*1）IP フィルタ機能については、開発者が提供する次のマニュアルを参照してください。  　* MELSEC iQ-F FX5 ユーザーズマニュアル（Ethernet 通信編）「12.1 IP フィルタ機能」 　* MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) 「1.13 セキュリティ」の「IP フィルタ」 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機",
+          "vulinfoid": "MELSEC シリーズ CPU ユニットにおけるサービス拒否（DoS）及び悪意のあるコードが実行される脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-003.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-1424",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-1424"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-143-03",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-143-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94650413",
+          "url": "http://jvn.jp/vu/JVNVU94650413/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html",
+          "title": "古典的バッファオーバーフロー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-05-24T10:52:26+09:00",
+          "description": "[2023年05月24日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-05-25T12:58:53+09:00",
+          "description": "[2023年05月25日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-143-03) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2023-07-07T11:38:18+09:00",
+          "description": "[2023年07月07日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2023-09-13T15:18:39+09:00",
+          "description": "[2023年09月13日]\\n  影響を受けるシステム：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-05-24T10:52:26+09:00",
+    "datelastupdated": "2023-09-13T15:27:02+09:00",
+    "datepublic": "2023-05-23T00:00:00+09:00"
+  }
+}

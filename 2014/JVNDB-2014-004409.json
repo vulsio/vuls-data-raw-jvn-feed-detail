@@ -1,0 +1,350 @@
+{
+  "vulinfoid": "JVNDB-2014-004409",
+  "vulinfodata": {
+    "title": "Mozilla Network Security Services (NSS) に RSA 署名検証不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "Mozilla Network Security Services (NSS) ライブラリには、DigestInfo の処理に問題があり、RSA 署名を適切に検証しない脆弱性が存在します。  Mozilla Network Security Services (NSS) ライブラリが実装する DigestInfo の処理には脆弱性が存在します。 BER エンコードされた DigestInfo のフィールドをパースする際、パディングされたバイトの解析をバイパスされ、PKCS#1 v1.5 形式の RSA 署名の偽造を検知できない可能性があります(CWE-295)。  CWE-295: Improper Certificate Validation http://cwe.mitre.org/data/definitions/295.html  本脆弱性は、2006年に発表された Bleichenbacher vulnerability の一種です。  Bleichenbacher vulnerability http://www.imc.org/ietf-openpgp/mail-archive/msg06063.html  Mozilla NSS は 複数の Linux ディストリビューションやパッケージ、および、Google Chrome や Google Chrome OS などで利用されています。また、その他の暗号ライブラリや製品にも同様の脆弱な実装が存在する可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "37.0.2062.124 より前のバージョン",
+            "OS 37.0.2062.120 (Platform version: 5978.98.1/5978.98.2) より前のバージョン"
+          ]
+        },
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Firefox",
+          "cpe": {
+            "text": "cpe:/a:mozilla:firefox",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "32.0.3 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Firefox ESR",
+          "cpe": {
+            "text": "cpe:/a:mozilla:firefox_esr",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "24.8.1 より前のバージョン",
+            "31.1.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Network Security Services (NSS)",
+          "cpe": {
+            "text": "cpe:/a:mozilla:network_security_services",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.2.1 より前のバージョン",
+            "3.16.5 より前のバージョン",
+            "3.17.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla SeaMonkey",
+          "cpe": {
+            "text": "cpe:/a:mozilla:seamonkey",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.29.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Thunderbird",
+          "cpe": {
+            "text": "cpe:/a:mozilla:thunderbird",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "24.8.1 より前のバージョン",
+            "31.1.2 より前のバージョン"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Communications Applications",
+          "cpe": {
+            "text": "cpe:/a:oracle:communications_applications",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Oracle Communications Messaging Server 7.0.5.33.0 およびそれ以前"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Fusion Middleware",
+          "cpe": {
+            "text": "cpe:/a:oracle:fusion_middleware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Oracle Directory Server Enterprise Edition 11.1.1.7",
+            "の Oracle Directory Server Enterprise Edition 7.0",
+            "の Oracle OpenSSO 3.0-05",
+            "の Oracle Traffic Director 11.1.1.7.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle GlassFish Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:glassfish_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.1"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle iPlanet Web Proxy Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:iplanet_web_proxy_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle iPlanet Web Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:iplanet_web_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1",
+            "7.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "SSL 証明書などの RSA 署名を偽造される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報(MSFA 2014-73)をもとに、最新版へアップデートしてください。 MSFA 2014-73 http://www.mozilla-japan.org/security/announce/2014/mfsa2014-73.html  Google Chrome や Google Chrome OS など、その他の製品については、各製品開発者が提供する情報をもとに対応してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update",
+          "url": "http://googlechromereleases.blogspot.jp/2014/09/stable-channel-update_24.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update for Chrome OS",
+          "url": "http://googlechromereleases.blogspot.jp/2014/09/stable-channel-update-for-chrome-os_24.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Bugzilla",
+          "vulinfoid": "bug#1069405",
+          "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1069405"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Bugzilla",
+          "vulinfoid": "bug#1064636 ",
+          "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1064636"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Developer Network",
+          "vulinfoid": "Network Security Services ",
+          "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Developer Network",
+          "vulinfoid": "NSS Releases",
+          "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/NSS_Releases"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "Mozilla Foundation セキュリティアドバイザリ 2014-73",
+          "url": "http://www.mozilla-japan.org/security/announce/2014/mfsa2014-73.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html#AppendixEM"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - January 2015 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015verbose-1972976.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2015 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2015verbose-2365613.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1354",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1354.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1307",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1307.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1371",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1371.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "July 2015 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "January 2015 Critical Patch Update Released ",
+          "url": "https://blogs.oracle.com/security/entry/january_2015_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "April 2015 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/april_2015_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Bulletin",
+          "vulinfoid": "JSA10698",
+          "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10698&actp=search"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1568",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1568"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94190107",
+          "url": "http://jvn.jp/vu/JVNVU94190107/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1568",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1568"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#772676",
+          "url": "http://www.kb.cert.org/vuls/id/772676"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "PKCS #1: RSA Encryption Version 1.5",
+          "url": "https://tools.ietf.org/html/rfc2313"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Bleichenbacher's RSA signature forgery based on implementation error",
+          "url": "http://www.imc.org/ietf-openpgp/mail-archive/msg06063.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年09月26日]\\n  掲載\\n[2014年09月29日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2014年11月26日]\\n  ベンダ情報：レッドハット (RHSA-2014:1371) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1354) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1307) を追加\\n[2015年01月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2015 Critical Patch Update Released) を追加\\n[2015年04月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2015 Critical Patch Update Released) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加\\n[2015年12月02日]\\n  ベンダ情報：ジュニパーネットワークス (JSA10698) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-09-26T19:02:50+09:00",
+    "datelastupdated": "2015-12-02T15:15:09+09:00",
+    "datepublic": "2014-09-24T00:00:00+09:00"
+  }
+}

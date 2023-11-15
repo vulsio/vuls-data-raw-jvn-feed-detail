@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2017-003662",
+  "vulinfodata": {
+    "title": "QEMU の target/i386/translate.c の disas_insn 関数における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "** 未確定 ** 本件は、脆弱性として確定していません。  QEMU の target/i386/translate.c の disas_insn 関数は、ハードウェアアクセラレーションなしで TCG モードが使用されている場合、命令のサイズを制限しないため、権限を取得される脆弱性が存在します。  ベンダは、本脆弱性に対して異議を唱えています。 詳細については、以下の NVD の Current Description を確認してください。 https://nvd.nist.gov/vuln/detail/CVE-2017-8284"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.9.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、setuid プログラムにコードを挿入する、変更されたベーシックブロックを作成されることで、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "tcg/i386: Check the size of instruction being translated",
+          "url": "https://github.com/qemu/qemu/commit/30663fd26c0307e414622c7a8607fbc04f92ec14"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-8284",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8284"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-8284",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-8284"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年06月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-06-02T15:46:44+09:00",
+    "datelastupdated": "2017-06-02T15:46:44+09:00",
+    "datepublic": "2017-03-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2021-003687",
+  "vulinfodata": {
+    "title": "ISC BIND にサービス運用妨害（DoS）の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND には、lame cache の設計の問題によって内部データ構造がほぼ無限に大きくなり、BIND リゾルバのパフォーマンスが低下することでクライアントクエリへの応答に大幅な遅延が発生する、サービス運用妨害（DoS）の脆弱性（CWE-400、CVE-2021-25219）が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.12.0 から 9.16.21",
+            "9.16.8-S1 から 9.16.21-S1 (BIND 9 Supported Preview Edition)",
+            "9.17.0 から 9.17.18 (BIND 9.17 development branch)",
+            "9.3.0 から 9.11.35",
+            "9.9.3-S1 から 9.11.35-S1 (BIND 9 Supported Preview Edition)"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ESMPRO/ServerAgentService",
+          "cpe": {
+            "text": "cpe:/a:nec:esmpro_serveragentservice",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって送信された細工されたクエリを処理させられることで、named リゾルバの CPU 時間の大半を lame cache の管理とチェックに消費され、クライアントクエリへの応答が大幅に遅延し、クライアント側で DNS タイムアウトが発生する可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、使用しているバージョンの最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　* BIND 9.11.36 　* BIND 9.16.22 　* BIND 9.17.19 　* BIND 9.11.36-S1 　* BIND 9.16.22-S1  [ワークアラウンドを適用する] 「lame-ttl 0」を設定し、lame cache を無効にすることで、本脆弱性の影響を軽減することが可能です。 ISC によると、lame cache を無効にすることによるデメリットはほとんどないとのことです。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Internet Systems Consortium Security Advisory",
+          "vulinfoid": "CVE-2021-25219: Lame cache can be abused to severely degrade resolver performance",
+          "url": "https://kb.isc.org/docs/cve-2021-25219"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV22-007",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv22-007.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-25219",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25219"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（パフォーマンスの低下）について（CVE-2021-25219)",
+          "url": "https://jprs.jp/tech/security/2021-10-28-bind9-vuln-lamecache.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91101819",
+          "url": "https://jvn.jp/vu/JVNVU91101819/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-25219",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-25219"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-400",
+          "url": "https://cwe.mitre.org/data/definitions/400.html",
+          "title": "リソースの枯渇"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-11-02T11:23:55+09:00",
+          "description": "[2021年11月02日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-08-09T15:42:34+09:00",
+          "description": "[2022年08月08日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-007) を追加\\n"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-11-02T11:46:02+09:00",
+    "datelastupdated": "2022-08-08T17:08:58+09:00",
+    "datepublic": "2021-11-01T00:00:00+09:00"
+  }
+}

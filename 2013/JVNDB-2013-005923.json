@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-005923",
+  "vulinfodata": {
+    "title": "libvirt の libxl ドライバ内の libxlDomainGetNumaParameters 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libvirt の libxl ドライバ (libxl/libxl_driver.c) 内の libxlDomainGetNumaParameters 関数は、ノードマップを適切に初期化しないため、サービス運用妨害 (不正な操作およびクラッシュ) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "libvirt",
+          "cpe": {
+            "text": "cpe:/a:redhat:libvirt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.2.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.2",
+          "vector": "AV:A/AC:L/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、virsh numatune コマンドへの非アクティブなドメインを介して、サービス運用妨害 (不正な操作およびクラッシュ) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "libvirt",
+          "vulinfoid": "libvirt: Releases",
+          "url": "http://libvirt.org/news.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1048629",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1048629"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6457",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6457"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6457",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6457"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[libvirt] 20131220 [PATCH] libxl: avoid crashing if calling `virsh numatune' on inactive domain",
+          "url": "https://www.redhat.com/archives/libvir-list/2013-December/msg01176.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[libvirt] 20131224 CVE-2013-6457 Re: [PATCH] libxl: avoid crashing if calling `virsh numatune' on inactive domain",
+          "url": "https://www.redhat.com/archives/libvir-list/2013-December/msg01258.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年01月28日]\\n  掲載\\n[2015年08月03日]\\n  CWE による脆弱性タイプ一覧：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-01-28T10:56:15+09:00",
+    "datelastupdated": "2015-08-03T18:07:58+09:00",
+    "datepublic": "2013-12-20T00:00:00+09:00"
+  }
+}

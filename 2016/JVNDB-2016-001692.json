@@ -1,0 +1,286 @@
+{
+  "vulinfoid": "JVNDB-2016-001692",
+  "vulinfodata": {
+    "title": "OpenSSL の crypto/dh/dh_check.c の DH_check_pub_key 関数におけるプライベート DH 指数を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の crypto/dh/dh_check.c の DH_check_pub_key 関数は、素数がディフィー・ヘルマン (DH) 鍵交換に適切であることを確認しないため、プライベート DH 指数を取得される脆弱性が存在します。  なお、JVNVU#95668716 では、CWE-325 として公開されています。  CWE-325: Missing Required Cryptographic Step https://cwe.mitre.org/data/definitions/325.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2f 未満の 1.0.2"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Universal CMDB Foundation",
+          "cpe": {
+            "text": "cpe:/a:hp:universal_cmbd_foundation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Software 10.0",
+            "Software 10.01",
+            "Software 10.10",
+            "Software 10.11",
+            "Software 10.20",
+            "Software 10.21 UD Agent"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "CapsSuite",
+          "cpe": {
+            "text": "cpe:/a:nec:capssuite",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.0 から V4.0 のマネージャコンポーネント"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ESMPRO/ServerAgent",
+          "cpe": {
+            "text": "cpe:/a:nec:esmpro_serveragent",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver4.4.22-1以降 (Linux)"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ESMPRO/ServerAgentService",
+          "cpe": {
+            "text": "cpe:/a:nec:esmpro_serveragentservice",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン (Linux)"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "Express5800",
+          "cpe": {
+            "text": "cpe:/h:nec:express5800",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "/SG シリーズ InterSecVM/SG v1.2、v3.0、v3.1、v4.0",
+            "/SG シリーズ SG3600LM/LG/LJ v6.1、v6.2、v7.0、v7.1、v8.0、v8.2",
+            "/SG シリーズ UNIVERGE SG3000LG/LJ"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "SecureWare/PKIアプリケーション開発キット",
+          "cpe": {
+            "text": "cpe:/a:nec:secureware_pki_application_development_kit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver3.0",
+            "Ver3.01",
+            "Ver3.02",
+            "Ver3.1"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebSAM",
+          "cpe": {
+            "text": "cpe:/a:nec:websam",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Application Navigator Agent Ver3.3 から Ver4.1",
+            "Application Navigator Manager Ver3.2.2 から Ver4.1"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebSAM MCOperations",
+          "cpe": {
+            "text": "cpe:/a:nec:websam_mcoperations",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver3.6.2 から Ver4.2"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebSAM SystemManager",
+          "cpe": {
+            "text": "cpe:/a:nec:websam_systemmanager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver5.5.2 から Ver6.2.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、不適切な数を選択したピアとのハンドシェイクを複数回実行されることで、プライベート DH 指数を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Google Git",
+          "vulinfoid": "BoringSSL: Always set SSL_OP_SINGLE_DH_USE.",
+          "url": "https://boringssl.googlesource.com/boringssl/+/9f226a5f5183e8814ff30e7436a128a823315532%5E!"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBGN03621",
+          "url": "http://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05164821"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV16-007",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv16-007.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenBSD",
+          "vulinfoid": "LibreSSL 2.3.2 Release Notes",
+          "url": "http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.3.2-relnotes.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenBSD",
+          "vulinfoid": "LibreSSL 2.2.6 Release Notes",
+          "url": "http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.2.6-relnotes.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Prevent small subgroup attacks on DH/DHE",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=878e2c5b13010329c203f309ed0c8f2113f85648"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Always generate DH keys for ephemeral DH cipher suites",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=c5b831f21d0d29d1e517d139d9d101763f60c9a2"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "DH small subgroups (CVE-2016-0701)",
+          "url": "https://mta.openssl.org/pipermail/openssl-announce/2016-January/000061.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-6",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-6j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-0701",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0701"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99475301",
+          "url": "https://jvn.jp/vu/JVNVU99475301/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95668716",
+          "url": "https://jvn.jp/vu/JVNVU95668716/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-0701",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0701"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#257823",
+          "url": "https://www.kb.cert.org/vuls/id/257823"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "OpenSSL Key Recovery Attack on DH small subgroups (CVE-2016-0701)",
+          "url": "http://intothesymmetry.blogspot.jp/2016/01/openssl-key-recovery-attack-on-dh-small.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月15日]\\n  掲載\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03621) を追加\\n  ベンダ情報：日本電気 (NV16-007) を追加\\n[2016年08月02日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年08月25日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月22日]\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2022-09-15T13:33:02+09:00",
+          "description": "[2022年09月15日]\\n  参考情報：JVN (JVNVU#99475301) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-15T10:15:20+09:00",
+    "datelastupdated": "2022-09-15T16:36:55+09:00",
+    "datepublic": "2016-01-28T00:00:00+09:00"
+  }
+}

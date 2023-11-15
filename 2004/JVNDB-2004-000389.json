@@ -1,0 +1,195 @@
+{
+  "vulinfoid": "JVNDB-2004-000389",
+  "vulinfodata": {
+    "title": "gdk+ および gdk-pixbuf の pixbuf_create_from_xpm における整数オーバフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  GTK+ (GIMP Toolkit) パッケージは GNOME デスクトップ環境用の GUI アプリケーションを作成するためのツールキットで、多くの Linux ディストリビューションに同梱されています。また GTK+ に含まれる gdk-pixbuf は、画像のロード、保存、および処理を行うためのライブラリです。  GTK+ 2.4.9 以前に同梱される gdk-pixbuf 0.22 以前には、以下のようなファイル解析時に生じる複数のセキュリティ問題が存在します。  ・BMP ファイルの処理部において無限ループが生じる問題 (CAN-2004-0753)  ・XPM ファイルのデコーダでスタックオーバーフローおよびヒープオーバーフローが生じる問題  (CAN-2004-0782/CAN-2004-0783)  ・ICO ファイルのデコーダで整数オーバーフローが生じる問題 (CAN-2004-0788)  これらの問題を利用するリモートの攻撃者は、意図的に作成した画像ファイルを標的ユーザに送りつけ、GTK+ もしくは gdk-pixbuf を利用するアプリケーションで開くように標的ユーザを誘導することにより、アプリケーションをサービス不能状態に陥らせる、さらには標的ユーザの権限で任意のコードを実行できる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3.0 "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8 (sparc) ",
+            "8 (x86) ",
+            "9 (sparc) ",
+            "9 (x86) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "gdk-pixbuf",
+          "url": "http://www.miraclelinux.com/support/update/data/gdk-pixbuf.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "gtk2",
+          "url": "http://www.miraclelinux.com/support/update/data/gtk2.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:447",
+          "url": "http://rhn.redhat.com/errata/RHSA-2004-447.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:466",
+          "url": "http://rhn.redhat.com/errata/RHSA-2004-466.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "101776",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101776-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "101776",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101776-3"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:466",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-466J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:447",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-447J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-0782",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0782"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-0782",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0782"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA12542",
+          "url": "http://secunia.com/advisories/12542/"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA12548",
+          "url": "http://secunia.com/advisories/12548/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11195",
+          "url": "http://www.securityfocus.com/bid/11195"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1011285",
+          "url": "http://www.securitytracker.com/alerts/2004/Sep/1011285.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#369358",
+          "url": "http://www.kb.cert.org/vuls/id/369358"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#729894",
+          "url": "http://www.kb.cert.org/vuls/id/729894"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#577654",
+          "url": "http://www.kb.cert.org/vuls/id/577654"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-09-15T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2013-006324",
+  "vulinfodata": {
+    "title": "libvirt の LXC ドライバにおける任意のホストデバイスを削除される脆弱性",
+    "vulinfodescription": {
+      "overview": "libvirt の LXC ドライバ (lxc/lxc_driver.c) には、\"/proc/$PID/root 配下のパス\" および virInitctlSetRunLevel 関数に関する処理に不備があるため、任意のホストデバイスを削除される、任意のノード (mknod) を作成される、およびサービス運用妨害 (シャットダウンまたはホスト OS のリブート) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "20"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "libvirt",
+          "cpe": {
+            "text": "cpe:/a:redhat:libvirt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1 から 1.2.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:A/AC:M/Au:S/C:N/I:P/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、(1) virDomainDeviceDettach API およびコンテナ内の / dev へのシンボリックリンク攻撃を介して、任意のホストデバイスを削除される、(2) virDomainDeviceAttach API およびコンテナ内の / dev へのシンボリックリンク攻撃を介して、任意のノード (mknod) を作成される、および (3) virDomainShutdown または (4) virDomainReboot API およびコンテナ内の /dev/initctl へのシンボリックリンク攻撃を介して、サービス運用妨害 (シャットダウンまたはホスト OS のリブート) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2014-2864",
+          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2014-February/129199.html"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt",
+          "vulinfoid": "CVE-2013-6456: Avoid unsafe use of /proc/$PID/root in LXC hotunplug code",
+          "url": "http://libvirt.org/git/?p=libvirt.git;a=commit;h=5fc590ad9f4\\"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt",
+          "vulinfoid": "libvirt: Releases",
+          "url": "http://libvirt.org/news.html"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt",
+          "vulinfoid": "LSN-2013-0018",
+          "url": "http://security.libvirt.org/2013/0018.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1045643",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1045643"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6456",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6456"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6456",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6456"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-59",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-59.html",
+          "title": "リンク解釈の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-21T13:52:43+09:00",
+    "datelastupdated": "2014-04-21T13:52:43+09:00",
+    "datepublic": "2013-12-17T00:00:00+09:00"
+  }
+}

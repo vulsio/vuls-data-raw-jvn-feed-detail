@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2017-004549",
+  "vulinfodata": {
+    "title": "Config-Model の lib/Config/Model/Utils/GenClassPod.pm の gen_class_pod implementation における脆弱性",
+    "vulinfodescription": {
+      "overview": "Config-Model (旧 libconfig-model-perl) の lib/Config/Model/Utils/GenClassPod.pm の gen_class_pod implementation は、危険な use lib 行を持つため、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Config-Model project",
+          "productname": "Config-Model",
+          "cpe": {
+            "text": "cpe:/a:config-model_project:config-model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.102 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、巧妙に細工された Debian パッケージファイルを介して、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Alioth",
+          "vulinfoid": "add patch to remove 'use lib'",
+          "url": "https://anonscm.debian.org/cgit/pkg-perl/packages/libconfig-model-perl.git/commit/?h=stretch&id=e7e5dd1a650939a0e021d1d5b311dbb3c4884773"
+        },
+        {
+          "type": "vendor",
+          "name": "CPAN",
+          "vulinfoid": "genclasspod: remove use lib",
+          "url": "http://cpansearch.perl.org/src/DDUMONT/Config-Model-2.102/Changes"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Bug Tracker",
+          "vulinfoid": "CVE-2017-0373",
+          "url": "https://security-tracker.debian.org/tracker/CVE-2017-0373"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-0373",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0373"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-0373",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-0373"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年06月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-06-28T19:23:06+09:00",
+    "datelastupdated": "2017-06-28T19:23:06+09:00",
+    "datepublic": "2017-05-14T00:00:00+09:00"
+  }
+}

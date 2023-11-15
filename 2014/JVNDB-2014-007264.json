@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-007264",
+  "vulinfodata": {
+    "title": "MIT Kerberos 5 の plugins/kdb/ldap/libkdb_ldap/ldap_pwd_policy.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos 5 (別名 krb5) の plugins/kdb/ldap/libkdb_ldap/ldap_pwd_policy.c の krb5_ldap_get_password_policy_from_dn 関数には、KDC が LDAP を使用する際、サービス運用妨害 (デーモンクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.13.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、結果のない正常な LDAP クエリを介して、サービス運用妨害 (デーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix LDAP misused policy name crash [CVE-2014-5353]",
+          "url": "https://github.com/krb5/krb5/commit/d1f707024f1d0af6e54a18885322d70fa15ec4d3"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0439",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0439.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5353",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5353"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5353",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5353"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月19日]\\n  掲載\\n[2015年04月20日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2015) を追加\\n[2015年06月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0439) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-19T14:11:21+09:00",
+    "datelastupdated": "2015-06-08T17:26:23+09:00",
+    "datepublic": "2014-12-05T00:00:00+09:00"
+  }
+}

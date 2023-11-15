@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2015-005667",
+  "vulinfodata": {
+    "title": "EPSON Network Utility に権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "EPSON Network Utility には権限昇格の脆弱性が存在します。  不適切なデフォルトパーミッション (CWE-276) - CVE-2015-6034 EPSON Network Utility v4.10 は、ネットワーク経由でプリンタのステータスを確認し、印刷状況を表示するためのアプリケーションです。インストールの際、EPSON Network Utility は SYSTEM 権限で動作する EpsonBidirectionalService を作成します。これに対応する実行ファイル eEBSVC.exe のアクセス権はセキュアでなく、Windows の \"Everyone\" グループのユーザにフルアクセスを許可しています。eEBSVC.exe を悪意のある同名ソフトウェアに差し替えることで、攻撃者は SYSTEM 権限で任意のコードを実行することが可能となります。  CWE-276: Incorrect Default Permissions https://cwe.mitre.org/data/definitions/276.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "セイコーエプソン株式会社",
+          "productname": "EPSON Network Utility",
+          "cpe": {
+            "text": "cpe:/a:epson:network_utility",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v4.10"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "Windows にログイン可能な攻撃者によって、SYSTEM 権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] EPSON は CVE-2015-6034 を修正したアップデート版をリリースしています。影響を受けるユーザは直ちにアップデートを適用してください。  アップデート版 http://support.epson.net/ESN/info.html "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "EPSON",
+          "vulinfoid": "プリンター付属のソフトウェア「EPSON Network utility」の権限昇格の脆弱性について",
+          "url": "http://support.epson.net/ESN/info.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6034",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6034"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93369775",
+          "url": "http://jvn.jp/vu/JVNVU93369775/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6034",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6034"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#672500",
+          "url": "http://www.kb.cert.org/vuls/id/672500"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年10月30日]\\n  掲載\\n[2015年11月16日]\\n  概要：内容を更新\\n[2015年11月30日]\\n  対策：内容を更新\\n[2015年12月22日]\\n  ベンダ情報：セイコーエプソン株式会社 (プリンター付属のソフトウェア「EPSON Network utility」の権限昇格の脆弱性について) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-10-30T16:08:04+09:00",
+    "datelastupdated": "2015-12-22T10:40:17+09:00",
+    "datepublic": "2015-10-27T00:00:00+09:00"
+  }
+}

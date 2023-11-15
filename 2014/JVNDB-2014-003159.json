@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-003159",
+  "vulinfodata": {
+    "title": "Linux Kernel の ALSA 制御の実装の sound/core/control.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の ALSA 制御の実装の sound/core/control.c は、読み取り / 書き込みロックの所有を確認しないため、サービス運用妨害 (解放済みメモリの使用：use-after-free) 状態にされる、およびカーネルメモリから重要な情報を取得される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use-after-free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.15.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/dev/snd/controlCX アクセスを利用されることで、サービス運用妨害 (解放済みメモリの使用：use-after-free) 状態にされる、およびカーネルメモリから重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.15.2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.15.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ALSA: control: Don't access controls outside of protected regions",
+          "url": "https://github.com/torvalds/linux/commit/fd9f26e4eca5d08a27d12c0933fceef76ed9663d"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ALSA: control: Don't access controls outside of protected regions",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fd9f26e4eca5d08a27d12c0933fceef76ed9663d"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1113409",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1113409"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-4653",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4653"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-4653",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4653"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-07T16:49:07+09:00",
+    "datelastupdated": "2014-07-07T16:49:07+09:00",
+    "datepublic": "2014-06-26T00:00:00+09:00"
+  }
+}

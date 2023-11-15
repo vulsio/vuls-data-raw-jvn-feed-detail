@@ -1,0 +1,139 @@
+{
+  "vulinfoid": "JVNDB-2006-000955",
+  "vulinfodata": {
+    "title": "BusyBox の passwd における弱い暗号で MD5 パスワードハッシュが生成される問題",
+    "vulinfodescription": {
+      "overview": "BusyBox の passwd コマンドには、MD5 ハッシュで暗号化されたパスワードを生成する際に、salt を使用しないでパスワードを暗号化してしまう問題が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "BusyBox",
+          "productname": "BusyBox",
+          "cpe": {
+            "text": "cpe:/a:busybox:busybox",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "弱い暗号でパスワードの暗号化が行われてしまいます。そのため、悪意あるローカルユーザにより Rainbow クラックなどの手法でパスワード解析が行われることで、容易に有効なパスワードを取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています (BusyBox 1.1.3 で修正済み)。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "0000604",
+          "url": "http://bugs.busybox.net/view.php?id=604"
+        },
+        {
+          "type": "vendor",
+          "name": "BusyBox",
+          "vulinfoid": "17 May 2006 - BusyBox 1.1.3 (stable)",
+          "url": "http://www.busybox.net/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2007:0208",
+          "url": "https://rhn.redhat.com/errata/RHSA-2007-0208.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2007:0208",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0208J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-1058",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1058"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "25569",
+          "url": "http://xforce.iss.net/xforce/xfdb/25569"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-1058",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1058"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA19477",
+          "url": "http://secunia.com/advisories/19477/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17330",
+          "url": "http://www.securityfocus.com/bid/17330"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年05月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-05-23T17:50:49+09:00",
+    "datelastupdated": "2007-05-23T17:50:49+09:00",
+    "datepublic": "2006-04-04T00:00:00+09:00"
+  }
+}

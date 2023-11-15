@@ -1,0 +1,664 @@
+{
+  "vulinfoid": "JVNDB-2010-002300",
+  "vulinfodata": {
+    "title": "Apache Portable Utility ライブラリの apr_brigade_split_line 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server およびその他のソフトウェアの mod_reqtimeout モジュールにて使用される Apache Portable Utility ライブラリ (APR-util) の buckets/apr_brigade.c 内にある apr_brigade_split_line 関数には、APR bucket の 破損に関する処理に不備があるため、メモリリークが発生し、サービス運用妨害 (DoS) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0.64 未満",
+            "2.2.17 未満"
+          ]
+        },
+        {
+          "name": "Apache Software Foundation",
+          "productname": "APR-util",
+          "cpe": {
+            "text": "cpe:/a:apache:apr-util",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.3.10 未満"
+          ]
+        },
+        {
+          "name": "IBM",
+          "productname": "IBM HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:ibm:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1.0.35 未満",
+            "7.0.0.15 未満"
+          ]
+        },
+        {
+          "name": "IBM",
+          "productname": "IBM WebSphere Application Server",
+          "cpe": {
+            "text": "cpe:/a:ibm:websphere_application_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1.0.35 未満"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "OpenSolaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:opensolaris",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 "
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (x86) ",
+            "3 (x86-64) ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Appliance Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0  (延長メンテナンス)",
+            "3.0  ",
+            "3.0 (x64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Client",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_client",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2008 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux FUJI",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_fuji",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(延長メンテナンス)"
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  (延長メンテナンス)",
+            "10 (x64) (延長メンテナンス)",
+            "11  ",
+            "11 (x64) "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.11 ",
+            "11.23 ",
+            "11.31 "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX Apache-based Web Server",
+          "cpe": {
+            "text": "cpe:/h:hp:apache-based_web_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v.2.0.64.01",
+            "v.2.2.15.05"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX Web Server Suite",
+          "cpe": {
+            "text": "cpe:/a:hp:hp-ux_web_server_suite",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v.2.33",
+            "v.3.15"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "4.8 (as) ",
+            "4.8 (es) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "5.0 (client) ",
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Cosminexus HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:hitachi:cosminexus_http_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Web Server",
+          "cpe": {
+            "text": "cpe:/a:hitachi:hitachi_web_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_application_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(64)",
+            "-R",
+            "Express",
+            "Standard-R"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server Enterprise",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_application_server_enterprise",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server Smart Edition",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_application_server_smart_edition",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server Standard",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_application_server_standard",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Developer",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_developer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "01",
+            "Professional",
+            "Professional for Plug-in"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Developer Light",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_developer_light",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Developer Standard",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_developer_standard",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Primary Server",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_primary_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Base",
+            "Base(64)"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Service Architect",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_service_architect",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Service Platform",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_service_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(64)",
+            "- Messaging"
+          ]
+        },
+        {
+          "name": "富士通",
+          "productname": "Interstage Application Server",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:interstage_application_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "富士通",
+          "productname": "Interstage Studio",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:interstage_studio",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "富士通",
+          "productname": "Interstage Web Server",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:interstage_web_server",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Released",
+          "vulinfoid": "Apache HTTP Server 2.2.17 Released",
+          "url": "http://www.apache.org/dist/httpd/Announcement2.2.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Released",
+          "vulinfoid": "Apache HTTP Server 2.0.64 Released",
+          "url": "http://www.apache.org/dist/httpd/Announcement2.0.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Software Foundation",
+          "vulinfoid": "Fixed in Apache httpd 2.0.64",
+          "url": "http://httpd.apache.org/security/vulnerabilities_20.html#2.0.64"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Software Foundation",
+          "vulinfoid": "Fixed in Apache httpd 2.2.16",
+          "url": "http://httpd.apache.org/security/vulnerabilities_22.html#2.2.17"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "1003492",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1003492"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "1003493",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1003493"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "1003494",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1003494"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "1003495",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1003495"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "1003626",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1003626"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "apr-util-1.2.7-11.AXS3.2",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1321"
+        },
+        {
+          "type": "vendor",
+          "name": "Changes with Apache",
+          "vulinfoid": "CHANGES-APR-UTIL-1.3",
+          "url": "http://www.apache.org/dist/apr/CHANGES-APR-UTIL-1.3"
+        },
+        {
+          "type": "vendor",
+          "name": "Changes with Apache",
+          "vulinfoid": "CHANGES_2.2.17",
+          "url": "http://www.apache.org/dist/httpd/CHANGES_2.2.17"
+        },
+        {
+          "type": "vendor",
+          "name": "Hewlett Packard",
+          "vulinfoid": "HPUXWSATW233",
+          "url": "https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=HPUXWSATW233"
+        },
+        {
+          "type": "vendor",
+          "name": "Hewlett Packard",
+          "vulinfoid": "HPUXWSATW315",
+          "url": "https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=HPUXWSATW315"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "HS12-031",
+          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/HS12-031/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02645",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c02752210"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "7007951",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg27007951#61035"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "7008517",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg27008517#61035"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "7014506",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg27014506#70015"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2160",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2160"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2216",
+          "url": "https://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2216"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2010:0950",
+          "url": "https://rhn.redhat.com/errata/RHSA-2010-0950.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "cve_2010_1623_memory_leak",
+          "url": "http://blogs.sun.com/security/entry/cve_2010_1623_memory_leak"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2011-21",
+          "url": "http://www.turbolinux.co.jp/security/2011/TLSA-2011-21j.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "HS12-031",
+          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/HS12-031/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "富士通 セキュリティ情報",
+          "vulinfoid": "interstage_as_201103",
+          "url": "http://software.fujitsu.com/jp/security/products-fujitsu/solution/interstage_as_201103.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-1623",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1623"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "62235",
+          "url": "http://xforce.iss.net/xforce/xfdb/62235"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-1623",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1623"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA42403",
+          "url": "http://secunia.com/advisories/42403"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA42537",
+          "url": "http://secunia.com/advisories/42537"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA41701",
+          "url": "http://secunia.com/advisories/41701"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA43211",
+          "url": "http://secunia.com/advisories/43211"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA41811",
+          "url": "http://secunia.com/advisories/41811"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "43673",
+          "url": "http://www.securityfocus.com/bid/43673"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2010-2556",
+          "url": "http://www.vupen.com/english/advisories/2010/2556"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2010-2557",
+          "url": "http://www.vupen.com/english/advisories/2010/2557"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2010-2749",
+          "url": "http://www.vupen.com/english/advisories/2010/2749"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年11月15日]\\n  掲載\\n[2010年12月15日]\\n  影響を受けるシステム：オラクル (cve_2010_1623_memory_leak) の情報を追加\\n  影響を受けるシステム：ミラクル・リナックス (apr-util-1.2.7-11.AXS3.2) の情報を追加\\n  影響を受けるシステム：ミラクル・リナックス (2160) の情報を追加\\n  影響を受けるシステム：レッドハット (RHSA-2010:0950) の情報を追加\\n  ベンダ情報：オラクル (cve_2010_1623_memory_leak) を追加\\n  ベンダ情報：ミラクル・リナックス (apr-util-1.2.7-11.AXS3.2) を追加\\n  ベンダ情報：ミラクル・リナックス (2160) を追加\\n  ベンダ情報：レッドハット (RHSA-2010:0950) を追加\\n[2011年01月07日]\\n  影響を受けるシステム：IBM (7007951) の情報を追加\\n  影響を受けるシステム：IBM (7008517) の情報を追加\\n  ベンダ情報：IBM (7007951) を追加\\n  ベンダ情報：IBM (7008517) を追加\\n[2011年03月22日]\\n  影響を受けるシステム：IBM (7014506) の情報を追加\\n  ベンダ情報：IBM (7014506) を追加\\n[2011年04月06日]\\n  影響を受けるシステム：ヒューレット・パッカード (HPUXWSATW233) の情報を追加\\n  影響を受けるシステム：ヒューレット・パッカード (HPUXWSATW315) の情報を追加\\n  影響を受けるシステム：ヒューレット・パッカード (HPSBUX02645) の情報を追加\\n  ベンダ情報：ヒューレット・パッカード (HPUXWSATW233) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPUXWSATW315) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX02645) を追加\\n[2011年06月07日]\\n  影響を受けるシステム：ミラクル・リナックス (2216) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (2216) を追加\\n[2011年07月19日]\\n  影響を受けるシステム：ターボリナックス (TLSA-2011-21) の情報を追加\\n  ベンダ情報：ターボリナックス (TLSA-2011-21) を追加\\n[2011年11月24日]\\n  影響を受けるシステム：富士通 (interstage_as_201103) の情報を追加\\n  ベンダ情報：富士通 (interstage_as_201103) を追加\\n[2012年12月28日]\\n  影響を受けるシステム：日立 (HS12-031) の情報を追加\\n  ベンダ情報：日立 (HS12-031) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-11-15T15:39:44+09:00",
+    "datelastupdated": "2012-12-28T18:39:07+09:00",
+    "datepublic": "2010-10-01T00:00:00+09:00"
+  }
+}

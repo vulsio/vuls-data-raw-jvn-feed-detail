@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2020-003076",
+  "vulinfodata": {
+    "title": "複数の BD 製品における保護メカニズムの不具合の脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の BD 製品には、保護メカニズムの不具合の脆弱性 (CWE-693) が存在します。  該当製品は、端末の利用可能な機能を制限するため、キオスクモードとよばれる実装方法を採用しています。当該製品に物理アクセス可能な環境から細工した入力を行うことで、このキオスクモードをパイパスすることができます (CWE-693) 。その結果、機微な情報の表示や変更ができる可能性があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Becton, Dickinson and Company (BD)",
+          "productname": "Pyxis Anesthesia (PAS) ES System",
+          "cpe": {
+            "text": "cpe:/a:bd:pyxis_anesthesia_station_es_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.6.1"
+          ]
+        },
+        {
+          "name": "Becton, Dickinson and Company (BD)",
+          "productname": "Pyxis MedStation ES System",
+          "cpe": {
+            "text": "cpe:/a:bd:pyxis_anesthesia_es_system",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.6.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者が機微な情報を閲覧したり、改ざんしたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 今後、セキュリティアップデートのリリースを予定しています。 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  * 製品への物理的なアクセスを、許可されたユーザのみに制限する * 信頼できるシステムへのみ、製品を接続する * 製品の計画外の再起動を監視や調査する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "BD",
+          "vulinfoid": "BD Pyxis MedStation and Anesthesia (PAS) ES System Kiosk Mode Escape",
+          "url": "https://www.bd.com/en-us/support/product-security-and-privacy/product-security-bulletins/bd-pyxis-medstation-and-anesthesia-(pas)-es-system-kiosk-mode-escape"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-10598",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10598"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSMA-20-091-01",
+          "url": "https://www.us-cert.gov/ics/advisories/icsma-20-091-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91653148",
+          "url": "https://jvn.jp/vu/JVNVU91653148/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-04-03T14:19:04+09:00",
+          "description": "[2020年04月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-04-03T14:19:04+09:00",
+    "datelastupdated": "2020-04-03T14:19:04+09:00",
+    "datepublic": "2020-04-02T00:00:00+09:00"
+  }
+}

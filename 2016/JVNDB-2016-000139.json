@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2016-000139",
+  "vulinfodata": {
+    "title": "PhishWall クライアント Internet Explorer版における DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社セキュアブレインが提供する PhishWall クライアント Internet Explorer版は、不正送金やフィッシング対策用のソフトウェアです。PhishWall クライアント Internet Explorer版のインストーラには、DLL を読み込む際の検索パスに問題があり、意図しない DLL を読み込んでしまう脆弱性が存在します。  当該製品のインストーラは Install Shield の旧バージョンで作成されていますが、最新の Install Shield では、DLL 読み込みの問題に対して対策を行っています。詳細については「Best Practices to Avoid Windows Setup Launcher Executable Issues」を参照してください。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 吉川孝志 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社セキュアブレイン",
+          "productname": "PhishWall クライアント",
+          "cpe": {
+            "text": "cpe:/a:securebrain:phishwall_client",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Internet Explorer版 Ver. 3.7.8.1 およびそれ以前のインストーラ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している管理者の権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 なお、本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザは PhishWall クライアント Internet Explorer版をアップデートする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Flexera Software",
+          "vulinfoid": "Best Practices to Avoid Windows Setup Launcher Executable Issues",
+          "url": "https://flexeracommunity.force.com/customer/articles/INFO/Best-Practices-to-Avoid-Windows-Setup-Launcher-Executable-Issues"
+        },
+        {
+          "type": "vendor",
+          "name": "株式会社セキュアブレイン",
+          "vulinfoid": "株式会社セキュアブレインの告知ページ",
+          "url": "http://www.securebrain.co.jp/about/news/2016/08/160817.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4846",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4846"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#45583702",
+          "url": "https://jvn.jp/jp/JVN45583702/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4846",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-4846"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月17日]\\n  掲載\\n[2017年05月23日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-4846) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-17T15:33:58+09:00",
+    "datelastupdated": "2017-05-23T14:24:32+09:00",
+    "datepublic": "2016-08-17T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2012-002824",
+  "vulinfodata": {
+    "title": "Linux Kernel の br_multicast_add_group 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/bridge/br_multicast.c 内の br_multicast_add_group 関数には、特定の Ethernet ブリッジ構成が使用されている場合、サービス運用妨害 (メモリ破損およびシステムクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.38 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ローカルインターフェースに IGMP パケットを送信されることで、サービス運用妨害 (メモリ破損およびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.38",
+          "url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.38"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "bridge: Fix mglist corruption that leads to memory corruption",
+          "url": "https://github.com/torvalds/linux/commit/6b0d6a9b4296fa16a28d10d416db7a770fc03287"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=6b0d6a9b4296fa16a28d10d416db7a770fc03287"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 678169",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=678169"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0716",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0716"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0716",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0716"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-16",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-16.html",
+          "title": "環境設定"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-25T14:14:35+09:00",
+    "datelastupdated": "2012-06-25T14:14:35+09:00",
+    "datepublic": "2012-06-21T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2023-001009",
+  "vulinfodata": {
+    "title": "三菱電機製 MELSEC シリーズの WEB サーバ機能における認証回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC iQ-F/iQ-R シリーズの WEB サーバ機能には、疑似乱数生成器における予測可能なシード (CWE-337、CVE-2022-40267) に起因する認証回避の脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-F シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-f_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "FX5S-xMy/z x=30,40,60,80, y=T,R, z=ES,ESS バージョン 1.003 およびそれ以前",
+            "FX5U-xMy/z x=32,64,80, y=T,R, z=ES,DS,ESS,DSS　製造番号 179**** およびそれ以前 バージョン 1.074 およびそれ以前",
+            "FX5U-xMy/z x=32,64,80, y=T,R, z=ES,DS,ESS,DSS　製造番号 17X**** およびそれ以降 バージョン 1.280 およびそれ以前",
+            "FX5UC-32MT/DS-TS, FX5UC-32MT/DSS-TS, FX5UC-32MR/DS-TS バージョン 1.280 およびそれ以前",
+            "FX5UC-xMy/z x=32,64,96, y=T, z=D,DSS　製造番号 179**** およびそれ以前 バージョン 1.074 およびそれ以前",
+            "FX5UC-xMy/z x=32,64,96, y=T, z=D,DSS　製造番号 17X**** およびそれ以降 バージョン 1.280 およびそれ以前",
+            "FX5UJ-xMy/z x=24,40,60, y=T,R, z=ES,ESS バージョン 1.042 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-R シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R00/01/02CPU バージョン 33 およびそれ以前",
+            "R04/08/16/32/120(EN)CPU バージョン 66 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "収集した使用済みの乱数から認証に使用される乱数を推測することで、遠隔の第三者が認証を回避して WEB サーバ機能へ不正にアクセスする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 次の製品については、アップデートが提供されています。開発者が提供する情報をもとにファームウェアをアップデートしてください。 アップデートは、<a href=\"https://www.mitsubishielectric.co.jp/fa/download/index.html\" target=\"blank\">ダウンロード | 三菱電機FAダウンロードサイト</a>から入手できます。 開発者によると、他の製品についてのアップデートは、近日中に提供する予定とのことです。 　* MELSEC iQ-Fシリーズ 　　　* FX5U-xMy/z x=32,64,80, y=T,R, z=ES,DS,ESS,DSS　製造番号 17X****およびそれ以降 　　　　　* バージョン 1.281 およびそれ以降 　　　* FX5U-xMy/z x=32,64,80, y=T,R, z=ES,DS,ESS,DSS　製造番号 179****およびそれ以前 　　　　　* バージョン 1.075 およびそれ以降 　　　* FX5UC-xMy/z x=32,64,96, y=T, z=D,DSS　製造番号 17X****およびそれ以降 　　　　　* バージョン 1.281 およびそれ以降 　　　* FX5UC-xMy/z x=32,64,96, y=T, z=D,DSS　製造番号 179****およびそれ以前 　　　　　* バージョン 1.075 およびそれ以降 　　　* FX5UC-32MT/DS-TS, FX5UC-32MT/DSS-TS, FX5UC-32MR/DS-TS 　　　　　* バージョン 1.281 およびそれ以降 　　　* FX5UJ-xMy/z x=24,40,60, y=T,R, z=ES,ESS 　　　　　* バージョン 1.044 およびそれ以降 　　　* FX5S-xMy/z x=30,40,60,80, y=T,R, z=ES,ESS 　　　　　* バージョン 1.004 およびそれ以降  　* MELSEC iQ-Rシリーズ 　　　* R00/01/02CPU 　　　　　* バージョン 34 およびそれ以降 　　　* R04/08/16/32/120(EN)CPU 　　　　　* バージョン 67 およびそれ以降  ファームウェアアップデートの方法は、開発者が提供する次のマニュアルを参照してください。 　* MELSEC iQ-F FX5ユーザーズマニュアル(応用編) 「5 ファームウェアアップデート機能」 　* MELSEC iQ-R ユニット構成マニュアル 「付2 ファームウェアアップデート機能」  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能（*1）を使用し、信頼できないホストからのアクセスをブロックする (*1) IP フィルタ機能については、開発者が提供する次のマニュアルを参照してください。 　* MELSEC iQ-F FX5 ユーザーズマニュアル(Ethernet通信編) 「 12.1 IP フィルタ機能」 　* MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編)の 1.13 セキュリティの「 IP フィルタ」 詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-019.pdf\" target=\"blank\">開発者が提供する情報</a>をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機",
+          "vulinfoid": "ELSEC シリーズの WEB サーバ機能における認証回避の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-019.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-40267",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-40267"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-017-02",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-23-017-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99673580",
+          "url": "https://jvn.jp/vu/JVNVU99673580/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-01-18T16:23:29+09:00",
+          "description": "[2023年01月18日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-01-27T15:01:40+09:00",
+          "description": "[2023年01月27日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2023-03-01T10:21:07+09:00",
+          "description": "[2023年03月01日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2023-04-19T11:48:02+09:00",
+          "description": "[2023年04月19日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-01-18T16:23:29+09:00",
+    "datelastupdated": "2023-04-19T12:31:55+09:00",
+    "datepublic": "2023-01-18T00:00:00+09:00"
+  }
+}

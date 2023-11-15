@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2013-004156",
+  "vulinfodata": {
+    "title": "Moodle の Amazon S3 ライブラリの repository/s3/S3.php における SSL サーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Moodle の Amazon S3 ライブラリの repository/s3/S3.php は、サーバのホスト名が X.509 証明書のサブジェクトの Common Name (CN) または subjectAltName フィールドのドメイン名と一致することを検証しないため、SSL サーバになりすまされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Moodle",
+          "productname": "Moodle",
+          "cpe": {
+            "text": "cpe:/a:moodle:moodle",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.11 まで",
+            "2.3.9 未満の 2.3.x",
+            "2.4.6 未満の 2.4.x",
+            "2.5.2 未満の 2.5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、任意の有効な証明書を介して、SSL サーバになりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Moodle",
+          "vulinfoid": "MDL-40615",
+          "url": "http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=MDL-40615"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Announcements",
+          "vulinfoid": "MSA-13-0032: Host verification failure in Amazon S3 repository",
+          "url": "https://moodle.org/mod/forum/discuss.php?d=238393"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-6087",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6087"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-6087",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6087"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年09月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-09-18T18:42:24+09:00",
+    "datelastupdated": "2013-09-18T18:42:24+09:00",
+    "datepublic": "2013-09-16T00:00:00+09:00"
+  }
+}

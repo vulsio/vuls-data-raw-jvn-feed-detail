@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2020-009572",
+  "vulinfodata": {
+    "title": "BD 製 Alaris 8015 PC Unit および Alaris Systems Manager に不適切な認証の脆弱性",
+    "vulinfodescription": {
+      "overview": "Becton, Dickinson and Company (BD) が提供する Alaris 8015 PC Unit および Alaris Systems Manager には、不適切な認証の脆弱性が存在します。  BD が提供する Alaris 8015 PC Unit は、医療用輸液ポンプ向けモジュラー型プラットフォームです。また、Alaris Systems Manager は、輸液デバイス管理ソフトウェアです。 Alaris 8015 PC Unit と Alaris Systems Manager 間の認証プロセスにおけるネットワークセッション認証に、不適切な認証の脆弱性 (CWE-287) が存在します。この脆弱性は、第三者がワイヤレスネットワーク経由で Alaris 8015 PC Unit の認証要求をリダイレクトし、認証要求から抽出された情報に基づいて認証ハンドシェイクを完了することで悪用されます。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Becton, Dickinson and Company (BD)",
+          "productname": "Alaris 8015 PC unit",
+          "cpe": {
+            "text": "cpe:/a:bd:alaris_8015_pc_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 9.33.1 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Becton, Dickinson and Company (BD)",
+          "productname": "Alaris Systems Manager",
+          "cpe": {
+            "text": "cpe:/a:bd:alaris_systems_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 4.33 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、Alaris 8015 PC Unit と Alaris Systems Manager 間に直接ネットワークセッションを確立され、転送中のデータの構成ヘッダーを変更することにより、Alaris 8015 PC Unit に対してサービス運用妨害 (DoS) を引き起こされる可能性があります。 このサービス運用妨害 (DoS) により、Alaris 8015 PC Unit のワイヤレス通信機能が使用できなくなり、PC Unit を手動で操作しなくてはならなくなる可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 　* Alaris Systems Manager バージョン 12.0.1、12.0.2、12.1.0、および 12.1.2 　* Alaris PC Unit は、2020年11月13日現在、修正済みのバージョンが提供されておりません。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。詳しくは、開発者が提供する情報をご確認ください。 　* Alaris Systems Manager 上で、ファイアウォールを有効にし、ポートとサービスを制限する 　* サーバーネットワークセグメントとワイヤレスネットワークセグメントをファイアウォールで分離し、ワイヤレスネットワークセグメントには許可されたデバイスのみアクセスできるよう制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "BD",
+          "vulinfoid": "BD Alaris 8015 PC Unit and BD Alaris Systems Manager Network Session Vulnerability",
+          "url": "https://www.bd.com/en-us/support/product-security-and-privacy/product-security-bulletins/bd-alaris-8015-pc-unit-and-bd-alaris-systems-manager-network-session-vulnerability"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25165",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25165"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSMA-20-317-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsma-20-317-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98911990",
+          "url": "https://jvn.jp/vu/JVNVU98911990"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-11-16T14:51:56+09:00",
+          "description": "[2020年11月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-11-16T14:51:56+09:00",
+    "datelastupdated": "2020-11-16T14:51:56+09:00",
+    "datepublic": "2020-11-13T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2021-000100",
+  "vulinfodata": {
+    "title": "EC-CUBE 2系における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社イーシーキューブが提供する EC-CUBE 2系には、次の複数の脆弱性が存在します。 ・管理画面におけるアクセス制限不備 (CWE-284) - CVE-2021-20841 ・管理画面におけるクロスサイトリクエストフォージェリ (CWE-352) - CVE-2021-20842  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社イーシーキューブ",
+          "productname": "EC-CUBE",
+          "cpe": {
+            "text": "cpe:/a:lockon:ec-cube",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.11.0 から 2.17.1 まで (EC-CUBE 2系) (CVE-2021-20842)",
+            "2.11.2 から 2.17.1 まで (EC-CUBE 2系) (CVE-2021-20841)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品にログイン可能なユーザによって、本来操作権限のないシステム設定を変更される - CVE-2021-20841 ・当該製品にログインした状態の管理者権限を持つユーザが、細工されたページにアクセスした場合、管理ユーザを削除される - CVE-2021-20842"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとにアップデートしてください。 開発者は、本脆弱性を修正した EC-CUBE 2.17.2 をリリースしています。  [パッチを適用する] 開発者が提供する情報をもとに差分ファイル (Hotfix パッチ) を適用してください。  [ワークアラウンドを実施する] CVE-2021-20841 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 <ul><li>mtb_permission の値を管理画面 URL と同じディレクトリ名に変更する</li></ul> 詳しくは、開発者が提供する情報をご参照ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社イーシーキューブ",
+          "vulinfoid": "EC-CUBE 2系における複数の脆弱性",
+          "url": "https://www.ec-cube.net/info/weakness/20211111/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20841",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20841"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20842",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20842"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#75444925",
+          "url": "https://jvn.jp/jp/JVN75444925/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-352",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+          "title": "クロスサイトリクエストフォージェリ"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-11-08T09:48:55+09:00",
+          "description": "[2021年11月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-11-11T14:11:40+09:00",
+    "datelastupdated": "2021-11-11T14:11:40+09:00",
+    "datepublic": "2021-11-11T00:00:00+09:00"
+  }
+}

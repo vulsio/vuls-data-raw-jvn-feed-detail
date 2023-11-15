@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2015-005622",
+  "vulinfodata": {
+    "title": "ownCloud iOS Library で使用される AFNetworking フレームワークにおける SSL サーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "ownCloud iOS Library で使用される AFNetworking フレームワークの AFSSLPinningModeNone 用 AFSecurityPolicy.validatesDomainName のデフォルト設定は、X.509 証明書のサブジェクトの Common Name (CN) 内のドメイン名に反するサーバホスト名の検証を無効にするため、SSL サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-254: Security Features (セキュリティ機能) と識別されています。 http://cwe.mitre.org/data/definitions/254.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "AFNetworking project",
+          "productname": "AFNetworking",
+          "cpe": {
+            "text": "cpe:/a:afnetworking_project:afnetworking",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.3 未満 (ownCloud iOS Library)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、任意の有効な証明書を介して、SSL サーバになりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "AFSSLPinningModeNone vulnerable to man-in-the-middle attacks",
+          "url": "https://github.com/AFNetworking/AFNetworking/issues/2619"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "AFNetworking 2.5.3",
+          "url": "https://github.com/AFNetworking/AFNetworking/releases/tag/2.5.3"
+        },
+        {
+          "type": "vendor",
+          "name": "ownCloud",
+          "vulinfoid": "oC-SA-2015-012",
+          "url": "https://owncloud.org/security/advisory/?id=oc-sa-2015-012"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3996",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3996"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3996",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3996"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年10月29日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-10-29T15:53:11+09:00",
+    "datelastupdated": "2015-10-29T15:53:11+09:00",
+    "datepublic": "2015-04-20T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2011-001452",
+  "vulinfodata": {
+    "title": "pWhois Layer Four Traceroute に権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "pWhois Layer Four Traceroute には、コマンドライン引数の解析処理に起因する権限昇格の脆弱性が存在します。  なお、Layer Four Traceroute を同梱して配布しているディストリビューションでも、 ”lft” バイナリを SETUID root しないものは、本脆弱性の影響を受けないとのことです。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Prefix WhoIs Project",
+          "productname": "Layer Four Traceroute",
+          "cpe": {
+            "text": "cpe:/a:pwhois:layer_four_traceroute",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "Layer Four Traceroute が SETUID root されている場合、ローカルユーザが root 権限を取得する可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに Layer Four Traceroute 3.3 以降 にアップデートしてください。  [ワークアラウンド] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  * Layer Four Traceroute を SETUID root しない"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0765",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0765"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#946652",
+          "url": "http://jvn.jp/cert/JVNVU946652"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0765",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0765"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#946652",
+          "url": "http://www.kb.cert.org/vuls/id/946652"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年04月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-04-28T15:18:36+09:00",
+    "datelastupdated": "2011-04-28T15:18:36+09:00",
+    "datepublic": "2011-04-05T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2015-001205",
+  "vulinfodata": {
+    "title": "Node.js 用 serve-static プラグインにおけるオープンリダイレクトの脆弱性",
+    "vulinfodescription": {
+      "overview": "Node.js 用 serve-static プラグインには、ルートにマウントされている場合、オープンリダイレクトの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-601: URL Redirection to Untrusted Site (オープンリダイレクト) と識別されています。 http://cwe.mitre.org/data/definitions/601.html "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "serve-static project",
+          "productname": "serve-static",
+          "cpe": {
+            "text": "cpe:/a:serve-static_project:serve-static",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.7.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、後ろにデフォルト URI の PATH_INFO のドメインが続く // (スラッシュスラッシュ) を介して、ユーザを任意の Web サイトにリダイレクトされ、フィッシング攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Redirect to external website #26",
+          "url": "https://github.com/expressjs/serve-static/issues/26"
+        },
+        {
+          "type": "vendor",
+          "name": "Node Security Project",
+          "vulinfoid": "serve-static Open Redirect",
+          "url": "https://nodesecurity.io/advisories/serve-static-open-redirect"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1181917",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1181917"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1164",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1164"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1164",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1164"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-26T16:59:43+09:00",
+    "datelastupdated": "2015-01-26T16:59:43+09:00",
+    "datepublic": "2015-01-06T00:00:00+09:00"
+  }
+}

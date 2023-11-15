@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2013-004533",
+  "vulinfodata": {
+    "title": "Xen で使用される QEMU の SCSI の実装におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen で使用される QEMU の SCSI の実装には、SCSI コントローラに256以上のデバイス接続がある場合、バッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:L/AC:H/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、REPORT LUNS コマンドに含まれる小さい転送バッファを介して、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1754",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1754.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1553",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1553.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen",
+          "vulinfoid": "Top Page",
+          "url": "http://www.xen.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4344",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4344"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4344",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4344"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Xen Security Advisory 65 (CVE-2013-4344) - qemu SCSI REPORT LUNS buffer overflow",
+          "url": "http://www.openwall.com/lists/oss-security/2013/10/02/2"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[ANNOUNCE] QEMU 1.6.1 Stable released",
+          "url": "http://article.gmane.org/gmane.comp.emulators.qemu/237191"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年10月09日]\\n  掲載\\n[2013年11月12日]\\n  参考情報：関連文書 ([ANNOUNCE] QEMU 1.6.1 Stable released) を追加\\n[2014年02月18日]\\n  対策：内容を更新\\n  ベンダ情報：レッドハット (RHSA-2013:1553) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1754) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-10-09T15:03:05+09:00",
+    "datelastupdated": "2014-02-18T17:37:16+09:00",
+    "datepublic": "2013-10-02T00:00:00+09:00"
+  }
+}

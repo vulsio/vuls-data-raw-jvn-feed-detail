@@ -1,0 +1,97 @@
+{
+  "vulinfoid": "JVNDB-2005-000813",
+  "vulinfodata": {
+    "title": "sendfile() システムコールにおけるカーネルメモリ漏洩の脆弱性",
+    "vulinfodescription": {
+      "overview": "sendfile() システムコールには、特別に作られたファイルを正しく扱えない脆弱性が存在します。結果として、ローカルユーザに機密情報が漏洩する可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.10 ",
+            "4.11 ",
+            "4.8 ",
+            "4.9 ",
+            "5.0 ",
+            "5.1 ",
+            "5.2 ",
+            "5.3 ",
+            "5.4 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザが、カーネル内の機密情報を含んだメモリにアクセスする可能性があります。結果として、パスワードやユーザ名などの認証情報が漏洩する可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {}
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "FreeBSD-SA-05:02",
+          "url": "ftp://ftp.freebsd.org/pub/FreeBSD/CERT/advisories/FreeBSD-SA-05:02.sendfile.asc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0708",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0708"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#604846",
+          "url": "http://jvn.jp/cert/JVNVU604846/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0708",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2005-0708"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#604846",
+          "url": "http://www.kb.cert.org/vuls/id/604846"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2008年11月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2008-11-21T11:48:52+09:00",
+    "datelastupdated": "2008-11-21T11:48:52+09:00",
+    "datepublic": "2005-04-27T00:00:00+09:00"
+  }
+}

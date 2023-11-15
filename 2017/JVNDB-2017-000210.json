@@ -1,0 +1,112 @@
+{
+  "vulinfoid": "JVNDB-2017-000210",
+  "vulinfodata": {
+    "title": "セキュリティ機能見張り番のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "西日本電信電話株式会社（ＮＴＴ西日本）が提供する「セキュリティ機能見張り番」のインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "西日本電信電話株式会社",
+          "productname": "セキュリティ機能見張り番",
+          "cpe": {
+            "text": "cpe:/a:ntt_west:security_kinou_mihariban",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 1.0.21 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラ (「セキュリティ機能見張り番」ｖ1.0.22以降) を使用してください。  「セキュリティ機能見張り番」を新規インストールする際は、インストーラと同じディレクトリに不審なファイルがないことを確認してからインストーラを実行してください。  なお、本脆弱性の影響を受けるのはインストーラの起動時のみです。「セキュリティ機能見張り番」をインストール済みの既存ユーザは影響を受けません"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "西日本電信電話株式会社",
+          "vulinfoid": "西日本電信電話株式会社（ＮＴＴ西日本） の告知ページ",
+          "url": "http://flets-w.com/topics/mihariban_vulnerability/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-10826",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-10826"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#11601216",
+          "url": "https://jvn.jp/jp/JVN11601216/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-10826",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-10826"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-28T14:14:29+09:00",
+          "description": "[2017年08月25日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-02-28T14:14:37+09:00",
+          "description": "[2018年02月28日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-10826) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-08-25T12:09:46+09:00",
+    "datelastupdated": "2018-02-28T13:48:21+09:00",
+    "datepublic": "2017-08-25T00:00:00+09:00"
+  }
+}

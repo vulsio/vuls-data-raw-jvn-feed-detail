@@ -1,0 +1,68 @@
+{
+  "vulinfoid": "JVNDB-2021-006034",
+  "vulinfodata": {
+    "title": "Saviynt 製 Enterprise Identity Cloud における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Saviynt 社が提供する Enterprise Identity Cloud には、ローカル認証システムのためのパスワードリセット機能において、次の複数の脆弱性があります。  　* 次のような URI にて id パラメタを指定されると、管理者ユーザーを含むをユーザ名返却してしまう脆弱 　　　* /ECM/maintenance/forgotpasswordstep1?otpConfig=false&id=5  　* ユーザ名を取得後、ボタンの再表示を行うまたは検証をバイパスすることで、パスワードを変更できる URL にアクセス可能な脆弱性  その後、新しい資格情報を使用してログイン URL にアクセスすると、Enerprise Identity Cloud インスタンスへの認証に使用できる Cookie が生成されます。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Saviynt",
+          "productname": "Saviynt IGA Release",
+          "cpe": {
+            "text": "cpe:/a:saviynt:saviynt_saviynt_iga_release",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v5.5 SP2.xおよびそれ以降"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "遠隔の第三者によって、ユーザを列挙され、既存の管理者ユーザのパスワードを変更されることで認証をバイパスされる可能性があります。結果として、管理者権限で操作され、接続している他の認証システムに変更を加えられる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者は、Saviynt IGA Release v5.5 SP2.x およびそれ以降向けに、これらの問題を解決するソフトウェアのバックエンドアップデートを展開しています。ユーザは、利用しているバージョンの確認以外に特別な対策を行う必要はないとのことです。 また、SSO を利用する顧客は影響を受けるURLを通常使用しないため、開発者は追加的セキュリティ対策として、この URL へのアクセスをブロックしました。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Saviynt",
+          "vulinfoid": "Enterprise Identity Cloud",
+          "url": "https://saviynt.com/enterprise-identity-cloud/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93410694",
+          "url": "http://jvn.jp/cert/JVNVU93410694/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#692873",
+          "url": "https://kb.cert.org/vuls/id/692873"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-12-24T12:22:15+09:00",
+          "description": "[2021年12月24日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-12-24T14:25:07+09:00",
+    "datelastupdated": "2021-12-24T14:25:07+09:00",
+    "datepublic": "2021-12-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "vulinfoid": "JVNDB-2021-001289",
+  "vulinfodata": {
+    "title": "Ovarro 製 TBox における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Ovarro 社が提供する TBox は、リモートターミナルユニットです。TBoX には次の複数の脆弱性が存在します。  　* コードインジェクション (CWE-94) - CVE-2021-22646 　* 重要なリソースへの不適切なパーミッションの割り当て (CWE-732) - CVE-2021-22648 　* リソースの枯渇 (CWE-400) - CVE-2021-22642 　* 認証情報の不十分な保護 (CWE-522) - CVE-2021-22640 　* ハードコードされた暗号鍵の使用 (CWE-321) - CVE-2021-22644 　* 相対的パストラバーサル (CWE-23) - CVE-2021-22650"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Ovarro",
+          "productname": "TBox",
+          "cpe": {
+            "text": "cpe:/a:misc:ovarro_tbox",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "MS-CPU32",
+            "MS-CPU32-S2",
+            "RM2 (全モデル)",
+            "TG2 (全モデル)"
+          ]
+        },
+        {
+          "name": "Ovarro",
+          "productname": "TBoxLT2",
+          "cpe": {
+            "text": "cpe:/a:misc:ovarro_tboxlt2",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(全モデル)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、ipk パッケージを経由し、任意のコードを実行される - CVE-2021-22646 　* 遠隔の第三者によって、Modbus ファイルアクセス機能を利用し、構成情報を読み取られたり、変更や削除されたりする - CVE-2021-22648 　* 遠隔の第三者によって、細工された Modbus フレームを送信され、当該機器をサービス運用妨害 (DoS) 状態にされる - CVE-2021-22642 　* 遠隔の攻撃者によって、傍受した通信の情報をもとに総当たり攻撃 (ブルートフォースアタック) が行われることで、ログインパスワードが特定される - CVE-2021-22640 　* 遠隔の第三者によって、ハードコードされたユーザと暗号鍵を使用し、当該機器内の暗号化された情報を復号化される - CVE-2021-22644 　* 遠隔の第三者によって、細工されたプロジェクトファイルを読み込むことで、任意のコードを実行される - CVE-2021-22650"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Ovarro 社が提供する情報をもとに、以下のバージョンにアップデートしてください。  　* TWinSoft Version 12.5 およびそれ以降"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Ovarro",
+          "vulinfoid": "Customer Support",
+          "url": "https://www.ovarro.com/en/asia/contact-us/customer-support/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22648",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22648"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22650",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22650"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22640",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22640"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22642",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22642"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22644",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22644"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22646",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22646"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-054-04",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-054-04"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95598949",
+          "url": "http://jvn.jp/cert/JVNVU95598949"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-321",
+          "url": "https://cwe.mitre.org/data/definitions/321.html",
+          "title": "ハードコードされた暗号鍵の使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-400",
+          "url": "https://cwe.mitre.org/data/definitions/400.html",
+          "title": "リソースの枯渇"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-732",
+          "url": "https://cwe.mitre.org/data/definitions/732.html",
+          "title": "重要なリソースに対する不適切なパーミッションの割り当て"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-23",
+          "url": "https://cwe.mitre.org/data/definitions/23.html",
+          "title": "相対パストラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-522",
+          "url": "https://cwe.mitre.org/data/definitions/522.html",
+          "title": "認証情報の不十分な保護"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-03-25T16:07:55+09:00",
+          "description": "[2021年03月25日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-09-27T14:22:04+09:00",
+          "description": "[2021年09月27日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-2021-22650 を追加\\n  CWE による脆弱性タイプ一覧：CWE-23 を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE) (CVE-2021-22650) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-03-25T16:07:55+09:00",
+    "datelastupdated": "2021-09-27T14:50:37+09:00",
+    "datepublic": "2021-03-24T00:00:00+09:00"
+  }
+}

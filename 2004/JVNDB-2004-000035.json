@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2004-000035",
+  "vulinfodata": {
+    "title": "Apache HTTP Server の モジュールとして利用される PHP における情報漏洩の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP を Apache HTTP Server モジュールとして利用しており、php.ini と仮想ホストにおいて異なる設定を行った場合、同じ子プロセスにおいて複数の仮想ホストに対する HTTP リクエストを取り扱った際に、先にリクエストを受けた仮想ホストに対する php_admin_value/php_admin_flag の設定が、後にリクエストを受けた仮想ホストに対しても反映されてしまう脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.3 およびそれ以前",
+            "4.3.4 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本来アクセスできないファイルにアクセスされ、重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "#25753",
+          "url": "http://bugs.php.net/bug.php?id=25753"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-0263",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0263"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-0263",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0263"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "9599",
+          "url": "http://www.securityfocus.com/bid/9599"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1008973",
+          "url": "http://www.securitytracker.com/alerts/2004/Feb/1008973.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-02-07T00:00:00+09:00"
+  }
+}

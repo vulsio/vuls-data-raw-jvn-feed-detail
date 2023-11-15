@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2013-005002",
+  "vulinfodata": {
+    "title": "Linux Kernel の ipc/util.c の ipc_rcu_putref 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の ipc/util.c の ipc_rcu_putref 関数は、参照カウントを適切に管理しないため、サービス運用妨害 (メモリ消費またはシステムクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.10 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工されたアプリケーションを介して、サービス運用妨害 (メモリ消費またはシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ipc,sem: fine grained locking for semtimedop",
+          "url": "https://github.com/torvalds/linux/commit/6062a8dc0517bce23e3c2f7d2fea5e22411269a3"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "patch-3.10.bz2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/patch-3.10.bz2"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ipc,sem: fine grained locking for semtimedop",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6062a8dc0517bce23e3c2f7d2fea5e22411269a3"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1024854",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1024854"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0284",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0284.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0285",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0285.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4483",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4483"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4483",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4483"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月06日]\\n  掲載\\n[2013年11月28日]\\n  CWE による脆弱性タイプ一覧：内容を更新\\n[2015年06月09日]\\n  ベンダ情報：レッドハット (RHSA-2015:0284) を追加\\n　ベンダ情報：レッドハット (RHSA-2015:0285) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-06T17:42:34+09:00",
+    "datelastupdated": "2015-06-09T18:00:26+09:00",
+    "datepublic": "2013-05-01T00:00:00+09:00"
+  }
+}

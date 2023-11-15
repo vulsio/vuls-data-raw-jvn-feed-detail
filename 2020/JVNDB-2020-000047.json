@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2020-000047",
+  "vulinfodata": {
+    "title": "JavaFX の WebEngine コンポーネントに任意の Java メソッド実行が可能になる脆弱性",
+    "vulinfodescription": {
+      "overview": "JavaFX は Java アプリケーション向けの GUI ライブラリです。 OracleJDK のバージョン 7 からバージョン 10 までは JDK に同梱される形で提供されていました。 OracleJDK バージョン 11 以降には同梱されなくなり、OpenJDK コミュニティ傘下の OpenJFX プロジェクトによって開発が継続されています。  JavaFX に含まれる WebEngine コンポーネントは web コンテンツのレンダリング機能を提供しており、web コンテンツ中の JavaScript コードから Java メソッドを呼び出せるように設定することも可能です。 WebEngine コンポーネントには、細工された JavaScript コードから任意の Java メソッド呼び出しが可能になる脆弱性が存在します(CWE-470)。 これは、過去に Android の WebView コンポーネントに対して指摘された脆弱性 CVE-2012-6636 と同じタイプの脆弱性です。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 合同会社DMM.com 市原良平 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenJFX Project",
+          "productname": "JavaFX",
+          "cpe": {
+            "text": "cpe:/a:misc:open_jfx_project_java_fx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "14.0.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "JDK",
+          "cpe": {
+            "text": "cpe:/a:oracle:jdk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8 update 251 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "JavaFX を使用したアプリケーションが細工された web コンテンツを処理すると、当該アプリケーションの実行権限で任意の Java コードを実行させられる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] JavaFX アプリケーション開発者は、最新の JavaFX ライブラリを使用してアプリケーションを更新してください。 JavaFX アプリケーションユーザは、Java 実行環境を最新バージョンに更新してください。  OracleJDK 8 update 251 に同梱されている JavaFX および OpenJFX プロジェクトが提供する JavaFX 14.0.1 では、JavaScript から呼び出せる Java メソッドに制限を加えています。詳細はリリースノートを確認してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Release Notes for JavaFX 14.0.1",
+          "url": "https://github.com/openjdk/jfx/blob/jfx14/doc-files/release-notes-14.0.1.md#list-of-security-fixes"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "JDK 8u251 Update Release Notes",
+          "url": "https://www.oracle.com/technetwork/java/javase/8u251-relnotes-5972664.html#JDK-8236798"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#62161191",
+          "url": "https://jvn.jp/jp/JVN62161191/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-07-27T10:00:33+09:00",
+          "description": "[2020年07月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-07-28T12:04:19+09:00",
+    "datelastupdated": "2020-07-28T12:04:19+09:00",
+    "datepublic": "2020-07-28T00:00:00+09:00"
+  }
+}

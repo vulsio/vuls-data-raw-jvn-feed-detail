@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2016-005927",
+  "vulinfodata": {
+    "title": "libtiff の tif_predict.h および tif_predict.c におけるデバッグモードでのアサーションの失敗を引き起こされる脆弱性",
+    "vulinfodescription": {
+      "overview": "libtiff の tif_predict.h および tif_predict.c には、サブサンプリングを用いて YCbCr のような異常なタイルサイズを処理する場合、デバッグモードでのアサーションの失敗、またはリリースモードでのバッファオーバーフローを引き起こされる脆弱性が存在します。  本脆弱性は、MSVR 35105 として報告されました。  なお、本脆弱性は \"\"Predictor heap-buffer-overflow\" と呼ばれています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "LibTIFF",
+          "productname": "LibTIFF",
+          "cpe": {
+            "text": "cpe:/a:libtiff_project:libtiff",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "デバッグモードでのアサーションの失敗、またはリリースモードでのバッファオーバーフローを引き起こされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "* libtiff/tif_predict.h, libtiff/tif_predict.c: ",
+          "url": "https://github.com/vadz/libtiff/commit/3ca657a8793dd011bf869695d72ad31c779c3cc1"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "* libtiff/tif_predic.c: fix memory leaks in error code paths added in previous commit (fix for MSVR 35105)",
+          "url": "https://github.com/vadz/libtiff/commit/6a984bf7905c6621281588431f384e79d11a2e33"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9535",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9535"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9535",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9535"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年11月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-11-25T16:47:27+09:00",
+    "datelastupdated": "2016-11-25T16:47:27+09:00",
+    "datepublic": "2016-11-04T00:00:00+09:00"
+  }
+}

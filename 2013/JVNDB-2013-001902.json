@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2013-001902",
+  "vulinfodata": {
+    "title": "自動バグ報告ツール (ABRT) における任意の Python モジュールをロードおよび実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "自動バグ報告ツール (Automatic Bug Reporting Tool、略称 ABRT) の plugins/abrt-action-install-debuginfo-to-abrt-cache.c には、検索パスに関する処理に不備があるため、任意の Python モジュールをロードおよび実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-426: Untrusted Search Path (信頼性のない検索パス) と識別されています。 http://cwe.mitre.org/data/definitions/426.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "自動バグ報告ツール",
+          "cpe": {
+            "text": "cpe:/a:redhat:automatic_bug_reporting_tool",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(ABRT) 2.0.9 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.7",
+          "vector": "AV:L/AC:H/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、悪意のある Python モジュールを参照するように PYTHONPATH 環境変数を変更されることで、任意の Python モジュールをロードおよび実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Hosted",
+          "vulinfoid": "abrt-action-install-debuginfo-to-abrt-cache: clear entire environment",
+          "url": "http://git.fedorahosted.org/cgit/abrt.git/commit/?id=b173d81b577953b96a282167c7eecd66bf111a4f"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 854011",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=854011"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:0215",
+          "url": "https://rhn.redhat.com/errata/RHSA-2013-0215.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-5659",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5659"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-5659",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-5659"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-21T16:26:18+09:00",
+    "datelastupdated": "2013-03-21T16:26:18+09:00",
+    "datepublic": "2013-01-31T00:00:00+09:00"
+  }
+}

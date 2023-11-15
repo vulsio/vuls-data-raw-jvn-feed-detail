@@ -1,0 +1,139 @@
+{
+  "vulinfoid": "JVNDB-2021-003350",
+  "vulinfodata": {
+    "title": "三菱電機製 GENESIS64 および MC Works64 の AutoCAD (DWG) ファイルのインポート機能における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する GENESIS64 および MC Works64 の AutoCAD (DWG) ファイルのインポート機能には、次の複数の脆弱性が存在します。  　* 境界外読み取り (CWE-125) - CVE-2021-27040 　* 境界外書き込み (CWE-787) - CVE-2021-27041  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "GENESIS64",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:genesis64",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.97"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MC Works64",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:mc_works64",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.04E およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "* 第三者によって細工された AutoCAD (DWG) ファイルを当該製品にインポートすることで、情報が漏えいする - CVE-2021-27040 * 第三者によって細工された AutoCAD (DWG) ファイルを当該製品にインポートすることで、任意のプログラムが実行される - CVE-2021-27041"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] GENESIS64 および MC Works64 のセキュリティパッチを使用し、ソフトウェアを更新してください。 セキュリティパッチの入手方法等の詳細は、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-017.pdf\" target=\"blank\">開発者が提供する情報</a>をご確認ください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 制御システムネットワークとリモートデバイスをファイアウォールでブロックし、ビジネスネットワークから分離する 　* 制御システムデバイスやシステムのネットワークに対し、信頼できないネットワークやホストからのアクセスを制限する 　* 不審なメールに記載された URL をクリックしたり、添付された不審なファイルを開いたりしない  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-017.pdf\" target=\"blank\">開発者が提供する情報</a>をご確認ください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "GENESIS64およびMC Works64のAutoCAD(DWG)ファイルのインポート機能における情報漏えいと悪意あるプログラムが実行される脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-017.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27040",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27040"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27041",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27041"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-294-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-294-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94862669",
+          "url": "http://jvn.jp/cert/JVNVU94862669/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-27040",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-27040"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-27041",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-27041"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ADSK-SA-2021-0004:Vulnerabilities in the Autodesk AutoCAD family of products",
+          "url": "https://www.autodesk.com/trust/security-advisories/adsk-sa-2021-0004"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-787",
+          "url": "https://cwe.mitre.org/data/definitions/787.html",
+          "title": "境界外書き込み"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-10-25T12:04:40+09:00",
+          "description": "[2021年10月25日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-11-26T11:36:18+09:00",
+          "description": "[2021年11月26日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  想定される影響：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-2021-27040 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-27040) を追加\\n  CWE による脆弱性タイプ一覧：CWE-125 を追加\\n"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-10-25T13:41:55+09:00",
+    "datelastupdated": "2021-11-26T11:40:02+09:00",
+    "datepublic": "2021-10-22T00:00:00+09:00"
+  }
+}

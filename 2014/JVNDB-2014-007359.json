@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2014-007359",
+  "vulinfodata": {
+    "title": "Piwigo の include/functions_rate.inc.php の rate_picture 関数における SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Piwigo の include/functions_rate.inc.php の rate_picture 関数には、数字で始まる非数値の比較において不適切なデータ型に関する処理に不備があるため、SQL インジェクションの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Piwigo",
+          "productname": "Piwigo",
+          "cpe": {
+            "text": "cpe:/a:piwigo:piwigo",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.5 未満",
+            "2.6.4 未満の 2.6.x",
+            "2.7.2 未満の 2.7.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、picture.php の rate パラメータを介して、任意の SQL コマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Piwigo",
+          "vulinfoid": "Piwigo 2.7.2 Release Notes",
+          "url": "http://piwigo.org/releases/2.7.2"
+        },
+        {
+          "type": "vendor",
+          "name": "Piwigo",
+          "vulinfoid": "Piwigo 2.7.2, 2.6.4, 2.5.5, security bug fixed",
+          "url": "http://piwigo.org/forum/viewtopic.php?id=24850"
+        },
+        {
+          "type": "vendor",
+          "name": "Piwigo",
+          "vulinfoid": "Changeset 30563 for trunk/include/functions_rate.inc.php",
+          "url": "http://piwigo.org/dev/changeset/30563/trunk/include/functions_rate.inc.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9115",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9115"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9115",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9115"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-24T17:18:15+09:00",
+    "datelastupdated": "2014-12-24T17:18:15+09:00",
+    "datepublic": "2014-11-21T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2013-005186",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/netfilter/ipvs/ip_vs_ctl.c におけるスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/netfilter/ipvs/ip_vs_ctl.c には、CONFIG_IP_VS が使用されている場合、スタックベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.33 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "AV:L/AC:M/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、(1) do_ip_vs_get_ctl 関数に関連した getsockopt システムコール、または (2) do_ip_vs_set_ctl 関数に関連した setsockopt システムコールについての CAP_NET_ADMIN ケーパビリティを利用されることで、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.33",
+          "url": "http://ftp.linux.org.uk/pub/linux/linux-2.6/ChangeLog-2.6.33"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ipvs: Add boundary check on ioctl arguments",
+          "url": "https://github.com/torvalds/linux/commit/04bcef2a83f40c6db24222b27a52892cba39dffb"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ipvs: Add boundary check on ioctl arguments",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=04bcef2a83f40c6db24222b27a52892cba39dffb"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1030800",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1030800"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4588",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4588"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4588",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4588"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-21T15:55:42+09:00",
+    "datelastupdated": "2013-11-21T15:55:42+09:00",
+    "datepublic": "2013-11-15T00:00:00+09:00"
+  }
+}

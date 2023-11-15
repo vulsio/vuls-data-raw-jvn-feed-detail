@@ -1,0 +1,155 @@
+{
+  "vulinfoid": "JVNDB-2015-007190",
+  "vulinfodata": {
+    "title": "dosfstools の fat.c の set_fat 関数における FAT12 ファイルシステムを破損される脆弱性",
+    "vulinfodescription": {
+      "overview": "dosfstools の fat.c の set_fat 関数には、FAT12 ファイルシステムを破損される、またはサービス運用妨害 (不正なメモリ読み込みおよびクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "15.10",
+            "16.04 LTS"
+          ]
+        },
+        {
+          "name": "dosfstools project",
+          "productname": "dosfstools",
+          "cpe": {
+            "text": "cpe:/a:dosfstools_project:dosfstools",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.2"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.2",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、FAT12 ファイルシステム上の最後から三番目のエントリへの奇数クラスタの書き込みを介して、二つずれエラー (off-by-two error) を誘発されることで、FAT12 ファイルシステムを破損される、またはサービス運用妨害 (不正なメモリ読み込みおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "fsck.vfat invalid memory access in get_fat #12",
+          "url": "https://github.com/dosfstools/dosfstools/issues/12"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "set_fat(): Fix off-by-2 error leading to corruption in FAT12",
+          "url": "https://github.com/dosfstools/dosfstools/commit/07908124838afcc99c577d1d3e84cef2dbd39cb7"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "dosfstools 4.0",
+          "url": "https://github.com/dosfstools/dosfstools/releases/tag/v4.0"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:1461",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-06/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2986-1",
+          "url": "http://www.ubuntu.com/usn/USN-2986-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8872",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8872"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8872",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8872"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年06月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-06-06T16:04:27+09:00",
+    "datelastupdated": "2016-06-06T16:04:27+09:00",
+    "datepublic": "2015-09-12T00:00:00+09:00"
+  }
+}

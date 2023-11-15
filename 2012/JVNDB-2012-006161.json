@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2012-006161",
+  "vulinfodata": {
+    "title": "Apache CouchDB で使用される MochiWeb の mochiweb_util.erl の partition2 関数におけるディレクトリトラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache CouchDB で使用される MochiWeb の mochiweb_util.erl の partition2 関数には、ディレクトリトラバーサルの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache CouchDB",
+          "cpe": {
+            "text": "cpe:/a:apache:couchdb",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.4 未満",
+            "1.1.2 未満の 1.1.x",
+            "1.2.1 未満の 1.2.x"
+          ]
+        },
+        {
+          "name": "Mochi Media",
+          "productname": "MochiWeb",
+          "cpe": {
+            "text": "cpe:/a:mochiweb_project:mochiweb",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、デフォルト URI 内の ..\\ (ドットドットバックスラッシュ) を介して、任意のファイルを読まれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache CouchDB",
+          "vulinfoid": "Top Page",
+          "url": "http://couchdb.apache.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Issue 92: Do not allow backslashes in path (security).",
+          "url": "https://github.com/melkote/mochiweb/commit/ac2bf"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Using backslash on Path, arbitrary files can be accessed on Windows #92",
+          "url": "https://github.com/mochi/mochiweb/issues/92"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-5641",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5641"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-5641",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-5641"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE-2012-5641 Apache CouchDB Information disclosure via unescaped backslashes in URLs on Windows",
+          "url": "http://seclists.org/fulldisclosure/2013/Jan/81"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年03月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-03-20T19:18:35+09:00",
+    "datelastupdated": "2014-03-20T19:18:35+09:00",
+    "datepublic": "2012-12-14T00:00:00+09:00"
+  }
+}

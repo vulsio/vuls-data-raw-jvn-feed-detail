@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-001995",
+  "vulinfodata": {
+    "title": "elfutils で使用される libdw ライブラリの dwarf_begin_elf.c 内の check_section 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "elfutils で使用される libdw ライブラリの dwarf_begin_elf.c 内の check_section 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "elfutils Project",
+          "productname": "elfutils",
+          "cpe": {
+            "text": "cpe:/a:elfutils_project:elfutils",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.153 から 0.158"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、ELF ファイル内の不正な形式に圧縮されたデバッグセクションを介して、ヒープベースのバッファオーバーフローを誘発されることで、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "elfutils Project",
+          "vulinfoid": "[PATCH] CVE-2014-0172 Check for overflow before calling malloc to uncompress data.",
+          "url": "https://lists.fedorahosted.org/pipermail/elfutils-devel/2014-April/003921.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1085663",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1085663"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-0172",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0172"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-0172",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0172"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-16T10:52:26+09:00",
+    "datelastupdated": "2014-04-16T10:52:26+09:00",
+    "datepublic": "2014-04-09T00:00:00+09:00"
+  }
+}

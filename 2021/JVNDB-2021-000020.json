@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2021-000020",
+  "vulinfodata": {
+    "title": "MagicConnect クライアントプログラムのインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "NTTテクノクロス株式会社が提供する MagicConnect クライアントプログラムのインストーラには、リモートデスクトップを用いて遠隔から接続している端末内において、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 東内裕二 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "NTTテクノクロス株式会社",
+          "productname": "MagicConnect",
+          "cpe": {
+            "text": "cpe:/a:misc:ntt_technocross_magicconnect",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "クライアントプログラムの、2021年3月1日より前に配布されたインストーラ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 2021年3月1日より前に当該製品のインストーラをダウンロードしたユーザは、開発者が提供する情報をもとに、最新のインストーラを使用してください。 また、インストーラを実行する際には、インストーラと同じディレクトリに不審なファイルがないことを確認してください。  なお、本脆弱性を悪用される可能性があるのはインストーラの起動時のみです。すでに製品をインストールしている場合、再インストールする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "NTTテクノクロス株式会社",
+          "vulinfoid": "クライアントアプリケーション インストーラを更新しました",
+          "url": "https://www.magicconnect.net/information/202103110900-2"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20674",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20674"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#18056666",
+          "url": "https://jvn.jp/jp/JVN18056666/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-03-08T10:12:31+09:00",
+          "description": "[2021年03月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-03-11T12:05:40+09:00",
+    "datelastupdated": "2021-03-11T12:05:40+09:00",
+    "datepublic": "2021-03-11T00:00:00+09:00"
+  }
+}

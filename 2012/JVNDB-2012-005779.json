@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2012-005779",
+  "vulinfodata": {
+    "title": "Fetchmail におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Fetchmail は、デバッグモードで NTLM 認証を使用する場合、(1) サービス運用妨害 (クラッシュおよび受信メールの遅延配信) 状態となる、または (2) メモリから重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fetchmail Project",
+          "productname": "Fetchmail",
+          "cpe": {
+            "text": "cpe:/a:fetchmail:fetchmail",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0.8 から 6.3.21"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の NTLM サーバにより、(1) base64 デコーダの領域外メモリの読み込み (out-of-bounds read) を誘発する巧妙に細工された NTLM 応答を介して、サービス運用妨害 (クラッシュおよび受信メールの遅延配信) 状態にされる、または (2) 巧妙に細工された Target Name 構造を持つ NTLM Type 2 メッセージを介して、メモリから重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2012-14462",
+          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-October/088836.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Fetchmail",
+          "vulinfoid": "fetchmail-SA-2012-02",
+          "url": "http://www.fetchmail.info/fetchmail-SA-2012-02.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in fetchmail",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_fetchmail"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-3482",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3482"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-3482",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3482"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-25T14:11:05+09:00",
+    "datelastupdated": "2012-12-25T14:11:05+09:00",
+    "datepublic": "2012-08-13T00:00:00+09:00"
+  }
+}

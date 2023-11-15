@@ -1,0 +1,94 @@
+{
+  "vulinfoid": "JVNDB-2015-006980",
+  "vulinfodata": {
+    "title": "MIT Kerberos 5 の kadmind の lib/kadm5/srv/svr_principal.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos 5 (別名 krb5) の kadmind の lib/kadm5/srv/svr_principal.c の (1) kadm5_create_principal_3 および (2) kadm5_modify_principal 関数には、サービス運用妨害 (NULL ポインタデリファレンスおよびデーモンクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 1.12.x",
+            "5 1.13.4 未満の 1.13.x",
+            "5 1.14.1 未満の 1.14.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、NULL ポリシー名の KADM5_POLICY を特定されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびデーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Check for null kadm5 policy name [CVE-2015-8630]",
+          "url": "https://github.com/krb5/krb5/commit/b863de7fbf080b15e347a736fdda0a82d42f4f6b"
+        },
+        {
+          "type": "vendor",
+          "name": "RT/krbdev.mit.edu",
+          "vulinfoid": "Ticket #8342 Check for null kadm5 policy name [CVE-2015-8630]",
+          "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8342"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8630",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8630"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8630",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8630"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-11T15:41:51+09:00",
+    "datelastupdated": "2016-03-11T15:41:51+09:00",
+    "datepublic": "2015-12-23T00:00:00+09:00"
+  }
+}

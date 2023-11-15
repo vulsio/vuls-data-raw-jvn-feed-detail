@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2022-002017",
+  "vulinfodata": {
+    "title": "U-Boot の squashfs ファイルシステム実装にヒープベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "U-Bootは、複数のプラットフォームに対応したブートローダです。バージョンv2020.10-rc2以降ではsquashfsファイルシステムに対応しています（Commit c5100613）。U-Bootのsquashfsファイルシステム実装には、メタデータ読み込み処理の不備に起因するヒープベースのバッファオーバーフロー（CWE-122）の脆弱性が存在します。  この脆弱性情報は、下記の方が JPCERT/CC に報告し、 JPCERT/CC が開発者との調整を仲介しました。 報告者: ソニー株式会社 安松 達彦 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "DENX Software Engineering",
+          "productname": "U-Boot",
+          "cpe": {
+            "text": "cpe:/a:denx:u-boot",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            " v2020.10-rc2 から v2022.07-rc5 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "CVSS:3.0/AV:P/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された squashfs イメージをロードすることで、任意のコードを実行されたり、サービス運用妨害（DoS）攻撃を受けたりする可能性があります。  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性の修正はバージョンv2022.07-rc6に取り込まれています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "DENX Software Engineering",
+          "vulinfoid": "U-Boot",
+          "url": "https://www.denx.de/project/u-boot/"
+        },
+        {
+          "type": "vendor",
+          "name": "DENX Software Engineering",
+          "vulinfoid": "U-Boot mailing list: [v2] fs/squashfs: Use kcalloc when relevant",
+          "url": "https://lists.denx.de/pipermail/u-boot/2022-June/487467.html"
+        },
+        {
+          "type": "vendor",
+          "name": "DENX Software Engineering",
+          "vulinfoid": "Commit 7f7fb993: fs/squashfs: Use kcalloc when relevant",
+          "url": "https://source.denx.de/u-boot/u-boot/-/commit/7f7fb9937c6cb49dd35153bd6708872b390b0a44"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-33967",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-33967"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97846460",
+          "url": "http://jvn.jp/vu/JVNVU97846460/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-122",
+          "url": "https://cwe.mitre.org/data/definitions/122.html",
+          "title": "ヒープベースのバッファオーバーフロー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-07-14T12:30:18+09:00",
+          "description": "[2022年07月14日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-07-25T18:28:19+09:00",
+          "description": "[2022年07月25日]\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  対策：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-07-14T12:30:18+09:00",
+    "datelastupdated": "2022-07-25T18:30:09+09:00",
+    "datepublic": "2022-07-12T00:00:00+09:00"
+  }
+}

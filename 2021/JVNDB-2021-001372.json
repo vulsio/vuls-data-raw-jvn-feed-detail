@@ -1,0 +1,129 @@
+{
+  "vulinfoid": "JVNDB-2021-001372",
+  "vulinfodata": {
+    "title": "ジェイテクト製 TOYOPUC シリーズにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社ジェイテクトが提供する TOYOPUC シリーズは、プログラマブルロジックコントローラ (PLC) です。当該製品にはサービス運用妨害 (DoS) (CWE-404、CVE-2021-27458) の脆弱性が存在します。 当該製品は特定設定のイーサネット通信において、切断時に正常にクローズしなかった場合や接続状態で放置された場合もコネクションがリセットされません。コネクションをリセットするためには、当該製品の再起動が必要です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社ジェイテクト",
+          "productname": "TOYOPUC-PC10 Series",
+          "cpe": {
+            "text": "cpe:/h:misc:jtekt_toyopuc-pc10_series",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "PC10B TCC-1021 すべてのバージョン",
+            "PC10B-E/C TCU-6521 すべてのバージョン",
+            "PC10B-P TCC-6373 すべてのバージョン",
+            "PC10E TCC-4737 すべてのバージョン",
+            "PC10G-CPU TCC-6353 すべてのバージョン",
+            "PC10GE TCC-6464 すべてのバージョン",
+            "PC10P TCC-6372 すべてのバージョン",
+            "PC10P-DP TCC-6726 すべてのバージョン",
+            "PC10P-DP-IO TCC-6752 すべてのバージョン"
+          ]
+        },
+        {
+          "name": "株式会社ジェイテクト",
+          "productname": "TOYOPUC-PC3J/PC2J Series",
+          "cpe": {
+            "text": "cpe:/h:misc:jtekt_toyopuc-pc3j_pc2j_series",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2PORT-EFR THU-6404 すべてのバージョン",
+            "FL/ET-T-V2H THU-6289 すべてのバージョン"
+          ]
+        },
+        {
+          "name": "株式会社ジェイテクト",
+          "productname": "TOYOPUC-Plus Series",
+          "cpe": {
+            "text": "cpe:/h:misc:jtekt_toyopuc-plus_series",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Plus 2P-EFR TCU-6929 すべてのバージョン",
+            "Plus BUS-EX TCU-6900 すべてのバージョン",
+            "Plus CPU TCC-6740 すべてのバージョン",
+            "Plus EFR TCU-6743 すべてのバージョン",
+            "Plus EFR2 TCU-6859 すべてのバージョン",
+            "Plus EX TCU-6741 すべてのバージョン",
+            "Plus EX2 TCU-6858 すべてのバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、イーサネット通信のコネクションが正常にクローズされず、新たに他の機器とのイーサネット通信が確立できなくなる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 開発者によると、次の回避策を適用することで、本脆弱性の影響を軽減することが可能とのことです。  　* リンクパラメータ「無受信タイマ」を有効に設定する 　　（リンクパラメータを反映させるためには再起動が必要です。）  また開発者は、次のような一般的なセキュリティ設定とネットワーク管理を実施することを推奨しています。  　* ファイアウォール等で保護されたネットワーク内に製品を設置する 　* 当該システムのネットワークをファイアウォール等で業務ネットワークから分離して運用する 　* 外部からのアクセスが必要な場合、VPN 等の安全な方法でアクセスする。VPN ソフトウエアは最新の状態に保つ 　* 制御システム機器のネットワークへの接続を最小限にし、インターネットに直接接続しない "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社ジェイテクト",
+          "vulinfoid": "脆弱性に関する情報",
+          "url": "https://toyoda.jtekt.co.jp/products/toyopuc/vulnerability.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27458",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27458"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-103-03",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-103-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92524237",
+          "url": "http://jvn.jp/cert/JVNVU92524237"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-404",
+          "url": "https://cwe.mitre.org/data/definitions/404.html",
+          "title": "リソースの不適切なシャットダウンおよびリリース"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-04-16T16:27:38+09:00",
+          "description": "[2021年04月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-04-16T16:27:38+09:00",
+    "datelastupdated": "2021-04-16T16:27:38+09:00",
+    "datepublic": "2021-04-15T00:00:00+09:00"
+  }
+}

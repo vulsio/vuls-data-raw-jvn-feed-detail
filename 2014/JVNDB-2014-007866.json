@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-007866",
+  "vulinfodata": {
+    "title": "FreeType の pcf/pcfread.c 内の pcf_get_properties 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeType の pcf/pcfread.c 内の pcf_get_properties 関数には、一つずれエラー (Off-by-One error) により、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeType Project",
+          "productname": "FreeType",
+          "cpe": {
+            "text": "cpe:/a:freetype:freetype",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、適切にインクリメントされない 0xFFFFFFFF のサイズ値を持つ巧妙に細工された PCF ファイルを介して、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "freetype",
+          "vulinfoid": "Fix Savannah bug #43547.",
+          "url": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=0e2f5d518c60e2978f26400d110eff178fa7e3c3"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0696",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0696.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9671",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9671"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9671",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9671"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0083",
+          "url": "http://advisories.mageia.org/MGASA-2015-0083.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年02月17日]\\n  掲載\\n[2015年06月26日]\\n  ベンダ情報：レッドハット (RHSA-2015:0696) を追加\\n  参考情報：関連文書 (MGASA-2015-0083) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-02-17T09:47:10+09:00",
+    "datelastupdated": "2015-06-26T16:27:17+09:00",
+    "datepublic": "2014-11-06T00:00:00+09:00"
+  }
+}

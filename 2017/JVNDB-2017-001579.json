@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2017-001579",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/ipv4/ip_sockglue.c の ipv4_pktinfo_prepare 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/ipv4/ip_sockglue.c の ipv4_pktinfo_prepare 関数には、サービス運用妨害 (システムクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.9.9 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、(1) 巧妙に細工されたシステムコールを実行するアプリケーション、または (2) 無効な IP オプションを伴う IPv4 トラフィックを介して、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ipv4: keep skb->dst around in presence of IP options",
+          "url": "https://github.com/torvalds/linux/commit/34b2cef20f19c87999fff3da4071e66937db9644"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ipv4: keep skb->dst around in presence of IP options",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=34b2cef20f19c87999fff3da4071e66937db9644"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1421638",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1421638"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-5970",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5970"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-5970",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-5970"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[PATH,net] ipv4: keep skb->dst around in presence of IP options",
+          "url": "https://patchwork.ozlabs.org/patch/724136/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-284",
+          "url": "https://cwe.mitre.org/data/definitions/284.html",
+          "title": "不適切なアクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-06T12:08:40+09:00",
+    "datelastupdated": "2017-03-06T12:08:40+09:00",
+    "datepublic": "2017-02-05T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2023-002192",
+  "vulinfodata": {
+    "title": "Apache Tomcat における情報漏えいの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tomcat には、情報漏えいの脆弱性が存在します。  Apache Tomcat の <a href=\"https://bz.apache.org/bugzilla/show_bug.cgi?id=66512\"target=\"blank\">バグ66512</a> の修正により発生したリグレッションが、<a href=\"https://bz.apache.org/bugzilla/show_bug.cgi?id=66591\"target=\"blank\">バグ66591</a> として報告され修正されました。 このリグレッションには、レスポンスに HTTP ヘッダが設定されていない場合、AJP SEND_HEADERS メッセージが送信されない問題があります。これにより少なくともひとつの AJP ベースのプロキシ（mod_proxy_ajp）で、該当するリクエストに対し以前のリクエストのレスポンスヘッダが使用されるという問題（CVE-2023-34981）があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.1.8",
+            "11.0.0-M5",
+            "8.5.88",
+            "9.0.74"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "本リグレッションにより発生した問題によって、レスポンスヘッダの情報が漏えいする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者によると、本脆弱性は次のバージョンで修正されているとのことです。  　* Apache Tomcat 11.0.0-M6 およびそれ以降のバージョン 　* Apache Tomcat 10.1.9 およびそれ以降のバージョン 　* Apache Tomcat 9.0.75 およびそれ以降のバージョン 　* Apache Tomcat 8.5.89 およびそれ以降のバージョン "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 9.0.75",
+          "url": "https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.75"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 8.5.89",
+          "url": "https://tomcat.apache.org/security-8.html#Fixed_in_Apache_Tomcat_8.5.89"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 11.0.0-M6",
+          "url": "https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.0-M6"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 10.1.9",
+          "url": "https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.9"
+        },
+        {
+          "type": "vendor",
+          "name": "ASF Bugzilla",
+          "vulinfoid": "Bug 66512",
+          "url": "https://bz.apache.org/bugzilla/show_bug.cgi?id=66512"
+        },
+        {
+          "type": "vendor",
+          "name": "ASF Bugzilla",
+          "vulinfoid": "Bug 66591",
+          "url": "https://bz.apache.org/bugzilla/show_bug.cgi?id=66591"
+        },
+        {
+          "type": "vendor",
+          "name": "Pony Mail",
+          "vulinfoid": "[SECURITY] CVE-2023-34981 Apache Tomcat - Information disclosure",
+          "url": "https://lists.apache.org/thread/j1ksjh9m9gx1q60rtk1sbzmxhvj5h5qz"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-34981",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-34981"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92908681",
+          "url": "http://jvn.jp/vu/JVNVU92908681/index.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-06-23T10:43:05+09:00",
+          "description": "[2023年06月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-06-23T10:43:05+09:00",
+    "datelastupdated": "2023-06-23T10:43:05+09:00",
+    "datepublic": "2023-06-22T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2012-002591",
+  "vulinfodata": {
+    "title": "NUT の upsd 内の common/parseconf.c の addchar 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Network UPS Tools (NUT) の upsd 内の common/parseconf.c の addchar 関数には、バッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Network UPS Tools",
+          "productname": "NUT",
+          "cpe": {
+            "text": "cpe:/a:networkupstools:nut",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、非印字文字 (non-printable characters) を含む過度に長い文字列を介して、任意のコードを実行される、またはサービス運用妨害 (電力供給停止) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Alioth",
+          "vulinfoid": "[#313636] upsd crashes if it receives random data",
+          "url": "http://alioth.debian.org/tracker/?func=detail&aid=313636"
+        },
+        {
+          "type": "vendor",
+          "name": "Network UPS Tools",
+          "vulinfoid": "Changeset 3633",
+          "url": "http://trac.networkupstools.org/projects/nut/changeset/3633"
+        },
+        {
+          "type": "vendor",
+          "name": "Network UPS Tools",
+          "vulinfoid": "I.1.A Changes from 2.6.3 to 2.6.4",
+          "url": "http://networkupstools.org/docs/user-manual.chunked/apis01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2012:1069",
+          "url": "http://lists.opensuse.org/opensuse-updates/2012-08/msg00049.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2012:087",
+          "url": "http://www.mandriva.com/en/support/security/advisories/?name=MDVSA-2012:087"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2944",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2944"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2944",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2944"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月05日]\\n  掲載\\n[2012年06月27日]\\n  ベンダ情報：Mandriva, Inc. (MDVSA-2012:087) を追加\\n[2012年09月14日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1069) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-05T11:27:04+09:00",
+    "datelastupdated": "2012-09-14T11:00:05+09:00",
+    "datepublic": "2012-05-29T00:00:00+09:00"
+  }
+}

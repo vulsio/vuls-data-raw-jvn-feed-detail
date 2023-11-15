@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2014-005976",
+  "vulinfodata": {
+    "title": "複数の X.Org 製品の XVideo エクステンションにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "XFree86、X.Org X Window System (別名 X11 または X)、および X.Org Server (別名 xserver および xorg-server) の XVideo エクステンションには、サービス運用妨害 (out-of-bounds read および out-of-bounds write) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "X.Org Foundation",
+          "productname": "X Window System",
+          "cpe": {
+            "text": "cpe:/a:x.org:x_window_system",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "X11R6.7"
+          ]
+        },
+        {
+          "name": "X.Org Foundation",
+          "productname": "X.Org Server",
+          "cpe": {
+            "text": "cpe:/a:x.org:xorg-server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.16.3 未満"
+          ]
+        },
+        {
+          "name": "XFree86 Project",
+          "productname": "XFree86",
+          "cpe": {
+            "text": "cpe:/a:xfree86_project:xfree86",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、以下の関数に対する巧妙に細工された length 値または index 値を介して、サービス運用妨害 (out-of-bounds read および out-of-bounds write) 状態にされる、または任意のコードを実行される可能性があります。  (1) SProcXvQueryExtension (2) SProcXvQueryAdaptors (3) SProcXvQueryEncodings (4) SProcXvGrabPort (5) SProcXvUngrabPort (6) SProcXvPutVideo (7) SProcXvPutStill (8) SProcXvGetVideo (9) SProcXvGetStill (10) SProcXvPutImage (11) SProcXvShmPutImage (12) SProcXvSelectVideoNotify (13) SProcXvSelectPortNotify (14) SProcXvStopVideo (15) SProcXvSetPortAttribute (16) SProcXvGetPortAttribute (17) SProcXvQueryBestSize (18) SProcXvQueryPortAttributes (19) SProcXvQueryImageAttributes (20) SProcXvListImageFormats"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "X.Org Security Advisory",
+          "vulinfoid": "Advisory-2014-12-09",
+          "url": "http://www.x.org/wiki/Development/Security/Advisory-2014-12-09/"
+        },
+        {
+          "type": "vendor",
+          "name": "XFree86",
+          "vulinfoid": "Top Page",
+          "url": "http://www.xfree86.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8099",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8099"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8099",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8099"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2014-0532",
+          "url": "http://advisories.mageia.org/MGASA-2014-0532.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月15日]\\n  掲載\\n[2015年06月04日]\\n  参考情報：関連文書 (MGASA-2014-0532) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-15T18:58:43+09:00",
+    "datelastupdated": "2015-06-04T16:59:09+09:00",
+    "datepublic": "2014-12-09T00:00:00+09:00"
+  }
+}

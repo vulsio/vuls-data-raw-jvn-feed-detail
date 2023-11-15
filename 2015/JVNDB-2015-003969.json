@@ -1,0 +1,181 @@
+{
+  "vulinfoid": "JVNDB-2015-003969",
+  "vulinfodata": {
+    "title": "Openssh の sshd の auth2-chall.c 内の kbdint_next_device 関数における総当り攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Openssh の sshd の auth2-chall.c 内の kbdint_next_device 関数は、単一コネクション内のキーボード対話 (keyboard-interactive) デバイスの処理を適切に制限しないため、総当たり (brute-force) 攻撃を実行される、またはサービス運用妨害 (CPU 資源の消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenBSD",
+          "productname": "OpenSSH",
+          "cpe": {
+            "text": "cpe:/a:openbsd:openssh",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.9 まで"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.4"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Integrated Lights Out Manager",
+          "cpe": {
+            "text": "cpe:/o:oracle:integrated_lights_out_manager_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0",
+            "3.1",
+            "3.2"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "BIG-IP",
+          "cpe": {
+            "text": "cpe:/h:hitachi:bigip",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1500"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、ssh の -oKbdInteractiveDevices オプションの過度に長く重複したリストを介して、総当たり (brute-force) 攻撃を実行される、またはサービス運用妨害 (CPU 資源の消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205031",
+          "url": "https://support.apple.com/en-us/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205031",
+          "url": "https://support.apple.com/ja-jp/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenBSD",
+          "vulinfoid": "CVS log for src/usr.bin/ssh/auth2-chall.c",
+          "url": "http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/auth2-chall.c"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenBSD",
+          "vulinfoid": "Diff for /src/usr.bin/ssh/auth2-chall.c between version 1.42 and 1.43",
+          "url": "http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/auth2-chall.c.diff?r1=1.42&r2=1.43&f=h"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "July 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "サーバ・クライアント製品セキュリティ情報",
+          "vulinfoid": "OpenSSHの脆弱性(CVE-2015-5600)によるBIG-IP1500への影響について",
+          "url": "http://www.hitachi.co.jp/products/it/server/security/info/vulnerable/openssh_cve20155600_big.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5600",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5600"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5600",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5600"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE Request for OpenSSH vulnerability - authentication limits bypass",
+          "url": "http://openwall.com/lists/oss-security/2015/07/23/4"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月04日]\\n  掲載\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n  ベンダ情報：アップル (HT205031) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加\\n[2015年12月16日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (OpenSSHの脆弱性(CVE-2015-5600)によるBIG-IP1500への影響について)による影響について) を追加\\n[2016年07月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-04T16:22:45+09:00",
+    "datelastupdated": "2016-07-27T16:30:25+09:00",
+    "datepublic": "2015-07-18T00:00:00+09:00"
+  }
+}

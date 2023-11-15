@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2022-001962",
+  "vulinfodata": {
+    "title": "ruby-mysql におけるファイル参照に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "ruby-mysql は Ruby プログラムから MySQL を操作するためのライブラリです。ruby-mysql には、MySQL サーバからクライアント側のローカルファイルに適切な認可処理を経ずにアクセスすることが可能となる脆弱性（CWE-610）が存在します。  この脆弱性は次の方が発見し、Rapid7 へ報告しました。 その後 Rapid7 が CERT/CC ならびに JPCERT/CC を含めて開発者との調整を行い、JPCERT/CC は製品利用者への周知を目的に JVN での公表に至りました。  報告者: MOGWAI LABS GmbH Hans-Martin Munch 氏 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "tommy",
+          "productname": "ruby-mysql",
+          "cpe": {
+            "text": "cpe:/a:misc:tommy_ruby_mysql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.10.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者が運用する MySQL サーバに接続したクライアント上において、クライアントの ruby-mysql が動作するプログラムによりアクセス可能な範囲で、任意のファイルを読み取られ、データを不正に窃取される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "tommy",
+          "vulinfoid": "ruby-mysql",
+          "url": "https://rubygems.org/gems/ruby-mysql/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-3779",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-3779"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92799903",
+          "url": "http://jvn.jp/vu/JVNVU92799903/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-610",
+          "url": "http://cwe.mitre.org/data/definitions/610.html",
+          "title": "別領域リソースに対する外部からの制御可能な参照"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-06-30T11:54:40+09:00",
+          "description": "[2022年06月30日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-06-30T13:43:25+09:00",
+    "datelastupdated": "2022-06-30T13:43:25+09:00",
+    "datepublic": "2022-06-29T00:00:00+09:00"
+  }
+}

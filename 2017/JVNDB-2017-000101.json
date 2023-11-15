@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2017-000101",
+  "vulinfodata": {
+    "title": "航空自衛隊が提供するスクリーンセーバーのインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "航空自衛隊が提供するスクリーンセーバーのインストーラには、実行時に読み込む DLL の検索パスに不備があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "航空自衛隊",
+          "productname": "スクリーンセーバー",
+          "cpe": {
+            "text": "cpe:/a:jasdf:screensavers",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "次の条件を満たす場合に脆弱性が悪用されます。脆弱性が悪用された場合、当該インストーラを実行している権限で、任意のコードを実行される可能性があります。 ・細工された DLL が何らかの方法で同一ディレクトリに配置されている。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[当該スクリーンセーバーをインストールしない] 当該製品のインストーラの配布は既に終了しています。当該製品をインストールしないでください。 なお、既にこれらのスクリーンセーバーをインストールしている場合は本脆弱性の影響を受けません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "航空自衛隊",
+          "vulinfoid": "スクリーンセーバのインストーラにおけるDLL読み込みに関する脆弱性",
+          "url": "http://www.mod.go.jp/asdf/information/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2176",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2176"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#41185163",
+          "url": "https://jvn.jp/jp/JVN41185163/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2176",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2176"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月25日]\\n  掲載\\n[2018年02月15日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2176) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-25T12:07:54+09:00",
+    "datelastupdated": "2018-02-15T15:30:50+09:00",
+    "datepublic": "2017-05-25T00:00:00+09:00"
+  }
+}

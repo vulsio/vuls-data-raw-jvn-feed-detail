@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2016-001382",
+  "vulinfodata": {
+    "title": "Cisco Adaptive Security Appliance (ASA) の IKEv1 と IKEv2 の処理にバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Cisco Adaptive Security Appliance (ASA) の Internet Key Exchange version 1 および 2 (IKEv1, IKEv2) にはバッファオーバーフローの脆弱性が存在します。脆弱性を悪用することで、攻撃者は遠隔からコードを実行することが可能です。  バッファオーバーフロー (CWE-119) - CVE-2016-1287 Exodus Intelligence のアドバイザリには次のように記載されています:  　\"The algorithm for re-assembling IKE payloads fragmented with the Cisco fragmentation protocol contains a bounds-checking flaw that allows a heap buffer to be overflowed with attacker-controlled data. A sequence of payloads with carefully chosen parameters causes a buffer of insufficient size to be allocated in the heap which is then overflowed when fragment payloads are copied into the buffer. Attackers can use this vulnerability to execute arbitrary code on affected devices.     (Cisco fragmentation protocol によって分割された IKE ペイロードを再結合するアルゴリズムには、境界チェックの処理に欠陥があり、ヒープ上のバッファを攻撃者が制御可能なデータでオーバーフローさせることが可能です。パラメータが細工されたペイロード列が与えられると、ヒープメモリ上に想定より小さいバッファが確保され、ペイロードがバッファにコピーされる際にオーバーフローが発生します。攻撃者はこの脆弱性を悪用することで、影響を受ける機器上で任意のコードを実行することができます。)\"  CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer http://cwe.mitre.org/data/definitions/119.html  IKEv1 および IKEv2 を使って VPN を終端するよう設定されているシステムは、本脆弱性の影響を受けます。  Cisco Security Advisory には、システムが脆弱性の影響を受ける設定であるかどうか (crypto map を設定しているかどうか) を確認する方法について記載されています。  Cisco Security Advisory https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160210-asa-ike"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "シスコシステムズ",
+          "productname": "Cisco Adaptive Security Appliance",
+          "cpe": {
+            "text": "cpe:/h:cisco:adaptive_security_appliance",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって細工された UDP パケットが影響を受ける機器に直接送信されることで、任意のコードを実行され、システムを乗っ取られる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は ASA のいくつかのバージョン向けに本脆弱性の修正版をリリースしています。  なお、Cisco ASA 7.2, 8.2, 8.3, 8.6 も本脆弱性の影響を受けますが、サポートが終了しています。これらのバージョンを使用しているユーザには、サポート対象への移行を強く推奨します。  [細工されたパケットを検知して破棄する] Exodus Intelligence のアドバイザリには次のように記載されています:  　\"Looking for the value of the length field of a Fragment Payload (type 132) IKEv2 or IKEv1 packet allows detecting an exploitation attempt. Any length field with a value < 8 must be considered as an attempt to exploit the vulnerability. The detection also has to deal with the fact that the multiple payloads can be chained inside an IKEv2 packet, and that the Fragment Payload may not be the only/first payload of the packet. (IKEv1 または IKEv2 の Fragment Payload (type 132) の length フィールドの値を確認することで、攻撃を検知することが可能です。length の値が 8 より小さいものは本脆弱性を対象とした攻撃であると考えられます。攻撃を検知する際には、IKEv2 パケットの内部で複数のペイロードを連鎖させることが可能であること、Fragment Payload が、パケットの唯一あるいは最初のペイロードであるとは限らないことを考慮する必要があります。)\"  ネットワーク管理者は、攻撃の検知や防御に関するルールの実装を検討してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cisco Security Advisory",
+          "vulinfoid": "Cisco ASA Software IKEv1 and IKEv2 Buffer Overflow Vulnerability (cisco-sa-20160210-asa-ike)",
+          "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160210-asa-ike"
+        },
+        {
+          "type": "vendor",
+          "name": "シスコ セキュリティアドバイザリ",
+          "vulinfoid": "cisco-sa-20160210-asa-ike",
+          "url": "http://www.cisco.com/cisco/web/support/JP/113/1136/1136396_cisco-sa-20160210-asa-ike-j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-1287",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1287"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90170158",
+          "url": "http://jvn.jp/vu/JVNVU90170158/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#327976",
+          "url": "http://www.kb.cert.org/vuls/id/327976"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "EXECUTE MY PACKET",
+          "url": "http://blog.exodusintel.com/2016/02/10/firewall-hacking/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-12T16:52:08+09:00",
+    "datelastupdated": "2016-02-12T16:52:08+09:00",
+    "datepublic": "2016-02-11T00:00:00+09:00"
+  }
+}

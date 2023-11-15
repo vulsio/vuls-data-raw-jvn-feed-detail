@@ -1,0 +1,193 @@
+{
+  "vulinfoid": "JVNDB-2015-002006",
+  "vulinfodata": {
+    "title": "PHP の ext/date/php_date.c における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/date/php_date.c には、解放済みメモリの使用 (Use-after-free) により、任意のコードを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use After Free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.4.38 未満",
+            "5.5.22 未満の 5.5.x",
+            "5.6.6 未満の 5.6.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.3 (HT204942)",
+            "10.10.5 (HT205375)",
+            "10.11 (HT205375)",
+            "10.6.8 以上 10.11 未満 (HT205267)",
+            "10.9.5 (HT204942/HT205375)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下のデータの (1) R または (2) r 型指定子を含む、巧妙に細工されシリアライズされた入力を介して、任意のコードを実行される可能性があります。  (a) php_date_timezone_initialize_from_hash 関数により処理される DateTimeZone データ (b) php_date_initialize_from_hash 関数により処理される DateTime データ"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-10-21-4 OS X El Capitan 10.11.1 and Security Update 2015-007",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Oct/msg00005.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Jun/msg00002.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205267",
+          "url": "https://support.apple.com/en-us/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205375",
+          "url": "https://support.apple.com/en-us/HT205375"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT204942",
+          "url": "http://support.apple.com/en-us/HT204942"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205267",
+          "url": "http://support.apple.com/ja-jp/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205375",
+          "url": "https://support.apple.com/ja-jp/HT205375"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT204942",
+          "url": "http://support.apple.com/ja-jp/HT204942"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #68942",
+          "url": "https://bugs.php.net/bug.php?id=68942"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1194730",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1194730"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "Fix bug #68942 (Use after free vulnerability in unserialize() with DateTimeZone)",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=71335e6ebabc1b12c057d8017fd811892ecdfd24"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0273",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0273"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97220341",
+          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92655282",
+          "url": "http://jvn.jp/vu/JVNVU92655282/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0273",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0273"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月02日]\\n  掲載\\n[2015年07月07日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204942) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005) を追加\\n[2015年07月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2015) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加\\n[2015年10月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205375) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-10-21-4 OS X El Capitan 10.11.1 and Security Update 2015-007) を追加\\n  参考情報：JVN (JVNVU#92655282) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-02T15:09:58+09:00",
+    "datelastupdated": "2015-10-27T15:00:12+09:00",
+    "datepublic": "2015-02-19T00:00:00+09:00"
+  }
+}

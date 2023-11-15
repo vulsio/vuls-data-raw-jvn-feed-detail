@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2013-003919",
+  "vulinfodata": {
+    "title": "Xen における他のドメインの浮動小数点命令の状態の割り当てを見つけられる脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen は、AMD64 プロセッサ上で実行する場合、例外が保留された際の FXSAVE/FXRSTOR の FOP、FIP、FDP x87 レジスタをただ保存／復元のみする (only save/restore) ため、他のドメインの浮動小数点命令の状態の割り当てを見つけられ、暗号鍵などの重要な情報の取得に利用される脆弱性が存在します。  本脆弱性は、CVE-2006-1056 と類似した脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.x",
+            "4.1.x",
+            "4.2.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:A/AC:H/Au:S/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "一つのドメインにより、他のドメインの浮動小数点命令の状態の割り当てを見つけられ、暗号鍵などの重要な情報の取得に利用される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201309-24",
+          "url": "http://security.gentoo.org/glsa/glsa-201309-24.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Announcements",
+          "vulinfoid": "XSA 52 Information leak on XSAVE/XRSTOR capable AMD CPUs",
+          "url": "http://wiki.xenproject.org/wiki/Security_Announcements_%28Historical%29#XSA_52_Information_leak_on_XSAVE.2FXRSTOR_capable_AMD_CPUs"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen-announce",
+          "vulinfoid": "Xen Security Advisory 52 (CVE-2013-2076) - Information leak on XSAVE/XRSTOR capable AMD CPUs",
+          "url": "http://lists.xen.org/archives/html/xen-announce/2013-06/msg00002.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2076",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2076"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2076",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2076"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月30日]\\n  掲載\\n[2013年11月08日]\\n  ベンダ情報：Gentoo Linux (GLSA 201309-24) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-30T16:20:51+09:00",
+    "datelastupdated": "2013-11-08T15:55:42+09:00",
+    "datepublic": "2013-06-03T00:00:00+09:00"
+  }
+}

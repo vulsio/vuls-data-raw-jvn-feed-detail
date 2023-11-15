@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2015-004136",
+  "vulinfodata": {
+    "title": "Microsoft Windows 7 および Windows Server 2008 R2 のリモート デスクトップ プロトコルのクライアントにおける権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft Windows 7 および Windows Server 2008 R2 の リモート デスクトップ プロトコル (RDP) のクライアントには、検索パスに関する処理に不備があるため、権限を取得される脆弱性が存在します。  マイクロソフトセキュリティ情報には、この脆弱性は「リモート デスクトップ プロトコル DLL プランティングのリモートでコードが実行される脆弱性」と記載されています。  補足情報 : CWE による脆弱性タイプは、CWE-426: Untrusted Search Path (信頼性のない検索パス) と識別されています。 http://cwe.mitre.org/data/definitions/426.html  なお、マイクロソフトセキュリティ情報には、以下のように記述されています。  「Web ベースの攻撃のシナリオでは、攻撃者は、この脆弱性を悪用する意図で特別に細工した RDP ファイルを含む Web サイトをホストする (またはユーザーが提供するコンテンツを受け入れるかホストする侵害された Web サイト利用する) 可能性があります。ただし、攻撃者は、Web サイトへのアクセスをユーザーに強制することはできません。その代わり、通常は電子メールまたはインスタント メッセンジャーのメッセージの誘導により、ユーザーにリンクをクリックさせることが攻撃者にとっての必要条件となります。」  "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 7",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_7",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(x64 ベースのシステム) SP1",
+            "for 32-bit Systems SP1"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2008",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2008",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R2 for x64-based Systems SP1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、カレントワーキングディレクトリ配下にあるトロイの木馬の DLL を介して、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS15-082",
+          "url": "https://technet.microsoft.com/en-us/library/security/ms15-082.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS15-082",
+          "url": "https://technet.microsoft.com/ja-jp/library/security/ms15-082.aspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2473",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2473"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "Microsoft 製品の脆弱性対策について(2015年8月)",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20150812-ms.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2015-0028",
+          "url": "http://www.jpcert.or.jp/at/2015/at150028.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2473",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2473"
+        },
+        {
+          "type": "advisory",
+          "name": "警察庁 @police",
+          "vulinfoid": "マイクロソフト社のセキュリティ修正プログラムについて(MS15-079,080,081,082,083,084,085,086,087,088,089,090,091,092)(2015年08月12日)",
+          "url": "http://www.npa.go.jp/cyberpolice/topics/?seq=16702"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-18T16:00:15+09:00",
+    "datelastupdated": "2015-08-18T16:00:15+09:00",
+    "datepublic": "2015-08-11T00:00:00+09:00"
+  }
+}

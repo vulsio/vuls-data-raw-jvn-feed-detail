@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2015-006872",
+  "vulinfodata": {
+    "title": "MIT Kerberos 5 の kadmind の lib/kadm5/kadm_rpc_xdr.c の xdr_nullstring 関数における重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos 5 (別名 krb5) の kadmind の lib/kadm5/kadm_rpc_xdr.c の xdr_nullstring 関数は、想定通り '\\0' 文字が存在するかどうかを検証しないため、重要な情報を取得される、またはサービス運用妨害 (out-of-bounds read) 状態にされる脆弱性が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 1.13.4 未満の 1.13.x",
+            "5 1.14.1 未満の 1.14.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:N/AC:H/Au:S/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、巧妙に細工された文字列を介して、重要な情報を取得される、またはサービス運用妨害 (out-of-bounds read) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Verify decoded kadmin C strings [CVE-2015-8629]",
+          "url": "https://github.com/krb5/krb5/commit/df17a1224a3406f57477bcd372c61e04c0e5a5bb"
+        },
+        {
+          "type": "vendor",
+          "name": "RT/krbdev.mit.edu",
+          "vulinfoid": "Ticket #8341 Verify decoded kadmin C strings [CVE-2015-8629]",
+          "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8341"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8629",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8629"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8629",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8629"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-19T13:37:47+09:00",
+    "datelastupdated": "2016-02-19T13:37:47+09:00",
+    "datepublic": "2015-12-23T00:00:00+09:00"
+  }
+}

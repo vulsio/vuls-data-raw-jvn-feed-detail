@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2013-004992",
+  "vulinfodata": {
+    "title": "複数の OpenStack 製品におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenStack Compute (Nova) Folsom、Grizzly、および Havana は、use_cow_images が False に設定されている場合、QCOW2 イメージの仮想サイズを検証しないため、サービス運用妨害 (ホストファイルシステムディスクの消費) 状態にされる脆弱性が存在します。  本問題は、CVE-2013-2096 の修正が不完全だったことによる問題です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Compute Folsom",
+          "cpe": {
+            "text": "cpe:/a:openstack:folsom",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Grizzly",
+          "cpe": {
+            "text": "cpe:/a:openstack:grizzly",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Havana",
+          "cpe": {
+            "text": "cpe:/a:openstack:havana",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.9",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、Glance からの大量のデータを含まない過度に大きな仮想サイズのイメージを転送されることで、サービス運用妨害 (ホストファイルシステムディスクの消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Launchpad",
+          "vulinfoid": "Bug #1206081",
+          "url": "https://bugs.launchpad.net/nova/+bug/1206081"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4469",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4469"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4469",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4469"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[OSSA 2013-029] Potential Nova denial of service through compressed disk images (CVE-2013-4463, CVE-2013-4469)",
+          "url": "http://www.openwall.com/lists/oss-security/2013/10/31/3"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-06T11:52:11+09:00",
+    "datelastupdated": "2013-11-06T11:52:11+09:00",
+    "datepublic": "2013-11-01T00:00:00+09:00"
+  }
+}

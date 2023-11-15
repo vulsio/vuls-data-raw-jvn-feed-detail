@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2016-001840",
+  "vulinfodata": {
+    "title": "Debian jessie の glibc パッケージおよび Ubuntu の elibc ならびに glibcc パッケージの pt_chown におけるキーストロークをキャプチャされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Debian jessie の glibc パッケージ、および Ubuntu の elibc ならびに glibcc パッケージの pt_chown は、ファイル記述子の引渡しに関連付けられた名前空間の確認が欠落しているため、キーストロークをキャプチャされ、データを偽装される、および権限を取得される脆弱性が存在します。  なお、アップストリームのドキュメンテーションに --enable-pt_chown オプションに対する明確なセキュリティ勧告が存在するため、アップストリームの GNU C Library における脆弱性とはみなされていません。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "15.10"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GNU C Library",
+          "cpe": {
+            "text": "cpe:/a:gnu:glibc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(glibc) 2.19-18+deb8u4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、pts の読み書き操作を介して、キーストロークをキャプチャされ、データを偽装される、および権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Alioth",
+          "vulinfoid": "sysdeps/linux.mk: don't build pt_chown (CVE-2013-2207). Closes: #717544.",
+          "url": "http://anonscm.debian.org/cgit/pkg-glibc/glibc.git/commit/?h=jessie&id=09f7764882a81e13e7b5d87d715412283a6ce403"
+        },
+        {
+          "type": "vendor",
+          "name": "Alioth",
+          "vulinfoid": "releasing package glibc version 2.19-18+deb8u4",
+          "url": "http://anonscm.debian.org/cgit/pkg-glibc/glibc.git/commit/?h=jessie&id=11475c083282c1582c4dd72eecfcb2b7d308c958"
+        },
+        {
+          "type": "vendor",
+          "name": "GNU C Library",
+          "vulinfoid": "Top Page",
+          "url": "https://www.gnu.org/software/libc/"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu",
+          "vulinfoid": "CVE-2016-2856",
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-2856.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2985-1",
+          "url": "http://www.ubuntu.com/usn/USN-2985-1/"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2985-2",
+          "url": "http://www.ubuntu.com/usn/USN-2985-2/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2856",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2856"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2856",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2856"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "PtChownArbitraryPtsAccessViaUserNamespace",
+          "url": "http://www.halfdog.net/Security/2015/PtChownArbitraryPtsAccessViaUserNamespace/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: Access to /dev/pts devices via pt_chown and user namespaces",
+          "url": "http://www.openwall.com/lists/oss-security/2016/03/07/2"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月24日]\\n  掲載\\n[2016年06月06日]\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Ubuntu (USN-2985-1) を追加\\n  ベンダ情報：Ubuntu (USN-2985-2) を追加\\n  ベンダ情報：Ubuntu (CVE-2016-2856) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-24T14:50:08+09:00",
+    "datelastupdated": "2016-06-06T18:03:57+09:00",
+    "datepublic": "2016-02-16T00:00:00+09:00"
+  }
+}

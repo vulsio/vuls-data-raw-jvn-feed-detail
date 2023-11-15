@@ -1,0 +1,82 @@
+{
+  "vulinfoid": "JVNDB-2012-005130",
+  "vulinfodata": {
+    "title": "複数の DomainKeys Identified Mail (DKIM) 実装に問題",
+    "vulinfodescription": {
+      "overview": "複数の DomainKeys Identified Mail (DKIM) 実装において、テストモードが指定されているメッセージの扱いが仕様に反している例が報告されました。  DKIM 仕様では、DKIM ヘッダフィールドでテストモードの指定を行うことができます。 複数の DKIM 実装において、テストモードが指定されているメッセージの扱いが仕様に反している例が報告されました。  また、実運用環境において、1024ビット未満の RSA 鍵で DKIM 署名を行っている例も報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:N/AC:H/Au:M/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "テストモードが指定されている DKIM 署名メールが、通常の DKIM 署名メールと同様に扱われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[サーバの設定を変更する] システム管理者は、実運用環境で DKIM のテストモードが使用できないように設定してください。  また、DKIM 署名を行う際は、1024ビット以上の RSA 鍵を使用してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2012-4201",
+          "url": "https://www.jpcert.or.jp/wr/2012/wr124201.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#268267",
+          "url": "http://jvn.jp/cert/JVNVU268267/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#268267",
+          "url": "http://www.kb.cert.org/vuls/id/268267"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "米US-CERTのDKIM信頼性に関する報告について",
+          "url": "http://www.dkim.jp/dkim-jp/2012/10/31/declaration-about-thereliability/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年10月26日]\\n  掲載\\n[2013年01月24日]\\n  CVSS による深刻度：基本値と脆弱性評価基準を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-10-26T12:22:32+09:00",
+    "datelastupdated": "2012-10-26T12:22:32+09:00",
+    "datepublic": "2012-10-25T00:00:00+09:00"
+  }
+}

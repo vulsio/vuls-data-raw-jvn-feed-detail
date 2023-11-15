@@ -1,0 +1,140 @@
+{
+  "vulinfoid": "JVNDB-2021-000070",
+  "vulinfodata": {
+    "title": "GroupSession における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "日本トータルシステム株式会社が提供する GroupSession には、次の複数の脆弱性が存在します。 ・クロスサイトスクリプティング (CWE-79) - CVE-2021-20785 ・クロスサイトリクエストフォージェリ (CWE-352) - CVE-2021-20786 ・クロスサイトスクリプティング (CWE-79) - CVE-2021-20787 ・サーバサイドリクエストフォージェリ (CWE-918) - CVE-2021-20788 ・オープンリダイレクト (CWE-601) - CVE-2021-20789  CVE-2021-20785, CVE-2021-20786 これらの脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 浅井　健 氏  CVE-2021-20787, CVE-2021-20788, CVE-2021-20789 これらの脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ブロードバンドセキュリティ 佐藤竜 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "日本トータルシステム株式会社",
+          "productname": "GroupSession",
+          "cpe": {
+            "text": "cpe:/a:groupsession:groupsession",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "byCloud ver3.0.3 から ver5.1.0 より前のバージョン",
+            "ZION ver3.0.3 から ver5.1.0 より前のバージョン",
+            "無料版 ver2.2.0 から ver5.1.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品の管理者アカウントでログインしている状態で、特定の URL に対して細工されたリクエストを送信することで任意のスクリプトを実行される - CVE-2021-20785、CVE-2021-20787 ・当該製品の管理者アカウントでログインしている状態で、細工されたページにアクセスした場合、当該製品の設定を意図せず変更される - CVE-2021-20786 ・当該製品のブックマーク機能にアクセスできるユーザによって、当該製品からポートスキャンをされたり、内部の Web サイトの情報を窃取されたりする - CVE-2021-20788 ・細工されたページにアクセスすることで任意のウェブサイトにリダイレクトされ、結果としてフィッシングなどの被害にあう - CVE-2021-20789"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者より、本脆弱性を修正した ver5.1.0 が公開されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "日本トータルシステム株式会社",
+          "vulinfoid": "GroupSessionにおける脆弱性に関して(2021-07)",
+          "url": "https://groupsession.jp/info/info-news/security202107"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20789",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20789"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20785",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20785"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20786",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20786"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20787",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20787"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20788",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20788"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#86026700",
+          "url": "https://jvn.jp/jp/JVN86026700/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-352",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+          "title": "クロスサイトリクエストフォージェリ"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-07-13T14:22:26+09:00",
+          "description": "[2021年07月19日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-03-08T14:43:31+09:00",
+          "description": "[2023年03月08日]\\n  謝辞：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-07-19T12:05:05+09:00",
+    "datelastupdated": "2023-03-08T16:08:29+09:00",
+    "datepublic": "2021-07-19T00:00:00+09:00"
+  }
+}

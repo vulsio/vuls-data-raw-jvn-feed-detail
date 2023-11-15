@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2013-001705",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec の h264_ps.c 内の ff_h264_decode_seq_parameter_set 関数は、輝度の深さと彩度の深さの関係を適切に検証しないため、(配列の領域外へのアクセスおよびアプリケーションクラッシュ) となるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された H.264 データを介して、サービス運用妨害 (配列の領域外へのアクセスおよびアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "ffmpeg.git / commit",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=bdeb61ccc67911cfc5e20c7cfb1312d0501ca90a"
+        },
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "Top Page",
+          "url": "http://ffmpeg.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1790-1",
+          "url": "http://www.ubuntu.com/usn/USN-1790-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2277",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2277"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2277",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2277"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年02月28日]\\n  掲載\\n[2013年04月24日]\\n  ベンダ情報：Ubuntu (USN-1790-1) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-02-28T14:50:14+09:00",
+    "datelastupdated": "2013-04-24T11:13:19+09:00",
+    "datepublic": "2013-02-27T00:00:00+09:00"
+  }
+}

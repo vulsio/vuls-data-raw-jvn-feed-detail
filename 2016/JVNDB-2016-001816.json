@@ -1,0 +1,127 @@
+{
+  "vulinfoid": "JVNDB-2016-001816",
+  "vulinfodata": {
+    "title": "PCRE の pcre_compile.c および PCRE2 の pcre2_compile.c の compile_branch 関数における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "PCRE の pcre_compile.c および PCRE2 の pcre2_compile.c の compile_branch 関数は、ネストされた括弧と併用して、(*ACCEPT) サブストリングを含むパターンを誤って処理するため、任意のコードを実行される、またはサービス運用妨害 (スタックベースのバッファオーバーフロー) 状態にされる脆弱性が存在します。  Zero Day Initiative は、本脆弱性に ZDI-CAN-3542 を採番していました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "pcre.org",
+          "productname": "PCRE",
+          "cpe": {
+            "text": "cpe:/a:pcre:pcre",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.39 未満の 8.x"
+          ]
+        },
+        {
+          "name": "pcre.org",
+          "productname": "PCRE2",
+          "cpe": {
+            "text": "cpe:/a:pcre:pcre2",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.22 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された正規表現を介して、任意のコードを実行される、またはサービス運用妨害 (スタックベースのバッファオーバーフロー) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "815920",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=815920"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "815921",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=815921"
+        },
+        {
+          "type": "vendor",
+          "name": "Exim bugzilla",
+          "vulinfoid": "Bug 1791",
+          "url": "https://bugs.exim.org/show_bug.cgi?id=1791"
+        },
+        {
+          "type": "vendor",
+          "name": "pcre.org",
+          "vulinfoid": "Revision 1631",
+          "url": "http://vcs.pcre.org/pcre?view=revision&revision=1631"
+        },
+        {
+          "type": "vendor",
+          "name": "pcre.org",
+          "vulinfoid": "Revision 489",
+          "url": "http://vcs.pcre.org/pcre2?view=revision&revision=489"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1311503",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1311503"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3191",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3191"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3191",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3191"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-23T11:08:38+09:00",
+    "datelastupdated": "2016-03-23T11:08:38+09:00",
+    "datepublic": "2016-02-10T00:00:00+09:00"
+  }
+}

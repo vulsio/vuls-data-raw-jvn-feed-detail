@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2012-002541",
+  "vulinfodata": {
+    "title": "Linux Kernel の pmcraid_ioctl_passthrough 関数における整数符号エラーの脆弱性",
+    "vulinfodescription": {
+      "overview": "** 未確定 ** 本件は、脆弱性として確定していません。  Linux Kernel の drivers/scsi/pmcraid.c 内の pmcraid_ioctl_passthrough 関数には、整数符号エラーの脆弱性が存在します。  なお、本件は、要求されたファイル記述子を取得するための特権つきプログラムを提供する、特異な環境でのみ脆弱性とされる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、負の値を含む ioctl コールを介して、サービス運用妨害 (メモリ消費またはメモリ破損) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.1",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.1"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "[SCSI] pmcraid: reject negative request size",
+          "url": "https://github.com/torvalds/linux/commit/b5b515445f4f5a905c5dd27e6e682868ccd6c09d"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b5b515445f4f5a905c5dd27e6e682868ccd6c09d"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2906",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2906"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2906",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2906"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年05月28日]\\n  掲載\\n[2015年11月16日]\\n  概要：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-05-28T16:40:47+09:00",
+    "datelastupdated": "2015-11-16T17:59:04+09:00",
+    "datepublic": "2012-05-24T00:00:00+09:00"
+  }
+}

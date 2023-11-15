@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-005000",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/core/flow_dissector.c の skb_flow_dissect 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/core/flow_dissector.c の skb_flow_dissect 関数には、サービス運用妨害 (無限ループ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.12 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、IPIP によりカプセル化されたパケットの IHL フィールドの過度に小さい値を介して、サービス運用妨害 (無限ループ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "net: flow_dissector: fail on evil iph->ihl",
+          "url": "https://git.kernel.org/cgit/linux/kernel/git/davem/net.git/commit/?id=6f092343855a71e03b8d209815d8c45bf3a27fcd"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1007939",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1007939"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1490",
+          "url": "https://rhn.redhat.com/errata/RHSA-2013-1490.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4348",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4348"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4348",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4348"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月06日]\\n  掲載\\n[2013年11月28日]\\n  CWE による脆弱性タイプ一覧：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-06T17:36:42+09:00",
+    "datelastupdated": "2013-11-28T16:09:58+09:00",
+    "datepublic": "2013-11-02T00:00:00+09:00"
+  }
+}

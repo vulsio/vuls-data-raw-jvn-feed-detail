@@ -1,0 +1,145 @@
+{
+  "vulinfoid": "JVNDB-2016-004085",
+  "vulinfodata": {
+    "title": "PHP の ext/session/session.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/session/session.c は、特定のハッシュデータ構造を適切に保持しないため、サービス運用妨害 (解放済みメモリの使用 (use-after-free)) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use After Free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.38 未満",
+            "5.6.24 未満の 5.6.x",
+            "7.0.9 未満の 7.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、セッションのデシリアライゼーションに関する処理を介して、サービス運用妨害 (解放済みメモリの使用 (use-after-free)) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2016-09-20 macOS Sierra 10.12",
+          "url": "http://lists.apple.com/archives/security-announce/2016/Sep/msg00006.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT207170",
+          "url": "https://support.apple.com/en-us/HT207170"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT207170",
+          "url": "https://support.apple.com/ja-jp/HT207170"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #72562",
+          "url": "https://bugs.php.net/bug.php?id=72562"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "Fix bug #72562 - destroy var_hash properly",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=3798eb6fd5dddb211b01d41495072fd9858d4e32"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 7 ChangeLog",
+          "url": "http://php.net/ChangeLog-7.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-19",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-19j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6290",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6290"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90950877",
+          "url": "http://jvn.jp/vu/JVNVU90950877/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6290",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6290"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月01日]\\n  掲載\\n[2016年09月01日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-19) を追加\\n[2016年10月07日]\\n  ベンダ情報：アップル (HT207170) を追加\\n  ベンダ情報：アップル (APPLE-SA-2016-09-20 macOS Sierra 10.12) を追加\\n  参考情報：JVN (JVNVU#90950877) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-01T11:51:43+09:00",
+    "datelastupdated": "2016-10-07T16:37:35+09:00",
+    "datepublic": "2016-07-21T00:00:00+09:00"
+  }
+}

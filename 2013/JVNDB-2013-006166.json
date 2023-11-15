@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2013-006166",
+  "vulinfodata": {
+    "title": "VICIDIAL ダイヤラーのエージェントインターフェースにおける SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "VICIDIAL ダイヤラー (別名 Asterisk GUI クライアント) のエージェントインターフェース (agc/) には、SQL インジェクションの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "VICIDIAL Group",
+          "productname": "VICIDIAL",
+          "cpe": {
+            "text": "cpe:/a:vicidial:vicidial",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.7 およびそれ以前",
+            "2.7RC1",
+            "2.8-403a"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "(1) 第三者により、SCRIPT_multirecording_AJAX.php の campaign 変数を介して、および (2) リモート認証されたユーザにより、manager_send.php の server_ip パラメータを介して、任意の SQL コマンドを実行されるなど、不特定の影響を受ける脆弱性が存在します。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "vicidial_manager_send_cmd_exec.rb",
+          "url": "https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/webapp/vicidial_manager_send_cmd_exec.rb"
+        },
+        {
+          "type": "vendor",
+          "name": "VICIDIAL",
+          "vulinfoid": "Top Page",
+          "url": "http://www.vicidial.org/vicidial.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4467",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4467"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4467",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4467"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "VICIDIAL: Multiple Vulnerabilities",
+          "url": "https://adamcaudill.com/2013/10/23/vicidial-multiple-vulnerabilities/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "98903 : ViciDial manager_send.php stmt Parameter SQL Injection",
+          "url": "http://osvdb.org/98903"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年03月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-03-13T15:32:07+09:00",
+    "datelastupdated": "2014-03-13T15:32:07+09:00",
+    "datepublic": "2013-10-23T00:00:00+09:00"
+  }
+}

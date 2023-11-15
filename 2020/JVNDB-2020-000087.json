@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2020-000087",
+  "vulinfodata": {
+    "title": "日本電気株式会社製ディスクアレイ管理ソフトウェアにサーバ証明書の検証不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "日本電気株式会社が提供するディスクアレイ管理ソフトウェアにはサーバ証明書の検証不備の脆弱性 (CWE-295) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 小林正明 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "日本電気",
+          "productname": "iSM クライアント",
+          "cpe": {
+            "text": "cpe:/a:nec:ism_client",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V5.1 から V12.1 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.8",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、通信内容を窃取されたり、改ざんされたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 <ul><li>WebSAM iStorageManager を利用時、iSM クライアントから、管理サーバへ接続している場合 <ul><li>iSM サーバ V12.1 以降、および iSM クライアント V12.1 以降にアップデートする。 <ul><li>アップデート方法の詳細は<a href=\"https://www.support.nec.co.jp/View.aspx?id=3170100170#ism\">開発者の提供する情報</a>を参照ください。</li></ul></ul></li> <li>iStorageManager Express を利用時、iSM クライアントから、iStorage M12e, M120, M320, M320F へ接続している場合 <ul><li>ストレージ制御ソフトをリビジョン1216 以降にアップデート後、Web ブラウザからディスクアレイにアクセスし、iSM クライアントのインストーラをダウンロードしてアップデートする。 <ul><li>インストーラの入手およびアップデート方法の詳細は<a href=\"https://www.support.nec.co.jp/View.aspx?NNoClear=on&id=9010108058\">開発者の提供する情報</a>を参照ください。 </li></ul></ul></li></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "日本電気株式会社からの情報",
+          "url": "https://jvn.jp/jp/JVN10100024/6443/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "サーバ・クライアント製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2021-217",
+          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_217.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5684",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5684"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#10100024",
+          "url": "https://jvn.jp/jp/JVN10100024/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-12-18T15:57:12+09:00",
+          "description": "[2020年12月18日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2020-12-18T17:27:28+09:00",
+          "description": "[2020年12月18日]\\n  影響を受けるシステム：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-07-21T11:53:53+09:00",
+          "description": "[2021年07月21日]\\n  ベンダ情報：日立 (hitachi-sec-2021-217) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-12-18T15:51:45+09:00",
+    "datelastupdated": "2021-07-21T16:11:24+09:00",
+    "datepublic": "2020-12-18T00:00:00+09:00"
+  }
+}

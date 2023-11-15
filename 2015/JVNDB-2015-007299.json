@@ -1,0 +1,125 @@
+{
+  "vulinfoid": "JVNDB-2015-007299",
+  "vulinfodata": {
+    "title": "Linux Kernel の crypto/algif_skcipher.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の crypto/algif_skcipher.c は、accept システムコールが処理される前に、AF_ALG ソケット上で setkey 操作が実行されていることを検証しないため、サービス運用妨害 (NULL ポインタデリファレンスおよびシステムクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 https://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、鍵を提供しない巧妙に細工されたアプリケーションを介して、サービス運用妨害 (NULL ポインタデリファレンスおよびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.4.2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.4.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "crypto: algif_skcipher - Require setkey before accept(2)",
+          "url": "https://github.com/torvalds/linux/commit/dd504589577d8e8e70f51f997ad487a4cb6c026f"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "GPF in lrw_crypt",
+          "url": "https://groups.google.com/forum/#%21msg/syzkaller/frb2XrB5aWk/xCXzkIBcDAAJ"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "crypto: algif_skcipher - Require setkey before accept(2)",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=dd504589577d8e8e70f51f997ad487a4cb6c026"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1386286",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1386286"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8970",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8970"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8970",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8970"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年11月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-11-30T16:32:57+09:00",
+    "datelastupdated": "2016-11-30T16:32:57+09:00",
+    "datepublic": "2015-12-25T00:00:00+09:00"
+  }
+}

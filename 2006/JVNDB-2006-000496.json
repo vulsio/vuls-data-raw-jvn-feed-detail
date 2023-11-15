@@ -1,0 +1,176 @@
+{
+  "vulinfoid": "JVNDB-2006-000496",
+  "vulinfodata": {
+    "title": "ImageMagick における不正な Sun Rasterfile ファイルによるヒープオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  ImageMagick は、X Window システム上で複数の形式に対応した画像の表示や対話的な画像操作を行なうためのパッケージです。   ImageMagick には以下の複数のセキュリティ上の問題が存在します。   ・Sun Rasterfile 形式の画像ファイルを処理する sun.c の DecodeImage() 関数および ReadSUNImage() 関数において、ヒープオーバーフローが発生する問題 (CVE-2006-3743)   ・XCF 形式の画像ファイルを処理する XCF 画像デコーダにおいて、整数オーバーフローまたはヒープオーバーフローが発生する問題 (CVE-2006-3744)   ・SGI 形式の画像ファイルを処理する coders/sgi.c の ReadSGIImage() 関数において、bytes_per_pixel、columns、rows 変数の境界チェックに不備が存在するため、ヒープオーバーフローが発生する問題 (CVE-2006-4144)   リモートの攻撃者に悪用された場合、ImageMagick の実行権限で任意のコードを実行される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ImageMagick",
+          "productname": "ImageMagick",
+          "cpe": {
+            "text": "cpe:/a:imagemagick:imagemagick",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.2.9 未満"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0633",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0633.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2006-3744 Multiple Integer overflow vulnerabilities in ImageMagick",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2006_3744_multiple_integer"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2007-5",
+          "url": "http://www.turbolinux.com/security/2007/TLSA-2007-5.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0633",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0633J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2007-5",
+          "url": "http://www.turbolinux.co.jp/security/2007/TLSA-2007-5j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-3744",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3744"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-3744",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-3744"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA21615",
+          "url": "http://secunia.com/advisories/21615/"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA21462",
+          "url": "http://secunia.com/advisories/21462/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "19699",
+          "url": "http://www.securityfocus.com/bid/19699"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "19697",
+          "url": "http://www.securityfocus.com/bid/19697"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "19507",
+          "url": "http://www.securityfocus.com/bid/19507"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]\\n  掲載\\n[2012年06月27日]\\n  影響を受けるシステム：オラクル (CVE-2006-3744 Multiple Integer overflow vulnerabilities in ImageMagick) などの情報を追加\\n  ベンダ情報：オラクル (CVE-2006-3744 Multiple Integer overflow vulnerabilities in ImageMagick) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2012-06-27T10:50:50+09:00",
+    "datepublic": "2006-08-14T00:00:00+09:00"
+  }
+}

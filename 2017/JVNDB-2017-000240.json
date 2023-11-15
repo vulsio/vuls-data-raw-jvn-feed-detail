@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2017-000240",
+  "vulinfodata": {
+    "title": "PWR-Q200 における DNS キャッシュポイズニングの脆弱性",
+    "vulinfodescription": {
+      "overview": "東日本電信電話株式会社（ＮＴＴ東日本）が提供する PWR-Q200 はモバイル Wi-Fi ルータ です。 PWR-Q200 から送信される DNS クエリのソースポート番号は固定されている（CWE-330）ため、DNS キャッシュポイズニング攻撃が可能となる脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 坂口 俊文 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "東日本電信電話株式会社",
+          "productname": "PWR-Q200",
+          "cpe": {
+            "text": "cpe:/a:ntt_east:pwr-q200",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "すべてのファームウエアバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者により DNS レスポンスを偽装され、LAN 内の端末を悪意のあるサーバに誘導される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[PWR-Q200を使用しない] PWR-Q200 サポートは既に終了しています。PWR-Q200 の使用を停止してください。 なお、開発者から、クライアント端末が参照する DNS サーバを外部 ISP の DNS サーバに設定することで本脆弱性の影響を軽減することが可能であるとの情報が提供されています。  詳しくは開発者が提供する情報を参照してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "東日本電信電話株式会社",
+          "vulinfoid": "東日本電信電話株式会社の告知ページ",
+          "url": "http://web116.jp/shop/hikari_p/q200/q200_00.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-10874",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-10874"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#73141967",
+          "url": "https://jvn.jp/jp/JVN73141967/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-10874",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-10874"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年11月22日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-03-14T10:46:28+09:00",
+          "description": "[2018年03月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-10874) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-11-22T12:03:32+09:00",
+    "datelastupdated": "2018-03-14T14:18:40+09:00",
+    "datepublic": "2017-11-22T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "vulinfoid": "JVNDB-2015-002922",
+  "vulinfodata": {
+    "title": "Symfony の HttpKernel コンポーネントの FragmentListener における URL 署名およびセキュリティルールを回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Symfony の HttpKernel コンポーネントの FragmentListener は、ESI または SSI サポートが有効な場合、_controller 属性が設定されているかどうかをチェックしないため、URL 署名およびセキュリティルールを回避される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御) と識別されています。 http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Sensio Labs",
+          "productname": "Symfony",
+          "cpe": {
+            "text": "cpe:/a:sensiolabs:symfony",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.19 から 2.3.28",
+            "2.4.9 から 2.4.10",
+            "2.5.4 から 2.5.11",
+            "2.6.0 から 2.6.7"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、/_fragment へのリクエスト内に (1）ハッシュを含めない、または (2) 無効なハッシュを含められることで、URL 署名およびセキュリティルールを回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sensio Labs",
+          "vulinfoid": "CVE-2015-4050: ESI unauthorized access",
+          "url": "http://symfony.com/blog/cve-2015-4050-esi-unauthorized-access"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-4050",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4050"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-4050",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4050"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年06月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-06-04T13:50:44+09:00",
+    "datelastupdated": "2015-06-04T13:50:44+09:00",
+    "datepublic": "2015-05-27T00:00:00+09:00"
+  }
+}

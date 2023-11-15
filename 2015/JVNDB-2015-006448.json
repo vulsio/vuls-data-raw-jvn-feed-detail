@@ -1,0 +1,160 @@
+{
+  "vulinfoid": "JVNDB-2015-006448",
+  "vulinfodata": {
+    "title": "複数の Cisco 製品のシリアル化されたオブジェクトのインターフェースにおける任意のコマンドを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の Cisco 製品のシリアル化されたオブジェクトのインターフェースには、任意のコマンドを実行される脆弱性が存在します。  本件は、Apache Commons Collections (ACC) ライブラリの問題に関する脆弱性です。  補足情報 : CWE による脆弱性タイプは、CWE-502: Deserialization of Untrusted Data (信頼性のないデータのデシリアライゼーション) と識別されています。 http://cwe.mitre.org/data/definitions/502.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Commons Collections",
+          "cpe": {
+            "text": "cpe:/a:apache:commons_collections",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.1 およびそれ以前",
+            "4.0 およびそれ以前"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "CapsSuite",
+          "cpe": {
+            "text": "cpe:/a:nec:capssuite",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "InfoFrame Relational Store",
+          "cpe": {
+            "text": "cpe:/a:nec:infoframe_relational_store",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "SystemDirector Enterprise",
+          "cpe": {
+            "text": "cpe:/a:nec:systemdirector_enterprise",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebOTX",
+          "cpe": {
+            "text": "cpe:/a:nec:webotx",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたシリアル化された Java オブジェクトを介して、任意のコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Commons Collections",
+          "vulinfoid": "Top Page",
+          "url": "http://commons.apache.org/proper/commons-collections/"
+        },
+        {
+          "type": "vendor",
+          "name": "Cisco Security Advisory",
+          "vulinfoid": "cisco-sa-20151209-java-deserialization",
+          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV16-002",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv16-002.html"
+        },
+        {
+          "type": "vendor",
+          "name": "The Apache Software Foundation Blog",
+          "vulinfoid": "Apache Commons statement to widespread Java object de-serialisation vulnerability",
+          "url": "https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6420",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6420"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96340370",
+          "url": "https://jvn.jp/vu/JVNVU96340370/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94276522",
+          "url": "http://jvn.jp/vu/JVNVU94276522/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6420",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6420"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#576313",
+          "url": "https://www.kb.cert.org/vuls/id/576313"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月18日]\\n  掲載\\n[2016年04月05日] \\n  ベンダ情報：不要なリンク情報を削除\\n[2017年11月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV16-002) を追加\\n[2018年02月07日]\\n  影響を受けるシステム：ベンダ情報 (NV16-002) の更新に伴い内容を更新\\n"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-09-28T17:06:45+09:00",
+          "description": "[2018年09月28日]\\n  参考情報：JVN (JVNVU#96340370) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-18T15:35:28+09:00",
+    "datelastupdated": "2018-09-28T17:26:37+09:00",
+    "datepublic": "2015-11-10T00:00:00+09:00"
+  }
+}

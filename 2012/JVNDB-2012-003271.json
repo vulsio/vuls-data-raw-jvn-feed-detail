@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2012-003271",
+  "vulinfodata": {
+    "title": "Linux-PAM の modules/pam_env/pam_env.c におけるスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux-PAM の modules/pam_env/pam_env.c 内の _assemble_line 関数には、スタックベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "kernel.org",
+          "productname": "Linux-PAM",
+          "cpe": {
+            "text": "cpe:/a:kernel:linux-pam",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.5 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、~/.pam_environment ファイルの先頭の過度に長い空白文字列を介して、サービス運用妨害 (クラッシュ) 状態にされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugs",
+          "vulinfoid": "Bug #874469 stack buffer overflow in pam_env",
+          "url": "https://bugs.launchpad.net/ubuntu/+source/pam/+bug/874469"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Hosted",
+          "vulinfoid": "linux-pam.git / commitdiff",
+          "url": "http://git.fedorahosted.org/git/?p=linux-pam.git;a=commitdiff;h=caf5e7f61c8d9288daa49b4f61962e6b1239121d"
+        },
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201206-31",
+          "url": "http://www.gentoo.org/security/en/glsa/glsa-201206-31.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "kernel.org",
+          "vulinfoid": "Index of /pub/linux/libs/pam",
+          "url": "http://www.kernel.org/pub/linux/libs/pam/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-3148",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3148"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-3148",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3148"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-24T16:39:57+09:00",
+    "datelastupdated": "2012-07-24T16:39:57+09:00",
+    "datepublic": "2012-07-22T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "vulinfoid": "JVNDB-2020-004994",
+  "vulinfodata": {
+    "title": "GE 製 Grid Solutions Reason RT Clocks に重要な機能に対する認証欠如に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "GE が提供する Grid Solutions Reason RT Clocks は GNSS および GPS の時刻同期システムです。当該製品の Web アプリケーションには、重要な機能に対する認証欠如 (CWE-306) に関する脆弱性が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "General Electric Company",
+          "productname": "RT430 ファームウエア",
+          "cpe": {
+            "text": "cpe:/o:ge:rt430_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 08A05 より前のバージョン"
+          ]
+        },
+        {
+          "name": "General Electric Company",
+          "productname": "RT431 ファームウエア",
+          "cpe": {
+            "text": "cpe:/o:ge:rt431_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 08A05 より前のバージョン"
+          ]
+        },
+        {
+          "name": "General Electric Company",
+          "productname": "RT434 ファームウエア",
+          "cpe": {
+            "text": "cpe:/o:ge:rt434_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 08A05 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.6",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "認証されていない隣接するネットワーク上の第三者によって、次のような影響を受ける可能性があります。  * 任意のコマンドを実行されたり、特定の URL にアクセスし、機器を応答不能な状態にされる * 管理ユーザアカウントのパスワードを変更し、設定や構成を変更される * 認証を回避して、当該製品の構成変更や再起動をされる "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性を修正したファームウエア Version 08A05 がリリースされています。  [ワークアラウンドを実施する] 開発者は以下の回避策を適用を推奨しています。  * 当該製品が設置されているローカルネットワークに第三者がアクセスできないように、ネットワークと物理的なセキュリティ対策を強化する * 80/tcp および 443/tcp ポートをブロックし、当該製品の Web インターフェースへのアクセスを遮断する。その際、当該製品が接続している Ethernet にのみブロックルールを適用するよう注意する * すべての制御システムおよび製品について、ネットワークへの露出を最小限に抑え、インターネットからアクセスできないようにする * セキュリティイベントを監視し、予期せぬトラフィックや通信の早期発見を可能にする "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "General Electric",
+          "vulinfoid": "Reason RT431 - Time Code Generator",
+          "url": "https://www.gegridsolutions.com/app/ViewFiles.aspx?prod=RT431&type=7"
+        },
+        {
+          "type": "vendor",
+          "name": "General Electric",
+          "vulinfoid": "Reason RT430/RT434 - GPS/GNSS Precision Clocks",
+          "url": "https://www.gegridsolutions.com/app/ViewFiles.aspx?prod=RT430&type=7"
+        },
+        {
+          "type": "vendor",
+          "name": "General Electric",
+          "vulinfoid": "Reason RT43X - GPS/GNSS Precision ClocksRelease Notes",
+          "url": "https://www.gegridsolutions.com/products/software/AlstomEnergy/FW-08A05_Notes.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-12017",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12017"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-154-05",
+          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-154-05"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99830150",
+          "url": "https://jvn.jp/vu/JVNVU99830150/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-306",
+          "url": "https://cwe.mitre.org/data/definitions/306.html",
+          "title": "重要な機能に対する認証の欠如"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-06-04T14:22:50+09:00",
+          "description": "[2020年06月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-06-04T14:22:50+09:00",
+    "datelastupdated": "2020-06-04T14:22:50+09:00",
+    "datepublic": "2020-06-03T00:00:00+09:00"
+  }
+}

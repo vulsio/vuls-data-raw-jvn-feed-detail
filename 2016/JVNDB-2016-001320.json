@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2016-001320",
+  "vulinfodata": {
+    "title": "Google Chrome で使用される PDFium の formfiller の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Google Chrome で使用される PDFium の formfiller の実装には、(1) IPWL_FocusHandler および (2) IPWL_Provider オブジェクトの不適切な破棄のトラッキングに関する処理に不備があるため、解放済みメモリの使用 (Use-after-free) により、サービス運用妨害 (DoS) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use-after-free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "48.0.2564.82 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された PDF ドキュメントを介して、サービス運用妨害 (DoS) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Chromium Code Reviews",
+          "vulinfoid": "Issue 1564773003",
+          "url": "https://codereview.chromium.org/1564773003"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "https://www.google.com/intl/ja/chrome/browser/features.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update",
+          "url": "http://googlechromereleases.blogspot.jp/2016/01/stable-channel-update_20.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PDFium",
+          "vulinfoid": "Invalidate IPWL_FocusHandler and IPWL_Provider on destruction.",
+          "url": "https://pdfium.googlesource.com/pdfium/+/dcac57bc8b64fdc870d79d11a498ae7021cf8ae7"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-1613",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1613"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-1613",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-1613"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-27T16:28:48+09:00",
+    "datelastupdated": "2016-01-27T16:28:48+09:00",
+    "datepublic": "2016-01-20T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "vulinfoid": "JVNDB-2016-004361",
+  "vulinfodata": {
+    "title": "GD Graphics Library の gd_interpolation.c の _gdContributionsAlloc 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "GD Graphics Library (別名 libgd) の gd_interpolation.c  の _gdContributionsAlloc 関数には、整数オーバーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-190: Integer Overflow or Wraparound (整数オーバーフローまたはラップアラウンド)、および CWE-787: Out-of-bounds Write (境界外書き込み) と識別されています。 http://cwe.mitre.org/data/definitions/190.html http://cwe.mitre.org/data/definitions/787.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "LibGD project",
+          "productname": "LibGD",
+          "cpe": {
+            "text": "cpe:/a:libgd:libgd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.3 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、サービス運用妨害 (メモリの境界外書き込みまたはメモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3630",
+          "url": "https://www.debian.org/security/2016/dsa-3630"
+        },
+        {
+          "type": "vendor",
+          "name": "News",
+          "vulinfoid": "LibGD 2.2.3 release",
+          "url": "https://libgd.github.io/release-2.2.3.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:2363",
+          "url": "http://lists.opensuse.org/opensuse-updates/2016-09/msg00078.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #72558",
+          "url": "https://bugs.php.net/bug.php?id=72558"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6207",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6207"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6207",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6207"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月17日]\\n  掲載\\n[2016年11月21日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：openSUSE project (openSUSE-SU-2016:2363) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-17T17:50:09+09:00",
+    "datelastupdated": "2016-11-21T11:00:29+09:00",
+    "datepublic": "2016-07-22T00:00:00+09:00"
+  }
+}

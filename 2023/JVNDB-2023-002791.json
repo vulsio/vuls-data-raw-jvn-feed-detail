@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2023-002791",
+  "vulinfodata": {
+    "title": "三菱電機製 GOT2000 シリーズおよび GOT SIMPLE シリーズの FTP サーバ機能にデータコネクションを待ち受けるポート番号を容易に推測可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する GOT2000 シリーズおよび GOT SIMPLE シリーズには FTP サーバ機能が実装されています。クライアントからの FTP 接続に対してパッシブモードで動作する際、FTP サーバはクライアントからの接続を待ち受けますが、このとき使われるポート番号は容易に推測可能です (CWE-342、CVE-2023-3373)。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "GOT SIMPLE シリーズ GS21 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got_simple_series_gs21_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "01.49.000 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT21 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt21_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "01.49.000 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "FTP 接続が行われた際、遠隔の第三者がタイミングを見計らって FTP サーバの待ち受けポートに接続する可能性があります。 これによって、データコネクションの確立を妨害するサービス運用妨害 (DoS) 攻撃や、FTP 接続で通信されるデータの窃取や改ざんが行われる可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 アップデート方法等の詳細については、開発者が提供する情報を確認してください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を回避することが可能です。  　* FTP サーバ機能が不要な場合は、FTP サーバ機能を無効にする  次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品および当該製品が接続された LAN への物理的なアクセスを制限する 　* 対象製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* 製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスを制限する 　* IP フィルタ機能 (*1) を使用し、接続可能な IP アドレスを制限する (*1) IP フィルタ機能については、次のマニュアルを参照してください 　* GT Designer3 (GOT2000) 画面設計マニュアル (SH-081219) 　　　* 「5.4.3 章 IP フィルタを設定する」 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "GOT2000 シリーズおよび GOT SIMPLE シリーズの FTP サーバ機能におけるなりすましおよびサービス拒否 (DoS) の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-006.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-3373",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-3373"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-215-01",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-215-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92167394",
+          "url": "http://jvn.jp/vu/JVNVU92167394/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2023-3373",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-3373"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-342",
+          "url": "https://cwe.mitre.org/data/definitions/342.html",
+          "title": "以前の値から予測可能な正確な値"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-08-07T13:49:11+09:00",
+          "description": "[2023年08月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-08-07T13:49:11+09:00",
+    "datelastupdated": "2023-08-07T13:49:11+09:00",
+    "datepublic": "2023-08-04T00:00:00+09:00"
+  }
+}

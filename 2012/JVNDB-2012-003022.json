@@ -1,0 +1,295 @@
+{
+  "vulinfoid": "JVNDB-2012-003022",
+  "vulinfodata": {
+    "title": "FreeBSD の crypt_des 関数におけるアクセス権を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP、PostgreSQL、および他の製品で使用される FreeBSD の crypt_des 関数は、0x80 文字を含んだ平文パスワードを適切に処理しないため、アクセス権を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.4-RELEASE-p8 未満 (RELENG_7_4)",
+            "7.4-STABLE 未満 (RELENG_7)",
+            "8.1-RELEASE-p10 未満 (RELENG_8_1)",
+            "8.2-RELEASE-p8 未満 (RELENG_8_2)",
+            "8.3-RELEASE-p2 未満 (RELENG_8_3)",
+            "8.3-STABLE 未満 (RELENG_8)",
+            "9.0-RELEASE-p2 未満 (RELENG_9_0)",
+            "9.0-STABLE 未満 (RELENG_9)"
+          ]
+        },
+        {
+          "name": "PostgreSQL.org",
+          "productname": "PostgreSQL",
+          "cpe": {
+            "text": "cpe:/a:postgresql:postgresql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.3.19 未満の 8.3.x",
+            "8.4.12 未満の 8.4.x",
+            "9.0.8 未満の 9.0.x",
+            "9.1.4 未満の 9.1.x"
+          ]
+        },
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3.14 未満の 5.3.x",
+            "5.4.4 未満の 5.4.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.6.8",
+            "v10.7 から v10.7.4",
+            "v10.8",
+            "v10.8.1"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X Server",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.6.8",
+            "v10.7 から v10.7.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、文字列の始めに問題の文字が含まれるパスワードに対する認証試行を介して、アクセス権を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2012-09-19-2",
+          "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT5501",
+          "url": "http://support.apple.com/kb/HT5501"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT5501",
+          "url": "http://support.apple.com/kb/HT5501?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2491-1",
+          "url": "http://www.debian.org/security/2012/dsa-2491"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2012-8915",
+          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-June/082294.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2012-8924",
+          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-June/082292.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2012-8893",
+          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-June/082258.html"
+        },
+        {
+          "type": "vendor",
+          "name": "FreeBSD Security Advisory",
+          "vulinfoid": "FreeBSD-SA-12:02.crypt",
+          "url": "http://security.freebsd.org/advisories/FreeBSD-SA-12:02.crypt.asc"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2012:0840",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2012-07/msg00003.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2012:1299",
+          "url": "http://lists.opensuse.org/opensuse-updates/2012-10/msg00024.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2012:1251",
+          "url": "http://lists.opensuse.org/opensuse-updates/2012-09/msg00102.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2012:1288",
+          "url": "http://lists.opensuse.org/opensuse-updates/2012-10/msg00013.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL",
+          "vulinfoid": "postgresql.git / commit",
+          "url": "http://git.postgresql.org/gitweb/?p=postgresql.git&a=commit&h=932ded2ed51e8333852e370c7a6dad75d9f236f9"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.1.4",
+          "url": "http://www.postgresql.org/docs/9.1/static/release-9-1-4.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.0.8",
+          "url": "http://www.postgresql.org/docs/9.0/static/release-9-0-8.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 8.4.12",
+          "url": "http://www.postgresql.org/docs/8.4/static/release-8-4-12.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 8.3.19",
+          "url": "http://www.postgresql.org/docs/8.3/static/release-8-3-19.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Security Information",
+          "vulinfoid": "Top Page",
+          "url": "http://www.postgresql.org/support/security/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 816956",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=816956"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:1037",
+          "url": "http://rhn.redhat.com/errata/RHSA-2012-1037.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2012:092",
+          "url": "http://www.mandriva.com/en/support/security/advisories/?name=MDVSA-2012:092"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in postgresql",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_postgresql1"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "fix CVE-2012-2143",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=aab49e934de1fff046e659cbec46e3d053b41c34"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5.4.4 and PHP 5.3.14 released",
+          "url": "http://www.php.net/archive/2012.php#id2012-06-14-1"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2143",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2143"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#381963",
+          "url": "http://jvn.jp/cert/JVNVU381963/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2143",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2143"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月09日]\\n  掲載\\n[2012年07月26日]\\n  ベンダ情報：Fedora Project (FEDORA-2012-8915) を追加\\n  ベンダ情報：Fedora Project (FEDORA-2012-8924) を追加\\n  ベンダ情報：Fedora Project (FEDORA-2012-8893) を追加\\n  ベンダ情報：openSUSE (SUSE-SU-2012:0840) を追加\\n  ベンダ情報：レッドハット (RHSA-2012:1037) を追加\\n  ベンダ情報：Debian (DSA-2491-1) を追加\\n  ベンダ情報：Mandriva, Inc. (MDVSA-2012:092) を追加\\n[2012年08月03日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in postgresql) を追加\\n[2012年10月16日]\\n  ベンダ情報：アップル (HT5501) を追加\\n[2012年10月22日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1299) を追加\\n[2012年11月05日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1251) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1288) を追加\\n[2014年02月13日]\\n  影響を受けるシステム：アップル (HT5501) の情報を追加\\n  ベンダ情報：アップル (APPLE-SA-2012-09-19-2) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-09T15:36:46+09:00",
+    "datelastupdated": "2014-02-13T17:48:45+09:00",
+    "datepublic": "2012-05-30T00:00:00+09:00"
+  }
+}

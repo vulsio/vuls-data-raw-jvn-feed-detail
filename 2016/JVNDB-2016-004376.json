@@ -1,0 +1,125 @@
+{
+  "vulinfoid": "JVNDB-2016-004376",
+  "vulinfodata": {
+    "title": "Linux Kernel の kernel/auditsc.c の audit_log_single_execve_arg 関数における文字セットの制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の kernel/auditsc.c の audit_log_single_execve_arg 関数には、競合状態により、文字セットの制限を回避される、またはシステムコールの監査を中断される脆弱性が存在します。  本脆弱性は、\"ダブルフェッチの脆弱性\" と呼ばれています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.7 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.9",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、特定の文字列を変更されることで、文字セットの制限を回避される、またはシステムコールの監査を中断される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "BUG: fix double fetch in audit_log_single_execve_arg() #18",
+          "url": "https://github.com/linux-audit/audit-kernel/issues/18"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "audit: fix a double fetch in audit_log_single_execve_arg()",
+          "url": "https://github.com/torvalds/linux/commit/43761473c254b45883a64441dd0bc85a42f3645c"
+        },
+        {
+          "type": "vendor",
+          "name": "Kernel Bug Tracker",
+          "vulinfoid": "Bug 120681",
+          "url": "https://bugzilla.kernel.org/show_bug.cgi?id=120681"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "audit: fix a double fetch in audit_log_single_execve_arg()",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=43761473c254b45883a64441dd0bc85a42f3645c"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1353533",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1353533"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6136",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6136"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6136",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6136"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-18T14:18:08+09:00",
+    "datelastupdated": "2016-08-18T14:18:08+09:00",
+    "datepublic": "2016-07-20T00:00:00+09:00"
+  }
+}

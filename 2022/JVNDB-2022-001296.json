@@ -1,0 +1,91 @@
+{
+  "vulinfoid": "JVNDB-2022-001296",
+  "vulinfodata": {
+    "title": "Samba vfs_fruit モジュールにおける拡張ファイル属性の安全でない処理による境界外読み書きの脆弱性",
+    "vulinfodescription": {
+      "overview": "Samba の vfs_fruit モジュールには、拡張ファイル属性の処理に、ヒープ領域内において境界外読み取りおよび書き込みが可能となる脆弱性が存在します。 そのため、遠隔の攻撃者により任意のコードを実行される可能性があります。  Samba の vfs_fruit モジュールは、拡張ファイル属性を利用して、「Apple SMB クライアントとの互換性拡張と、Netatalk 3 AFP ファイルサーバーとの相互運用性」を提供するモジュールです。 vfs_fruit を有効にした Samba では、特別に細工された拡張ファイル属性を介して、ヒープ領域内において境界外読み取りおよび書き込みが可能となる脆弱性（CVE-2021-44142）が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Samba Project",
+          "productname": "Samba",
+          "cpe": {
+            "text": "cpe:/a:samba:samba",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.13.17より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.9",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "拡張ファイル属性への書き込み権限を持つ遠隔の攻撃者によって、smbd の権限（一般的には root）で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Samba が提供する情報をもとに、最新版へアップデートしてください。 Samba は、対策済みバージョンとして、4.13.17、4.14.12 および 4.15.5 をリリースしています。  [vfs_fruit モジュールを無効にする] Samba の設定ファイル（smb.conf など）内の vfs objects 行から fruit を削除してください。 デフォルト設定で fruit:metadata=netatalk または fruit:resource=file が記述されています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "Out-of-bounds heap read/write vulnerability in VFS module vfs_fruit allows code execution",
+          "url": "https://www.samba.org/samba/security/CVE-2021-44142.html"
+        },
+        {
+          "type": "vendor",
+          "name": "The Samba-Bugzilla",
+          "vulinfoid": "Bug 14914",
+          "url": "https://bugzilla.samba.org/show_bug.cgi?id=14914"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-44142",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-44142"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92602689",
+          "url": "https://jvn.jp/vu/JVNVU92602689/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#119678",
+          "url": "https://kb.cert.org/vuls/id/119678"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-02-02T10:35:07+09:00",
+          "description": "[2022年02月02日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-02-02T11:33:07+09:00",
+    "datelastupdated": "2022-02-02T11:33:07+09:00",
+    "datepublic": "2022-02-01T00:00:00+09:00"
+  }
+}

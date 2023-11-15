@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2006-003706",
+  "vulinfodata": {
+    "title": "Sun Solaris の .iked などに使用されている libike ライブラリにおける PKCS #1 v1.5 署名を偽造される脆弱性",
+    "vulinfodescription": {
+      "overview": "Sun Solaris の .iked、elfsign、および kcfd に使用されている libike ライブラリは、3 の指数を伴う RSA 鍵を使用している際、ハッシュ生成前に PKCS-1 パディングを削除するため、PKCS #1 v1.5 署名を偽造される脆弱性が存在します。 本脆弱性は、CVE-2006-4339 と類似する脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5 (sparc) 9 および 10"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、RSA 鍵で署名され、libike が PKCS #1 を使用する X.509 およびその他の証明書を正確に検証しないことで、PKCS #1 v1.5 署名を偽造される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sun",
+          "vulinfoid": "Sun Alert 102722",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/sun_alert_102722_security_vulnerability"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-7140",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7140"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-7140",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-7140"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-20T18:18:59+09:00",
+    "datelastupdated": "2012-12-20T18:18:59+09:00",
+    "datepublic": "2006-11-27T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2016-002520",
+  "vulinfodata": {
+    "title": "MSM デバイス用 QuIC Android コントリビューションなどで使用される Linux Kernel 用 Adreno GPU ドライバにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイス用 Qualcomm Innovation Center (QuIC) Android コントリビューション、およびその他の製品で使用される Linux Kernel 用 Adreno GPU ドライバの drivers/gpu/msm/adreno_perfcounter.c の adreno_perfcounter_query_group 関数は、不正な整数データ型を使用するため、サービス運用妨害 (整数オーバーフロー、ヒープベースのバッファオーバーフロー、および不適切なメモリ割り当て) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工された IOCTL_KGSL_PERFCOUNTER_QUERY ioctl コールを介して、サービス運用妨害 (整数オーバーフロー、ヒープベースのバッファオーバーフロー、および不適切なメモリ割り当て) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android Security Bulletin - June 2016",
+          "url": "http://source.android.com/security/bulletin/2016-06-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "Buffer overflow in Adreno GPU MSM Driver (CVE-2016-2062)",
+          "url": "https://www.codeaurora.org/buffer-overflow-adreno-gpu-msm-driver-cve-2016-2062"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "msm: kgsl: Cast perfcounter query count to an unsigned int",
+          "url": "https://codeaurora.org/cgit/quic/la/kernel/msm-3.18/commit/?id=27c95b64b2e4b5ff1288cbaa6e353dd803d71576"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2062",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2062"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2062",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2062"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月12日]\\n  掲載\\n[2016年06月23日]\\n  CVSS による深刻度：内容を更新\\n[2016年06月24日]\\n  ベンダ情報：Google (Android Security Bulletin - June 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-12T14:48:34+09:00",
+    "datelastupdated": "2016-06-24T17:45:41+09:00",
+    "datepublic": "2016-04-28T00:00:00+09:00"
+  }
+}

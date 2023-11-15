@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2016-004383",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/ioctl.c の ioctl_file_dedupe_range 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/ioctl.c の ioctl_file_dedupe_range 関数には、サービス運用妨害 (ヒープベースのバッファオーバーフロー) 状態にされる、または権限を取得される脆弱性が存在します。  本脆弱性は、\"ダブルフェッチの脆弱性\" と呼ばれています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.7 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.4",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、特定のカウント値を変更されることで、サービス運用妨害 (ヒープベースのバッファオーバーフロー) 状態にされる、または権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "vfs: ioctl: prevent double-fetch in dedupe ioctl",
+          "url": "https://github.com/torvalds/linux/commit/10eec60ce79187686e052092e5383c99b4420a20"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "vfs: ioctl: prevent double-fetch in dedupe ioctl",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=10eec60ce79187686e052092e5383c99b4420a20"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1362457",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1362457"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6516",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6516"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6516",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6516"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-18T14:18:15+09:00",
+    "datelastupdated": "2016-08-18T14:18:15+09:00",
+    "datepublic": "2016-07-28T00:00:00+09:00"
+  }
+}

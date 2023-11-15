@@ -1,0 +1,124 @@
+{
+  "vulinfoid": "JVNDB-2018-003517",
+  "vulinfodata": {
+    "title": "strongSwan VPN charon サーバにバッファアンダーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "strongSwan VPN charon サーバ には、パケット長をチェックしていないことに起因する、バッファアンダーフローの脆弱性が存在します。  バッファアンダーフロー (<a href=\"https://cwe.mitre.org/data/definitions/124.html\"target=\"blank\">CWE-124</a>) - CVE-2018-5388 stroke_socket.c には、パケット長をチェックしていないことに起因するバッファアンダーフローの脆弱性が存在し、リソース枯渇を発生させるサービス運用妨害 (DoS) 攻撃につながる可能性があります。 開発者によると、一般的にソケットにアクセスするためには root 権限が必要とのことです。ただし初期設定とは異なりますが、当該製品を root ではない特定のアカウントで動作するように設定している状況では、vpn グループなどのように root 権限を持たない他のアカウントやグループが、ソケットにアクセスする権限を持っている可能性があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "strongSwan",
+          "productname": "strongSwan",
+          "cpe": {
+            "text": "cpe:/a:strongswan:strongswan",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 5.6.3rc1 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:N/AC:H/Au:S/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.1",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品が待ち受けしているソケットにアクセスできるローカルユーザ (root もしくは vpn グループに含まれる一般ユーザ) により、バッファアンダーフローによるサービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 StrongSwan version 5.6.3rc1 およびそれ以降には、この問題への対策を行うパッチが含まれています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "strongSwan",
+          "vulinfoid": "strongswan-5.6.3rc1 ChangeLog",
+          "url": "https://download.strongswan.org/CHANGES5rc.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "strongSwan",
+          "vulinfoid": "git.strongswan.org Git - strongswan.git/commitdiff",
+          "url": "https://git.strongswan.org/?p=strongswan.git;a=commitdiff;h=0acd1ab4"
+        },
+        {
+          "type": "vendor",
+          "name": "strongSwan",
+          "vulinfoid": "git.strongswan.org Git - strongswan.git/summary",
+          "url": "https://git.strongswan.org/?p=strongswan.git;a=summary"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5388",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5388"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92725946",
+          "url": "https://jvn.jp/vu/JVNVU92725946/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5388",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5388"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#338343",
+          "url": "https://www.kb.cert.org/vuls/id/338343"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-124",
+          "url": "https://cwe.mitre.org/data/definitions/124.html",
+          "title": "バッファアンダーフロー "
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-05-25T11:00:38+09:00",
+          "description": "[2018年05月25日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2018-08-30T15:16:27+09:00",
+          "description": "[2018年08月30日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5388) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-05-25T14:59:11+09:00",
+    "datelastupdated": "2018-08-30T15:17:11+09:00",
+    "datepublic": "2018-05-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2015-002838",
+  "vulinfodata": {
+    "title": "Linux Kernel の arch/x86/crypto/aesni-intel_glue.c 内の __driver_rfc4106_decrypt 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の arch/x86/crypto/aesni-intel_glue.c 内の __driver_rfc4106_decrypt 関数は、暗号化されたデータに使用されるメモリ領域を適切に判定しないため、サービス運用妨害 (バッファオーバーフローおよびシステムクラッシュ) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.19.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、crypto API コールを誘発されることで、サービス運用妨害 (バッファオーバーフローおよびシステムクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.19.3",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.19.3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "crypto: aesni - fix memory usage in GCM decryption",
+          "url": "https://github.com/torvalds/linux/commit/ccfe8c3f7e52ae83155cb038753f4c75b774ca8a"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "crypto: aesni - fix memory usage in GCM decryption",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ccfe8c3f7e52ae83155cb038753f4c75b774ca8a"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1213322",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1213322"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1199",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1199.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3331",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3331"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3331",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3331"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年05月29日]\\n  掲載\\n[2015年09月03日]\\n  ベンダ情報：レッドハット (RHSA-2015:1199) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-05-29T16:20:43+09:00",
+    "datelastupdated": "2015-09-03T17:51:10+09:00",
+    "datepublic": "2015-03-26T00:00:00+09:00"
+  }
+}

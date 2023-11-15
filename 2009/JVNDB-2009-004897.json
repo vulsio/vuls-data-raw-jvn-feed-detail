@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2009-004897",
+  "vulinfodata": {
+    "title": "Linux kernel の net/llc/af_llc.c における一部のカーネルメモリの配置のコンテンツを読まれる脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の net/llc/af_llc.c の llc_ui_getname 関数は、特定のデータ構造を初期化しないため、一部のカーネルメモリの配置のコンテンツを読まれる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.31-rc7 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、AF_LLC ソケット上の getsockname の呼び出しを介して、一部のカーネルメモリの配置のコンテンツを読まれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "NET: llc, zero sockaddr_llc struct",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=28e9fc592cb8c7a43e4d3147b38be6032a0e81bc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-3001",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3001"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-3001",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3001"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:27:40+09:00",
+    "datelastupdated": "2012-09-25T17:27:40+09:00",
+    "datepublic": "2009-08-24T00:00:00+09:00"
+  }
+}

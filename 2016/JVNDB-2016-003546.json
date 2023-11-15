@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2016-003546",
+  "vulinfodata": {
+    "title": "MSM デバイスなどの製品用 QuIC Android コントリビューションで使用される Linux Kernel の MSM グラフィックスドライバにおける権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイスおよびその他の製品用 Qualcomm Innovation Center (QuIC) Android コントリビューションで使用される Linux Kernel の MSM グラフィックスドライバ (別名 GPU ドライバ) の drivers/gpu/msm/kgsl.c は、KGSL_MEMFLAGS_GPUREADONLY フラグを誤って処理するため、権限を取得される脆弱性が存在します。  ベンダは、本脆弱性を Qualcomm internal bug CR988993 として公開しています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Android",
+          "cpe": {
+            "text": "cpe:/o:google:android",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、偶発的な読み書きのマッピングを利用されることで、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android Security Bulletin-July 2016",
+          "url": "http://source.android.com/security/bulletin/2016-07-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "Privilege Escalation Vulnerability in Graphics Driver (CVE-2016-2067)",
+          "url": "https://www.codeaurora.org/privilege-escalation-vulnerability-graphics-driver-cve-2016-2067"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "msm: kgsl: verify user memory permissions before mapping to GPU driver",
+          "url": "https://source.codeaurora.org/quic/la//kernel/msm-3.18/commit/?id=410cfa95f0a1cf58819cbfbd896f9aa45b004ac0"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2067",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2067"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2067",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2067"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-13T16:54:34+09:00",
+    "datelastupdated": "2016-07-13T16:54:34+09:00",
+    "datepublic": "2016-07-06T00:00:00+09:00"
+  }
+}

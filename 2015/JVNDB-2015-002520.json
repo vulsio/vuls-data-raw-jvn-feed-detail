@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2015-002520",
+  "vulinfodata": {
+    "title": "EMC AutoStart に任意のコマンド実行が可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "EMC AutoStart には、細工されたパケットによる任意のコマンド実行が可能な脆弱性が存在します。  EMC AutoStart は、ネットワークやサービスの高可用性を確保するためのエンタープライズソフトウェアです。AutoStart は単一のインスタンスだけでなく、複数のアプリケーションやノードを管理することができます。  EMC AutoStart は、ノード間の通信をセキュアに行わないため、攻撃者によってパケットインジェクションが行われる可能性があります。AutoStart のドメイン名を知る攻撃者は、SYSTEM や root の権限で任意のコマンドを実行することが可能です。攻撃対象のシステム上で実行されている ftagent が細工されたパケットを受け取ると、絶対パスもしくは相対パスで指定された場所に任意のデータを書き込み、それを実行するコマンドを実行される可能性があります。  なお、National Vulnerability Database (NVD) では、CWE-77 として公開されています。  CWE-77: Improper Neutralization of Special Elements used in a Command (コマンドインジェクション) http://cwe.mitre.org/data/definitions/77.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "DELL EMC (旧 EMC Corporation)",
+          "productname": "EMC AutoStart",
+          "cpe": {
+            "text": "cpe:/a:emc:autostart",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 5.5.0 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、SYSTEM や root の権限で任意のコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] EMC は本脆弱性の対策版として version 5.5.0.508 (HF4) をリリースしています。EMC Technical Support へ連絡し、ホットフィックス (reference hotfix 1073, service alert 1078) を入手してください。影響を受けるユーザは直ちに最新版へアップデートすることが推奨されます。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * 8045/tcp での通信を EMC AutoStart controller application を実行する信頼できるシステムのみに制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "EMC Corporation",
+          "vulinfoid": "AutoStart",
+          "url": "http://www.emc.com/storage/autostart.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0538",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0538"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94201974",
+          "url": "http://jvn.jp/vu/JVNVU94201974/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0538",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0538"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#581276",
+          "url": "http://www.kb.cert.org/vuls/id/581276"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ESA-2015-084: EMC AutoStart Packet Injection Vulnerability",
+          "url": "http://seclists.org/bugtraq/2015/May/25"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年05月01日]\\n  掲載\\n[2015年05月08日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-0538) を追加\\n  参考情報：関連文書 (ESA-2015-084: EMC AutoStart Packet Injection Vulnerability) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-05-01T17:36:58+09:00",
+    "datelastupdated": "2015-05-08T11:45:02+09:00",
+    "datepublic": "2015-04-30T00:00:00+09:00"
+  }
+}

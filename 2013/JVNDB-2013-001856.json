@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2013-001856",
+  "vulinfodata": {
+    "title": "Spree における任意の Ruby オブジェクトをインスタンス化される脆弱性",
+    "vulinfodescription": {
+      "overview": "Spree には、constantize 関数の危険な使用に関する処理に不備があるため、任意の Ruby オブジェクトをインスタンス化される、および任意のコマンドを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Spree Commerce",
+          "productname": "Spree",
+          "cpe": {
+            "text": "cpe:/a:spreecommerce:spree",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.x から 1.3.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、下記の項目を介して、任意の Ruby オブジェクトをインスタンス化される、および任意のコマンドを実行される可能性があります。  (1) core/app/controllers/spree/admin/payment_methods_controller.rb の payment_method パラメータ (2) promo/app/controllers/spree/admin/promotion_actions_controller.rb の promotion_action パラメータ (3) promo/app/controllers/spree/admin/promotion_rules_controller.rb の promotion_rule パラメータ (4) promo/app/controllers/spree/admin/promotions_controller.rb の calculator_type パラメータ"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix unsafe constantize calls in admin controllers",
+          "url": "https://github.com/spree/spree/commit/70092eb55b8be8fe5d21a7658b62da658612fba7"
+        },
+        {
+          "type": "vendor",
+          "name": "Spree Commerce",
+          "vulinfoid": "Multiple Security Vulnerabilities Fixed - Unsafe Use of Constantize in Admin",
+          "url": "http://spreecommerce.com/blog/multiple-security-vulnerabilities-fixed"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1656",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1656"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1656",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1656"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-19T17:21:32+09:00",
+    "datelastupdated": "2013-03-19T17:21:32+09:00",
+    "datepublic": "2013-02-21T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2016-003753",
+  "vulinfodata": {
+    "title": "GIMP の app/xcf/xcf-load.c の xcf_load_image 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "GIMP の app/xcf/xcf-load.c の xcf_load_image 関数には、解放済みメモリの使用 (Use-after-free) により、サービス運用妨害 (プログラムクラッシュ) 状態にされる、または任意のコードを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use After Free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The GIMP Team",
+          "productname": "GIMP",
+          "cpe": {
+            "text": "cpe:/a:the_gimp_team:gimp",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された XCF ファイルを介して、サービス運用妨害 (プログラムクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GIMP",
+          "vulinfoid": "Top Page",
+          "url": "http://www.gimp.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME",
+          "vulinfoid": "Bug 767873 - (CVE-2016-4994) Multiple Use-After-Free when parsing XCF channel and layer properties",
+          "url": "https://git.gnome.org/browse/gimp/commit/?id=e82aaa4b4ee0703c879e35ea9321fff6be3e9b6f"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME Bugzilla",
+          "vulinfoid": "Bug 767873",
+          "url": "https://bugzilla.gnome.org/show_bug.cgi?id=767873"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4994",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4994"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4994",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4994"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-20T13:51:05+09:00",
+    "datelastupdated": "2016-07-20T13:51:05+09:00",
+    "datepublic": "2016-06-22T00:00:00+09:00"
+  }
+}

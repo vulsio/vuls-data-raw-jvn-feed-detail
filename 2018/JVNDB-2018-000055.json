@@ -1,0 +1,200 @@
+{
+  "vulinfoid": "JVNDB-2018-000055",
+  "vulinfodata": {
+    "title": "baserCMS における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "baserCMSユーザー会が提供する baserCMS は、オープンソースのコンテンツ管理システムです。baserCMS には次の複数の脆弱性が存在します。  ・コマンドインジェクション (CWE-94) - CVE-2018-0569 ・クロスサイトスクリプティング (CWE-79) - CVE-2018-0570 ・アップロードファイル管理機能における危険なタイプのファイルの無制限アップロード (CWE-434) - CVE2018-0571 ・コンテンツ管理機能におけるアクセス制限不備 (CWE-264) - CVE-2018-0572 ・公開期限が過ぎたコンテンツに対するアクセス制限不備 (CWE-264) - CVE-2018-0573 ・テーマ管理機能におけるクロスサイトスクリプティング (CWE-79) - CVE-2018-0574 ・メールフォームのファイル添付機能におけるアクセス制限不備 (CWE-264) - CVE-2018-0575  これらの脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき次の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。  CVE-2018-0569, CVE-2018-0570, CVE-2018-0571, CVE-2018-0572, CVE-2018-0573 報告者: 三井物産セキュアディレクション株式会社 米山 俊嗣 氏、望月 岳 氏  CVE-2018-0574, CVE-2018-0575 報告者: 三井物産セキュアディレクション株式会社 望月 岳 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "baserCMSユーザー会",
+          "productname": "baserCMS",
+          "cpe": {
+            "text": "cpe:/a:basercms:basercms",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0.15 およびそれ以前のバージョン",
+            "4.1.0.1 およびそれ以前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・遠隔の第三者によって、運営管理者の権限で任意のコードを実行される - CVE-2018-0569 ・当該製品にサイト運営者権限でログインできるユーザによって、任意の OS コマンドを実行される - CVE2018-0570 ・当該製品にサイト運営者権限でログインできるユーザによって、任意のファイルをアップロードされる - CVE-2018-0571 ・当該製品にサイト運営者権限でログインできるユーザによって、アクセスを制限されているコンテンツを閲覧されたり、改ざんされたりする - CVE-2018-0572 ・遠隔の第三者によって、サイト利用者がアップロードしたファイルを閲覧される - CVE-2018-0573 ・テーマ管理画面にアクセスしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE2018-0574 ・遠隔の第三者によって、サイト利用者がアップロードしたファイルを閲覧される - CVE-2018-0575"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "CVE-2018-0570, CVE-2018-0571, CVE-2018-0573, CVE-2018-0574, CVE-2018-0575 への対策： [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  CVE-2018-0569 への対策： [最新版へアップデートし、ユーザ認証を設定する] 最新版へのアップデート後に、ユーザ認証の有効、無効を選択してください。ユーザ認証が有効な場合は、記事中へのスクリプトの保存について、システム管理者権限を要求します。 開発者によると最新版へのアップデート後、システム管理グループ以外のユーザについてはユーザ認証がすべて無効となり、有効、無効をあらためて選択することが可能になるとのことです。 なお、最新のインストーラで新規にインストールする際には、ユーザ認証はすべて有効になります。  CVE-2018-0572 への対策： [ワークアラウンドを実施する] コンテンツ管理機能でアクセス制限を行う際には、該当ページの URL を全て登録してください。詳細は開発者が提供する情報を参照ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "baserCMSユーザー会",
+          "vulinfoid": "コードインジェクションをはじめとする複数の脆弱性",
+          "url": "https://basercms.net/security/JVN67881316"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0574",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0574"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0575",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0575"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0569",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0569"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0570",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0570"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0571",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0571"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0572",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0572"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0573",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0573"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#67881316",
+          "url": "https://jvn.jp/jp/JVN67881316/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0575",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0575"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0569",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0569"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0570",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0570"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0571",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0571"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0572",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0572"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0573",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0573"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0574",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0574"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-05-18T17:47:52+09:00",
+          "description": "[2018年05月22日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-07-05T09:46:50+09:00",
+          "description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0569) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0570) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0571) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0572) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0573) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0574) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0575) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-05-22T12:11:52+09:00",
+    "datelastupdated": "2018-05-22T12:11:52+09:00",
+    "datepublic": "2018-05-22T00:00:00+09:00"
+  }
+}

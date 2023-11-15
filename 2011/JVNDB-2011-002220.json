@@ -1,0 +1,206 @@
+{
+  "vulinfoid": "JVNDB-2011-002220",
+  "vulinfodata": {
+    "title": "Samba の mount.cifs 内にある check_mtab 関数におけるサービス運用妨害 (mtab 破損) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Samba の smbfs の mount.cifs 内にある client/mount.cifs.c の check_mtab 関数は、デバイス名、およびマウントポイントの文字列が、有効なキャラクタで構成されていることを確認しないため、サービス運用妨害 (mtab 破損) 状態となる脆弱性が存在します。 本脆弱性は CVE-2010-0547 での修正が不完全だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Samba Project",
+          "productname": "Samba",
+          "cpe": {
+            "text": "cpe:/a:samba:samba",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5.10 およびそれ以前"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0 (client) ",
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1.z  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.2",
+          "vector": "AV:L/AC:H/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工されたデバイス名およびマウントポイントの文字列を介して、サービス運用妨害 (mtab 破損) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011-1221",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-1221.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011-1220",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-1220.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "Release History",
+          "url": "http://samba.org/samba/history/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2724",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2724"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2724",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2724"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "74871",
+          "url": "http://osvdb.org/74871"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA45760",
+          "url": "http://secunia.com/advisories/45760"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA45798",
+          "url": "http://secunia.com/advisories/45798"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "38326",
+          "url": "http://www.securityfocus.com/bid/38326"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1025988",
+          "url": "http://www.securitytracker.com/id?1025988"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年09月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-09-16T11:49:13+09:00",
+    "datelastupdated": "2011-09-16T11:49:13+09:00",
+    "datepublic": "2011-08-29T00:00:00+09:00"
+  }
+}

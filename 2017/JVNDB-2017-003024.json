@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2017-003024",
+  "vulinfodata": {
+    "title": "GNU Binutils で配布される Binary File Descriptor ライブラリの elflink.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU Binutils で配布される Binary File Descriptor (BFD) ライブラリ (別名 libbfd) の elflink.c には、\"Null ポインタ内でのメンバアクセス\" の未定義の動作問題により、サービス運用妨害 (アプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU Binutils",
+          "cpe": {
+            "text": "cpe:/a:gnu:binutils",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.28 の Binary File Descriptor (BFD) ライブラリ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、\"int main() {return 0;}\" プログラムを介して、サービス運用妨害 (アプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "sourceware.org",
+          "vulinfoid": "Fix null pointer dereferences when using a link built with clang.",
+          "url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=ad32986fdf9da1c8748e47b8b45100398223dba8"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-7614",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7614"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-7614",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7614"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "binutils: two NULL pointer dereference in elflink.c",
+          "url": "https://blogs.gentoo.org/ago/2017/04/05/binutils-two-null-pointer-dereference-in-elflink-c/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-476",
+          "url": "http://cwe.mitre.org/data/definitions/476.html",
+          "title": "NULL ポインタデリファレンス"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-11T17:35:17+09:00",
+    "datelastupdated": "2017-05-11T17:35:17+09:00",
+    "datepublic": "2017-04-04T00:00:00+09:00"
+  }
+}

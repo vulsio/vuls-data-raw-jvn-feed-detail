@@ -1,0 +1,212 @@
+{
+  "vulinfoid": "JVNDB-2016-002443",
+  "vulinfodata": {
+    "title": "ImageMagick に入力値検証不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "ImageMagick は、delegate の仕組みを使って入力データの処理を行う前の検証が適切に実行されていないため、結果として任意のコードを実行される可能性があります。この問題は \"ImageTragick\" としても知られています。  不適切な入力検査 (CWE-20) - CVE-2016-3714  CWE-20: Improper Input Validation http://cwe.mitre.org/data/definitions/20.html  研究者は、メーリングリストに次のように投稿しています:   　Insufficient filtering for filename passed to delegate's command allows remote code execution during conversion of several file formats.  　ImageMagick allows to process files with external libraries. This feature is called 'delegate'. It is implemented as a system() with command string ('command') from the config file delegates.xml with actual value for different params (input/output filenames etc). Due to insufficient %M param filtering it is possible to conduct shell command injection.  　delegate 先のコマンドに渡す前のファイル名のフィルタリングが不十分なため、ファイル形式の変換中に任意のコードを実行される可能性がある。  　ImageMagick には外部ライブラリを使用してファイルを処理する 'delegate' と呼ばれる機能が存在する。この機能は、設定ファイル delegates.xml で指定されたコマンド名 ('command') と、入力ファイル名や出力ファイル名などのパラメータの値を使って組み立てられた文字列を system() 関数に渡して実行する形で実装されている。パラメータ %M に当てはめる入力値のフィルタリングが不十分なため、シェルコマンドインジェクションが可能である。   ImageMagick に画像ファイルを処理させることで、攻撃者は ImageMagick が動作しているシステム上で任意のコマンドを実行することが可能です。本脆弱性の影響を受ける典型的な構成例としては、ファイルのアップロードを許可しているウェブサーバで、アップロードされたファイルを ImageMagick で処理しているケースが考えられます。  本脆弱性を使用した攻撃コードが公開されています。ウェブサイト ImageTragick (imagetragick.com) によれば、既に本脆弱性を使用した攻撃活動が観測されているとのことです。  ImageTragick https://imagetragick.com/"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "15.10",
+            "16.04 LTS"
+          ]
+        },
+        {
+          "name": "ImageMagick",
+          "productname": "ImageMagick",
+          "cpe": {
+            "text": "cpe:/a:imagemagick:imagemagick",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.9.3-10 より前のバージョン",
+            "7.0.1-1 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.4",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "画像ファイルをアップロードできる遠隔の第三者によって、ImageMagick を実行するユーザの権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 本脆弱性は ImageMagick 6.9.3-10 および 7.0.1-1 で修正されています。 なお 2016年5月9日現在、さらなるアップデート版として ImageMagick 6.9.4-0 および 7.0.1-2 がリリースされています。 開発者が提供する情報をもとに最新版へアップデートしてください。  あわせて、研究者が示す次の手順を参考に、システム構成のセキュリティ強化や設定ファイルの更新を行ってください。  　* ImageMagick による画像ファイルの処理を行う前に、その画像ファイル先頭の \"magic bytes\" が適切な値であることを確認する 　* ImageMagick のポリシーファイルにおいて、脆弱な coder を無効化する  詳細は、ウェブサイト ImageTragick (imagetragick.com) を参照してください。  ImageTragick https://imagetragick.com/"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitLab",
+          "vulinfoid": "Release ImageMagick 6.9.3-10",
+          "url": "http://git.imagemagick.org/repos/ImageMagick/blob/a01518e08c840577cabd7d3ff291a9ba735f7276/ChangeLog"
+        },
+        {
+          "type": "vendor",
+          "name": "ImageMagick",
+          "vulinfoid": "ImageMagick Security Issue",
+          "url": "https://www.imagemagick.org/discourse-server/viewtopic.php?f=4&t=29588"
+        },
+        {
+          "type": "vendor",
+          "name": "ImageMagick",
+          "vulinfoid": "ImageMagick Is On Fire - CVE-2016-3714",
+          "url": "https://imagetragick.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "ImageMagick Change Log",
+          "vulinfoid": "2016-05-03 7.0.1-1",
+          "url": "https://www.imagemagick.org/script/changelog.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1332492",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1332492"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Customer Portal",
+          "vulinfoid": "ImageMagick Filtering Vulnerability - CVE-2016-3714",
+          "url": "https://access.redhat.com/security/vulnerabilities/2296071"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:0726",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-0726.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2990-1",
+          "url": "http://www.ubuntu.com/usn/USN-2990-1/"
+        },
+        {
+          "type": "vendor",
+          "name": "サイボウズからのお知らせ",
+          "vulinfoid": "imagemagickライブラリの脆弱性（CVE-2016-3714）について（2016/5/26）",
+          "url": "https://cs.cybozu.co.jp/2016/006184.html"
+        },
+        {
+          "type": "vendor",
+          "name": "不具合情報公開サイト",
+          "vulinfoid": "[CyVDB-1228]ImageMagick ライブラリに関する脆弱性 (Office 10)",
+          "url": "https://support.cybozu.com/ja-jp/article/9559"
+        },
+        {
+          "type": "vendor",
+          "name": "不具合情報公開サイト",
+          "vulinfoid": "[CyVDB-1228]ImageMagick ライブラリに関する脆弱性 (Office 9)",
+          "url": "https://support.cybozu.com/ja-jp/article/9558"
+        },
+        {
+          "type": "vendor",
+          "name": "不具合情報公開サイト",
+          "vulinfoid": "[CyVDB-1232]ImageMagick ライブラリに関する脆弱性 (MailWise 5)",
+          "url": "https://support.cybozu.com/ja-jp/article/9560"
+        },
+        {
+          "type": "vendor",
+          "name": "富士通",
+          "vulinfoid": "脆弱性情報 2016年 (CVE-2016-3714)",
+          "url": "http://www.fujitsu.com/jp/products/software/resources/condition/security/vulnerabilities/2016/index.html#cve-2016-3714"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3714",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3714"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2016-0021",
+          "url": "http://www.jpcert.or.jp/at/2016/at160021.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92998929",
+          "url": "http://jvn.jp/vu/JVNVU92998929/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3714",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3714"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#250519",
+          "url": "http://www.kb.cert.org/vuls/id/250519"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月09日]\\n  掲載\\n[2016年05月24日]\\n  対策：内容を更新\\n[2016年06月01日]\\n  ベンダ情報：サイボウズ (imagemagickライブラリの脆弱性（CVE-2016-3714）について（2016/5/26）) を追加\\n  ベンダ情報：サイボウズ ([CyVDB-1228]ImageMagick ライブラリに関する脆弱性 (Office 9)) を追加\\n  ベンダ情報：サイボウズ ([CyVDB-1228]ImageMagick ライブラリに関する脆弱性 (Office 10)) を追加\\n  ベンダ情報：サイボウズ ([CyVDB-1232]ImageMagick ライブラリに関する脆弱性 (MailWise 5)) を追加\\n[2016年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：レッドハット (RHSA-2016:0726) を追加\\n  ベンダ情報：Canonical (USN-2990-1) を追加\\n[2016年10月07日]\\n  ベンダ情報：富士通 (脆弱性情報 2016年 (CVE-2016-3714)) を追加\\n[2016年11月18日]\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-09T16:43:31+09:00",
+    "datelastupdated": "2016-11-18T16:58:05+09:00",
+    "datepublic": "2016-05-04T00:00:00+09:00"
+  }
+}

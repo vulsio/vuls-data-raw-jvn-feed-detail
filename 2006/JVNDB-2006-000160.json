@@ -1,0 +1,215 @@
+{
+  "vulinfoid": "JVNDB-2006-000160",
+  "vulinfodata": {
+    "title": "Linux Kernel の SCTP-netfilter におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には以下の複数の問題が存在します。  1) __keyring_search_one() 関数におけるチェックの不備のため、キーリングに特定のユーザキーを追加すると無効なメモリ参照が発生する問題が存在します。(Linux Kernel 2.6.16.3 未満, CVE-2006-1522)  2) Intel EM64T CPU で稼動するシステムにおいて、特定のリターンアドレスの処理が不適切であるため、適切な命令が実行されずに SYSRET 命令が実行されてしまう問題が存在します。(Linux Kernel 2.6.16.5 未満, CVE-2006-0744)  3) ip_route_input() 関数において、マルチキャストアドレスを処理する際に NULL ポインタデリファレンスが発生する問題が存在します。(Linux Kernel 2.6.16.8 未満, CVE-2006-1525)  4) readv() および writev() システムコールにおいて、Linux Security Modules (LSM) によりファイルパーミッションチェックを行うコードが含まれていないため、これらのシステムコールにより LSM によるアクセス制限が回避される問題が存在します。(Linux Kernel 2.6.16.12 未満, CVE-2006-1856)  5) SCTP-netfilter を実装するコードにおいて、SCTP chunk サイズチェックが不適切であるため、無限ループが発生する問題が存在します。(Linux Kernel 2.6.16.13 未満, CVE-2006-1527)  6) SMBFS (Server Message Block File System) において、相対パスの処理が不適切であるため、chroot によりルートディレクトリが設定されている場合、相対パス表記により設定したルートディレクトリより上位のディレクトリにアクセス可能となる問題が存在します。(Linux Kernel 2.6.16.14 未満, CVE-2006-1864)  7) SCTP プロトコルの実装において、ECNE チャンクの処理に不備が存在するため、セッションが CLOSED の状態で予期しないチャンクを処理した場合にカーネルパニックが発生する問題が存在します。(Linux Kernel 2.6.16.15 未満, CVE-2006-2271)  8) SCTP プロトコルの実装において IP フラグメントされた SCTP 制御チャンク (COOKIE_ECHO、HEARTBEAT) の処理に不備が存在するため、カーネルパニックが発生する問題が存在します。(Linux Kernel 2.6.16.15 未満, CVE-2006-2272)  9) SCTP プロトコルの実装において sctp_skb_pull() 関数に不備が存在し、複数の DATA フラグメントを含むパケットを処理した場合に無限ループが発生し、Linux Kernel がクラッシュする問題が存在します。(Linux Kernel 2.6.16.15 未満, CVE-2006-2274)  リモート/ローカルの攻撃者にこれらの問題を悪用された場合、本来許可されていない処理やアクセスが許可される、あるいはシステムがサービス不能状態に陥る可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "kernel (V3.0)",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=758"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "kernel (V4.0)",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=378"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0710",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0710.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0493",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0493.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0437",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0437.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0580",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0580.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0579",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0579.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0710",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0710J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0493",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0493J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0437",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0437J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0580",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0580J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0579",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0579J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-1527",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1527"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-1527",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1527"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17955",
+          "url": "http://www.securityfocus.com/bid/17955"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "18105",
+          "url": "http://www.securityfocus.com/bid/18105"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17910",
+          "url": "http://www.securityfocus.com/bid/17910"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17806",
+          "url": "http://www.securityfocus.com/bid/17806"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17735",
+          "url": "http://www.securityfocus.com/bid/17735"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17593",
+          "url": "http://www.securityfocus.com/bid/17593"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17541",
+          "url": "http://www.securityfocus.com/bid/17541"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17451",
+          "url": "http://www.securityfocus.com/bid/17451"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-04-10T00:00:00+09:00"
+  }
+}

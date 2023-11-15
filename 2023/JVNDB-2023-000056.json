@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2023-000056",
+  "vulinfodata": {
+    "title": "Starlette におけるディレクトリトラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "Encode が提供する Starlette には、ディレクトリトラバーサル (CWE-22) の脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ラック 山根将司 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Encode",
+          "productname": "Starlette",
+          "cpe": {
+            "text": "cpe:/a:encode:starlette",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.13.5 およびそれ以降で 0.27.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.7",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "特定の条件下で遠隔の第三者によって、当該製品を使用して構築した Web サービス内のファイルを閲覧される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性の対策として Starlette 0.27.0 がリリースされています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Encode",
+          "vulinfoid": "Path traversal vulnerability in StaticFiles",
+          "url": "https://github.com/encode/starlette/security/advisories/GHSA-v5gw-mw7f-84px"
+        },
+        {
+          "type": "vendor",
+          "name": "Encode",
+          "vulinfoid": "Release Version 0.27.0",
+          "url": "https://github.com/encode/starlette/releases/tag/0.27.0"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-29159",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-29159"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#95981715",
+          "url": "https://jvn.jp/jp/JVN95981715/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-05-25T10:21:37+09:00",
+          "description": "[2023年05月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-05-30T12:03:09+09:00",
+    "datelastupdated": "2023-05-30T12:03:09+09:00",
+    "datepublic": "2023-05-30T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2015-005790",
+  "vulinfodata": {
+    "title": "MIT Kerberos 5 の lib/gssapi/spnego/spnego_mech.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos 5 (別名 krb5) の lib/gssapi/spnego/spnego_mech.c は、不適切なコンテキストのハンドルに依存するため、サービス運用妨害 (不正なポインタの読み込みおよびプロセスクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-18: Source Code (ソースコード) と識別されています。 http://cwe.mitre.org/data/definitions/18.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 1.14 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、gss_inquire_context コール中に誤って処理される巧妙に細工された SPNEGO パケットを介して、サービス運用妨害 (不正なポインタの読み込みおよびプロセスクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix SPNEGO context aliasing bugs [CVE-2015-2695]",
+          "url": "https://github.com/krb5/krb5/commit/b51b33f2bc5d1497ddf5bd107f791c101695000d"
+        },
+        {
+          "type": "vendor",
+          "name": "RT/krbdev.mit.edu",
+          "vulinfoid": "Ticket #8244 SPNEGO and IAKERB context aliasing bugs [CVE-2015-2695][CVE-2015-2696]",
+          "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=8244"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2695",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2695"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2695",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2695"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-10T16:46:14+09:00",
+    "datelastupdated": "2015-11-10T16:46:14+09:00",
+    "datepublic": "2015-10-26T00:00:00+09:00"
+  }
+}

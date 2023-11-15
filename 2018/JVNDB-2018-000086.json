@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2018-000086",
+  "vulinfodata": {
+    "title": "EC-CUBEペイメント決済モジュールおよび EC-CUBE用 GMO-PG決済モジュール (PGマルチペイメントサービス) における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "GMOペイメントゲートウェイ株式会社が EC-CUBE の追加モジュールとして提供する EC-CUBEペイメント決済モジュールおよび EC-CUBE用 GMO-PG決済モジュール (PGマルチペイメントサービス) には、次の複数の脆弱性が存在します。 ・管理画面におけるクロスサイトスクリプティングの脆弱性 (CWE-79) - CVE-2018-0657 ・管理画面における入力値検証不備の脆弱性 (CWE-20) - CVE-2018-0658  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 佐藤　元 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GMOペイメントゲートウェイ株式会社",
+          "productname": "EC-CUBEペイメント決済モジュール",
+          "cpe": {
+            "text": "cpe:/a:gmo_payment_gateway:ec-cubepayment_settlement_module",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(2.11系) バージョン 2.3.17 およびそれ以前",
+            "(2.12系) バージョン 3.5.23 およびそれ以前"
+          ]
+        },
+        {
+          "name": "GMOペイメントゲートウェイ株式会社",
+          "productname": "GMO-PG決済モジュール (PGマルチペイメントサービス)",
+          "cpe": {
+            "text": "cpe:/a:gmo_payment_gateway:gmo-pg_settlement_module",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(2.11系) バージョン 2.3.17 およびそれ以前",
+            "(2.12系) バージョン 3.5.23 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  ・EC-CUBE 管理画面にログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2018-0657 ・EC-CUBE 管理画面にログインしているユーザにより、サーバ上で任意の PHP コードを実行される - CVE-2018-0658  また、2つの脆弱性を組み合わせると、EC-CUBE 管理画面にログインしているユーザが細工された URL にアクセスすることで、サーバ上で任意の PHP コードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GMOペイメントゲートウェイ株式会社",
+          "vulinfoid": "GMOペイメントゲートウェイ株式会社からの情報",
+          "url": "https://jvn.jp/jp/JVN06372244/996220/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0657",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0657"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0658",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0658"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#06372244",
+          "url": "https://jvn.jp/jp/JVN06372244/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-08-09T13:58:34+09:00",
+          "description": "[2018年08月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-08-09T14:13:47+09:00",
+    "datelastupdated": "2018-08-09T14:13:47+09:00",
+    "datepublic": "2018-08-09T00:00:00+09:00"
+  }
+}

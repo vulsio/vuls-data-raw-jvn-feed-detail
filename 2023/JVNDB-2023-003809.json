@@ -1,0 +1,146 @@
+{
+  "vulinfoid": "JVNDB-2023-003809",
+  "vulinfodata": {
+    "title": "三菱電機製 MELSEC-F シリーズ基本ユニットにおける不適切な認証の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC-F シリーズ基本ユニットには、不適切な認証の脆弱性（CWE-287、CVE-2023-4562）が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "FX3G",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:fx3g",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "-xMy/z x=14,24,40,60, y=T,R, z=ES,ESS,DS,DSS 全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "FX3GC",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:fx3gc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "-32MT/D, FX3GC-32MT/DSS 全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "FX3S",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:fx3s",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "-30My/z-2AD y=T,R, z=ES,ESS 全バージョン",
+            "-xMy/z x=10,14,20,30, y=T,R, z=ES,ESS,DS,DSS 全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "FX3U",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:fx3u",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "-32MR/UA1, FX3U-64MR/UA1 全バージョン",
+            "-32MS/ES, FX3U-64MS/ES 全バージョン",
+            "-xMy/z x=16,32,48,64,80,128, y=T,R, z=ES,ESS,DS,DSS 全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "FX3UC",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:fx3uc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "-16MR/D-T, FX3UC-16MR/DS-T 全バージョン",
+            "-32MT-LT, FX3UC-32MT-LT-2 全バージョン",
+            "-xMT/z x=16,32,64,96, z=D,DSS 全バージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品にアクセス可能な第三者によって細工されたメッセージを送信されることで、認証をせずにシーケンスプログラム等を読み出されたり、悪意あるシーケンスプログラムや不正なデバイスデータなどを書き込まれた結果、情報が漏えいしたり改ざんされる可能性があります。 設定しているキーワードの桁数により想定される影響は異なります。  　* 8桁のキーワード認証の場合 　認証の欠如による情報漏えいおよび情報改ざん 　* 16桁のキーワード認証の場合 　認証の不備による認証回避  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-012.pdf\"target=\"blank\">開発者が提供する情報</a>を確認してください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 次の軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク（VPN）等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* 当該製品が接続された LAN への物理的なアクセスを制限する  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-012.pdf\"target=\"blank\">開発者が提供する情報</a>を確認してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "MELSEC-F 基本ユニットにおける情報漏えい、情報改ざん及び認証回避の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-012.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-4562",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-4562"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-285-13",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-285-13"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90509290",
+          "url": "https://jvn.jp/vu/JVNVU90509290/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-10-13T12:00:45+09:00",
+          "description": "[2023年10月13日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-10-16T14:30:31+09:00",
+          "description": "[2023年10月16日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-285-13) を追加\\n"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-10-13T12:00:45+09:00",
+    "datelastupdated": "2023-10-16T14:53:31+09:00",
+    "datepublic": "2023-10-12T00:00:00+09:00"
+  }
+}

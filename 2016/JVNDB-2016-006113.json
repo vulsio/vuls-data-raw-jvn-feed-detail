@@ -1,0 +1,178 @@
+{
+  "vulinfoid": "JVNDB-2016-006113",
+  "vulinfodata": {
+    "title": "Apache HTTP Web Server の HTTP/2 プロトコルの処理にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Web Server の実験的 (experimental) モジュール mod_http2 には、リクエストヘッダを適切に制限しないことに起因するサービス運用妨害 (DoS) の脆弱性が存在します。  Apache HTTP Web Server 2．4.17 では、実験的モジュールとして HTTP/2 プロトコル (RFC7540) を実装した mod_http2 が提供されています。このモジュールは、Apache Software Foundation が提供する配布物ではコンパイルされずに無効なままとされていますが、Apache HTTP Web Server を自社製品に取り込んで提供しているディストリビュータによっては、有効にしている可能性があります。mod_http2 を有効にするには、httpd の設定ファイル内の 'Protocols' 行に 'h2' や 'h2c' を追加する必要があります。  Apache HTTP Web Server 2.4.17 から 2.4.23 では、HTTP/2 プロトコルの処理において、リソース制限が適切に行われていません。 細工された HTTP/2 リクエストにより、サーバ上のメモリを消費させるサービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.17 から 2.4.23 まで"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "MailShooter",
+          "cpe": {
+            "text": "cpe:/a:nec:mailshooter",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "SimpWright",
+          "cpe": {
+            "text": "cpe:/a:nec:simpwright",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V6",
+            "V7"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "SpoolServerシリーズ",
+          "cpe": {
+            "text": "cpe:/h:nec:spoolserver",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "ReportFiling Ver5.2 から 6.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された HTTP/2 リクエストを処理することで、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] Apache HTTP WebServer 2.4.23 に対してはパッチが提供される予定です。 Apache のソースコードリポジトリにおいては、リビジョン 1772576 (r1772576) で修正が行われています。  リビジョン 1772576 (r1772576) http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/http2/h2_stream.c?revision=1772576&view=markup  [ワークアラウンドを実施する] 一時的な回避策として次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* 設定ファイル内の 'Protocols' 行から 'h2' および 'h2c' を削除することで HTTP/2 を無効にする  [2016年12月21日 更新] [アップデートする] 本脆弱性に対応した Apache HTTP Web Server 2.4.25 がリリースされました。 開発者が提供する情報をもとに、最新版にアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache",
+          "vulinfoid": "CVE-2016-8740, Server memory can be exhausted and service denied when HTTP/2 is used",
+          "url": "http://mail-archives.apache.org/mod_mbox/httpd-announce/201612.mbox/browser"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache httpd 2.4 vulnerabilities",
+          "vulinfoid": "Fixed in Apache httpd 2.4.24-dev",
+          "url": "https://httpd.apache.org/security/vulnerabilities_24.html#2.4.24-dev"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Revision 1772576",
+          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/http2/h2_stream.c?revision=1772576&view=markup"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "SECURITY: CVE-2016-8740",
+          "url": "https://github.com/apache/httpd/commit/29c63b786ae028d82405421585e91283c8fa0da3"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV17-003",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv17-003.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV17-004",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv17-004.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8740",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8740"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97133859",
+          "url": "http://jvn.jp/vu/JVNVU97133859/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99304449",
+          "url": "http://jvn.jp/vu/JVNVU99304449/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8740",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-8740"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年12月07日]\\n  掲載\\n[2016年12月27日]\\n  対策：内容を更新\\n[2017年02月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-003) を追加\\n  ベンダ情報：日本電気 (NV17-004) を追加\\n  参考情報：JVN (JVNVU#99304449) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-12-07T15:51:43+09:00",
+    "datelastupdated": "2017-02-20T17:39:28+09:00",
+    "datepublic": "2016-12-04T00:00:00+09:00"
+  }
+}

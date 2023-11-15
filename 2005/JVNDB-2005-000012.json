@@ -1,0 +1,185 @@
+{
+  "vulinfoid": "JVNDB-2005-000012",
+  "vulinfodata": {
+    "title": "Squid の fakeauth_auth helper におけるメモリリークの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Squid 2.5 STABLE1 - STABLE7 の NTLM 認証ヘルパの一つ fakeauth_auth helper には、メモリリークおよびセグメンテーションフォルトが発生する問題が存在します。  ・メモリリークの問題 (CAN-2005-0096) fakeauth_auth.c においてメモリリークの問題が存在し、メモリが消費されてしまうことで高負荷の状態に陥る  ・セグメンテーションフォルトの問題 (CAN-2005-0097) 意図的に作成された NTLM タイプ 3 のメッセージを受信した場合に、セグメンテーションフォルトが発生する  これらの問題を利用するリモートの攻撃者は、NTLM 認証ヘルパとして fakeauth が指定されている場合、認証ルーチンをクラッシュさせ、結果として Squid プロキシサーバをサービス不能状態に陥らせる可能性があります。   尚、Squid 2.4 以前では NTLM 認証はサポートされていないため、これらの問題の影響を受けません。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Squid-cache.org",
+          "productname": "Squid",
+          "cpe": {
+            "text": "cpe:/a:squid-cache:squid",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.STABLE7 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "squid",
+          "url": "http://www.miraclelinux.com/support/update/data/squid.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:061",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-061.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:060",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-060.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Squid Proxy Cache Security Update Advisory",
+          "vulinfoid": "squid-2.5.STABLE7-fakeauth_auth",
+          "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/index.html#squid-2.5.STABLE7-fakeauth_auth"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-71",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-71.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:060",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-060J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:061",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-061J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-71",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-71j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0096",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0096"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0096",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0096"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13789",
+          "url": "http://secunia.com/advisories/13789/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12324",
+          "url": "http://www.securityfocus.com/bid/12324"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12220",
+          "url": "http://www.securityfocus.com/bid/12220"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012818",
+          "url": "http://www.securitytracker.com/alerts/2005/Jan/1012818.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-01-07T00:00:00+09:00"
+  }
+}

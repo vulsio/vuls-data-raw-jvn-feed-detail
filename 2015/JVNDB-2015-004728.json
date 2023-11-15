@@ -1,0 +1,150 @@
+{
+  "vulinfoid": "JVNDB-2015-004728",
+  "vulinfodata": {
+    "title": "OrientDB および OrientDB Studio に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "OrientDB Server Community Edition 2.1.1 より前のバージョンにバンドルされた Studio には、複数の脆弱性が存在します。  クロスサイトリクエストフォージェリ (CWE-352) - CVE-2015-2912 OrientDB 用のウェブインターフェース Studio には、クロスサイトリクエストフォージェリの脆弱性が存在します。当該システムとのセッションがアクティブな状態のユーザが、細工されたリクエストを送信させられることにより、Studio に対して意図しない操作をさせられる可能性があります。  CWE-352: Cross-Site Request Forgery (CSRF) https://cwe.mitre.org/data/definitions/352.html  本脆弱性は OrientDB Server Community Edition 2.0.3 にバンドルされた Studio に対して報告されたものです。OrientDB Server Community Edition 2.0.15 より前のバージョンおよび 2.1.1 より前のバージョンにバンドルされた Studio についても脆弱性が存在する可能性があります。   不十分なランダム値の使用 (CWE-330) - CVE-2015-2913 OrientDB Server Community Edition 2.1.0 より前のバージョンは、セッション ID の生成に Java ライブラリ java.util.Random を使用しています。しかしながら、このクラスが生成する乱数の品質は、セキュリティに関連した用途には適していません。生成される値を攻撃者によって予測される可能性があります。  CWE-330: Use of Insufficiently Random Values https://cwe.mitre.org/data/definitions/330.html  なお、National Vulnerability Database (NVD) では、CWE-200 (情報漏えい) として公開されています。   不適切な入力確認 (CWE-20) - CVE-2015-2918 OrientDB 用のウェブインターフェース Studio は、デフォルトではレスポンスヘッダ X-Frame-Options を付与しません。そのため、細工されたウェブページを介して、クリックジャッキング攻撃を受ける可能性があります。  CWE-20: Improper Input Validation https://cwe.mitre.org/data/definitions/20.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Orient Technologies",
+          "productname": "OrientDB",
+          "cpe": {
+            "text": "cpe:/a:orientdb:orientdb",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Server Community Edition 2.0.15 より前のバージョンにバンドルされた Studio",
+            "Server Community Edition 2.1.1 より前のバージョンにバンドルされた Studio"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、被害者であるユーザと同等の権限で、当該製品を操作される可能性があります。また、管理者権限を持っていないユーザによってセッション ID が操作されることで、データベースの管理者権限を入手される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  CVE-2015-2912 および CVE-2015-2913 は OrientDB 2.0.15 および 2.1.1 で修正されています。 このアップデートでは、デフォルトで JSONP を無効にすることにより CVE-2015-2912 を修正しています。 また、java.security.SecureRandom を使用して乱数を生成することにより CVE-2015-2913 を修正しています。  デフォルトで JSONP を無効にする https://github.com/orientechnologies/orientdb/issues/4824  java.security.SecureRandom を使用して乱数を生成する https://github.com/orientechnologies/orientdb/commit/668ece96be210e742a4e2820a3085b215cf55104   [X-Frame-Options ヘッダを追加する] クリックジャッキング攻撃 (CVE-2015-2918) を防止するために、X-Frame-Options ヘッダを追加してください。ヘッダを追加するためには、サーバの起動時に次のコマンドライン引数を追加してください。  　　* Dnetwork.http.additionalResponseHeaders=\"X-FRAME-OPTIONS: DENY\"  もしくは、この引数をサーバの orientdb-server-config.xml ファイルに追加してください。  [OrientDB Studio を無効にする] 必要がなければ Studio を無効にしてください。Studio を無効とすれば、これらの問題は顕在化しません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "commit log: Adopted SecureRandom to avoid predicable random numbers in session",
+          "url": "https://github.com/orientechnologies/orientdb/commit/668ece96be210e742a4e2820a3085b215cf55104"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "issue #4824: Cross-Site-Request-Forgery",
+          "url": "https://github.com/orientechnologies/orientdb/issues/4824"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2912",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2912"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2913",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2913"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2918",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2918"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96220126",
+          "url": "http://jvn.jp/vu/JVNVU96220126/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2913",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2913"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2918",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2918"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2912",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2912"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#845332",
+          "url": "https://www.kb.cert.org/vuls/id/845332"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-352",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+          "title": "クロスサイトリクエストフォージェリ"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月18日]\\n  掲載\\n[2016年01月07日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2912) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2913) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2918) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-18T18:19:04+09:00",
+    "datelastupdated": "2016-01-07T15:11:52+09:00",
+    "datepublic": "2015-09-03T00:00:00+09:00"
+  }
+}

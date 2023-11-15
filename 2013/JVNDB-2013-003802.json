@@ -1,0 +1,208 @@
+{
+  "vulinfoid": "JVNDB-2013-003802",
+  "vulinfodata": {
+    "title": "マルチコア CPU の共有 L3 キャッシュに対するサイドチャネル攻撃",
+    "vulinfodescription": {
+      "overview": "マルチコア CPU の共有 L3 キャッシュに対するサイドチャネル攻撃手法が公開されています。 詳しくは、以下のページをご確認ください。  Flush+Reload: a High Resolution, Low Noise, L3 Cache Side-Channel Attack http://eprint.iacr.org/2013/448.pdf   この問題は情報漏えい (CWE-200) の脆弱性の一種です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.04 LTS",
+            "12.04 LTS",
+            "12.10",
+            "13.04"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0",
+            "7.0"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GnuPG",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnupg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.14 未満",
+            "2.0.x"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "Libgcrypt",
+          "cpe": {
+            "text": "cpe:/a:gnu:libgcrypt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.3 未満"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.2",
+            "12.3"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10",
+            "11.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.9",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "共有 L3 キャッシュを通じて、他のプロセスからメモリ内容を推測される可能性があります。結果として、機密情報などを取得される可能性があります。  Flush+Reload: a High Resolution, Low Noise, L3 Cache Side-Channel Attack では、Intel Ivy Bridge プラットフォーム上で本攻撃手法を適用することで、GnuPG の RSA 秘密鍵を 98% まで復元できることが示されています。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 各開発者が提供する情報や、VU#976534 の Vendor Information をもとに、該当する製品をアップデートしてください。  GnuPG は本脆弱性の対策版として GnuPG 1.4.14 と Libgcrypt 1.5.3 を公開しています。  [ワークアラウンドを実施する] ハイパーバイザ型の仮想環境では、以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* memory page de-duplication 機能を無効にする"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "717880",
+          "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=717880"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2730",
+          "url": "http://www.debian.org/security/2013/dsa-2730"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2731",
+          "url": "http://www.debian.org/security/2013/dsa-2731"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuPG Project",
+          "vulinfoid": "Download",
+          "url": "http://www.gnupg.org/download/"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1294",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00003.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1457",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1457.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2013-4242 Information Disclosure vulnerability in libgcrypt",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2013_4242_information_disclosure"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1923-1",
+          "url": "http://www.ubuntu.com/usn/USN-1923-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4242",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4242"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94473961",
+          "url": "http://jvn.jp/cert/JVNVU94473961/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4242",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4242"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#976534 ",
+          "url": "http://www.kb.cert.org/vuls/id/976534"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Flush+Reload: a High Resolution, Low Noise, L3 Cache Side-Channel Attack",
+          "url": "http://eprint.iacr.org/2013/448.pdf"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月21日]\\n  掲載\\n[2013年10月04日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  参考情報：JVN (JVNVU#94473961) を追加\\n  参考情報：US-CERT Vulnerability Note (VU#976534) を追加\\n  参考情報：関連文書 (Flush+Reload: a High Resolution, Low Noise, L3 Cache Side-Channel Attack) を追加\\n[2013年10月23日]\\n  CVSS による深刻度：内容を更新\\n[2013年10月28日]\\n  影響を受けるシステム：内容を更新\\n[2013年11月11日]\\n  ベンダ情報：レッドハット (RHSA-2013:1457) を追加\\n[2014年05月14日]\\n  ベンダ情報：オラクル (CVE-2013-4242 Information Disclosure vulnerability in libgcrypt) を追加\\n[2014年05月23日]\\n  影響を受けるシステム：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-21T20:09:06+09:00",
+    "datelastupdated": "2014-05-23T14:52:56+09:00",
+    "datepublic": "2013-07-29T00:00:00+09:00"
+  }
+}

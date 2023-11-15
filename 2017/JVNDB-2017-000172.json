@@ -1,0 +1,178 @@
+{
+  "vulinfoid": "JVNDB-2017-000172",
+  "vulinfodata": {
+    "title": "FileCapsule Deluxe Portable および FileCapsule Deluxe Portable で作成された自己復号形式の暗号ファイルにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "FileCapsule Deluxe Portable は、ファイルの暗号化を行うソフトウェアです。FileCapsule Deluxe Portable および FileCapsule Deluxe Portable で作成された自己復号形式の暗号ファイルには、次の脆弱性が存在します。 ・FileCapsule Deluxe Portable が意図しない DLL を読み込み実行する (CWE-427) - CVE-2017-2265、CVE-2017-2267、CVE-2017-2269 ・作成された自己復号形式の暗号ファイルが意図しない DLL を読み込み実行する (CWE-427) - CVE-2017-2266、CVE-2017-2268、CVE-2017-2270  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "SPIRIT",
+          "productname": "FileCapsule Deluxe Portable",
+          "cpe": {
+            "text": "cpe:/a:resume-next:filecapsule_deluxe_portable",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.1.0.4.1 およびそれ以前 - CVE-2017-2265",
+            "Ver.1.0.4.1 およびそれ以前を使用して作成された自己復号形式の暗号ファイル - CVE-2017-2266",
+            "Ver.1.0.5.1 およびそれ以前 - CVE-2017-2267",
+            "Ver.1.0.5.1 およびそれ以前を使用して作成された自己復号形式の暗号ファイル - CVE-2017-2268",
+            "Ver.2.0.9 およびそれ以前 - CVE-2017-2269",
+            "Ver.2.0.9 およびそれ以前を使用して作成された自己復号形式の暗号ファイル - CVE-2017-2270"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品を実行している権限で、任意のコードを実行される - CVE-2017-2265、CVE-2017-2267、CVE-2017-2269 ・自己復号形式の暗号ファイルを実行している権限で、任意のコードを実行される - CVE-2017-2266、CVE-2017-2268、CVE-2017-2270"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。また、自己復号形式暗号ファイルは作成し直してください。  開発者によると、Windows 8 より前の Windows OS を使用している場合には、以下の対応が必要とのことです。 ・Windows 7 および Vista を使用している場合は、あらかじめ Microsoft が提供する更新プログラム KB2533623 を適用しておく必要があります。 ・Windows XP を使用している場合、アプリケーション側では対策できないため、アプリケーション本体や自己復号形式暗号ファイルの置き場所に注意してください。具体的には、他のユーザが自由にファイルを配置できるフォルダや、自分で信頼できないファイルを置く可能性のあるフォルダから起動することは避けてください。  詳しくは、開発者が提供する情報をご参照ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ON ERROR RESUME NEXT",
+          "vulinfoid": "ON ERROR RESUME NEXT",
+          "url": "http://www.resume-next.com/contents/fcdp.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ON ERROR RESUME NEXT",
+          "vulinfoid": "【重要なお知らせ】FileCapsule Deluxe Portableの脆弱性について / [Important Notice] About FileCapsule Deluxe Portable Vulnerability",
+          "url": "http://resumenext.blog.fc2.com/blog-entry-30.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2266",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2266"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2267",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2267"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2268",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2268"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2269",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2269"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2270",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2270"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2265",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2265"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#42031953",
+          "url": "https://jvn.jp/jp/JVN42031953/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2268",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2268"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2269",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2269"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2270",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2270"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2265",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2265"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2266",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2266"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2267",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2267"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年7月13日]\\n  掲載\\n[2018年02月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2265) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2266) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2267) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2268) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2269) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2270) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-07-13T12:07:54+09:00",
+    "datelastupdated": "2018-02-07T16:44:54+09:00",
+    "datepublic": "2017-07-13T00:00:00+09:00"
+  }
+}

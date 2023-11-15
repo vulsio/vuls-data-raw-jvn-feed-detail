@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2015-005702",
+  "vulinfodata": {
+    "title": "Xen におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen は、特定の pmu および profiling ハイパーコールのロギングの際、printk コンソールのメッセージ数を制限しないため、サービス運用妨害 (DoS) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.x から 4.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルゲストにより、以下の巧妙に細工されたハイパーコールのシーケンスを介してサービス運用妨害 (DoS) 状態にされる可能性があります。  (1) common/xenoprof.c の do_xenoprof_op 関数で適切に処理されない HYPERCALL_xenoprof_op ハイパーコール (2) arch/x86/cpu/vpmu.c の do_xenpmu_op 関数で適切に処理されない HYPERVISOR_xenpmu_op ハイパーコール"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-152",
+          "url": "http://xenbits.xen.org/xsa/advisory-152.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7971",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7971"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7971",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7971"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-04T16:29:44+09:00",
+    "datelastupdated": "2015-11-04T16:29:44+09:00",
+    "datepublic": "2015-10-29T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "vulinfoid": "JVNDB-2007-000216",
+  "vulinfodata": {
+    "title": "デバイスエクスプローラ OPC サーバにバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社たけびしが提供する デバイスエクスプローラ MELSEC OPC サーバは、シーケンサ等の計測機器との通信を行い、計測データを OPC インターフェース仕様を介して任意のアプリケーションに受け渡しを行う通信アプリケーションです。  OPC (OLE for Process Control)とは、米国 OPC Foundation が策定した国際標準のアプリケーション間通信インターフェースの統一仕様です。   このたけびしが提供する OPC サーバには、OPC プロトコルの実装にともなうバッファオーバーフローの脆弱性が存在します。なお、OPC プロトコルの仕様自体には影響がないことが確認されております。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "たけびし",
+          "productname": "デバイスエクスプローラ FA-M3 OPC サーバ",
+          "cpe": {
+            "text": "cpe:/a:takebishi_corporation:devicexplorer_fa-m3_opc_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.11 Build6 およびそれ以前、V3.12 Build1、V3.12 Build2"
+          ]
+        },
+        {
+          "name": "たけびし",
+          "productname": "デバイスエクスプローラ HIDIC OPC サーバ",
+          "cpe": {
+            "text": "cpe:/a:takebishi_corporation:devicexplorer_hidic_opc_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.11 Build6 およびそれ以前、V3.12 Build1、V3.12 Build2"
+          ]
+        },
+        {
+          "name": "たけびし",
+          "productname": "デバイスエクスプローラ MELSEC OPCサーバ",
+          "cpe": {
+            "text": "cpe:/a:takebishi_corporation:devicexplorer_melsec_opc_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.11 Build6 およびそれ以前、V3.12 Build1、V3.12 Build2"
+          ]
+        },
+        {
+          "name": "たけびし",
+          "productname": "デバイスエクスプローラ MODBUS OPC サーバ",
+          "cpe": {
+            "text": "cpe:/a:takebishi_corporation:devicexplorer_modbus_opc_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.11 Build6 およびそれ以前、V3.12 Build1、V3.12 Build2"
+          ]
+        },
+        {
+          "name": "たけびし",
+          "productname": "デバイスエクスプローラ SYSMAC OPC サーバ",
+          "cpe": {
+            "text": "cpe:/a:takebishi_corporation:devicexplorer_sysmac_opc_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.11 Build6 およびそれ以前、V3.12 Build1、V3.12 Build2"
+          ]
+        },
+        {
+          "name": "たけびし",
+          "productname": "デバイスエクスプローラ TOYOPUC OPC サーバ",
+          "cpe": {
+            "text": "cpe:/a:takebishi_corporation:devicexplorer_toyopuc_opc_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.11 Build6 およびそれ以前、V3.12 Build1、V3.12 Build2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "システムの設置されているネットワーク環境によって異なりますが、第三者によって OPC サーバの実行権限で任意のコードが実行される可能性があります。管理者権限のアカウントでユーザがログインしている場合、結果としてシステムを完全に制御される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。  解決策として、株式会社たけびしホームページで公開されている最新バージョンを使用することを推奨いたします。  最新バージョンへの適用が出来ない場合、回避策として、Windows の RPC の通信設定を適切に制限することを推奨いたします。また、OPC サーバと管理用クライアントが異なるネットワークセグメントを経由して接続されている場合は、適切なアクセス制限を行うようにする方法も推奨いたします。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Security Notice",
+          "vulinfoid": "The vulnerability of DeviceXPlorer OPC Server",
+          "url": "http://www.faweb.net/us/opc/1231207.html"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティ関連のお知らせ",
+          "vulinfoid": "デバイスエクスプローラOPCサーバの脆弱性について",
+          "url": "http://www.faweb.net/opc/1231207.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-1319",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1319"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#346577",
+          "url": "http://jvn.jp/cert/JVNVU%23346577/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#202345",
+          "url": "http://jvn.jp/cert/JVNVU%23202345/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#581889",
+          "url": "http://jvn.jp/cert/JVNVU%23581889/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#907049",
+          "url": "http://jvn.jp/cert/JVNVU%23907049/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#926551",
+          "url": "http://jvn.jpcert.or.jp/cert/JVNVU926551/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#347105",
+          "url": "http://jvn.jp/cert/JVNVU%23347105/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-1319",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-1319"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA24570",
+          "url": "http://secunia.com/advisories/24570"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "23037",
+          "url": "http://www.securityfocus.com/bid/23037"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1017793",
+          "url": "http://www.securitytracker.com/id?1017793"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#926551",
+          "url": "http://www.kb.cert.org/vuls/id/926551"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-24T17:53:29+09:00",
+    "datelastupdated": "2007-04-24T17:53:29+09:00",
+    "datepublic": "2007-03-16T00:00:00+09:00"
+  }
+}

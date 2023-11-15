@@ -1,0 +1,154 @@
+{
+  "vulinfoid": "JVNDB-2015-005933",
+  "vulinfodata": {
+    "title": "Linux Kernel の KVM サブシステムおよび Xen におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の KVM サブシステム、および Xen には、svm.c および vmx.c に関する処理に不備があるため、サービス運用妨害 (ホスト OS パニックまたはハング) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.6 まで"
+          ]
+        },
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.x から 4.6.x"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle VM VirtualBox",
+          "cpe": {
+            "text": "cpe:/a:oracle:vm_virtualbox",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.36 未満",
+            "4.1.44 未満",
+            "4.2.36 未満",
+            "4.3.34 未満",
+            "5.0.10 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、多数の #AC (別名 Alignment Check) 例外を誘発されることで、サービス運用妨害 (ホスト OS パニックまたはハング) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KVM: x86: work around infinite loop in microcode when #AC is delivered",
+          "url": "https://github.com/torvalds/linux/commit/54a20552e1eae07aa240fa370a0293e006b5faed"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "KVM: x86: work around infinite loop in microcode when #AC is delivered",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=54a20552e1eae07aa240fa370a0293e006b5faed"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2016verbose-2367956.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1277172",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1277172"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "January 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/january_2016_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-156",
+          "url": "http://xenbits.xen.org/xsa/advisory-156.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5307",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5307"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5307",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5307"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月17日]\\n  掲載\\n[2016年01月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2016 Critical Patch Update Released) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-17T16:17:29+09:00",
+    "datelastupdated": "2016-01-28T17:42:51+09:00",
+    "datepublic": "2015-11-04T00:00:00+09:00"
+  }
+}

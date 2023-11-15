@@ -1,0 +1,125 @@
+{
+  "vulinfoid": "JVNDB-2017-002817",
+  "vulinfodata": {
+    "title": "複数の OS 上で稼動する Google Chrome の Blink で使用される libxslt の transform.c における境界外書き込みを引き起こされる脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の OS 上で稼動する Google Chrome の Blink で使用される libxslt の transform.c 内の xsltAddTextString 関数は、サイズ計算中に整数オーバーフローのチェックを行わないため、境界外書き込みを引き起こされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "57.0.2987.108 未満 (Android)",
+            "57.0.2987.98 未満 (Windows/Macintosh/Linux)"
+          ]
+        },
+        {
+          "name": "xmlsoft.org",
+          "productname": "libxslt",
+          "cpe": {
+            "text": "cpe:/a:xmlsoft:libxslt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.29"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、巧妙に細工された HTML ページを介して、境界外書き込みを引き起こされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Chromium",
+          "vulinfoid": "Issue 676623",
+          "url": "https://bugs.chromium.org/p/chromium/issues/detail?id=676623"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME GIT REPOSITORY",
+          "vulinfoid": "Check for integer overflow in xsltAddTextString",
+          "url": "https://git.gnome.org/browse/libxslt/commit/?id=08ab2774b870de1c7b5a48693df75e8154addae5"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "https://www.google.com/intl/ja/chrome/browser/features.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update for Desktop",
+          "url": "https://chromereleases.googleblog.com/2017/03/stable-channel-update-for-desktop.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-5029",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5029"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-5029",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5029"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-787",
+          "url": "https://cwe.mitre.org/data/definitions/787.html",
+          "title": "境界外書き込み"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月01日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-01T16:30:05+09:00",
+    "datelastupdated": "2017-05-01T16:30:05+09:00",
+    "datepublic": "2017-03-09T00:00:00+09:00"
+  }
+}

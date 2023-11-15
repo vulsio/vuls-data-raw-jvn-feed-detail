@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2013-005048",
+  "vulinfodata": {
+    "title": "OpenSSH の sshd における ForceCommand およびログインシェルの制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSH の sshd の monitor_wrap.c 内の mm_newkeys_from_blob 関数は、AES-GCM 暗号化方式を使用する場合、MAC コンテキストデータ構造のメモリを適切に初期化しないため、ForceCommand およびログインシェルの制限を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenBSD",
+          "productname": "OpenSSH",
+          "cpe": {
+            "text": "cpe:/a:openbsd:openssh",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.2",
+            "6.3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、巧妙に細工されたコールバックアドレスを返すパケットデータを介して、ForceCommand およびログインシェルの制限を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX03188 SSRT101487",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04499681"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSH",
+          "vulinfoid": "OpenSSH Security Advisory: gcmrekey.adv",
+          "url": "http://www.openssh.com/txt/gcmrekey.adv"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2013:1726",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00017.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2014-1",
+          "url": "http://www.ubuntu.com/usn/USN-2014-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4548",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4548"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4548",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4548"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月11日]\\n  掲載\\n[2013年11月20日]\\n  CVSS による深刻度：内容を更新\\n[2013年12月04日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:1726) を追加\\n  ベンダ情報：Ubuntu (USN-2014-1) を追加\\n[2014年12月08日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03188 SSRT101487) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-11T12:18:02+09:00",
+    "datelastupdated": "2014-12-08T17:07:15+09:00",
+    "datepublic": "2013-11-07T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2017-000104",
+  "vulinfodata": {
+    "title": "RW-4040 ドライバソフトインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "シャープ株式会社が提供する RW-4040 ドライバソフトインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: NTTコミュニケーションズ株式会社 東内裕二 氏、PinkFlyingWhale 黒翼猫 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "シャープ株式会社",
+          "productname": "RW-4040 ドライバソフトインストーラ Windows 7 用",
+          "cpe": {
+            "text": "cpe:/a:sharp:rw-4040_driver_installer_for_windows_7",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 2.27A (RW4040V2.27_A_win7V.exe) およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 本脆弱性は次のバージョンで修正されています。  　* RW-4040 ドライバソフトインストーラ Windows 7 用 バージョン 2.2.7.1 (RW40Inst.exe)  なお、ドライバソフトが本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザはドライバソフトをアップデートする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "シャープ株式会社",
+          "vulinfoid": "サポート・お問い合わせ  住民基本台帳用 ICカードリーダライタ",
+          "url": "http://www.sharp.co.jp/support/iccrw/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2189",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2189"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#51274854",
+          "url": "https://jvn.jp/jp/JVN51274854/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2189",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2189"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年06月01日]\\n  掲載\\n[2017年08月23日]\\n  概要：内容を追記\\n  影響を受けるシステム、対策：内容を更新\\n[2018年01月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2189) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-06-01T14:05:09+09:00",
+    "datelastupdated": "2018-01-24T13:54:42+09:00",
+    "datepublic": "2017-06-01T00:00:00+09:00"
+  }
+}

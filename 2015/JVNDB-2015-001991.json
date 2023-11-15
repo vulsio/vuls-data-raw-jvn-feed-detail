@@ -1,0 +1,76 @@
+{
+  "vulinfoid": "JVNDB-2015-001991",
+  "vulinfodata": {
+    "title": "複数の認証局においてメールアドレスのみに基づいて証明書を発行している問題",
+    "vulinfodescription": {
+      "overview": "複数の認証局において、証明書発行時の確認が「特定のメールアドレスでのやりとりが可能であること」のみで行われています。これにより、関連するドメインの管理とは無関係な第三者によって SSL 証明書が取得され、クライアントのソフトウェア上で警告が発せられることなく HTTPS スプーフィングが行われる可能性があります。  ウェブブラウザなどのクライアントが HTTPS で表現される URL にアクセスする際、クライアントは通常、サーバから提示された証明書が、信頼するルート認証局によって発行されていることを確認します。この仕組みでは、ルート認証局が証明書を発行する際、証明書の発行依頼はドメイン管理者の了承に基づくものであるという厳密な確認のもとに行われていることを前提としています。  多くのルート認証局は、「ドメイン認証型 (\"domain-authenticated\")」、またはそれに類似する名前を持つ証明書の発行サービスを提供しています。ドメイン認証型証明書は、証明書発行依頼者がドメイン管理者であることの最小限の確認のみで発行されている場合があります。例えば、証明書を発行するドメイン名のメールアドレスを使って連絡可能であることを確認するだけで証明書を発行するサービスもあります。RFC2142 では「DNS 関連のサービスに使用するメールアドレスは hostmaster であるべき」としています。また、Mozilla CA Certificate Inclusion Policy や CA/Browser Forum の Baseline Requirements Documents では、ドメインの正当な管理者であることの確認のために、admin、administrator、webmaster、hostmaster および postmaster が使用可能であるとしています。 しかし、それ以外のメールアドレスをドメイン管理者の正当性の確認に使用しているルート認証局もあります。例えば、ssladministrator@example.com というメールアドレスでやりとりを行うことができれば example.com の証明書を取得できる可能性があります。  RFC2142 https://www.ietf.org/rfc/rfc2142.txt   EV 証明書以外では、ウェブブラウザの表示においてドメイン認証型証明書とさらに追加の確認をした上で発行された証明書は区別されません。例えば GeoCerts は、domain-authentication 型証明書と full-authentication 型証明書の両方を提供していますが、ウェブブラウザなどのクライアントの表示では、この2種類の証明書を区別していません。  メールサービスを提供するウェブサイトのドメインには、より高いリスクがあります。あるルート認証局がドメイン認証型証明書の発行確認に使用しているメールアドレスを取得することができれば、そのドメインの証明書を発行させることができます。ドメイン認証型証明書の発行確認で使われているメールアドレスリストの一例として、Comodo のポリシーがあります。また、BuyHTTP などのように、証明書購入時のメール認証でさらに追加のメールアドレスを使用可能な例もあります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "AV:A/AC:M/Au:N/C:C/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ドメイン管理に無関係な第三者によって当該ドメインの証明書を取得され、偽の HTTPS サイトを立ち上げられたり、クライアントに警告を出されることなく HTTPS 通信を傍受されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年3月30日現在、対策方法は不明です。以下のワークアラウンドの適用を検討してください。  [センシティブなメールアカウントを使わせない] ユーザにメールアカウントを提供するウェブサイトでは、ルート認証局が証明書発行時の確認に使っているメールアカウントをユーザが作成できないよう制限すべきです。最低でも、admin、administrator、webmaster、hostmaster および postmaster のメールアドレスはユーザに提供しないでください。BuyHTTP では、これらのメールアドレスに加え、root、ssladmin、info、is、it、mis、ssladministrator および sslwebmaster のメールアドレスによる証明書の購入も許可されています。ユーザがこれらのメールアドレスをすでに作成している場合、これらを無効にしてください。無効にしなければ、当該ドメイン名に対する証明書が取得される可能性があります。  なお、上に挙げたメールアドレスが全てではありません。上記以外のメールアドレスを使って証明書の取得が可能なルート認証局が少なくとも 1つ存在します。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92002857",
+          "url": "http://jvn.jp/vu/JVNVU92002857/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#591120",
+          "url": "http://www.kb.cert.org/vuls/id/591120"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "RFC2142",
+          "url": "https://www.ietf.org/rfc/rfc2142.txt"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月01日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-01T10:57:55+09:00",
+    "datelastupdated": "2015-04-01T10:57:55+09:00",
+    "datepublic": "2015-03-27T00:00:00+09:00"
+  }
+}

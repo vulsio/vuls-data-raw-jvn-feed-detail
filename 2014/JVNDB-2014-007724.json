@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-007724",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/utvideodec.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/utvideodec.c は、スライスの高さのゼロの値をチェックしないため、サービス運用妨害 (配列の領域外へのアクセス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された Ut Video データを介して、サービス運用妨害 (配列の領域外へのアクセス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "Top Page",
+          "url": "https://www.ffmpeg.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "avcodec/utvideodec: Fix handling of slice_height=0",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=3881606240953b9275a247a1c98a567f3c44890f"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9604",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9604"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9604",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9604"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-23T13:46:20+09:00",
+    "datelastupdated": "2015-01-23T13:46:20+09:00",
+    "datepublic": "2014-12-17T00:00:00+09:00"
+  }
+}

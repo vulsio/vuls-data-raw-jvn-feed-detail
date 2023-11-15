@@ -1,0 +1,219 @@
+{
+  "vulinfoid": "JVNDB-2016-002380",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/pipe.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/pipe.c は、パイプ内の未読のデータ量を適切に制限しないため、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.5 未満"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Debuginfo",
+          "cpe": {
+            "text": "cpe:/a:suse:linux_enterprise_debuginfo",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Desktop",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_desktop",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Live Patching",
+          "cpe": {
+            "text": "cpe:/a:suse:suse_linux_enterprise_live_patching",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Module for Public Cloud",
+          "cpe": {
+            "text": "cpe:/a:suse:suse_linux_enterprise_module_for_public_cloud",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Real Time Extension",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_real_time_extension",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Server",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Software Development Kit",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_software_development_kit",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Workstation Extension",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_workstation_extension",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.2",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、デフォルトのサイズではない大量のパイプを作成されることで、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "pipe: limit the per-user amount of pages allocated in pipes",
+          "url": "https://github.com/torvalds/linux/commit/759c01142a5d0f364a462346168a56de28a80f52"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "pipe: limit the per-user amount of pages allocated in pipes",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=759c01142a5d0f364a462346168a56de28a80f52"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1707",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00059.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1937",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-08/msg00000.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1672",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00052.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1690",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00054.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1696",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00056.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle VM Server for x86 Bulletin - October 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinoct2016-3090547.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1313428",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1313428"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2847",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2847"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2847",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2847"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月02日]\\n  掲載\\n[2016年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - October 2016) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1672) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1690) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1696) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1707) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1937) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-02T17:59:54+09:00",
+    "datelastupdated": "2016-10-28T16:59:35+09:00",
+    "datepublic": "2016-01-19T00:00:00+09:00"
+  }
+}

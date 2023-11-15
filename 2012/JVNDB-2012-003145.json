@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2012-003145",
+  "vulinfodata": {
+    "title": "OpenStack Compute (Nova) Folsom および Essex におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenStack Compute (Nova) Folsom (2012.2) および Essex (2012.1) の Nova scheduler は、DifferentHostFilter または SameHostFilter が有効である場合、サービス運用妨害 (データベースの過剰な参照呼出しおよびサーバハング) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Compute Nova",
+          "cpe": {
+            "text": "cpe:/a:openstack:nova",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Folsom (2012.2)"
+          ]
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Essex",
+          "cpe": {
+            "text": "cpe:/a:openstack:essex",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(2012.1)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、os:scheduler_hints セクション内で過度に繰り返す ID を伴うリクエストを介して、サービス運用妨害 (データベースの過剰な参照呼出しおよびサーバハング) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Use compute_api.get_all in affinity filters._refs/heads/stable/essex",
+          "url": "https://github.com/openstack/nova/commit/25f5bd31805bd21d7b7e3583c775252aa8f737e9"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Use compute_api.get_all in affinity filters._refs/heads/master",
+          "url": "https://github.com/openstack/nova/commit/034762e8060dcf0a11cb039b9d426b0d0bb1801d"
+        },
+        {
+          "type": "vendor",
+          "name": "Launchpad",
+          "vulinfoid": "scheduler hang (DOS) possible with DifferentHostFilter/SameHostFilter",
+          "url": "https://bugs.launchpad.net/nova/+bug/1017795"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1501-1",
+          "url": "http://www.ubuntu.com/usn/USN-1501-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-3371",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3371"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-3371",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3371"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-19T16:44:04+09:00",
+    "datelastupdated": "2012-07-19T16:44:04+09:00",
+    "datepublic": "2012-06-26T00:00:00+09:00"
+  }
+}

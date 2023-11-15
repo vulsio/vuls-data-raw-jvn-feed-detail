@@ -1,0 +1,200 @@
+{
+  "vulinfoid": "JVNDB-2016-004849",
+  "vulinfodata": {
+    "title": "libarchive の archive_read_support_format_cpio.c の archive_read_format_cpio_read_header 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libarchive の archive_read_support_format_cpio.c の archive_read_format_cpio_read_header 関数には、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "libarchive",
+          "productname": "libarchive",
+          "cpe": {
+            "text": "cpe:/a:libarchive:libarchive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.1 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)",
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)",
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)",
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server AUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)",
+            "(v. 7)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、過度に大きなシンボリックリンクを持つ CPIO アーカイブを介して、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Reject cpio symlinks that exceed 1MB",
+          "url": "https://github.com/libarchive/libarchive/commit/fd7e0c02"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "memory allocate error #705",
+          "url": "https://github.com/libarchive/libarchive/issues/705"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1347084",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1347084"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1844",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1844.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1850",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1850.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4809",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4809"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4809",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4809"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-27T11:51:01+09:00",
+    "datelastupdated": "2016-09-27T11:51:01+09:00",
+    "datepublic": "2016-05-15T00:00:00+09:00"
+  }
+}

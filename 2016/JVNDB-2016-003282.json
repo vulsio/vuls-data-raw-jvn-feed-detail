@@ -1,0 +1,147 @@
+{
+  "vulinfoid": "JVNDB-2016-003282",
+  "vulinfodata": {
+    "title": "Libav および FFmpeg の libavformat/mov.c の mov_read_dref 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Libav および FFmpeg の libavformat/mov.c の mov_read_dref 関数には、サービス運用妨害 (メモリ破損) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.11 未満"
+          ]
+        },
+        {
+          "name": "Libav",
+          "productname": "Libav",
+          "cpe": {
+            "text": "cpe:/a:libav:libav",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.7 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、MP4 ファイルの dref ボックスのエントリー値を介して、サービス運用妨害 (メモリ破損) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 929",
+          "url": "https://bugzilla.libav.org/show_bug.cgi?id=929"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3603",
+          "url": "https://www.debian.org/security/2016/dsa-3603"
+        },
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "FFmpeg Security",
+          "url": "https://ffmpeg.org/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mov: reset dref_count on realloc to keep values consistent.",
+          "url": "https://github.com/FFmpeg/FFmpeg/commit/689e59b7ffed34eba6159dcc78e87133862e3746"
+        },
+        {
+          "type": "vendor",
+          "name": "Libav",
+          "vulinfoid": "libav-11.7.changelog",
+          "url": "https://libav.org/releases/libav-11.7.changelog"
+        },
+        {
+          "type": "vendor",
+          "name": "Libav",
+          "vulinfoid": "mov: Check the entries value when parsing dref boxes",
+          "url": "https://git.libav.org/?p=libav.git;a=commit;h=7e01d48cfd168c3dfc663f03a3b6a98e0ecba328"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3062",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3062"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3062",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3062"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年06月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-06-21T15:15:27+09:00",
+    "datelastupdated": "2016-06-21T15:15:27+09:00",
+    "datepublic": "2016-03-11T00:00:00+09:00"
+  }
+}

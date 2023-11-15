@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2013-003175",
+  "vulinfodata": {
+    "title": "FreeBSD のカーネルにおけるファイルシステムの書き込み権限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeBSD のカーネルの mmap の実装の sys/vm/vm_map.c 内の vm_map_lookup 関数は、タスクがメモリロケーションへの書き込み権限を持つべきかどうかを適切に判定しないため、ファイルシステムの書き込み権限を回避され、その結果、権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.0 から 9.1-RELEASE-p4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、読み取り権限を利用する巧妙に細工されたアプリケーションを介して、mmap や ptrace のシステムコールを呼び出されることで、ファイルシステムの書き込み権限を回避され、その結果、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "FreeBSD-SA-13:06.mmap",
+          "url": "http://www.freebsd.org/security/advisories/FreeBSD-SA-13:06.mmap.asc"
+        },
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "Revision 251901",
+          "url": "http://svnweb.freebsd.org/base?view=revision&revision=251901"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2171",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2171"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2171",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2171"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年07月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-07-03T13:55:01+09:00",
+    "datelastupdated": "2013-07-03T13:55:01+09:00",
+    "datepublic": "2013-06-18T00:00:00+09:00"
+  }
+}

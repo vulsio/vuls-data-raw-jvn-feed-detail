@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2009-001478",
+  "vulinfodata": {
+    "title": "Linux kernel の shm サブシステムに含まれる shm_get_stat 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の shm サブシステムに含まれる shm_get_stat 関数 (ipc/shm.c) には、 CONFIG_SHMEM を無効に設定している場合に、 inode のデータタイプを誤解してしまうため、サービス運用妨害 (DoS) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.28.5 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ipcs プログラムを実行させることで立証されたとおり、ローカルユーザにより、 SHM_INFO 操作の shmctl コールを介して、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "The Linux Kernel Archives",
+          "vulinfoid": "Top Page",
+          "url": "http://www.kernel.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-0859",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0859"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-0859",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-0859"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2009年06月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2009-06-30T11:43:04+09:00",
+    "datelastupdated": "2009-06-30T11:43:04+09:00",
+    "datepublic": "2009-03-09T00:00:00+09:00"
+  }
+}

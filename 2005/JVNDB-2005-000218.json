@@ -1,0 +1,401 @@
+{
+  "vulinfoid": "JVNDB-2005-000218",
+  "vulinfodata": {
+    "title": "Mozilla 製品における検索プラグインを同一名の不正なプラグインに置き換えられる脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Mozilla Suite 1.7.6 以前、Firefox 1.0.2 以前 には、以下の複数のセキュリティ上の問題が存在します。  1) プラグイン検索サービス (PFS) で使用される PLUGINSPAGE 属性には、URL の妥当性のチェックに不備が存在するため、javascript: 形式の URL を指定することで、任意の JavaScript が実行される問題が存在します。(CAN-2005-0752、mfsa2005-34)  尚、Mozilla Suite に同梱される PFS はこの問題の影響を受けないことが Mozilla Foundation より報告されています。  2) ブロックされた javascript: 形式のポップアップを、ステータスバーのアイコンや情報バーで [javascript: …を表示する] を選択して表示した場合、より高い権限で JavaScript が実行されてしまう問題が存在します。(CAN-2005-1153、mfsa2005-35)  3) ページ間で存続可能な方法でウィンドウのグローバルスコープを汚染することでクロスサイトスクリプティング攻撃が可能であるため、Cookie やページの内容が奪取される、また場合によっては商品の購入やメールの削除などのユーザアクションが実行される問題が存在します。(CAN-2005-1154、mfsa2005-36)  4) favicon (ブックマークアイコン) 機能で使用される link タグの href 属性に javascript: 形式の URL を指定することにより、より高い権限で任意の JavaScript が実行される問題が存在します。(CAN-2005-1155、mfsa2005-37)  5) 既存の検索プラグインと同じファイル名を用いた悪質なプラグインが、既存のものを上書きするため、悪質な検索プラグインにより検索を実行するたびに、表示されたページの権限で任意の JavaScript が実行される問題が存在します。(CAN-2005-1156、CAN-2005-1157、mfsa2005-38)  6) Firefox のサイドバーでリンクを開くために _search ターゲットを使用する場合のセキュリティチェックに不備が存在するため、about:config などの権限付きページを不正に開き、javascript: 形式の URL を使用してスクリプトを挿入可能な問題が存在します。(CAN-2005-1158、mfsa2005-39)  尚、Mozilla Suite はこの問題の影響を受けないことが Mozilla Foundation より報告されています。  7) InstallTrigger などの XPInstall 関連の JavaScript オブジェクトの実装において、呼び出すインスタンスの形式が適切に検証されていないため、他のオブジェクトを渡された場合に、JavaScript インタプリタがメモリ内の誤った場所にジャンプしてしまう問題が存在します。(CAN-2005-1159、mfsa2005-40)  8) 特権付き UI コードにおいて、コンテンツウィンドウの DOM ノードの検証が不適切であるため、DOM ノードのプロパティやメソッドを上書きし、ネイティブの値を隠蔽することによって権限昇格が可能な問題が存在します。(CAN-2005-1160、mfsa2005-41)  これらの問題を利用するリモートの攻撃者は、意図的に作成した Web サイトに標的ユーザを誘導することにより、結果的に重要な情報を奪取する、権限を昇格する、または任意のコードを実行する可能性があります。また、潜在的に商品の購入やメールの削除などのユーザアクションが実行される可能性があります。  尚、Thunderbird 1.0.2 以前が CAN-2005-1159、CAN-2005-1160 の問題の影響を受けることが Mozilla Foundation より報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Firefox",
+          "cpe": {
+            "text": "cpe:/a:mozilla:firefox",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 ",
+            "3.0 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.00 ",
+            "11.11 ",
+            "11.22 ",
+            "11.23 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX01133",
+          "url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01133"
+        },
+        {
+          "type": "vendor",
+          "name": "HP セキュリティ報告",
+          "vulinfoid": "HPSBUX01133",
+          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01133.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-34",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-34.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-38",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-38.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-34",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-34.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-35",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-35.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-39",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-39.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-36",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-36.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-40",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-40.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-37",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-37.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation Security Advisory",
+          "vulinfoid": "mfsa2005-41",
+          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-41.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-38",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-38.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-35",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-35.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-39",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-39.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-36",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-36.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-40",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-40.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-37",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-37.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation セキュリティアドバイザリ",
+          "vulinfoid": "mfsa2005-41",
+          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-41.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:383",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-383.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:386",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-386.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:384",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-384.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:601",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-601.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-49",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-49.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "ミラクル・リナックス株式会社",
+          "vulinfoid": "Top Page",
+          "url": "http://www.miraclelinux.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:383",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-383J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:386",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-386J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:384",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-384J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:601",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-601J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-49",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-49j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1157",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1157"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-0361",
+          "url": "http://www.frsirt.com/english/advisories/2005/0361"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1157",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1157"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14992",
+          "url": "http://secunia.com/advisories/14992/"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14821",
+          "url": "http://secunia.com/advisories/14821"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14820",
+          "url": "http://secunia.com/advisories/14820"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13211",
+          "url": "http://www.securityfocus.com/bid/13211"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13233",
+          "url": "http://www.securityfocus.com/bid/13233"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13208",
+          "url": "http://www.securityfocus.com/bid/13208"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13232",
+          "url": "http://www.securityfocus.com/bid/13232"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13231",
+          "url": "http://www.securityfocus.com/bid/13231"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13230",
+          "url": "http://www.securityfocus.com/bid/13230"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13229",
+          "url": "http://www.securityfocus.com/bid/13229"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13228",
+          "url": "http://www.securityfocus.com/bid/13228"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13216",
+          "url": "http://www.securityfocus.com/bid/13216"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1013635",
+          "url": "http://securitytracker.com/alerts/2005/Apr/1013635.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#519317",
+          "url": "http://www.kb.cert.org/vuls/id/519317"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#973309",
+          "url": "http://www.kb.cert.org/vuls/id/973309"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-03-31T00:00:00+09:00"
+  }
+}

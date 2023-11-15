@@ -1,0 +1,155 @@
+{
+  "vulinfoid": "JVNDB-2016-007661",
+  "vulinfodata": {
+    "title": "三菱電機 MELSEC-Q シリーズの Ethernet インターフェースモジュールに複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC-Q シリーズの Ethernet インターフェースモジュールには、次の複数の脆弱性が存在します。 なお、これらの脆弱性を使用した攻撃コードが公開されています。  不完全または危険な暗号化アルゴリズムの使用 (CWE-327) - CVE-2016-8370 通信データに含まれるパスワードは弱い暗号化アルゴリズムで暗号化されています。  外部からの操作の制限不備 (CWE-412) - CVE-2016-8368 遠隔の第三者によってポート 5002/TCP 経由で PLC に接続され、結果としてサービス運用妨害 (DoS) 攻撃を受ける可能性があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "QJ71E71-100",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:qj71e71-100_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "のすべてのバージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "QJ71E71-B2",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:qj71e71-b2_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "のすべてのバージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "QJ71E71-B5",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:qj71e71-b5_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "のすべてのバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.6",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、パスワードを取得されたり、サービス運用妨害 (DoS) 攻撃を受けたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートし、適切な設定を行う] 開発者が提供する情報をもとに、最新版へアップデートし、適切な送信元からの通信のみを許可するように、IP フィルタリング機能の設定を行ってください。また、信頼できない第三者に通信データを傍受されないようネットワーク構成を工夫する、通信データの内容を解析されないよう通信経路を暗号化する、などの対策を行ってください。  開発者によると、シリアル番号 18072 およびそれ以降の製造番号をもつ機器では IP フィルタリング機能を実装しているとのことです。また、IP フィルタリング機能の使用や、ファイアウォールの内側に製品を置くことを推奨しています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "三菱電機株式会社からの情報",
+          "url": "http://jvn.jp/vu/JVNVU99901500/479518/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8370",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8370"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8368",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8368"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-16-336-03",
+          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-16-336-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99901500",
+          "url": "http://jvn.jp/vu/JVNVU99901500/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8370",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-8370"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8368",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-8368"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-412",
+          "url": "https://cwe.mitre.org/data/definitions/412.html",
+          "title": "外部からの操作の制限不備"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-327",
+          "url": "https://cwe.mitre.org/data/definitions/327.html",
+          "title": "不完全、または危険な暗号アルゴリズムの使用"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月09日]\\n  掲載\\n[2017年04月05日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-09T15:53:21+09:00",
+    "datelastupdated": "2017-04-05T14:43:40+09:00",
+    "datepublic": "2016-12-01T00:00:00+09:00"
+  }
+}

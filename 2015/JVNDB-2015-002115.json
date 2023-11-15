@@ -1,0 +1,172 @@
+{
+  "vulinfoid": "JVNDB-2015-002115",
+  "vulinfodata": {
+    "title": "NTP の ntpd の ntp_proto.c 内の receive の symmetric-key 機能におけるパケットを偽装される脆弱性",
+    "vulinfodescription": {
+      "overview": "NTP の ntpd の ntp_proto.c 内の receive の symmetric-key 機能は、MAC (メッセージ認証コード) フィールドがゼロ以外の長さを持つ場合のみ正しい MAC を要求するため、パケットを偽装される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "NTP Project",
+          "productname": "NTP",
+          "cpe": {
+            "text": "cpe:/a:ntp:ntp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.8p2 未満の 4.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "versionnumber": [
+            "10.10 から 10.10.3",
+            "10.8.5",
+            "10.9.5"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "UNIVERGE",
+          "cpe": {
+            "text": "cpe:/h:nec:univerge",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "IP8800シリーズ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.8",
+          "vector": "AV:A/AC:H/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、MAC を削除されることで、パケットを偽装される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Jun/msg00002.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT204942",
+          "url": "https://support.apple.com/en-us/HT204942"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT204942",
+          "url": "https://support.apple.com/ja-jp/HT204942"
+        },
+        {
+          "type": "vendor",
+          "name": "Cisco Security Advisory",
+          "vulinfoid": "cisco-sa-20150408-ntpd",
+          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150408-ntpd"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV17-008",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv17-008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NTP Bugzilla",
+          "vulinfoid": "Bug 2779",
+          "url": "http://bugs.ntp.org/show_bug.cgi?id=2779"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Notice",
+          "vulinfoid": "Recent Vulnerabilities",
+          "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#Recent_Vulnerabilities"
+        },
+        {
+          "type": "vendor",
+          "name": "Vulnerability Alert",
+          "vulinfoid": "38276",
+          "url": "http://tools.cisco.com/security/center/viewAlert.x?alertId=38276"
+        },
+        {
+          "type": "vendor",
+          "name": "シスコ セキュリティアドバイザリ",
+          "vulinfoid": "cisco-sa-20150408-ntpd",
+          "url": "http://www.cisco.com/cisco/web/support/JP/112/1128/1128965_cisco-sa-20150408-ntpd-j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1798",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1798"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95993136",
+          "url": "http://jvn.jp/vu/JVNVU95993136/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1798",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1798"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#374268",
+          "url": "http://www.kb.cert.org/vuls/id/374268"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月09日]\\n  掲載\\n[2015年04月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：シスコシステムズ (38276) を追加\\n  ベンダ情報：シスコシステムズ (cisco-sa-20150408-ntpd) を追加\\n[2015年05月25日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2015) を追加\\n[2015年07月14日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204942) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005) を追加\\n[2017年03月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-008) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-09T12:32:46+09:00",
+    "datelastupdated": "2017-03-09T15:30:05+09:00",
+    "datepublic": "2015-04-07T00:00:00+09:00"
+  }
+}

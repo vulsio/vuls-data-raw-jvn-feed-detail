@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2017-002764",
+  "vulinfodata": {
+    "title": "QEMU の hw/virtio/virtio-crypto.c における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "QEMU (別名 Quick Emulator) の hw/virtio/virtio-crypto.c には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルのゲスト OS の特権ユーザにより、巧妙に細工された virtio-crypto リクエストを介して、サービス運用妨害 (QEMU プロセスクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "QEMU",
+          "vulinfoid": "virtio-crypto: fix possible integer and heap overflow",
+          "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=a08aaff811fb194950f79711d2afe5a892ae03a4"
+        },
+        {
+          "type": "vendor",
+          "name": "Qemu-devel",
+          "vulinfoid": "[PULL 03/41] virtio-crypto: fix possible integer and heap overflow",
+          "url": "https://lists.nongnu.org/archive/html/qemu-devel/2017-01/msg01368.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1420092",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1420092"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-5931",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5931"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-5931",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5931"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-190",
+          "url": "https://cwe.mitre.org/data/definitions/190.html",
+          "title": "整数オーバーフローまたはラップアラウンド"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-27T18:39:27+09:00",
+    "datelastupdated": "2017-04-27T18:39:27+09:00",
+    "datepublic": "2017-01-10T00:00:00+09:00"
+  }
+}

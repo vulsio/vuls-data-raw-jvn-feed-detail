@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2010-005472",
+  "vulinfodata": {
+    "title": "Serendipity で使用されている Xinha WYSIWYG エディタにおけるアクセス制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Serendipity で使用されている Xinha WYSIWYG エディタの動的コンフィグレーション機能は、以下の不備があるため、アクセス制限を回避される、および任意のプラグインの設定を変更される脆弱性が存在します。 (1) \"使用されていない設定通過\" 機能が、既知となるまたは外部に影響される共有秘密の SHA1 ハッシュで使用されるパラメータを適切に処理しない (2) xinha_read_passed_data 関数が、変数を適切に処理しない"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "s9y",
+          "productname": "Serendipity",
+          "cpe": {
+            "text": "cpe:/a:s9y:serendipity",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "xinha",
+          "productname": "wysiwyg editor",
+          "cpe": {
+            "text": "cpe:/a:xinha:wysiwyg_editor",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.96 Beta 2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下を介して、アクセス制限を回避される、および任意のプラグインの設定を変更される可能性があります。 (1) 巧妙に細工された backend_config_secret_key_location パラメータおよび backend_config_hash パラメータ (2) 巧妙に細工された backend_data 変数および backend_data[key_location] 変数"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "s9y",
+          "vulinfoid": "Top Page",
+          "url": "http://www.s9y.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "xinha",
+          "vulinfoid": "1518",
+          "url": "http://trac.xinha.org/ticket/1518"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-1916",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1916"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-1916",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1916"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-20T19:29:04+09:00",
+    "datelastupdated": "2012-12-20T19:29:04+09:00",
+    "datepublic": "2010-05-12T00:00:00+09:00"
+  }
+}

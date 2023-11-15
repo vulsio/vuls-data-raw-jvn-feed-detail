@@ -1,0 +1,199 @@
+{
+  "vulinfoid": "JVNDB-2021-001020",
+  "vulinfodata": {
+    "title": "sudo にヒープベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "sudo にはコマンドの引数に設定された特殊文字のエスケープ処理の実装に起因した、ヒープベースのバッファオーバーフロー (CWE-122) の脆弱性が存在します。 2021年2月5日時点において、macOS、AIX、Solaris においても影響を受ける可能性があるとの報告がされていますが、発見者による確認は実施されていません。  なお、2021年2月9日に Apple から本件に対応する<a href=\"https://support.apple.com/en-us/HT212177\" target=\"_blank\">セキュリティアップデート</a>が公開されました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "sudo project",
+          "productname": "Sudo",
+          "cpe": {
+            "text": "cpe:/a:sudo_project:sudo",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 1.8.2 から 1.8.31p2",
+            "バージョン 1.9.0 から 1.9.5p1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルの第三者によって、権限昇格され管理者権限でコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へとアップデートしてください。  なお、本脆弱性の影響が確認されていない OS やディストリビューションにおいても影響を受ける可能性があるため、本件に関する続報を注視してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "About the security content of macOS Big Sur 11.2.1, macOS Catalina 10.15.7 Supplemental Update, and macOS Mojave 10.14.6 Security Update 2021-002",
+          "url": "https://support.apple.com/en-us/HT212177"
+        },
+        {
+          "type": "vendor",
+          "name": "Sudo",
+          "vulinfoid": "Buffer overflow in command line unescaping",
+          "url": "https://www.sudo.ws/alerts/unescape_overflow.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-3156",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3156"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-256-01",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-256-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "sudoの脆弱性（CVE-2021-3156）に関する注意喚起",
+          "url": "https://www.jpcert.or.jp/at/2021/at210005.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92304019",
+          "url": "https://jvn.jp/vu/JVNVU92304019/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98963695",
+          "url": "https://jvn.jp/vu/JVNVU98963695/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91343607",
+          "url": "https://jvn.jp/vu/JVNVU91343607/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96493147",
+          "url": "http://jvn.jp/cert/JVNVU96493147"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99480250",
+          "url": "https://jvn.jp/vu/JVNVU99480250/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90511416",
+          "url": "http://jvn.jp/vu/JVNVU90511416/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-3156",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-3156"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#794544",
+          "url": "https://kb.cert.org/vuls/id/794544"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Qualys Security Blog (CVE-2021-3156: Heap-Based Buffer Overflow in Sudo (Baron Samedit))",
+          "url": "https://blog.qualys.com/vulnerabilities-research/2021/01/26/cve-2021-3156-heap-based-buffer-overflow-in-sudo-baron-samedit"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-122",
+          "url": "https://cwe.mitre.org/data/definitions/122.html",
+          "title": "ヒープベースのバッファオーバーフロー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-787",
+          "url": "https://cwe.mitre.org/data/definitions/787.html",
+          "title": "境界外書き込み"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-02-08T17:32:48+09:00",
+          "description": "[2021年02月08日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-04-02T11:27:57+09:00",
+          "description": "[2021年04月02日]\\n  概要：内容を更新\\n  ベンダ情報：Apple Security Updates (About the security content of macOS Big Sur 11.2.1, macOS Catalina 10.15.7 Supplemental Update, and macOS Mojave 10.14.6 Security Update 2021-002) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-05-07T10:32:26+09:00",
+          "description": "[2021年05月07日]\\n  参考情報：JVN (JVNVU#92304019) を追加"
+        },
+        {
+          "historyno": "5",
+          "datetime": "2021-05-19T16:16:42+09:00",
+          "description": "[2021年05月19日]\\n  参考情報：JVN (JVNVU#98963695) を追加"
+        },
+        {
+          "historyno": "7",
+          "datetime": "2021-06-10T17:51:26+09:00",
+          "description": "[2021年06月10日]\\n  参考情報：JVN (JVNVU#91343607) を追加"
+        },
+        {
+          "historyno": "8",
+          "datetime": "2021-12-02T14:20:40+09:00",
+          "description": "[2021年12月02日]\\n  参考情報：JVN (JVNVU#99480250) を追加\\n"
+        },
+        {
+          "historyno": "9",
+          "datetime": "2022-09-15T11:43:02+09:00",
+          "description": "[2022年09月15日]\\n  参考情報：JVN (JVNVU#90511416) を追加\\n  参考情報：ICS Advisory (ICSA-22-256-01) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-02-08T17:32:48+09:00",
+    "datelastupdated": "2022-09-15T14:47:26+09:00",
+    "datepublic": "2021-02-05T00:00:00+09:00"
+  }
+}

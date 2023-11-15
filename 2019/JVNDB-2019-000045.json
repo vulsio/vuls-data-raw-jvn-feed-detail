@@ -1,0 +1,151 @@
+{
+  "vulinfoid": "JVNDB-2019-000045",
+  "vulinfodata": {
+    "title": "アクセス解析CGI An-Analyzer における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "有限会社アングラーズネットが提供するアクセス解析CGI An-Analyzer には、次の複数の脆弱性が存在します。 ・管理ページにおける OS コマンドインジェクション (CWE-78) - CVE-2019-5987 ・管理ページにおける格納型のクロスサイトスクリプティング (CWE-79) - CVE-2019-5988 ・解析対象ページにおける DOM ベースのクロスサイトスクリプティング (CWE-79) - CVE-2019-5989 ・情報漏えい (CWE-200) - CVE-2019-5990  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社STNet 渡邉優太 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "有限会社アングラーズネット",
+          "productname": "アクセス解析CGI An-Analyzer",
+          "cpe": {
+            "text": "cpe:/a:anglers-net:cgi_an-anlyzer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2019年6月24日以前に配布しているもの"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品にログイン可能なユーザによって、任意の OS コマンドを実行される - CVE-2019-5987 ・ユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2019-5988, CVE-2019-5989 ・HTTP リファラからログイン用パスワードを取得される - CVE-2019-5990"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[当該製品の更新ファイルを適用し、解析用スクリプトを修正する] 当該製品への対策には、開発者が提供する最新版のスクリプトをダウンロードし、当該製品の .cgi 拡張子のファイルを更新の上、解析用スクリプトを修正する必要があります。 詳細については、開発者が提供する情報を参照ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "有限会社アングラーズネット",
+          "vulinfoid": "アクセス解析CGIにおける脆弱性について",
+          "url": "https://www.anglers-net.com/anlog/update/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5987",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5987"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5988",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5988"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5989",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5989"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5990",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5990"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#37230341",
+          "url": "https://jvn.jp/jp/JVN37230341/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5989",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5989"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5990",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5990"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5987",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5987"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5988",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5988"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-07-02T16:40:49+09:00",
+          "description": "[2019年07月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-07-05T12:05:28+09:00",
+    "datelastupdated": "2019-07-05T12:05:28+09:00",
+    "datepublic": "2019-07-05T00:00:00+09:00"
+  }
+}

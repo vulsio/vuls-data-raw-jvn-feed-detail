@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2013-003658",
+  "vulinfodata": {
+    "title": "HTTPS レスポンスから暗号化されたデータの一部を推測可能な脆弱性 (BREACH)",
+    "vulinfodescription": {
+      "overview": "圧縮された HTTPS レスポンスの長さを観測することで、攻撃者は HTTPS ストリームの暗号文から、ウェブサイトの認証鍵など (secret) を推測することが可能です。  Salesforce.com の Angelo Prado 氏は、下記の通り報告しています。  　Extending the CRIME vulnerability presented at Ekoparty 2012, an attacker can target HTTPS responses to recover data from the response body.  　While the CRIME attack is currently believed to be mitigated by disabling TLS/SSL/level compression, compressed HTTP responses represent a significant unmitigated vector which is currently exploitable. By injecting plaintext into an HTTPS request, an attacker can learn information about the corresponding HTTPS response by measuring its size.  　This relies on the attacker being able to observe the size of the cipher text received by the browser while triggering a number of strategically crafted requests to a target site. To recover a particular secret in an HTTPS response body, the attacker guesses character by character, sending a pair of requests for each guess. The correct guess will result in a smaller HTTPS response. For each guess the attacker coerces the victim's browser to issue two requests. The first request includes a payload of the form:  \"target_secret_name=<already known part of secret>+<guess>+<padding>\"  ...while the second request includes a payload of the form:  \"target_secret_name=<already known part of secret>+<padding>+<guess>\".  　If the size of the first response is smaller than the second response, this indicates that the guess has a good chance of being correct. This method of sending two similar requests and comparing them is due to Duong and Rizzo. If multiple candidates are found, the following is a useful recovery mechanism: move forward in parallel with both candidates until it becomes clear which guess is correct.  　With a token of length 32 and a character space of size 16 (e.g. hex), the attacker needs an average of approximately 1,000 request if no recovery mechanisms are needed. In practice, we have been able to recover CSRF tokens with fewer than 4,000 requests. A browser like Google Chrome or Internet Explorer is able to issue this number of requests in under 30 seconds, including callbacks to the attacker command & control center.  [In order to conduct the attack, the following conditions must be true]:  　1. HTTPS-enabled endpoint (ideally with stream ciphers like RC4, although the attack can be made to work with adaptive padding for block ciphers).  　2. The attacker must be able to measure the size of HTTPS responses.  　3. Use of HTTP-level compression (e.g. gzip).  　4. A request parameter that is reflected in the response body.  　5. A static secret in the body (e.g. CSRF token, sessionId, VIEWSTATE, PII, etc.) that can be bootstrapped (either first/last two characters are predictable and/or the secret is padded with something like KnownSecretVariableName=\"\".  　6. An otherwise static or relatively static response. Dynamic pages do not defeat the attack, but make it much more expensive."
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、暗号化されている HTTPS レスポンスから、ウェブサイトの認証に用いられる鍵や CSRF トークンなどの情報 (secret) を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "研究者らが公表した論文のセクション 3. Mitigation には以下のような対策方法が提案されています。  　1. HTTP 圧縮を使用しない 　2. ユーザの入力と secret を分離する 　3. リクエストごとに異なる secret を使用する 　4. secret をマスクする 　5. より積極的な CSRF 対策を行う 　6. レスポンスごとに任意のバイト数のデータを追加し、レスポンスのサイズの推測を困難にする  詳しくは、研究者が公開している論文をご参照下さい。  BREACH: REVIVING THE CRIME ATTACK http://breachattack.com/resources/BREACH%20-%20SSL,%20gone%20in%2030%20seconds.pdf"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-3587",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3587"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94916481",
+          "url": "http://jvn.jp/cert/JVNVU94916481/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-3587",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-3587"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#987798",
+          "url": "http://www.kb.cert.org/vuls/id/987798"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "BREACH: REVIVING THE CRIME ATTACK",
+          "url": "http://breachattack.com/resources/BREACH%20-%20SSL,%20gone%20in%2030%20seconds.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "BREACH: SSL, GONE IN 30 SECONDS",
+          "url": "http://breachattack.com/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月08日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-08T14:54:40+09:00",
+    "datelastupdated": "2013-08-08T14:54:40+09:00",
+    "datepublic": "2013-08-02T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "vulinfoid": "JVNDB-2016-004620",
+  "vulinfodata": {
+    "title": "PHP の ext/session/session.c における任意の型のセッションデータを挿入される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/session/session.c は、不正な構文解析を誘発する方法で無効なセッション名をスキップするため、任意の型のセッションデータを挿入される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component (インジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/74.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.25 未満",
+            "7.0.10 未満の 7.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、セッション名の管理を利用されることで、任意の型のセッションデータを挿入される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix bug #72681 - consume data even if we're not storing them",
+          "url": "https://github.com/php/php-src/commit/8763c6090d627d8bb0ee1d030c30e58f406be9ce?w=1"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #72681",
+          "url": "https://bugs.php.net/bug.php?id=72681"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 7 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-7.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-7125",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7125"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-7125",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-7125"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-13T15:39:07+09:00",
+    "datelastupdated": "2016-09-13T15:39:07+09:00",
+    "datepublic": "2016-08-18T00:00:00+09:00"
+  }
+}

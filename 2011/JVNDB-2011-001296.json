@@ -1,0 +1,189 @@
+{
+  "vulinfoid": "JVNDB-2011-001296",
+  "vulinfodata": {
+    "title": "HarfBuzz の hb-buffer.c 内にある hb_buffer_ensure 関数における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "HarfBuzz の hb-buffer.c 内にある hb_buffer_ensure 関数は、メモリ再割り当ての成功を検証しないため、サービス運用妨害 (DoS) 状態となる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Pango.org",
+          "productname": "Pango",
+          "cpe": {
+            "text": "cpe:/a:pango:pango",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.28.3"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11 Express"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、不正なインデックスの使用を誘発する巧妙に細工された OpenType フォントデータを介して、サービス運用妨害 (DoS) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Pango",
+          "vulinfoid": "Top Page",
+          "url": "http://www.pango.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0309",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0309.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "cve_2011_0064_vulnerability_in",
+          "url": "http://blogs.oracle.com/sunsecurity/entry/cve_2011_0064_vulnerability_in"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0064",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0064"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "65770",
+          "url": "http://xforce.iss.net/xforce/xfdb/65770"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0064",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0064"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA43572",
+          "url": "http://secunia.com/advisories/43572"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA43578",
+          "url": "http://secunia.com/advisories/43578"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "46632",
+          "url": "http://www.securityfocus.com/bid/46632"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1025145",
+          "url": "http://securitytracker.com/id?1025145"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2011-0543",
+          "url": "http://www.vupen.com/english/advisories/2011/0543"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年03月28日]\\n  掲載\\n[2011年09月14日]\\n  影響を受けるシステム：オラクル (cve_2011_0064_vulnerability_in) の情報を追加\\n  ベンダ情報：オラクル (cve_2011_0064_vulnerability_in) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-03-28T16:08:06+09:00",
+    "datelastupdated": "2011-09-14T10:45:26+09:00",
+    "datepublic": "2011-03-01T00:00:00+09:00"
+  }
+}

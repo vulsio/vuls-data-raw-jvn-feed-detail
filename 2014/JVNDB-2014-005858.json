@@ -1,0 +1,94 @@
+{
+  "vulinfoid": "JVNDB-2014-005858",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/pngdec.c の decode_ihdr_chunk 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/pngdec.c の decode_ihdr_chunk 関数には、サービス運用妨害 (out-of-bounds ヒープアクセス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.6 未満",
+            "2.2.x から 2.3.x",
+            "2.4.4 未満の 2.4.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、PNG ファイルの IHDR の前の IDAT を介して、サービス運用妨害 (out-of-bounds ヒープアクセス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "FFmpeg Security",
+          "url": "http://www.ffmpeg.org/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "avcodec/pngdec: Check IHDR/IDAT order",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=79ceaf827be0b070675d4cd0a55c3386542defd8"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9317",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9317"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9317",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9317"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-11T15:02:36+09:00",
+    "datelastupdated": "2014-12-11T15:02:36+09:00",
+    "datepublic": "2014-11-27T00:00:00+09:00"
+  }
+}

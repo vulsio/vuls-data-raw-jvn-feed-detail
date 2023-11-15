@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2003-000406",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/ipv4/netfilter/ipt_REDIRECT.c の redirect_target 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/ipv4/netfilter/ipt_REDIRECT.c の redirect_target 関数には、サービス運用妨害 (NULL ポインタデリファレンスおよび OOPS) 状態にされる脆弱性が存在します。  本脆弱性は、CVE-2015-8787 と関連する問題です。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、0.0.0.0 IP アドレスを持つインターフェースにパケットを送信されることで、サービス運用妨害 (NULL ポインタデリファレンスおよび OOPS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "MARC: Mailing list ARChives",
+          "vulinfoid": "[PATCH] Fix possible oops in ipt_REDIRECT",
+          "url": "http://marc.info/?l=netfilter-devel&m=106668497403047&w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1303072",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1303072"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2003-1604",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1604"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2003-1604",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2003-1604"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-10T10:07:28+09:00",
+    "datelastupdated": "2016-05-10T10:07:28+09:00",
+    "datepublic": "2003-10-20T00:00:00+09:00"
+  }
+}

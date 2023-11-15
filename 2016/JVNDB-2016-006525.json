@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2016-006525",
+  "vulinfodata": {
+    "title": "USB リダイレクタ の usb-guest サポートでビルドされた Quick Emulator におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "USB リダイレクタ の usb-guest サポートでビルドされた Quick Emulator (Qemu) には、'usbredir_handle_destroy' で USB リダイレクタを破棄する際 (destroying)、メモリリークにより、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲストのユーザ/プロセスにより、ホストメモリをリークされることで、サービス運用妨害 (DoS) 状態にされる可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "QEMU",
+          "vulinfoid": "usbredir: free vm_change_state_handler in usbredir destroy dispatch",
+          "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=07b026fd82d6cf11baf7d7c603c4f5f6070b35bf"
+        },
+        {
+          "type": "vendor",
+          "name": "Qemu-devel",
+          "vulinfoid": "[PATCH] usbredir: free vm_change_state_handler in usbredir",
+          "url": "https://lists.gnu.org/archive/html/qemu-devel/2016-11/msg01379.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9907",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9907"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9907",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9907"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-400",
+          "url": "https://cwe.mitre.org/data/definitions/400.html",
+          "title": "リソースの枯渇"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-10T17:32:05+09:00",
+    "datelastupdated": "2017-01-10T17:32:05+09:00",
+    "datepublic": "2016-11-07T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "vulinfoid": "JVNDB-2005-000656",
+  "vulinfodata": {
+    "title": "PHP の phpinfo() 関数におけるクロスサイトスクリプティングの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  PHP には以下の複数のセキュリティ上の問題が存在します。   1) extract() 関数、import_request_variables() 関数における処理に不備が存在するため、ファイルアップロードを行う特定の POST リクエストによりグローバル変数が上書きされる問題が存在します。(CVE-2005-3390)   リモートの攻撃者により悪用された場合、任意の PHP コードを実行される可能性があります。   2) parse_str() 関数には、関数が予期しない終わり方をした場合、register_globals ディレクティブが有効になってしまう問題が存在します。(CVE-2005-3389)   リモートの攻撃者により悪用された場合、不正に register_globals ディレクティブの設定を変更され、さらなる攻撃に利用される可能性があります。   3) phpinfo() 関数に渡される引数に対するサニタイズ処理が適切に行われていないため、意図的に作成された URL によりクロスサイトスクリプティング攻撃が可能となる問題が存在します。(CVE-2005-3388)   リモートの攻撃者により悪用された場合、cookie などの重要な情報を取得される可能性があります。   4) fopen_wrappers.c における処理に不備が存在するため、open_basedir ディレクティブによる保護が不正に回避される問題が存在します。(CVE-2005-3054)   リモートの攻撃者により悪用された場合、本来保護される特定のリソースにアクセスされてしまう可能性があります。   5) ext/curl、ext/gd モジュールにおける処理に不備が存在するため、safe_mode、open_basedir ディレクティブによる保護が不正に回避される問題が存在します。(CVE-2005-3391)   リモートの攻撃者により悪用された場合、本来保護される特定のリソースにアクセスされてしまう可能性があります。   6) virtual() 関数を呼び出す処理に不備が存在するため、safe_mode、open_basedir ディレクティブによる保護が不正に回避される問題が存在します。(CVE-2005-3392)   リモートの攻撃者により悪用された場合、本来保護される特定のリソースにアクセスされてしまう可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.11 およびそれ以前",
+            "4.4.0",
+            "5.0.5 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Cobalt RaQ4",
+          "cpe": {
+            "text": "cpe:/h:sun:sun_cobalt_raq_4",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Cobalt RaQ550",
+          "cpe": {
+            "text": "cpe:/h:sun:sun_cobalt_raq_550",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Cobalt RaQXTR",
+          "cpe": {
+            "text": "cpe:/h:sun:sun_cobalt_raq_xtr",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "php",
+          "url": "http://www.miraclelinux.com/support/update/data/php.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "AXSA-2005-133:1",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=249"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "AXSA-2005-128:1",
+          "url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=193"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "ChangeLog-4",
+          "url": "http://www.php.net/ChangeLog-4.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "ChangeLog-5",
+          "url": "http://www.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "release notes 4.4.1",
+          "url": "http://www.php.net/release_4_4_1.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:831",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-831.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:838",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-838.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Cobalt RaQ Patches",
+          "vulinfoid": "4 PHP Security Update 2.0.1",
+          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Cobalt RaQ Patches",
+          "vulinfoid": "550 PHP Security Update 0.0.1",
+          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-97",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-97.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2006-6",
+          "url": "http://www.turbolinux.com/security/2006/TLSA-2006-6.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2006-38",
+          "url": "http://www.turbolinux.com/security/2006/TLSA-2006-38.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:831",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-831J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:838",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-838J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-97",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-97j.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2006-6",
+          "url": "http://www.turbolinux.co.jp/security/2006/TLSA-2006-6j.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2006-38",
+          "url": "http://www.turbolinux.co.jp/security/2006/TLSA-2006-38j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-3388",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3388"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-1862",
+          "url": "http://www.frsirt.com/english/advisories/2005/1862"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-2254",
+          "url": "http://www.frsirt.com/english/advisories/2005/2254"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-3388",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-3388"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA17371",
+          "url": "http://secunia.com/advisories/17371/"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA16971",
+          "url": "http://secunia.com/advisories/16971/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15249",
+          "url": "http://www.securityfocus.com/bid/15249"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15250",
+          "url": "http://www.securityfocus.com/bid/15250"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15413",
+          "url": "http://www.securityfocus.com/bid/15413"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15119",
+          "url": "http://www.securityfocus.com/bid/15119"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15411",
+          "url": "http://www.securityfocus.com/bid/15411"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15248",
+          "url": "http://www.securityfocus.com/bid/15248"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "14957",
+          "url": "http://www.securityfocus.com/bid/14957"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-10-31T00:00:00+09:00"
+  }
+}

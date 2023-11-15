@@ -1,0 +1,124 @@
+{
+  "vulinfoid": "JVNDB-2001-000165",
+  "vulinfodata": {
+    "title": "Sun Solaris の cachefsd におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Cache File System (CacheFS) は、サーバやネットワークの負荷を緩和し、NFS サーバのパフォーマンスや便宜性を向上するために用いられるキャッシュファイルサーバーです。 Sun Solaris 2.6、7、及び 8 に標準で実装されている CacheFS デーモンには、マウントする際に fscache_setup() 関数で境界チェックを適切に行わないといった不備が存在し、スタック領域でバッファオーバーフローが発生する問題が存在します。 このことを利用して、ローカルの攻撃者は root 権限を得るために任意のファイルを作成し、cashefsd にそのファイルを処理させ、最終的に任意のコードを実行することができる可能性が存在します。  この問題はパッチ ID 105693-13/108800-02/105694-13/108801-02 で解消済みです。しかし、これらのパッチを適用した場合には /etc/inet/inetd.conf がデフォルト設定状態に戻ってしまう問題が発生することがベンダより報告されています。これらのパッチを適用済みの場合には対策情報に従い、適切な対策を行ってください。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.1 (sparc) ",
+            "2.5.1 (x86) ",
+            "2.6 (sparc) ",
+            "2.6 (x86) ",
+            "7.0 (sparc) ",
+            "7.0 (x86) ",
+            "8 (sparc) ",
+            "8 (x86) ",
+            "9 (sparc) ",
+            "9 (x86) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "44309",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-44309-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "56300",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-56300-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "44309",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-44309-3"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "56300",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-56300-3"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2002-0084",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0084"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2002-0084",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-0084"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "4631",
+          "url": "http://www.securityfocus.com/bid/4631"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "8461",
+          "url": "http://www.securityfocus.com/bid/8461"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#161931",
+          "url": "http://www.kb.cert.org/vuls/id/161931"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2001-10-29T00:00:00+09:00"
+  }
+}

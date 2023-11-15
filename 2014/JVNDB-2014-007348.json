@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-007348",
+  "vulinfodata": {
+    "title": "ZNC の modules/webadmin.cpp の CWebAdminMod::ChanPage 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ZNC の modules/webadmin.cpp の CWebAdminMod::ChanPage 関数には、 \"use-after-delete\" エラーに関する処理に不備があるため、サービス運用妨害 (NULL ポインタデリファレンスおよびクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ZNC",
+          "productname": "ZNC",
+          "cpe": {
+            "text": "cpe:/a:znc:znc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、既存のチャンネルと同一の名前で、チャンネル名の前に # 文字がないチャンネルを追加されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ZNC 1.4 (2014-05-08)",
+          "url": "https://github.com/znc/znc/blob/master/ChangeLog.md"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Crash while adding channels to the web admin #528",
+          "url": "https://github.com/znc/znc/issues/528"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9403",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9403"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9403",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9403"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2014-0543",
+          "url": "http://advisories.mageia.org/MGASA-2014-0543.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月24日]\\n  掲載\\n[2015年05月14日]      \\n  参考情報：関連文書 (MGASA-2014-0543) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-24T14:58:48+09:00",
+    "datelastupdated": "2015-05-14T17:55:04+09:00",
+    "datepublic": "2014-05-08T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2016-008130",
+  "vulinfodata": {
+    "title": "JasPer における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "JasPer の (1) base/jas_malloc.c の jas_realloc 関数および (2) base/jas_stream.c の mem_resize 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "JasPer Project",
+          "productname": "JasPer",
+          "cpe": {
+            "text": "cpe:/a:jasper_project:jasper",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.900.22 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、巧妙に細工された解放済みメモリの使用 (Use-after-free) を誘発する画像を介して、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Made some changes to the I/O stream library for memory streams.",
+          "url": "https://github.com/mdadams/jasper/commit/634ce8e8a5accc0fa05dd2c20d42b4749d4b2735"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1393882",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1393882"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9262",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9262"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9262",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-9262"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-190",
+          "url": "https://cwe.mitre.org/data/definitions/190.html",
+          "title": "整数オーバーフローまたはラップアラウンド"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-25T11:01:06+09:00",
+    "datelastupdated": "2017-04-25T11:01:06+09:00",
+    "datepublic": "2016-11-07T00:00:00+09:00"
+  }
+}

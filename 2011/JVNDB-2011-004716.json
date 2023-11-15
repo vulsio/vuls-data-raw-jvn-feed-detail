@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2011-004716",
+  "vulinfodata": {
+    "title": "Linux kernel の add_del_listener 関数における サービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の kernel/taskstats.c の add_del_listener 関数は、exit ハンドラの登録処理を制限しないため、サービス運用妨害 (メモリと CPU 消費) 状態となる、または OOM Killer を回避する脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.39.1 およびそれ以前"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESXi",
+          "cpe": {
+            "text": "cpe:/a:vmware:esxi",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工されたアプリケーションを介して、サービス運用妨害 (メモリと CPU 消費) 状態とされる、または OOM Killer を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Linux",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0013",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0013.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2484",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2484"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2484",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2484"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載\\n[2012年11月02日]\\n  影響を受けるシステム：VMware (VMSA-2012-0013) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0013) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:43:29+09:00",
+    "datelastupdated": "2012-11-02T17:53:23+09:00",
+    "datepublic": "2011-06-24T00:00:00+09:00"
+  }
+}

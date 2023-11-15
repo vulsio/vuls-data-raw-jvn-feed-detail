@@ -1,0 +1,139 @@
+{
+  "vulinfoid": "JVNDB-2005-000573",
+  "vulinfodata": {
+    "title": "BEA 製品におけるイントラネットの IP アドレス情報が漏洩する脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  BEA WebLogic Server 8.1 SP3 以前には、以下の複数のセキュリティ上の問題が存在します。  1) ファイアウォール等で NAT される前の WebLogic Server が動作するマシンの IP アドレスが漏洩する問題が存在します。(BEA05-90.00)  リモートの攻撃者に悪用された場合、ファイアウォールによって保護されているネットワーク上の IP アドレスを取得される可能性があります。  2) サーバの秘密鍵および証明書が保管されているキーストアを開くときに必要とされるパスワードが、nodemanager.config 内に平文で表示される問題が存在します。(BEA05-91.00)  nodemanager.config を閲覧可能なローカルの攻撃者に悪用された場合、サーバの秘密鍵にアクセスされる可能性があります。  3) Admin セキュリティロールを保持するユーザ (WebLogic Server 管理者) が、ローカルファイルシステム上のファイルにリモートからアクセス可能な問題が存在します。(BEA05-94.00)  Admin セキュリティロールを保持するローカルの攻撃者に悪用された場合、リモートから HTTP あるいは HTTPS を介して内部サーブレットにアクセスされ、ローカルファイル上のファイルを閲覧される可能性があります。  4) 設定ウィザードを使用して新規 WebLogic ドメインを作成する際に、SSL の設定に使用した秘密鍵のパスワードが画面上およびサーバのログファイルに平文で表示されてしまう問題が存在します。(BEA05-96.00)  新規 WebLogic ドメインを作成可能なローカルの攻撃者に悪用された場合、SSL の設定に使用した秘密鍵のパスワードを取得される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "BEAシステムズ",
+          "productname": "BEA WebLogic Server",
+          "cpe": {
+            "text": "cpe:/a:bea:weblogic_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.1 SP3 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "BEA Security Advisory",
+          "vulinfoid": "BEA05-96.00",
+          "url": "http://dev2dev.bea.com/pub/advisory/150"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA Security Advisory",
+          "vulinfoid": "BEA05-90.00",
+          "url": "http://dev2dev.bea.com/pub/advisory/144"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA Security Advisory",
+          "vulinfoid": "BEA05-91.00",
+          "url": "http://dev2dev.bea.com/pub/advisory/145"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA Security Advisory",
+          "vulinfoid": "BEA05-94.00",
+          "url": "http://dev2dev.bea.com/pub/advisory/148"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA セキュリティアドバイザリ",
+          "vulinfoid": "BEA05-90.00",
+          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-90.00.html"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA セキュリティアドバイザリ",
+          "vulinfoid": "BEA05-91.00",
+          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-91.00.html"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA セキュリティアドバイザリ",
+          "vulinfoid": "BEA05-94.00",
+          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-94.00.html"
+        },
+        {
+          "type": "vendor",
+          "name": "BEA セキュリティアドバイザリ",
+          "vulinfoid": "BEA05-96.00",
+          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-96.00.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-4754",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4754"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-2038",
+          "url": "http://www.frsirt.com/english/advisories/2005/2038"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-4754",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-4754"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA17138",
+          "url": "http://secunia.com/advisories/17138/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15052",
+          "url": "http://www.securityfocus.com/bid/15052"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-10-10T00:00:00+09:00"
+  }
+}

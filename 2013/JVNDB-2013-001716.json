@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-001716",
+  "vulinfodata": {
+    "title": "Linux Kernel の kernel/printk.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の kernel/printk.c 内の log_prefix 関数は、syslog ヘッダから prefix 文字列を適切に削除しないため、サービス運用妨害 (バッファオーバーフローおよびシステムクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.4.33 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:L/AC:H/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/dev/kmsg 書き込みアクセス権を利用され、call_console_drivers 関数呼び出しを誘発されることで、サービス運用妨害 (バッファオーバーフローおよびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.4.33",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.4.33"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "printk: fix buffer overflow when calling log_prefix function from call_c...",
+          "url": "https://github.com/torvalds/linux/commit/ce0030c00f95cf9110d9cdcd41e901e1fb814417"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 916075",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=916075"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1772",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1772"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1772",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1772"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-04T15:57:09+09:00",
+    "datelastupdated": "2013-03-04T15:57:09+09:00",
+    "datepublic": "2013-02-21T00:00:00+09:00"
+  }
+}

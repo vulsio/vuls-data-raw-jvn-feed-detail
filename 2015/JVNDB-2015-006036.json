@@ -1,0 +1,88 @@
+{
+  "vulinfoid": "JVNDB-2015-006036",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/jpeg2000dec.c の jpeg2000_read_main_headers 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/jpeg2000dec.c の jpeg2000_read_main_headers 関数は、JPEG 2000 画像の SIZ マーカーの唯一性を確保しないため、サービス運用妨害 (ヒープメモリの領域外へのアクセス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.5 未満",
+            "2.7.3 未満の 2.7.x",
+            "2.8.2 までの 2.8.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、2 つまたはそれ以上の SIZ マーカーを持つ巧妙に細工された画像を介して、サービス運用妨害 (ヒープメモリの領域外へのアクセス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "avcodec/jpeg2000dec: Check for duplicate SIZ marker",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=44a7f17d0b20e6f8d836b2957e3e357b639f19a2"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8363",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8363"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8363",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8363"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-30T11:34:50+09:00",
+    "datelastupdated": "2015-11-30T11:34:50+09:00",
+    "datepublic": "2015-11-14T00:00:00+09:00"
+  }
+}

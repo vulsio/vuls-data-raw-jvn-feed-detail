@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2015-001017",
+  "vulinfodata": {
+    "title": "Wireshark の SMTP ディセクタの epan/dissectors/packet-smtp.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Wireshark の SMTP ディセクタ (解析機能) の epan/dissectors/packet-smtp.c は、特定の文字列追加 (string-append) 操作に不正な長さの値を使用するため、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Wireshark",
+          "productname": "Wireshark",
+          "cpe": {
+            "text": "cpe:/a:wireshark:wireshark",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.10.12 未満の 1.10.x",
+            "1.12.3 未満の 1.12.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたパケットを介して、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Wireshark",
+          "vulinfoid": "wnpa-sec-2015-04",
+          "url": "https://www.wireshark.org/security/wnpa-sec-2015-04.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark",
+          "vulinfoid": "Always set decrypt_len when setting decrypt.",
+          "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=611cfd00c283e7a77a2f1fd89c01b0b9f691411b"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark",
+          "vulinfoid": "When deccoding base-64, the result is the length of the *decoded* result.",
+          "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=854157883bd1972e012c65c0418a9732ef5d9fb0"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark Bug Database",
+          "vulinfoid": "Bug 10823",
+          "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=10823"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0563",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0563"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0563",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0563"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0019",
+          "url": "http://advisories.mageia.org/MGASA-2015-0019.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月14日]\\n  掲載\\n[2015年04月08日]\\n  参考情報：関連文書 (MGASA-2015-0019) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-14T12:12:17+09:00",
+    "datelastupdated": "2015-04-08T17:21:58+09:00",
+    "datepublic": "2015-01-07T00:00:00+09:00"
+  }
+}

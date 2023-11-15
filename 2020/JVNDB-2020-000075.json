@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2020-000075",
+  "vulinfodata": {
+    "title": "セイコーエプソン製の複数製品のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "セイコーエプソン株式会社が提供する複数製品のインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 東内裕二 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "セイコーエプソン株式会社",
+          "productname": "(複数の製品)",
+          "cpe": {
+            "text": "cpe:/a:epson:multiple_product",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 また、インストーラを実行する際には、インストーラと同じディレクトリに不審なファイルがないことを確認してください。  なお、本脆弱性の影響を受けるのはインストーラの起動時のみです。すでに製品をインストールしている場合、再インストールする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "EPSON",
+          "vulinfoid": "エプソン製ソフトウェアのDLL読み込みに関する脆弱性について",
+          "url": "https://www.epson.jp/support/misc_t/201119_oshirase.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5674",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5674"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#26835001",
+          "url": "https://jvn.jp/jp/JVN26835001/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-11-18T15:09:28+09:00",
+          "description": "[2020年11月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-11-20T12:03:58+09:00",
+    "datelastupdated": "2020-11-20T12:03:58+09:00",
+    "datepublic": "2020-11-20T00:00:00+09:00"
+  }
+}

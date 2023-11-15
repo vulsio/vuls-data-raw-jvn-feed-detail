@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-005125",
+  "vulinfodata": {
+    "title": "Pidgin の libpurple にバンドルされている GnuTLS SSL/TLS および OpenSSL SSL/TLS プラグインにおけるサーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Pidgin の libpurple にバンドルされている (1) GnuTLS SSL/TLS および (2) OpenSSL SSL/TLS プラグインは、SSL サーバからの X.509 証明書の検証中に Basic Constraints 拡張機能を適切に考慮しないため、サーバになりすまされ、重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Pidgin",
+          "productname": "Pidgin",
+          "cpe": {
+            "text": "cpe:/a:pidgin:pidgin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.10.10 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、巧妙に細工された証明書を介して、サーバになりすまされ、重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Pidgin",
+          "vulinfoid": "Fix basic constraints checking for both our SSL plugins.",
+          "url": "http://hg.pidgin.im/pidgin/main/rev/2e4475087f04"
+        },
+        {
+          "type": "vendor",
+          "name": "Pidgin Security Advisories",
+          "vulinfoid": "Insufficient SSL certificate validation",
+          "url": "https://pidgin.im/news/security/?id=86"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3694",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3694"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3694",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3694"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年10月30日]\\n  掲載\\n[2015年06月19日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-10-30T16:37:48+09:00",
+    "datelastupdated": "2015-06-19T16:43:56+09:00",
+    "datepublic": "2014-10-12T00:00:00+09:00"
+  }
+}

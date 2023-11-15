@@ -1,0 +1,197 @@
+{
+  "vulinfoid": "JVNDB-2016-006496",
+  "vulinfodata": {
+    "title": "Oracle MySQL およびその他のデータベースにおける権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Oracle MySQL、MariaDB、Percona Server、および Percona XtraDB Cluster には、競合状態により、権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MariaDB Corporation Ab.",
+          "productname": "MariaDB",
+          "cpe": {
+            "text": "cpe:/a:mariadb:mariadb",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0.28 未満の 10.0.x",
+            "10.1.18 未満の 10.1.x",
+            "5.5.52 未満"
+          ]
+        },
+        {
+          "name": "Percona",
+          "productname": "Percona Server",
+          "cpe": {
+            "text": "cpe:/a:percona:percona_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.51-38.2 未満",
+            "5.6.32-78-1 未満の 5.6.x",
+            "5.7.14-8 未満の 5.7.x"
+          ]
+        },
+        {
+          "name": "Percona",
+          "productname": "Percona XtraDB Cluster",
+          "cpe": {
+            "text": "cpe:/a:percona:xtradb_cluster",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.41-37.0 未満",
+            "5.6.32-25.17 未満の 5.6.x",
+            "5.7.14-26.17 未満の 5.7.x"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "MySQL",
+          "cpe": {
+            "text": "cpe:/a:oracle:mysql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.52 未満",
+            "5.6.33 未満の 5.6.x",
+            "5.7.15 未満の 5.7.x",
+            "8.0.1 未満の 8.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "特定の権限を持つローカルユーザにより、MyISAM テーブルを修復するための REPAIR TABLE による my_copystat の使用を利用されることで、権限を取得される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "don't use my_copystat in the server",
+          "url": "https://github.com/MariaDB/server/commit/347eeefbfc658c8531878218487d729f4e020805"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Bug#24388746: PRIVILEGE ESCALATION AND RACE CONDITION USING CREATE TABLE",
+          "url": "https://github.com/mysql/mysql-server/commit/4e5473862e6852b0f3802b0cd0c6fa10b5253291"
+        },
+        {
+          "type": "vendor",
+          "name": "MariaDB",
+          "vulinfoid": "MariaDB 10.0.28 Release Notes",
+          "url": "https://mariadb.com/kb/en/mariadb/mariadb-10028-release-notes/"
+        },
+        {
+          "type": "vendor",
+          "name": "MariaDB",
+          "vulinfoid": "MariaDB 10.1.18 Release Notes",
+          "url": "https://mariadb.com/kb/en/mariadb/mariadb-10118-release-notes/"
+        },
+        {
+          "type": "vendor",
+          "name": "MariaDB",
+          "vulinfoid": "MariaDB 5.5.52 Release Notes",
+          "url": "https://mariadb.com/kb/en/mariadb/mariadb-5552-release-notes/"
+        },
+        {
+          "type": "vendor",
+          "name": "MySQL",
+          "vulinfoid": "Changes in MySQL 5.5.52 (2016-09-06, General Availability)",
+          "url": "https://dev.mysql.com/doc/relnotes/mysql/5.5/en/news-5-5-52.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MySQL",
+          "vulinfoid": "Changes in MySQL 5.6.33 (2016-09-06, General Availability)",
+          "url": "https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-33.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MySQL",
+          "vulinfoid": "Changes in MySQL 5.7.15 (2016-09-06, General Availability)",
+          "url": "https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-15.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MySQL",
+          "vulinfoid": "Changes in MySQL 8.0.1 (Not yet released, Development Milestone)",
+          "url": "https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-1.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Percona",
+          "vulinfoid": "Percona responds to CVE-2016-6663 and CVE-2016-6664",
+          "url": "https://www.percona.com/blog/2016/11/02/percona-responds-to-cve-2016-6663-and-cve-2016-6664/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6663",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6663"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6663",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6663"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-05T18:20:17+09:00",
+    "datelastupdated": "2017-01-05T18:20:17+09:00",
+    "datepublic": "2016-09-06T00:00:00+09:00"
+  }
+}

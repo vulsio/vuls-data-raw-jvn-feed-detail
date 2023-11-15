@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2021-001018",
+  "vulinfodata": {
+    "title": "Rockwell Automation 製 MicroLogix 1400 にバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Rockwell Automation 社が提供する MicroLogix 1400 には、受信した Modbus パケットの処理に起因したバッファオーバーフローの脆弱性 (CWE-120) が存在します。 認証されていない遠隔の第三者によって、当該製品に細工した Modbus パケットを送信されることで、レジスタ内のランダムな値を取得または変更される可能性があります。その結果、バッファオーバーフローの発生、および FAULT LED が赤く点滅し、通信が失われる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Rockwell Automation",
+          "productname": "MicroLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:micrologix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1400 すべてのシリーズ Version 21.6 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 開発者は次のワークアラウンドの適用を推奨しています。  　* 当該製品において、必要のない場合は Modbus TCP サポートを無効にする 　* ファイアウォールを使用して、許可されていない送信元からの Modbus TCP 通信をブロックする 　* ハードウェアキースイッチ設定などの機能を使用し、不正な変更を制限する 　* ファイアウォール等で TCP/UDP ポート 2222 や 44818 のアクセスを制限する 　　* TCP/UDP ポートに関する情報は開発者から提供されているナレッジベース ID 898270 (要ログイン) を参照してください 　* すべてのソフトウェアを「管理者」ではなく「ユーザー」として実行し、悪意のあるコードによる影響を最小限に抑える 　* Microsoft AppLocker または他の同様のホワイトリストアプリケーションを導入し、不要なアプリケーションなどの実行を制限する 　　* Rockwell Automation 製品における AppLocker の使用に関する情報は、ナレッジベース ID 546989 (要ログイン) で入手できます 　* ユーザー/サービスアカウントによる共有リソース (データベースなど) へのアクセスは、最小限の権限でのみ許可する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "ナレッジベース ID 898270 (要ログイン)",
+          "url": "https://rockwellautomation.custhelp.com/app/answers/detail/a_id/898270/page/1"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "ナレッジベース ID 546989 (要ログイン)",
+          "url": "https://rockwellautomation.custhelp.com/app/answers/detail/a_id/546989"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Rockwell Automation Security Advisory PN1545 (要ログイン)",
+          "url": "https://rockwellautomation.custhelp.com/app/answers/answer_view/a_id/1129877/loc/en_US#__highlight"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22659",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22659"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-033-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-033-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93359735",
+          "url": "http://jvn.jp/cert/JVNVU93359735"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html",
+          "title": "古典的バッファオーバーフロー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-02-04T14:21:42+09:00",
+          "description": "[2021年02月04日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-03-25T14:06:45+09:00",
+          "description": "[2021年03月25日]\\n  ベンダ情報：Rockwell Automation (Rockwell Automation Security Advisory PN1545 (要ログイン)) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-02-04T14:21:42+09:00",
+    "datelastupdated": "2021-03-25T16:28:36+09:00",
+    "datepublic": "2021-02-03T00:00:00+09:00"
+  }
+}

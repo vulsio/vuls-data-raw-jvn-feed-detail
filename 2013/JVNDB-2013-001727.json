@@ -1,0 +1,129 @@
+{
+  "vulinfoid": "JVNDB-2013-001727",
+  "vulinfodata": {
+    "title": "MIT Kerberos の鍵配布センタの PKINIT の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos の鍵配布センタ (KDC) の PKINIT の実装における、plugins/preauth/pkinit/pkinit_crypto_openssl.c 内の pkinit_check_kdc_pkid 関数は、X.509 証明書よりフィールドを抽出する際、エラーを適切に処理しないため、サービス運用妨害 (Null ポインタデリファレンスおよびデーモンクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 1.10.4 未満",
+            "5 1.11.1 未満の 1.11.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、不正な形式の KRB5_PADATA_PK_AS_REQ AS-REQ リクエストを介して、サービス運用妨害 (Null ポインタデリファレンスおよびデーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "PKINIT null pointer deref [CVE-2013-1415]",
+          "url": "https://github.com/krb5/krb5/commit/f249555301940c6df3a2cdda13b56b5674eebc2e"
+        },
+        {
+          "type": "vendor",
+          "name": "MIT Kerberos",
+          "vulinfoid": "Kerberos 5 Release 1.10.4",
+          "url": "http://web.mit.edu/kerberos/www/krb5-1.10/"
+        },
+        {
+          "type": "vendor",
+          "name": "MIT Kerberos",
+          "vulinfoid": "Kerberos 5 Release 1.11.1",
+          "url": "http://web.mit.edu/kerberos/www/krb5-1.11/"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:0523",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-03/msg00090.html"
+        },
+        {
+          "type": "vendor",
+          "name": "RT/krbdev.mit.edu",
+          "vulinfoid": "Ticket #7570 PKINIT null pointer deref [CVE-2013-1415]",
+          "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7570"
+        },
+        {
+          "type": "vendor",
+          "name": "RT/krbdev.mit.edu",
+          "vulinfoid": "Ticket #7577 PKINIT null pointer deref [CVE-2013-1415]",
+          "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7577"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2013:157",
+          "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:157"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in the PKINIT implementation in the Key Distribution Center (KDC)",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_the_pkinit"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1415",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1415"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1415",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1415"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月06日]\\n  掲載\\n[2013年04月23日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:0523) を追加\\n[2013年10月31日]\\n  ベンダ情報：Mandriva, Inc. (MDVSA-2013:157) を追加\\n  ベンダ情報：オラクル (Multiple vulnerabilities in the PKINIT implementation in the Key Distribution Center (KDC)) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-06T14:35:17+09:00",
+    "datelastupdated": "2013-10-31T17:19:12+09:00",
+    "datepublic": "2013-02-21T00:00:00+09:00"
+  }
+}

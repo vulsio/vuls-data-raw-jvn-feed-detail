@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-008078",
+  "vulinfodata": {
+    "title": "libmspack の cabd.c の cabd_extract 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libmspack の cabd.c の cabd_extract 関数は、有効なファイルに無効なファイルが続く特定のケースにおいて解凍のコールバックを適切に保持しないため、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Stuart Caie",
+          "productname": "libmspack",
+          "cpe": {
+            "text": "cpe:/a:cabextract:libmspack",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.5 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された CAB アーカイブを介して、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "774665",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=774665"
+        },
+        {
+          "type": "vendor",
+          "name": "Stuart Caie",
+          "vulinfoid": "libmspack",
+          "url": "http://www.cabextract.org.uk/libmspack/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9732",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9732"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9732",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9732"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年06月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-06-12T17:44:46+09:00",
+    "datelastupdated": "2015-06-12T17:44:46+09:00",
+    "datepublic": "2014-12-21T00:00:00+09:00"
+  }
+}

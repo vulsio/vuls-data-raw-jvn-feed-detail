@@ -1,0 +1,145 @@
+{
+  "vulinfoid": "JVNDB-2016-003433",
+  "vulinfodata": {
+    "title": "phpMyAdmin におけるクロスサイトスクリプティングの脆弱性",
+    "vulinfodescription": {
+      "overview": "phpMyAdmin には、クロスサイトスクリプティングの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The phpMyAdmin Project",
+          "productname": "phpMyAdmin",
+          "cpe": {
+            "text": "cpe:/a:phpmyadmin:phpmyadmin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.10.16 未満の 4.0.x",
+            "4.4.15.7 未満の 4.4.x",
+            "4.6.3 未満の 4.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下に関する問題によって、任意の Web スクリプトまたは HTML を挿入される可能性があります。  (1) table_row.phtml の特権のチェックの際に誤って処理される巧妙に細工されたテーブル名 (2) log_selector.phtml で誤って処理される巧妙に細工された mysqld log_bin ディレクティブ (3) Transformation の実装 (4) js/ajax.js の AJAX エラー処理 (5) Designer の実装 (6) js/tbl_chart.js のチャートの実装 (7) rows_zoom.phtml の ズーム検索の実装"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Properly escape translated string",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/8716855b309dbe65d7b9a5d681b80579b225b322"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fixed rendering of chart of columns with HTML inside",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/4d21b5c077db50c2a54b7f569d20f463cc2651f5"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Simplify and cleanup transformation plugins",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/be3ecbb4cca3fbe20e3b3aa4e049902d18b60865"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Escape attributes when showing images in javascript",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/79661610f6f65443e0ec1e382a7240437f28436c"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Do not allow javascript: links in transformation",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/615212a14d7d87712202f37354acf8581987fc5a"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Properly escape zoom search column type",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/960fd1fd52023047a23d069178bfff7463c2cefc"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Escape HTML when rendering AJAX error",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/895a131d2eb7e447757a35d5731c7d647823ea8b"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Escape binary log name",
+          "url": "https://github.com/phpmyadmin/phpmyadmin/commit/d648ade18d6cbb796a93261491c121f078df2d88"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY ANNOUNCEMENTS",
+          "vulinfoid": "PMASA-2016-26",
+          "url": "https://www.phpmyadmin.net/security/PMASA-2016-26/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5733",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5733"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5733",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5733"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-07T15:19:52+09:00",
+    "datelastupdated": "2016-07-07T15:19:52+09:00",
+    "datepublic": "2016-06-23T00:00:00+09:00"
+  }
+}

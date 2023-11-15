@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-005214",
+  "vulinfodata": {
+    "title": "MIT Kerberos 5 の鍵配布センタの do_tgs_req.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos 5 (別名 krb5) の鍵配布センタ (KDC) の do_tgs_req.c には、単一のコンポーネントのレルム名が使用されている場合、サービス運用妨害 (デーモンクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 1.11.4 未満の 1.11"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、ホストベースのサービスプリンシパルに対してクロスレルム照会 (cross-realm referral) を誘発する TGS-REQ リクエストを介して、サービス運用妨害 (デーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KDC null deref due to referrals [CVE-2013-1417]",
+          "url": "https://github.com/krb5/krb5/commit/4c023ba43c16396f0d199e2df1cfa59b88b62acc"
+        },
+        {
+          "type": "vendor",
+          "name": "MIT Kerberos",
+          "vulinfoid": "Kerberos Version 5, Release 1.11",
+          "url": "http://web.mit.edu/kerberos/krb5-1.11/README-1.11.4.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1030743",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1030743"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in Kerberos",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_kerberos1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1417",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1417"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1417",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1417"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月22日]\\n  掲載\\n[2014年02月26日]\\n  ベンダ情報：MIT Kerberos (Kerberos Version 5, Release 1.11) を追加\\n[2014年03月05日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Kerberos) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-22T10:59:41+09:00",
+    "datelastupdated": "2014-03-05T17:34:06+09:00",
+    "datepublic": "2013-06-21T00:00:00+09:00"
+  }
+}

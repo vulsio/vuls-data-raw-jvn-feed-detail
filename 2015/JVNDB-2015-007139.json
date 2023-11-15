@@ -1,0 +1,144 @@
+{
+  "vulinfoid": "JVNDB-2015-007139",
+  "vulinfodata": {
+    "title": "jq の jv_parse.c の tokenadd 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "jq の jv_parse.c の tokenadd 関数には、一つずれエラー (Off-by-One error) により、サービス運用妨害 (クラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "jq project",
+          "productname": "jq",
+          "cpe": {
+            "text": "cpe:/a:jq_project:jq",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.2"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、過度に長い JSON エンコード数を介して、ヒープベースのバッファオーバーフローを誘発されることで、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "802231",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=802231"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Stack exhaustion parsing a JSON file #1136",
+          "url": "https://github.com/stedolan/jq/issues/1136"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Heap buffer overflow in tokenadd() (fix #105)",
+          "url": "https://github.com/stedolan/jq/commit/8eb1367ca44e772963e704a700ef72ae2e12babd"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Heap-based buffer overflow in check_literal() #995",
+          "url": "https://github.com/stedolan/jq/issues/995"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:1212",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-05/msg00012.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:1214",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-05/msg00014.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8863",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8863"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8863",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8863"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-18T11:54:02+09:00",
+    "datelastupdated": "2016-05-18T11:54:02+09:00",
+    "datepublic": "2015-10-25T00:00:00+09:00"
+  }
+}

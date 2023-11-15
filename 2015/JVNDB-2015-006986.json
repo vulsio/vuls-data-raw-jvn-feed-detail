@@ -1,0 +1,90 @@
+{
+  "vulinfoid": "JVNDB-2015-006986",
+  "vulinfodata": {
+    "title": "Ruby on Rails の Action Controller の Basic 認証の実装における認証を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Ruby on Rails の Action Controller の Basic 認証の実装の actionpack/lib/action_controller/metal/http_authentication.rb の http_basic_authenticate_with メソッドは、認証情報の検証に定数時間アルゴリズムを使用しないため、認証を回避される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-254: Security Features (セキュリティ機能) と識別されています。 http://cwe.mitre.org/data/definitions/254.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Ruby on Rails project",
+          "productname": "Rails",
+          "cpe": {
+            "text": "cpe:/a:rubyonrails:ruby_on_rails",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.22.1 未満",
+            "4.0.x",
+            "4.1.14.1 未満の 4.1.x",
+            "4.2.5.1 未満の 4.2.x",
+            "5.0.0.beta1.1 未満の 5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、タイミングの違いを計測されることで、認証を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "[CVE-2015-7576] Timing attack vulnerability in basic authentication in Action Controller.",
+          "url": "https://groups.google.com/forum/message/raw?msg=ruby-security-ann/ANv0HDHEC3k/T8Hgq-hYEgAJ"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7576",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7576"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7576",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7576"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月15日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-15T14:33:37+09:00",
+    "datelastupdated": "2016-03-15T14:33:37+09:00",
+    "datepublic": "2015-10-29T00:00:00+09:00"
+  }
+}

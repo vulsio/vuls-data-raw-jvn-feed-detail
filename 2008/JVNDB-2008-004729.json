@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2008-004729",
+  "vulinfodata": {
+    "title": "Linux kernel の mm/filemap.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の mm/filemap.c の iov_iter_advance 関数は、一つずれエラー (Off-by-one) が発生するため、サービス運用妨害 (システムクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.27-rc2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、readv および writev を持つ I/O 操作の特定のシーケンスを介して、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "RHSA-2008:0857-21",
+          "url": "http://rhn.redhat.com/errata/RHSA-2008-0857.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-3535",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3535"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-3535",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-3535"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:17:13+09:00",
+    "datelastupdated": "2012-09-25T17:17:13+09:00",
+    "datepublic": "2008-08-08T00:00:00+09:00"
+  }
+}

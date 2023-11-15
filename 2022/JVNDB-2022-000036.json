@@ -1,0 +1,114 @@
+{
+  "vulinfoid": "JVNDB-2022-000036",
+  "vulinfodata": {
+    "title": "Rakuten Casa における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "楽天モバイル株式会社が提供する Rakuten Casa には、次の複数の脆弱性が存在します。 ・ハードコードされた認証情報の使用 (CWE-798) - CVE-2022-29525 ・アクセス制限不備 (CWE-284) - CVE-2022-28704 ・アクセス制限不備 (CWE-284) - CVE-2022-26834  CVE-2022-29525 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ラック 平井 成海 氏  CVE-2022-28704 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 大城 裕紀 氏、田川 真樹 氏  CVE-2022-26834 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 田川 真樹 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "楽天モバイル株式会社",
+          "productname": "Rakuten Casa",
+          "cpe": {
+            "text": "cpe:/a:misc:rakuten_mobile_rakuten_casa",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン AP_F_V1_4_1 または AP_F_V2_0_0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品筐体に関する情報を取得可能な第三者によって、root 権限でログインされ任意の操作を実行される - CVE-2022-29525 ・初期設定で WAN 側からの SSH 接続を受け付ける状態になっており、認証情報を初期設定のまま変更せずにインターネット接続している場合、第三者によって root 権限でログインされ任意の操作を実行される - CVE-2022-28704 ・初期設定で WAN 側からの HTTP 接続を受け付ける状態になっており、当該製品内部の情報を取得される - CVE-2022-26834"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者によると、2021年8月に本脆弱性の修正を行ったソフトウェアをリリースしており、Rakuten Casa 設置規約に則って適切に設置されている筐体については、自動的にアップデートが適用されるとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "楽天モバイル株式会社",
+          "vulinfoid": "【重要】Rakuten Casaのソフトウェアアップデート情報",
+          "url": "https://network.mobile.rakuten.co.jp/information/news/product/1033/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-29525",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-29525"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-28704",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-28704"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-26834",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-26834"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#46892984",
+          "url": "https://jvn.jp/jp/JVN46892984/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-05-16T16:39:29+09:00",
+          "description": "[2022年5月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-05-19T12:04:58+09:00",
+    "datelastupdated": "2022-05-19T12:04:58+09:00",
+    "datepublic": "2022-05-19T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "vulinfoid": "JVNDB-2012-002835",
+  "vulinfodata": {
+    "title": "Linux Kernel の encode_share_access 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/nfs/nfs4xdr.c 内の encode_share_access 関数には、サービス運用妨害 (バグおよびシステムクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.29 未満"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESXi",
+          "cpe": {
+            "text": "cpe:/a:vmware:esxi",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、NFSv4 ファイルシステムのパス名を伴う mknod システムコールを用いられることにより、サービス運用妨害 (バグおよびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.29",
+          "url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.29"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "NFSv4: Convert the open and close ops to use fmode",
+          "url": "https://github.com/torvalds/linux/commit/dc0b027dfadfcb8a5504f7d8052754bf8d501ab9"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=dc0b027dfadfcb8a5504f7d8052754bf8d501ab9"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 755440",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=755440"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0013",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0013.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-4324",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4324"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-4324",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4324"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月25日]\\n  掲載\\n[2012年12月17日]\\n  影響を受けるシステム：VMware (VMSA-2012-0013) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0013) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-25T16:21:44+09:00",
+    "datelastupdated": "2012-12-17T16:10:26+09:00",
+    "datepublic": "2012-06-21T00:00:00+09:00"
+  }
+}

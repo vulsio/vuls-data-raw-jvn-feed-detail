@@ -1,0 +1,187 @@
+{
+  "vulinfoid": "JVNDB-2013-000072",
+  "vulinfodata": {
+    "title": "JBoss RichFaces において任意のコードが実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "JBoss RichFaces には、deserialize の処理に問題があり、任意のコードが実行される脆弱性が存在します。  JBoss RichFaces は、Ajax 機能を持つウェブアプリケーションを作成するためのフレームワークです。JBoss RichFaces で作成されたアプリケーションには、外部からの入力を自動的に deserialize する機能が提供されています。この機能は、信頼できないデータを deserialize してしまうため、任意のコードが実行される脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 寺田 健 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "JBoss Enterprise Application Platform",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_enterprise_application_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.0 CP10 まで",
+            "5.2.0 までの 5.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "JBoss Enterprise Web Platform",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_enterprise_web_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.2.0 まで"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "JBoss RichFaces",
+          "cpe": {
+            "text": "cpe:/a:redhat:richfaces",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x",
+            "4.x",
+            "5.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "JBoss Web Framework Kit",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_web_framework_kit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.0 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat JBoss BRMS",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_enterprise_brms_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3.1 まで"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat JBoss Operations Network",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_operations_network",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.2 まで",
+            "3.1.2 までの 3.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat JBoss Portal",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_portal",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3 CP07 まで",
+            "5.2.2 までの 5.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat JBoss SOA Platform",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_enterprise_soa_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.0 CP05 まで",
+            "5.3.1 までの 5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された入力を処理することで、サーバ上で任意のファイルが書き込まれたり、任意のコードを実行されたりするなどの可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報をもとに各バージョンに対応したパッチを適用してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat",
+          "vulinfoid": "CVE-2013-2165",
+          "url": "https://access.redhat.com/security/cve/CVE-2013-2165"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 973570 - CVE-2013-2165 JBoss RichFaces: Remote code execution due to insecure deserialization",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2013-2165"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2165",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2165"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "「JBoss RichFaces」において任意のコードが実行される脆弱性対策について (JVN#38787103)",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20130719-jvn.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#38787103",
+          "url": "http://jvn.jp/jp/JVN38787103/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2165",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2165"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年07月19日]\\n  掲載\\n[2013年07月24日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2013-2165) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-07-19T12:00:49+09:00",
+    "datelastupdated": "2013-07-24T16:16:03+09:00",
+    "datepublic": "2013-07-19T00:00:00+09:00"
+  }
+}

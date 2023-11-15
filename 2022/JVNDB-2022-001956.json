@@ -1,0 +1,74 @@
+{
+  "vulinfoid": "JVNDB-2022-001956",
+  "vulinfodata": {
+    "title": "SMA Technologies 製 OpCon の UNIX 向けエージェントにおける SSH 鍵生成の問題",
+    "vulinfodescription": {
+      "overview": "SMA Technologies が提供する  OpCon には、UNIX 向けエージェントにおいて、SSH 接続用の鍵生成に関する問題が存在します。  OpCon は SMA Technologies が提供する IT 管理システムです。OpCon の UNIX 向けエージェントでは、製品に共通の SSH 接続用鍵ペアが用いられており、その秘密鍵がインストールファイル内にハードコードされています。さらに、製品のインストールおよび更新時に、公開鍵が root ユーザの authorized_keys ファイルに追加されるため、インストールファイルから秘密鍵を入手した攻撃者は、他ユーザのシステムに SSH 接続することが可能になります。この問題には CVE-2022-2154 が採番されています。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "SMA Technologies",
+          "productname": "OpCon",
+          "cpe": {
+            "text": "cpe:/a:misc:sam_technologies_opcon",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 21.2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "秘密鍵を取得した攻撃者によって、本製品を使用しているシステムに root 権限で SSH 接続される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[修正ツールを適用する] 開発者は、システムから鍵情報を削除し、本問題を修正するための<a href=\"https://smatechnologies.hosted-by-files.com/SMAUnixLSAMVulnerabilityFix/\"target=\"blank\">ツール</a>を提供しています。開発者が提供する情報を確認の上、ツールを適用してください。  [ワークアラウンドを実施する] 開発者が提供しているツールを適用しない場合、root ユーザの authorized_keys ファイルから公開鍵のエントリ （下記を参照） を手動で削除してください。  * SHA256: qbgTVNkLGI5G7erZqDhte63Vpw+9g88jYCxMuh8cLeg * MD5: f1:6c:c9:ba:21:66:ce:7c:5a:55:e2:4d:07:72:cc:31  なお、開発者によると、現在公開されている OpCon バージョン 21.2 のパッケージには鍵情報は含まれていないとのことです。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "SMA Technologies",
+          "vulinfoid": "SMAUnixLSAMVulnerabilityFix",
+          "url": "https://smatechnologies.hosted-by-files.com/SMAUnixLSAMVulnerabilityFix/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-2154",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-2154"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92741585",
+          "url": "http://jvn.jp/vu/JVNVU92741585/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#142546",
+          "url": "https://kb.cert.org/vuls/id/142546"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-06-23T17:34:22+09:00",
+          "description": "[2022年06月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-06-23T17:34:22+09:00",
+    "datelastupdated": "2022-06-23T17:34:22+09:00",
+    "datepublic": "2022-06-22T00:00:00+09:00"
+  }
+}

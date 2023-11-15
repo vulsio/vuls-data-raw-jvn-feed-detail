@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2016-001318",
+  "vulinfodata": {
+    "title": "Xen の include/asm-x86/paging.h の paging_invlpg 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen の include/asm-x86/paging.h の  paging_invlpg 関数には、シャドウモードでページングを使用する、またはネストされた仮想化が有効になっている場合、サービス運用妨害 (ホストクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3.x から 4.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルの HVM ゲストユーザにより、INVVPID 命令の非カノニカルゲストアドレスを介して、ハイパーバイザのバグチェックを誘発されることで、サービス運用妨害 (ホストクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Citrix Knowledge Center",
+          "vulinfoid": "CTX205496",
+          "url": "http://support.citrix.com/article/CTX205496"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-168",
+          "url": "http://xenbits.xen.org/xsa/advisory-168.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-1571",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1571"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-1571",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-1571"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月27日]\\n  掲載\\n[2016年06月14日]\\n  ベンダ情報：シトリックス・システムズ (CTX205496) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-27T14:52:35+09:00",
+    "datelastupdated": "2016-06-14T16:09:48+09:00",
+    "datepublic": "2016-01-20T00:00:00+09:00"
+  }
+}

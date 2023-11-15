@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-007443",
+  "vulinfodata": {
+    "title": "PHP の Fileinfo コンポーネントの libmagic/apprentice.c の apprentice_load 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "** 未確定 ** 本件は、脆弱性として確定していません。  PHP の Fileinfo コンポーネントの libmagic/apprentice.c の apprentice_load 関数は、スタックベースの文字配列を解放しようとするため、サービス運用妨害 (メモリ破損またはアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html  なお、ベンダは、標準の erealloc (内部メモリ確保) の動作では、解放操作が実行不可能なため、この問題が脆弱性であることに異議を唱えています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.4 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、サービス運用妨害 (メモリ破損またはアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Bug #68665",
+          "url": "https://bugs.php.net/bug.php?id=68665"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "Fixed bug #68665 (Invalid free) (a72cd07)",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=a72cd07f2983dc43a6bb35209dc4687852e53c09"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "Fixed bug #68665 (Invalid free) (ef89ab2)",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=ef89ab2f99fbd9b7b714556d4f1f50644eb54191"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9426",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9426"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9426",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9426"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月06日]\\n  掲載\\n[2015年04月30日]\\n  概要：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-06T18:17:51+09:00",
+    "datelastupdated": "2015-04-30T18:17:57+09:00",
+    "datepublic": "2014-12-28T00:00:00+09:00"
+  }
+}

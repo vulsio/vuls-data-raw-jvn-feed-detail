@@ -1,0 +1,159 @@
+{
+  "vulinfoid": "JVNDB-2011-001442",
+  "vulinfodata": {
+    "title": "IPComp パケットの受信処理に脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の IPComp 実装の受信処理には、メモリ破損の脆弱性が存在します。  IPComp (RFC 3173) は、一般的に IPsec の実装と共に使用されています。 KAME プロジェクトや NetBSD プロジェクトなどで IPComp および IPsec を実装しているコードには、細工された IPComp ペイロードを処理する際にスタックベースのバッファオーバーフローが発生する可能性があります。  なお、本脆弱性を使用した攻撃コードが公開されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/B1 ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:iij:seil%252fb1_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.00 から 3.20"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/neu 2FE Plus ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:iij:seil%252fneu_2fe_plus_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.00 から 2.11"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/Turbo ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:iij:seil%252fturbo_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.00 から 2.11"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/X1 ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:iij:seil%252fx1_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.00 から 3.20"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/X2 ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:iij:seil%252fx2_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.00 から 3.20"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/x86 ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:iij:seil%252fx86_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.70"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受けたり、任意のコードを実行されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 各ベンダや配布元が提供する情報をもとに本脆弱性に対応したパッチを適用してください。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　IPComp (プロトコル番号 108) パケットをフィルタリングする"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "SEIL シリーズ セキュリティ&脆弱性情報",
+          "vulinfoid": "偽装されたIPCompパケットに対する受信処理の脆弱性",
+          "url": "http://www.seil.jp/support/security/a01024.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1547",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1547"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#668220",
+          "url": "http://jvn.jp/cert/JVNVU668220"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1547",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1547"
+        },
+        {
+          "type": "advisory",
+          "name": "Request for Comments (RFC)",
+          "vulinfoid": "RFC 3173",
+          "url": "http://tools.ietf.org/html/rfc3173"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#668220",
+          "url": "http://www.kb.cert.org/vuls/id/668220"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年04月27日]\\n  掲載\\n[2013年10月28日]\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-04-27T11:48:35+09:00",
+    "datelastupdated": "2013-10-28T18:22:39+09:00",
+    "datepublic": "2011-04-06T00:00:00+09:00"
+  }
+}

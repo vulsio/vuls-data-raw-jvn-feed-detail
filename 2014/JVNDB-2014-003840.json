@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2014-003840",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/namespace.c における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/namespace.c は、バインドマウントの再マウント中に MNT_NODEV、MNT_NOSUID、MNT_NOEXEC の消去、および MNT_ATIME_MASK の変更を適切に制限しないため、権限を取得される、atime が有効なシステム上でバックアップや監査を妨害される、または atime が無効なシステム上でサービス運用妨害 (過剰なファイルシステムの更新) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.1 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:L/AC:H/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ユーザの名前空間に含まれる \"mount -o remount\" コマンドを介して、権限を取得される、atime が有効なシステム上でバックアップや監査を妨害される、または atime が無効なシステム上でサービス運用妨害 (過剰なファイルシステムの更新) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mnt: Correct permission checks in do_remount",
+          "url": "https://github.com/torvalds/linux/commit/9566d6742852c527bf5af38af5cbb878dad75705"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "index : kernel/git/torvalds/linux.git",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=9566d6742852c527bf5af38af5cbb878dad75705"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1129662",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1129662"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5207",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5207"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5207",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5207"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月19日]\\n  掲載\\n[2014年09月02日]\\n  CVSS による深刻度：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-19T15:07:00+09:00",
+    "datelastupdated": "2014-09-02T14:59:02+09:00",
+    "datepublic": "2014-07-28T00:00:00+09:00"
+  }
+}

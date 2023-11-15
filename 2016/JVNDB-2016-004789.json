@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2016-004789",
+  "vulinfodata": {
+    "title": "PHP の ext/wddx/wddx.c の php_wddx_push_element 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/wddx/wddx.c の php_wddx_push_element 関数には、サービス運用妨害 (不正なポインタアクセスおよび境界外読み取り) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.26 未満",
+            "7.0.11 未満の 7.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、wddxPacket XML ドキュメントの不正なブーリアン要素を介して、wddx_deserialize コール内で誤って処理されることで、サービス運用妨害 (不正なポインタアクセスおよび境界外読み取り) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix bug #73065: Out-Of-Bounds Read in php_wddx_push_element of wddx.c",
+          "url": "https://github.com/php/php-src/commit/c4cca4c20e75359c9a13a1f9a36cb7b4e9601d29?w=1"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #73065",
+          "url": "https://bugs.php.net/bug.php?id=73065"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 7 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-7.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-26",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-26j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-7418",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7418"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-7418",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-7418"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月21日]\\n  掲載\\n[2016年10月07日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-26) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-21T11:59:22+09:00",
+    "datelastupdated": "2016-10-07T16:40:37+09:00",
+    "datepublic": "2016-09-15T00:00:00+09:00"
+  }
+}

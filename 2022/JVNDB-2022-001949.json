@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2022-001949",
+  "vulinfodata": {
+    "title": "三菱電機製 MELSEC-Q/L シリーズおよび MELSEC iQ-R シリーズにおける不適切な入力値確認の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC-Q/ Lシリーズの Ethernet インタフェースユニットの Web 機能および MELSEC iQ-R シリーズ MES インタフェースユニットの REST サーバ機能には、不適切な入力値確認の脆弱性（CWE-20、CVE-2022-25163）が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-R シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "RD81MES96N REST サーバ機能 ファームウェアバージョン ”08” およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC L シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec-l_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "LJ71E71-100 Web 機能シリアル No. の上 5 桁 ”24061” およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC Q シリーズ",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:melsec-q_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "QJ71E71-100 Web 機能シリアル No. の上 5 桁 ”24061” およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって細工されたパケットを該当製品が受信することで、当該製品がサービス運用妨害（DoS）状態となったり、悪意のあるプログラムが実行されたりする可能性があります。 なお、復旧にはシステムのリセットが必要です。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 対策済みバージョンは次の通りです。 アップデート方法等の詳細については、開発者が提供する情報を参照の上、製品を購入した開発者の支社または代理店にお問合せください。  <ul> <li>MELSEC-Q シリーズ <ul> <li>QJ71E71-100 <ul> <li>シリアル No. の上 5 桁 \"24062\" およびそれ以降</li> </ul> </li> </ul> </li> <li>MELSEC-L シリーズ <ul> <li>LJ71E71-100 <ul> <li>シリアル No. の上 5 桁 \"24062\" およびそれ以降</li> </ul> </li> </ul> </li> <li>MELSEC iQ-R シリーズ <ul> <li>RD81MES96N <ul> <li>ファームウェアバージョン \"09\" およびそれ以降</li> </ul> </li> </ul> </li> </ul>  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品を含むシステムをインターネットに接続する場合には、ファイアウォールやWebアプリケーションファイアウォール（WAF）、仮想プライベートネットワーク（VPN）等を使用し、システムへの不正アクセスを防止する 　* 当該製品をルータやファイアウォールで適切に区分された信頼できる LAN 内で使用する 詳しくは、開発者が提供する情報をご確認ください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "MELSEC-Q/L シリーズ Ethernet インタフェースユニット及び MELSEC iQ-R シリーズ MES インタフェースユニットにおける サービス拒否(DoS)及び悪意のあるプログラムが実行される脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-006.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-25163",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-25163"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-165-03",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-165-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92561747",
+          "url": "http://jvn.jp/vu/JVNVU92561747/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-06-03T11:26:52+09:00",
+          "description": "[2022年06月03日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-06-17T14:19:11+09:00",
+          "description": "[2022年06月17日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-165-03) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-06-03T12:12:03+09:00",
+    "datelastupdated": "2022-06-17T14:27:09+09:00",
+    "datepublic": "2022-06-02T00:00:00+09:00"
+  }
+}

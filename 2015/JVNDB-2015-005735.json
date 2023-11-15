@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2015-005735",
+  "vulinfodata": {
+    "title": "MiniUPnP クライアントの igd_desc_parse.c の IGDstartelt 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "MiniUPnP クライアント (別名 MiniUPnPc) の igd_desc_parse.c の IGDstartelt 関数には、バッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MiniUPnP Project",
+          "productname": "MiniUPnPc",
+          "cpe": {
+            "text": "cpe:/a:miniupnp_project:miniupnp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.9.20150917 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの UPNP サーバより、\"過度に大きな (oversized)\" XML 要素の名前を介して、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "igd_desc_parse.c: fix buffer overflow",
+          "url": "https://github.com/miniupnp/miniupnp/commit/79cca974a4c2ab1199786732a67ff6d898051b78"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Changelog.txt",
+          "url": "https://github.com/miniupnp/miniupnp/blob/master/miniupnpc/Changelog.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6031",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6031"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6031",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6031"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-05T15:39:46+09:00",
+    "datelastupdated": "2015-11-05T15:39:46+09:00",
+    "datepublic": "2015-09-15T00:00:00+09:00"
+  }
+}

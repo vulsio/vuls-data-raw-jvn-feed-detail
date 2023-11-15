@@ -1,0 +1,219 @@
+{
+  "vulinfoid": "JVNDB-2016-003166",
+  "vulinfodata": {
+    "title": "NetworkManager で使用される libndp における中間者攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "NetworkManager で使用される libndp は、Neighbor Discovery Protocol (NDP) メッセージの送信元を適切に検証しないため、中間者攻撃 (man-in-the-middle attack) を実行される、またサービス運用妨害 (ネットワーク接続の中断) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御) と識別されています。 http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "15.10",
+            "16.04 LTS"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "Jiri Pirko",
+          "productname": "libndp",
+          "cpe": {
+            "text": "cpe:/a:libndp:libndp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.6 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server AUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、ローカルでないネットワークからノードをルータとして経路広告 (advertising) されることで、中間者攻撃 (man-in-the-middle attack) を実行される、またサービス運用妨害 (ネットワーク接続の中断) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3581",
+          "url": "http://www.debian.org/security/2016/dsa-3581"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "libndp: validate the IPv6 hop limit",
+          "url": "https://github.com/jpirko/libndp/commit/a4892df306e0532487f1634ba6d4c6d4bb381c7f"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "libndb: reject redirect and router advertisements from non-link-local",
+          "url": "https://github.com/jpirko/libndp/commit/2af9a55b38b55abbf05fd116ec097d4029115839"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1086",
+          "url": "https://rhn.redhat.com/errata/RHSA-2016-1086.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2980-1",
+          "url": "http://www.ubuntu.com/usn/USN-2980-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3698",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3698"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3698",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3698"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年06月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-06-16T15:24:14+09:00",
+    "datelastupdated": "2016-06-16T15:24:14+09:00",
+    "datepublic": "2016-05-17T00:00:00+09:00"
+  }
+}

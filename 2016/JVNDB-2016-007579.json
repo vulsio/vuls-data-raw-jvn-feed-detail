@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2016-007579",
+  "vulinfodata": {
+    "title": "libarchive の archive_read_support_format_7zip.c の read_Header 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libarchive の archive_read_support_format_7zip.c の read_Header 関数には、サービス運用妨害 (境界外読み取り) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "libarchive",
+          "productname": "libarchive",
+          "cpe": {
+            "text": "cpe:/a:libarchive:libarchive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.1"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、7zip アーカイブのヘッダの複数の EmptyStream 属性を介して、サービス運用妨害 (境界外読み取り) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Issue 761: Heap overflow reading corrupted 7Zip files",
+          "url": "https://github.com/libarchive/libarchive/commit/7f17c791dcfd8c0416e2cd2485b19410e47ef126"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "1377925",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1377925"
+        },
+        {
+          "type": "vendor",
+          "name": "SUSE Security Update",
+          "vulinfoid": "openSUSE-SU-2016:3002",
+          "url": "http://lists.opensuse.org/opensuse-updates/2016-12/msg00027.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8689",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8689"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8689",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-8689"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-06T17:30:55+09:00",
+    "datelastupdated": "2017-03-06T17:30:55+09:00",
+    "datepublic": "2016-09-19T00:00:00+09:00"
+  }
+}

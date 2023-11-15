@@ -1,0 +1,228 @@
+{
+  "vulinfoid": "JVNDB-2011-003524",
+  "vulinfodata": {
+    "title": "RPM におけるサービス運用妨害 (メモリ破損) の脆弱性",
+    "vulinfodescription": {
+      "overview": "RPM には、rpmio/rpmpgp.c の (1) regionSwab 関数、(2) headerLoad 関数、および (3) multiple 関数に関する処理に不備があるため、サービス運用妨害 (メモリ破損) 状態となる、および任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "RPM",
+          "productname": "RPM Package Manager",
+          "cpe": {
+            "text": "cpe:/a:rpm:rpm",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.x から 4.9.x (4.9.1.2 未満)"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "5.0 (client) ",
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux ELS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_els",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.z (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Long Life",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_long_life",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 5.3 server)",
+            "(v. 5.6 server)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.z  ",
+            "6.1.z  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、rpm パッケージがクエリされている、またはインストールされている場合、rpm パッケージに含まれる適切に処理されない巧妙に細工されたヘッダおよびオフセットを介して、サービス運用妨害 (メモリ破損) 状態にされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:1349",
+          "url": "http://www.redhat.com/support/errata/RHSA-2011-1349.html"
+        },
+        {
+          "type": "vendor",
+          "name": "RPM",
+          "vulinfoid": "PM 4.9.1.2 Release Notes",
+          "url": "http://rpm.org/wiki/Releases/4.9.1.2#Security"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0001",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0001.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-3378",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3378"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-3378",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3378"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年12月28日]\\n  掲載\\n[2012年12月21日]\\n  影響を受けるシステム：VMware (VMSA-2012-0001) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0001) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-12-28T11:23:47+09:00",
+    "datelastupdated": "2012-12-21T16:47:44+09:00",
+    "datepublic": "2011-12-24T00:00:00+09:00"
+  }
+}

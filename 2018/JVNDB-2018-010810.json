@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2018-010810",
+  "vulinfodata": {
+    "title": "ファイルシステムドライバ Dokan におけるスタックバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "オープンソースのファイルシステムドライバである Dokan には、スタックベースのバッファオーバーフローの脆弱性が存在します。  スタックベースのバッファオーバーフロー (CWE-121) - CVE-2018-5410 Dokan version 1.0.0.5000 から 1.2.0.1000 までのドライバ dokan1.sys には、スタックベースのバッファオーバーフローの脆弱性が存在します。攻撃者は、システムドライバへのデバイスハンドルを作成し、任意の値を送信することで本脆弱性を悪用する可能性があります。本脆弱性はバージョン 1.0.0.5000 へのアップデート時に発生したものです。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Dokan",
+          "productname": "Dokan",
+          "cpe": {
+            "text": "cpe:/a:dokan_project:dokan",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.0.5000 から 1.2.0.1000 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該 Windows システムにログインした一般ユーザにより、システム権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した version 1.2.1 を公開しています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Release 1.2.1.1000 - dokan-dev/dokany",
+          "url": "https://github.com/dokan-dev/dokany/releases/tag/v1.2.1.1000"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sys - Fix Buffer Overflow by adding mount length path check",
+          "url": "https://github.com/dokan-dev/dokany/commit/4954cc0a3299b20274ac64bf52d6c285a1f40b0f"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5410",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5410"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97284298",
+          "url": "https://jvn.jp/vu/JVNVU97284298/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5410",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5410"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "Vulnerability Note VU#741315",
+          "url": "https://kb.cert.org/vuls/id/741315/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-12-25T14:56:16+09:00",
+          "description": "[2018年12月25日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-08-27T14:23:16+09:00",
+          "description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5410) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-12-25T14:56:16+09:00",
+    "datelastupdated": "2019-08-27T16:51:05+09:00",
+    "datepublic": "2018-12-20T00:00:00+09:00"
+  }
+}

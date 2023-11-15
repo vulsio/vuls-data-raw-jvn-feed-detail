@@ -1,0 +1,140 @@
+{
+  "vulinfoid": "JVNDB-2013-003749",
+  "vulinfodata": {
+    "title": "MongoDB で使用される mongo-python-driver におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MongoDB で使用される mongo-python-driver (別名 pymongo) の bson/_cbsonmodule.c には、無効な DBRef のデコーディングに関する処理に不備があるため、サービス運用妨害 (NULL ポインタデリファレンスおよびクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "12.10",
+            "13.04"
+          ]
+        },
+        {
+          "name": "MongoDB Inc.",
+          "productname": "MongoDB",
+          "cpe": {
+            "text": "cpe:/a:mongodb:mongodb",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "mongo-python-driver 2.5.2 未満"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、サービス運用妨害 (NULL ポインタデリファレンスおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "710597",
+          "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=710597"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2705",
+          "url": "http://www.debian.org/security/2013/dsa-2705"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix null pointer when decoding invalid DBRef PYTHON-532",
+          "url": "https://github.com/mongodb/mongo-python-driver/commit/a060c15ef87e0f0e72974c7c0e57fe811bbd06a2"
+        },
+        {
+          "type": "vendor",
+          "name": "MongoDB",
+          "vulinfoid": "PYTHON-532",
+          "url": "https://jira.mongodb.org/browse/PYTHON-532"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1064",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-06/msg00180.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1897-1",
+          "url": "http://www.ubuntu.com/usn/usn-1897-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2132",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2132"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2132",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2132"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-19T13:46:05+09:00",
+    "datelastupdated": "2013-08-19T13:46:05+09:00",
+    "datepublic": "2013-05-31T00:00:00+09:00"
+  }
+}

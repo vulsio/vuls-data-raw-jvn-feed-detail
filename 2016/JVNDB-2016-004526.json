@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2016-004526",
+  "vulinfodata": {
+    "title": "QEMU の megasas_lookup_frame 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "QEMU (別名 Quick Emulator) の megasas_lookup_frame 関数には、MegaRAID SAS 8708EM2 ホストバスアダプタのエミュレーションサポートを伴いビルドされている場合、サービス運用妨害 (境界外読み取りおよびクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-125: Out-of-bounds Read (境界外読み取り) と識別されています。 http://cwe.mitre.org/data/definitions/125.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.5",
+          "vector": "AV:L/AC:M/Au:S/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルのゲスト OS 管理者により、サービス運用妨害 (境界外読み取りおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Qemu-devel",
+          "vulinfoid": "[PATCH v2] scsi: megasas: check 'read_queue_head' index value",
+          "url": "https://lists.gnu.org/archive/html/qemu-devel/2016-05/msg04424.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1336461",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1336461"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-3047-1",
+          "url": "http://www.ubuntu.com/usn/USN-3047-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-3047-2",
+          "url": "http://www.ubuntu.com/usn/USN-3047-2"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5107",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5107"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5107",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5107"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月05日]\\n  掲載\\n[2016年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Canonical (USN-3047-1) を追加\\n  ベンダ情報：Canonical (USN-3047-2) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-05T15:20:45+09:00",
+    "datelastupdated": "2016-10-28T16:29:21+09:00",
+    "datepublic": "2016-05-25T00:00:00+09:00"
+  }
+}

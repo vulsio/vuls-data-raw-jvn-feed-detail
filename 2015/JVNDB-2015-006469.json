@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2015-006469",
+  "vulinfodata": {
+    "title": "Xen の common/memory.c の memory_exchange 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen の common/memory.c の memory_exchange 関数は、ページをドメインへ適切に戻さないため、サービス運用妨害 (ホストクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.x から 4.6.x"
+          ]
+        },
+        {
+          "name": "シトリックス・システムズ",
+          "productname": "Citrix XenServer",
+          "cpe": {
+            "text": "cpe:/a:citrix:xenserver",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.5 Service Pack 1 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS 管理者により、ドメインのティアダウン (teardown) に関する不特定の要因を介して、サービス運用妨害 (ホストクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Citrix Knowledge Center",
+          "vulinfoid": "CTX203451",
+          "url": "http://support.citrix.com/article/CTX203451"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-159",
+          "url": "http://xenbits.xen.org/xsa/advisory-159.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8339",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8338"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8339",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8339"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-21T15:19:23+09:00",
+    "datelastupdated": "2015-12-21T15:19:23+09:00",
+    "datepublic": "2015-12-08T00:00:00+09:00"
+  }
+}

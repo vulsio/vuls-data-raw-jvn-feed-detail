@@ -1,0 +1,108 @@
+{
+  "vulinfoid": "JVNDB-2016-006623",
+  "vulinfodata": {
+    "title": "Tor におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Tor は、buf_t データに NUL 終端があると想定する内部機能を持っているものの、or/buffers.c の実装は NUL 終端の存在を確認しないため、サービス運用妨害 (クライアント、秘匿サービス、リレー、または権限のクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The Tor Project",
+          "productname": "Tor",
+          "cpe": {
+            "text": "cpe:/a:torproject:tor",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.2.8.9 未満",
+            "0.2.9.4-alpha 未満の 0.2.9.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、巧妙に細工されたデータを介して、サービス運用妨害 (クライアント、秘匿サービス、リレー、または権限のクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Add a one-word sentinel value of 0x0 at the end of each buf_t chunk",
+          "url": "https://github.com/torproject/tor/commit/3cea86eb2fbb65949673eb4ba8ebb695c87a57ce"
+        },
+        {
+          "type": "vendor",
+          "name": "Tor",
+          "vulinfoid": "Tor 0.2.8.9 is released, with important fixes",
+          "url": "https://blog.torproject.org/blog/tor-0289-released-important-fixes"
+        },
+        {
+          "type": "vendor",
+          "name": "Tor",
+          "vulinfoid": "TROVE-2016-10-001: out-of-bounds read on buffer chunks",
+          "url": "https://trac.torproject.org/projects/tor/ticket/20384"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8860",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8860"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8860",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-8860"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-17T10:44:05+09:00",
+    "datelastupdated": "2017-01-17T10:44:05+09:00",
+    "datepublic": "2016-10-17T00:00:00+09:00"
+  }
+}

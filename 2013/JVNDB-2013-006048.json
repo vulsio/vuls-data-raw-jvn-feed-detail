@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-006048",
+  "vulinfodata": {
+    "title": "LXC の lxc-sshd テンプレートにおける権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "LXC の lxc-sshd テンプレート (templates/lxc-sshd.in) は、/sbin/init にマウントしている際に read-write パーミッションを使用するため、権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux Containers",
+          "productname": "LXC",
+          "cpe": {
+            "text": "cpe:/a:linuxcontainers:lxc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.0.beta2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、init ファイルを変更されることで、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugs",
+          "vulinfoid": "Bug #1261045",
+          "url": "https://bugs.launchpad.net/ubuntu/%2Bsource/lxc/%2Bbug/1261045"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sshd: Don't bind-mount /sbin/init read-write",
+          "url": "https://github.com/lxc/lxc/commit/f4d5cc8e1f39d132b61e110674528cac727ae0e2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Security Bugfix: added ro to init-script #1",
+          "url": "https://github.com/dotcloud/lxc/pull/1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2104-1",
+          "url": "http://www.ubuntu.com/usn/USN-2104-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6441",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6441"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6441",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6441"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年02月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-02-19T12:18:55+09:00",
+    "datelastupdated": "2014-02-19T12:18:55+09:00",
+    "datepublic": "2013-12-18T00:00:00+09:00"
+  }
+}

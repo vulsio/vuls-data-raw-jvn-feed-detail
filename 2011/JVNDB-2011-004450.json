@@ -1,0 +1,143 @@
+{
+  "vulinfoid": "JVNDB-2011-004450",
+  "vulinfodata": {
+    "title": "Red Hat Enterprise Linux 5 の Linux kernel および Red Hat Enterprise Linux 6 の GRO におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Red Hat Enterprise Virtualization (RHEV) Hypervisor などの製品に使われる Red Hat Enterprise Linux 5 の Linux kernel および Red Hat Enterprise Linux 6 の Generic Receive Offload (GRO) 実装には、サービス運用妨害状態となる脆弱性が存在します。 本脆弱性は、CVE-2011-1478 の脆弱性とは異なる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.18"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) 5",
+            "2.1 (as) 6"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Virtualization Hypervisor",
+          "cpe": {
+            "text": "cpe:/a:redhat:enterprise_virtualization_hypervisor",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.7",
+          "vector": "AV:A/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、napi_reuse_skb 関数が細工された VLAN パケットの処理を介して、(1) メモリリーク、および (2) メモリ破壊に至り、サービス運用妨害状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 695173",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=695173"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:1090",
+          "url": "http://www.redhat.com/support/errata/RHSA-2011-1090.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0927",
+          "url": "http://rhn.redhat.com/errata/RHSA-2011-0927.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:1106",
+          "url": "http://www.redhat.com/support/errata/RHSA-2011-1106.html"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0001",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0001.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1576",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1576"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1576",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1576"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載\\n[2012年12月19日]\\n  影響を受けるシステム：VMware (VMSA-2012-0001) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0001) を追加\\n[2016年06月30日]\\n  ベンダ情報：レッドハット (Bug 695173) を追加\\n  ベンダ情報：レッドハット (RHSA-2011:0927) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:43:13+09:00",
+    "datelastupdated": "2016-06-30T14:07:54+09:00",
+    "datepublic": "2011-07-27T00:00:00+09:00"
+  }
+}

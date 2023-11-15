@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2015-000119",
+  "vulinfodata": {
+    "title": "ファイル暗号化ソフト ED に小さいファイルを暗号化した場合において暗号化データの解読が比較的容易になる問題",
+    "vulinfodescription": {
+      "overview": "ファイル暗号化ソフト ED では、サイズの小さいファイルを暗号化した際にサイズの大きなファイルを暗号化した時と比べ、解読が比較的容易になります。  ファイル暗号化ソフト ED では、ブロックサイズ (128 ビット) 未満のファイルを処理する際、「ECBモードをキー生成部において組み合わせた、ストリーム暗号」を選択して暗号化を行っており、解読が比較的容易になります。この処理に関する詳細については、開発者が提供する情報（http://type74.org/edman5-1.php）をご確認ください。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 澤田 豊 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Type74.org",
+          "productname": "ED",
+          "cpe": {
+            "text": "cpe:/a:type74:ed",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver4.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "16 バイト未満のファイルを暗号化した場合、差分解読法により解読される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに Ver4.0 以上にアップデートしてください。  [ワークアラウンドを実施する] Ver.4.0 以上にアップデートできない場合は、以下のワークアラウンドを実施することで本問題の影響を回避可能です。   - 16 バイト未満のファイルを暗号化しない"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Type74.org",
+          "vulinfoid": "EDマニュアル - ５−１、暗号技術について",
+          "url": "http://type74.org/edman5-1.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Type74.org",
+          "vulinfoid": "ファイル暗号化ソフト「ED」",
+          "url": "http://type74.org/ed.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Type74.org",
+          "vulinfoid": "Type74.orgのブログ",
+          "url": "http://type74org.blog14.fc2.com/blog-entry-1384.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2987",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2987"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#91474878",
+          "url": "https://jvn.jp/jp/JVN91474878/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2987",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2987"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月27日]\\n  掲載\\n[2015年09月02日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2987) を追加\\n  ベンダ情報：Type74.org (Type74.orgのブログ) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-27T14:04:54+09:00",
+    "datelastupdated": "2015-09-02T17:56:43+09:00",
+    "datepublic": "2015-08-27T00:00:00+09:00"
+  }
+}

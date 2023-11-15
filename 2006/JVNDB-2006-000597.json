@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2006-000597",
+  "vulinfodata": {
+    "title": "OpenSSH クライアントの無効なパケットの処理によるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSH クライアントにおけるセッション確立後の鍵交換の処理において、newkeys[mode] に対する NULL 値のチェックに不備が存在するため、意図的な SSH パケットを処理した場合、Null ポインタデリファレンスが発生する脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenBSD",
+          "productname": "OpenSSH",
+          "cpe": {
+            "text": "cpe:/a:openbsd:openssh",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3p2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "7  ",
+            "8  "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "OpenSSH クライアントがクラッシュし、サービス運用妨害 (DoS) 状態となる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "OpenSSH",
+          "vulinfoid": "OpenSSH 4.4/4.4p1 released",
+          "url": "http://www.openssh.com/txt/release-4.4"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2006-34",
+          "url": "http://www.turbolinux.com/security/2006/TLSA-2006-34.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2006-34",
+          "url": "http://www.turbolinux.co.jp/security/2006/TLSA-2006-34j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-4925",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4925"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-4925",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-4925"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-09-28T00:00:00+09:00"
+  }
+}

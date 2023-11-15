@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2013-006677",
+  "vulinfodata": {
+    "title": "QEMU の hw/net/virtio-net.c の virtio_net_load 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "QEMU の hw/net/virtio-net.c の virtio_net_load 関数には、サービス運用妨害 (DoS) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.0 から 1.7.2 未満の 1.7.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、max_queues より大きい curr_queues 値を介して、out-of-bounds write を誘発されることで、サービス運用妨害 (DoS) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "QEMU",
+          "vulinfoid": "[Qemu-stable] [ANNOUNCE] QEMU 1.7.2 Stable released",
+          "url": "http://lists.nongnu.org/archive/html/qemu-stable/2014-07/msg00187.html"
+        },
+        {
+          "type": "vendor",
+          "name": "QEMU",
+          "vulinfoid": "virtio-net: out-of-bounds buffer write on invalid state load",
+          "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=eea750a5623ddac7a61982eec8f1c93481857578"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0927",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0927.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4150",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4150"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4150",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4150"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-06T18:32:44+09:00",
+    "datelastupdated": "2014-11-06T18:32:44+09:00",
+    "datepublic": "2013-06-12T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "vulinfoid": "JVNDB-2008-001591",
+  "vulinfodata": {
+    "title": "Oracle Weblogic Apache connector プラグインにバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Oracle Weblogic (旧 BEA Weblogic) Server および Weblogic Express Applicaiton Server の Weblogic Apache connector プラグインにはバッファオーバーフローの脆弱性が存在します。  Oracle Weblogic Server および Weblogic Express Applicaiton Server は、Weblogic Apache connector プラグインである mod_wl を使用することで Apache ウェブサーバ と連動させることができます。  Weblogic Server および Weblogic Express で使用される Apache Connector プラグインには、細工された POST リクエストを処理する際にバッファオーバーフローの脆弱性が存在します。  また、本脆弱性に関する検証コードが公開されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "オラクル",
+          "productname": "Oracle WebLogic Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:weblogic_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0 Maintenance Pack 1 およびそれ以前",
+            "6.1 Service Pack 7 およびそれ以前",
+            "7.0 Service Pack 7 およびそれ以前",
+            "8.1 Service Pack 6 およびそれ以前",
+            "9.0",
+            "9.1",
+            "9.2 Maintenance Pack 3 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって任意のコードが実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 2008年8月5日現在、Oracle よりパッチが公開されていることを確認しました。  なお、パッチを適用できない場合、以下の回避策が Ocacle より公開されています。  [Apache の設定を変更する] httpd.conf に LimitRequestLine 4000 のパラメータを追加して Apache を再起動する。  [mod_security を導入する] mod_security モジュールを導入する。  詳しくは、Oracle が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "Oracle Fusion Middleware 10gR3 Application Server Downloads",
+          "url": "http://www.oracle.com/technology/software/products/ias/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories and Notifications",
+          "vulinfoid": "2793",
+          "url": "http://www.oracle.com/technology/deploy/security/wls-security/2793.html"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティアドバイザリ",
+          "vulinfoid": "CVE-2008-3257",
+          "url": "https://support.bea.com/application_content/product_portlets/securityadvisories-ja/cve-2008-3257.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-3257",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3257"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2008-2145",
+          "url": "http://www.frsirt.com/english/advisories/2008/2145"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "43885",
+          "url": "http://xforce.iss.net/xforce/xfdb/43885"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#716387",
+          "url": "http://jvn.jp/cert/JVNVU716387/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-3257",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-3257"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA31146",
+          "url": "http://secunia.com/advisories/31146"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "30273",
+          "url": "http://www.securityfocus.com/bid/30273"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1020520",
+          "url": "http://www.securitytracker.com/id?1020520"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#716387",
+          "url": "http://www.kb.cert.org/vuls/id/716387"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2008年09月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2008-09-02T17:56:40+09:00",
+    "datelastupdated": "2008-09-02T17:56:40+09:00",
+    "datepublic": "2008-08-01T00:00:00+09:00"
+  }
+}

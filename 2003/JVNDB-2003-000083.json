@@ -1,0 +1,145 @@
+{
+  "vulinfoid": "JVNDB-2003-000083",
+  "vulinfodata": {
+    "title": "Kerberos 4 における選択平文攻撃により特定の principal になりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Kerberos 4 プロトコルの実装には、いくつかの暗号化方法における不備が存在します。この問題を利用することで、悪意ある特定の realm 内のユーザは、cross-realm 認証が行われている任意のリモートの realm 内の principal に成りすますことが可能です。  特定の principal に成りすました攻撃者は、結果として、ローカルの realm 内で管理されている任意のリモートの realm へのアクセス権限を奪取できる可能性があります。  さらに、Kerberos 4 プロトコルには、Triple DES 暗号化方式の実装上においての不備が存在します。Triple DES Kerberos 4 のサポートが有効化されている場合には、任意のユーザへの成りすましや、標的ユーザの Kerberos チケットを含む、ネットワークトラフィックを解析されてしまう可能性があります。  尚、これらの問題は Kerberos 4 プロトコルに存在するため、Kerberos 4 プロトコルをサポートした状態で MIT Kerberos 5 を実装している場合や、Kerberos 4 プロトコルで Kerberos 認証を使用しているアプリケーションにおいて影響を受ける可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.2  ",
+            "7.0  ",
+            "7.1  ",
+            "7.2  ",
+            "7.3  ",
+            "8.0  ",
+            "9  "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:091",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-091.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:051",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-051.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2003-29",
+          "url": "http://www.turbolinux.com/security/2003/TLSA-2003-29.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:091",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-091J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:051",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-051J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2003-29",
+          "url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-29j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2003-0138",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0138"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2003-0138",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0138"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "7113",
+          "url": "http://www.securityfocus.com/bid/7113"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#623217",
+          "url": "http://www.kb.cert.org/vuls/id/623217"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#442569",
+          "url": "http://www.kb.cert.org/vuls/id/442569"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2003-03-17T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2009-006499",
+  "vulinfodata": {
+    "title": "Piwik などの製品で使用される Open Flash Chart Lug Wyrm Charmer における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Piwik、Woopra Analytics プラグインなどの製品で使用されている Open Flash Chart Lug Wyrm Charmer の ofc_upload_image.php は、register_globals が有効になっている際、無制限にファイルをアップロードする不備があるため、任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Piwik",
+          "productname": "Piwik",
+          "cpe": {
+            "text": "cpe:/a:piwik:piwik",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.2.35 から 0.4.3"
+          ]
+        },
+        {
+          "name": "teethgrinder.co.uk",
+          "productname": "open flash chart",
+          "cpe": {
+            "text": "cpe:/a:teethgrinder.co.uk:open_flash_chart",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v2 Beta 1 から v2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、HTTP_RAW_POST_DATA パラメータ内のコードを伴う name パラメータを経由する実行可能な拡張子を伴うファイルをアップロードされ、アクセスされることで、tmp-upload-images/ の配下のファイルへの直接リクエストを介して、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Piwik",
+          "vulinfoid": "SA37078",
+          "url": "http://piwik.org/blog/2009/10/piwik-response-to-secunia-advisory-sa37078/"
+        },
+        {
+          "type": "vendor",
+          "name": "teethgrinder.co.uk",
+          "vulinfoid": "Top page",
+          "url": "http://teethgrinder.co.uk/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-4140",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4140"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-4140",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-4140"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-20T19:28:46+09:00",
+    "datelastupdated": "2012-12-20T19:28:46+09:00",
+    "datepublic": "2009-10-21T00:00:00+09:00"
+  }
+}

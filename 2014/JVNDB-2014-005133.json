@@ -1,0 +1,162 @@
+{
+  "vulinfoid": "JVNDB-2014-005133",
+  "vulinfodata": {
+    "title": "GNU Wget にシンボリックリンクの扱いに関する問題",
+    "vulinfodescription": {
+      "overview": "GNU Wget には、FTP の再帰的ダウンロード時におけるシンボリックリンクの扱いに問題があり、GNU Wget の実行権限の範囲内でローカルファイルシステム上の任意のファイルを操作される可能性があります。  リンク解釈の問題 (CWE-59) GNU Wget は、サーバからファイルを取得するためのユーティリティです。GNU Wget で FTP サーバから再帰的にファイルをダウンロードする際、サーバから取得するディレクトリ一覧のなかに細工されたシンボリックリンクが仕込まれていると、Wget がローカルファイルシステム側の任意のファイルを作成したり上書きしたりする可能性があります。  CWE-59: Improper Link Resolution Before File Access ('Link Following') https://cwe.mitre.org/data/definitions/59.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU Wget",
+          "cpe": {
+            "text": "cpe:/a:gnu:wget",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10",
+            "11.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の FTP サーバから再帰的にファイルをダウンロードする際、GNU Wget を使用しているユーザの権限で任意のファイルを作成されたり、任意のファイルを上書きされたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] GNU Wget では、本問題の対策としてバージョン 1.16 をリリースしています。 このバージョンでは、サーバから取得したファイル一覧情報の検査が追加されています。 また、初期状態で retr-symlinks オプションを有効にしており、FTP サーバからの再帰的ダウンロード時に、サーバ側のシンボリックリンクに対応してローカル側にシンボリックリンクを作成しなくなります。  [ワークアラウンドを実施する] retr-symlinks オプションを設定することで、FTP サーバからの再帰的ダウンロード時に、サーバ側のシンボリックリンクに対応してローカル側にシンボリックリンクを作成しなくなります。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Add checks for valid listing file in FTP",
+          "url": "http://git.savannah.gnu.org/cgit/wget.git/commit/?id=69c45cba4382fcaabe3d86876bd5463dc34f442c"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Prepare new release 1.16",
+          "url": "http://git.savannah.gnu.org/cgit/wget.git/commit/?id=b4440d96cf8173d68ecaa07c36b8f4316ee794d0"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "CVE-2014-4877: Arbitrary Symlink Access",
+          "url": "http://git.savannah.gnu.org/cgit/wget.git/commit/?id=18b0979357ed7dc4e11d4f2b1d7e0f5932d82aa7"
+        },
+        {
+          "type": "vendor",
+          "name": "GNU Wget",
+          "vulinfoid": "GNU wget 1.16 released",
+          "url": "http://savannah.gnu.org/forum/forum.php?forum_id=8133"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Third Party Bulletin - January 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1139181",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1139181"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1764",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1764.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1955",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-1955.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-4877",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4877"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98581917",
+          "url": "http://jvn.jp/vu/JVNVU98581917/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-4877",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4877"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#685996",
+          "url": "https://www.kb.cert.org/vuls/id/685996"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Rapid7 - R7-2014-15 GNU Wget FTP Symlink Arbitrary Filesystem Access",
+          "url": "https://community.rapid7.com/community/metasploit/blog/2014/10/28/r7-2014-15-gnu-wget-ftp-symlink-arbitrary-filesystem-access"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-59",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-59.html",
+          "title": "リンク解釈の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年10月30日]\\n  掲載\\n[2014年11月20日]\\n  ベンダ情報：レッドハット (RHSA-2014:1764) を追加\\n[2014年12月17日]\\n  ベンダ情報：レッドハット (RHSA-2014:1955) を追加\\n[2015年01月30日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-10-30T17:08:15+09:00",
+    "datelastupdated": "2015-01-30T15:39:39+09:00",
+    "datepublic": "2014-10-28T00:00:00+09:00"
+  }
+}

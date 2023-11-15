@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2012-005598",
+  "vulinfodata": {
+    "title": "libssh の keys.c におけるサービス運用妨害 (クラッシュ) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libssh の keys.c 内の下記の関数は、\"エラーパス上の無効なポインタ\" を解放するため、サービス運用妨害 (クラッシュ) 状態となる脆弱性が存在します。  (1) publickey_make_dss 関数 (2) publickey_make_rsa 関数 (3) signature_from_string 関数 (4) ssh_do_sign 関数 (5) ssh_sign_session_id 関数"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "libssh",
+          "productname": "libssh",
+          "cpe": {
+            "text": "cpe:/a:libssh:libssh",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.5.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2577",
+          "url": "http://www.debian.org/security/2012/dsa-2577"
+        },
+        {
+          "type": "vendor",
+          "name": "libssh",
+          "vulinfoid": "libssh 0.5.3 (SECURITY RELEASE)",
+          "url": "http://www.libssh.org/2012/11/20/libssh-0-5-3-security-release/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 871617",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=871617"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-4561",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-4561"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-4561",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-4561"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月04日]\\n  掲載\\n[2012年12月21日]\\n  ベンダ情報：Debian (DSA-2577) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-04T14:28:41+09:00",
+    "datelastupdated": "2012-12-21T15:19:36+09:00",
+    "datepublic": "2012-11-20T00:00:00+09:00"
+  }
+}

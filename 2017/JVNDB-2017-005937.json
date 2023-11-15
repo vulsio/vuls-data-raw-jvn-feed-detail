@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2017-005937",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/apedec.c の ape_decode_frame 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/apedec.c の ape_decode_frame 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3.2 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、巧妙に細工された APE ファイルを介して、サービス運用妨害 (out-of-array アクセスおよびアプリケーションクラッシュ) 状態など、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "avcodec/apedec: Fix integer overflow",
+          "url": "https://github.com/FFmpeg/FFmpeg/commit/ba4beaf6149f7241c8bd85fe853318c2f6837ad0"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-11399",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11399"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-11399",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-11399"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年08月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-08-09T19:25:39+09:00",
+    "datelastupdated": "2017-08-09T19:25:39+09:00",
+    "datepublic": "2017-07-16T00:00:00+09:00"
+  }
+}

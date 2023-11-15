@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-005825",
+  "vulinfodata": {
+    "title": "Erlang/OTP の FTP モジュールにおける CRLF インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Erlang/OTP の FTP モジュールには、CRLF インジェクションの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-93: Improper Neutralization of CRLF Sequences (CRLF インジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/93.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ERLANG",
+          "productname": "Erlang/OTP",
+          "cpe": {
+            "text": "cpe:/a:erlang:erlang%2Fotp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R15B03"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、以下のコマンドの CRLF シーケンスを介して、任意の FTP コマンドを挿入される可能性があります。  (1) user (2) account (3) cd (4) ls (5) nlist (6) rename (7) delete (8) mkdir (9) rmdir (10) recv (11) recv_bin (12) recv_chunk_start (13) send (14) send_bin (15) send_chunk_start (16) append_chunk_start (17) append (18) append_bin"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Erlang",
+          "vulinfoid": "Top Page",
+          "url": "http://www.erlang.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1059331",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1059331"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1693",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1693"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1693",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1693"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2014-0553",
+          "url": "http://advisories.mageia.org/MGASA-2014-0553.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月10日]\\n  掲載\\n[2015年06月23日]\\n  参考情報：関連文書 (MGASA-2014-0553) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-10T16:24:32+09:00",
+    "datelastupdated": "2015-06-23T17:44:02+09:00",
+    "datepublic": "2014-01-29T00:00:00+09:00"
+  }
+}

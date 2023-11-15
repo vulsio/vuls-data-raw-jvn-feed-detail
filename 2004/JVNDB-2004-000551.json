@@ -1,0 +1,149 @@
+{
+  "vulinfoid": "JVNDB-2004-000551",
+  "vulinfodata": {
+    "title": "CUPS の lppasswd における書き込みエラーを無視してしまう脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  CUPS を使用して印刷を行う際には、変換フィルタ hpgltops を介して HPGL ファイル (.hpgl) を PostScript への変換を行います。また、CUPS は LPR とは異なり、lppasswd コマンドを使用して CUPS パスワードファイルを管理し、ユーザ認証を設定することが可能です。  CUPS 1.1.22 以前の HPGL ファイル解析部である hpgl-input.c 内の ParseCommand() 関数では、境界チェックが適切に行われていないため、バッファオーバーフローが発生する問題が存在します。 この問題を利用するリモートの攻撃者は、意図的に作成した HPGL ファイルを CUPS を使用して印刷するように誘導することにより、バッファオーバーフローを発生させ、結果として lp 権限で任意のコードを実行することが可能です。  また CUPS 1.1.22 以前には、この問題の他に lppasswd コマンドの不備に関連する複数のセキュリティ問題が報告がされており、特定の状況下においてローカルの攻撃者により特定のファイルを修正される、あるいは lppasswd が無効になり、サービスが使用不可能になる可能性があります。  尚、これらの問題を解消する CUPS 1.1.23 では、CUPS 1.1.21 - 1.1.23rc1 に存在する is_path_absolute() 関数におけるパスの取り扱いの不備のため悪意ある HTTP GET リクエストを受信すると CUPS がサービス不能状態に陥る問題 (STR #1042) についても解消されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:053",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-053.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:013",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-013.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-25",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-25.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:013",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-013J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:053",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-053J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-25",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-25j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-1268",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1268"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-1268",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1268"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13510",
+          "url": "http://secunia.com/advisories/13510/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11968",
+          "url": "http://www.securityfocus.com/bid/11968"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012602",
+          "url": "http://www.securitytracker.com/alerts/2004/Dec/1012602.html"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012566",
+          "url": "http://www.securitytracker.com/alerts/2004/Dec/1012566.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-12-15T00:00:00+09:00"
+  }
+}

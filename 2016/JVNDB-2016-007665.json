@@ -1,0 +1,131 @@
+{
+  "vulinfoid": "JVNDB-2016-007665",
+  "vulinfodata": {
+    "title": "ForeScout CounterACT SecureConnector エージェントに権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "ForeScout CounterACT SecureConnector の Windows 向けエージェントには、権限昇格の脆弱性が存在します。  SecureConnector の Windows 向けエージェントは、全ての機能を有効にするために SYSTEM アカウントなどの管理者権限を必要とし、通常は Windows サービスとして SYSTEM アカウントの権限で動作します。 SecureConnector の Windows 向けエージェントは、ホストに関する情報収集や、収集した情報を CounterACT 管理アプライアンスへ送信するために、多数のプラグインを実行します。これらのプラグインは、必要に応じて CounterACT 管理アプライアンスからダウンロードされます。   SecureConnector の Windows 向けエージェントには、次の脆弱性が存在します。   不適切なアクセスパーミションでの一時ファイル作成 (CWE-378) - CVE-2016-9485  SecureConnector エージェントは、ダウンロードしたファイルオブジェクトに適切なアクセス権限を設定していません。そのため、ファイルの保存場所に関係なく、ユーザがファイルを改ざんすることが可能です。SecureConnector エージェントがダウンロードしたファイルは SYSTEM 権限で実行されるため、管理者権限のないユーザがファイルを改ざんし、そのファイルを SecureConnector エージェントが実行することで、SYSTEM 権限で悪意あるコードが実行される可能性があります。  不適切なアクセスパーミションのディレクトリに一時ファイル作成 (CWE-379) - CVE-2016-9486  SecureConnector エージェントは SYSTEM 権限で動作しており、ダウンロードするプラグインファイルは、ユーザの %TEMP% ディレクトリに保存され実行されます。また、ダウンロードするプラグイン以外に、SecureConnector エージェントが SYSTEM 権限で実行するバッチファイルも同じディレクトリに保存され実行されます。そのため、管理者権限のないユーザがバッチファイルを改ざんし、そのバッチファイルを SecureConnector エージェントが実行することで、SYSTEM 権限で悪意あるコードが実行される可能性があります。  プラグインファイルをダウンロードするディレクトリは、CounterACT 管理アプライアンスのローカルプロパティ設定ファイルにて config.script_run_folder.value を設定することで変更可能ですが、バッチファイルの保存先は、この設定では変更できません。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ForeScout Technologies",
+          "productname": "SecureConnector",
+          "cpe": {
+            "text": "cpe:/a:forescout:secureconnector",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Windows 向けエージェント"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "AV:L/AC:M/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "管理者でない一般ユーザ権限のアカウントを使用しているユーザによって、SYSTEM 権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者は、本脆弱性の対策として HPS Inspection Engine Plugin, version 10.4.1.1 をリリースしています。 開発者が提供する情報をもとに、HPS Inspection Engine Plugin, version 10.4.1.1 を適用してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ForeScout Technologies",
+          "vulinfoid": "ForeScout CounterACT",
+          "url": "https://www.forescout.com/products/counteract/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9485",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9485"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9486",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9486"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96676747",
+          "url": "http://jvn.jp/vu/JVNVU96676747/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9485",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-9485"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9486",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-9486"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#768331",
+          "url": "https://www.kb.cert.org/vuls/id/768331"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-378",
+          "url": "https://cwe.mitre.org/data/definitions/378.html",
+          "title": "不適切なアクセスパーミションでの一時ファイル作成"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-379",
+          "url": "https://cwe.mitre.org/data/definitions/379.html",
+          "title": "不適切なアクセスパーミションのディレクトリに一時ファイル作成"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月09日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2019-07-05T16:59:58+09:00",
+          "description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-9485) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-9486) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-09T16:04:33+09:00",
+    "datelastupdated": "2019-07-05T17:00:29+09:00",
+    "datepublic": "2016-12-07T00:00:00+09:00"
+  }
+}

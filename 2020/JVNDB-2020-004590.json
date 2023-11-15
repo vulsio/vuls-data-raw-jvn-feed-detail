@@ -1,0 +1,124 @@
+{
+  "vulinfoid": "JVNDB-2020-004590",
+  "vulinfodata": {
+    "title": "Rockwell Automation 製 EDS Subsystem に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Rockwell Automation 社が提供する EDS Subsystem には次の複数の脆弱性が存在します。  * SQLインジェクション (CWE-89) - CVE-2020-12034 * バッファエラー (CWE-199) - CVE-2020-12038"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Rockwell Automation",
+          "productname": "FactoryTalk",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:factorytalk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Linx software (旧称 RSLinx Enterprise) Version 6.00、 6.10 および 6.11"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "Rockwell Automation RSLinx Classic",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:rslinx_classic",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 4.11.00 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "RSNetWorx",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:rsnetworx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "software Version 28.00.00 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "Studio 5000 Logix Designer",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:studio_5000_logix_designer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "software Version 32 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.2",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * 隣接するネットワーク上の第三者により細工された EDS ファイルを読み込むことにより不正な SQL 文が実行され、サービス運用妨害 (DoS) 攻撃が引き起こされる - CVE-2020-12034 * ローカルの第三者により細工された EDS ファイルを読み込むことでメモリ破壊が発生し、サービス運用妨害 (DoS) 攻撃が引き起こされる - CVE-2020-12038 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報 <a href=\"https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1125928\">RAid 1125928</a>（要ログイン）を元に、パッチを適用してください  [ワークアラウンドを実施する]  * ファイアウォール等で 2222/tcp、 7153/tcp および 44818/udp へのアクセスを制限する * その他のポートに関する情報は開発者から提供されているナレッジベース <a href=\"https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F898270\">ID 898270</a> を参照してください  * 当該システムのネットワークをファイアウォール等で業務ネットワークから分離して運用する * 外部からのアクセスが必要な場合、VPN 等の安全な方法でアクセスする。VPN ソフトウエアは最新の状態に保つ "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "RAid 1125928 （要ログイン）",
+          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1125928"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-12038",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12038"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-12034",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12034"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-140-01",
+          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-140-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92757733",
+          "url": "http://jvn.jp/cert/JVNVU92757733"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-05-21T16:00:11+09:00",
+          "description": "[2020年05月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-05-21T16:00:11+09:00",
+    "datelastupdated": "2020-05-21T16:00:11+09:00",
+    "datepublic": "2020-05-20T00:00:00+09:00"
+  }
+}

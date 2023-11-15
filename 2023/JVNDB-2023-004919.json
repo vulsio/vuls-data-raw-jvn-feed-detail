@@ -1,0 +1,97 @@
+{
+  "vulinfoid": "JVNDB-2023-004919",
+  "vulinfodata": {
+    "title": "富士フイルムビジネスイノベーション製および Xerox Corporation 製複合機（MFP）における脆弱性",
+    "vulinfodescription": {
+      "overview": "富士フイルムビジネスイノベーション製および Xerox Corporation 製の複数の複合機（MFP）には、アドレス帳に格納されている情報を暗号化した形でエクスポートする機能が提供されていますが、十分な強度の暗号化を行っていません（CWE-1391）。  この脆弱性情報は、下記の方が製品開発者に報告し、報告者および製品開発者がJPCERT/CCとの調整を経て公表に至りました。 報告者: Pen Test Partners Kunal Thakrar 氏、Ceri Coburn 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xerox",
+          "productname": "(複数の製品)",
+          "cpe": {
+            "text": "cpe:/a:xerox:multiple_product",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "富士フイルムビジネスイノベーション株式会社 (旧 富士ゼロックス株式会社)",
+          "productname": "(複数の製品)",
+          "cpe": {
+            "text": "cpe:/a:fuji_xerox:multiple_product",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.4",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "暗号化鍵と暗号化処理内容を知っている第三者が、当該製品のアドレス帳からエクスポートされたデータを入手した場合、接続先サーバーの認証情報などを取得する可能性があります。  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 各製品開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 詳しくは、［ベンダ情報］に掲載の各製品開発者が提供している情報を参照してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Xerox",
+          "vulinfoid": "Mini Bulletin XRX23-015 CVE-2023-46327",
+          "url": "https://security.business.xerox.com/en-us/documents/bulletins/"
+        },
+        {
+          "type": "vendor",
+          "name": "富士フイルムビジネスイノベーション株式会社",
+          "vulinfoid": "弊社複合機のアドレス帳の暗号化処理における脆弱性について",
+          "url": "https://www.fujifilm.com/fb/company/news/notice/2023/1031_addressbook_announce.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-46327",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-46327"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96482726",
+          "url": "https://jvn.jp/vu/JVNVU96482726/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-1391",
+          "url": "https://cwe.mitre.org/data/definitions/1391.html",
+          "title": "脆弱な認証情報の使用"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-11-02T16:19:12+09:00",
+          "description": "[2023年11月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-11-02T16:19:12+09:00",
+    "datelastupdated": "2023-11-02T16:19:12+09:00",
+    "datepublic": "2023-11-01T00:00:00+09:00"
+  }
+}

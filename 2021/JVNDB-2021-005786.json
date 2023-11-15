@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2021-005786",
+  "vulinfodata": {
+    "title": "Wibu-Systems 製 CodeMeter Runtime における不適切な権限管理の脆弱性",
+    "vulinfodescription": {
+      "overview": "Wibu-Systems 社が提供する CodeMeter Runtime は、ライセンスマネージャーです。CodeMeter Runtime には、不適切な権限管理の脆弱性（CWE-269、CVE-2021-41057）が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Wibu-Systems AG",
+          "productname": "CodeMeter Runtime",
+          "cpe": {
+            "text": "cpe:/a:wibu:codemeter_runtime",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.30a より前のすべてのバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザによって、重要ファイルを上書きされたり該当製品をクラッシュさせられたりする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  [ワークアラウンドを実施する] アップデートまでのリスクを軽減するために、以下の対策をお勧めします。製品構成によって適用できる対策が異なりますので、適宜ご確認ください。  　* CodeMeter License Server サービスを実行しているマシンへの非特権ユーザによるアクセスは制限する 　* CodeMeter でコンテナタイプ「Mass Storage」を無効にする。影響を受けるマシンに CmDongles が接続されていない場合、または接続されている CmDongles が HID として構成されている場合、「Mass Storage」デバイスとの CodeMeter 通信は、Windows レジストリで次のように無効にできます。 　　* 「HKEY_LOCAL_MACHINE\\SOFTWARE\\WIBUSYSTEMS\\CodeMeter\\Server\\CurrentVersion\\EnabledContainerTypes」キーを「4294967294 (0xFFFFFFFE)」にセットする 　　* 上記変更を適用後、CodeMeter を再起動する 　　 また、影響を受ける CodeMeter に依存する製品の詳細については、「ベンダ情報」を参照してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Siemens Security Advisory",
+          "vulinfoid": "SSA-580693: WIBU Systems CodeMeter Runtime Denial-of-Service Vulnerability in Siemens Products (pdf)",
+          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-580693.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Wibu-Systems AG",
+          "vulinfoid": "Security Advisory WIBU-210910-01 (PDF)",
+          "url": "https://cdn.wibu.com/fileadmin/wibu_downloads/security_advisories/Advisory_WIBU-210910-01.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Wibu-Systems AG",
+          "vulinfoid": "User Software",
+          "url": "https://www.wibu.com/us/support/user/downloads-user-software.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-41057",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41057"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-350-03",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-21-350-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94117485",
+          "url": "https://jvn.jp/vu/JVNVU94117485/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-41057",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-41057"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-269",
+          "url": "https://cwe.mitre.org/data/definitions/269.html",
+          "title": "不適切な権限管理"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-12-20T16:38:35+09:00",
+          "description": "[2021年12月20日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-12-20T17:31:52+09:00",
+    "datelastupdated": "2021-12-20T17:31:52+09:00",
+    "datepublic": "2021-12-17T00:00:00+09:00"
+  }
+}

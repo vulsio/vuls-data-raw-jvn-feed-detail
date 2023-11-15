@@ -1,0 +1,160 @@
+{
+  "vulinfoid": "JVNDB-2021-000097",
+  "vulinfodata": {
+    "title": "CLUSTERPRO X および EXPRESSCLUSTER X における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "日本電気株式会社が提供する CLUSTERPRO X および EXPRESSCLUSTER X には、次の複数の脆弱性が存在します。 ・Disk Agent 機能にバッファオーバーフローの脆弱性 (CWE-119) - CVE-2021-20700、CVE-2021-20701 ・Transaction Server 機能にバッファオーバーフローの脆弱性 (CWE-119) - CVE-2021-20702、CVE-2021-20703 ・旧バージョン (Ver 8.0 以前) との互換 API 機能にバッファオーバーフローの脆弱性 (CWE-119) - CVE-2021-20704 ・WebManager 機能に遠隔ファイルアップロードの脆弱性 (CWE-20) - CVE-2021-20705、CVE-2021-20706 ・Transaction Server 機能にファイル読み取りの脆弱性 (CWE-20) - CVE-2021-20707  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "日本電気",
+          "productname": "CLUSTERPRO X",
+          "cpe": {
+            "text": "cpe:/a:nec:expresscluster_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3 for Windows およびそれ以前 (EXPRESSCLUSTER X 4.3 for Windows およびそれ以前)",
+            "4.3 SingleServerSafe for Windows およびそれ以前 (EXPRESSCLUSTER X 4.3 SingleServerSafe for Windows およびそれ以前)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・遠隔の第三者によって細工されたパケットを受信することで任意のコードを実行される - CVE-2021-20700、CVE-2021-20701、CVE-2021-20702、CVE-2021-20703、CVE-2021-20704 ・遠隔の第三者によって細工されたアップロードリクエストを受け入れる - CVE-2021-20705、CVE-2021-20706 ・遠隔の第三者によって細工されたパケットを受信することで任意のファイルを読み出される - CVE-2021-20707"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、CLUSTERPRO X および EXPRESSCLUSTER X に対し、本脆弱性を修正した次のアップデートをリリースしています。 <ul><li>CLUSTERPRO X 4.3 for Windows 追加アップデート (CPRO-XWA40-13)</li> <li>CLUSTERPRO X SingleServerSafe 4.3 for Windows 追加アップデート (CPRO-XWA40-13)</li> <li>CLUSTERPRO X 3.3 for Windows 追加アップデート (CPRO-XWA30-96)</li> <li>CLUSTERPRO X SingleServerSafe 3.3 for Windows 追加アップデート (CPRO-XWA30-96)</li> </ul>  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を回避することが可能です。  <ul><li>Firewall を有効にし、不要な通信を遮断する</li> <ul><li>下記のポートについて、クラスタに所属するホストのみに接続要求の受付を許可する</li> <ul><li>データ転送 (既定値: 29002)</li> <li>ディスクエージェント間通信 (既定値: 29004)</li></ul></ul></ul>  <ul><ul><li>下記のポートについて、信頼できる管理クライアントのみに接続要求の受付を許可する</li> <ul><li>WebManager の HTTP ポート (既定値: 29003)</li></ul></ul></ul>  <ul><ul><li>プロセス clpoldapi.exe について、ローカルホストのみに接続要求の受付を許可する</li>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "日本電気株式会社からの情報",
+          "url": "https://jvn.jp/jp/JVN69304877/6443/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20705",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20705"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20706",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20706"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20707",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20707"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20700",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20700"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20701",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20701"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20702",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20702"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20703",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20703"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20704",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20704"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#69304877",
+          "url": "https://jvn.jp/jp/JVN69304877/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-10-25T11:21:42+09:00",
+          "description": "[2021年10月29日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-11-10T17:00:21+09:00",
+          "description": "[2021年11月10日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-11-30T07:45:30+09:00",
+          "description": "[2021年11月30日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2022-04-18T18:00:34+09:00",
+          "description": "[2022年04月20日]\\n  対策：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-10-29T12:20:15+09:00",
+    "datelastupdated": "2022-04-20T12:02:18+09:00",
+    "datepublic": "2021-10-29T00:00:00+09:00"
+  }
+}

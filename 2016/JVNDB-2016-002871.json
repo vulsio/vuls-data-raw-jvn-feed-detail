@@ -1,0 +1,155 @@
+{
+  "vulinfoid": "JVNDB-2016-002871",
+  "vulinfodata": {
+    "title": "PHP の ext/xml/xml.c の xml_parse_into_struct 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/xml/xml.c の xml_parse_into_struct 関数には、サービス運用妨害 (バッファアンダーリードおよびセグメンテーションフォルト) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "24"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        },
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.35 未満",
+            "5.6.21 未満の 5.6.x",
+            "7.0.6 未満の 7.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、第 2 引数の巧妙に細工された XML データを介して、パーサレベルをゼロにされることで、サービス運用妨害 (バッファアンダーリードおよびセグメンテーションフォルト) 状態にされるなど、不特定の影響を受ける"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2016-f4e73663f4",
+          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-May/183736.html"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBNS03635",
+          "url": "https://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05240731"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:1524",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-06/msg00027.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #72099",
+          "url": "https://bugs.php.net/bug.php?id=72099"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 7 ChangeLog",
+          "url": "http://php.net/ChangeLog-7.php"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "Fix bug #72099: xml_parse_into_struct segmentation fault",
+          "url": "https://git.php.net/?p=php-src.git;a=commit;h=dccda88f27a084bcbbb30198ace12b4e7ae961cc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4539",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4539"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4539",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4539"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月25日]\\n  掲載\\n[2016年10月26日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Fedora Project (FEDORA-2016-f4e73663f4) を追加\\n  ベンダ情報：openSUSE project (openSUSE-SU-2016:1524) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03635) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-25T16:29:01+09:00",
+    "datelastupdated": "2016-10-26T16:34:58+09:00",
+    "datepublic": "2016-04-28T00:00:00+09:00"
+  }
+}

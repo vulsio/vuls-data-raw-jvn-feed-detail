@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2012-002825",
+  "vulinfodata": {
+    "title": "Linux Kernel の drivers/acpi/debugfs.c おける任意のカーネルメモリロケーションを変更される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の drivers/acpi/debugfs.c には、任意のカーネルメモリロケーションを変更される脆弱性が存在します。  本問題は CVE-2010-4347 の修正が不完全だったことによる問題です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.6",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/sys/kernel/debug/acpi/custom_method ファイルへの書き込みを許可している root 権限を利用されることで、任意のカーネルメモリロケーションを変更される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.0",
+          "url": "http://ftp.osuosl.org/pub/linux/kernel/v3.0/ChangeLog-3.0"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ACPI: Split out custom_method functionality into an own driver",
+          "url": "https://github.com/torvalds/linux/commit/526b4af47f44148c9d665e57723ed9f86634c6e3"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=526b4af47f44148c9d665e57723ed9f86634c6e3"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 680841",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=680841"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1021",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1021"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1021",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1021"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-25T14:15:37+09:00",
+    "datelastupdated": "2012-06-25T14:15:37+09:00",
+    "datepublic": "2012-06-21T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2023-002111",
+  "vulinfodata": {
+    "title": "Ridoc Ez Installer NX で作成したドライバーインストールパッケージを改ざん可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社リコーが提供する Ridoc Ez Installer NX は、対象 PC 上で管理者権限のプロセスを実行してプリンタドライバのインストール・設定を行う「ドライバーインストールパッケージ」を作成するツールです。 当該製品で作成したドライバーインストールパッケージには、インストール時に実行するプログラムなどがバンドルされています。また、管理者権限を持っていないユーザでもインストール作業を行うことができるよう、管理者アカウントおよびパスワードを暗号化してバンドルすることが可能です。  当該製品で作成したドライバーインストールパッケージには、インストール時に実行するプログラムが改ざんされていないかどうかを検証する機能は実装されていません（CWE-345）。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "リコー",
+          "productname": "Ridoc Ez Installer NX",
+          "cpe": {
+            "text": "cpe:/a:ricoh:ridoc_ez_Installer_nx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "DI01.00.02 から DI01.01.25 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "対象 PC の管理者権限を持たないユーザが、細工したドライバーインストールパッケージを実行することで、管理者権限で任意のプログラムを実行する可能性があります。  [分析結果のコメント] 一般ユーザ権限を持つ攻撃者が、細工したインストールパッケージを実行することを想定しています。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートし、ドライバーインストールパッケージを再作成する] 開発者が提供する情報をもとに、Ridoc Ez Installer NX を最新版にアップデートした上で、ドライバーインストールパッケージを再作成してください。 開発者は、本脆弱性を修正した DI01.01.26 をリリースしています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社リコー",
+          "vulinfoid": "Ridoc Ez Installer NX に権限昇格の脆弱性",
+          "url": "https://jp.ricoh.com/security/products/vulnerabilities/vul?id=ricoh-2023-000001"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-30759",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-30759"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92207133",
+          "url": "https://jvn.jp/vu/JVNVU92207133/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-345",
+          "url": "https://cwe.mitre.org/data/definitions/345.html",
+          "title": "データの信頼性についての不十分な検証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-06-15T15:20:57+09:00",
+          "description": "[2023年06月15日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-06-15T15:20:57+09:00",
+    "datelastupdated": "2023-06-15T15:20:57+09:00",
+    "datepublic": "2023-06-14T00:00:00+09:00"
+  }
+}

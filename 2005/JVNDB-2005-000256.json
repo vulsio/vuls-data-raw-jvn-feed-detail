@@ -1,0 +1,193 @@
+{
+  "vulinfoid": "JVNDB-2005-000256",
+  "vulinfodata": {
+    "title": "PHP の exif.c における特定の EXIF ヘッダによるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  PHP 4 以降では、コンパイル時に --enable-exif を指定してコンパイルすることにより、EXIF (デジタルカメラ用の画像ファイルの規格) のサポートを有効にします。これにより、デジタルカメラにより生成された JPEG/TIFF イメージ内の EXIF ヘッダに含まれる IFD (Image File Directory) タグ (画像のサイズや種類、圧縮手法、色情報、著作権などの情報) を取得することができます。  PHP 4.3.10 以前、5.0.3 以前に同梱されている EXIF モジュール (exif.c) には、特定のイメージファイル内に含まれる IFD タグの取り扱いに不備のため、以下のセキュリティ上の問題が存在します。  1) exif_process_IFD_TAG() 関数で整数オーバーフローが発生する問題 (CAN-2005-1042)  2) IFD タグが過大にネストされている場合に、再帰的な関数呼び出しが無制限に発生し、メモリ資源を大量に消費してしまう問題 (CAN-2005-1043)  これらの問題を利用するリモートの攻撃者は、意図的に作成した EXIF ヘッダを含むイメージファイルを、EXIF サポートを有効にする PHP に読み込ませることにより、PHP を使用する Web アプリケーションをサービス不能状態に陥らせる、さらには任意のコードを実行する可能性があります。  尚、PHP Group より配布されている PHP のデフォルトでは、EXIF サポートは有効化されませんが、Red Hat Enterprise Linux などの一部の Linux ディストリビューションに同梱される PHP パッケージでは EXIF サポートが有効化されています。  PHP 4.3.11/5.0.4 では上記の問題以外に、複数のセキュリティ問題 (CAN-2005-0524 や CAN-2005-0525 など) 、及びバグが修正されており、PHP 4.3.11/5.0.4 にアップデートすることが PHP Group より強く推奨されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.10 およびそれ以前",
+            "5.0.3 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "ChangeLog-4",
+          "url": "http://jp2.php.net/ChangeLog-4.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "ChangeLog-5",
+          "url": "http://jp2.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "release notes 4.3.11",
+          "url": "http://jp2.php.net/release_4_3_11.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "#28451",
+          "url": "http://bugs.php.net/bug.php?id=28451"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "#31797",
+          "url": "http://bugs.php.net/bug.php?id=31797"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "154021",
+          "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=154021"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "154025",
+          "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=154025"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:406",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-406.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:405",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-405.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-50",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-50.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:405",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-405J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:406",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-406J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-50",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-50j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1043",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1043"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1043",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1043"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13164",
+          "url": "http://www.securityfocus.com/bid/13164"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13163",
+          "url": "http://www.securityfocus.com/bid/13163"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-04-12T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2020-000043",
+  "vulinfodata": {
+    "title": "Android アプリ「メルカリ」 (日本版) において Java オブジェクトの任意のメソッドが実行可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社メルカリが提供する Android アプリ「メルカリ」 (日本版) には、WebView クラスの addJavascriptInterface の制限不備に起因して任意の Java メソッドが実行される脆弱性 (CWE-749) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社アカツキ 小竹 泰一 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社メルカリ",
+          "productname": "メルカリ",
+          "cpe": {
+            "text": "cpe:/a:mercari:mercari",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(日本版) Android アプリ バージョン 3.52.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (Man-In-The-Middle attack) が可能な遠隔の第三者によって、JavaScript コードの Java Reflection API を WebView 上で使用されることで、Java オブジェクトの任意のメソッドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 本脆弱性は、開発者が提供する最新のバージョンにアプリをアップデートすることで修正されます。 なお開発者によると、本脆弱性の影響を受ける API level は現在採用されておらず、また過去に強制アップデートが実施されており、当該バージョンのアプリを使用することができないため、ユーザはアップデートのための自発的行動を取る必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "株式会社メルカリからの情報",
+          "url": "https://jvn.jp/jp/JVN93167107/995931/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5604",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5604"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#93167107",
+          "url": "https://jvn.jp/jp/JVN93167107/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2020-5604",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5604"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-07-07T11:46:07+09:00",
+          "description": "[2020年07月08日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-07-08T12:05:29+09:00",
+    "datelastupdated": "2020-07-08T12:05:29+09:00",
+    "datepublic": "2020-07-08T00:00:00+09:00"
+  }
+}

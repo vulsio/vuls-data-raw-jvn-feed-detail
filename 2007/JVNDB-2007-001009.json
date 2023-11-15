@@ -1,0 +1,194 @@
+{
+  "vulinfoid": "JVNDB-2007-001009",
+  "vulinfodata": {
+    "title": "Apple QuickTime RTSP の Content-Type ヘッダの処理にスタックバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apple QuickTime RTSP の Content-Type ヘッダの処理には、スタックバッファオーバーフローの脆弱性が存在します。  Winodws 版および Mac 版の QuickTime が本脆弱性の影響を受けます。また、iTunes など QuickTime を使用するソフトウェアをインストールしているシステムも本脆弱性の影響を受けます。  RTSP (Real Time Streaming Protocol) は、ストリーミングメディアシステムで使用されるプロトコルであり Apple QuickTime Streaming サーバや QuickTime Player でサポートされています。QuickTime の RTSP Content-Type ヘッダ処理にはスタックバッファオーバーフローの脆弱性が存在します。  また、既にこの脆弱性を使用した検証コードが公開されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アップル",
+          "productname": "QuickTime",
+          "cpe": {
+            "text": "cpe:/a:apple:quicktime",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 から 7.3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって細工された RTSP stream にユーザが接続することによって任意のコードが実行される可能性あります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "アップデートする 2007/12/14 現在、本件への対策を行なった QuickTime 7.3.1 が公開されました。  また、アップデートを適用できない場合は、以下の回避策を行なうことで、想定される攻撃によって受ける影響を軽減することはできますが、脆弱性自体が解決されるわけでありません。  アクセス制限をする rtsp://URL が含まれる通信を制限する。RTSP プロトコルはデフォルトで 554/tcp や 6970-6999/udp ポートを使用します。ただし、RTSP は異なるポートを使用している可能性があるため、特定のポート番号に基づいてプロトコルをブロックしようとするだけでは十分でない可能性があります。  Internet Explorer で QuickTime ActiveX コントロールを無効にする Internet Explorer で ActiveX コントロールの動作を停止する方法を参考にしてQuicktime ActiveX コントロールを無効にしてください。  Mozilla ベースのブラウザで QuickTime プラグインを無効にする プラグインのアンインストール(削除) を参考にして QuickTime プラグインを削除してください。  JavaScript を無効にする JavaScript を無効にすることにより、QuickTime plug-in や ActiveX control を利用した攻撃を回避できる可能性があります。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple QuickTime",
+          "vulinfoid": "Top Page",
+          "url": "http://www.apple.com/jp/quicktime/home/win.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "QuickTime 7.3.1",
+          "url": "http://docs.info.apple.com/article.html?artnum=307176-en"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "QuickTime 7.3.1",
+          "url": "http://docs.info.apple.com/article.html?artnum=307176-ja"
+        },
+        {
+          "type": "vendor",
+          "name": "富士通 公開脆弱性情報",
+          "vulinfoid": "TA07-334A",
+          "url": "http://software.fujitsu.com/jp/security/vulnerabilities/ta07-334a.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-6166",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6166"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2007-3984",
+          "url": "http://www.frsirt.com/english/advisories/2007/3984"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "38604",
+          "url": "http://xforce.iss.net/xforce/xfdb/38604"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2007-4701",
+          "url": "http://www.jpcert.or.jp/wr/2007/wr074701.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2007-4901",
+          "url": "http://www.jpcert.or.jp/wr/2007/wr074901.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2007-0023",
+          "url": "http://www.jpcert.or.jp/at/2007/at070023.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#659761",
+          "url": "http://jvn.jp/cert/JVNVU%23659761/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA07-334A",
+          "url": "http://jvn.jp/cert/JVNTA07-334A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA07-334A",
+          "url": "http://jvn.jp/tr/TRTA07-334A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-6166",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-6166"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA27755",
+          "url": "http://secunia.com/advisories/27755"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "26549",
+          "url": "http://www.securityfocus.com/bid/26549"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1018989",
+          "url": "http://www.securitytracker.com/id?1018989"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Cyber Security Alerts",
+          "vulinfoid": "SA07-334A",
+          "url": "http://www.us-cert.gov/cas/alerts/SA07-334A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA07-334A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA07-334A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#659761",
+          "url": "http://www.kb.cert.org/vuls/id/659761"
+        },
+        {
+          "type": "advisory",
+          "name": "警察庁 @police",
+          "vulinfoid": "QuickTime の脆弱性について",
+          "url": "http://www.cyberpolice.go.jp/important/2007/20071214_142118.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年12月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-12-18T13:56:50+09:00",
+    "datelastupdated": "2007-12-18T13:56:50+09:00",
+    "datepublic": "2007-11-30T00:00:00+09:00"
+  }
+}

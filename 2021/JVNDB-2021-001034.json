@@ -1,0 +1,102 @@
+{
+  "vulinfoid": "JVNDB-2021-001034",
+  "vulinfodata": {
+    "title": "Atlassian 製 Bitbucket にインストールディレクトリの ACL 設定不備による権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "Atlassian 製 Bitbucket  には、デフォルトのインストールディレクトリにおいて ACL が適切に設定されないことに起因する権限昇格の脆弱性が存在します。  Bitbucket は、Atlassian が提供するソースコードおよびプロジェクト管理ツールです。 該当製品のインストーラは、C:\\Atlassian\\Bitbucket\\ のようなデフォルトのインストールディレクトリに対して ACL を適切に設定できません。そのため、管理者権限を持たない Windows ユーザによって当該フォルダに悪意のある DLL ファイルを配置され、SYSTEM 権限で任意のコードを実行してしまう可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Atlassian",
+          "productname": "Bitbucket",
+          "cpe": {
+            "text": "cpe:/a:atlassian:bitbucket",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.10.9 より前のバージョン",
+            "7.10.0",
+            "7.6.4 より前のバージョン",
+            "7.7.x 系すべてのバージョン",
+            "7.8.x 系すべてのバージョン",
+            "7.9.x 系すべてのバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "特別に細工された DLL ファイルを当該製品のインストールディレクトリ配下に配置されることにより、当該製品がインストールされている Windows システムにおいて SYSTEM 権限で任意のコードが実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は、本脆弱性の対策として次のバージョンをリリースしています。  　* Bitbucket 6.10.9 　* Bitbucket 7.6.4 　* Bitbucket 7.10.1"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Atlassian JIRA",
+          "vulinfoid": "Privilege Escalation Vulnerability in Atlassian Bitbucket on Windows - CVE-2020-36233",
+          "url": "https://jira.atlassian.com/browse/BSERV-12753"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-36233",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36233"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92838794",
+          "url": "http://jvn.jp/cert/JVNVU92838794"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#240785",
+          "url": "https://kb.cert.org/vuls/id/240785"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MITRE ATT&CK T1574.001 (Hijack Execution Flow: DLL Search Order Hijacking)\\",
+          "url": "https://attack.mitre.org/techniques/T1574/001/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-02-22T16:15:50+09:00",
+          "description": "[2021年02月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-02-22T16:15:50+09:00",
+    "datelastupdated": "2021-02-22T16:15:50+09:00",
+    "datepublic": "2021-02-19T00:00:00+09:00"
+  }
+}

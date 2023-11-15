@@ -1,0 +1,89 @@
+{
+  "vulinfoid": "JVNDB-2019-006351",
+  "vulinfodata": {
+    "title": "LLVM の Arm バックエンドにおいてスタック保護機構が機能しなくなる問題",
+    "vulinfodescription": {
+      "overview": "LLVM の Arm バックエンドにおいて、スタック保護機構が正常に機能せずバッファオーバーフローが検知できなくなる問題があります。  LLVM の Arm バックエンドにおけるスタック保護機構では、関数のスタックフレーム内においてローカル変数と戻り先アドレスの間にチェック用の cookie 値（カナリア）がスタックプロテクタとして配置されます。関数の実行終了時にこの値が上書きされていないかチェックすることでスタックの改ざんを検知します。 スタックプロテクタが置かれるスタック上の位置はあらかじめ決められていますが、スタック上にローカル変数を配置する処理のなかで新しいスタックプロテクタを設けてしまう可能性があることがわかりました。この場合、スタック保護機構は正常に機能せず、スタックの改ざんを検知することができません。また、スタックプロテクタを指すポインタ値がスタック上に置かれる可能性があることも分かりました。この場合も、スタックの改ざんを検知できない可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "LLVM",
+          "productname": "LLVM",
+          "cpe": {
+            "text": "cpe:/a:llvm:llvm",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "スタックバッファオーバーフローが正常に検知されなくなることにより、第三者により任意のコードを実行されたり、サービス運用妨害 (DoS) 攻撃を受けたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ベンダのアップデートを適用する] ベンダの提供する情報を元に最新版にアップデートを行なってください。  詳しくはベンダの提供する情報を参照してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "LLVM",
+          "vulinfoid": "[PEI] Don't re-allocate a pre-allocated stack protector slot",
+          "url": "https://reviews.llvm.org/D64757"
+        },
+        {
+          "type": "vendor",
+          "name": "LLVM",
+          "vulinfoid": "[CodeGen] Don't resolve the stack protector frame accesses until PEI",
+          "url": "https://reviews.llvm.org/D64759"
+        },
+        {
+          "type": "vendor",
+          "name": "LLVM",
+          "vulinfoid": "The LLVM Compiler Infrastructure",
+          "url": "https://www.llvm.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96954584",
+          "url": "https://jvn.jp/vu/JVNVU96954584/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#129209",
+          "url": "https://kb.cert.org/vuls/id/129209/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "The Architecture of Open Source Applications",
+          "url": "http://www.aosabook.org/en/llvm.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Arm Compiler",
+          "url": "https://developer.arm.com/tools-and-software/embedded/arm-compiler"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-07-18T11:22:28+09:00",
+          "description": "[2019年07月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-07-18T11:22:28+09:00",
+    "datelastupdated": "2019-07-18T11:22:28+09:00",
+    "datepublic": "2019-07-15T00:00:00+09:00"
+  }
+}

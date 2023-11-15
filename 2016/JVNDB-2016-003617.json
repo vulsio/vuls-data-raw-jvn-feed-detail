@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2016-003617",
+  "vulinfodata": {
+    "title": "libbpg にメモリ境界外への書き込みを行う脆弱性",
+    "vulinfodescription": {
+      "overview": "libbpg は、BPG 画像フォーマットを扱うライブラリです。libbpg には、メモリ境界外への書き込みを行う脆弱性が存在します。  メモリ境界外への書き込み (CWE-787) - CVE-2016-5637 libbpg で使用される関数 restore_tqb_pixels において transquant_bypass_enable_flag のチェックが不適切なため、細工されたファイルを処理することでメモリ境界外への書き込みを行う脆弱性が存在します。  CWE-787: Out-of-bounds Write http://cwe.mitre.org/data/definitions/787.html  なお、National Vulnerability Database (NVD) では、CWE-119 として公開されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "libbpg",
+          "productname": "libbpg",
+          "cpe": {
+            "text": "cpe:/a:libbpg:libbpg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.9.5 から 0.9.7 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "libbpg が細工された BPG ファイルを処理することで、サービス運用妨害 (DoS) 攻撃を受けたり、任意のコードを実行されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2016年7月13日現在、対策方法は不明です。  [ワークアラウンドを実施する] 対策が公開されるまでの間、本脆弱性の影響を軽減するため、次のワークアラウンドを実施してください。  　　* ImageMagick のユーザは、ImageMagick セキュリティポリシーを変更する 　　　　　BPG ファイルを拒否するよう、policy.xml を変更する 　　　　　BPG に関する要素を delegate.xml から削除する  これらの設定ファイルの詳細は、ImageMagick のウェブサイトから確認できます。  ImageMagick のウェブサイト http://www.imagemagick.org/script/security-policy.php"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "bellard.org",
+          "vulinfoid": "BPG Image format",
+          "url": "http://bellard.org/bpg/"
+        },
+        {
+          "type": "vendor",
+          "name": "ImageMagick",
+          "vulinfoid": "Security Policy",
+          "url": "http://www.imagemagick.org/script/security-policy.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5637",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5637"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96627087",
+          "url": "http://jvn.jp/cert/JVNVU96627087"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5637",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5637"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#123799",
+          "url": "https://www.kb.cert.org/vuls/id/123799"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月14日]\\n  掲載\\n[2016年08月03日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-5637) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-14T17:17:49+09:00",
+    "datelastupdated": "2016-08-03T15:06:11+09:00",
+    "datepublic": "2016-07-12T00:00:00+09:00"
+  }
+}

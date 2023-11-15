@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2016-001307",
+  "vulinfodata": {
+    "title": "cgit の ui-shared.c の cgit_print_http_headers 関数における CRLF インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "cgit の ui-shared.c の cgit_print_http_headers 関数には、CRLF インジェクションの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-93: Improper Neutralization of CRLF Sequences (CRLF インジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/93.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Jason A. Donenfeld",
+          "productname": "cgit",
+          "cpe": {
+            "text": "cpe:/a:jason_a_donenfeld:cgit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.12 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "リポジトリへの書き込み権限を持つ第三者により、ファイル名の改行文字を介して、任意の HTTP ヘッダを挿入され、HTTP レスポンス分割攻撃、またはクロスサイトスクリプティング攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "cgit",
+          "vulinfoid": "ui-shared: prevent malicious filename from injecting headers",
+          "url": "http://git.zx2c4.com/cgit/commit/?id=513b3863d999f91b47d7e9f26710390db55f9463"
+        },
+        {
+          "type": "vendor",
+          "name": "cgit",
+          "vulinfoid": "[ANNOUNCE] CGIT v0.12 Released",
+          "url": "http://lists.zx2c4.com/pipermail/cgit/2016-January/002817.html"
+        },
+        {
+          "type": "vendor",
+          "name": "cgit",
+          "vulinfoid": "XSS in cgit",
+          "url": "http://lists.zx2c4.com/pipermail/cgit/2016-January/002790.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-1900",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1900"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-1900",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-1900"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-26T14:33:11+09:00",
+    "datelastupdated": "2016-01-26T14:33:11+09:00",
+    "datepublic": "2016-01-14T00:00:00+09:00"
+  }
+}

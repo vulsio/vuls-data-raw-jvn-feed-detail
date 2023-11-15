@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2016-004107",
+  "vulinfodata": {
+    "title": "Intel Crosswalk Project に SSL サーバ証明書の検証が行われなくなる脆弱性",
+    "vulinfodescription": {
+      "overview": "Intel Crosswalk Project は、Android および iOS 向けのハイブリッドアプリを開発するためのフレームワークです。Crosswalk Project には、不正な SSL サーバ証明書をユーザが許可した際の処理に問題があり、アプリによるそれ以降の SSL サーバ証明書すべての検証が阻害される可能性があります。  安全でない操作であることをユーザに警告しない問題 (CWE-356) - CVE-2016-5672  不正な SSL サーバ証明書が検出されると、Crosswalk Project を使用して作成されたアプリはエラーメッセージを表示します。ユーザがこのエラーメッセージで \"OK\" を選択すると、当該アプリはそれ以降 SSL サーバ証明書の検証を行わなくなります。エラーメッセージには、アプリが永続的に SSL サーバ証明書を検証しなくなることが明確に記載されておらず、再び同じメッセージが表示されることはありません。  CWE-356: Product UI does not Warn User of Unsafe Actions http://cwe.mitre.org/data/definitions/356.html  研究者は、さらに詳しい情報をセキュリティアドバイザリとして公開しています。また、Intel Corporation もこの問題についてブログ記事を作成しています。  セキュリティアドバイザリ https://wwws.nightwatchcybersecurity.com/2016/07/29/advisory-intel-crosswalk-ssl-prompt-issue/  ブログ記事 http://blogs.intel.com/evangelists/2016/07/28/crosswalk-security-vulnerability/"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "インテル",
+          "productname": "Crosswalk Project",
+          "cpe": {
+            "text": "cpe:/a:intel:crosswalk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "19.49.514.5 (stable) より前のバージョン",
+            "20.50.533.11 (beta) より前のバージョン",
+            "21.51.546.0 (beta) より前のバージョン",
+            "22.51.549.0 (canary) より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "一度でも不正なサーバ証明書を許可するよう設定すると、他の SSL サーバ証明書すべての検証が行われなくなり、中間者攻撃 (man-in-the-middle attack) が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[Crosswalk Project をアップデートし、アプリをリビルドする] アプリの開発者は、Intel Corporation が提供する情報をもとに対策済みの Crosswalk Project にアップデートし、アプリをリビルドしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Intel",
+          "vulinfoid": "Crosswalk Security Vulnerability - Intel Software and Services",
+          "url": "http://blogs.intel.com/evangelists/2016/07/28/crosswalk-security-vulnerability/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5672",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5672"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93087310",
+          "url": "http://jvn.jp/vu/JVNVU93087310/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5672",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5672"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#217871",
+          "url": "http://www.kb.cert.org/vuls/id/217871"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Advisory: Intel Crosswalk SSL Prompt Issue [CVE 2016-5672]",
+          "url": "https://wwws.nightwatchcybersecurity.com/2016/07/29/advisory-intel-crosswalk-ssl-prompt-issue/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月02日]\\n  掲載\\n[2016年08月05日]\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-5672) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-02T10:54:02+09:00",
+    "datelastupdated": "2016-08-05T17:29:19+09:00",
+    "datepublic": "2016-07-29T00:00:00+09:00"
+  }
+}

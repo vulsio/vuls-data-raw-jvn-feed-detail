@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2013-003830",
+  "vulinfodata": {
+    "title": "SPICE の server/red_channel.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "SPICE の server/red_channel.c 内の (1) red_channel_pipes_add_type 関数、および (2) red_channel_pipes_add_empty_msg 関数は、ring ループを適切に実行しないため、サービス運用妨害 (到達可能なアサーションおよびサーバの終了) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.04"
+          ]
+        },
+        {
+          "name": "Spice Project",
+          "productname": "SPICE",
+          "cpe": {
+            "text": "cpe:/a:spice_project:spice",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.12.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、ネットワークエラーを誘発されることで、サービス運用妨害 (到達可能なアサーションおよびサーバの終了) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "freedesktop.org",
+          "vulinfoid": "Use RING_FOREACH_SAFE in red_channel.c functions which are missing it",
+          "url": "http://cgit.freedesktop.org/spice/spice/commit/?id=53488f0275d6c8a121af49f7ac817d09ce68090d"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 984769",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=984769"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1926-1",
+          "url": "http://www.ubuntu.com/usn/USN-1926-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4130",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4130"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4130",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4130"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-22T18:51:21+09:00",
+    "datelastupdated": "2013-08-22T18:51:21+09:00",
+    "datepublic": "2013-07-05T00:00:00+09:00"
+  }
+}

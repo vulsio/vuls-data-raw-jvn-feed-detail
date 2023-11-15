@@ -1,0 +1,212 @@
+{
+  "vulinfoid": "JVNDB-2018-000049",
+  "vulinfodata": {
+    "title": "Microsoft 製の複数の Windows アプリケーションおよびインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft が提供する複数の Windows アプリケーションおよびインストーラには、DLL を読み込む際の検索パスに関する処理に不備があり、該当するアプリケーションやインストーラと同一のディレクトリ内に存在する特定の DLL ファイルを読み込んでしまう脆弱性 (CWE-427) が存在します。 開発者によると、本件は「アプリケーション ディレクトリにおける DLL の植え付け」の問題であり、実際の攻撃実現性は限定的であるため、セキュリティ更新プログラムによる対応は行なわないとのことです。  開発者による「アプリケーション ディレクトリにおける DLL の植え付け」への対応については、開発者が提供する情報をご確認ください。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 CVE-2018-0592、CVE-2018-0593、CVE-2018-0596 報告者: 三井物産セキュアディレクション株式会社 吉川孝志 氏 CVE-2018-0594 報告者: PinkFlyingWhale 黒翼猫 氏 CVE-2018-0595、CVE-2018-0597 報告者: 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft OneDrive",
+          "cpe": {
+            "text": "cpe:/a:microsoft:onedrive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "- CVE-2018-0592",
+            "のインストーラ - CVE-2018-0593"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Skype",
+          "cpe": {
+            "text": "cpe:/a:microsoft:skype",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for Windows - CVE-2018-0594",
+            "for Windows のインストーラ - CVE-2018-0595"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Visual Studio Code",
+          "cpe": {
+            "text": "cpe:/a:microsoft:visual_studio_code",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "のインストーラ - CVE-2018-0597"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Visual Studio Community",
+          "cpe": {
+            "text": "cpe:/a:microsoft:visual_studio_community",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "のインストーラ - CVE-2018-0596"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性の影響を受けるアプリケーションやインストーラを実行する際に、細工された DLL ファイルが同一ディレクトリに置かれていた場合、当該アプリケーションやインストーラの権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 ・システムディレクトリへの書き込みは管理者にのみ許可する (Windows の初期設定) ・Windows PC は管理者権限を持たない標準ユーザアカウントで操作することを原則とし、必要なときのみ管理者アカウントで操作する ・インストーラは新たに作成したディレクトリに保存し、他の無関係なファイルが存在しない状態で実行する ・アプリケーションをインストールしたディレクトリに信用できないファイルが存在しないことを確認する ・社内でインストーラを共有ディレクトリに置き、各 Windows PC にインストールさせるような運用を行っている場合は、当該ディレクトリを読み取り専用にする Microsoft OneDrive など、アプリケーションによってはユーザディレクトリ配下にインストールされる場合があります。各アプリケーションにあわせて適切なワークアラウンドを実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft TechNet",
+          "vulinfoid": "DLL の植え付けの脆弱性のトリアージ",
+          "url": "https://blogs.technet.microsoft.com/jpsecurity/2018/04/10/triaging-a-dll-planting-vulnerability/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0596",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0596"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0597",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0597"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0592",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0592"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0593",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0593"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0594",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0594"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0595",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0595"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#91151862",
+          "url": "https://jvn.jp/jp/JVN91151862/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0592",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0592"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0593",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0593"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0594",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0594"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0595",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0595"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0596",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0596"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0597",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0597"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-05-11T16:28:59+09:00",
+          "description": "[2018年05月17日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-07-01T15:49:19+09:00",
+          "description": "[2018年08月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0592) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0593) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2019-07-05T16:37:19+09:00",
+          "description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0594) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0595) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0596) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0597) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-05-17T12:09:34+09:00",
+    "datelastupdated": "2019-07-05T16:38:04+09:00",
+    "datepublic": "2018-05-17T00:00:00+09:00"
+  }
+}

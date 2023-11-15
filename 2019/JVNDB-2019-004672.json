@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2019-004672",
+  "vulinfodata": {
+    "title": "Microsoft Windows リモートデスクトップのネットワークレベル認証に Windows ロックスクリーンをバイパスされる問題",
+    "vulinfodescription": {
+      "overview": "Microsoft Windows リモートデスクトップのネットワークレベル認証には、Windows ロックスクリーンをバイパスされる問題が存在します。  Microsoft のリモートデスクトップでは、接続時の認証を RDP レイヤではなくネットワークレイヤで行う、ネットワークレベル認証 (NLA, Network Level Authentication) という機能をサポートしています。 また、Windows ではユーザセッションがロックされると、認証情報の入力を要求するロックスクリーンが表示され、適切な認証情報を入力しないとセッションを継続できない仕組みになっています。RDP 経由のセッションにおいてもセッションロックの仕組みは ローカルセッションと同様です。  <a href=\"https://cwe.mitre.org/data/definitions/288.html\">CWE-288</a>: Authentication Bypass Using an Alternate Path or Channel (CVE-2019-9510)  2018年4月にリリースされた Windows 10 1803 および Windows Server 2019 では、NLA を使用した RDP セッションの扱い方に変更があり、セッションロックの際に意図しない動作が発生するようになりました。ネットワークの異常により RDP 接続が一時的に切断され、自動的に再接続が行われると、リモートシステムがどの様な状態であったかに関わらず、RDP セッションはロックが解除された状態で復元されてしまいます。 例えば、次のような状況を考えます:  1. ユーザが Windows 10 1803 もしくは Windows Server 2019 およびそれ以降のシステムにリモートデスクトップ接続する 2. ユーザがリモートデスクトップのセッションをロックする 3. リモートデスクトップ接続に使用しているクライアントをそのまま放置する  この状況において、攻撃者は RDP クライアントのネットワーク接続を一時的に切断します。RDP クライアントは、ネットワーク接続が復旧すると自動的にリモートシステムへの再接続を行い、復元された RDP セッションは、ログインスクリーンではなくログイン済みのデスクトップ画面になります。ログイン時のバナー表示もバイパスされます。 これはすなわち、手動で認証情報を入力しなくてもロックを解除できるということを意味します。 Duo Security MFA のような、Windows ログインスクリーンと統合された 2 要素認証システムも、この挙動を使用することでバイパス可能です。CERT/CC では、Windows ログインスクリーンを使用する、他の多要素認証ソリューションも本脆弱性の影響を受ける可能性があると考えています。 なお、本件の原因は RDP 使用時の Windows ロックスクリーンの動作にあり、多要素認証ソリューションがインストールされているかどうかには無関係です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 10",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_10",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1803 およびそれ以降"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2019 およびそれ以降"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "Windows RDP クライアントに物理的にアクセス可能な攻撃者によって、リモートデスクトップセッションを使用される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2019年6月5日現在、対策方法は不明です。次のワークアラウンドの実施を検討してください。  * RDP クライアントシステムへのアクセスを保護する   RDP クライアントとして使用しているシステムの場合、リモートシステムではなくローカルのシステムをロックしてください。例えローカルシステムに Value値が全く存在しなくとも、RDP のセッションはクライアントシステムへのアクセスを制限することで保護可能です。リモートシステムのロックでは保護できません。  * RDP セッションの接続を切断する   リモートの RDP セッションのロックでは保護が行えないため、RDP セッションの接続を切断することが有効です。セッションが無効化され、クレデンシャルを使用しない RDP セッションの自動再接続を防止することが可能です。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "日本マイクロソフト株式会社からの情報",
+          "url": "https://jvn.jp/vu/JVNVU94741708/4953/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft",
+          "vulinfoid": "Configure Network Level Authentication for Remote Desktop Services Connections",
+          "url": "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11)"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft TechNet",
+          "vulinfoid": "Prevent a worm by updating Remote Desktop Services (CVE-2019-0708)",
+          "url": "https://blogs.technet.microsoft.com/msrc/2019/05/14/prevent-a-worm-by-updating-remote-desktop-services-cve-2019-0708/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-9510",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9510"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94741708",
+          "url": "http://jvn.jp/cert/JVNVU94741708"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-9510",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9510"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#576688",
+          "url": "https://www.kb.cert.org/vuls/id/576688"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-06-06T10:35:28+09:00",
+          "description": "[2019年06月06日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-06-07T09:55:51+09:00",
+          "description": "[2019年06月07日]\\n  ベンダ情報：JVN (日本マイクロソフト株式会社からの情報) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-06-06T10:35:28+09:00",
+    "datelastupdated": "2019-06-06T10:35:28+09:00",
+    "datepublic": "2019-06-04T00:00:00+09:00"
+  }
+}

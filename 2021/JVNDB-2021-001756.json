@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2021-001756",
+  "vulinfodata": {
+    "title": "urllib3 における、正規表現を用いたサービス運用妨害 (ReDoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "urllib3 には、正規表現を用いたサービス運用妨害 (ReDoS) の脆弱性が存在します。  urllib3 は Python で用いられる HTTP クライアントモジュールです。urllib3 には、不正な URL を評価する正規表現の処理中に長大なバックトラックが発生し、サービス運用妨害 (DoS) 状態となる脆弱性 (CWE-400, CVE-2021-33503) が存在します。  この脆弱性情報は、次の方が製品開発者に直接報告し、製品開発者との調整を経て、製品利用者への周知を目的に JVN での公表に至りました。 報告者: NTTセキュアプラットフォーム研究所 千田 忠賢 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Python Software Foundation",
+          "productname": "urllib3",
+          "cpe": {
+            "text": "cpe:/a:python:urllib3",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v1.26.5 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに修正版へアップデートしてください。 本脆弱性を修正した v1.26.5 がリリースされています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Catastrophic backtracking in URL authority parser when passed URL containing many @ characters",
+          "url": "https://github.com/urllib3/urllib3/security/advisories/GHSA-q2q7-5pp4-w6pg"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-33503",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33503"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92413403",
+          "url": "http://jvn.jp/cert/JVNVU92413403"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-400",
+          "url": "https://cwe.mitre.org/data/definitions/400.html",
+          "title": "リソースの枯渇"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-08T10:07:47+09:00",
+          "description": "[2021年06月08日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-08T11:22:53+09:00",
+    "datelastupdated": "2021-06-08T11:22:53+09:00",
+    "datepublic": "2021-06-07T00:00:00+09:00"
+  }
+}

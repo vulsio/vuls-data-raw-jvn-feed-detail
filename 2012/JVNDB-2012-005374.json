@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2012-005374",
+  "vulinfodata": {
+    "title": "Apache Tomcat の HTTP NIO コネクタにおけるサービス運用妨害 (メモリ消費) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tomcat の HTTP NIO コネクタ内の java/org/apache/coyote/http11/InternalNioInputBuffer.java は、リクエストヘッダのサイズを適切に制限しないため、サービス運用妨害 (メモリ消費) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.36 未満の 6.x",
+            "7.0.28 未満の 7.x"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP Service Manager",
+          "cpe": {
+            "text": "cpe:/a:hp:service_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.30 (Windows/Linux/HP-UX/Solaris/AIX)",
+            "9.31 (Windows/Linux/HP-UX/Solaris/AIX)"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP XP P9000 Performance Advisor ソフトウェア",
+          "cpe": {
+            "text": "cpe:/a:hp:xp_9000_performance_advisor_software",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.4.1 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、大量のヘッダデータを介して、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 6.0.36",
+          "url": "http://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.36"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 7.0.28",
+          "url": "http://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.28"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Revision 1356208",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1356208"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Revision 1350301",
+          "url": "http://svn.apache.org/viewvc?view=revision&revision=1350301"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU02873 SSRT101182",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c03748878"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBST02955 SSRT101157",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04047415"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in Apache Tomcat",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_apache_tomcat3"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1637-1",
+          "url": "http://www.ubuntu.com/usn/USN-1637-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2733",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2733"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2733",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2733"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年11月20日]\\n  掲載\\n[2012年12月26日]\\n  ベンダ情報：Ubuntu (USN-1637-1) を追加\\n[2013年03月08日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Apache Tomcat) を追加\\n[2015年03月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU02873 SSRT101182) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBST02955 SSRT101157) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-11-20T10:53:37+09:00",
+    "datelastupdated": "2015-03-09T14:28:36+09:00",
+    "datepublic": "2012-11-05T00:00:00+09:00"
+  }
+}

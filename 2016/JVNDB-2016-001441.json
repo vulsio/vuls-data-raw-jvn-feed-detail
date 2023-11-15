@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2016-001441",
+  "vulinfodata": {
+    "title": "Hirschmann Classic Platform スイッチの管理者パスワードが SNMP コミュニティ名を通じて漏えいする問題",
+    "vulinfodescription": {
+      "overview": "Hirschmann の Classic スイッチにはパスワードを同期する機能があり、スイッチの管理者パスワードが SNMP コミュニティ名に同期されます。そのため、ローカルネットワーク上の攻撃者に管理パスワードが漏えいします。  復元可能な形式でのパスワード保存 (CWE-257) Belden のブランドである Hirschmann の (MACH シリーズスイッチを含む) \"Classic Platform\" スイッチは、デフォルト設定で、管理者パスワードを使用して SNMP コミュニティ文字列 (スイッチの設定の遠隔管理を可能にする) を生成します。ローカルネットワークの攻撃者は、コミュニティ文字列の情報からスイッチの管理者パスワードを取得することが可能です。  CWE-257: Storing Passwords in a Recoverable Format http://cwe.mitre.org/data/definitions/257.html  なお、National Vulnerability Database (NVD) では、CWE-200 として公開されています。  Belden はセキュリティアドバイザリ BSECV-2016-2 で本問題についてより詳細に言及しています。  BSECV-2016-2 https://www.belden.com/resourcecenter/security/upload/Belden_Security_Advisory_BSECV-2016-2_1v0.pdf"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann Classic Layer 2 Basic",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_l2b",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann Classic Layer 2 Enhanced",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_l2e",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann Classic Layer 2 Professional",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_l2p",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann Classic Layer 3 Enhanced",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_l3e",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann Classic Layer 3 Professional",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_l3p",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:belden:hirschmann_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "05.3.07 未満",
+            "09.0.06 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.9",
+          "vector": "AV:A/AC:M/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルネットワーク上の攻撃者によって、SNMPv1 および SNMPv2 で送受信される平文の SNMP コミュニティ文字列から、スイッチの管理者パスワードを取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[SNMP Password Sync 機能を無効にし SNMPv3 を使用する] 対象機器の SNMP パスワード同期機能を無効化してください。詳しくは、Belden が提供するセキュリティアドバイザリ BSECV-2016-2 をご確認ください。また、通信の暗号化をサポートする SNMPv3 の使用も推奨されます。  BSECV-2016-2 https://www.belden.com/resourcecenter/security/upload/Belden_Security_Advisory_BSECV-2016-2_1v0.pdf  Hirschmann によると、パスワード同期機能は、SNMPv1 および v2 から SNMPv3 へ移行されるまでの間、ネットワーク設定を補助する目的でデフォルトで有効にされていました。SNMPv3 が製品のデフォルトであることを踏まえ、Hirschmann は、今後リリースする製品やファームウェアにおいてパスワード同期機能をデフォルトで無効とするとしています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Belden Security Advisory",
+          "vulinfoid": "BSECV-2016-2 - Passwords Synchronization with SNMP v1/v2 Communities",
+          "url": "https://www.belden.com/resourcecenter/security/upload/Belden_Security_Advisory_BSECV-2016-2_1v0.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "横河セキュリティ対策情報",
+          "vulinfoid": "YSAR-16-0001: Vnet/IP用ネットワークスイッチの管理者パスワードが漏えいする脆弱性",
+          "url": "http://www.yokogawa.co.jp/dcs/security/ysar/dcs-ysar-index-ja.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2509",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2509"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99862126",
+          "url": "http://jvn.jp/vu/JVNVU99862126/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2509",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2509"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#507216",
+          "url": "http://www.kb.cert.org/vuls/id/507216"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月18日]\\n  掲載\\n[2016年03月29日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：横河電機株式会社 (YSAR-16-0001: Vnet/IP用ネットワークスイッチの管理者パスワードが漏えいする脆弱性) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE) (CVE-2016-2509) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2509) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-18T14:03:24+09:00",
+    "datelastupdated": "2016-03-29T15:14:45+09:00",
+    "datepublic": "2016-02-16T00:00:00+09:00"
+  }
+}

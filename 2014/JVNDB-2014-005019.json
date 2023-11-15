@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2014-005019",
+  "vulinfodata": {
+    "title": "GPGME の engine-gpgsm.c および engine-uiserver.c におけるヒープベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "GPGME の (1) engine-gpgsm.c および (2) engine-uiserver.c の status_handler 関数には、\"特定のオーダーによる異なる行の長さ (different line lengths in a specific order)\" に関する処理に不備があるため、ヒープベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.04",
+            "12.04 LTS"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GPGME",
+          "cpe": {
+            "text": "cpe:/a:gnu:gpgme",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、サービス運用妨害 (クラッシュ) 状態にされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix possible realloc overflow for gpgsm and uiserver engines.",
+          "url": "http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=commit;h=2cbd76f7911fc215845e89b50d6af5ff4a83dd77"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1113267",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1113267"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3564",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3564"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3564",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3564"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年10月27日]\\n  掲載\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-10-27T16:59:19+09:00",
+    "datelastupdated": "2015-10-30T16:35:09+09:00",
+    "datepublic": "2014-07-30T00:00:00+09:00"
+  }
+}

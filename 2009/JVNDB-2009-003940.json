@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2009-003940",
+  "vulinfodata": {
+    "title": "FreeBSD の libexec/rtld-elf/rtld.c における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeBSD の libexec/rtld-elf/rtld.c の Run-Time Link-Editor (rtld) の _rtld 関数は、以下の環境変数をクリアにしないため、権限を取得される脆弱性が存在します。 (1) LD_LIBMAP 環境変数 (2) LD_LIBRARY_PATH 環境変数 (3) LD_LIBMAP_DISABLE 環境変数 (4) LD_DEBUG 環境変数 (5) LD_ELF_HINTS_PATH 環境変数 本脆弱性は、CVE-2009-4146 とは異なる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3 7.1 および 8.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、トロイの木馬ライブラリを指す検索パスを含む変更された変数を伴う setuid プログラムまたは setguid プログラムを実行されることで、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "Index: rtld.c",
+          "url": "http://people.freebsd.org/~cperciva/rtld.patch"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-4147",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4147"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-4147",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-4147"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T16:18:56+09:00",
+    "datelastupdated": "2012-06-26T16:18:56+09:00",
+    "datepublic": "2009-12-02T00:00:00+09:00"
+  }
+}

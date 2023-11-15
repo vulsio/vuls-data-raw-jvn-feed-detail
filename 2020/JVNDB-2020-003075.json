@@ -1,0 +1,258 @@
+{
+  "vulinfoid": "JVNDB-2020-003075",
+  "vulinfodata": {
+    "title": "HiOS および HiSecOS におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Hirschmann (Belden 社傘下) が提供する HiOS および HiSecOS を搭載した製品の Web サーバには、バッファオーバーフローの脆弱性 (CWE-120) が存在します。この脆弱性は、URL パラメータの不適切な処理に起因しており、認証されていない遠隔の攻撃者が、細工した HTTP リクエストを送信することで、バッファオーバーフローを発生させることが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann EAGLE20",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_eagle20",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 03.2.00 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann EAGLE30",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_eagle30",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 03.2.00 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann EES",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_ees",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann EESX",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_eesx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann GRS",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_grs",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann MSP",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_msp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann OS",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_OS",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann RED",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_red",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann RSP",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_rsp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann RSPE",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_rspe",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann RSPL",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_rspl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Belden Inc.",
+          "productname": "Hirschmann RSPS",
+          "cpe": {
+            "text": "cpe:/h:belden:hirschmann_rsps",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 07.0.02 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された HTTP リクエストを処理することで、任意のコードを実行される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性を修正した HiOS バージョン 07.0.03 および HiSecOS バージョン 03.3.00 がリリースされています。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  * 当該製品の IP アクセス制限機能 (\"IP Access Restriction\") を使用して、アクセス元を信頼できる IPアドレスに制限する * Web サーバ機能 (HTTP および HTTPS) を無効化する  CISA は以下の防御策の実行を推奨しています。  * すべての制御システムおよび製品について、ネットワークへの露出を最小限に抑え、インターネットからアクセスできないようにする * 制御システムのネットワークおよびデバイスをファイアウォールの内側に設置し、業務ネットワークから分離する * リモートアクセスが必要な場合は、VPN などの安全な方法を使用する。その際は利用可能な最新のバージョンを用いる "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Belden Inc.",
+          "vulinfoid": "Belden Security Bulletin-Industrial ITBSECV-2020-01",
+          "url": "https://www.belden.com/hubfs/support/security/bulletins/Belden_Security_Bulletin_BSECV-2020-01_1v2_FINAL.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-6994",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-6994"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT",
+          "vulinfoid": "ICS-TIP-12-146-01B -- Targeted Cyber Intrusion Detection and Mitigation Strategies",
+          "url": "https://www.us-cert.gov/ics/tips/ICS-TIP-12-146-01B"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT",
+          "vulinfoid": "Control systems security recommended practices",
+          "url": "https://www.us-cert.gov/ics/Recommended-Practices"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT",
+          "vulinfoid": "Recommended Practice: Improving Industrial Control System Cybersecurity with Defense-in-Depth Strategies",
+          "url": "https://www.us-cert.gov/sites/default/files/recommended_practices/NCCIC_ICS-CERT_Defense_in_Depth_2016_S508C.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-263-02",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-263-02"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-091-01",
+          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-091-01"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-270-01",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-270-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99486919",
+          "url": "https://jvn.jp/vu/JVNVU99486919/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90707671",
+          "url": "http://jvn.jp/vu/JVNVU90707671/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90193571",
+          "url": "http://jvn.jp/vu/JVNVU90193571/index.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-09-22T14:06:40+09:00",
+          "description": "[2020年04月03日]\\n  掲載\\n"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-09-22T14:18:15+09:00",
+          "description": "[2022年09月22日]\\n  参考情報：JVN (JVNVU#90193571) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-263-02) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-09-29T13:39:40+09:00",
+          "description": "[2022年09月29日]\\n  参考情報：JVN (JVNVU#90707671) を追加\\n  参考情報：ICS Advisory (ICSA-22-270-01) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-04-03T14:08:49+09:00",
+    "datelastupdated": "2022-09-29T16:17:30+09:00",
+    "datepublic": "2020-04-02T00:00:00+09:00"
+  }
+}

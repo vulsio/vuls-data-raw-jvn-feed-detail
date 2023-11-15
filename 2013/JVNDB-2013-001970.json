@@ -1,0 +1,157 @@
+{
+  "vulinfoid": "JVNDB-2013-001970",
+  "vulinfodata": {
+    "title": "Git の imap-send コマンドにおける SSL サーバを偽装される脆弱性",
+    "vulinfodescription": {
+      "overview": "Git の imap-send コマンドは、サーバのホスト名が X.509 証明書の Subject の Common Name (CN)、または subjectAltName フィールド内のドメイン名と一致することを検証しないため、SSL サーバを偽装される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Git project",
+          "productname": "Git",
+          "cpe": {
+            "text": "cpe:/a:git_project:git",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.8.1.4 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Xcode",
+          "cpe": {
+            "text": "cpe:/a:apple:xcode",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0 未満 (OS X v10.8.4 以降)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、任意の有効な証明書を介して、SSL サーバを偽装される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2013-09-18-3",
+          "url": "http://lists.apple.com/archives/security-announce/2013/Sep/msg00007.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT5937",
+          "url": "http://support.apple.com/kb/HT5937"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT5937",
+          "url": "http://support.apple.com/kb/HT5937?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 804730",
+          "url": "https://bugzilla.novell.com/show_bug.cgi?id=804730"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "701586",
+          "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701586"
+        },
+        {
+          "type": "vendor",
+          "name": "Git",
+          "vulinfoid": "Git 1.8.1.4 Release Notes",
+          "url": "https://raw.github.com/git/git/master/Documentation/RelNotes/1.8.1.4.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:0382",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-03/msg00007.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:0380",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-03/msg00005.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 909977",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=909977"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:0589",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0589.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-0308",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0308"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-0308",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0308"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月25日]\\n  掲載\\n[2013年10月15日]\\n  影響を受けるシステム：アップル (HT5937) の情報を追加\\n  ベンダ情報：アップル (HT5937) を追加\\n  ベンダ情報：アップル (APPLE-SA-2013-09-18-3) を追加\\n[2015年06月19日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-25T14:26:12+09:00",
+    "datelastupdated": "2015-06-19T16:43:54+09:00",
+    "datepublic": "2013-03-04T00:00:00+09:00"
+  }
+}

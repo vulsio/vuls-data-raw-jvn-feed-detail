@@ -1,0 +1,162 @@
+{
+  "vulinfoid": "JVNDB-2018-001704",
+  "vulinfodata": {
+    "title": "複数の SAML ライブラリに認証回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の SAML ライブラリに、サービスプロバイダへの認証が回避される問題が存在します。この問題は XML DOM トラバーサルおよび正規化を行う API の挙動に起因しており、攻撃者は XML 署名の検証を無効化することなく、SAML データを改ざんすることが可能です。  不適切な認証 (<a href=\"https://cwe.mitre.org/data/definitions/287.html\"target=\"blank\">CWE-287</a>) Security Assertion Markup Language (SAML) は主に SSO (Single Sign-On サービス) で使用される、認証や認可を行うための XML ベースのマークアップ言語です。 いくつかの SAML ライブラリでは、XML DOM トラバーサルや正規化の処理を行う API における XML データ中のコメントの扱い方に不整合な点があり、XML 署名検証で XML データの改ざんを検出できない可能性があります。  その結果、遠隔の攻撃者は、改ざんした SAML メッセージを使って SAML サービスプロバイダの認証を回避することが可能となります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.3",
+          "vector": "AV:N/AC:M/Au:S/C:C/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、SAML データの内容を XML 署名が無効にならない形で改ざんされ、SAML サービスプロバイダの第一段階の認証を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 本脆弱性に影響を受ける可能性がある SAML サービスプロバイダの方は、最新版の SAML ライブラリを使用するようにソフトウェアをアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Shibboleth Service Provider Security Advisory",
+          "vulinfoid": "[12 January 2018]",
+          "url": "https://shibboleth.net/community/advisories/secadv_20180112.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0489",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0489"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-11427",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11427"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5387",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5387"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-11428",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11428"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-11429",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11429"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-11430",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11430"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98536678",
+          "url": "http://jvn.jp/vu/JVNVU98536678/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0489",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0489"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5387",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5387"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#475445",
+          "url": "https://www.kb.cert.org/vuls/id/475445"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Duo Finds SAML Vulnerabilities Affecting Multiple Implementations",
+          "url": "https://duo.com/blog/duo-finds-saml-vulnerabilities-affecting-multiple-implementations"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "DUO-PSA-2017-003: Duo Product Security Advisory",
+          "url": "https://duo.com/labs/psa/duo-psa-2017-003"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-03-02T13:45:56+09:00",
+          "description": "[2018年03月02日]\\n  掲載"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2018-08-22T14:46:02+09:00",
+          "description": "[2018年08月22日]\\n   参考情報：National Vulnerability Database (NVD) (CVE-2018-0489) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2018-10-29T14:19:48+09:00",
+          "description": "[2018年10月29日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE) (CVE-2018-5387) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5387) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-03-02T13:45:56+09:00",
+    "datelastupdated": "2018-10-29T14:20:21+09:00",
+    "datepublic": "2018-02-27T00:00:00+09:00"
+  }
+}

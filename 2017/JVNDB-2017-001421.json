@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2017-001421",
+  "vulinfodata": {
+    "title": "Linux Kernel の VideoCore DRM ドライバの drivers/gpu/drm/vc4/vc4_gem.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の VideoCore DRM ドライバの drivers/gpu/drm/vc4/vc4_gem.c の vc4_get_bcl 関数は、特定のオーバーフローの検出に errno 値を設定しないため、サービス運用妨害 (不正なポインタデリファレンスおよび OOPS) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.9.7 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、VC4_SUBMIT_CL ioctl コールの整合性のないサイズ値を介して、サービス運用妨害 (不正なポインタデリファレンスおよび OOPS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.9.7",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.7"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "drm/vc4: Return -EINVAL on the overflow checks failing.",
+          "url": "https://github.com/torvalds/linux/commit/6b8ac63847bc2f958dd93c09edc941a0118992d9"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "drm/vc4: Return -EINVAL on the overflow checks failing.",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6b8ac63847bc2f958dd93c09edc941a0118992d9"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1416437",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1416437"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-5577",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5577"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-5577",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-5577"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-388",
+          "url": "https://cwe.mitre.org/data/definitions/388.html",
+          "title": "エラー処理"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年02月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-02-17T11:45:04+09:00",
+    "datelastupdated": "2017-02-17T11:45:04+09:00",
+    "datepublic": "2017-02-01T00:00:00+09:00"
+  }
+}

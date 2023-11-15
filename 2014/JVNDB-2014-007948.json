@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-007948",
+  "vulinfodata": {
+    "title": "node.js 用 dns-sync モジュールにおける任意のコマンドを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "node.js 用 dns-sync モジュールには、任意のコマンドを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-77: Improper Neutralization of Special Elements used in a Command (コマンドインジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/77.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Skoranga",
+          "productname": "node-dns-sync",
+          "cpe": {
+            "text": "cpe:/a:dns-sync_project:dns-sync",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.1.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、resolve API 関数の第一 引数内のシェルのメタ文字を介して、任意のコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "This package contains a serious security hole. #1",
+          "url": "https://github.com/skoranga/node-dns-sync/issues/1"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "adding validation check for hostname",
+          "url": "https://github.com/skoranga/node-dns-sync/commit/d9abaae384b198db1095735ad9c1c73d7b890a0d"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9682",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9682"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9682",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9682"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年03月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-03-03T14:26:15+09:00",
+    "datelastupdated": "2015-03-03T14:26:15+09:00",
+    "datepublic": "2014-11-11T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2014-007269",
+  "vulinfodata": {
+    "title": "Linux Kernel の Thread Local Storage の実装の arch/x86/kernel/tls.c における espfix 保護メカニズムを回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の Thread Local Storage (TLS) の実装の arch/x86/kernel/tls.c には、espfix 保護メカニズムを回避され、その結果、ASLR 保護メカニズムを回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.18.1 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、set_thread_area システムコールおよびその後の 16-bit 値の読み込む巧妙に細工されたアプリケーションを介して、espfix 保護メカニズムを回避され、その結果、ASLR 保護メカニズム回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "x86/tls: Validate TLS entries to protect espfix",
+          "url": "https://github.com/torvalds/linux/commit/41bdc78544b8a93a9c6814b8bbbfef966272abbe"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "x86/tls: Validate TLS entries to protect espfix",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=41bdc78544b8a93a9c6814b8bbbfef966272abbe"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1172797",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1172797"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8133",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8133"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8133",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8133"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-19T14:33:12+09:00",
+    "datelastupdated": "2014-12-19T14:33:12+09:00",
+    "datepublic": "2014-12-14T00:00:00+09:00"
+  }
+}

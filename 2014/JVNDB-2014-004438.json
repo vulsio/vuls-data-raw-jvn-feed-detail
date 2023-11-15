@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2014-004438",
+  "vulinfodata": {
+    "title": "Linux Kernel の drivers/hid/hid-logitech-dj.c の logi_dj_raw_event 関数における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の drivers/hid/hid-logitech-dj.c の logi_dj_raw_event 関数には、配列のインデックスエラーにより、任意のコードを実行される、またはサービス運用妨害 (不正な kfree 処理) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "物理的に端末の操作が可能な攻撃者により、不正な形式の REPORT_TYPE_NOTIF_DEVICE_UNPAIRED の値を返す巧妙に細工されたデバイスを介して、任意のコードを実行される、またはサービス運用妨害 (不正な kfree 処理) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.16.2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.16.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "HID: logitech: perform bounds checking on device_id early enough",
+          "url": "https://github.com/torvalds/linux/commit/ad3e14d7c5268c2e24477c6ef54bbdf88add5d36"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Issue 89:  Linux kernel hid-logitech-dj.c device_index arbitrary kfree",
+          "url": "https://code.google.com/p/google-security-research/issues/detail?id=89"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "HID: logitech: perform bounds checking on device_id early enough",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=ad3e14d7c5268c2e24477c6ef54bbdf88add5d36"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1141210",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141210"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット",
+          "vulinfoid": "RHSA-2014:1318",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1318.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3182",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3182"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3182",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3182"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年09月30日]\\n  掲載\\n[2014年11月21日]\\n  ベンダ情報：レッドハット (RHSA-2014:1318) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-09-30T16:09:26+09:00",
+    "datelastupdated": "2014-11-21T18:16:19+09:00",
+    "datepublic": "2014-09-05T00:00:00+09:00"
+  }
+}

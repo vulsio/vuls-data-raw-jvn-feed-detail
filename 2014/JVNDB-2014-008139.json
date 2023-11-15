@@ -1,0 +1,168 @@
+{
+  "vulinfoid": "JVNDB-2014-008139",
+  "vulinfodata": {
+    "title": "Linux および OS X 上で稼動する NTP の ntpd の ntp_io.c の read_network_packet 関数における制限されたパケットを偽装される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux および OS X 上で稼動する NTP の ntpd の ntp_io.c の read_network_packet 関数は、送信元 IP アドレスが IPv6 ループバックアドレスであるかどうかを適切に判定しないため、制限されたパケットを偽装され、ランタイムの状態を読み書きされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html  なお、JVNVU#96605606 に記載のある CVE-2014-9297、CVE-2014-9298 の内容が、本件である CVE-2014-9751 および CVE-2014-9750 に移されました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "NTP Project",
+          "productname": "NTP",
+          "cpe": {
+            "text": "cpe:/a:ntp:ntp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.8p1 未満の 4.x"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "Express5800",
+          "cpe": {
+            "text": "cpe:/h:nec:express5800",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "/SIGMABLADE EMカード(N8405-043)用ファームウェア Rev.14.02 以前"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "iStorage",
+          "cpe": {
+            "text": "cpe:/h:nec:istorage",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Neシングルモデル/クラスタモデル Ver.002.08.08 以前のバージョン",
+            "NV7400/NV5400/NV3400シリーズ",
+            "NV7500/NV5500/NV3500シリーズ"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "SecureBranch",
+          "cpe": {
+            "text": "cpe:/h:nec:securebranch",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 3.2"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "UNIVERGE",
+          "cpe": {
+            "text": "cpe:/h:nec:univerge",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3C CMM"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、::1 アドレスからのパケットが ntpd マシンのネットワークインターフェースに到達されることで、制限されたパケットを偽装され、ランタイムの状態を読み書きされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV15-009",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv15-009.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NTP Bugzilla",
+          "vulinfoid": "Bug 2672",
+          "url": "http://bugs.ntp.org/show_bug.cgi?id=2672"
+        },
+        {
+          "type": "vendor",
+          "name": "ntp.org",
+          "vulinfoid": "Security Notice",
+          "url": "http://support.ntp.org/bin/view/Main/SecurityNotice#December_2014_NTP_Security_Vulne"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1184572",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1184572"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1459",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1459.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9751",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9751"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96605606",
+          "url": "http://jvn.jp/vu/JVNVU96605606/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9751",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9751"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#852879",
+          "url": "http://www.kb.cert.org/vuls/id/852879"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年10月07日]\\n  掲載\\n[2015年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV15-009) を追加\\n[2015年11月30日]\\n  影響を受けるシステム：内容を更新\\n[2016年02月01日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月09日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-10-07T17:19:55+09:00",
+    "datelastupdated": "2016-11-09T16:51:46+09:00",
+    "datepublic": "2014-11-03T00:00:00+09:00"
+  }
+}

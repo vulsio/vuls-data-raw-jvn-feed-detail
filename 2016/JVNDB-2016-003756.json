@@ -1,0 +1,186 @@
+{
+  "vulinfoid": "JVNDB-2016-003756",
+  "vulinfodata": {
+    "title": "Ceph の mon/Monitor.cc の handle_command 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Ceph の mon/Monitor.cc の handle_command 関数には、サービス運用妨害 (セグメンテーション違反および ceph モニタークラッシュ) 状態にされる脆弱性が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Ceph Storage",
+          "cpe": {
+            "text": "cpe:/a:redhat:ceph_storage",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.3 x86_64",
+            "Calamari 1.3 x86_64"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Ceph Storage MON",
+          "cpe": {
+            "text": "cpe:/a:redhat:ceph_storage_mon",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.3 x86_64"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Ceph Storage OSD",
+          "cpe": {
+            "text": "cpe:/a:redhat:ceph_storage_osd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.3 x86_64"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for Scientific Computing 7 x86_64"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7 x86_64"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7 x86_64"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7 x86_64"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、(1) 空の、または (2) 巧妙に細工された prefix を介して、サービス運用妨害 (セグメンテーション違反および ceph モニタークラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Ceph",
+          "vulinfoid": "Bug #16297",
+          "url": "http://tracker.ceph.com/issues/16297"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Merge pull request #9700 from JiYou/fix-monitor-crush",
+          "url": "https://github.com/ceph/ceph/commit/957ece7e95d8f8746191fd9629622d4457d690d6"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mon: Monitor: validate prefix on handle_command() #9700",
+          "url": "https://github.com/ceph/ceph/pull/9700"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1384",
+          "url": "https://access.redhat.com/errata/RHSA-2016:1384"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1385",
+          "url": "https://access.redhat.com/errata/RHSA-2016:1385"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5009",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5009"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5009",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5009"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-20T15:24:37+09:00",
+    "datelastupdated": "2016-07-20T15:24:37+09:00",
+    "datepublic": "2016-07-05T00:00:00+09:00"
+  }
+}

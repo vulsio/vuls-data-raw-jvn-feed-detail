@@ -1,0 +1,89 @@
+{
+  "vulinfoid": "JVNDB-2013-006718",
+  "vulinfodata": {
+    "title": "Redmine 用 redmine_git_hosting プラグインの git_http_controller.rb における任意のコマンドを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Redmine 用 redmine_git_hosting プラグインの git_http_controller.rb には、任意のコマンドを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-77: Improper Neutralization of Special Elements used in a Command (コマンドインジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/77.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Redmine",
+          "productname": "Redmine Git Hosting",
+          "cpe": {
+            "text": "cpe:/a:redmine:redmine_git_hosting_plugin",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下のシェルのメタ文字を介して、任意のコマンドを実行される可能性があります。  (1) get_info_refs 関数に関連する info/refs の service パラメータ (2) file_exists 関数の reqfile 引数"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Redmine",
+          "vulinfoid": "Redmine Git Hosting :: Gitolite Integration",
+          "url": "http://www.redmine.org/plugins/redmine_git_hosting"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4663",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4663"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4663",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4663"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Redmine Git Hosting Plugin: Remote Command Execution",
+          "url": "http://www.sec-1.com/blog/2013/redmine-git-hosting-plugin-remote-command-execution"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-06T14:16:26+09:00",
+    "datelastupdated": "2015-01-06T14:16:26+09:00",
+    "datepublic": "2013-08-16T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2021-001028",
+  "vulinfodata": {
+    "title": "Rockwell Automation 製 Allen-Bradley Micrologix 1100 に長さパラメータの不整合時の不適切な取り扱いの脆弱性",
+    "vulinfodescription": {
+      "overview": "Rockwell Automation 製 Allen-Bradley Micrologix 1100 は、プログラマブルロジックコントローラです。当該製品は長さパラメータの不整合時の不適切な取り扱いの脆弱性 (CWE-130) が存在し、無効な IPv4 パケット長の値が含まれている ICMP パケットを処理する際に例外が発生する可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Rockwell Automation",
+          "productname": "Allen-Bradley Micrologix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:ab_micrologix_controller",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1100 revision number 1.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、送信された不正な形式のパケットを受信することで、サービス運用妨害 (DoS) 状態になるおそれがあります。 復旧のためには、当該製品の電源を入れなおし、プロジェクトを再ダウンロードする必要があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[代替製品を利用する] 開発者は、MicroLogix 1400 へ移行したうえで、 firmware v21.006 およびそれ以降のファームウェアを適用することを推奨しています。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減できます。  　* ファイアウォールなどの適切なネットワーク制御を利用して、許可されていない送信元からの通信をブロックする 　* 製品のドキュメントを参照し、ハードウェアキーモード設定など不正な変更をブロックする機能を利用する 　* TCP/UDP ポート 2222 およびポート 44818 へのアクセスをブロックまたは制限することにより、機器に対する外部ネットワークからの全トラフィックをブロックする (RockwellAutomation製品で使用される TCP/UDP ポートの詳細は、開発者が提供する情報 (要ログイン) を参照してください。)"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Rockwell Automation’s publication number, PN1548 (要ログイン)",
+          "url": "https://rockwellautomation.custhelp.com/app/answers/answer_view/a_id/1130078"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Downloads",
+          "url": "https://compatibility.rockwellautomation.com/Pages/MultiProductFindDownloads.aspx?crumb=112&refSoft=1&toggleState=&versions=58288,58298"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-6111",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-6111"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-047-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-047-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98205567",
+          "url": "http://jvn.jp/cert/JVNVU98205567"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2020-6111",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-6111"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-130",
+          "url": "https://cwe.mitre.org/data/definitions/130.html",
+          "title": "レングスパラメーターの不整合による不適切な処理"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-02-18T17:36:56+09:00",
+          "description": "[2021年02月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-02-18T17:36:56+09:00",
+    "datelastupdated": "2021-02-18T17:36:56+09:00",
+    "datepublic": "2021-02-17T00:00:00+09:00"
+  }
+}

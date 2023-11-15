@@ -1,0 +1,125 @@
+{
+  "vulinfoid": "JVNDB-2018-004254",
+  "vulinfodata": {
+    "title": "ISC BIND の一部のバージョンにおいて再帰的クエリが不適切に許可される問題",
+    "vulinfodescription": {
+      "overview": "ISC BIND の一部のバージョンでは、再帰的クエリが不適切に許可される問題が存在します。  ISC BIND では、明示的に設定しない場合の allow-recursion の初期値は次のように設定されることが想定されています。  　　*\"recursion no;\" が設定されているとき: 再帰的クエリを許可しない 　　*\"recursion yes;\" の設定とともに allow-query-cache や allow-query でアクセスを許可する範囲が明示的に設定されているとき: allow-query-cache や allow-query の値を継承する 　　*\"recursion yes;\" が有効な状態 (明示的に設定しないときの初期値は yes) で allow-query-cache や allow-query が明示的に設定されていないとき: \"allow-recursion {localhost; localnets;};\" が設定される  2017年10月に導入された Change #4777 により上記の挙動が影響を受け、\"recursion yes;\" が有効な状態で allow-query-cache や allow-query が明示的に設定されていないときに、allow-query の初期値である、全てのホストからのアクセスを許可する設定が allow-recursion に継承される状態になっていました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.10.7",
+            "9.10.7-S1",
+            "9.11.3",
+            "9.11.3-S1",
+            "9.11.3-S2",
+            "9.12.0 から 9.12.1-P2",
+            "9.9.12",
+            "9.9.12-S1",
+            "the development release 9.13.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "他のサイトに対する DNS リフレクタ攻撃に使われたり、ネームサーバのキャッシュの状況を外部から取得されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] named.conf で ACL を明示的に指定することで、本脆弱性の影響を軽減することが可能です。  　　*固有の設定をする必要がなければ \"allow-query {localnets; localhost;};\" を設定する 　　*allow-recursion、allow-query、allow-query-cache を明示的に設定する 　　*再帰的問い合わせを受け付ける必要がなければ \"recursion no;\" を設定する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2018-5738: Some versions of BIND can improperly permit recursive query service to unauthorized clients",
+          "url": "https://kb.isc.org/article/AA-01616"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5738",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5738"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT",
+          "vulinfoid": "ISC BIND 9 の脆弱性 (CVE-2018-5738) について",
+          "url": "https://www.jpcert.or.jp/newsflash/2018061302.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92227071",
+          "url": "http://jvn.jp/vu/JVNVU92227071/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5738",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5738"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Current Activity",
+          "vulinfoid": "ISC Releases Security Advisory for BIND",
+          "url": "https://www.us-cert.gov/ncas/current-activity/2018/06/13/ISC-Releases-Security-Advisory-BIND"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "BIND 9.xの脆弱性（サービス提供者が意図しないアクセスの許可）について （CVE-2018-5738）",
+          "url": "https://jprs.jp/tech/security/2018-06-13-bind9-vuln-acl.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-06-15T10:46:57+09:00",
+          "description": "[2018年06月15日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-09-26T16:18:31+09:00",
+          "description": "[2019年09月26日]\\n    参考情報：National Vulnerability Database (NVD) (CVE-2018-5738) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-06-15T11:29:33+09:00",
+    "datelastupdated": "2019-09-26T18:02:24+09:00",
+    "datepublic": "2018-06-14T00:00:00+09:00"
+  }
+}

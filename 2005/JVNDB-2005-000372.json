@@ -1,0 +1,149 @@
+{
+  "vulinfoid": "JVNDB-2005-000372",
+  "vulinfodata": {
+    "title": "Linux Kernel の ptrace() 関数において命令ポインタ RIP のアドレスに対する正規化チェックを行わない脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel 2.4.31 以前、2.6.11.10 以前には x86-64 アーキテクチャ (AMD64 および AMD64 互換の 64 ビット機能 EM64T) においてカーネルがクラッシュする以下の複数の問題が存在します。  ・ptrace() 関数において、セグメントレジスタにおける正規化 (canonical) チェックが適切に行われていないため、カーネルがクラッシュする問題 (CAN-2005-0756)  ・ptrace() 関数において、命令ポインタ RIP のアドレスが正規化 (canonical) されているかどうかをチェックしていないため、カーネルがクラッシュする問題 (CAN-2005-1762)  これらの問題を利用するローカルの攻撃者は、非正規化のセグメントベースをセットした悪意あるプログラムを実行することによりカーネルをクラッシュさせ、標的システムをサービス不能状態に陥らせる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "kernel",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=290"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "159917",
+          "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=159917"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "159915",
+          "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=159915"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:663",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:514",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-514.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:663",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-663J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:514",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-514J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1762",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1762"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1762",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1762"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA15786",
+          "url": "http://secunia.com/advisories/15786"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13891",
+          "url": "http://www.securityfocus.com/bid/13891"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13904",
+          "url": "http://www.securityfocus.com/bid/13904"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-06-08T00:00:00+09:00"
+  }
+}

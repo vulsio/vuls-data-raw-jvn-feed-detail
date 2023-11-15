@@ -1,0 +1,195 @@
+{
+  "vulinfoid": "JVNDB-2005-000060",
+  "vulinfodata": {
+    "title": "Squid における 不適切な Header の取り扱いにおける HTTP Request Smuggling の脆弱性",
+    "vulinfodescription": {
+      "overview": "HTTP リクエストの解釈において、(1) 複数の Content-Length ヘッダを含む HTTP リクエストを受信した場合に最初の Content-Length ヘッダを解釈する不備、(2) HTTP リクエストヘッダ中の \"CRLF SP CRLF\" を前のヘッダ続きであると解釈する不備が存在するため、これと異なる HTTP リクエストの解釈を行う Web サーバに Squid を介してリクエストが送信される場合に、HTTP Request Smuggling 攻撃が利用可能となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Squid-cache.org",
+          "productname": "Squid",
+          "cpe": {
+            "text": "cpe:/a:squid-cache:squid",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.STABLE7 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3.0 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "Web キャッシュ汚染やセッションハイジャックなどの攻撃を招く可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "squid",
+          "url": "http://www.miraclelinux.com/support/update/data/squid.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:060",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-060.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:061",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-061.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Squid Proxy Cache Security Update Advisory",
+          "vulinfoid": "SQUID-2005_4",
+          "url": "http://www.squid-cache.org/Advisories/SQUID-2005_4.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Squid Proxy Cache Security Update Advisory",
+          "vulinfoid": "squid-2.5.STABLE7-header_parsing",
+          "url": "http://www.squid-cache.org/Versions/v2/2.5/bugs/index.html#squid-2.5.STABLE7-header_parsing"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-71",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-71.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:061",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-061J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-71",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-71j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0174",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0174"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#768702",
+          "url": "http://jvn.jp/cert/JVNVU%23768702"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0174",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0174"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12433",
+          "url": "http://www.securityfocus.com/bid/12433"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13434",
+          "url": "http://www.securityfocus.com/bid/13434"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012992",
+          "url": "http://www.securitytracker.com/alerts/2005/Jan/1012992.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#768702",
+          "url": "http://www.kb.cert.org/vuls/id/768702"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-01-25T00:00:00+09:00"
+  }
+}

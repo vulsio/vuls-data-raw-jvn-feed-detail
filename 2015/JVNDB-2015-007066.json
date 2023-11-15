@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2015-007066",
+  "vulinfodata": {
+    "title": "Foreman における任意のホストからのレポートを読まれる脆弱性",
+    "vulinfodescription": {
+      "overview": "Foreman は、view_hosts 権限を適切に適用しないため、(1) 任意のホストからのレポートを読まれる、または (2) 任意のホストからのレポートを削除される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The Foreman",
+          "productname": "Foreman",
+          "cpe": {
+            "text": "cpe:/a:theforeman:foreman",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.8.4 未満",
+            "1.9.1 未満の 1.9.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Satellite",
+          "cpe": {
+            "text": "cpe:/a:redhat:satellite",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1 for RHEL 6 x86_64",
+            "6.1 for RHEL 7 x86_64",
+            "Capsule 6.1 for RHEL 6 x86_64",
+            "Capsule 6.1 for RHEL 7 x86_64"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.2",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "(a) 個人のレポートの表示/削除ページまたは (b) API への直接のアクセスを介して、以下の影響を受ける可能性があります。  (1) view_reports 権限を持つリモート認証されたユーザにより、任意のホストからのレポートを読まれる。 (2) destroy_reports 権限を持つリモート認証されたユーザにより、任意のホストからのレポートを削除される。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Foreman",
+          "vulinfoid": "Bug #11579",
+          "url": "http://projects.theforeman.org/issues/11579"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "CVE-2015-5233: reports show/destroy not restricted by host authorization",
+          "url": "http://theforeman.org/security.html#CVE-2015-5233:reportsshow/destroynotrestrictedbyhostauthorization"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:2622",
+          "url": "https://access.redhat.com/errata/RHSA-2015:2622"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5233",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5233"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5233",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5233"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-21T12:23:11+09:00",
+    "datelastupdated": "2016-04-21T12:23:11+09:00",
+    "datepublic": "2015-09-01T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "vulinfoid": "JVNDB-2002-000027",
+  "vulinfodata": {
+    "title": "Microsoft IIS におけるシステム情報が漏洩する脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Windows XP にデフォルトで同梱されている Microsoft IIS 5.1 には、詳細なシステム情報を公開してしまう問題が存在します。IIS 5.1 のデフォルトインストールで作成される _vti_pvt フォルダは FrontPage を利用する場合に必要となります。ここには Server Extensions やページ更新等の情報など、様々な有用な情報が存在します。  この _vti_pvt フォルダ内の以下の .cnf ファイルをリモートの攻撃者に GET リクエストを送りつけることにより、Web サイトの構成や所有権、各ファイルに対した絶対パスなどを公開してしまい、ホスト上の事前調査を行っている攻撃者にとっては有用な情報を奪取されてしまう可能性があります。   ＜GET リクエストによりシステム情報を公開してしまうファイル＞  　・access.cnf　　　・botinfs.cnf  　・bots.cnf　　　　・linkinfo.cnf   また、以下のように　/iishelp/common/colegal.htm について GET リクエストを送りつけることで、リモートの攻撃者はその他のファイルにもアクセスできる可能性があります。   GET /iishelp/common/colegal.htm:../../../../../_vti_bin/_vti_adm/admin.dll   尚、更なる報告によると、この問題が成立するためには、_vti_pvt フォルダに対して読み取り権限が許可された設定である必要があります。そのため、リモートの攻撃者はこのような設定ミスの状況下において有用な情報を奪取することが可能となります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft IIS",
+          "cpe": {
+            "text": "cpe:/a:microsoft:iis",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "マイクロソフト株式会社",
+          "vulinfoid": "Top Page",
+          "url": "http://www.microsoft.com/ja/jp/default.aspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2002-1717",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1717"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2002-1717",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1717"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "4078",
+          "url": "http://www.securityfocus.com/bid/4078"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2002-02-10T00:00:00+09:00"
+  }
+}

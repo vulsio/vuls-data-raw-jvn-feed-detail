@@ -1,0 +1,250 @@
+{
+  "vulinfoid": "JVNDB-2008-001083",
+  "vulinfodata": {
+    "title": "KAME プロジェクトの IPv6 スタックにおける IPComp パケットの処理にサービス運用妨害(DoS)の脆弱性",
+    "vulinfodescription": {
+      "overview": "KAME プロジェクトの IPv6 スタックには IPCompパケットを正しく扱えない脆弱性があります。遠隔の第三者により、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。  IPComp プロトコルは IP パケットのペイロード部分の圧縮方法を規定しています(RFC3173)。KAME プロジェクトからリリースされている IP スタックでは、 IPComp プロトコルに対応した圧縮・伸張機能が実装されています。  KAME プロジェクトの IPv6 スタックにおける、IPComp パケットの扱いには脆弱性があります。遠隔の第三者が細工した IPComp ヘッダを持つ IPv6 パケットを送信することで、サービス運用妨害 (DoS) 攻撃を行う可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "KAME プロジェクト",
+          "productname": "IPv6 スタック",
+          "cpe": {
+            "text": "cpe:/a:kame:ipcomp",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.5.3 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X Server",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.5.3 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "iPhone",
+          "cpe": {
+            "text": "cpe:/h:apple:iphone",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v2.0 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "iPod touch",
+          "cpe": {
+            "text": "cpe:/h:apple:ipod_touch",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v2.0 未満"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/neu",
+          "versionnumber": [
+            "2.00 から 2.35 のバージョン"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/Plus",
+          "versionnumber": [
+            "1.00 から 1.84 のバージョン"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/Turbo",
+          "versionnumber": [
+            "1.00 から 1.84 のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "IPComp ヘッダを持つ IPv6 パケットにより、システムを停止あるいは再起動させられる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 各開発元が提供する情報をもとに、最新版にアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "Security Update 2008-003",
+          "url": "http://support.apple.com/kb/HT1897"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "iPhone v2.0 and iPod touch v2.0",
+          "url": "http://support.apple.com/kb/HT2351"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "Security Update 2008-003",
+          "url": "http://support.apple.com/kb/HT1897?viewlocale=ja_JP&locale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "iPhone v2.0 and iPod touch v2.0",
+          "url": "http://support.apple.com/kb/HT2351?viewlocale=ja_JP&locale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "IP Payload Compression Protocol (IPComp)",
+          "vulinfoid": "RFC3173",
+          "url": "http://tools.ietf.org/html/rfc3173"
+        },
+        {
+          "type": "vendor",
+          "name": "KAME",
+          "vulinfoid": "Top Page",
+          "url": "http://www.kame.net/"
+        },
+        {
+          "type": "vendor",
+          "name": "KAME",
+          "vulinfoid": "ipcomp_input.cへのパッチ",
+          "url": "http://www.kame.net/dev/cvsweb2.cgi/kame/kame/sys/netinet6/ipcomp_input.c.diff?r1=1.36;r2=1.37"
+        },
+        {
+          "type": "vendor",
+          "name": "SEIL シリーズ セキュリティ&脆弱性情報",
+          "vulinfoid": "偽造されたIPv6パケットに対する受信処理の脆弱性",
+          "url": "http://www.seil.jp/seilseries/security/2007/12181268.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-0177",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0177"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2008-0441",
+          "url": "http://www.frsirt.com/english/advisories/2008/0441"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#110947",
+          "url": "http://jvn.jp/cert/JVNVU%23110947/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA08-150A",
+          "url": "http://jvn.jp/cert/JVNTA08-150A/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA08-150A",
+          "url": "http://jvn.jp/tr/TRTA08-150A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-0177",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-0177"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA28788",
+          "url": "http://secunia.com/advisories/28788"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "27642",
+          "url": "http://www.securityfocus.com/bid/27642"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1019314",
+          "url": "http://securitytracker.com/id?1019314"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Cyber Security Alerts",
+          "vulinfoid": "SA08-150A",
+          "url": "http://www.us-cert.gov/cas/alerts/SA08-150A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA08-150A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA08-150A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#110947",
+          "url": "http://www.kb.cert.org/vuls/id/110947"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2008年02月22日]\\n  掲載\\n[2008年06月18日]\\n  影響を受けるシステム：アップル (Security Update 2008-003) の情報を追加\\n  ベンダ情報：アップル (Security Update 2008-003) を追加\\n[2008年07月29日]\\n  影響を受けるシステム：アップル (iPhone v2.0 and iPod touch v2.0) の情報を追加\\n  ベンダ情報：アップル (iPhone v2.0 and iPod touch v2.0) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2008-02-22T16:15:35+09:00",
+    "datelastupdated": "2008-07-29T14:51:18+09:00",
+    "datepublic": "2008-02-07T00:00:00+09:00"
+  }
+}

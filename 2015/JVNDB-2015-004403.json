@@ -1,0 +1,127 @@
+{
+  "vulinfoid": "JVNDB-2015-004403",
+  "vulinfodata": {
+    "title": "OpenBSD 以外のプラットフォーム上で稼働する OpenSSH の sshd のモニターコンポーネントにおけるなりすまし攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenBSD 以外のプラットフォーム上で稼働する OpenSSH の sshd のモニターコンポーネントは、MONITOR_REQ_PAM_INIT_CTX リクエストに外部からのユーザ名データを受け入れるため、なりすまし攻撃を実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenBSD",
+          "productname": "OpenSSH",
+          "cpe": {
+            "text": "cpe:/a:openbsd:openssh",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.0 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.11"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.9",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された MONITOR_REQ_PWNAM リクエストを送信する sshd uid の制御と連動した任意の SSH ログインアクセスを利用されることで、なりすまし攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-10-21-4 OS X El Capitan 10.11.1 and Security Update 2015-007",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Oct/msg00005.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205375",
+          "url": "https://support.apple.com/en-us/HT205375"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205375",
+          "url": "https://support.apple.com/ja-jp/HT205375"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Don't resend username to PAM; it already has it.",
+          "url": "https://github.com/openssh/openssh-portable/commit/d4697fe9a28dab7255c60433e4dd23cf7fce8a8b"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSH",
+          "vulinfoid": "release-7.0",
+          "url": "http://www.openssh.com/txt/release-7.0"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6563",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6563"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92655282",
+          "url": "http://jvn.jp/vu/JVNVU92655282/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6563",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6563"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月26日]\\n  掲載\\n[2015年10月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205375) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-10-21-4 OS X El Capitan 10.11.1 and Security Update 2015-007) を追加\\n  参考情報：JVN (JVNVU#92655282) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-26T11:33:11+09:00",
+    "datelastupdated": "2015-10-27T15:00:12+09:00",
+    "datepublic": "2015-08-11T00:00:00+09:00"
+  }
+}

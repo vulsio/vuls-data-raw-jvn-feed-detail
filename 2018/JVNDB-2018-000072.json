@@ -1,0 +1,135 @@
+{
+  "vulinfoid": "JVNDB-2018-000072",
+  "vulinfodata": {
+    "title": "複数のロジクール製ソフトウェアのインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社ロジクールが提供する複数のソフトウェアのインストーラには、DLL を読み込む際の検索パスに問題があり、該当するインストーラと同一のディレクトリに存在する特定の DLL ファイルを読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CCが開発者との調整を行いました。 報告者: NTTコミュニケーションズ株式会社 東内裕二 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Logitech",
+          "productname": "ロジクール ゲームソフト",
+          "cpe": {
+            "text": "cpe:/a:logitech:game_software",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 8.87.116 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Logitech",
+          "productname": "ロジクール接続ユーティリティソフトウェア",
+          "cpe": {
+            "text": "cpe:/a:logitech:connection_utility_software",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 2.30.9 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。  開発者によると、ロジクール ゲームソフトウェアについては、2016年月8月31日にリリースされたバージョン8.87.116 にて、本脆弱性が修正されているとのことです。  本脆弱性の影響を受けるのはインストーラの起動時のみです。既に製品をインストール済みの場合は影響を受けません。 上記の各バージョンより古いインストーラが保存されている場合は、速やかに削除してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "株式会社ロジクールからの情報",
+          "url": "https://jvn.jp/jp/JVN52574492/996192/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0620",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0620"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0621",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0621"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#52574492",
+          "url": "https://jvn.jp/jp/JVN52574492/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0620",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0620"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0621",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0621"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-07-04T16:34:53+09:00",
+          "description": "[2018年07月06日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-07-05T11:09:04+09:00",
+          "description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0620) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0621) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-07-06T12:10:02+09:00",
+    "datelastupdated": "2018-07-06T12:10:02+09:00",
+    "datepublic": "2018-07-06T00:00:00+09:00"
+  }
+}

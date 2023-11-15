@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2016-001515",
+  "vulinfodata": {
+    "title": "無線接続するキーボードやマウスなどの入力機器が安全でない独自通信プロトコルを使用している問題",
+    "vulinfodescription": {
+      "overview": "複数の開発者が提供している無線接続のキーボードやマウスなどの入力機器は、安全でない独自の無線通信プロトコルを使用しています。  センシティブなデータを暗号化しない問題 (CWE-311) 複数の無線接続の入力機器 (キーボードやマウスなど) は、2.4GHz 帯 (ISM バンド) を使用する独自の無線通信プロトコルを実装しており、このプロトコルにおける通信の暗号化に不備が存在します。無線通信の到達範囲にいる攻撃者は、ユーザの端末にキー入力を送りつけたり、キーボードに打ち込まれた内容を傍受したり、ユーザの端末を別の入力機器とペアリングさせたりすることが可能です。無線通信の有効範囲は機器によって異なりますが、室内で使用する多くの場合には数メートル程度です。  CWE-311: Missing Encryption of Sensitive Data http://cwe.mitre.org/data/definitions/311.html  発見者はさらに詳しい情報を掲載したアドバイザリをリリースし、ウェブサイトも立ち上げています。  アドバイザリ https://github.com/RFStorm/mousejack/tree/master/doc/advisories  ウェブサイト https://www.mousejack.com/"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.9",
+          "vector": "AV:A/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "無線通信の到達範囲にいる攻撃者によって、ユーザの端末にキー入力されたり、ユーザのキー入力を傍受されたり、他の入力機器をペアリングされたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ファームウェアをアップデートする] 発見者によると、ロジクールはこの問題を修正するファームウェアアップデートをリリースしているとのことです。 詳しくは、ロジクールのカスタマーサポートにお問い合わせください。  発見者による情報 https://www.bastille.net/affected-devices  他のモデルのユーザは、ファームウェアをアップデートするまでの間、個々のユースケースや脅威モデルについて考慮する必要があります。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Logitech",
+          "vulinfoid": "Mice and Pointing Devices",
+          "url": "http://forums.logitech.com/t5/Mice-and-Pointing-Devices/Logitech-Response-to-Unifying-Receiver-Research-Findings/td-p/1493878"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99797968",
+          "url": "http://jvn.jp/cert/JVNVU99797968"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#981271",
+          "url": "http://www.kb.cert.org/vuls/id/981271"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MOUSEJACK - Wireless Mouse Hacks & Network Security Protection",
+          "url": "https://www.mousejack.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Affected Devices",
+          "url": "https://www.bastille.net/affected-devices"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "mousejack/doc/advisories at master - RFStorm/mousejack - GitHub",
+          "url": "https://github.com/RFStorm/mousejack/tree/master/doc/advisories"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-26T16:26:19+09:00",
+    "datelastupdated": "2016-02-26T16:26:19+09:00",
+    "datepublic": "2016-02-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2015-004543",
+  "vulinfodata": {
+    "title": "GnuTLS の lib/x509/x509_ext.c におけるメモリ二重解放の脆弱性",
+    "vulinfodescription": {
+      "overview": "GnuTLS の lib/x509/x509_ext.c には、メモリ二重解放の脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-415: Double Free (二重解放) と識別されています。 http://cwe.mitre.org/data/definitions/415.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "15.04"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GnuTLS",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnutls",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3.14 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された CRL 配布ポイント (CDP)を介して、サービス運用妨害 (DoS) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GnuTLS",
+          "vulinfoid": "Better fix for the double free in dist point parsing",
+          "url": "https://gitlab.com/gnutls/gnutls/commit/053ae65403216acdb0a4e78b25ad66ee9f444f02"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuTLS",
+          "vulinfoid": "eliminated double-free in the parsing of dist points",
+          "url": "https://gitlab.com/gnutls/gnutls/commit/d6972be33264ecc49a86cd0958209cd7363af1e9"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2727-1",
+          "url": "http://www.ubuntu.com/usn/USN-2727-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3308",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3308"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3308",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3308"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-03T11:22:14+09:00",
+    "datelastupdated": "2015-09-03T11:22:14+09:00",
+    "datepublic": "2015-03-23T00:00:00+09:00"
+  }
+}

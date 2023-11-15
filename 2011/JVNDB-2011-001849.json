@@ -1,0 +1,273 @@
+{
+  "vulinfoid": "JVNDB-2011-001849",
+  "vulinfodata": {
+    "title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND には、細工された DNS パケットを処理することで named プロセスが終了する、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC から、以下の脆弱性情報が公開されています。  \"A defect in the affected BIND 9 versions allows an attacker to remotely cause the \"named\" process to exit using a specially crafted packet. This defect affects both recursive and authoritative servers. The code location of the defect makes it impossible to protect BIND using ACLs configured within named.conf or by disabling any features at compile-time or run-time.  A remote attacker would need to be able to send a specially crafted packet directly to a server running a vulnerable version of BIND. There is also the potential for an indirect attack via malware that is inadvertently installed and run, where infected machines have direct access to an organization's nameservers.\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.6-ESV-R5b1 より前のバージョン",
+            "9.7.4b1 より前のバージョン",
+            "9.8.1b1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 ",
+            "11 Express",
+            "8 ",
+            "9 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.z (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Long Life",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_long_life",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 5.6 server)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1.z  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "キャッシュ DNS サーバと権威 DNS サーバのどちらも、遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] この問題は、使用している OS のベンダや配布元が提供する修正済みのバージョンに更新することで解決します。 ISC は以下の対策済みバージョンを提供しています。  　　・ 9.6-ESV-R4-P3 　　・ 9.7.3-P3 　　・ 9.8.0-P4  BIND 9.5.3b1, 9.5.3rc1 についてはサポート終了製品のため、修正済みバージョンはリリースされていません。これらのバージョンについて ISC は現行製品へのアップグレードを推奨しています。詳しくは ISC が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ISC BIND",
+          "vulinfoid": "ISC BIND 9 Remote packet Denial of Service against Authoritative and Recursive Servers",
+          "url": "http://www.isc.org/software/bind/advisories/cve-2011-2464"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND",
+          "vulinfoid": "BIND software version status",
+          "url": "http://www.isc.org/software/bind/versions"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0926",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0926.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "cve_2011_2464_remote_denial",
+          "url": "http://blogs.oracle.com/sunsecurity/entry/cve_2011_2464_remote_denial"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2464",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2464"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 緊急対策情報",
+          "vulinfoid": "20110706-bind9",
+          "url": "http://www.ipa.go.jp/security/ciadr/vul/20110706-bind9.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2011-0019",
+          "url": "https://www.jpcert.or.jp/at/2011/at110019.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性を利用したサービス不能（DoS）攻撃について",
+          "url": "http://jprs.jp/tech/security/2011-07-05-bind9-vuln-remote-packet-auth-and-recurse.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#142646",
+          "url": "http://jvn.jp/cert/JVNVU142646"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2464",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2464"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA45082",
+          "url": "http://secunia.com/advisories/45082"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA45185",
+          "url": "http://secunia.com/advisories/45185"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "48566",
+          "url": "http://www.securityfocus.com/bid/48566"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1025742",
+          "url": "http://www.securitytracker.com/id/1025742"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#142646",
+          "url": "http://www.kb.cert.org/vuls/id/142646"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年07月11日]\\n  掲載\\n[2011年08月05日]\\n  影響を受けるシステム：オラクル (cve_2011_2464_remote_denial) の情報を追加\\n  ベンダ情報：オラクル (cve_2011_2464_remote_denial) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-07-11T14:24:58+09:00",
+    "datelastupdated": "2011-08-05T09:55:01+09:00",
+    "datepublic": "2011-07-06T00:00:00+09:00"
+  }
+}

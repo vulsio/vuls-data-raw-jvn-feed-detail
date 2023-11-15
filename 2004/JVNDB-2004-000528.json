@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2004-000528",
+  "vulinfodata": {
+    "title": "Microsoft Windows NT Server の不正な DHCP メッセージによるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  DHCP (Dynamic Host Configuration Protocol) サーバは、DHCP クライアントに自動的に IP アドレス、ネットマスク、DNS サーバなどのネットワーク構成情報を提供します。  Microsoft Windows NT Server 4.0 SP6a 以前および Microsoft Windows NT Server 4.0 Terminal Server Edition SP6 以前に実装されている DHCP サービスには、DHCP サービスのログ機能および DHCP リクエストにおいて、メッセージ長を適切にチェックしないため、複数の箇所においてバッファオーバーフローが発生する問題が存在します。  これらの問題を利用するリモートの攻撃者は、意図的に作成した DHCP メッセージを標的の DHCP サーバに送りつけることによりバッファオーバーフローを発生させ、結果として DHCP サーバをサービス不能状態に陥らせる可能性があります。  尚、Windows NT 4.0 のデフォルトインストールでは、DHCP サービスはインストールされていないため、これらの問題の影響は受けません。  また、DHCP ログ機能の問題 (CAN-2004-0899) については、DCHP サービスの設定において DHCP ログ機能が有効 (デフォルトでは無効) に設定されている場合のみ、影響を受けます。 DHCP リクエストの問題 (CAN-2004-0900) の問題については、DHCP サービスの実行権限で任意のコードが実行される可能性についても Microsoft より報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows NT",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_nt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 (server) ",
+            "4.0 (terminal_srv) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS04-042",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS04-042.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS04-042",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/ms04-042.asp"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-0899",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0899"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-0899",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0899"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13463",
+          "url": "http://secunia.com/advisories/13463/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11919",
+          "url": "http://www.securityfocus.com/bid/11919"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11920",
+          "url": "http://www.securityfocus.com/bid/11920"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012515",
+          "url": "http://securitytracker.com/alerts/2004/Dec/1012515.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-12-14T00:00:00+09:00"
+  }
+}

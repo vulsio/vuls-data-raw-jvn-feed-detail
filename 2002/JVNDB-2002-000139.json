@@ -1,0 +1,334 @@
+{
+  "vulinfoid": "JVNDB-2002-000139",
+  "vulinfodata": {
+    "title": "BIND の DNS リゾルバコードにおけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  情報を提供するネームサーバに問い合わせをするクライアントのことを、リゾルバと言います。ホスト名から IP アドレスへの変換を必要とするアプリケーションには、このリゾルバの機能が組み込まれています。一般的に、リゾルバとはライブラリとして提供され、アプリケーションにリンクされます。   DNS リゾルバライブラリに DNS からのレスポンスの操作の実装に不備が存在します。IPv4 のクライアントは gethostbyname() 関数を使用して DNS サーバにクエリを発行します。これに対する DNS サーバからのレスポンスの文字列長を適切にチェックしないため、バッファオーバーフローが発生する可能性があります。  この問題を利用することにより、リモートの攻撃者は DNS リゾルバライブラリを呼び出した時の権限で、任意のコードの実行が可能です。   尚、この問題は脆弱な DNS リゾルバライブラリを使用している場合に影響を受けます。Named 自体に問題は存在しません。ISC BIND 9.x の場合、デフォルトインストールでは脆弱なリゾルバライブラリは含まれません。   Sendmail は BIND リゾルバ API を使用しているため、最新バージョンである 8.12.5 を含めた全てのバージョンでこの問題の影響を受けます。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM AIX",
+          "cpe": {
+            "text": "cpe:/o:ibm:aix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3 ",
+            "5.1 "
+          ]
+        },
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.9.7-T1B およびそれ以前",
+            "8.3.2 およびそれ以前",
+            "9.2.1 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Sendmail Consortium",
+          "productname": "sendmail",
+          "cpe": {
+            "text": "cpe:/a:sendmail:sendmail",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.12.5 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.1 (sparc) ",
+            "2.5.1 (x86) ",
+            "2.6 (sparc) ",
+            "2.6 (x86) ",
+            "7.0 (sparc) ",
+            "7.0 (x86) ",
+            "8 (sparc) ",
+            "8 (x86) ",
+            "9 (sparc) "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 ",
+            "10.20 ",
+            "10.24 ",
+            "11.00 ",
+            "11.04 ",
+            "11.11 ",
+            "11.22 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.2  ",
+            "7.0  ",
+            "7.1  ",
+            "7.2  ",
+            "7.3  "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX0208-209",
+          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX0208-209"
+        },
+        {
+          "type": "vendor",
+          "name": "HP セキュリティ報告",
+          "vulinfoid": "HPSBUX0208-209",
+          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0208-209.html"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM APAR",
+          "vulinfoid": "IY32719",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY32719"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM APAR",
+          "vulinfoid": "IY32746",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY32746"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND Vulnerabilities",
+          "vulinfoid": "libbind buffer overflow",
+          "url": "http://www.isc.org/index.pl?/sw/bind/bind-security.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2002:139",
+          "url": "http://rhn.redhat.com/errata/RHSA-2002-139.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2002:119",
+          "url": "http://www.redhat.com/support/errata/RHSA-2002-119.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2002:167",
+          "url": "http://www.redhat.com/support/errata/RHSA-2002-167.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2002:154",
+          "url": "http://www.redhat.com/support/errata/RHSA-2003-154.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2002:133",
+          "url": "http://rhn.redhat.com/errata/RHSA-2002-133.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sendmail.org",
+          "vulinfoid": "Top Page",
+          "url": "http://www.sendmail.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "46042",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-46042-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "46042",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-46042-3"
+        },
+        {
+          "type": "vendor",
+          "name": "Vulnerability Note VU#803539",
+          "vulinfoid": "Sendmail Information for VU#803539",
+          "url": "http://www.kb.cert.org/vuls/id/AAMN-5BJMPJ"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2002:133",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-133J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2002:139",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-139J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2002:167",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-167J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2002:119",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-119J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "CERT Advisory",
+          "vulinfoid": "CA-2002-19",
+          "url": "http://www.cert.org/advisories/CA-2002-19.html"
+        },
+        {
+          "type": "advisory",
+          "name": "CIAC Bulletins",
+          "vulinfoid": "M-110",
+          "url": "http://www.ciac.org/ciac/bulletins/m-110.shtml"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2002-0651",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0651"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2002-2501",
+          "url": "http://www.jpcert.or.jp/wr/2002/wr022501.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2002-2901",
+          "url": "http://www.jpcert.or.jp/wr/2002/wr022901.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2002-3201",
+          "url": "http://www.jpcert.or.jp/wr/2002/wr023201.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2002-3401",
+          "url": "http://www.jpcert.or.jp/wr/2002/wr023401.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2002-3801",
+          "url": "http://www.jpcert.or.jp/wr/2002/wr023801.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2002-0005",
+          "url": "http://www.jpcert.or.jp/at/2002/at020005.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNCA-2002-19",
+          "url": "http://jvn.jp/cert/JVNCA-2002-19"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2002-0651",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-0651"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "5100",
+          "url": "http://www.securityfocus.com/bid/5100"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#803539",
+          "url": "http://www.kb.cert.org/vuls/id/803539"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2002-06-25T00:00:00+09:00"
+  }
+}

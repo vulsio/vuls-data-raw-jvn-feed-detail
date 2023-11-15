@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2017-001107",
+  "vulinfodata": {
+    "title": "Linux Kernel の arch/x86/kvm/emulate.c におけるカーネルメモリから重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の arch/x86/kvm/emulate.c には、カーネルメモリから重要な情報を取得される、またはサービス運用妨害 (解放済みメモリの使用 (Use-after-free)) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.9.3 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、fxrstor、fxsave、sgdt、および sidt の命令エミュレーションを利用する巧妙に細工されたアプリケーションを介して、重要な情報を取得される、またはサービス運用妨害 (解放済みメモリの使用 (Use-after-free)) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KVM: x86: Introduce segmented_write_std",
+          "url": "https://github.com/torvalds/linux/commit/129a72a0d3c8e139a04512325384fe5ac119e74d"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "KVM: x86: Introduce segmented_write_std",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=129a72a0d3c8e139a04512325384fe5ac119e74d"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1413001",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1413001"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2584",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2584"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2584",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-2584"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-416",
+          "url": "https://cwe.mitre.org/data/definitions/416.html",
+          "title": "解放済みメモリの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-27T15:05:05+09:00",
+    "datelastupdated": "2017-01-27T15:05:05+09:00",
+    "datepublic": "2017-01-12T00:00:00+09:00"
+  }
+}

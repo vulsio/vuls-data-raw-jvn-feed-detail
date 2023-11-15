@@ -1,0 +1,179 @@
+{
+  "vulinfoid": "JVNDB-2021-001123",
+  "vulinfodata": {
+    "title": "GROWI における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社WESEEK が提供する GROWI には、次の複数の脆弱性が存在します。  　* 格納型クロスサイトスクリプティング (CWE-79) - CVE-2021-20667 　* パストラバーサル (CWE-22) - CVE-2021-20668 　* パストラバーサル (CWE-22) - CVE-2021-20669 　* アクセス制限の不備 (CWE-284) - CVE-2021-20670 　* 不適切な入力検証 (CWE-20) - CVE-2021-20671 　* クロスサイトスクリプティング (CWE-79) - CVE-2021-20829  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者:株式会社Flatt Security　stypr 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社WESEEK",
+          "productname": "GROWI",
+          "cpe": {
+            "text": "cpe:/a:weseek:growi",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v4.2.19 およびそれ以前",
+            "v4.2.2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.7",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* CSP (Content Security Policy) の設定不備により、特別に細工されたコンテンツを含む添付ファイルを参照したユーザのブラウザ上で、任意のスクリプトが実行される - CVE-2021-20667 　* 管理者権限を持つ遠隔の攻撃者によって特別に細工された URL から当該製品にアクセスされることで、システム上の任意のファイルを読み出される - CVE-2021-20668 　* 管理者権限を持つ遠隔の攻撃者によって特別に細工されたリクエストが送信されることで、システム上の任意のファイルを読み出されたり削除されたりする - CVE-2021-20669 　* ファイルに対するアクセス制限の不備により、遠隔の第三者によって認証を経ずにユーザの個人情報やサーバの内部情報を読み出される - CVE-2021-20670 　* アップロード機能におけるファイル検証の不備により、管理者権限を持つ遠隔の攻撃者にシステム上のファイルを上書きされる。結果として任意のコードが実行される - CVE-2021-20671 　* &#8226;タグの不適切な処理により、特別に細工されたページを参照したユーザのブラウザ上で、任意のスクリプトが実行される - CVE-2021-20829 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正したバージョンをリリースしています。  　* GROWI v4.2.20"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社WESEEK",
+          "vulinfoid": "株式会社WESEEK の告知ページ",
+          "url": "https://weseek.co.jp/security/2021/03/08/vulnerability/growi-prevent-multiple-xss/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20671",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20671"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20829",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20829"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20667",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20667"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20668",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20668"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20669",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20669"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20670",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20670"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94889258",
+          "url": "http://jvn.jp/cert/JVNVU94889258"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-20667",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20667"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-20668",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20668"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-20669",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20669"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-20670",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20670"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-20671",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20671"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-20829",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20829"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-284",
+          "url": "https://cwe.mitre.org/data/definitions/284.html",
+          "title": "不適切なアクセス制御"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-03-09T11:18:16+09:00",
+          "description": "[2021年03月09日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-09-21T16:42:25+09:00",
+          "description": "[2021年09月21日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE) (CVE-2021-20829) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20667) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20668) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20669) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20670) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20671) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20829) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-03-09T11:18:16+09:00",
+    "datelastupdated": "2021-09-21T16:52:22+09:00",
+    "datepublic": "2021-03-08T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "vulinfoid": "JVNDB-2020-009428",
+  "vulinfodata": {
+    "title": "三菱電機製 MELSEC iQ-R、Q および L シリーズにおけるリソース枯渇の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC iQ-R、Q および L シリーズの CPU ユニットには、リソース枯渇の脆弱性 (CWE-400) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-R シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R00/01/02CPU ファームウェアバージョン \"20\" およびそれ以前",
+            "R04/08/16/32/120(EN)CPU ファームウェアバージョン \"52\" およびそれ以前",
+            "R08/16/32/120PCPU ファームウェアバージョン \"25\" およびそれ以前",
+            "R08/16/32/120SFCPU ファームウェアバージョン \"22\" およびそれ以前",
+            "R16/32/64MTCPU 本体 OS ソフトウェアバージョン \"21\" およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC L シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec-l_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "L02/06/26CPU(-P) および L26CPU-(P)BT シリアル No. の上 5桁が ”23121” およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC Q シリーズ",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:melsec-q_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Q03/04/06/13/26UDVCPU シリアル No. の上 5桁が \"22031\" およびそれ以前",
+            "Q03UDECPU および Q04/06/10/13/20/26/50/100UDEHCPU シリアル No. の上 5桁が \"22081\" およびそれ以前",
+            "Q04/06/13/26UDPVCPU シリアル No. の上 5桁が \"22031\" およびそれ以前",
+            "Q170MCPU 本体 OS ソフトウェアバージョン \"V\" およびそれ以前",
+            "Q170MSCPU(-S1) 本体 OS ソフトウェアバージョン \"W\" およびそれ以前",
+            "Q172/173DCPU-S1 本体 OS ソフトウェアバージョン \"V\" およびそれ以前",
+            "Q172/173DSCPU 本体 OS ソフトウェアバージョン \"W\" およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって細工されたパケットを受信すると、Ethernet 通信がサービス運用妨害 (DoS) 状態となる可能性があります。 なお、復旧にはリセットが必要です。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとにアップデートしてください。   　* iQ-Rシリーズ 　　　* R00/01/02CPU ファームウェアバージョン \"21\" およびそれ以降 　　　* R04/08/16/32/120（EN）CPU ファームウェアバージョン \"53\" およびそれ以降 　　　* R08/16/32/120SFCPU ファームウェアバージョン \"23\" およびそれ以降 　　　* R08/16/32/120PCPU ファームウェアバージョン \"26\" およびそれ以降 　　　* R16/32/64MTCPU 本体OSソフトウェアバージョン ”22” およびそれ以降  　* Qシリーズ 　　　* Q03UDECPU および Q04/06/10/13/20/26/50/100UDEHCPU シリアル No. の上 5桁が \"22082\" およびそれ以降 　　　* Q03/04/06/13/26UDVCPU シリアル No. の上 5桁が \"22032\" およびそれ以降 　　　* Q04/06/13/26UDPVCPU シリアル No. の上 5桁 \"22032\" およびそれ以降 　　　* Q172/173DCPU-S1 本体 OS ソフトウェアバージョン \"W\" およびそれ以降 　　　* Q172/173DSCPU 本体 OS ソフトウェアバージョン \"X\" およびそれ以降 　　　* Q170MCPU 本体 OS ソフトウェアバージョン \"W\" およびそれ以降 　　　* Q170MSCPU(-S1) 本体 OS ソフトウェアバージョン \"X\" およびそれ以降  　* Lシリーズ 　　　* L02/06/26CPU(-P)、 L26CPU-(P)BT シリアル No. の上 5桁が ”23122” およびそれ以降  [ワークアラウンドを実施する] 開発者によると、対策バージョンがリリースされていない、またはアップデートを適用できない場合には、次の回避策を適用することで、本脆弱性の影響を軽減することが可能とのことです。 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) などを使用する 　* 当該製品を LAN 内での使用に限定し、信頼できないネットワークやホストからのアクセスを制限する  詳しくは、開発者が提供する情報を参照してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機",
+          "vulinfoid": "MELSEC iQ-R、Q および L シリーズ CPU ユニットの Ethernet ポートにおけるサービス拒否 (DoS) の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2020-013.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5652",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5652"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-303-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-303-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96558207",
+          "url": "https://jvn.jp/vu/JVNVU96558207"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-11-05T15:29:46+09:00",
+          "description": "[2020年11月05日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-05-19T11:32:38+09:00",
+          "description": "[2021年05月19日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-01-14T11:48:01+09:00",
+          "description": "[2022年01月14日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2022-03-30T16:05:55+09:00",
+          "description": "[2022年03月30日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-11-05T15:29:46+09:00",
+    "datelastupdated": "2022-03-30T16:08:39+09:00",
+    "datepublic": "2020-10-29T00:00:00+09:00"
+  }
+}

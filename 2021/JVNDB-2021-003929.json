@@ -1,0 +1,144 @@
+{
+  "vulinfoid": "JVNDB-2021-003929",
+  "vulinfodata": {
+    "title": "ヤマハ製のルータにおける複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "ヤマハ株式会社が提供する複数のルータには、次の複数の脆弱性が存在します。  　* クロスサイトスクリプトインクルージョン (CWE-829) - CVE-2021-20843 　* HTTP レスポンスヘッダインジェクション (CWE-644) - CVE-2021-20844  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社イエラエセキュリティ 馬場 将次 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ヤマハ",
+          "productname": "NVR510",
+          "cpe": {
+            "text": "cpe:/h:yamaha:nvr510",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.15.01.18 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ヤマハ",
+          "productname": "NVR700W",
+          "cpe": {
+            "text": "cpe:/h:yamaha:nvr700w",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.15.00.19 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ヤマハ",
+          "productname": "RTX1210",
+          "cpe": {
+            "text": "cpe:/h:yamaha:rtx1210",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.14.01.38 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ヤマハ",
+          "productname": "RTX830",
+          "cpe": {
+            "text": "cpe:/h:yamaha:rtx830",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Rev.15.02.17 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.8",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、当該製品の Web GUI にログインした状態のユーザが、攻撃者の作成した罠ページにアクセスすることで、次のような影響を受ける可能性があります。  　* 製品の設定情報が変更される - CVE-2021-20843、CVE-2021-20844 　* 機微な情報を窃取される - CVE-2021-20844"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正したバージョンをリリースしています。  　* RTX830 Rev.15.02.20 　* NVR510 Rev.15.01.21 　* NVR700W Rev.15.00.22 　* RTX1210 Rev.14.01.40  [ワークアラウンドを実施する] 対策を行ったファームウェアが入手できない、あるいは適用が困難な場合は、次のいずれかのワークアラウンドを実施することで本脆弱性の影響を回避することが可能です。  　* httpd service off を設定し、HTTP サーバ機能を無効にする 　* httpd host none を設定し、全てのホストからの GUI 設定画面へのアクセスを禁止する "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "RTシリーズのセキュリティに関するFAQ",
+          "vulinfoid": "「ヤマハ製のルーターにおける複数の脆弱性」について",
+          "url": "http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/JVNVU91161784.html"
+        },
+        {
+          "type": "vendor",
+          "name": "西日本電信電話株式会社",
+          "vulinfoid": "Biz Boxルータをご利用のお客さまへ",
+          "url": "https://www.ntt-west.co.jp/smb/kiki_info/info/211109.html"
+        },
+        {
+          "type": "vendor",
+          "name": "東日本電信電話株式会社",
+          "vulinfoid": "ヤマハルータをご利用のお客さまへ",
+          "url": "https://business.ntt-east.co.jp/topics/2021/11_09.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20843",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20843"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20844",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20844"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91161784",
+          "url": "http://jvn.jp/cert/JVNVU91161784"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-644",
+          "url": "https://cwe.mitre.org/data/definitions/644.html",
+          "title": "HTTP ヘッダのスクリプト構文の不適切な無効化"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-829",
+          "url": "https://cwe.mitre.org/data/definitions/829.html",
+          "title": "信頼できない制御領域からの機能の組み込み"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-11-10T14:14:42+09:00",
+          "description": "[2021年11月10日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-11-10T16:16:40+09:00",
+    "datelastupdated": "2021-11-10T16:16:40+09:00",
+    "datepublic": "2021-11-09T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "vulinfoid": "JVNDB-2017-004912",
+  "vulinfodata": {
+    "title": "Apache Struts2 の Struts1 プラグインを使用するアプリケーションに任意のコードが実行可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Struts2 において、Struts1 プラグインを使用するアプリケーションには任意のコードが実行可能な脆弱性が存在します。  開発者が公開している S2-048 において、本脆弱性を含むアプリケーションとして Apache Struts2 に付属しているサンプルアプリケーション showcase が挙げられています。 showcase アプリケーションは Struts1 プラグインを使用して作られており、Struts1 由来のアクションを通じて HTTP リクエストから受け取った値がそのまま出力用のメッセージの一部として使用されてしまうことが問題であると説明されています。  S2-048 https://struts.apache.org/docs/s2-048.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Struts",
+          "cpe": {
+            "text": "cpe:/a:apache:struts",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3 系で Struts1 プラグインを使用して動作するアプリケーション"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.6",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって細工されたリクエストを処理することで、アプリケーションの権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] showcase アプリケーションの修正方法を参考に、ActionMessage クラス (のコンストラクタ) への入力処理を適切に行ってください。 詳しくは開発者の提供する情報を参照してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Struts 2 Documentation",
+          "vulinfoid": "S2-048: Possible RCE in the Struts Showcase app in the Struts 1 plugin example in Struts 2.3.x series",
+          "url": "https://struts.apache.org/docs/s2-048.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ASF Git Repos",
+          "vulinfoid": "Uses resource message key instead of passing message directly",
+          "url": "https://git-wip-us.apache.org/repos/asf?p=struts.git;a=commitdiff;h=73da12e723c2737bd515946588ddcd898acf584a"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Security Alert",
+          "vulinfoid": "Oracle Security Alert Advisory - CVE-2017-9805",
+          "url": "http://www.oracle.com/technetwork/security-advisory/alert-cve-2017-9805-3889403.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-9791",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9791"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2017-0025",
+          "url": "https://www.jpcert.or.jp/at/2017/at170025.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99376481",
+          "url": "http://jvn.jp/vu/JVNVU99376481/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-9791",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-9791"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年07月11日]\\n  掲載\\n[2018年01月24日]\\n  ベンダ情報：オラクル (Oracle Security Alert Advisory - CVE-2017-9805) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-07-11T12:12:17+09:00",
+    "datelastupdated": "2018-01-24T13:38:45+09:00",
+    "datepublic": "2017-07-10T00:00:00+09:00"
+  }
+}

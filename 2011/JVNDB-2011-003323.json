@@ -1,0 +1,138 @@
+{
+  "vulinfoid": "JVNDB-2011-003323",
+  "vulinfodata": {
+    "title": "GnuTLS の gnutls_session_get_data 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "GnuTLS の lib/gnutls_session.c 内にある gnutls_session_get_data 関数には、規定外のセッション再開を実行するクライアントにおいて利用される場合に、バッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GnuTLS",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnutls",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.12.14 未満の 2.12.x",
+            "3.0.7 未満の 3.x"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESXi",
+          "cpe": {
+            "text": "cpe:/a:vmware:esxi",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "大きな SessionTicket を介して、TLS サーバをサービス運用妨害 (アプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gmane",
+          "vulinfoid": "Possible buffer overflow on gnutls_session_get_data",
+          "url": "http://article.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/5596"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuTLS",
+          "vulinfoid": "gnutls_session_get_data: fix possible buffer overflow",
+          "url": "http://git.savannah.gnu.org/gitweb/?p=gnutls.git;a=commitdiff;h=190cef6eed37d0e73a73c1e205eb31d45ab60a3c"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuTLS",
+          "vulinfoid": "Advisories",
+          "url": "http://www.gnu.org/software/gnutls/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuTLS",
+          "vulinfoid": "bug fix in gnutls_session_get_data().",
+          "url": "http://git.savannah.gnu.org/gitweb/?p=gnutls.git;a=commitdiff;h=e82ef4545e9e98cbcb032f55d7c750b81e3a0450"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2011-4128 Buffer Overflow vulnerability in gnutls",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2011_4128_buffer_overflow"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0013",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0013.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-4128",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4128"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-4128",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4128"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年12月13日]\\n  掲載\\n[2012年10月23日]\\n  ベンダ情報：オラクル (CVE-2011-4128 Buffer Overflow vulnerability in gnutls) を追加\\n[2012年12月17日]\\n  影響を受けるシステム：VMware (VMSA-2012-0013) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0013) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-12-13T14:47:33+09:00",
+    "datelastupdated": "2012-12-17T18:07:02+09:00",
+    "datepublic": "2011-11-08T00:00:00+09:00"
+  }
+}

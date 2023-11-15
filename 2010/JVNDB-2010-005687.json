@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2010-005687",
+  "vulinfodata": {
+    "title": "VideoLAN VLC media player および MPlayer で使用される real.c における整数アンダーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "VideoLAN VLC media player の modules/access/rtsp/real.c、および MPlayer の stream/realrtsp/real.c で使用される real.c の real_get_rdt_chunk 関数には、整数アンダーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MPlayer project",
+          "productname": "MPlayer",
+          "cpe": {
+            "text": "cpe:/a:mplayer:mplayer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "r29447 未満"
+          ]
+        },
+        {
+          "name": "VideoLAN",
+          "productname": "VLC media player",
+          "cpe": {
+            "text": "cpe:/a:videolan:vlc_media_player",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、RDT チャンクヘッダの巧妙に細工された length 値を介して、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MPlayer project",
+          "vulinfoid": "Top Page",
+          "url": "http://www.mplayerhq.hu/design7/news.html"
+        },
+        {
+          "type": "vendor",
+          "name": "VideoLAN",
+          "vulinfoid": "Top Page",
+          "url": "https://www.videolan.org/vlc/index.ja.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-2062",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2062"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-2062",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2062"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE requests for mplayer/vlc and abcm2ps",
+          "url": "http://openwall.com/lists/oss-security/2010/06/04/4"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[DZC-2009-001] The Movie Player and VLC Media Player Real Data Transport parsing integer underflow",
+          "url": "https://dzcore.wordpress.com/2009/07/27/dzc-2009-001-the-movie-player-and-vlc-media-player-real-data-transport-parsing-integer-underflow/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-05T18:18:52+09:00",
+    "datelastupdated": "2015-01-05T18:18:52+09:00",
+    "datepublic": "2010-06-04T00:00:00+09:00"
+  }
+}

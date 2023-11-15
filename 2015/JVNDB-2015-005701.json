@@ -1,0 +1,88 @@
+{
+  "vulinfoid": "JVNDB-2015-005701",
+  "vulinfodata": {
+    "title": "Xen の arch/x86/mm/p2m-pod.c の p2m_pod_emergency_sweep 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen の arch/x86/mm/p2m-pod.c の p2m_pod_emergency_sweep 関数は、プリエンプティブではないため、サービス運用妨害 (CPU 資源の消費およびリブート) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.4.x",
+            "3.5.x",
+            "3.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルの x86 HVM ゲスト管理者により、\"時間のかかる線形走査 (time-consuming linear scan)\" を誘発する巧妙に細工されたメモリコンテンツを介して、サービス運用妨害 (CPU 資源の消費およびリブートの可能性) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-150",
+          "url": "http://xenbits.xen.org/xsa/advisory-150.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7970",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7970"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7970",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7970"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-04T16:29:43+09:00",
+    "datelastupdated": "2015-11-04T16:29:43+09:00",
+    "datepublic": "2015-10-29T00:00:00+09:00"
+  }
+}

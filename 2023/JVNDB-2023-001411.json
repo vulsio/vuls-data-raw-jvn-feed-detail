@@ -1,0 +1,170 @@
+{
+  "vulinfoid": "JVNDB-2023-001411",
+  "vulinfodata": {
+    "title": "横河電機製 CENTUM シリーズにおける重要な情報の平文保存の脆弱性",
+    "vulinfodescription": {
+      "overview": "横河電機株式会社が提供する CENTUM シリーズには、重要な情報の平文保存の脆弱性（CWE-312、CVE-2023-26593）が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "横河電機株式会社",
+          "productname": "B/M9000 CS",
+          "cpe": {
+            "text": "cpe:/o:yokogawa:b%2fm9000cs_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R5.04.01からR5.05.01まで（*2）"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "B/M9000 VP",
+          "cpe": {
+            "text": "cpe:/o:yokogawa:b%2fm9000_vp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R6.01.01からR7.04.51まで（*2）",
+            "R8.01.01およびそれ以降（*2）"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 1000",
+          "cpe": {
+            "text": "cpe:/o:yokogawa:centum_cs_1000_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R2.01.00からR3.09.50まで"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 3000",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_cs_3000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R2.01.00からR3.09.50まで"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 3000 Small",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_cs_3000_small",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R2.01.00からR3.09.50まで"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP",
+          "cpe": {
+            "text": "cpe:/a:yokogawa:centum_vp_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R4.01.00からR4.03.00まで（*1）",
+            "R5.01.00からR5.04.20まで（*1）",
+            "R6.01.00およびそれ以降（*1）"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP Basic",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_vp_basic",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R4.01.00からR4.03.00まで（*1）",
+            "R5.01.00からR5.04.20まで（*1）",
+            "R6.01.00およびそれ以降（*1）"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP Small",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_vp_small",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R4.01.00からR4.03.00まで（*1）",
+            "R5.01.00からR5.04.20まで（*1）",
+            "R6.01.00およびそれ以降（*1）"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品がインストールされたコンピューターにログイン可能もしくは共有フォルダにアクセス可能な攻撃者により、当該コンピューターに格納されているパスワードファイルを改ざんされることで、CENTUM が管理するユーザーの権限を昇格され、結果として上位の権限で制御システムを操作される可能性があります。  本脆弱性が悪用されるには次の条件が必要です。  　* 攻撃者が、当該製品がインストールされたコンピューターの認証情報を取得している 　* ユーザー認証に CENTUM 認証モードを使用している （CENTUM VP を使用している場合）  詳しくは、開発者が提供する情報を確認してください。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[旧製品の使用を停止し後継製品に移行する] CENTUM CS 100 0および CENTUM CS 3000（CENTUM CS 3000 Small を含む）の場合： 保守期間が終了しているため、対策は提供されません。 最新の CENTUM VP シリーズへの移行（マイグレーション）を検討してください。  [アップデートする] CENTUM VP、CENTUM VP Small、CENTUM VP Basic R4.01.00 から R4.02.00 までの場合： 開発者が提供する情報をもとに、R4.03.00 へアップデートした上でユーザー認証モードを Windows 認証モードに変更してください。  [認証モードを変更する] CENTUM VP、CENTUM VP Small、CENTUM VP Basic R4.03.00、R5.01.00からR5.04.20、R6.01.00 およびそれ以降の場合： ユーザー認証モードを Windows 認証モードに変更してください。  なお、B/M9000 CS および B/M9000 VP を使用している場合、製品自体に本脆弱性は存在しませんが、一緒にインストールされる CENTUM により本脆弱性の影響を受けます。そのため、最新の CENTUM VP にアップデートする場合は、B/M9000 VP も適切なバージョンにアップデートする必要があります。  詳しくは、開発者が提供する情報を確認してください。  "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "横河電機株式会社",
+          "vulinfoid": "YSAR-23-0001: CENTUM 認証モードに権限昇格の脆弱性",
+          "url": "https://www.yokogawa.co.jp/library/resources/white-papers/yokogawa-security-advisory-report-list/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-26593",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-26593"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98775218",
+          "url": "https://jvn.jp/vu/JVNVU98775218/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-312",
+          "url": "https://cwe.mitre.org/data/definitions/312.html",
+          "title": "重要な情報の平文保存"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-04-06T14:16:41+09:00",
+          "description": "[2023年04月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-04-06T14:16:41+09:00",
+    "datelastupdated": "2023-04-06T14:16:41+09:00",
+    "datepublic": "2023-04-05T00:00:00+09:00"
+  }
+}

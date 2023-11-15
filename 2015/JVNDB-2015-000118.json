@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2015-000118",
+  "vulinfodata": {
+    "title": "Apache Tapestry における信頼できないデータをデシリアライズする脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tapestry には、信頼できないデータをデシリアライズする脆弱性が存在します。  Apache Software Foundation が提供する Apache Tapestry は、ウェブアプリケーションを作成するためのフレームワークです。Apache Tapestry は、クライアント側でシリアライズされたデータをエンコードした上でサーバに送信し、サーバ側で受け取ったデータをデシリアライズするインターフェースを備えています。 このデータのシリアライズ / デシリアライズ処理には、データの正当性を確認する仕組みが存在しません。そのため、シリアライズされたデータが改ざんされたり細工されたりした場合、サーバ側はデータを検証することなくデシリアライズします (CWE-502)。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 寺田 健 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tapestry",
+          "cpe": {
+            "text": "cpe:/a:apache:tapestry",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0.x (全バージョン)",
+            "5.1.x (全バージョン)",
+            "5.2.x (全バージョン)",
+            "5.3 から 5.3.5 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "サーバが、細工されたデータをデシリアライズすることで、任意のファイルが書き込まれたり、任意のコードが実行されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Software Foundation",
+          "vulinfoid": "Release Notes 5.3.6",
+          "url": "https://tapestry.apache.org/release-notes-536.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ASF JIRA",
+          "vulinfoid": "Serialized object data stored on the client should be HMAC signed and validated",
+          "url": "https://issues.apache.org/jira/browse/TAP5-2008"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1972",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1972"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT",
+          "vulinfoid": "Oracle Java 標準ライブラリ AtomicReferenceArray クラスにおけるデシリアライズに関する脆弱性",
+          "url": "https://www.jpcert.or.jp/securecoding/2014/OracleJava-AtomicReferenceArray.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT",
+          "vulinfoid": "SER02-J. センシティブなオブジェクトは信頼境界を越えて送信する前に署名し暗号化する",
+          "url": "https://www.jpcert.or.jp/java-rules/ser02-j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#17611367",
+          "url": "https://jvn.jp/jp/JVN17611367/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1972",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1972"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月20日]\\n  掲載\\n[2015年08月26日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-1972) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-20T12:06:04+09:00",
+    "datelastupdated": "2015-08-26T17:48:26+09:00",
+    "datepublic": "2015-08-20T00:00:00+09:00"
+  }
+}

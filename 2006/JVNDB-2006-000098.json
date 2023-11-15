@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2006-000098",
+  "vulinfodata": {
+    "title": "IBM Lotus Notes/Domino の kvarcve.dll におけるディレクトリトラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  IBM Lotus Notes/Domino には、以下の複数のセキュリティ上の問題が存在します。  1) Notes attachment viewer の kvarcve.dll において、過度に長いファイル名を含む ZIP 圧縮ファイルを展開する前に、圧縮ファイルのパスの存在を確認するためのフルパス名を構成する過程で、境界チェックが適切に行われないためスタックオーバーフローが発生する問題が存在します。(CVE-2005-2618)  リモートの攻撃者に悪用された場合、Lotus Notes を実行する標的ユーザの権限で任意のコードを実行される可能性があります。  2) Notes attachment viewer の uudrdr.dll において、エンコードされた過度に長いファイル名のファイルを含む UUE ファイルを取り扱う際、境界チェックが適切に行われないため、スタックオーバーフローが発生する問題が存在します。(CVE-2005-2618)  リモートの攻撃者に悪用された場合、標的ユーザの権限で任意のコードを実行される可能性があります。  3) Notes attachment viewer の kvarcve.dll において、特定の ZIP、UUE、TAR 圧縮ファイルのプレビューを生成する際、ディレクトリトラバーサル攻撃を受ける問題が存在します。(CVE-2005-2619)  リモートの攻撃者に悪用された場合、標的ユーザのアクセス可能な任意のファイルを削除されてしまう可能性があります。  4) TAR reader の tarrdr.dll において、過度に長いファイル名を含む TAR 圧縮ファイルを展開する際、境界チェックが適切に行われないため、スタックオーバーフローが発生する問題が存在します。(CVE-2005-2618)  リモートの攻撃者に悪用された場合、標的ユーザの権限で任意のコードを実行される可能性があります。  5) 電子メールに添付された HTML を表示する HTML speed reader の htmsr.dll において、\"http\"、\"ftp\"、もしくは \"//\" から始まる過度に長い (約 800 文字) リンクを含む HTML ファイルをプレビュー表示する際、境界チェックが適切に行われないためスタックオーバーフローが発生する問題が存在します。(CVE-2005-2618)  リモートの攻撃者に悪用された場合、標的ユーザの権限で任意のコードを実行される可能性があります。  6) HTML speed reader において、ローカルファイルを参照する過度に長いリンクを含む HTML ファイルをプレビュー表示する際、境界チェックが適切に行われてないため、スタックオーバーフローが発生する問題が存在します。(CVE-2005-2618)  リモートの攻撃者に悪用された場合、標的ユーザの権限で任意のコードを実行される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM Notes",
+          "cpe": {
+            "text": "cpe:/a:ibm:notes",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.5 およびそれ以前",
+            "6.5.4 およびそれ以前",
+            "7.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IBM Lotus セキュリティー情報",
+          "vulinfoid": "729083",
+          "url": "http://www-06.ibm.com/jp/domino04/lotus/support/faqs/faqs.nsf/all/729083"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1229918",
+          "url": "http://www-1.ibm.com/support/docview.wss?rs=475&amp;uid=swg21229918"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-2619",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2619"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-2619",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-2619"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA16280",
+          "url": "http://secunia.com/advisories/16280/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#884076",
+          "url": "http://www.kb.cert.org/vuls/id/884076"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-02-10T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "vulinfoid": "JVNDB-2020-009258",
+  "vulinfodata": {
+    "title": "Chocolatey Boxstarter に DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Chocolatey が提供する Boxstarter には、DLL 読み込みに関する脆弱性が存在します。  DLL ファイルの検索パスが適切に制御されていない (CWE-427) Boxstarter は Chocolatey を利用した Windows システムの設定管理ツールです。Boxstarter はインストール時に C:\\ProgramData\\Boxstarter フォルダに適切な ACL が設定されません。そのため、管理者権限を持たない Windows ユーザによって当該フォルダに悪意のある DLL ファイルを配置され、また、当該フォルダはシステム環境変数 PATHに追加されるため配置された悪意のあるファイルを読み込み、SYSTEM 権限で任意のコードを実行してしまう可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Chocolatey Software Inc",
+          "productname": "Boxstarter",
+          "cpe": {
+            "text": "cpe:/a:chocolatey:boxstarter",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 2.12.0 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "特別に細工された DLL ファイルを特定のパスに配置されることにより、当該製品がインストールされている Windows システムにおいて、SYSTEM 権限で任意のコードを実行される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性を修正した version 2.13.0 がリリースされています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Github",
+          "vulinfoid": "Boxstarter folder allows write access for standard users",
+          "url": "https://github.com/chocolatey/boxstarter/security/advisories/GHSA-rpgx-h675-r3jf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-15264",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15264"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90267651",
+          "url": "https://jvn.jp/vu/JVNVU90267651/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#208577",
+          "url": "https://kb.cert.org/vuls/id/208577"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Hijack Execution Flow: DLL Search Order Hijacking",
+          "url": "https://attack.mitre.org/techniques/T1574/001/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-427",
+          "url": "https://cwe.mitre.org/data/definitions/427.html",
+          "title": "制御されていない検索パスの要素"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-10-27T10:28:37+09:00",
+          "description": "[2020年10月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-10-27T10:28:37+09:00",
+    "datelastupdated": "2020-10-27T10:28:37+09:00",
+    "datepublic": "2020-10-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "vulinfoid": "JVNDB-2018-002523",
+  "vulinfodata": {
+    "title": "CENTUM と Exaopc にアクセス制限不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "横河電機株式会社が提供する CENTUM と Exaopc には、アクセス制限不備 (<a href=\"https://cwe.mitre.org/data/definitions/264.html\"target=\"blank\">CWE-264</a>) の脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "横河電機株式会社",
+          "productname": "B/M9000 CS",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:b%2fm9000cs_firmware",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "B/M9000 VP",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:b%2fm9000_vp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R8.01.01 およびそれ以前"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 1000",
+          "cpe": {
+            "text": "cpe:/o:yokogawa:centum_cs_1000_firmware",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 3000 ファームウェア",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_cs_3000_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R3.09.50 およびそれ以前",
+            "Small R3.09.50 およびそれ以前"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP",
+          "cpe": {
+            "text": "cpe:/a:yokogawa:centum_vp_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Basic R6.03.10 およびそれ以前",
+            "R6.03.10 およびそれ以前",
+            "Small R6.03.10 およびそれ以前"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "Exaopc",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:exaopc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R3.75.00 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.7",
+          "vector": "AV:L/AC:H/Au:S/C:P/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:L/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品にログイン可能な攻撃者によって、アラームの偽造およびアラーム表示妨害を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[マイグレーションを行う] CENTUM CS 1000, CENTUM CS 3000, CENTUM CS 3000 Small は保守期間終了製品のため、対策パッチは提供されず、CENTUM VP へのマイグレーションを行う必要があります。  [アップデートする] CENTUM CS 1000, CENTUM CS 3000, CENTUM CS 3000 Small 以外の本脆弱性対象製品のユーザの方は、開発者が提供する情報をもとに最新版へアップデートしてください。  なお開発者によると、B/M9000 CS および B/M9000 VP の製品自体は本脆弱性の影響を受けませんが、一緒にインストールされる CENTUM CS 3000, CENTUM CS 1000, CENTUM VP に脆弱性が存在するため、確認が必要とのことです。  詳しくは、開発者が提供する<a href=\"https://web-material3.yokogawa.com/YSAR-18-0001-J.jp.pdf\"target=\"blank\">情報</a>をご覧ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "横河電機株式会社",
+          "vulinfoid": "YSAR-18-0001: CENTUM と Exaopc にアラームの偽造と妨害の脆弱性",
+          "url": "https://web-material3.yokogawa.com/YSAR-18-0001-J.jp.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-8838",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8838"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-18-102-01",
+          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-18-102-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98102375",
+          "url": "http://jvn.jp/cert/JVNVU98102375"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-8838",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8838"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-04-17T10:39:39+09:00",
+          "description": "[2018年04月17日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2018-08-22T17:31:19+09:00",
+          "description": "[2018年08月22日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-8838) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-04-17T10:39:39+09:00",
+    "datelastupdated": "2018-08-22T17:31:43+09:00",
+    "datepublic": "2018-04-16T00:00:00+09:00"
+  }
+}

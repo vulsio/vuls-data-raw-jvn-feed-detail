@@ -1,0 +1,94 @@
+{
+  "vulinfoid": "JVNDB-2022-002780",
+  "vulinfodata": {
+    "title": "シャープ製デジタル複合機におけるコマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "シャープ株式会社が提供する複数のデジタル複合機には、コマンドインジェクションの脆弱性（CWE-77、CVE-2022-45796）が存在します。  本件の脆弱性は web アプリケーションコンポーネントに存在しますが、影響を受ける OS 部分を web アプリケーションコンポーネントの外部として扱い、S:C と評価しています。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "シャープ株式会社",
+          "productname": "(複数の製品)",
+          "cpe": {
+            "text": "cpe:/a:sharp:multiple_product",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性が悪用された場合、複合機のファームウェア上で任意のコマンドが実行される可能性があります。  開発者によると、本脆弱性を使用した攻撃成立には、次の条件が必須とのことです。  　* 遠隔の第三者が対象の複合機にネットワーク経由で接続可能であること 　* 遠隔の第三者が対象の複合機の管理者パスワードを知っていること  詳しくは、<a href=\"https://jp.sharp/business/print/information/info_security_2022-11.html\"target=\"blank\">開発者が提供する情報</a>をご確認ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 ファームウェアアップデートの入手や適用の詳細に関しては、開発者の提供する<a href=\"https://jp.sharp/business/print/contact/index-support.html\"target=\"blank\">「お客様ご相談窓口」</a>にお問合せください。  [ワークアラウンドを実施する] ファームウェアのアップデートが適用されるまでの間、次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 複合機をインターネットに直接接続せず、ファイアウォールやルーター等で保護されたネットワーク内で使用する 　* 複合機の管理者パスワードを工場出荷時の初期値から変更し、適切に管理する  回避策の詳細については、開発者が提供する次の情報をご確認ください。 <a href=\"https://jp.sharp/business/print/solution/security/state1.html#setupGuide\"target=\"blank\">「シャープ デジタル複合機 インターネットからの不正アクセス防止のための対策手順書」</a> "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "シャープ株式会社",
+          "vulinfoid": "弊社複合機におけるセキュリティ脆弱性について",
+          "url": "https://jp.sharp/business/print/information/info_security_2022-11.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-45796",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-45796"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96195138",
+          "url": "http://jvn.jp/vu/JVNVU96195138/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZA-2022-01(SHARP Multifunction Printer - Command Injection)",
+          "url": "https://zuso.ai/Advisory/ZA-2022-01.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-77",
+          "url": "https://cwe.mitre.org/data/definitions/77.html",
+          "title": "コマンドインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-12-16T12:21:41+09:00",
+          "description": "[2022年12月16日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-12-19T16:01:54+09:00",
+          "description": "[2022年12月19日]\\n  参考情報：関連文書 (ZA-2022-01(SHARP Multifunction Printer - Command Injection) ) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-12-16T13:43:07+09:00",
+    "datelastupdated": "2022-12-19T16:07:19+09:00",
+    "datepublic": "2022-12-15T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2015-003859",
+  "vulinfodata": {
+    "title": "Total Commander 用プラグイン FileInfo にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Total Commander 用プラグイン FileInfo には、サービス運用妨害 (DoS) の脆弱性が存在します。  Total Commander 用のプラグインである FileInfo には、細工されたファイルの処理により、範囲外 (out-of-bounds) の読み込みが発生する脆弱性 (CWE-125) が存在します。攻撃者はこの脆弱性を使用し、Total Commander を停止させることが可能です。  CWE-125: Out-of-bounds Read https://cwe.mitre.org/data/definitions/125.html  この問題は strncmp 関数の不適切な使用に起因しており、少なくとも 2種類のファイルの処理で確認されています。  　* Archive Member Header の 'Size' フィールド、もしくは 1st Linker Member の \"Number Of Symbols\" フィールドに過大な値を指定した COFF 形式ファイル (.lib)  　* LE Header の \"Resource Table Count\" フィールド、もしくは \"Resource Table Entry\" のオフセット 0x8 に位置する \"Object\" フィールドに過大な値を指定した Linear Executable ファイル"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "TOTALCMD.NET",
+          "productname": "FileInfo",
+          "cpe": {
+            "text": "cpe:/a:fransois_gannier:fileinfo_plugin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.21 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者によって、Total Commander を停止させられる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cisco Blogs",
+          "vulinfoid": "TALOS-2015-024/CVE-2015-2869",
+          "url": "http://blogs.cisco.com/security/talos/fileinfo-plugin-dos"
+        },
+        {
+          "type": "vendor",
+          "name": "TOTALCMD.NET",
+          "vulinfoid": "FileInfo 2.22 - Total Commander ",
+          "url": "http://totalcmd.net/plugring/fileinfo.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2869",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2869"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91359631",
+          "url": "http://jvn.jp/vu/JVNVU91359631/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2869",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2869"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#813631",
+          "url": "https://www.kb.cert.org/vuls/id/813631"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-23T10:21:23+09:00",
+    "datelastupdated": "2015-07-23T10:21:23+09:00",
+    "datepublic": "2015-07-20T00:00:00+09:00"
+  }
+}

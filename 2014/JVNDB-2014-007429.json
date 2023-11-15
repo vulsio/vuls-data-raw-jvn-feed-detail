@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-007429",
+  "vulinfodata": {
+    "title": "Facebook HipHop Virtual Machine の hphp/runtime/ext/ext_hash.cpp の HashContext クラスにおける重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Facebook HipHop Virtual Machine (HHVM) の hphp/runtime/ext/ext_hash.cpp の HashContext クラスは、特定の key 文字列が、末尾に '\\0' を使用することを誤って予測するため、重要な情報を取得される脆弱性、および暗号保護メカニズムを破られる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Facebook",
+          "productname": "HipHop Virtual Machine (HHVM)",
+          "cpe": {
+            "text": "cpe:/a:facebook:hiphop_virtual_machine",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、文字列の末尾を超えた読み込みアクセスを利用されることで、重要な情報を取得される、および、内部に '\\0' の文字を含む文字列の切り捨てを利用されることで、暗号保護メカニズムを破られる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Facebook",
+          "vulinfoid": "HHVM 3.3.0",
+          "url": "http://hhvm.com/blog/6239/hhvm-3-3-0"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix potential security leak in HashContext",
+          "url": "https://github.com/facebook/hhvm/commit/7135ec229882370a00411aa50030eada6034cc1b"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-6229",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6229"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-6229",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6229"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-06T13:50:03+09:00",
+    "datelastupdated": "2015-01-06T13:50:03+09:00",
+    "datepublic": "2014-09-19T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2017-000191",
+  "vulinfodata": {
+    "title": "Qua station接続ツール (Windows版) のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "ＫＤＤＩ株式会社が提供する Qua station は、4G LTE 搭載のフォトストレージです。Qua station接続ツールは、Qua station に保存されているデータを PC から閲覧したり、PC にデータを保存したりする際に使用します。Qua station接続ツール (Windows版) のインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "KDDI",
+          "productname": "Qua station接続ツール",
+          "cpe": {
+            "text": "cpe:/h:kddi:qua_station",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(Windows版) バージョン 1.00.03"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する、最新のインストーラを使用してください。 開発者によると、2017年6月22日 16:00 以降に開発者のホームページに掲載された Qua station接続ツール (Windows版) のインストーラは、本脆弱性の影響を受けないとのことです。 なお、本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザは Qua station接続ツール (Windows版) をアップデートする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ＫＤＤＩ株式会社",
+          "vulinfoid": "Qua station",
+          "url": "https://www.au.com/mobile/product/4glte-photostorage/quastation/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2289",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2289"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#81659403",
+          "url": "https://jvn.jp/jp/JVN81659403/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2289",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2289"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年08月08日]\\n  掲載\\n[2018年02月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2289) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-08-08T14:12:53+09:00",
+    "datelastupdated": "2018-02-14T12:13:20+09:00",
+    "datepublic": "2017-08-08T00:00:00+09:00"
+  }
+}

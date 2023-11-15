@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2006-000551",
+  "vulinfodata": {
+    "title": "Cisco IOS の VTP バージョンフィールドの処理におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Cisco IOS には、VLAN トランクプロトコル (VTP) の実装に以下の複数のセキュリティ上の問題が存在します。  1) VTP パケットに含まれる VTP バージョンフィールドの処理に不備が存在するため、不適切な値が設定されている場合に処理がループ状態に陥り、デバイスがリセットされてしまう問題が存在します。(CVE-2006-4774)  リモートの攻撃者に悪用された場合、デバイスがサービス不能状態に陥る可能性があります。  2) 設定リビジョン番号が負の整数として処理されてしまう不備が存在するため、以後の VLAN 設定情報の変更が適切に反映されない問題が存在します。(CVE-2006-4775)  リモートの攻撃者に悪用された場合、VLAN 設定情報の変更が妨害される可能性があります。  3) VLAN 名の長さに対するチェックに不備が存在するため、100 文字より長い名前を処理した場合にヒープオーバーフローが発生する問題が存在します。(CVE-2006-4776)  リモートの攻撃者に悪用された場合、デバイスがサービス不能状態に陥る、あるいは潜在的に任意のコードが実行される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "シスコシステムズ",
+          "productname": "Cisco IOS",
+          "cpe": {
+            "text": "cpe:/o:cisco:ios",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.1 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cisco Security Advisory",
+          "vulinfoid": "cisco-sr-20060913-vtp",
+          "url": "http://www.cisco.com/warp/public/707/cisco-sr-20060913-vtp.shtml"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-4774",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4774"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2006-3600",
+          "url": "http://www.frsirt.com/english/advisories/2006/3600"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-4774",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-4774"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "19998",
+          "url": "http://www.securityfocus.com/bid/19998"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#542108",
+          "url": "http://www.kb.cert.org/vuls/id/542108"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#175148",
+          "url": "http://www.kb.cert.org/vuls/id/175148"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#821420",
+          "url": "http://www.kb.cert.org/vuls/id/821420"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-09-13T00:00:00+09:00"
+  }
+}

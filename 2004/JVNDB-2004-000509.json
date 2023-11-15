@@ -1,0 +1,177 @@
+{
+  "vulinfoid": "JVNDB-2004-000509",
+  "vulinfodata": {
+    "title": "Microsoft Internet Explorer における任意の FTP コマンドを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  FTP KIOSlave は、KDE に同梱されている Web ブラウザ Konqueror のような FTP をサポートする KDE アプリケーションにおいて、データの入出力を行うために使用されています。  KDE に同梱される FTP KIOSlave および Microsoft Internet Explorer (IE) には、FTP URL に対するチェックに不備が存在するため、次の例のように URL エンコードされた改行コードと FTP コマンドを含む URL を処理した場合に、この FTP コマンドが意図せず実行されてしまう問題が存在します。  例) ftp://ftpuser:ftppass@server/directory%0a[任意のコマンド]%0a  リモートの攻撃者により悪用された場合、標的ユーザの意図しない任意の FTP コマンドが強制的に実行されてしまう可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Internet Explorer",
+          "cpe": {
+            "text": "cpe:/a:microsoft:internet_explorer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.01",
+            "6",
+            "6 for Windows Server 2003",
+            "6 for Windows Server 2003 for Itanium-based Systems",
+            "6 for Windows Server 2003 x64 Edition",
+            "6 for Windows XP",
+            "6 for Windows XP Professional x64 Edition"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS06-042",
+          "url": "http://www.microsoft.com/technet/security/bulletin/ms06-042.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:009",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-009.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:065",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-065.html"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS06-042",
+          "url": "http://www.microsoft.com/japan/technet/security/Bulletin/MS06-042.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:065",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-065J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:009",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-009J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-1166",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1166"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-1166",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1166"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13398",
+          "url": "http://secunia.com/advisories/13398/"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13696",
+          "url": "http://secunia.com/advisories/13696/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecuriTeam",
+          "vulinfoid": "6A00O0KC1O",
+          "url": "http://www.securiteam.com/unixfocus/6A00O0KC1O.html"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11826",
+          "url": "http://www.securityfocus.com/bid/11826"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11827",
+          "url": "http://www.securityfocus.com/bid/11827"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012443",
+          "url": "http://www.securitytracker.com/alerts/2004/Dec/1012443.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-12-01T00:00:00+09:00"
+  }
+}

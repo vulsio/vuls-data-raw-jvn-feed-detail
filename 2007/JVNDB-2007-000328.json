@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2007-000328",
+  "vulinfodata": {
+    "title": "ISC BIND の query_addsoa() 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC が提供する BIND には、query_addsoa() 関数の呼び出しに問題があり、細工された問い合わせに応答する際にサービス運用妨害 (DoS) 攻撃を受ける脆弱性が存在します。BIND の設定で recursion を有効にしている場合にこの脆弱性の影響を受けます。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.4.0",
+            "9.5.0a1, 9.5.0a2, 9.5.0a3 (BIND forum member のみに公開)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者により、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています (BIND 9.4.1, BIND 9.5.0a4 で修正済み)。ベンダ情報を参照して適切な対策を実施してください。  なお回避策として、「recursion の設定を無効にする( named.conf で ‘recursion no;’ を設定する)」ことが ISC により公開されています。特に上述のアップデートを適用できないユーザは、この回避策を適用することが推奨されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Internet Systems Consortium Security Advisory",
+          "vulinfoid": "BIND 9: query_addsoa DoS",
+          "url": "http://marc.info/?l=bind-announce&m=117798912418849&w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND Vulnerabilities",
+          "vulinfoid": "BIND 9: query_addsoa DoS",
+          "url": "http://www.isc.org/index.pl?/sw/bind/bind-security.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-2241",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2241"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2007-1593",
+          "url": "http://www.frsirt.com/english/advisories/2007/1593"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#718460",
+          "url": "http://jvn.jp/cert/JVNVU%23718460/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-2241",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2241"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA25070",
+          "url": "http://secunia.com/advisories/25070/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "23738",
+          "url": "http://www.securityfocus.com/bid/23738"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "31252",
+          "url": "http://www.securityfocus.com/bid/31252"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#718460",
+          "url": "http://www.kb.cert.org/vuls/id/718460"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年05月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-05-22T11:34:24+09:00",
+    "datelastupdated": "2007-05-22T11:34:24+09:00",
+    "datepublic": "2007-04-30T00:00:00+09:00"
+  }
+}

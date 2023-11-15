@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2008-006648",
+  "vulinfodata": {
+    "title": "Linux Kernel の mm/filemap.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の mm/filemap.c には、サービス運用妨害 (無限ループ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.25 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ゼロ長の iovec を誘発し、続けてゼロ以外の長さの iovec に対してページフォルトを誘発する writev システムコールを介して、サービス運用妨害 (無限ループ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.25",
+          "url": "http://mirror.linux.org.au/linux/kernel/v2.6/ChangeLog-2.6.25"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "fix writev regression: pan hanging unkillable and un-straceable",
+          "url": "https://github.com/torvalds/linux/commit/124d3b7041f9a0ca7c43a6293e1cae4576c32fd5"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "fix writev regression: pan hanging unkillable and un-straceable",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=124d3b7041f9a0ca7c43a6293e1cae4576c32fd5"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1302009",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1302009"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-7316",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7316"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-7316",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-7316"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-11T16:56:26+09:00",
+    "datelastupdated": "2016-05-11T16:56:26+09:00",
+    "datepublic": "2008-04-16T00:00:00+09:00"
+  }
+}

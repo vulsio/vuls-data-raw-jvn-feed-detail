@@ -1,0 +1,82 @@
+{
+  "vulinfoid": "JVNDB-2015-006053",
+  "vulinfodata": {
+    "title": "Dell System Detect (DSD) がルート証明書と秘密鍵 (DSDTestProvider) をインストールする問題",
+    "vulinfodescription": {
+      "overview": "Dell System Detect (DSD) は、信頼されたルート証明書として DSDTestProvider を Windows にインストールします。この証明書は秘密鍵を含んでいます。攻撃者は信頼された証明書を作成することで、ユーザになりすましたり、中間者 (man-in-the-middle) 攻撃により、通信内容を解読したりすることが可能となります。結果として、機密情報が漏えいする可能性があります。  Dell System Detect (DSD) は、Windows PC や Windows タブレット上で、ユーザ権限で Dell のサポートサイトと連携して動作するアプリケーションです。DSD は、いくつかの Dell 製の機器にプリインストールされています。DSD は、秘密鍵を含む DSDTestProvider を信頼されたルート証明書としてインストールします。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "デル",
+          "productname": "Dell System Detect",
+          "cpe": {
+            "text": "cpe:/a:dell:dell_system_detect",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.4",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者は DSDTestProvider CA で署名した証明書を作成することが可能です。DSDTestProvider CA を信頼するシステムはこの CA が署名したどのような証明書も信用します。攻撃者はウェブサイトや他のサービスになりすましたり、ソフトウェアやメールに署名したり、通信内容を解読したりすることが可能です。 一般的な攻撃シナリオとして、中間者 (man-in-the-middle) 攻撃によって HTTPS の通信内容を解読されたり、悪意のソフトウェアをインストールさせられたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[DSDTestProvider を無効にする] Windows の証明書 MMC スナップイン (certmgr.msc) を使用して、DSDTestProvider を信頼されていない証明書に移動してください。この証明書を無効にしておくと、DSD を再インストールした際に DSDTestProvider が再度信頼された証明書としてインストールされることを防ぐことが可能です。  移動 http://huagati.blogspot.com/2015/07/do-you-know-which-cas-can-issue-ssltls.html"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft",
+          "vulinfoid": "信頼されたルートおよび許可されない証明書を構成する",
+          "url": "https://technet.microsoft.com/ja-jp/library/dn265983.aspx"
+        },
+        {
+          "type": "advisory",
+          "name": "CERT/CC blog",
+          "vulinfoid": "The Risks of SSL Inspection",
+          "url": "http://insights.sei.cmu.edu/cert/2015/03/the-risks-of-ssl-inspection.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99824449",
+          "url": "http://jvn.jp/vu/JVNVU99824449/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#925497",
+          "url": "http://www.kb.cert.org/vuls/id/925497"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-30T17:50:12+09:00",
+    "datelastupdated": "2015-11-30T17:50:12+09:00",
+    "datepublic": "2015-11-24T00:00:00+09:00"
+  }
+}

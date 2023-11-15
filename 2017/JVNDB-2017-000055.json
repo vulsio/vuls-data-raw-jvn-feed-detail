@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2017-000055",
+  "vulinfodata": {
+    "title": "NETGEAR ProSAFE Plus Configuration Utility におけるアクセス制限不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "NETGEAR が提供する ProSAFE Plus Configuration Utility は、PC から NETGEAR 製スイッチ (アンマネージプラス・スイッチ、クリックスイッチ) の設定と管理をするための Windows 向けユーティリティです。当該製品では、操作画面からスイッチへのログインと設定などの操作を行うことが可能です。また、当該製品を起動すると特定のポートで SOAP リクエストを受けつける状態となり、受信した SOAP リクエストの内容に応じてスイッチに対する操作が行われます。当該製品が待ち受けるポートは PC の外からアクセス可能になっており、当該製品からログインしたスイッチに対して意図しない操作が行われる可能性があります (CWE-284)。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 諌山 貴由 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ネットギア",
+          "productname": "ProSAFE Plus Configuration Utility",
+          "cpe": {
+            "text": "cpe:/o:netgear:prosafe_plus_configuration_utility",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 2.3.29 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.9",
+          "vector": "AV:A/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.4",
+          "vector": "CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品を使用して管理対象のスイッチにログインした状態で、第三者からの SOAP リクエストを受信した場合、スイッチの設定が変更される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ネットギア",
+          "vulinfoid": "【重要】 NETGEAR ProSAFE Plus Configuration Utility におけるアクセス制限不備の",
+          "url": "https://www.netgear.jp/supportInfo/NewSupportList/183.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2137",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2137"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#08740778",
+          "url": "https://jvn.jp/jp/JVN08740778/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2137",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2137"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月18日]\\n  掲載\\n[2017年06月01日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2137) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-18T12:01:05+09:00",
+    "datelastupdated": "2017-06-01T15:22:48+09:00",
+    "datepublic": "2017-04-18T00:00:00+09:00"
+  }
+}

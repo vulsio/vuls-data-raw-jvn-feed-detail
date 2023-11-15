@@ -1,0 +1,136 @@
+{
+  "vulinfoid": "JVNDB-2020-007075",
+  "vulinfodata": {
+    "title": "Secomea 製 GateManager に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "GateManager は Secomea 社が提供する VPN サーバです。GateManager には次の複数の脆弱性が存在します。   *NULL バイト もしくは NUL 文字の不適切な無効化 (CWE-158) - CVE-2020-14500 *境界条件の判定 (CWE-193) - CVE-2020-14508  *ハードコードされた認証情報の使用 (CWE-798) - CVE-2020-14510 *強度が不十分なパスワードハッシュの使用 (CWE-916) - CVE-2020-14512 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Secomea",
+          "productname": "GateManager",
+          "cpe": {
+            "text": "cpe:/a:misc:secomea_gatemanager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.2c より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。   *遠隔の第三者が負の値を送信し、任意のデータを上書きされる - CVE-2020-14500 *遠隔の第三者が Off-by-one エラーを引き起こし、任意のコードを実行されたり、サービス妨害状態 (DoS) にされたりする - CVE-2020-14508 *Telnet の認証情報がハードコードされているため、管理者権限を持たない遠隔の第三者によって root 権限でコマンドを実行される - CVE-2020-14510 *弱いハッシュアルゴリズムを使用しているため、遠隔の第三者によってユーザのパスワードを参照される - CVE-2020-14512 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Secomea",
+          "vulinfoid": "Downloads: GateManager",
+          "url": "https://kb.secomea.com/helpdesk/KB/View/25546482-downloads-gatemanager"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14500",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14500"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14508",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14508"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14510",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14510"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-14512",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14512"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-210-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-210-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96640421",
+          "url": "https://jvn.jp/vu/JVNVU96640421/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-158",
+          "url": "https://cwe.mitre.org/data/definitions/158.html",
+          "title": "NULL バイトまたは NULL キャラクタの不適切な無害化"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-798",
+          "url": "https://cwe.mitre.org/data/definitions/798.html",
+          "title": "ハードコードされた認証情報の使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-193",
+          "url": "https://cwe.mitre.org/data/definitions/193.html",
+          "title": "境界条件の判定"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-916",
+          "url": "http://cwe.mitre.org/data/definitions/916.html",
+          "title": "強度が不十分なパスワードハッシュの使用"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-07-30T15:55:32+09:00",
+          "description": "[2020年07月30日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2020-08-26T14:41:25+09:00",
+          "description": "[2020年08月26日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-210-01) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-07-30T15:55:32+09:00",
+    "datelastupdated": "2020-08-26T15:37:32+09:00",
+    "datepublic": "2020-07-29T00:00:00+09:00"
+  }
+}

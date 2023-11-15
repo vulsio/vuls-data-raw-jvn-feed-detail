@@ -1,0 +1,125 @@
+{
+  "vulinfoid": "JVNDB-2016-000129",
+  "vulinfodata": {
+    "title": "Android OS が CRIME 攻撃による影響を受けてしまう問題",
+    "vulinfodescription": {
+      "overview": "Android OS での TLS プロトコルの実装には、平文の HTTP ヘッダを取得されてしまう脆弱性が存在します。  TLS プロトコルでは、サーバおよびクライアントにて通信する際にデータを圧縮する機能があります。この機能がサーバとクライアントで有効になっている場合、暗号化された元データの長さを適切に保護していない状態で圧縮したデータを暗号化をしてしまうため、平文の HTTP ヘッダを取得されてしまう脆弱性が存在します。Android OS の TLS プロトコル実装は、本脆弱性の影響を受けます。 なお、この脆弱性を悪用し、平文の HTTP ヘッダを取得する攻撃は、通称 CRIME 攻撃と呼ばれています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Android",
+          "cpe": {
+            "text": "cpe:/o:google:android",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "OS 4.1.2 およびそれ以前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.7",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) が可能な第三者が CRIME 攻撃を行うことにより、平文の HTTP ヘッダを取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者や販売元が提供する情報をもとにアップデートを適用してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Change I0efabd6b: Disable SSL compression",
+          "url": "https://android-review.googlesource.com/#/c/42360/"
+        },
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Change I8e060a82: Disable SSL compression",
+          "url": "https://android-review.googlesource.com/#/c/42361/"
+        },
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "SoftBankからの情報",
+          "url": "https://jvn.jp/jp/JVN65273415/397327/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": " ディズニー・モバイル・オン・ソフトバンクからの情報",
+          "url": "https://jvn.jp/jp/JVN65273415/995417/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "ワイモバイルからの情報",
+          "url": "https://jvn.jp/jp/JVN65273415/995293/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "KDDI株式会社からの情報",
+          "url": "https://jvn.jp/jp/JVN65273415/113349/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-4929",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-4929"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#65273415",
+          "url": "https://jvn.jp/jp/JVN65273415/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-22T14:10:40+09:00",
+    "datelastupdated": "2016-07-22T14:10:40+09:00",
+    "datepublic": "2016-07-22T00:00:00+09:00"
+  }
+}

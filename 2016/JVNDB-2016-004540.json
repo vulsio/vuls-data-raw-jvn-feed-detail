@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2016-004540",
+  "vulinfodata": {
+    "title": "Dentsply Sirona CDR DICOM に認証情報がハードコードされている問題",
+    "vulinfodescription": {
+      "overview": "Dentsply Sirona (旧名 Shick Technologies) が提供する CDR DICOM は、歯科記録の管理ソフトウェアです。CDR DICOM には複数の認証情報がハードコードされているため、管理者または root 権限でアクセスされる可能性があります。  認証情報がハードコードされている問題 (CWE-798) - CVE-2016-6530 CDR DICOM 5 およびそれ以前には、データベースの複数の認証情報がハードコードされているため、管理者または root 権限でアクセスされる可能性があります。  CWE-798: Use of Hard-coded Credentials http://cwe.mitre.org/data/definitions/798.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Sirona",
+          "productname": "CDR DICOM",
+          "cpe": {
+            "text": "cpe:/a:dentsply_sirona:cdr_dicom",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、管理者権限で当該製品のデータベースにアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[認証情報を更新する] 開発者は、この問題による影響を軽減するためにデータベースの認証情報を更新したいユーザに向けて次の通り述べています。詳細は、開発者にご確認ください。  　　CDR Dicom uses default passwords to optimize its installation and to expedite the setup and configuration of the software. A potential risk exists where unauthorized individuals with knowledge of the default passwords, and internal access to CDR's SQL database, could retrieve the patient information stored by CDR exams. 　　(CDR DICOM は、セットアップおよび設定にかかる時間を短縮し、最適化するためにデフォルトのパスワードを使用しています。CDR DICOM のデフォルトパスワードを知っており SQL データベースに内部アクセス可能な攻撃者によって、CDR DICOM に保存された患者情報を取得される潜在的なリスクが存在します。)  　　Mitigation of this issue can be achieved in several ways. Ensuring network access to patient information is protected from improper use is one approach. Another would be to replace the default passwords with user-selected ones. This can be accomplished during a custom installation of SQL Server or by modifying the default credentials after installation. 　　(この問題の影響を軽減するにはいくつかの方法があります。不正に使用されないよう患者情報へのアクセスを制限するのがひとつの方法です。もうひとつは、デフォルトのパスワードをユーザの指定するものに置き換える方法です。SQL サーバのカスタムインストール時、またはインストール後に認証情報を変更することが可能です。)  　　Additional Information about the default passwords used by CDR, the options for mitigation, and general recommendation on keeping patient data safe, can be found on the company website at the following link: https://www.schickbysirona.com/items.php?itemid=19189 　　(CDR DICOM のデフォルトパスワードや緩和策、患者情報の安全な保持に関する一般的な推奨事項については、https://www.schickbysirona.com/items.php?itemid=19189 に掲載しています。)"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sirona Dental",
+          "vulinfoid": "CDR DICOM 5",
+          "url": "https://www.schickbysirona.com/items.php?catid=714"
+        },
+        {
+          "type": "vendor",
+          "name": "Sirona Dental",
+          "vulinfoid": "CDR Dicom Security Issue",
+          "url": "https://www.schickbysirona.com/items.php?itemid=19189"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6530",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6530"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94423160",
+          "url": "http://jvn.jp/vu/JVNVU94423160/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6530",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6530"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#548399",
+          "url": "http://www.kb.cert.org/vuls/id/548399"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月08日]\\n  掲載\\n[2016年09月12日]\\n  ベンダ情報：Sirona (CDR Dicom Security Issue) を追加\\n  対策：内容を更新\\n[2016年11月10日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6530) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-08T14:00:36+09:00",
+    "datelastupdated": "2016-11-10T16:27:05+09:00",
+    "datepublic": "2016-09-06T00:00:00+09:00"
+  }
+}

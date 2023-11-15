@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2013-006736",
+  "vulinfodata": {
+    "title": "PHP における WSDL インジェクション攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の (1) php.ini-production および (2) php.ini-development の soap.wsdl_cache_dir のデフォルト設定は、/tmp ディレクトリを指定しているため、WSDL インジェクション攻撃を実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-74: Improper Neutralization of Special Elements in Output Used by a Downstream Component (インジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/74.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.7 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/tmp 配下に ext/soap/php_sdl.c の get_sdl 関数に使用される予測可能なファイル名のファイルを作成されることで、WSDL インジェクション攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "Top Page",
+          "url": "http://php.net/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1009103",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1009103"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6501",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6501"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6501",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6501"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月02日]\\n  掲載\\n[2015年08月31日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-02T16:57:09+09:00",
+    "datelastupdated": "2015-08-31T17:31:27+09:00",
+    "datepublic": "2013-09-17T00:00:00+09:00"
+  }
+}

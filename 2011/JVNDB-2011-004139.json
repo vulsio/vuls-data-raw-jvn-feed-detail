@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2011-004139",
+  "vulinfodata": {
+    "title": "Asterisk Open Source の ast_uri_encode 関数におけるスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Asterisk Open Source の main/utils.c の ast_uri_encode 関数には、スタックベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Digium",
+          "productname": "Asterisk",
+          "cpe": {
+            "text": "cpe:/a:digium:asterisk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Asterisk 1.4.38.1 未満、1.4.39.1、1.6.1.21、1.6.2.15.1、1.6.2.16.1、1.8.1.2、1.8.2、および Business Edition C.3.6.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、巧妙に細工された以下を含む caller ID データを介して、任意のコマンドを実行される可能性があります。 (1) SIP チャネルドライバ (2) URIENCODE diaplan 関数 (3) AGI diaplan 関数"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asterisk Project Security Advisory",
+          "vulinfoid": "AST-2011-001",
+          "url": "http://downloads.asterisk.org/pub/security/AST-2011-001.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0495",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0495"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0495",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0495"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:42:55+09:00",
+    "datelastupdated": "2012-07-10T14:35:56+09:00",
+    "datepublic": "2011-01-18T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2010-002766",
+  "vulinfodata": {
+    "title": "ProFTPD の sql_prepare_where 関数におけるヒープベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "ProFTPD の sql_prepare_where 関数 (contrib/mod_sql.c) は、mod_sql が有効な際、SQL クエリの構築時に代替タグを正しく処理しないため、ヒープベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ProFTPD Project",
+          "productname": "ProFTPD",
+          "cpe": {
+            "text": "cpe:/a:proftpd:proftpd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.3.3d 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、代替タグが入った巧妙に細工されたユーザネームを介して、サービス運用妨害 (DoS) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ProFTPD Bugzilla",
+          "vulinfoid": "3536",
+          "url": "http://bugs.proftpd.org/show_bug.cgi?id=3536"
+        },
+        {
+          "type": "vendor",
+          "name": "Proftpd Release Notes",
+          "vulinfoid": "RELEASE_NOTES-1.3.3d",
+          "url": "http://proftpd.org/docs/RELEASE_NOTES-1.3.3d"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2014-13",
+          "url": "http://www.turbolinux.co.jp/security/2014/TLSA-2014-13j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-4652",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4652"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-4652",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4652"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "44933",
+          "url": "http://www.securityfocus.com/bid/44933"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年03月02日]\\n  掲載\\n[2015年03月26日]\\n  ベンダ情報：ターボリナックス (TLSA-2014-13) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-03-02T16:37:18+09:00",
+    "datelastupdated": "2015-03-26T17:54:37+09:00",
+    "datepublic": "2010-11-18T00:00:00+09:00"
+  }
+}

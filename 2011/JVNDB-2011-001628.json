@@ -1,0 +1,310 @@
+{
+  "vulinfoid": "JVNDB-2011-001628",
+  "vulinfodata": {
+    "title": "Postfix SMTP サーバにおけるメモリ破損の脆弱性",
+    "vulinfodescription": {
+      "overview": "Postfix SMTP サーバには、メモリ破損の脆弱性が存在します。  Postfix SMTP サーバには、Cyrus SASL ライブラリを用いた認証処理に問題があり、メモリ破損の脆弱性が存在します。 この問題は PLAIN 認証または LOGIN 認証以外で Cyrus SASL ライブラリを使用した際に起こります。  なお、開発者から以下の脆弱性情報が公開されています。  \"The Postfix SMTP server fails to create a new Cyrus SASL server handle after authentication failure. This causes memory corruption when, for example, a client requests CRAM-MD5 authentication, fails to authenticate, and then invokes some other authentication mechanism except PLAIN (or ANONYMOUS if available). The likely outcome is that the Postfix SMTP server process crashes with a segmentation violation error (SIGSEGV, a.k.a. signal 11).\" ... \"The memory corruption is known to result in a program crash (SIGSEV). Remote code execution cannot be excluded. Such code would execute as the unprivileged \"postfix\" user. This user has no control over processes that run with non-postfix privileges including Postfix processes running as root; the impact may be reduced with configurations that enable the Postfix chroot feature or that use platform-dependent privilege-reducing features.\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Postfix Project",
+          "productname": "postfix",
+          "cpe": {
+            "text": "cpe:/a:postfix:postfix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "SMTP サーバ"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (x86) ",
+            "3 (x86-64) ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Appliance Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0  ",
+            "3.0 (x64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Client",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_client",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2008 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11  ",
+            "11 (x64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "4.8 (as) ",
+            "4.8 (es) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "5.0 (client) ",
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.z (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Long Life",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_long_life",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 5.6 server)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1.z  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者により、サービス運用妨害 (DoS) 攻撃を受けたり、任意のコードを実行されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、各バージョンに対応したアップデートを適用してください。  [ワークアラウンドを実施する] 対策版を適用するまでの間、以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 ・開発者が提供する情報をもとに Cyrus SASL の認証機能を無効にする"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "postfix-2.3.3-2.11.0.1.AXS3",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1447"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2222",
+          "url": "https://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2222"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2232",
+          "url": "https://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2232"
+        },
+        {
+          "type": "vendor",
+          "name": "Postfix",
+          "vulinfoid": "Please choose a Postfix Download Site",
+          "url": "http://www.postfix.org/download.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Postfix",
+          "vulinfoid": "Postfix releases 2.8.3, 2.7.4, 2.6.10 and 2.5.13",
+          "url": "http://www.postfix.org/announcements/postfix-2.8.3.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Postfix",
+          "vulinfoid": "Memory corruption in Postfix SMTP server Cyrus SASL support (CVE-2011-1720)",
+          "url": "http://www.postfix.org/CVE-2011-1720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0843",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0843.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2011-13",
+          "url": "http://www.turbolinux.co.jp/security/2011/TLSA-2011-13j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1720",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1720"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "67359",
+          "url": "http://xforce.iss.net/xforce/xfdb/67359"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#727230",
+          "url": "http://jvn.jp/cert/JVNVU727230/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1720",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1720"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "72259",
+          "url": "http://www.osvdb.org/72259"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA44500",
+          "url": "http://secunia.com/advisories/44500"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "47778",
+          "url": "http://www.securityfocus.com/bid/47778"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#727230",
+          "url": "http://www.kb.cert.org/vuls/id/727230"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年05月25日]\\n  掲載\\n[2011年06月03日]\\n  影響を受けるシステム：ターボリナックス (TLSA-2011-13) の情報を追加\\n  影響を受けるシステム：レッドハット (RHSA-2011:0843) の情報を追加\\n  ベンダ情報：ターボリナックス (TLSA-2011-13) を追加\\n  ベンダ情報：レッドハット (RHSA-2011:0843) を追加\\n[2011年06月14日]\\n  影響を受けるシステム：ミラクル・リナックス (2222) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (2222) を追加\\n[2011年07月19日]\\n  影響を受けるシステム：ミラクル・リナックス (postfix-2.3.3-2.11.0.1.AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (postfix-2.3.3-2.11.0.1.AXS3) を追加\\n[2011年08月10日]\\n  影響を受けるシステム：ミラクル・リナックス (2232) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (2232) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-05-25T12:14:10+09:00",
+    "datelastupdated": "2011-08-10T08:16:58+09:00",
+    "datepublic": "2011-05-12T00:00:00+09:00"
+  }
+}

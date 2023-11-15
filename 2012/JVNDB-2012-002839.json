@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2012-002839",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/proc/root.c におけるサービス運用妨害 (リファレンスリークおよびメモリ消費) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel に procfs を実装するために用いられている fs/proc/root.c は、CLONE_NEWPID クローンシステムコールと適切に対話処理しないため、サービス運用妨害 (リファレンスリークおよびメモリ消費) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、クライアントを特定するために PID 名前空間を用いてデーモンに対して多くの接続を生成されることで、サービス運用妨害 (リファレンスリークおよびメモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 757783",
+          "url": "https://bugzilla.novell.com/show_bug.cgi?id=757783"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "procfs: fix a vfsmount longterm reference leak",
+          "url": "https://github.com/torvalds/linux/commit/905ad269c55fc62bee3da29f7b1d1efeba8aa1e1"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Index of /pub/linux/kernel/v3.x",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=905ad269c55fc62bee3da29f7b1d1efeba8aa1e1"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "patch-3.2.bz2",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/patch-3.2.bz2"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 815188",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=815188"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2127",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2127"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2127",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2127"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-25T16:34:07+09:00",
+    "datelastupdated": "2012-06-25T16:34:07+09:00",
+    "datepublic": "2012-06-21T00:00:00+09:00"
+  }
+}

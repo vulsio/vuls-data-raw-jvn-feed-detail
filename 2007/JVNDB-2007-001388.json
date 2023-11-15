@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2007-001388",
+  "vulinfodata": {
+    "title": "Mac OS X および FreeBSD カーネルの ufs_lookup 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Mac OS X および FreeBSD カーネルの ufs_lookup 関数には、ufs_dirbad 関数に関連する処理に不備があるため、サービス運用妨害 (カーネルパニック) 状態となる、および他のファイルシステムが破損する脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3 6.1"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.4.8"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、破損したディレクトリエントリ (struct direct) を含む巧妙に細工された UNIX File System (UFS) DMG イメージをマウントされることで、サービス運用妨害 (カーネルパニック) 状態にされる、および他のファイルシステムを破損される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple",
+          "vulinfoid": "APPLE-SA-2007-03-13",
+          "url": "http://lists.apple.com/archives/security-announce/2007/Mar/msg00002.html"
+        },
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "MOAB advisories",
+          "url": "http://lists.freebsd.org/pipermail/freebsd-security/2007-January/004218.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-0267",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0267"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-0267",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-0267"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA07-072A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA07-072A.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T15:46:00+09:00",
+    "datelastupdated": "2012-06-26T15:46:00+09:00",
+    "datepublic": "2007-01-16T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "vulinfoid": "JVNDB-2005-000513",
+  "vulinfodata": {
+    "title": "OpenSSH の証明書転送処理における情報漏洩の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  OpenSSH 4.1p1 以前には以下の複数のセキュリティ上の問題が存在します。  1) SSH クライアントにおいて -D オプションにより動的ポート転送を実行する際に、ListenAddress が明示的に指定されていない場合、ポート中継の許可を指定する GatewayPorts が不適切に有効になってしまう問題が存在します。(CAN-2005-2797)  この問題を利用するリモートの攻撃者は、結果として SSH クライアントを実行する標的ホストの転送ポートに不正にアクセスする可能性があります。  尚、この問題は OpenSSH 4.0/4.1 のみが影響を受けることが報告されています。  2) SSH クライアントにおいて \"GSSAPIDelegateCredentials\" を有効に設定している場合、証明書転送処理の不備のため、GSSAPI 認証以外の方法でログインした場合にも SSH サーバに対して GSSAPI 証明書を転送してしまう問題が存在します。(CAN-2005-2798)  SSH クライアントが信頼のないホストに接続を行った場合、この問題を利用するリモートの攻撃者に GSSAPI 証明書が漏洩してしまう可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenBSD",
+          "productname": "OpenSSH",
+          "cpe": {
+            "text": "cpe:/a:openbsd:openssh",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1p1 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.00 ",
+            "11.04 ",
+            "11.11 ",
+            "11.23 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02090",
+          "url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00589050"
+        },
+        {
+          "type": "vendor",
+          "name": "HP セキュリティ報告",
+          "vulinfoid": "HPSBUX02090",
+          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX02090.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "AXSA-2005-95:1",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=216"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenBSD",
+          "vulinfoid": "Top Page",
+          "url": "http://www.openbsd.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "167444",
+          "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=167444"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:527",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-527.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-100",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-100.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:527",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-527J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-100",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-100j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-2798",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2798"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-1624",
+          "url": "http://www.frsirt.com/english/advisories/2005/1624"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-2798",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-2798"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA16686",
+          "url": "http://secunia.com/advisories/16686/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "14729",
+          "url": "http://www.securityfocus.com/bid/14729"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "14727",
+          "url": "http://www.securityfocus.com/bid/14727"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1014845",
+          "url": "http://securitytracker.com/alerts/2005/Sep/1014845.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-09-01T00:00:00+09:00"
+  }
+}

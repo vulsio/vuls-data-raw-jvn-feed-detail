@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2016-004573",
+  "vulinfodata": {
+    "title": "Ruby on Rails の Action Record におけるデータベースクエリの制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Ruby on Rails の Action Record は、Active Record コンポーネントと JSON の実装間のパラメータ処理の差異を適切に考慮しないため、データベースクエリの制限を回避され、NULL チェックを実行される、または WHERE 句の欠落を誘発される脆弱性が存在します。  本脆弱性は、CVE-2012-2660、CVE-2012-2694、および CVE-2013-0155 と関連する問題です。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御)、および CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/284.html http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Ruby on Rails project",
+          "productname": "Rails",
+          "cpe": {
+            "text": "cpe:/a:rubyonrails:ruby_on_rails",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.7.1 未満の 4.2.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたリクエストを介して、データベースクエリの制限を回避され、NULL チェックを実行される、または WHERE 句の欠落を誘発される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "[CVE-2016-6317] Unsafe Query Generation Risk in Active Record",
+          "url": "https://groups.google.com/forum/#!topic/ruby-security-ann/WccgKSKiPZA"
+        },
+        {
+          "type": "vendor",
+          "name": "Rails weblog",
+          "vulinfoid": "Rails 5.0.0.1, 4.2.7.1, and 3.2.22.3 have been released!",
+          "url": "http://weblog.rubyonrails.org/2016/8/11/Rails-5-0-0-1-4-2-7-2-and-3-2-22-3-have-been-released/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6317",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6317"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6317",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6317"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-09T18:00:47+09:00",
+    "datelastupdated": "2016-09-09T18:00:47+09:00",
+    "datepublic": "2016-08-11T00:00:00+09:00"
+  }
+}

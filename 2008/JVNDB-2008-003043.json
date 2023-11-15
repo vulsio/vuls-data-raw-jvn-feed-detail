@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2008-003043",
+  "vulinfodata": {
+    "title": "Linux kernel 内の arch/sparc/kernel/sys_sparc.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "(1) Linux kernel 内の arch/sparc/kernel/sys_sparc.c の sparc_mmap_check 関数および (2) Linux kernel 内の arch/sparc64/kernel/sys_sparc.c の sparc64_mmap_check 関数は、mmap MAP_FIXED ビットが設定されていない際、仮想アドレス範囲のチェックを省略するため、サービス運用妨害 (パニック) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 "
+          ]
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.36.5 未満の 2.4 および 2.6.25.3 未満の 2.6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、mmap 呼び出しを介して、サービス運用妨害 (パニック) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian",
+          "vulinfoid": "DSA-1588-1",
+          "url": "http://www.debian.org/security/2008/dsa-1588"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux",
+          "vulinfoid": "USN-625-1",
+          "url": "http://www.ubuntu.com/usn/usn-625-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-2137",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2137"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-2137",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-2137"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T16:02:29+09:00",
+    "datelastupdated": "2012-06-26T16:02:29+09:00",
+    "datepublic": "2008-05-27T00:00:00+09:00"
+  }
+}

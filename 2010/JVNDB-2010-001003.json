@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2010-001003",
+  "vulinfodata": {
+    "title": "Linear eMerge のマネージメントコンポーネントにおけるサービス運用妨害 (DoS)",
+    "vulinfodescription": {
+      "overview": "Linear eMerge のマネージメントコンポーネントには、認証されていない第三者によって工場出荷時の設定にリセットされる可能性があるという問題が存在します。  Linear eMerge は、IP 化された物理セキュリティ管理用のシステムです。Linear eMerge は、管理者がウェブブラウザ経由でシステム設定の変更を行うためのマネージメントコンポーネントと、建物のセキュリティ機器 (錠、カードリーダー、エレベーターのボタン、モーションセンサー等) などのノードコンポーネントから構成されています。  eMerge のマネージメントコンポーネントには、細工された URI を認証されていない第三者がアクセスすることにより、工場出荷時の設定にリセットされる可能性があるという問題が存在します。設定がリセットされるとマネージメントコンポーネントはネットワークから切り離されますが、ノードコンポーネントは個々に動作を続けます。  なお、マネージメントコンポーネントは、毎日自動で作成されているデータベースのバックアップから復旧させることが可能です。  VU#571629 によると、Linear eMerge は、Linear LLC によって配布されており、製造は S2 Security Corporation が行っているとされています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linear LLC",
+          "productname": "Linear eMerge",
+          "cpe": {
+            "text": "cpe:/a:linear:linear_emerge",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Software Version 2.5.x"
+          ]
+        },
+        {
+          "name": "S2 Security",
+          "productname": "Linear eMerge",
+          "cpe": {
+            "text": "cpe:/a:s2sys:linear_emerge_access_control_system",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Software Version 2.5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者が細工した特定の URI にアクセスすることにより、サービス運用妨害 (DoS) 攻撃を行う可能性があります。なお、DoS 攻撃を受けた場合でもノードコンポーネントは個々に動作を続けます。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] ベンダへ問い合わせの上、アップデートを行ってください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Linear LLC",
+          "vulinfoid": "Linear LLC",
+          "url": "http://www.linearcorp.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "Linear LLC",
+          "vulinfoid": "Contact Linear LLC",
+          "url": "http://www.linearcorp.com/contact_us.php"
+        },
+        {
+          "type": "vendor",
+          "name": "S2 Security",
+          "vulinfoid": "S2 Security",
+          "url": "http://www.s2sys.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-3734",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3734"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#571629",
+          "url": "http://jvn.jp/cert/JVNVU571629/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-3734",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3734"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#571629",
+          "url": "http://www.kb.cert.org/vuls/id/571629"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年02月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-02-03T14:35:09+09:00",
+    "datelastupdated": "2010-02-03T14:35:09+09:00",
+    "datepublic": "2010-01-05T00:00:00+09:00"
+  }
+}

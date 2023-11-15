@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2017-001743",
+  "vulinfodata": {
+    "title": "Vim における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Vim の u_read_undo メモリ割り当てサイト (memory allocation site) には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Vim",
+          "productname": "Vim",
+          "cpe": {
+            "text": "cpe:/a:vim:vim",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "patch 8.0.0377 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "破損した undo ファイルを読み取られる際、ツリーの長さの値を適切に検証しない場合、バッファオーバーフローを引き起こされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "patch 8.0.0378: possible overflow when reading corrupted undo file",
+          "url": "https://github.com/vim/vim/commit/0c8485f0e4931463c0f7986e1ea84a7d79f10c75"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "Integer overflow in src/undo.c:1405",
+          "url": "https://groups.google.com/forum/#%21topic/vim_dev/QPZc0CY9j3Y"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "Patch 8.0.0377",
+          "url": "https://groups.google.com/forum/#%21topic/vim_dev/LAgsTcdSfNA"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-6349",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6349"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-6349",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-6349"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-190",
+          "url": "https://cwe.mitre.org/data/definitions/190.html",
+          "title": "整数オーバーフローまたはラップアラウンド"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-16T16:52:22+09:00",
+    "datelastupdated": "2017-03-16T16:52:22+09:00",
+    "datepublic": "2017-02-27T00:00:00+09:00"
+  }
+}

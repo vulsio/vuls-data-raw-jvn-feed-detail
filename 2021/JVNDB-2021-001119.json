@@ -1,0 +1,220 @@
+{
+  "vulinfoid": "JVNDB-2021-001119",
+  "vulinfodata": {
+    "title": "複数の Rockwell Automation Logix コントローラ製品に認証情報の不十分な保護の脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の Rockwell Automation Logix コントローラ製品には認証情報の不十分な保護の脆弱性が存在します。  Rockwell Automation 社が提供する Studio 5000 Logix Designer には認証情報の不十分な保護により認証メカニズムをバイパスできる脆弱性 (CWE-522) が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Rockwell Automation",
+          "productname": "Compact GuardLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:compact_guardlogix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5370",
+            "5380"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "CompactLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:compactlogix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1768",
+            "1769",
+            "5370",
+            "5380",
+            "5480"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "ControlLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:controllogix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5550",
+            "5560",
+            "5570",
+            "5580"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "DriveLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:drivelogix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1794-L34",
+            "5560",
+            "5730"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "FactoryTalk Security",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:factorytalk_security",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(FactoryTalk Services Platform の一部) v2.10 およびそれ以降"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "GuardLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:guardlogix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5570",
+            "5580"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "RSLogix 5000",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:rslogix_5000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 16 から 20 まで"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "SoftLogix",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:softlogix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5800"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "Studio 5000 Logix Designer",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:studio_5000_logix_designer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 21 およびそれ以降"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "認証されていない遠隔の第三者によって、認証メカニズムをバイパスして Logix コントローラに接続されたり、許可されていないサードパーティー製ツールを利用して Logix コントローラの構成やアプリケーションコードを変更されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 本脆弱性を修正するパッチは提供されません。 Rockwell Automation 社によると、製品個別の回避策を適用することで、本脆弱性の影響を軽減することが可能とのことです。 また同社はセキュリティガイドラインに沿った一般的な対策をあわせて、適用することを推奨しています。  共通 　　詳細はRockwell Automation 社が提供する <a href=\"https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/secure-rm001_-en-p.pdf\" target=\"_blank\">Rockwell Automation’s System Security Design Guidelines</a> などを参照してください。 　* すべてのコントロールデバイスやシステムのネットワークへの接続を最小限に抑え、インターネットからアクセスできないようにする 　* コントロールシステムネットワークとデバイスをファイアウォールで防御し、業務用ネットワークから分離する 　* 44818/TCP ポートへの外部からのアクセスを制限、もしくはブロックする  　　* Rockwell Automation 製品が使用する TCP/UDP ポートについては、<a href=\"https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F898270\" target=\"_blank\">BF7490</a> (要ログイン) を参照してください 　* リモートアクセスが必要な場合は、仮想プライベートネットワーク (VPN) を使用する  ControlLogix 5580 v32 およびそれ以降  　* コントローラのモードスイッチを Run に設定する。 　* Run に設定できない場合、開発者は次のワークアラウンドを推奨しています。 　　　* フロントポートを介して Logix Designer 接続用の CIP Security を適用する。 　　　* フロントポートを利用しない場合は 1756-EN4TR ControlLogix Ethernet/IP Module を使用して CIP Security を適用する。   ControlLogix 5580 v31  　* コントローラのモードスイッチを Run に設定する。 　* Run に設定できない場合、開発者は次のワークアラウンドを推奨しています。 　　　* v32 以降にアップデートし v32 のワークアラウンドを適用する。 　　　* v32 以降にアップデートできない場合、1756-EN4TR Controll Logix Ethernet/IP Module を使用して CIP Security を適用する。   ControlLogix 5570 v31 およびそれ以降  　* コントローラのモードスイッチを Run に設定する。 　* Run に設定できない場合、開発者は次のワークアラウンドを推奨しています。 　　　* 1756-EN4TR Controll Logix Ethernet/IP Module を使用して CIP Security を適用する。   ControlLogix 5580 v28-v30、ControlLogix 5570 v18 およびそれ以降、ControlLogix 5560 v16 およびそれ以降、ControlLogix 5550 v16、GuardLogix 5580 v31 およびそれ以降、GuardLogix 5570 v20 およびそれ以降、GuardLogix 5560 v16 およびそれ以降, 1768 CompactLogix v16 およびそれ以降、1769 CompactLogix v16 およびそれ以降、CompactLogix 5370 v20 およびそれ以降、CompactLogix 5380 v28 およびそれ以降、CompactLogix 5480 v32 およびそれ以降、Compact GuardLogix 5370 v28 およびそれ以降、Compact GuardLogix 5380 v31 およびそれ以降、FlexLogix 1794-L34 v16、DriveLogix 5370 v16 およびそれ以降  　* コントローラのモードスイッチを Run に設定する。   SoftLogix 5800  　* 緩和策は提供されていません。一般的な多層防御戦略については <a href=\"https://literature.rockwellautomation.com/idc/groups/literature/documents/td/enet-td001_-en-p.pdf\" target=\" blank\">Converged Plantwide Ethernet (CPwE) Design and Implementation Guide</a> を参照してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Rockwell Automation’s System Security Design Guidelines",
+          "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/secure-rm001_-en-p.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Converged Plantwide Ethernet (CPwE) Design and Implementation Guide",
+          "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/td/enet-td001_-en-p.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "CIP Security with Rockwell Automation Products",
+          "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/at/secure-at001_-en-p.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Security advisory (要ログイン)",
+          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1130301"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "BF7490 (要ログイン)",
+          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F898270"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22681",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22681"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-056-03",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-056-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95803527",
+          "url": "http://jvn.jp/cert/JVNVU95803527"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-522",
+          "url": "https://cwe.mitre.org/data/definitions/522.html",
+          "title": "認証情報の不十分な保護"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-03-01T17:55:30+09:00",
+          "description": "[2021年03月01日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-03-25T14:39:18+09:00",
+          "description": "[2021年03月25日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Rockwell Automation (BF7490 (要ログイン)) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-03-01T17:55:30+09:00",
+    "datelastupdated": "2021-03-25T16:34:20+09:00",
+    "datepublic": "2021-02-26T00:00:00+09:00"
+  }
+}

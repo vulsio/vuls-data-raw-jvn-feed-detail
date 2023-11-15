@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2016-007821",
+  "vulinfodata": {
+    "title": "Docker Engine における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Docker Engine には、競合状態により、権限を取得される脆弱性が存在します。  本脆弱性は、\"エントリー上の脆弱性\" と呼ばれています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Docker",
+          "productname": "Docker",
+          "cpe": {
+            "text": "cpe:/a:docker:docker",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.12.6 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "root 権限を持つローカルユーザにより、ptrace を使用されることで、起動されたプロセス、または他の名前空間からコンテナへ移動されたプロセスのファイル記述子にアクセスされ、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 1012568",
+          "url": "https://bugzilla.suse.com/show_bug.cgi?id=1012568#c6"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Set init processes as non-dumpable",
+          "url": "https://github.com/opencontainers/runc/commit/50a19c6ff828c58e5dab13830bd3dacde268afe5"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "v1.12.6",
+          "url": "https://github.com/docker/docker/releases/tag/v1.12.6"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Customer Portal",
+          "vulinfoid": "On-entry container attack - CVE-2016-9962",
+          "url": "https://access.redhat.com/ja/security/vulnerabilities/2861711"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9962",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9962"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9962",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9962"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-23T14:57:13+09:00",
+    "datelastupdated": "2017-03-23T14:57:13+09:00",
+    "datepublic": "2016-12-08T00:00:00+09:00"
+  }
+}

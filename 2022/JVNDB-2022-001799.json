@@ -1,0 +1,158 @@
+{
+  "vulinfoid": "JVNDB-2022-001799",
+  "vulinfodata": {
+    "title": "BIND における接続が無期限に CLOSE_WAIT ステータスのままにされる脆弱性",
+    "vulinfodescription": {
+      "overview": "BIND には、クライアントが接続を終了した後も、BIND への接続が無期限に CLOSE_WAIT ステータスのままにされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.16.11 から 9.16.26",
+            "9.16.11-S1 から 9.16.26-S1",
+            "9.17.0 から 9.18.0"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ESMPRO/ServerAgent",
+          "cpe": {
+            "text": "cpe:/a:nec:esmpro_serveragent",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "巧妙に細工された TCP ストリームを介して、クライアントが接続を終了した後も、BIND への接続が無期限に CLOSE_WAIT ステータスのままにされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2022-14e36aac0c",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/NYD7US4HZRFUGAJ66ZTHFBYVP5N3OQBY/"
+        },
+        {
+          "type": "vendor",
+          "name": "Internet Systems Consortium Security Advisory",
+          "vulinfoid": "CVE-2022-0396: DoS from specifically crafted TCP packets",
+          "url": "https://kb.isc.org/v1/docs/cve-2022-0396"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV22-009",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv22-009.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-0396",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-0396"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-258-05",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-258-05"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98927070",
+          "url": "http://jvn.jp/vu/JVNVU98927070/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99475301",
+          "url": "https://jvn.jp/vu/JVNVU99475301/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2022-0396",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0396"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-404",
+          "url": "https://cwe.mitre.org/data/definitions/404.html",
+          "title": "リソースの不適切なシャットダウンおよびリリース"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-08-09T13:32:54+09:00",
+          "description": "[2022年05月12日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-08-09T13:36:51+09:00",
+          "description": "[2022年08月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-009) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-09-15T13:44:23+09:00",
+          "description": "[2022年09月15日]\\n  参考情報：JVN (JVNVU#99475301) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2022-09-20T13:54:37+09:00",
+          "description": "[2022年09月20日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-258-05) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-05-12T17:54:17+09:00",
+    "datelastupdated": "2022-09-20T15:14:39+09:00",
+    "datepublic": "2022-03-16T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2014-008019",
+  "vulinfodata": {
+    "title": "HHVM の WddxPacket::recursiveAddVar 関数におけるクロスサイトスクリプティングの脆弱性",
+    "vulinfodescription": {
+      "overview": "HHVM (別名 HipHop Virtual Machine) の WddxPacket::recursiveAddVar 関数には、クロスサイトスクリプティングの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Facebook",
+          "productname": "HipHop Virtual Machine (HHVM)",
+          "cpe": {
+            "text": "cpe:/a:facebook:hiphop_virtual_machine",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された wddx_serialize_value 関数の文字列を介して、任意の Web スクリプトまたは HTML を挿入される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Facebook",
+          "vulinfoid": "HHVM 3.5.0",
+          "url": "http://hhvm.com/blog/7637/hhvm-3-5-0"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "wddx_serialize_value() does not escape \"&\"s #4283",
+          "url": "https://github.com/facebook/hhvm/issues/4283"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "HTMLEncode strings in wddx_serialize_value()",
+          "url": "https://github.com/facebook/hhvm/commit/324701c9fd31beb4f070f1b7ef78b115fbdfec34"
+        },
+        {
+          "type": "vendor",
+          "name": "Phabricator",
+          "vulinfoid": "T85851",
+          "url": "https://phabricator.wikimedia.org/T85851"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9714",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9714"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9714",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9714"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月15日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-15T16:36:24+09:00",
+    "datelastupdated": "2015-04-15T16:36:24+09:00",
+    "datepublic": "2014-11-21T00:00:00+09:00"
+  }
+}

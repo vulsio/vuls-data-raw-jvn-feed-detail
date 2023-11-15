@@ -1,0 +1,362 @@
+{
+  "vulinfoid": "JVNDB-2016-001616",
+  "vulinfodata": {
+    "title": "OpenSSL の crypto/bio/b_print.c の fmtstr 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の crypto/bio/b_print.c の fmtstr 関数は、文字列の長さを適切に計算しないため、サービス運用妨害 (オーバーフローおよび out-of-bounds read) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  本脆弱性は、CVE-2016-2842 とは異なる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1s 未満の 1.0.1",
+            "1.0.2g 未満の 1.0.2"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "MySQL",
+          "cpe": {
+            "text": "cpe:/a:oracle:mysql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.29 およびそれ以前",
+            "5.7.11 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE BladeSystem",
+          "cpe": {
+            "text": "cpe:/o:hp:bladesystem",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "c-Class Virtual Connect (VC) ファームウェア 4.30 から VC 4.45"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Insight Controlサーバー配備",
+          "cpe": {
+            "text": "cpe:/a:hp:insight_control_server_deployment",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "すべてのバージョン"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Oneview",
+          "cpe": {
+            "text": "cpe:/a:hp:oneview",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "for VMware vCenter 7.8.1 以前のリリース"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Systems Insight Manager",
+          "cpe": {
+            "text": "cpe:/a:hp:systems_insight_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(HP SIM) 7.5.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Virtual Connect",
+          "cpe": {
+            "text": "cpe:/h:hp:virtual_connect",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Flex-10 10Gb Enet Module",
+            "Flex-10/10D Module for c-Class BladeSystem",
+            "FlexFabric 10Gb/24-port Module for c-Class BladeSystem",
+            "FlexFabric-20/40 F8 Module for c-Class BladeSystem"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "System Management Homepage",
+          "cpe": {
+            "text": "cpe:/a:hp:system_management_homepage",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.5.5 より前のすべてのバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、過度に長い文字列を介して、サービス運用妨害 (オーバーフローおよび out-of-bounds read) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBGN03587",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05141441"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBHF03592",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05126404"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBGN03569",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBHF03594",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05135617"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03590",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05131085"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03575",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05086877"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03593",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05111017"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03600",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05150736"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03601",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05150800"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03611",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05150888"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03607",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05157667"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03612",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05158380"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL 1.0.2 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.2-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL 1.0.1 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.1-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Fix memory issues in BIO_*printf functions",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=578b956fe741bf8e84055547b1e83c28dd902c73"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "Fix memory issues in BIO_*printf functions (CVE-2016-0799)",
+          "url": "https://openssl.org/news/secadv/20160301.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - January 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:0996",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-0996.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:0722",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-0722.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "SA40168",
+          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40168"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "April 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-8",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-8j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-0799",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0799"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-054-03",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-054-03"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-0799",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0799"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月08日]\\n  掲載\\n[2016年03月17日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-8) を追加\\n[2016年05月31日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n  ベンダ情報：パルスセキュア (SA40168) を追加\\n[2016年06月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03601) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03590) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03593) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03569) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03607) を追加\\n[2016年08月29日]\\n  ベンダ情報：レッドハット (RHSA-2016:0722) を追加\\n  ベンダ情報：レッドハット (RHSA-2016:0996) を追加\\n[2016年10月26日]\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBHF03592) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03600) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBHF03594) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03612) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03611) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03575) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03587) を追加\\n[2016年11月14日]\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2021-02-26T16:54:17+09:00",
+          "description": "[2021年02月26日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-054-03) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-08T16:26:28+09:00",
+    "datelastupdated": "2021-02-26T17:21:01+09:00",
+    "datepublic": "2016-03-01T00:00:00+09:00"
+  }
+}

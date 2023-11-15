@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2014-000082",
+  "vulinfodata": {
+    "title": "FuelPHP において任意のコードが実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "FuelPHP は、ウェブアプリケーションを作成するためのフレームワークです。FuelPHP には、Request_Curl クラスの処理に問題があり、任意のコードが実行される脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: グリー株式会社 千田　雅明 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FuelPHP",
+          "productname": "FuelPHP",
+          "cpe": {
+            "text": "cpe:/a:fuelphp:fuelphp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1 から 1.7.1 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "細工されたデータを処理することで、サーバ上で任意のファイルを削除されたり、任意のコードを実行されたりするなどの可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[フレームワークを最新版に更新し、アプリケーションが Request_Curl クラスを使用している場合は対応する] 開発者が提供する情報をもとにフレームワークを最新版に更新してください。 更新後、アプリケーション内で Request_Curl クラスを使用しているか確認し、当該クラスを使用している場合は、下記について確認してください。    - cURL 呼び出しに対するレスポンスが信用できる場合     autofomatting を有効にすることが可能です。    - cURL 呼び出しに対するレスポンスが信用できない場合    リクエストを実行した直後にレスポンスを確認するコードを追加する必要があります。    確認後、auto formatting を有効にし、set_response() を呼び出し、レスポンスを正しい形式にしてください。  開発者は、auto formatting における注意事項を記載したドキュメンテーションを提供しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FuelPHP",
+          "vulinfoid": "Security Advisories - SEC-CORE-004: auto-format of Curl responses may lead to code execution",
+          "url": "http://fuelphp.com/security-advisories"
+        },
+        {
+          "type": "vendor",
+          "name": "FuelPHP",
+          "vulinfoid": "Request_Curl - Classes - FuelPHP Documentation",
+          "url": "http://fuelphp.com/dev-docs/classes/request/curl.html#/method_set_auto_format"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1999",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1999"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#94791545",
+          "url": "http://jvn.jp/jp/JVN94791545/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1999",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1999"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月18日]\\n  掲載\\n[2014年07月23日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-1999) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-18T12:08:57+09:00",
+    "datelastupdated": "2014-07-23T10:50:11+09:00",
+    "datepublic": "2014-07-18T00:00:00+09:00"
+  }
+}

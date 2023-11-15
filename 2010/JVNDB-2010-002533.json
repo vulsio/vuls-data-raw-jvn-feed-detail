@@ -1,0 +1,179 @@
+{
+  "vulinfoid": "JVNDB-2010-002533",
+  "vulinfodata": {
+    "title": "Microsoft Windows の RtlQueryRegistryValues() 関数におけるレジストリデータ検証不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft Windows の RtlQueryRegistryValues() 関数には、読み込んだレジストリデータを正しく検証しない脆弱性が存在します。  なお、本脆弱性を使用した攻撃コードが公開されています。  Microsoft Windows は、ユーザ定義の Unicode 文字 (外字) を使用するための end-user defined characters (EUDC) をサポートしています。Windows カーネル (win32k.sys) の graphics device interface (GDI) は、 EUDC レジストリキーに含まれるフォント情報を読み込みます。具体的には、GreEnableEudc() が RtlQueryRegistryValues() を使用して、レジストリキー HKCU\\EUDC\\(codepage)\\SystemDefaultEUDCFont の値を読み込みます。RtlQueryRegistryValues() は、REG_SZ (ストリング) の値を想定しており、レジストリキー SystemDefaultEUDCFont が指定するバッファに書き込みます。  デフォルト設定において、権限のないユーザが EUDC レジストリキーを変更することが可能です。また、RtlQueryRegistryValues() は SystemDefaultEUDCFont から読み込まれたデータの検証を行いません。  SystemDefaultEUDCFont のデータを変更することで、攻撃者はカーネルメモリを上書きすることが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 7",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_7",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(x32) ",
+            "(x64) "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2003",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2003",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(itanium) ",
+            "(x64) "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2008",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2008",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(itanium) ",
+            "(x64) ",
+            "(x86) ",
+            "r2(itanium) ",
+            "r2(x64) "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Vista",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_vista",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(x64) "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows XP",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_xp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(x64) ",
+            "sp3 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "権限のないユーザによって SYSTEM の権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 2011年2月9日にセキュリティ更新プログラムが公開されました。マイクロソフトが提供する情報 (MS11-011) をもとにアップデートしてください。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。      * EUDC レジストリキーへのアクセスを制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Corporation",
+          "vulinfoid": "EUDC",
+          "url": "http://msdn.microsoft.com/ja-jp/library/dd317836%28v=VS.85%29.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS11-011",
+          "url": "http://www.microsoft.com/technet/security/bulletin/ms11-011.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS11-011",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/ms11-011.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "絵でみるセキュリティ情報",
+          "vulinfoid": "MS11-011e",
+          "url": "http://www.microsoft.com/japan/security/bulletins/ms11-011e.mspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-4398",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4398"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#529673",
+          "url": "http://jvn.jp/cert/JVNVU529673"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-4398",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4398"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA42356",
+          "url": "http://secunia.com/advisories/42356"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "45045",
+          "url": "http://www.securityfocus.com/bid/45045"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1025046",
+          "url": "http://www.securitytracker.com/id?1025046"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#529673",
+          "url": "http://www.kb.cert.org/vuls/id/529673"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2011-0324",
+          "url": "http://www.vupen.com/english/advisories/2011/0324"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2010-3058",
+          "url": "http://www.vupen.com/english/advisories/2010/3058"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年12月21日]\\n  掲載\\n[2011年03月17日]\\n  影響を受けるシステム：マイクロソフト (MS11-011) の情報を追加\\n  ベンダ情報：マイクロソフト (MS11-011) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-12-21T15:28:08+09:00",
+    "datelastupdated": "2011-03-17T17:48:31+09:00",
+    "datepublic": "2010-11-29T00:00:00+09:00"
+  }
+}

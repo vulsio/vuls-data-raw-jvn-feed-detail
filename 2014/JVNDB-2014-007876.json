@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2014-007876",
+  "vulinfodata": {
+    "title": "FreeType の CFF CharString インタプリタの cff/cf2intrp.c における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeType の CFF CharString インタプリタの cff/cf2intrp.c は、ヒントマスクが計算された後に追加のヒント処理に進むため、任意のコードを実行される、またはサービス運用妨害 (スタックベースのバッファオーバーフロー) 状態にされる脆弱性が存在します。  本脆弱性は、CVE-2014-2240 に対する修正が不十分だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeType Project",
+          "productname": "FreeType",
+          "cpe": {
+            "text": "cpe:/a:freetype:freetype",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された OpenType フォントを介して、任意のコードを実行される、またはサービス運用妨害 (スタックベースのバッファオーバーフロー) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "freetype",
+          "vulinfoid": "[cff] Fix Savannah bug #43661.",
+          "url": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=2cdc4562f873237f1c77d43540537c7a721d3fd8"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9659",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9659"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9659",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9659"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年02月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-02-17T09:47:52+09:00",
+    "datelastupdated": "2015-02-17T09:47:52+09:00",
+    "datepublic": "2014-12-04T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2013-005556",
+  "vulinfodata": {
+    "title": "Linux Kernel の KVM サブシステムの arch/x86/kvm/lapic.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の KVM サブシステムの arch/x86/kvm/lapic.c 内の recalculate_apic_map 関数には、サービス運用妨害 (ホスト OS クラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.12.5 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.2",
+          "vector": "AV:A/AC:M/Au:S/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、x2apic モードでの 巧妙に細工された ICR 書き込み操作を介して、サービス運用妨害 (ホスト OS クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KVM: x86: fix guest-initiated crash with x2apic (CVE-2013-6376)",
+          "url": "https://github.com/torvalds/linux/commit/17d68b763f09a9ce824ae23eb62c9efc57b69271"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "KVM: x86: fix guest-initiated crash with x2apic (CVE-2013-6376)",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=17d68b763f09a9ce824ae23eb62c9efc57b69271"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1042099",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1042099"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1033106",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1033106"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6376",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6376"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6376",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6376"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年12月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-12-17T19:10:04+09:00",
+    "datelastupdated": "2013-12-17T19:10:04+09:00",
+    "datepublic": "2013-12-12T00:00:00+09:00"
+  }
+}

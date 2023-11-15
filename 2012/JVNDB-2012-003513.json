@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2012-003513",
+  "vulinfodata": {
+    "title": "複数の Linux ディストリビューションで使用されている php5 パッケージにおける認証を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP 5.3.x 向けの Debian php_crypt_revamped.patch パッチを使用する php5 パッケージは、空の salt 文字列を適切に処理しないため、認証を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "php5 パッケージ",
+          "cpe": {
+            "text": "cpe:/a:canonical:php5",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3.2-1ubuntu4.17 未満 (Ubuntu 10.04 LTS)",
+            "5.3.5-1ubuntu7.10 未満 (Ubuntu 11.04)"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "php5 パッケージ",
+          "cpe": {
+            "text": "cpe:/a:debian:php5-common",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3.3-7+squeeze4 未満 (Debian GNU/Linux squeeze)",
+            "5.3.6-1 未満 (Debian)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、パスワードのハッシュ化に salt を使用している PHP の crypt 関数を用いているアプリケーションを悪用されることで、認証を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "php5 crypt() does not complete with emtpy salt",
+          "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=581170"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "PHP's bundled crypt implementation is used",
+          "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=572601%20%28introduced%20by%20this%20bug%29"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu",
+          "vulinfoid": "CVE-2012-2317",
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2012/CVE-2012-2317.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1481-1",
+          "url": "http://www.ubuntu.com/usn/USN-1481-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2317",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2317"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2317",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2317"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年08月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-08-09T16:55:14+09:00",
+    "datelastupdated": "2012-08-09T16:55:14+09:00",
+    "datepublic": "2012-08-07T00:00:00+09:00"
+  }
+}

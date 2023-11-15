@@ -1,0 +1,194 @@
+{
+  "vulinfoid": "JVNDB-2016-004543",
+  "vulinfodata": {
+    "title": "Eye of GNOME におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Eye of GNOME (別名 eog) には、glib 2.44.1 未満とともに使用される場合、サービス運用妨害 (境界外書き込みおよびクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-787: Out-of-bounds Write (境界外書き込み) と識別されています。 http://cwe.mitre.org/data/definitions/787.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "16.04 LTS"
+          ]
+        },
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "23",
+            "24"
+          ]
+        },
+        {
+          "name": "GNOME Project",
+          "productname": "Eye of GNOME",
+          "cpe": {
+            "text": "cpe:/a:gnome:eog",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.5",
+            "3.17.x",
+            "3.18.3 未満の 3.18.x",
+            "3.19.x",
+            "3.20.4 未満の 3.20.x"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.2"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、GMarkup に無効な UTF-8 を渡すことに関する問題によって、サービス運用妨害 (境界外書き込みおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2016-0f8779baa6",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/T6GFDHLNPUG7JHWM3QLXQNRA7NZGU2KI/"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2016-5abbc35b6a",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/JVINHHR6VJKXTYYMAYKN5GROKHVT4UKB/"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME",
+          "vulinfoid": "Version 3.16.5",
+          "url": "https://git.gnome.org/browse/eog/plain/NEWS?h=3.16.5"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME",
+          "vulinfoid": "Version 3.20.4",
+          "url": "https://git.gnome.org/browse/eog/plain/NEWS?h=3.20.4"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME",
+          "vulinfoid": "Version 3.18.3",
+          "url": "https://git.gnome.org/browse/eog/plain/NEWS?h=3.18.3"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME Bugzilla",
+          "vulinfoid": "Bug 770143",
+          "url": "https://bugzilla.gnome.org/show_bug.cgi?id=770143"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME GIT REPOSITORY",
+          "vulinfoid": "EogErrorMessageArea: Make sure error messages are valid UTF8",
+          "url": "https://git.gnome.org/browse/eog/commit/?id=e99a8c00f959652fe7c10e2fa5a3a7a5c25e6af4"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:2242",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-09/msg00021.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-3069-1",
+          "url": "http://www.ubuntu.com/usn/USN-3069-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6855",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6855"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6855",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6855"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-09T10:51:51+09:00",
+    "datelastupdated": "2016-09-09T10:51:51+09:00",
+    "datepublic": "2016-08-21T00:00:00+09:00"
+  }
+}

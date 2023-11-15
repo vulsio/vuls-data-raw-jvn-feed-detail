@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2013-001777",
+  "vulinfodata": {
+    "title": "Xen の oxenstored におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen の oxenstored は、読み取り操作の間、Xenstore リングの状態を適切に配慮しないため、サービス運用妨害 (デーモンクラッシュおよびホスト制御の停止、またはメモリ破損) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "-unstable",
+            "4.1.x",
+            "4.2.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:A/AC:M/Au:N/C:P/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、ゲストの管理アクセス権を利用されることで、サービス運用妨害 (デーモンクラッシュおよびホスト制御の停止、またはメモリ破損) 状態にされる、または重要な制御プレーン (control-plane) データを取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201309-24",
+          "url": "http://security.gentoo.org/glsa/glsa-201309-24.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen",
+          "vulinfoid": "tools/ocaml: oxenstored: Be more paranoid about ring reading",
+          "url": "http://xenbits.xen.org/gitweb/?p=xen.git;a=commitdiff;h=40f9c5e0a6d15b4ca1f6d4ed3a46f0871520eab5"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen",
+          "vulinfoid": "oxenstored: Enforce a maximum message size of 4096 bytes",
+          "url": "http://xenbits.xen.org/gitweb/?p=xen.git;a=commitdiff;h=61401264eb00fae4ee4efc8e9a5067449283207b"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-0215",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0215"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-0215",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0215"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月08日]\\n  掲載\\n[2013年11月05日]\\n  ベンダ情報：Gentoo Linux (GLSA 201309-24) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-08T19:31:21+09:00",
+    "datelastupdated": "2013-11-05T18:06:55+09:00",
+    "datepublic": "2013-03-07T00:00:00+09:00"
+  }
+}

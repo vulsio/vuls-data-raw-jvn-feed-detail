@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-002465",
+  "vulinfodata": {
+    "title": "Linux kernel の net/core/scm.c におけるアクセス制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の net/core/scm.c 内の scm_check_creds 関数は、UNIX ドメインソケットに関連付けられた PID 値を制御するための機能要件 (capability requirement) を適切に処理しないため、アクセス制限を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.8.6 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.9",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ユーザ名前空間は作成されているが PID 名前空間が作成されていない期間を利用されることで、アクセス制限を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してださい。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.8.6",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.8.6"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "scm: Require CAP_SYS_ADMIN over the current pidns to spoof pids.",
+          "url": "https://github.com/torvalds/linux/commit/92f28d973cce45ef5823209aab3138eb45d8b349"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=92f28d973cce45ef5823209aab3138eb45d8b349"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1958",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1958"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1958",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1958"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年04月26日]\\n  掲載\\n[2013年05月09日]\\n  CVSS による深刻度：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-04-26T16:14:35+09:00",
+    "datelastupdated": "2013-05-09T11:18:40+09:00",
+    "datepublic": "2013-04-05T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "vulinfoid": "JVNDB-2014-007219",
+  "vulinfodata": {
+    "title": "Mozilla Network Security Services におけるデータスマグリング攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Mozilla Network Security Services (NSS) の lib/util/quickder.c の definite_length_decoder 関数は、ASN.1 の長さの DER エンコーディングが適切に形成されているかを確認しないため、データスマグリング攻撃を実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-444: Inconsistent Interpretation of HTTP Requests (HTTP リクエストスマグリング) と識別されています。 http://cwe.mitre.org/data/definitions/444.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Network Security Services (NSS)",
+          "cpe": {
+            "text": "cpe:/a:mozilla:network_security_services",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.2.4 未満",
+            "3.17.3 未満の 3.17.x"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Communications Applications",
+          "cpe": {
+            "text": "cpe:/a:oracle:communications_applications",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Oracle Communications Messaging Server 7.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Fusion Middleware",
+          "cpe": {
+            "text": "cpe:/a:oracle:fusion_middleware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Oracle Traffic Director 11.1.1.7.0",
+            "の Oracle Traffic Director 11.1.1.9.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle GlassFish Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:glassfish_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.1"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle iPlanet Web Proxy Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:iplanet_web_proxy_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle iPlanet Web Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:iplanet_web_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1",
+            "7.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、エンコーディングに対して過度に長いバイトのシーケンスを使用されることで、データスマグリング攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Mozilla Bugzilla",
+          "vulinfoid": "Bug 1064670",
+          "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1064670"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Developer Network",
+          "vulinfoid": "NSS 3.17.3 release notes",
+          "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/NSS_3.17.3_release_notes"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015verbose-2367954.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "July 2015 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "October 2015 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/october_2015_critical_patch_update"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1569",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1569"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1569",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1569"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "BERserk Vulnerability",
+          "url": "http://www.intelsecurity.com/resources/wp-berserk-analysis-part-1.pdf"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月17日]\\n  掲載\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加\\n[2015年10月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2015 Critical Patch Update Released) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-17T12:21:20+09:00",
+    "datelastupdated": "2015-10-22T14:20:57+09:00",
+    "datepublic": "2014-12-01T00:00:00+09:00"
+  }
+}

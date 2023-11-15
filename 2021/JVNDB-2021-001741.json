@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2021-001741",
+  "vulinfodata": {
+    "title": "ISC DHCP におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC (Internet Systems Consortium) が提供する ISC DHCP には、バッファオーバーフローの脆弱性が存在します。  ISC DHCP には、ネットワークパケット内にカプセル化されたオプション情報の処理とディスクに格納された情報の処理の間の相違に起因する、バッファオーバーフローの脆弱性が存在します。 (CVE-2021-25217)"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "ISC DHCP",
+          "cpe": {
+            "text": "cpe:/a:isc:dhcp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1-ESV-R1 から 4.1-ESV-R16",
+            "4.4.0 から 4.4.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.4",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響はアーキテクチャ (32-bit/64-bit) やコンパイル時のコンパイルフラグによって異なりますが、不適切なリース情報を処理した際に次のような影響を受ける可能性があります。  　* DHCP クライアントプロセス (dhclient) がクラッシュし、ネットワーク接続に問題が発生する 　* DHCP サーバプロセス (dhcpd) が停止し、サービス提供ができなくなる 　* DHCP サーバプロセス (dhcpd) が管理するリースデータベースにて、不適切なリース情報とその直後のリース情報が削除される"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  開発者は、本脆弱性を修正した以下のパッチバージョンをリリースしています。  　* ISC DHCP 4.1-ESV-R16-P1 　* ISC DHCP 4.4.2-P1"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2021-25217: A buffer overrun in lease file parsing code can be used to exploit a common vulnerability shared by dhcpd and dhclient",
+          "url": "https://kb.isc.org/docs/cve-2021-25217"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "ISC DHCP におけるバッファオーバーフローの脆弱性",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv21-014.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-25217",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-25217"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-258-05",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-258-05"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95111565",
+          "url": "http://jvn.jp/cert/JVNVU95111565"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99475301",
+          "url": "https://jvn.jp/vu/JVNVU99475301/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-04T14:52:53+09:00",
+          "description": "[2021年06月04日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-08-10T14:24:19+09:00",
+          "description": "[2021年08月10日]\\n  ベンダ情報：日本電気 (ISC DHCP におけるバッファオーバーフローの脆弱性) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-09-15T13:40:53+09:00",
+          "description": "[2022年09月15日]\\n  参考情報：JVN (JVNVU#99475301) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2022-09-20T13:45:45+09:00",
+          "description": "[2022年09月20日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-258-05) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-04T14:53:25+09:00",
+    "datelastupdated": "2022-09-20T15:10:35+09:00",
+    "datepublic": "2021-05-28T00:00:00+09:00"
+  }
+}

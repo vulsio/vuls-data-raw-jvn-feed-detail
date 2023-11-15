@@ -1,0 +1,255 @@
+{
+  "vulinfoid": "JVNDB-2021-016456",
+  "vulinfodata": {
+    "title": "Apache HTTP Server における NULL ポインタデリファレンスに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server には、 NULL ポインタデリファレンス、サーバサイドのリクエストフォージェリに関する脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.7 から 2.4.51"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Tenable, Inc.",
+          "productname": "Tenable.Sc",
+          "cpe": {
+            "text": "cpe:/a:tenable:tenable.sc",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アップル",
+          "productname": "macOS",
+          "cpe": {
+            "text": "cpe:/o:apple:macos",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Communications Operations Monitor",
+          "cpe": {
+            "text": "cpe:/a:oracle:communications_operations_monitor",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Communications Session Element Manager",
+          "cpe": {
+            "text": "cpe:/a:oracle:communications_element_manager",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Communications Session Report Manager",
+          "cpe": {
+            "text": "cpe:/a:oracle:communications_session_report_manager",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.2",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "フォワードプロキシとして構成された (ProxyRequests がオン) 場合は、巧妙に細工された URI を介して、クラッシュを引き起こされる可能性があります。またフォワードプロキシとリバースプロキシを混ぜた構成の場合には、Unix ドメインソケットエンドポイントを介して、サーバ側のリクエストフォージェリを引き起こされる可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache httpd 2.4 vulnerabilities",
+          "vulinfoid": "moderate: Possible NULL dereference or SSRF in forward proxy configurations in Apache HTTP Server 2.4.51 and earlier (CVE-2021-44224)",
+          "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT213255",
+          "url": "https://support.apple.com/en-us/HT213255"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT213256",
+          "url": "https://support.apple.com/en-us/HT213256"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT213257",
+          "url": "https://support.apple.com/en-us/HT213257"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT213256",
+          "url": "https://support.apple.com/ja-jp/HT213256"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT213257",
+          "url": "https://support.apple.com/ja-jp/HT213257"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT213255",
+          "url": "https://support.apple.com/ja-jp/HT213255"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-5035-1",
+          "url": "https://www.debian.org/security/2022/dsa-5035"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2021-29a536c2ae",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/BFSWOH4X77CV7AH7C4RMHUBDWKQDL4YH/"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2022-b4103753e9",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/RGWILBORT67SHMSLYSQZG2NMXGCMPUZO/"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2022-78e3211c55",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/X73C35MMMZGBVPQQCH7LQZUMYZNQA5FO/"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2022-21264ec6db",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/Z7H26WJ6TPKNWV3QKY4BHKUKQVUTZJTD/"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2022",
+          "url": "https://www.oracle.com/security-alerts/cpuapr2022.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2022",
+          "url": "https://www.oracle.com/security-alerts/cpujan2022.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "TNS-2022-01",
+          "url": "https://www.tenable.com/security/tns-2022-01"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "TNS-2022-03",
+          "url": "https://www.tenable.com/security/tns-2022-03"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-44224",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-44224"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97805418",
+          "url": "https://jvn.jp/vu/JVNVU97805418/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-44224",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44224"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-476",
+          "url": "http://cwe.mitre.org/data/definitions/476.html",
+          "title": "NULL ポインタデリファレンス"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-12-13T11:42:58+09:00",
+          "description": "[2022年12月13日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-12-15T11:54:29+09:00",
+    "datelastupdated": "2022-12-15T11:54:29+09:00",
+    "datepublic": "2021-12-14T00:00:00+09:00"
+  }
+}

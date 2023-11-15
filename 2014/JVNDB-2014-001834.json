@@ -1,0 +1,163 @@
+{
+  "vulinfoid": "JVNDB-2014-001834",
+  "vulinfodata": {
+    "title": "LibYAML の yaml_parser_scan_uri_escapes 関数におけるヒープベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "LibYAML の yaml_parser_scan_uri_escapes 関数には、ヒープベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Kirill Simonov",
+          "productname": "LibYAML",
+          "cpe": {
+            "text": "cpe:/a:pyyaml:libyaml",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.1.6 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.9 から 10.9.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、YAML ファイルの URI のパーセントエンコードされた文字の過度に長いシーケンスを介して、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT6443",
+          "url": "http://support.apple.com/kb/HT6443"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT6443",
+          "url": "http://support.apple.com/kb/HT6443?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "Bitbucket",
+          "vulinfoid": "Fixed heap overflow in yaml_parser_scan_uri_escapes (Thanks Ivan Fratric of the Google Security Team).",
+          "url": "https://bitbucket.org/xi/libyaml/commits/bce8b60f0b9af69fa9fab3093d0a41ba243de048"
+        },
+        {
+          "type": "vendor",
+          "name": "Chef",
+          "vulinfoid": "Enterprise Chef 1.4.9 Release",
+          "url": "http://www.getchef.com/blog/2014/04/09/enterprise-chef-1-4-9-release/"
+        },
+        {
+          "type": "vendor",
+          "name": "Chef",
+          "vulinfoid": "Enterprise Chef 11.1.3 Release",
+          "url": "http://www.getchef.com/blog/2014/04/09/enterprise-chef-11-1-3-release/"
+        },
+        {
+          "type": "vendor",
+          "name": "Chef",
+          "vulinfoid": "Chef Server 11.0.12 Release",
+          "url": "http://www.getchef.com/blog/2014/04/09/chef-server-11-0-12-release/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0353",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0353.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0354",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0354.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0355",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0355.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-2525",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2525"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93868849",
+          "url": "http://jvn.jp/vu/JVNVU93868849/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-2525",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-2525"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "2014-003 LibYAML input sanitization errors",
+          "url": "http://www.ocert.org/advisories/ocert-2014-003.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2014-0150",
+          "url": "http://advisories.mageia.org/MGASA-2014-0150.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月01日]\\n  掲載\\n[2014年05月14日]\\n  ベンダ情報：Opscode (Enterprise Chef 1.4.9 Release) を追加\\n  ベンダ情報：Opscode (Enterprise Chef 11.1.3 Release) を追加\\n  ベンダ情報：Opscode (Chef Server 11.0.12 Release) を追加\\n[2014年05月23日]\\n  ベンダ情報：レッドハット (RHSA-2014:0353) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0354) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0355) を追加\\n[2014年09月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT6443) を追加\\n  参考情報：JVN (JVNVU#93868849) を追加\\n[2015年06月22日]\\n  参考情報：関連文書 (MGASA-2014-0150) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-01T13:51:10+09:00",
+    "datelastupdated": "2015-06-22T17:50:48+09:00",
+    "datepublic": "2014-03-26T00:00:00+09:00"
+  }
+}

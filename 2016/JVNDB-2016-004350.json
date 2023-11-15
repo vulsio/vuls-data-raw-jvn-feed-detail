@@ -1,0 +1,214 @@
+{
+  "vulinfoid": "JVNDB-2016-004350",
+  "vulinfodata": {
+    "title": "PHP で使用される GD Graphics Library の gd_gd2.c の _gd2GetHeader 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP で使用される GD Graphics Library (別名 libgd) の gd_gd2.c の _gd2GetHeader 関数には、整数オーバーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-190: Integer Overflow or Wraparound (整数オーバーフローまたはラップアラウンド) と識別されています。 http://cwe.mitre.org/data/definitions/190.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "LibGD project",
+          "productname": "LibGD",
+          "cpe": {
+            "text": "cpe:/a:libgd:libgd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.3 未満"
+          ]
+        },
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.37 未満",
+            "5.6.23 未満の 5.6.x",
+            "7.0.8 未満の 7.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat OpenShift",
+          "cpe": {
+            "text": "cpe:/a:redhat:openshift",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、画像の巧妙に細工されたチャンクディメンション (chunk dimension) を介して、サービス運用妨害 (ヒープベースのバッファオーバーフローおよびアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3619",
+          "url": "http://www.debian.org/security/2016/dsa-3619"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": " Fixed #72339 Integer Overflow in _gd2GetHeader() resulting in heap overflow",
+          "url": "https://github.com/php/php-src/commit/7722455726bec8c53458a32851d2a87982cf0eac?w=1"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBNS03635",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05240731"
+        },
+        {
+          "type": "vendor",
+          "name": "LibGD",
+          "vulinfoid": "LibGD 2.2.3 release",
+          "url": "https://libgd.github.io/release-2.2.3.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #72339",
+          "url": "https://bugs.php.net/bug.php?id=72339"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1351068",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1351068"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Customer Portal",
+          "vulinfoid": "CVE-2016-5766",
+          "url": "https://access.redhat.com/security/cve/cve-2016-5766"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Activity Bulletin",
+          "vulinfoid": "46860 : PHP Security Update for June 23, 2016",
+          "url": "http://tools.cisco.com/security/center/viewAlert.x?alertId=46860"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 7 ChangeLog",
+          "url": "http://php.net/ChangeLog-7.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-24",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-24j.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-25",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-25j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5766",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5766"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5766",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5766"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月17日]\\n  掲載\\n[2016年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ターボリナックス (TLSA-2016-25) を追加\\n  ベンダ情報：ターボリナックス (TLSA-2016-24) を追加\\n  ベンダ情報：レッドハット (CVE-2016-5766) を追加\\n  ベンダ情報：レッドハット (Bug 1351068) を追加\\n  ベンダ情報：シスコシステムズ (46860 : PHP Security Update for June 23, 2016) を追加\\n  ベンダ情報：Debian (DSA-3619) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03635) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-17T15:55:09+09:00",
+    "datelastupdated": "2016-10-28T09:58:44+09:00",
+    "datepublic": "2016-06-23T00:00:00+09:00"
+  }
+}

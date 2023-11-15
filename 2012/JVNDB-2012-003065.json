@@ -1,0 +1,99 @@
+{
+  "vulinfoid": "JVNDB-2012-003065",
+  "vulinfodata": {
+    "title": "TikiWiki CMS/Groupware における任意の PHP コードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "TikiWiki CMS/Groupware は、unserialize 関数を使用する際に適切に処理しないため、任意の PHP コードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Tiki Software Community Association",
+          "productname": "TikiWiki",
+          "cpe": {
+            "text": "cpe:/a:tiki:tikiwiki",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.7 LTS 未満",
+            "8.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下の項目に含まれた巧妙に細工されたシリアル化されたオブジェクトを介して、任意の PHP コードを実行される可能性があります。  (1) lib/banners/bannerlib.php の cookieName (2) tiki-print_multi_pages.php または tiki-print_pages.php の printpages パラメータ (3) tiki-print_multi_pages.php または tiki-print_pages.php の printstructures パラメータ (4) tiki-send_objects.php の sendpages パラメータ (5) tiki-send_objects.php の sendstructures パラメータ (6) tiki-send_objects.php の sendarticles パラメータ"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Tikiwiki",
+          "vulinfoid": "Critical security vulnerability",
+          "url": "http://dev.tiki.org/item4109"
+        },
+        {
+          "type": "vendor",
+          "name": "Tikiwiki",
+          "vulinfoid": "Tiki Releases 8.4",
+          "url": "http://info.tiki.org/article191-Tiki-Releases-8-4"
+        },
+        {
+          "type": "vendor",
+          "name": "Tikiwiki",
+          "vulinfoid": "Tiki Wiki CMS Groupware Updates Tiki 6.7 LTS",
+          "url": "http://info.tiki.org/article190-Tiki-Wiki-CMS-Groupware-Updates-Tiki-6-7-LTS"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-0911",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0911"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-0911",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0911"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-17T15:43:52+09:00",
+    "datelastupdated": "2012-07-17T15:43:52+09:00",
+    "datepublic": "2012-07-12T00:00:00+09:00"
+  }
+}

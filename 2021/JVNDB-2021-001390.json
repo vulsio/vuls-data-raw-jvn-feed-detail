@@ -1,0 +1,196 @@
+{
+  "vulinfoid": "JVNDB-2021-001390",
+  "vulinfodata": {
+    "title": "Advantech 製 WebAccess/HMI Designer に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Advantech 社が提供する WebAccess/HMI Designer は Human Machine Interface (HMI) 設計用のソフトウェアです。WebAccess/HMI Designer には、次の複数の脆弱性が存在します。  　* ヒープベースのバッファオーバーフロー (CWE-122) - CVE-2021-33000 　* 境界外書き込み (CWE-787) - CVE-2021-33002 　* バッファエラー (CWE-119) - CVE-2021-33004 　* 解放済みメモリの使用 (Use-after-free) (CWE-416) - CVE-2021-42706 　* クロスサイトスクリプティング (CWE-79) - CVE-2021-42703 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アドバンテック株式会社",
+          "productname": "WebAccess/HMI",
+          "cpe": {
+            "text": "cpe:/a:advantech:webaccess_hmi_designer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Designer V2.1.11.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 攻撃者によって特別に細工されたプロジェクトファイル (PLF ファイル、SNF ファイル、PM3 ファイル) を読み込むと、システム上で任意のコードが実行される - CVE-2021-33000、CVE-2021-33002、CVE-2021-33004 　* 第三者によって、情報を窃取されたり、任意のコードを実行されたりする - CVE-2021-42706 　* 遠隔の第三者によって細工した Javascript コードを当該製品に送信されると、ユーザの認証トークンを乗っ取られたり、ユーザを悪意のあるウェブページにリダイレクトさせ、意図しないブラウザ操作を実行されたりする - CVE-2021-42703"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した WebAccess/HMI Designer V2.1.11.0 をリリースしています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Advantech",
+          "vulinfoid": "Contact Us",
+          "url": "https://www.advantech.com/contact"
+        },
+        {
+          "type": "vendor",
+          "name": "Advantech",
+          "vulinfoid": "WebAccess/HMI Designer and WebAccess/HMI Runtime",
+          "url": "https://www.advantech.com/support/details/installation?id=1-F6UG0T"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-42706",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-CVE-2021-42706"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-33000",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33000"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-33002",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33002"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-33004",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33004"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-42703",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42703"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-173-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-173-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98262671",
+          "url": "http://jvn.jp/cert/JVNVU98262671"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZDI-21-488 ((0Day) Advantech WebAccess/HMI Designer PM3 File Parsing Out-Of-Bounds Write Remote Code Execution Vulnerability)",
+          "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-488/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZDI-21-489 ((0Day) Advantech WebAccess/HMI Designer PM3 File Parsing Memory Corruption Remote Code Execution Vulnerability)",
+          "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-489/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZDI-21-490 ((0Day) Advantech WebAccess/HMI Designer PM3 File Parsing Heap-based Buffer Overflow Remote Code Execution Vulnerability)",
+          "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-490/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZDI-21-441 ((0Day) Advantech WebAccess/HMI Designer PLF File Parsing Memory Corruption Remote Code Execution Vulnerability)",
+          "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-441/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZDI-21-442 ((0Day) Advantech WebAccess/HMI Designer SNF File Parsing Memory Corruption Remote Code Execution Vulnerability)",
+          "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-442/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "ZDI-21-487 ((0Day) Advantech WebAccess/HMI Designer PM3 File Parsing Heap-based Buffer Overflow Remote Code Execution Vulnerability)",
+          "url": "https://www.zerodayinitiative.com/advisories/ZDI-21-487/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-122",
+          "url": "https://cwe.mitre.org/data/definitions/122.html",
+          "title": "ヒープベースのバッファオーバーフロー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-416",
+          "url": "https://cwe.mitre.org/data/definitions/416.html",
+          "title": "解放済みメモリの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-787",
+          "url": "https://cwe.mitre.org/data/definitions/787.html",
+          "title": "境界外書き込み"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-05-13T15:28:46+09:00",
+          "description": "[2021年05月13日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-06-24T11:27:36+09:00",
+          "description": "[2021年06月24日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：アドバンテック株式会社 (Contact Us) を追加\\n  CWE による脆弱性タイプ一覧：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-2021-33000 を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-33002 を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-33004 を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-173-01) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-11-12T13:35:28+09:00",
+          "description": "[2021年11月12日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：アドバンテック株式会社 (WebAccess/HMI Designer and WebAccess/HMI Runtime) を追加\\n  CWE による脆弱性タイプ一覧：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-2021-42703 を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-42706 を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-05-13T15:28:46+09:00",
+    "datelastupdated": "2021-11-12T14:12:50+09:00",
+    "datepublic": "2021-05-12T00:00:00+09:00"
+  }
+}

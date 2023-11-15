@@ -1,0 +1,198 @@
+{
+  "vulinfoid": "JVNDB-2016-002326",
+  "vulinfodata": {
+    "title": "Apache Struts2 に任意のコード実行の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Struts2 には、任意のコードを実行可能な脆弱性が存在します。  Apache Struts2 には、Dynamic Method Invocation を有効にしている場合、任意のコードを実行可能な脆弱性が存在します。  なお、本脆弱性を使用した proof-of-concept コードが公開されています。  National Vulnerability Database (NVD) では、CWE-77 として公開されています。  CWE-77: Improper Neutralization of Special Elements used in a Command (コマンドインジェクション) http://cwe.mitre.org/data/definitions/77.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Struts",
+          "cpe": {
+            "text": "cpe:/a:apache:struts",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.20 から 2.3.28 まで (Struts 2.3.20.3 および Struts 2.3.24.3 を除く)"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "MICROS Retail XBRi Loss Prevention",
+          "cpe": {
+            "text": "cpe:/a:oracle:micros_retail_xbri_loss_prevention",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0.1",
+            "10.5.0",
+            "10.6.0",
+            "10.7.0",
+            "10.8.0",
+            "10.8.1"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle FLEXCUBE Private Banking",
+          "cpe": {
+            "text": "cpe:/a:oracle:flexcube_private_banking",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.0.1",
+            "12.0.3",
+            "12.1.0",
+            "2.0.0",
+            "2.0.1",
+            "2.2.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Siebel",
+          "cpe": {
+            "text": "cpe:/a:oracle:siebel_crm",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Siebel Apps - E-Billing 7.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、当該製品が動作しているサーバ上で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は Apache Struts 2.3.20.3、2.3.24.3、2.3.28.1 で修正されています。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* Dynamic Method Invocation (DMI) を無効にする、または最新版の Apache Strust2 のソースコードをもとに独自に ActionMapper を実装する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Struts 2 Documentation",
+          "vulinfoid": "S2-032: Remote Code Execution can be performed via method: prefix when Dynamic Method Invocation is enabled.",
+          "url": "http://struts.apache.org/docs/s2-032.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016verbose-2881725.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "July 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "October 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/october_2016_critical_patch_update"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3081",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3081"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "Apache Struts2 の脆弱性対策について(CVE-2016-3081)(S2-032)",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20160427-struts.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2016-0020",
+          "url": "https://www.jpcert.or.jp/at/2016/at160020.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91375252",
+          "url": "http://jvn.jp/cert/JVNVU91375252"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3081",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3081"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "安恒安全研究院",
+          "url": "http://seclab.dbappsecurity.com.cn/?p=924"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月28日]\\n  掲載\\n[2016年07月27日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-3081) を追加\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加\\n[2016年11月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2016 Critical Patch Update Released) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-28T11:42:14+09:00",
+    "datelastupdated": "2016-11-22T16:17:52+09:00",
+    "datepublic": "2016-04-27T00:00:00+09:00"
+  }
+}

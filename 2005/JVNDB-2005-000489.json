@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2005-000489",
+  "vulinfodata": {
+    "title": "HP Ignite-UX におけるパスワード情報が漏洩する脆弱性",
+    "vulinfodescription": {
+      "overview": "HP-UX 上で使用する管理ツール Ignite-UX では、一部のファイルを TFTP を利用して転送を行っています。   Ignite-UX C.6.2.241 未満には make_recovery コマンドの処理に不備が存在するため、/etc/passwd ファイルのコピーが TFTP サーバのディレクトリツリーに作成される問題が存在します。   なお、ベンダが提供する情報によると、Ignite-UX C.6.0 以降は make_recovery コマンドが削除されていますが、それ以前のバージョンで過去にコマンドを実行している場合、/etc/passwd ファイルのコピーが TFTP サーバのディレクトリツリーに存在している可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.00 ",
+            "11.11 ",
+            "11.22 ",
+            "11.23 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者が TFTP を介して /etc/passwd ファイルのコピーにアクセスすることにより、結果としてパスワード情報を奪取される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX01219",
+          "url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01219"
+        },
+        {
+          "type": "vendor",
+          "name": "HP セキュリティ報告",
+          "vulinfoid": "HPSBUX01219",
+          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01219.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-0951",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0951"
+        },
+        {
+          "type": "advisory",
+          "name": "CPNI Vulnerability Advisory",
+          "vulinfoid": "00694",
+          "url": "http://www.cpni.gov.uk/Products/vulnerabilitydisclosures/default.aspx?id=va-20050816-00694.xml"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-1433",
+          "url": "http://www.frsirt.com/english/advisories/2005/1433"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "NISCC-688910",
+          "url": "http://jvn.jp/niscc/NISCC-688910/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-0951",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0951"
+        },
+        {
+          "type": "advisory",
+          "name": "NISCC Vulnerability Advisory",
+          "vulinfoid": "688910/NISCC/IGNITE-UX",
+          "url": "http://www.cpni.gov.uk/docs/re-20050816-00694.pdf?lang=en"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA16456",
+          "url": "http://secunia.com/advisories/16456/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "14571",
+          "url": "http://www.securityfocus.com/bid/14571"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "14568",
+          "url": "http://www.securityfocus.com/bid/14568"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-08-15T00:00:00+09:00"
+  }
+}

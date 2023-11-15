@@ -1,0 +1,255 @@
+{
+  "vulinfoid": "JVNDB-2022-001498",
+  "vulinfodata": {
+    "title": "Spring Framework における不適切なデータバインディング処理による任意コード実行の脆弱性",
+    "vulinfodescription": {
+      "overview": "Spring Framework は、Java 言語で Web アプリケーションなどを作成するために用いられるフレームワークです。Spring Framework には、データバインディングで使用する、CachedIntrospectionResults クラス内の PropertyDescriptor オブジェクトを安全に処理しない脆弱性（CVE-2022-22965）があります。その結果、攻撃者により class.classLoader を呼び出され、システム内で任意の Java コードが実行される可能性があります。  2010年に同種の脆弱性が CVE-2010-1622 として報告され、Spring Framework 2.5.6.SEC02 において修正されました。今回報告された CVE-2022-22965 はこの修正を回避する新たな攻撃手法を提供するものです。  なお、VMWare によると本脆弱性を悪用する攻撃を成功させるためには複数の条件が必要であることが示唆されています。2022年4月1日現在、同社が報告を受けた攻撃シナリオにおいては、以下の条件が必要であったとのことです。  　* JDK 9 以上を使用している 　* Apache Tomcat をサーブレットコンテナとして使用している 　* WAR 形式でデプロイされている 　* プログラムが spring-webmvc あるいは spring-webflux に依存している  ただし、上記以外にも攻撃が成功するための条件が存在する可能性があります。今後公開される情報を注視してください。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "VMware",
+          "productname": "Spring Framework",
+          "cpe": {
+            "text": "cpe:/a:vmware:spring_framework",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.2.0 から 5.2.19（5.2.x 系）",
+            "5.3.0 から 5.3.17（5.3.x 系）"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "NEC Enhanced Video Analytics",
+          "cpe": {
+            "text": "cpe:/a:nec:nec_enhanced_video_analytics",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "SimpWright",
+          "cpe": {
+            "text": "cpe:/a:nec:simpwright",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Device Manager",
+          "cpe": {
+            "text": "cpe:/a:hitachi:device_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.8.3-00 以降 8.8.3-02 未満"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Global Link Manager",
+          "cpe": {
+            "text": "cpe:/a:hitachi:global_link_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.8.3-00 以降 8.8.3-02 未満"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Replication Manager",
+          "cpe": {
+            "text": "cpe:/a:hitachi:replication_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.8.3-00 以降 8.8.3-02 未満"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Tiered Storage Manager",
+          "cpe": {
+            "text": "cpe:/a:hitachi:tiered_storage_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.8.3-00 以降 8.8.3-02 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "攻撃者により細工されたデータを Spring Framework で作成されたアプリケーションが処理することにより、アプリケーションの権限で任意のコードを実行される可能性があります。アプリケーションの構成によっては、攻撃者によって遠隔から認証なしで悪用される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、対策済みバージョンとして、Spring Framework 5.3.18（5.3.x 系）および 5.2.20（5.2.x 系）をリリースしています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2022-114",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2022-114/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV22-008",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv22-008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Siemens",
+          "vulinfoid": "SSA-254054: Spring Framework Vulnerability (Spring4Shell or SpringShell, CVE-2022-22965) - Impact to Siemens Products",
+          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-254054.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware",
+          "vulinfoid": "CVE-2022-22965: Spring Framework RCE via Data Binding on JDK 9+",
+          "url": "https://tanzu.vmware.com/security/cve-2022-22965"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware",
+          "vulinfoid": "Spring Framework RCE, Early Announcement",
+          "url": "https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-114",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2022-114/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "トレンドマイクロ",
+          "vulinfoid": "アラート/アドバイザリ：Spring Cloudと Spring Frameworkにおけるリモートコード実行の脆弱性 (CVE-2022-22963、CVE-2022-22965) のトレンドマイクロ製品への影響について",
+          "url": "https://success.trendmicro.com/jp/solution/000290783"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-22965",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-22965"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-286-05",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-286-05"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94675398",
+          "url": "http://jvn.jp/vu/JVNVU94675398/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98836905",
+          "url": "http://jvn.jp/vu/JVNVU98836905/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2022-22965",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-22965"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#970766",
+          "url": "https://kb.cert.org/vuls/id/970766"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Overview of software (un)affected by vulnerability",
+          "url": "https://github.com/NCSC-NL/spring4shell/blob/main/software/README.md"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "cve-2022-22965 Spring4Shell の影響調査",
+          "url": "https://dev.classmethod.jp/articles/springboot-spring4shell/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE-2022-22965: Spring Core Remote Code Execution Vulnerability Exploited In the Wild (SpringShell)",
+          "url": "https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "springcore-0day-en",
+          "url": "https://github.com/tweedge/springcore-0day-en"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "SpringShell: Spring Core RCE 0-day Vulnerability",
+          "url": "https://www.cyberkendra.com/2022/03/springshell-rce-0-day-vulnerability.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Spring Frameworkの任意のコード実行の脆弱性（CVE-2022-22965）について",
+          "url": "https://www.jpcert.or.jp/newsflash/2022040101.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-08-09T13:44:59+09:00",
+          "description": "[2022年04月05日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-08-09T13:45:13+09:00",
+          "description": "[2022年04月08日]\\n  参考情報：関連文書 (cve-2022-22965 Spring4Shell の影響調査) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-08-09T13:45:49+09:00",
+          "description": "[2022年04月22日]\\n  ベンダ情報：シーメンス (SSA-254054: Spring Framework Vulnerability (Spring4Shell or SpringShell, CVE-2022-22965) - Impact to Siemens Products) を追加\\n  ベンダ情報：トレンドマイクロ (アラート/アドバイザリ：Spring Cloudと Spring Frameworkにおけるリモートコード実行の脆弱性 (CVE-2022-22963、CVE-2022-22965) のトレンドマイクロ製品への影響について) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2022-08-09T13:46:45+09:00",
+          "description": "[2022年05月30日]\\n  ベンダ情報：日立 (hitachi-sec-2022-114) を追加\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新"
+        },
+        {
+          "historyno": "5",
+          "datetime": "2022-08-09T16:51:40+09:00",
+          "description": "[2022年08月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-008) を追加"
+        },
+        {
+          "historyno": "6",
+          "datetime": "2022-10-18T16:21:47+09:00",
+          "description": "[2022年10月18日]\\n  参考情報：JVN (JVNVU#98836905) を追加\\n  参考情報：ICS-CERT ADVISORY(ICSA-22-286-05) を追加"
+        },
+        {
+          "historyno": "7",
+          "datetime": "2023-09-05T16:34:48+09:00",
+          "description": "[2023年09月05日]\\n  影響を受けるシステム：ベンダ情報 (NV22-008) の更新に伴い内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-04-05T16:32:13+09:00",
+    "datelastupdated": "2023-09-05T16:45:46+09:00",
+    "datepublic": "2022-04-01T00:00:00+09:00"
+  }
+}

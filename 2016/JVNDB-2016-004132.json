@@ -1,0 +1,137 @@
+{
+  "vulinfoid": "JVNDB-2016-004132",
+  "vulinfodata": {
+    "title": "Perl の複数のファイルにおける権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Perl の以下のファイルは、インクルードディレクトリの配列の末尾から . (ピリオド) 文字を適切に削除しないため、権限を取得される脆弱性が存在します。  (1) cpan/Archive-Tar/bin/ptar (2) cpan/Archive-Tar/bin/ptardiff (3) cpan/Archive-Tar/bin/ptargrep (4) cpan/CPAN/scripts/cpan (5) cpan/Digest-SHA/shasum (6) cpan/Encode/bin/enc2xs (7) cpan/Encode/bin/encguess (8) cpan/Encode/bin/piconv (9) cpan/Encode/bin/ucmlint (10) cpan/Encode/bin/unidump (11) cpan/ExtUtils-MakeMaker/bin/instmodsh (12) cpan/IO-Compress/bin/zipdetails (13) cpan/JSON-PP/bin/json_pp (14) cpan/Test-Harness/bin/prove (15) dist/ExtUtils-ParseXS/lib/ExtUtils/xsubpp (16) dist/Module-CoreList/corelist (17) ext/Pod-Html/bin/pod2html (18) utils/c2ph.PL (19) utils/h2ph.PL (20) utils/h2xs.PL (21) utils/libnetcfg.PL (22) utils/perlbug.PL (23) utils/perldoc.PL (24) utils/perlivp.PL (25) utils/splain.PL"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "The Perl Foundation",
+          "productname": "Perl",
+          "cpe": {
+            "text": "cpe:/a:perl:perl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.22.3-RC2 未満の 5.x",
+            "5.24.1-RC2 未満の 5.24"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、カレントワーキングディレクトリ配下にあるトロイの木馬のモジュールを介して、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3628",
+          "url": "https://www.debian.org/security/2016/dsa-3628"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBNS03635",
+          "url": "https://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05240731"
+        },
+        {
+          "type": "vendor",
+          "name": "perl",
+          "vulinfoid": "(perl #127834) remove . from the end of @INC if complex modules are loaded",
+          "url": "http://perl5.git.perl.org/perl.git/commit/cee96d52c39b1e7b36e1c62d38bcd8d86e9a41ab"
+        },
+        {
+          "type": "vendor",
+          "name": "perl",
+          "vulinfoid": "CVE-2016-1238: Important unsafe module load path flaw",
+          "url": "http://www.nntp.perl.org/group/perl.perl5.porters/2016/07/msg238271.html"
+        },
+        {
+          "type": "vendor",
+          "name": "perl",
+          "vulinfoid": "Bug #127834",
+          "url": "https://rt.perl.org/Public/Bug/Display.html?id=127834"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1355695",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1355695"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-1238",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1238"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-1238",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-1238"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月04日]\\n  掲載\\n[2016年10月27日]\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03635) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-04T16:50:35+09:00",
+    "datelastupdated": "2016-10-27T15:18:23+09:00",
+    "datepublic": "2016-07-25T00:00:00+09:00"
+  }
+}

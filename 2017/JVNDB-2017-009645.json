@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2017-009645",
+  "vulinfodata": {
+    "title": "Microsoft Office 数式エディタにおけるスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft Office 数式エディタには、スタックベースのバッファオーバーフローの脆弱性が存在します。  Microsoft 数式エディタは Microsoft Office に付属するコンポーネントです。Microsoft Office 数式エディタにはスタックベースのバッファオーバーフローの脆弱性 (CWE-121) が存在します。  CWE-121 https://cwe.mitre.org/data/definitions/121.html  最近のソフトウェアでは、メモリ破損の脆弱性に対して DEP や ASLR などの保護、さらには CFG といった保護を組み込むことによって影響を緩和する対策を行っています。しかしこのコンポーネントには、最新の Microsoft Office 2016 のバージョンであっても、上記のような保護機構が組み込まれておらず、コード実行などの攻撃が容易になっています。  保護 https://msdn.microsoft.com/en-us/library/bb430720.aspx?f=255&MSPPError=-2147217396  CFG https://msdn.microsoft.com/en-us/library/windows/desktop/mt637065(v=vs.85).aspx  Microsoft 数式エディタは eqnedt32.exe で提供される out-of-process COM サーバーであるため、MS Office アプリケーションに対する保護の範囲外にあります。例えば RTF 文書を使った攻撃が行われる場合、文書は Microsoft Word で開かれますが、eqnedt32.exe は Windows DCOM Server Process Launcher service によって呼び出されるため、Microsoft Office のプログラムに対する EMET や Windows Defender Exploit Guard などの保護機構は働きません。同様の理由で Windows Defender Exploit Guard Attack Surface Reduction (ASR) による保護も行われません。  COM サーバー https://msdn.microsoft.com/en-us/library/windows/desktop/ms683835(v=vs.85).aspx  EMET https://www.microsoft.com/en-us/download/details.aspx?id=54264  Windows Defender Exploit Guard https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard  Attack Surface Reduction (ASR) https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-exploit-guard/enable-attack-surface-reduction  Windows 7 のユーザで、かつ システムレベルで EMET の ASLR を「常にオン」に設定している場合には、この脆弱性に対する攻撃から保護されます。一方 Windows 10 の場合、Windows 7 のようなシステムレベルでの ASLR 設定はできないため、この脆弱性に対する対策を行う必要があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Office",
+          "cpe": {
+            "text": "cpe:/a:microsoft:office",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2007 Service Pack 3",
+            "2010 Service Pack 2 (32-bit editions)",
+            "2013 Service Pack 1 (32-bit editions)",
+            "2013 Service Pack 1 (64-bit editions)",
+            "2016 (32-bit edition)",
+            "2016 (64-bit edition)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された Office 文書を閲覧した場合に、ユーザの権限で任意のコードが実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  開発者が提供する情報 https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2017-11882  [数式エディタを無効化する] 以下のようにレジストリを設定することで、Microsoft Office において数式エディタを無効化することが可能です。  　　Windows Registry Editor Version 5.00  　　[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Office\\Common\\COM             Compatibility\\{0002CE02-0000-0000-C000-000000000046}] \"Compatibility Flags\"=dword:00000400  　　[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Office\\Common\\COM Compatibility\\{0002CE02-0000-0000-C000-000000000046}] \"Compatibility Flags\"=dword:00000400  [EMET もしくは Windows Defender Exploit Guard を eqnedt32.exe に適用する] eqnedt32.exe に Windows が提供する保護機構を適用してください。 とくに、ASLR を有効にすることで発見者の提供する情報で説明されている攻撃を防ぐことが可能です。  保護機構 https://blogs.technet.microsoft.com/srd/2017/08/09/moving-beyond-emet-ii-windows-defender-exploit-guard/  発見者が提供する情報 https://embedi.com/blog/skeleton-closet-ms-office-vulnerability-you-didnt-know-about"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Security TechCenter",
+          "vulinfoid": "CVE-2017-11882 | Microsoft Office Memory Corruption Vulnerability",
+          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-11882"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティ TechCenter",
+          "vulinfoid": "CVE-2017-11882 | Microsoft Office のメモリ破損の脆弱性",
+          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2017-11882"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-11882",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11882"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "Microsoft Office の脆弱性(CVE-2017-11882)について",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20171129_ms.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90967793",
+          "url": "http://jvn.jp/vu/JVNVU90967793"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-11882",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-11882"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#421280",
+          "url": "http://www.kb.cert.org/vuls/id/421280"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Blog | Embedi",
+          "url": "https://embedi.com/blog/skeleton-closet-ms-office-vulnerability-you-didnt-know-about"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-121",
+          "url": "https://cwe.mitre.org/data/definitions/121.html",
+          "title": "スタックベースのバッファオーバーフロー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年11月17日]\\n  掲載\\n[2017年11月29日]\\n  参考情報：IPA 重要なセキュリティ情報 (Microsoft Office の脆弱性(CVE-2017-11882)について) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-11-17T12:17:53+09:00",
+    "datelastupdated": "2017-11-29T17:03:04+09:00",
+    "datepublic": "2017-11-15T00:00:00+09:00"
+  }
+}

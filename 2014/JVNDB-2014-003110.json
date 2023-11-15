@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2014-003110",
+  "vulinfodata": {
+    "title": "D-Bus の dbus-daemon におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "D-Bus の dbus-daemon は、クライアントがサービスへのアクセスを禁止された際、クライアントの代わりにサービスへ AccessDenied エラーを送信するため、サービス運用妨害 (初期化の失敗および終了) 状態にされる、またはサイドチャネル攻撃を実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "freedesktop.org",
+          "productname": "D-Bus",
+          "cpe": {
+            "text": "cpe:/a:freedesktop:dbus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.2.x から 1.4.x",
+            "1.6.20 未満の 1.6.x",
+            "1.8.4 未満の 1.8.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、非アクティブなサービスへの D-Bus メッセージを介して、サービス運用妨害 (初期化の失敗および終了) 状態にされる、またはサイドチャネル攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 78979",
+          "url": "https://bugs.freedesktop.org/show_bug.cgi?id=78979"
+        },
+        {
+          "type": "vendor",
+          "name": "freedesktop.org",
+          "vulinfoid": "CVE-2014-3477: deliver activation errors correctly, fixing Denial of Service",
+          "url": "http://cgit.freedesktop.org/dbus/dbus/commit/?h=dbus-1.8&id=24c590703ca47eb71ddef453de43126b90954567"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3477",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3477"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3477",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3477"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2014-0266",
+          "url": "http://advisories.mageia.org/MGASA-2014-0266.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月03日]\\n  掲載\\n[2015年06月09日]\\n  参考情報：関連文書 (MGASA-2014-0266) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-03T17:00:40+09:00",
+    "datelastupdated": "2015-06-09T18:06:20+09:00",
+    "datepublic": "2014-06-05T00:00:00+09:00"
+  }
+}

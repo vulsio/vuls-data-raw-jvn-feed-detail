@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2020-006737",
+  "vulinfodata": {
+    "title": "Apache Tomcat における複数のサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "The Apache Software Foundation から、Apache Tomcat の脆弱性に対するアップデートが公開されました。  * h2c direct connection における HTTP/2 へのアップグレード処理において、HTTP/1.1 を扱うオブジェクトを破棄しないためヒープを過剰に消費する - CVE-2020-13934 * WebSocket フレームのペイロード長が適切に検証されない - CVE-2020-13935"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0.0-M1 to 10.0.0-M6 まで",
+            "7.0.27 から 7.0.104 まで",
+            "8.5.0 から 8.5.56 まで",
+            "9.0.0.M1 から 9.0.36 まで"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Ops Center Common Services",
+          "cpe": {
+            "text": "cpe:/a:hitachi:hitachi_ops_center_common_services",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(海外販売のみ)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受けるおそれがあります。  * 遠隔の第三者から、h2c direct connection による HTTP/2 へのアップグレードの要求が大量に行われると、OutOfMemoryException が発生し、サービス運用妨害 (DoS) 状態になる - CVE-2020-13934 * 遠隔の第三者から無効なペイロード長の通信が行われると、無限ループが発生しサービス運用妨害 (DoS) 状態になる - CVE-2020-13935"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性の対策版として次のバージョンをリリースしています。  * Apache Tomcat 10.0.0-M7 * Apache Tomcat 9.0.37 * Apache Tomcat 8.5.57 * Apache Tomcat 7.0.105 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 10.0.0-M7",
+          "url": "http://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.0.0-M7"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 9.0.37",
+          "url": "http://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.37"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 8.5.57",
+          "url": "http://tomcat.apache.org/security-8.html#Fixed_in_Apache_Tomcat_8.5.57"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 7.0.105",
+          "url": "http://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.105"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2020-130",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2020-130/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "Apache Tomcat における複数のサービス運用妨害 (DoS) の脆弱性",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv20-012.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2020-130",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2020-130/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-13934",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13934"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-13935",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-13935"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96390265",
+          "url": "https://jvn.jp/vu/JVNVU96390265/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-07-16T15:08:38+09:00",
+          "description": "[2020年07月16日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2020-10-28T11:19:30+09:00",
+          "description": "[2020年10月28日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2020-130) を追加\\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2020-130) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-08-10T16:10:56+09:00",
+          "description": "[2021年08月10日]\\n  ベンダ情報：日本電気 (Apache Tomcat における複数のサービス運用妨害 (DoS) の脆弱性) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-07-16T15:08:38+09:00",
+    "datelastupdated": "2021-08-10T17:18:53+09:00",
+    "datepublic": "2020-07-15T00:00:00+09:00"
+  }
+}

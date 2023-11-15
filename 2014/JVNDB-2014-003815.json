@@ -1,0 +1,165 @@
+{
+  "vulinfoid": "JVNDB-2014-003815",
+  "vulinfodata": {
+    "title": "OpenSSL の s3_clnt.c 内の ssl3_send_client_key_exchange 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の s3_clnt.c 内の ssl3_send_client_key_exchange 関数には、サービス運用妨害 (NULL ポインタデリファレンスおよびクライアントアプリケーションのクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.9.8 以上 0.9.8zb 未満",
+            "1.0.0 以上 1.0.0n 未満",
+            "1.0.1 以上 1.0.1i 未満"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP Virtual Connect",
+          "cpe": {
+            "text": "cpe:/a:hp:virtual_connect",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8Gb 24ポート ファイバーチャネル モジュール 3.00 未満 (VC (バーチャルコネクト) 4.40 未満)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート DTLS サーバは、(1) anonymous DH または (2) anonymous ECDH 暗号スイートに関連する巧妙に細工されたハンドシェイクメッセージを介して、サービス運用妨害 (NULL ポインタデリファレンスおよびクライアントアプリケーションのクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBHF03293",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04595951"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX03095 SSRT101674",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04404655"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBOV03099 SSRT101686",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04426586"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1686997",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21686997"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1682293",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21682293"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "Fix DTLS anonymous EC(DH) denial of service",
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=17160033765480453be0a41335fa6b833691c049"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "OpenSSL DTLS anonymous EC(DH) denial of service (CVE-2014-3510)",
+          "url": "http://www.openssl.org/news/secadv_20140806.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "ELSA-2014-1053",
+          "url": "http://linux.oracle.com/errata/ELSA-2014-1053.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1297",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1297.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1256",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1256.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisory",
+          "vulinfoid": "Huawei-SA-20141008-OpenSSL",
+          "url": "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-372998.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2014-6",
+          "url": "http://www.turbolinux.co.jp/security/2014/TLSA-2014-6j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3510",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3510"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3510",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3510"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月15日]\\n  掲載\\n[2014年09月17日]\\n  ベンダ情報：オラクル (ELSA-2014-1053) を追加\\n[2014年11月14日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03095 SSRT101674) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBOV03099 SSRT101686) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1297) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1256) を追加\\n[2014年11月28日]\\n ベンダ情報：IBM (1682293) を追加\\n ベンダ情報：IBM (1686997) を追加\\n ベンダ情報：Huawei (Huawei-SA-20141008-OpenSSL) を追加\\n[2015年04月08日]\\n  ベンダ情報：ターボリナックス (TLSA-2014-6) を追加\\n[2015年06月15日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03293) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-15T17:00:19+09:00",
+    "datelastupdated": "2015-06-15T16:42:56+09:00",
+    "datepublic": "2014-08-06T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "vulinfoid": "JVNDB-2015-007257",
+  "vulinfodata": {
+    "title": "TLS プロトコルにおける TLS サーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "TLS プロトコルは、ClientCertificateType の rsa_fixed_dh、dss_fixed_dh、rsa_fixed_ecdh、および ecdsa_fixed_ecdh 値をサポートしていますが、クライアントの秘密鍵、およびサーバの秘密鍵ではなく公開鍵を伴う特定の状況下におけるマスターシークレットを計算する機能 (ability to compute) について直接的に文書化していないため、TLS サーバになりすまされる可能性があります。  本脆弱性は、\"Key Compromise Impersonation (KCI) 攻撃\" と呼ばれています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Mozilla Foundation",
+          "productname": "Mozilla Firefox",
+          "cpe": {
+            "text": "cpe:/a:mozilla:firefox",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Opera Software ASA",
+          "productname": "Opera",
+          "cpe": {
+            "text": "cpe:/a:opera:opera_browser",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アップル",
+          "productname": "Safari",
+          "cpe": {
+            "text": "cpe:/a:apple:safari",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Internet Explorer",
+          "cpe": {
+            "text": "cpe:/a:microsoft:internet_explorer",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、任意のインストールされたクライアントの X.509 証明書の秘密鍵の情報を利用されることで、TLS サーバになりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "https://www.google.com/intl/ja/chrome/browser/features.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mozilla Foundation",
+          "vulinfoid": "Firefox",
+          "url": "https://www.mozilla.org/ja/firefox/desktop/"
+        },
+        {
+          "type": "vendor",
+          "name": "Opera Software ASA",
+          "vulinfoid": "Opera",
+          "url": "http://www.opera.com/ja"
+        },
+        {
+          "type": "vendor",
+          "name": "アップル",
+          "vulinfoid": "Safari",
+          "url": "http://www.apple.com/jp/safari/"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト株式会社",
+          "vulinfoid": "Internet Explorer",
+          "url": "https://support.microsoft.com/ja-jp/products/internet-explorer"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8960",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8960"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8960",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8960"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Prying open Pandora’s box:KCI attacks against TLS",
+          "url": "https://www.usenix.org/system/files/conference/woot15/woot15-paper-hlauschek.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "KCI Attacks against TLS",
+          "url": "https://kcitls.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Twitter：This attack is hilarious. Install a client cert in a browser, MITM any connection it makes to certain servers.",
+          "url": "https://twitter.com/matthew_d_green/statuses/630908726950674433"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-27T12:03:56+09:00",
+    "datelastupdated": "2016-09-27T12:03:56+09:00",
+    "datepublic": "2015-08-10T00:00:00+09:00"
+  }
+}

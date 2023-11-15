@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2016-006896",
+  "vulinfodata": {
+    "title": "Smack の XMPP ライブラリにおける TLS の保護を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Smack の XMPP ライブラリには、競合状態により、SecurityMode.required TLS が設定されている際、TLS の保護を回避され、クライアント認証の平文の使用を誘発される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fedora Project",
+          "productname": "Fedora",
+          "cpe": {
+            "text": "cpe:/o:fedoraproject:fedora",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "25"
+          ]
+        },
+        {
+          "name": "Ignite Realtime",
+          "productname": "Smack API",
+          "cpe": {
+            "text": "cpe:/a:igniterealtime:smack",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1.9 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、サーバレスポンスから \"starttls\" 機能を削除されることで、TLS の保護を回避され、クライアント認証の平文の使用を誘発される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "FEDORA-2016-897a1e6698",
+          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/J4WXAZ4JVJXHMEDDXJVWJHPVBF5QCTZF/"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Move TLS Required check at the end of connect() (fe7cb04)",
+          "url": "https://github.com/igniterealtime/Smack/commit/a9d5cd4a611f47123f9561bc5a81a4555fe7cb04"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Move TLS Required check at the end of connect() (9ec820b)",
+          "url": "https://github.com/igniterealtime/Smack/commit/059ee99ba0d5ff7758829acf5a9aeede09ec820b"
+        },
+        {
+          "type": "vendor",
+          "name": "Ignite Realtime",
+          "vulinfoid": "SMACK-739",
+          "url": "https://issues.igniterealtime.org/projects/SMACK/issues/SMACK-739?filter=allissues"
+        },
+        {
+          "type": "vendor",
+          "name": "Ignite Realtime Blog",
+          "vulinfoid": "Smack Security Advisory 2016-11-22",
+          "url": "https://community.igniterealtime.org/blogs/ignite/2016/11/22/smack-security-advisory-2016-11-22"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-10027",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10027"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-10027",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-10027"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月30日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-30T11:40:46+09:00",
+    "datelastupdated": "2017-01-30T11:40:46+09:00",
+    "datepublic": "2016-11-22T00:00:00+09:00"
+  }
+}

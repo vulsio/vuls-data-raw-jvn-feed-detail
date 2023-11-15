@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2021-001029",
+  "vulinfodata": {
+    "title": "ISC BIND にバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC (Internet Systems Consortium) が提供する BIND には、バッファオーバーフローの脆弱性が存在します。  BIND には TSIG プロトコルの拡張機能である GSS-TSIG の、GSSAPI に基づくネゴシエーションメカニズム SPNEGO の実装不備によりバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.12.0 から 9.16.11",
+            "9.5.0 から 9.11.27",
+            "Supported Preview Edition 9.11.3-S1 から 9.11.27-S1",
+            "Supported Preview Edition 9.16.8-S1 から 9.16.11-S1",
+            "開発版 9.17.0 から 9.17.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "GSSAPI に関するオプション tkey-gssapi-keytab または tkey-gssapi-credential に有効な値が明示的に設定されている場合に named プロセスのクラッシュが引き起こされ、サービス運用妨害 (DoS) 状態にされる可能性があります。 開発者によると、2021年2月18日時点では実証されていませんが、リモートでコード実行できる可能性があると報告しています。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、使用しているバージョンの最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　* BIND 9.11.28 　* BIND 9.16.12 　* BIND Supported Preview Edition 9.11.28-S1 　* BIND Supported Preview Edition 9.16.12-S1 　 [ワークアラウンドを実施する] 　* GSS-TSIG を使用しない 　* 一部のプラットフォームで BIND ビルド時、ソースディレクトリのトップにある configure スクリプトを実行する際 --disable-isc-spnego をコマンドライン引数に指定し、SPNEGO を組み込まない named を作成する (ただし、GSSAPI が使用できなくなる可能性があります)"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "サイバートラスト株式会社 の告知ページ",
+          "url": "https://tsn.miraclelinux.com/ja/"
+        },
+        {
+          "type": "vendor",
+          "name": "Internet Systems Consortium",
+          "vulinfoid": "CVE-2020-8625: A vulnerability in BIND's GSSAPI security policy negotiation can be targeted by a buffer overflow attack",
+          "url": "https://kb.isc.org/docs/cve-2020-8625"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-8625",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8625"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止・リモートコード実行）について（CVE-2020-8625）- GSS-TSIGが有効に設定されている場合のみ対象、バージョンアップを強く推奨 -",
+          "url": "https://jprs.jp/tech/security/2021-02-18-bind9-vuln-gsstsig.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90613078",
+          "url": "http://jvn.jp/cert/JVNVU90613078"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-02-19T16:59:10+09:00",
+          "description": "[2021年02月19日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-05-11T12:00:32+09:00",
+          "description": "[2021年05月11日]\\n  ベンダ情報：サイバートラスト株式会社 (サイバートラスト株式会社 の告知ページ) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-02-19T16:59:10+09:00",
+    "datelastupdated": "2021-05-11T14:03:29+09:00",
+    "datepublic": "2021-02-18T00:00:00+09:00"
+  }
+}

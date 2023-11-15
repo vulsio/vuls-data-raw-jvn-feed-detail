@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2015-001837",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/sctp/associola.c の sctp_assoc_update 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/sctp/associola.c の sctp_assoc_update 関数には、解放済みメモリの使用 (Use-after-free) により、サービス運用妨害 (スラブ (slab) 破損およびパニック) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use-after-free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.18.8 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、共有鍵データの不適切な処理につながる INIT の衝突を誘発されることで、サービス運用妨害 (スラブ (slab) 破損およびパニック) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.18.8",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.18.8"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "net: sctp: fix slab corruption from use after free on INIT collisions",
+          "url": "https://github.com/torvalds/linux/commit/600ddd6825543962fb807884169e57b580dba208"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "net: sctp: fix slab corruption from use after free on INIT collisions",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=600ddd6825543962fb807884169e57b580dba208"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1196581",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1196581"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0726",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-0726.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0751",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-0751.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0782",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-0782.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1421",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1421"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1421",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1421"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年03月18日]\\n  掲載\\n[2015年04月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0751) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0726) を追加\\n[2015年05月25日]\\n  ベンダ情報：レッドハット (RHSA-2015:0782) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-03-18T12:20:47+09:00",
+    "datelastupdated": "2015-05-25T16:52:53+09:00",
+    "datepublic": "2015-01-27T00:00:00+09:00"
+  }
+}

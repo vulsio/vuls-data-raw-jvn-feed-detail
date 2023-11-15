@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2011-004268",
+  "vulinfodata": {
+    "title": "Vino の vino-server の rfbSendFramebufferUpdate 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Vino の vino-server の server/libvncserver/rfbserver.c の rfbSendFramebufferUpdate 関数は、tight エンコードが使用される際、サービス運用妨害 (デーモンクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "David King",
+          "productname": "Vino",
+          "cpe": {
+            "text": "cpe:/a:david_king:vino",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.28.3 未満の 2.x",
+            "2.32.2 未満の 2.32.x",
+            "3.0.2, 未満の 3.0.x",
+            "3.1.1 未満の 3.1.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、範囲外読み込み操作を誘発する framebuffer update リクエスト内の巧妙に細工された配列を介して、サービス運用妨害 (デーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "David King",
+          "vulinfoid": "Vino 2.32.2",
+          "url": "http://ftp.gnome.org/pub/GNOME/sources/vino/2.32/vino-2.32.2.news"
+        },
+        {
+          "type": "vendor",
+          "name": "David King",
+          "vulinfoid": "Vino 2.28.3",
+          "url": "http://ftp.gnome.org/pub/GNOME/sources/vino/2.28/vino-2.28.3.news"
+        },
+        {
+          "type": "vendor",
+          "name": "David King",
+          "vulinfoid": "NEWS",
+          "url": "https://git.gnome.org/browse/vino/tree/NEWS"
+        },
+        {
+          "type": "vendor",
+          "name": "David King",
+          "vulinfoid": "Vino 3.0.2",
+          "url": "http://ftp.gnome.org/pub/GNOME/sources/vino/3.0/vino-3.0.2.news"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 694456",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=694456"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:0169",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0169.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0905",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0905"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0905",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0905"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載\\n[2016年06月30日]\\n  ベンダ情報：レッドハット (RHSA-2013:0169) を追加\\n  ベンダ情報：レッドハット (Bug 694456) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:43:03+09:00",
+    "datelastupdated": "2016-06-30T14:45:57+09:00",
+    "datepublic": "2011-05-10T00:00:00+09:00"
+  }
+}

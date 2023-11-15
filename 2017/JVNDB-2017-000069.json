@@ -1,0 +1,147 @@
+{
+  "vulinfoid": "JVNDB-2017-000069",
+  "vulinfodata": {
+    "title": "東芝製メモリカード関連ソフトウェアの複数のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社東芝が提供する複数のメモリカードの設定ソフトウェアおよびソフトウェア更新ツールのインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: NTT コミュニケーションズ株式会社 東内 裕二 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "東芝",
+          "productname": "NFC搭載 SDHC/SDXCメモリカードソフトウェア更新ツール",
+          "cpe": {
+            "text": "cpe:/a:toshiba:nfc_sdhc_%2F_sdxc_memory_card_software_updatetool",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V1.00.03 およびそれ以前"
+          ]
+        },
+        {
+          "name": "東芝",
+          "productname": "TransferJet（近接無線通信）搭載SDHCメモリカード ファームウェア更新ツール",
+          "cpe": {
+            "text": "cpe:/a:toshiba:sdhc_memory_card_with_transferjet_firmware_updatetool",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V1.00.06 およびそれ以前"
+          ]
+        },
+        {
+          "name": "東芝",
+          "productname": "TransferJet（近接無線通信）搭載SDHCメモリカード 設定ソフトウェア",
+          "cpe": {
+            "text": "cpe:/a:toshiba:sdhc_memory_card_with_transferjet_setting_software",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V1.02 およびそれ以前"
+          ]
+        },
+        {
+          "name": "東芝",
+          "productname": "無線LAN搭載SDHCメモリカード FlashAir ソフトウェア更新ツール",
+          "cpe": {
+            "text": "cpe:/a:toshiba:wlan_sdhc_memory_card_flashair_setting_software_updatetool",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "（SD-WB / WLシリーズ） V1.00.04 およびそれ以前",
+            "（SD-WD/WCシリーズ＜W-02＞） V2.00.03 およびそれ以前",
+            "（SD-WEシリーズ＜W-03＞） V3.00.01"
+          ]
+        },
+        {
+          "name": "東芝",
+          "productname": "無線LAN搭載SDHCメモリカード FlashAir 設定ソフトウエア",
+          "cpe": {
+            "text": "cpe:/a:toshiba:wlan_sdhc_memory_card_flashair_setting_software",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V3.0.2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "プログラムを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 なお、本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザは製品をアップデートする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "東芝",
+          "vulinfoid": "株式会社東芝の告知ページ",
+          "url": "http://www.toshiba-personalstorage.net/news/20170414.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2149",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2149"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#05340816",
+          "url": "https://jvn.jp/jp/JVN05340816/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2149",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2149"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月14日]\\n   掲載\\n[2017年04月21日]\\n   概要：内容を更新\\n[2017年12月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2149) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-14T12:04:08+09:00",
+    "datelastupdated": "2017-12-21T17:48:54+09:00",
+    "datepublic": "2017-04-14T00:00:00+09:00"
+  }
+}

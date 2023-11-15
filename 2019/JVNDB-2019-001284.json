@@ -1,0 +1,162 @@
+{
+  "vulinfoid": "JVNDB-2019-001284",
+  "vulinfodata": {
+    "title": "ISC BIND 9 に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND 9 には、複数の脆弱性が存在します。  * 特別に細工されたパケットを処理した場合に、named がメモリリークを引き起こす - CVE-2018-5744 * managed-keys 機能を設定してリゾルバとして使用している named において、トラストアンカーの鍵が、リゾルバがサポートしていないアルゴリズムを使用する鍵に交換された場合に、assertion failure が発生する - CVE-2018-5745 * 書き込み可能な DLZ (Dynamically Loadable Zone) において、ゾーン転送の制限が有効にならない - CVE-2019-6465  "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * サービス運用妨害 (DoS) - CVE-2018-5744, CVE-2018-5745 * 許可していない相手への DLZ ゾーン転送 - CVE-2019-6465"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  * BIND 9.11.5-P4 * BIND 9.12.3-P4 * BIND 9.11.5-S5"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2018-5744: A specially crafted packet can cause named to leak memory",
+          "url": "https://kb.isc.org/docs/cve-2018-5744"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2018-5745: An assertion failure can occur if a trust anchor rolls over to an unsupported key algorithm when using managed-keys",
+          "url": "https://kb.isc.org/docs/cve-2018-5745"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2019-6465: Zone transfer controls for writable DLZ zones were not effective",
+          "url": "https://kb.isc.org/docs/cve-2019-6465"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5744",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5744"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5745",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5745"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-6465",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6465"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2019-0009",
+          "url": "https://www.jpcert.or.jp/at/2019/at190009.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPNIC",
+          "vulinfoid": "BIND 9における複数の脆弱性について(2019年2月)",
+          "url": "https://www.nic.ad.jp/ja/topics/2019/20190222-01.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2018-5745）",
+          "url": "https://jprs.jp/tech/security/2019-02-22-bind9-vuln-managed-keys.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（アクセス制限の不具合によるゾーンデータの流出）について（CVE-2019-6465）",
+          "url": "https://jprs.jp/tech/security/2019-02-22-bind9-vuln-dlz.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性（メモリリークの発生）について（CVE-2018-5744）",
+          "url": "https://jprs.jp/tech/security/2019-02-22-bind9-vuln-edns-options.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92881878",
+          "url": "https://jvn.jp/vu/JVNVU92881878/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5744",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5744"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-6465",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6465"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5745",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5745"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-02-25T14:02:46+09:00",
+          "description": "[2019年02月25日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-12-02T14:13:17+09:00",
+          "description": "[2019年12月02日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5744) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5745) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-6465) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-02-25T14:02:46+09:00",
+    "datelastupdated": "2019-12-02T15:38:50+09:00",
+    "datepublic": "2019-02-22T00:00:00+09:00"
+  }
+}

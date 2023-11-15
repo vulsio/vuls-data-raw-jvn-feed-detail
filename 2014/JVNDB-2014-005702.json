@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2014-005702",
+  "vulinfodata": {
+    "title": "Linux Kernel の SCTP の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の SCTP の実装には、net/sctp/inqueue.c および net/sctp/sm_statefuns.c に関する処理に不備があるため、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.17.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、関連の出力キューに大量のチャンクを誘発されることで、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.17.4",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.17.4"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "net: sctp: fix remote memory pressure from excessive queueing",
+          "url": "https://github.com/torvalds/linux/commit/26b87c7881006311828bb0ab271a551a62dcceb4"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "net: sctp: fix remote memory pressure from excessive queueing",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=26b87c7881006311828bb0ab271a551a62dcceb4"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1155745",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1155745"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0062",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0062.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0115",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0115.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3688",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3688"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3688",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3688"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月02日]\\n  掲載\\n[2015年06月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0062) を追加\\n[2015年06月22日]\\n  ベンダ情報：レッドハット (RHSA-2015:0115) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-02T16:14:44+09:00",
+    "datelastupdated": "2015-06-22T18:00:21+09:00",
+    "datepublic": "2014-11-21T00:00:00+09:00"
+  }
+}

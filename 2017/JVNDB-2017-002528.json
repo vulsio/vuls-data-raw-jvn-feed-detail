@@ -1,0 +1,129 @@
+{
+  "vulinfoid": "JVNDB-2017-002528",
+  "vulinfodata": {
+    "title": "IBM Lotus Domino の IMAP サーバにスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "IBM Lotus Domino がサポートする IMAP サーバには、メールボックス名の処理に起因するスタックベースのバッファオーバーフローの脆弱性が存在します。ユーザが指定した長大なメールボックス名を処理することで、スタックベースのバッファオーバーフローが発生します。IMAP コマンドを受け付けるのはユーザ認証完了後であるため、本脆弱性を使用した攻撃が可能なのは、当該製品にログインしたユーザのみであると考えられます。この攻撃手法は、\"EMPHASISMINE\" と呼ばれています。公開されている攻撃コードでは EXAMINE コマンドが使用されていますが、メールボックス名を指定するその他の IMAP コマンドも本脆弱性の影響を受ける可能性があります。  EXAMINE コマンド https://tools.ietf.org/html/rfc3501#section-6.3.2  Windows 版 Domino が使用する少なくとも一つのライブラリは ASLR に対応しておらず、最新の Windows 環境においても容易にバッファオーバーフローの脆弱性を使用した攻撃が可能です。また、Linux など他のプラットフォームで動作する Domino に対しても、この脆弱性を使用した攻撃が可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM Domino (旧 IBM Lotus Domino)",
+          "cpe": {
+            "text": "cpe:/a:ibm:lotus_domino",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.5.1 から 8.5.1 Fix Pack 5 まで",
+            "8.5.2 から 8.5.2 Fix Pack 4 まで",
+            "8.5.3 から 8.5.3 Fix Pack 6 Interim Fix 16 まで",
+            "9.0 から 9.0 Interim Fix 7 まで",
+            "9.0.1 から 9.0.1 Feature Pack 8 Interim Fix 1 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された IMAP コマンドを処理することで、当該製品にログインしたユーザによって Domino IMAP サーバの権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は次のバージョンで修正されています。  　* IBM Domino 9.0.1 Fix Pack 8 Interim Fix 2 　* IBM Domino 8.5.3 Fix Pack 6 Interim Fix 17  　　情報 (Security Bulletin: IBM Domino server IMAP EXAMINE command stack buffer overflow (CVE-2017-1274)) 　　http://www-01.ibm.com/support/docview.wss?uid=swg22002280  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* Enhanced Mitigation Experience Toolkit (EMET) を適用する 　　https://support.microsoft.com/ja-jp/help/2458544/the-enhanced-mitigation-experience-toolkit "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IBM",
+          "vulinfoid": "IBM Knowledge Center -- IMAPサービス",
+          "url": "https://www.ibm.com/support/knowledgecenter/ja/SSKTMJ_8.5.3/com.ibm.help.domino.admin85.doc/H_THE_IMAP_SERVICE_OVER.html"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Security Bulletin",
+          "vulinfoid": "IBM Domino server IMAP EXAMINE command stack buffer overflow (CVE-2017-1274)",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg22002280"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft サポート",
+          "vulinfoid": "Enhanced Mitigation Experience Toolkit",
+          "url": "https://support.microsoft.com/ja-jp/help/2458544/the-enhanced-mitigation-experience-toolkit"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-1274",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-1274"
+        },
+        {
+          "type": "advisory",
+          "name": "IETF",
+          "vulinfoid": "6.3.2.  EXAMINE Command",
+          "url": "https://tools.ietf.org/html/rfc3501#section-6.3.2"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91685026",
+          "url": "http://jvn.jp/vu/JVNVU91685026/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-1274",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-1274"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#676632",
+          "url": "http://www.kb.cert.org/vuls/id/676632"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月19日]\\n  掲載\\n[2017年04月21日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  想定される影響：内容を更新\\n[2017年04月25日]\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  対策：内容を更新\\n  ベンダ情報：IBM (IBM Domino server IMAP EXAMINE command stack buffer overflow (CVE-2017-1274)) を追加\\n  共通脆弱性識別子(CVE)：CVE-ID を追加\\n[2017年06月01日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-1274) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  CVSS による深刻度：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-19T15:54:52+09:00",
+    "datelastupdated": "2017-06-01T15:12:52+09:00",
+    "datepublic": "2017-04-17T00:00:00+09:00"
+  }
+}

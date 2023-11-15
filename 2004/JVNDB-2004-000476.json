@@ -1,0 +1,147 @@
+{
+  "vulinfoid": "JVNDB-2004-000476",
+  "vulinfodata": {
+    "title": "imlib の BMP ファイル解析処理におけるヒープオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  多くの Linux ディストリビューションに同梱されている imlib は libXpm の機能を拡張したライブラリで、画像を参照および処理する各種のアプリケーションで利用されています。   imlib 1.9.15 以前のデコード部において、GTK+ および gdk-pixbuf の BMP ファイル解析時における問題 (CAN-2004-0782) に類似する不備が存在します。  このため、意図的に作成された BMP 形式の画像ファイルをロードする際に、複数の箇所におけてヒープオーバーフロー (CAN-2004-1025) および整数オーバーフロー (CAN-2004-1026) が発生する問題が存在します。   これらの問題を利用するリモートの攻撃者は、意図的に作成した画像ファイルを問題を抱える imlib ライブラリが使用されているアプリケーションで開かせることにより、オーバーフローを発生させ、結果としてアプリケーションをクラッシュさせる、さらにはアプリケーションを実行した標的ユーザの権限で任意のコードを実行する可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1 ",
+            "2.0 ",
+            "2.1 ",
+            "3.0 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "imlib",
+          "url": "http://www.miraclelinux.com/support/update/data/imlib.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:651",
+          "url": "https://rhn.redhat.com/errata/RHSA-2004-651.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-6",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-6.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:651",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-651J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-6",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-6j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-1025",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1025"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-1025",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1025"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13381",
+          "url": "http://secunia.com/advisories/13381/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "11830",
+          "url": "http://www.securityfocus.com/bid/11830"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-11-09T00:00:00+09:00"
+  }
+}

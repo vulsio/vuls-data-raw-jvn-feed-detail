@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2017-001416",
+  "vulinfodata": {
+    "title": "Artifex Software, Inc. の MuJS の jsrun.c 内の jsR_setproperty 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Artifex Software, Inc. の MuJS の jsrun.c 内の jsR_setproperty 関数は、負の配列の長さをチェックしないため、js_pushstring 関数内で整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Artifex Software",
+          "productname": "MuJS",
+          "cpe": {
+            "text": "cpe:/a:artifex:mujs",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4006739a28367c708dea19aeb19b8a1a9326ce08 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "巧妙に細工された JS ファイルを構文解析されることで、js_pushstring 関数内で整数オーバーフローを引き起こされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Artifex Software",
+          "vulinfoid": "Fix 697497: Ensure array length is positive.",
+          "url": "http://git.ghostscript.com/?p=mujs.git;h=4006739a28367c708dea19aeb19b8a1a9326ce08"
+        },
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 697497",
+          "url": "https://bugs.ghostscript.com/show_bug.cgi?id=697497"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-5627",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5627"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-5627",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-5627"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-190",
+          "url": "https://cwe.mitre.org/data/definitions/190.html",
+          "title": "整数オーバーフローまたはラップアラウンド"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年02月15日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-02-15T11:11:14+09:00",
+    "datelastupdated": "2017-02-15T11:11:14+09:00",
+    "datepublic": "2017-01-24T00:00:00+09:00"
+  }
+}

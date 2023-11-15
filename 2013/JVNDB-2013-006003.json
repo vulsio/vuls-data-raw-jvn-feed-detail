@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2013-006003",
+  "vulinfodata": {
+    "title": "Pidgin の libpurple の util.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Pidgin の libpurple の util.c は、Content-Length ヘッダと矛盾する HTTP レスポンスへのメモリの割り当てを適切に行わないため、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Pidgin",
+          "productname": "Pidgin",
+          "cpe": {
+            "text": "cpe:/a:pidgin:pidgin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.10.8 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート HTTP サーバにより、巧妙に細工されたレスポンスを介して、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Pidgin",
+          "vulinfoid": "Fix purple_util_fetch_url_request variants to avoid implicitly trusting the",
+          "url": "http://hg.pidgin.im/pidgin/main/rev/cd529e1158d3"
+        },
+        {
+          "type": "vendor",
+          "name": "Pidgin Security Advisories",
+          "vulinfoid": "Remote crash parsing HTTP responses",
+          "url": "http://pidgin.im/news/security/?id=73"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1056907",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1056907"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0139",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0139.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in Pidgin",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_pidgin2"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6479",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6479"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6479",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6479"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年02月10日]\\n  掲載\\n[2014年08月11日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Pidgin) を追加\\n[2015年08月03日]\\n  CWE による脆弱性タイプ一覧：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-02-10T11:41:23+09:00",
+    "datelastupdated": "2015-08-03T17:56:01+09:00",
+    "datepublic": "2013-02-21T00:00:00+09:00"
+  }
+}

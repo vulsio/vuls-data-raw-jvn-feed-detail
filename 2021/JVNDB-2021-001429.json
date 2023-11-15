@@ -1,0 +1,158 @@
+{
+  "vulinfoid": "JVNDB-2021-001429",
+  "vulinfodata": {
+    "title": "OPC 製品における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "OPC Foundation が提供する OPC UA 製品および Unified Automation が提供する OPC UA クライアント / サーバの SDK バンドルには、次の複数の脆弱性が存在します。  　* 不適切な再帰制御 (CWE-674) - CVE-2021-27432 　* 情報漏えい (CWE-200) - CVE-2021-27434"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OPC Foundation",
+          "productname": "UA .NET Legacy",
+          "cpe": {
+            "text": "cpe:/a:opcfoundation:ua-.net-legacy",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "OPC Foundation",
+          "productname": "UA .NET Standard",
+          "cpe": {
+            "text": "cpe:/a:opcfoundation:ua-.netstandard",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.365.48 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Unified Automation GmbH",
+          "productname": ".NET ベースの OPC UA クライアント / サーバの SDK バンドル",
+          "cpe": {
+            "text": "cpe:/a:misc:unified_automation_.net_based_opc_ua_client_server_sdk_bundle",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0.7 およびそれ以前（.NET 4.5、4.0 および 3.5 Framework バージョンのみ)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、スタックオーバーフローを引き起こされる。 - CVE-2021-27432 　* 遠隔の第三者によって、ファイルシステム上のアクセスを許可していない機密情報を窃取される。 - CVE-2021-27434"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートまたはソフトウェアの更新をしてください。  　* CVE-2021-27432 　　　* OPC Foundation が提供する OPC UA .NET Standard 1.4.365.48 にアップデートする。 　* CVE-2021-27434 　　　* Unified Automation が提供する OPC UA クライアント / サーバの SDK バンドルを最新にアップデートする。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "OPC UA .NET Standard stack update",
+          "url": "https://github.com/OPCFoundation/UA-.NETStandard/releases/tag/1.4.365.48"
+        },
+        {
+          "type": "vendor",
+          "name": "Unified Automation",
+          "vulinfoid": "OPC UA Development - Downloads (要ログイン)",
+          "url": "https://www.unified-automation.com/downloads/opc-ua-development.html"
+        },
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "三菱電機株式会社 の告知ページ",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-016.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27432",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27432"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-27434",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27434"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-133-03",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-133-03"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-133-04",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-133-04"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-294-03",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-294-03"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98588994",
+          "url": "http://jvn.jp/cert/JVNVU98588994"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-674",
+          "url": "https://cwe.mitre.org/data/definitions/674.html",
+          "title": "不適切な再帰制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-05-17T17:33:46+09:00",
+          "description": "[2021年05月17日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-10-22T11:05:31+09:00",
+          "description": "[2021年10月22日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-294-03) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-10-25T13:49:29+09:00",
+          "description": "[2021年10月25日]\\n  ベンダ情報：三菱電機 (三菱電機株式会社 の告知ページ) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-05-17T17:33:46+09:00",
+    "datelastupdated": "2021-10-25T13:50:16+09:00",
+    "datepublic": "2021-05-14T00:00:00+09:00"
+  }
+}

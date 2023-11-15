@@ -1,0 +1,132 @@
+{
+  "vulinfoid": "JVNDB-2016-004360",
+  "vulinfodata": {
+    "title": "GD Graphics Library の gd_gif_out.c の output 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "GD Graphics Library (別名 libgd) の gd_gif_out.c の output 関数には、サービス運用妨害 (境界外読み取り) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-125: Out-of-bounds Read (境界外読み取り) と識別されています。 http://cwe.mitre.org/data/definitions/125.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "LibGD project",
+          "productname": "LibGD",
+          "cpe": {
+            "text": "cpe:/a:libgd:libgd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された画像を介して、サービス運用妨害 (境界外読み取り) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3619",
+          "url": "https://www.debian.org/security/2016/dsa-3619"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "global out of bounds read when encoding gif from malformed input with gd2togif #209",
+          "url": "https://github.com/libgd/libgd/issues/209"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "gif: avoid out-of-bound reads of masks array #209",
+          "url": "https://github.com/libgd/libgd/commit/82b80dcb70a7ca8986125ff412bceddafc896842"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:2363",
+          "url": "http://lists.opensuse.org/opensuse-updates/2016-09/msg00078.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6161",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6161"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6161",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6161"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月17日]\\n  掲載\\n[2016年11月21日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：openSUSE project (openSUSE-SU-2016:2363) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-17T17:50:08+09:00",
+    "datelastupdated": "2016-11-21T11:00:28+09:00",
+    "datepublic": "2016-05-14T00:00:00+09:00"
+  }
+}

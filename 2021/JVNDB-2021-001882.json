@@ -1,0 +1,250 @@
+{
+  "vulinfoid": "JVNDB-2021-001882",
+  "vulinfodata": {
+    "title": "Rockwell Automation 製 ISaGRAF5 Runtime に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Rockwell Automation 社が提供する ISaGRAF5 Runtime には、次の複数の脆弱性が存在します。  　* 相対的パストラバーサル (CWE-23) - CVE-2020-25176 　* 認証情報の平文保存 (CWE-256) - CVE-2020-25184 　* 重要な情報の平文での送信 (CWE-319) - CVE-2020-25178 　* DLL ファイルの検索パスが適切に制御されていない (CWE-427) - CVE-2020-25182 　* ハードコードされた暗号鍵の使用 (CWE-321) - CVE-2020-25180"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GE Steam Power",
+          "productname": "ALSPA S6 MFC1000",
+          "cpe": {
+            "text": "cpe:/a:misc:ge_steam_power_alspa_s6_mfc1000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "すべてのバージョン"
+          ]
+        },
+        {
+          "name": "GE Steam Power",
+          "productname": "ALSPA S6 MFC3000",
+          "cpe": {
+            "text": "cpe:/a:misc:ge_steam_power_alspa_s6_mfc3000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "すべてのバージョン"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "AADvance Controller",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:aadvance_controller",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 1.40 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "ISaGRAF Free Runtime",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:isagraf_free_runtime",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(ISaGRAF6 Workbench Version 6.6.8 およびそれ以前に含まれる)"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "ISaGRAF Runtime",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:isagraf_runtime",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 4.x 系、5.x 系 すべてのバージョン"
+          ]
+        },
+        {
+          "name": "Rockwell Automation",
+          "productname": "Micro800",
+          "cpe": {
+            "text": "cpe:/a:rockwellautomation:micro800",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "family すべてのバージョン"
+          ]
+        },
+        {
+          "name": "Xylem Inc.",
+          "productname": "MultiSmart Gen-1",
+          "cpe": {
+            "text": "cpe:/a:misc:xylem_multismart_gen-1",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 3.2.0 より前のバージョン"
+          ]
+        },
+        {
+          "name": "Xylem Inc.",
+          "productname": "MultiSmart Gen-2",
+          "cpe": {
+            "text": "cpe:/a:misc:xylem_multismart_gen-2",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 3.2.0 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受けるおそれがあります。  　* 遠隔の第三者によって、任意のコードを実行される - CVE-2020-25176 　* ローカルのユーザによって、パスワードおよび情報を窃取される - CVE-2020-25184 　* 遠隔の第三者によって、ファイルのアップロード、読み取り、削除をされる - CVE-2020-25178 　* ISaGRAF Runtime が Microsoft Windows 上で動作している場合、ローカルの第三者によって任意のコードを実行される - CVE-2020-25182 　* 遠隔の第三者によって、情報を窃取される - CVE-2020-25180 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版にアップデートしてください。 開発者は本脆弱性を修正した ISaGRAF Runtime 5 Version 5.72.00 をリリースしています。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 外部からの 1131/TCP、1132/TCP によるアクセスを制限する 　* ユーザまたはサービスアカウントの Runtime フォルダへのアクセス権を最小限にする 　* 適切なネットワークセグメンテーションとセキュリティ管理を行う 　* すべての制御システム機器のネットワーク露出を最小限に抑える 　* ファイアウォールの内側にある制御システムを特定する 　* 制御システムを他のネットワークから可能な限り分離する 　* ネットワークセグメンテーションについては <a href=\"https://literature.rockwellautomation.com/idc/groups/literature/documents/td/enet-td001_-en-p.pdf\" target=\"_blank\">Converged Plantwide Ethernet (CPwE) Design and Implementation Guide</a> を参照して対策を実施する 　* ファイアウォール、UTM、VPN などを使用して適切なネットワーク制御を行う 　* ユーザーおよびサービスアカウントによるランタイム関連のフォルダへのアクセス許可は必要最小限の権限で行う"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Rockwell Automation Security Advisory (要ログイン)",
+          "url": "https://rockwellautomation.custhelp.com/app/answers/answer_view/a_id/1131699"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Downloads: ISaGRAF Runtime 5 Version 5.72.00",
+          "url": "https://compatibility.rockwellautomation.com/Pages/MultiProductFindDownloads.aspx?crumb=112&refSoft=1&toggleState=&versions=60131"
+        },
+        {
+          "type": "vendor",
+          "name": "Rockwell Automation",
+          "vulinfoid": "Converged Plantwide Ethernet (CPwE) Design and Implementation Guide",
+          "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/td/enet-td001_-en-p.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Notification",
+          "vulinfoid": "Schneider Electric Security Notification: SEVD-2021-159-04",
+          "url": "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-159-04"
+        },
+        {
+          "type": "vendor",
+          "name": "Xylem",
+          "vulinfoid": "Xylem Product Security Advisory: XSA-2021-002",
+          "url": "https://www.xylem.com/siteassets/about-xylem/cybersecurity/advisories/xylem-multismart-rockwell-isagraf.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25176",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25176"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25184",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25184"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25178",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25178"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25182",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25182"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25180",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25180"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-280-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-280-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90811375",
+          "url": "http://jvn.jp/cert/JVNVU90811375"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-321",
+          "url": "https://cwe.mitre.org/data/definitions/321.html",
+          "title": "ハードコードされた暗号鍵の使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-319",
+          "url": "https://cwe.mitre.org/data/definitions/319.html",
+          "title": "重要な情報の平文での送信"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-427",
+          "url": "https://cwe.mitre.org/data/definitions/427.html",
+          "title": "制御されていない検索パスの要素"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-23",
+          "url": "https://cwe.mitre.org/data/definitions/23.html",
+          "title": "相対パストラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-256",
+          "url": "https://cwe.mitre.org/data/definitions/256.html",
+          "title": "認証情報の平文保存"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-11T15:50:24+09:00",
+          "description": "[2021年06月11日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-06-21T11:47:16+09:00",
+          "description": "[2021年06月21日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Xylem (Xylem Product Security Advisory: XSA-2021-002) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-11T15:50:24+09:00",
+    "datelastupdated": "2021-06-21T17:28:47+09:00",
+    "datepublic": "2021-06-09T00:00:00+09:00"
+  }
+}

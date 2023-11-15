@@ -1,0 +1,148 @@
+{
+  "vulinfoid": "JVNDB-2018-006728",
+  "vulinfodata": {
+    "title": "Microsoft Windows タスクスケジューラの ALPC インターフェースにおけるローカル権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft Windows タスクスケジューラの ALPC インターフェースには、ローカル権限昇格が可能になる脆弱性が存在します。ローカルユーザによって、SYSTEM 権限が取得される可能性があります。  Microsoft Windows タスクスケジューラの SchRpcSetSecurity API には、Advanced Local Procedure Call (ALPC) の処理に脆弱性が存在します。認証されたユーザによって、ACL (Access Control List、アクセス制御リスト) で保護されているファイルを上書きされ、SYSTEM 権限を取得される可能性があります。 CERT/CC では、公開されたエクスプロイトコードが 64-bit Windows 10 および Windows Server 2016 Server で動作すること、さらに若干の変更により 32-bit Windows 10 で動作することを確認しています。他のバージョンの Windows でも動作する可能性があります。 なお、本脆弱性を悪用したマルウェアが確認されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Windows タスクスケジューラ",
+          "cpe": {
+            "text": "cpe:/a:microsoft:windows_task_scheduler",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品のローカルユーザによって、SYSTEM 権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Microsoft が提供する情報をもとに、Windows アップデートを適用してください。 Microsoft は本脆弱性への対応として CVE-2018-8440 | Windows ALPC の特権の昇格の脆弱性 を提供しています。  [ワークアラウンドを実施する] Microsoft Sysmon を使用して攻撃コードの実行を検知する Kevin Beaumont 氏は、本脆弱性を悪用する攻撃コードの実行を Microsoft Sysmon を使用して検出する方法を解説しています (DoublePulsar)。  ディレクトリ C:\\Windows\\Tasks にアクセス制御リストを設定する Karsten Nilsen 氏は、本脆弱性に対する以下のようなワークアラウンドを提案しています。 管理者権限で起動したプロンプトから次のコマンドを実行します。  icacls c:\\windows\\tasks /remove:g \"Authenticated Users\" icacls c:\\windows\\tasks /deny system:(OI)(CI)(WD,WDAC)  また、Microsoft から提供された本脆弱性の修正をシステムに適用する際には、想定外の副作用を防ぐためにこれらの変更を元に戻しておいたほうが良いでしょう。変更を元に戻す場合には次のコマンドを実行します。  icacls c:\\windows\\tasks /remove:d system icacls c:\\windows\\tasks /grant:r \"Authenticated Users\":(RX,WD)  注意: このワークアラウンドは、Microsoft から承認された方法ではありません。 このアクセス制御リストの設定を行う際には、システムの通常の利用に影響が出ないことを十分確認してから実施してください。 CERT/CC で行ったテストでは、これらのアクセス制御リストを設定することにより攻撃コードの実行はブロックされました。また、既存のタスクの実行や新たなタスクの登録への悪影響は見つかりませんでした。 ただし、レガシーなタスクスケジューラインタフェース経由でのタスク登録、SCCM (System Center Configuration Manager) や SCEP (System Center Endpoint Protection) に関連するタスクなどに副作用を及ぼす可能性があります。本ワークアラウンドを実施する際には、事前に十分な検証を行ってください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Developer Network",
+          "vulinfoid": "3.2.5.4.5 SchRpcSetSecurity (Opnum 4)",
+          "url": "https://msdn.microsoft.com/en-us/library/cc248452.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Update Guide",
+          "vulinfoid": "CVE-2018-8440 | Windows ALPC Elevation of Privilege Vulnerability",
+          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8440"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-8440",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8440"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2018-0038",
+          "url": "https://www.jpcert.or.jp/at/2018/at180038.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96222149",
+          "url": "https://jvn.jp/vu/JVNVU96222149/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-8440",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8440"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#906424",
+          "url": "https://www.kb.cert.org/vuls/id/906424"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Short term solution on VU#906424",
+          "url": "https://twitter.com/karsten_nilsen/status/1034406706879578112"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "PowerPool malware exploits zero-day vulnerability",
+          "url": "https://www.welivesecurity.com/2018/09/05/powerpool-malware-exploits-zero-day-vulnerability/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "randomrepo/PoC-LPE.rar",
+          "url": "https://github.com/SandboxEscaper/randomrepo/blob/master/PoC-LPE.rar"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Task Scheduler ALPC exploit high level analysis",
+          "url": "https://doublepulsar.com/task-scheduler-alpc-exploit-high-level-analysis-ff08cda6ad4f"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-08-30T12:22:30+09:00",
+          "description": "[2018年08月30日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2018-09-04T10:45:58+09:00",
+          "description": "[2018年09月04日]\\n  対策：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2018-09-13T11:41:57+09:00",
+          "description": "[2018年09月13日]\\n  概要：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Security Update Guide (CVE-2018-8440 | Windows ALPC Elevation of Privilege Vulnerability) を追加\\n  ベンダ情報：Microsoft Developer Network (3.2.5.4.5 SchRpcSetSecurity (Opnum 4)) を追加\\n  参考情報：JPCERT 緊急報告 (JPCERT-AT-2018-0038) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-8440) を追加\\n  参考情報：関連文書 (Short term solution on VU#906424) を追加\\n  参考情報：関連文書 (PowerPool malware exploits zero-day vulnerability) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2019-07-25T16:36:56+09:00",
+          "description": "[2019年07月25日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-8440) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-08-30T14:49:32+09:00",
+    "datelastupdated": "2019-07-25T16:36:18+09:00",
+    "datepublic": "2018-08-27T00:00:00+09:00"
+  }
+}

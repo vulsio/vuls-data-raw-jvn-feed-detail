@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2018-001879",
+  "vulinfodata": {
+    "title": "Apache Tomcat JK ISAPI Connector にパストラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tomcat JK ISAPI Connector には、パストラバーサルの脆弱性が存在します。  Apache Tomcat JK ISAPI Connector の IIS/ISAPI 向けの処理のなかで、受け取ったリクエストの URI から worker への対応付けを行う前にリクエスト中のパスを正規化する処理に、パストラバーサル (CWE-22) の脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat JK ISAPI Connector",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat_jk_isapi_connector",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.2.0 から 1.2.42 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "Apache Tomcat 側で処理が行われるパスのうち一部の範囲のみを IIS 経由で公開する設定にしている場合に、リバースプロキシ経由で受け取った細工されたリクエストにより、公開していないパスにアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者はこれらの脆弱性の対策版として、次のバージョンをリリースしています。  　　* Apache Tomcat JK ISAPI Connector 1.2.43"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat JK Connector 1.2.43",
+          "url": "https://tomcat.apache.org/security-jk.html#Fixed_in_Apache_Tomcat_JK_Connector_1.2.43"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV18-014",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv18-014.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-1323",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1323"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94969247",
+          "url": "http://jvn.jp/vu/JVNVU94969247/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-1323",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-1323"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-03-14T10:55:56+09:00",
+          "description": "[2018年03月14日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2018-07-31T11:25:30+09:00",
+          "description": "[2018年07月31日]\\n  ベンダ情報：日本電気 (NV18-014) を追加\\n  参考情報：National Vulnerability Database (CVE-2018-1323) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-03-14T10:55:56+09:00",
+    "datelastupdated": "2018-07-31T12:27:52+09:00",
+    "datepublic": "2018-03-13T00:00:00+09:00"
+  }
+}

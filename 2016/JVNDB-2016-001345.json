@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2016-001345",
+  "vulinfodata": {
+    "title": "OpenELEC と RasPlex に root の SSH パスワードがハードコードされている問題",
+    "vulinfodescription": {
+      "overview": "OpenELEC およびその派生製品では、ハードコードされた root 権限のパスワードを使用しており、デフォルトの設定で root による SSH 接続が有効になっています。  認証情報 (パスワード) がハードコードされている問題 (CWE-259)  CWE-259: Use of Hard-coded Password http://cwe.mitre.org/data/definitions/259.html  OpenELEC は、ハードコードされた root 権限のパスワードを使用しています。ファイルシステムの root パーティションは読込み専用 (read-only) のため、一度インストールしてしまうと、その後、ユーザはパスワードを変更することができません。さらに、機器への SSH 接続がデフォルトで有効になっています。  RasPlex は OpenELEC をベースにした製品のため、OpenELEC と同様の問題を抱えています。  RasPlex は次のように述べています。  　\"The root filesystem is read only (squashfs). This prevents the ability to change the root password, but also prevents an attacker from modifying the filesystem. root ファイルシステムは読込み専用 (SquashFS) です。そのため、root パスワードを変更することはできませんが、それと同時に、攻撃者がファイルシステムを改変することもできません。\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenELEC",
+          "productname": "OpenELEC",
+          "cpe": {
+            "text": "cpe:/o:openelec:openelec",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "RasPlex",
+          "productname": "RasPlex",
+          "cpe": {
+            "text": "cpe:/a:misc:rasplex_rasplex",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、当該機器に root 権限でアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2016年2月3日現在、CERT/CC ではこの問題を完全に解決できる方法を把握していません。 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  [パスワード認証による SSH 接続を無効にする] SSH 接続におけるパスワード認証を無効にし、鍵認証を有効にしてください。  鍵認証 http://wiki.openelec.tv/index.php?title=Config_connect_ssh_wo_password  RasPlex は次のように述べています。  \"users can simply disable SSH via the dialog if they are worried about being compromised. 機器への侵害を懸念するユーザは、単純に SSH を無効にすることができます。\"   [異なるパスワードを使用してビルドする] 製品開発者は、ソースコードから OpenELEC または RasPlex のディストリビューションをビルドすることができ、その際に root パスワードを変更可能です。それでも、パスワードがハードコードされていることに変わりはなく、ユーザはさらに攻撃を受ける可能性があります。また、パスワードの変更のためには再度ビルドし、機器に適用する必要があります。   [ネットワークアクセスを制限する] ファイアウォールなどを使用して、信頼できるホスト、ネットワーク、サービスのみが機器にアクセスできるよう設定してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "SSH insecure by default #453",
+          "url": "https://github.com/RasPlex/RasPlex/issues/453"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenELEC WIKI",
+          "vulinfoid": "OpenELEC FAQ - How do I change the SSH password?",
+          "url": "http://wiki.openelec.tv/index.php?title=OpenELEC_FAQ#SSH_Password_change"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenELEC WIKI",
+          "vulinfoid": "Config connect ssh wo password",
+          "url": "http://wiki.openelec.tv/index.php?title=Config_connect_ssh_wo_password"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenELEC WIKI",
+          "vulinfoid": "Compile from source",
+          "url": "http://wiki.openelec.tv/index.php?title=Compile_from_source"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2230",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2230"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99850969",
+          "url": "http://jvn.jp/vu/JVNVU99850969/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2230",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2230"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#544527",
+          "url": "http://www.kb.cert.org/vuls/id/544527"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-255",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+          "title": "証明書・パスワードの管理"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月04日]\\n  掲載\\n[2016年03月01日]\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE) (CVE-2016-2230) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2230) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-04T13:47:40+09:00",
+    "datelastupdated": "2016-03-01T15:17:08+09:00",
+    "datepublic": "2016-02-02T00:00:00+09:00"
+  }
+}

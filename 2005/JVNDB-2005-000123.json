@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2005-000123",
+  "vulinfodata": {
+    "title": "Linux Kernel の locks_read_proc() 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel 2.6.10 以前には、以下の複数のバッファオーバーフローの問題およびカーネルメモリ内を閲覧可能な問題が存在します。  ・/proc において、特定の引数を指定して locks_read_proc() 関数を呼び出す際に、バッファオーバーフローが発生する問題 (CAN-2005-0529)  ・drivers/char/n_tty.c において、カーネル空間からユーザ空間にデータをコピーする不備により、カーネルメモリ内の情報を奪取される問題 (CAN-2005-0530)  これらの問題を利用するローカルの攻撃者は、結果として不正に昇格された権限で任意のコードを実行する、あるいは重要な情報を奪取する可能性があります。 これらの問題は i386 アーキテクチャ上のバージョン 2.6.10 および 2.6.11rc1 で報告されていますが、他のバージョンも影響を受ける可能性があることが発見者により報告されています。 その他、現時点で詳細は不明ですが net/atm/addr.c の atm_get_addr() 関数や fs/reiserfs/file.c の reiserfs_copy_from_user_to_file_region() 関数にもセキュリティ上の問題 (CAN-2005-0531, CAN-2005-0532) が存在することが報告されています。  尚、開発版 Linux Kernel 2.6.11-rc4 においてこれらの問題は解消されていますが、上記問題以外にも以下のセキュリティ問題が修正されています。  ・Radeon ハードウェアに DRI (Direct Rendering Infrastructure) 権限が付与されている場合に、Radeon ドライバで不正に権限の昇格が可能となる問題 (CAN-2005-0767)  ・特定の i2c デバイスファイルの権限設定およびハードウェアの組み合わせにおいて、i2c-viapro ドライバの境界チェックが適切に行われないために、SMBus ブロック読み込みでバッファオーバーフローが発生する問題"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:366",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-366.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ターボリナックス株式会社",
+          "vulinfoid": "Top Page",
+          "url": "http://www.turbolinux.co.jp/"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:366",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-366J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0529",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0529"
+        },
+        {
+          "type": "advisory",
+          "name": "K-OTik Security Advisory",
+          "vulinfoid": "KOTIK/ADV-2005-0163",
+          "url": "http://www.k-otik.com/english/advisories/2005/0163"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0529",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0529"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14270",
+          "url": "http://secunia.com/advisories/14270/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12555",
+          "url": "http://www.securityfocus.com/bid/12555"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-02-15T00:00:00+09:00"
+  }
+}

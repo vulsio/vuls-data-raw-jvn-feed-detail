@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2016-004282",
+  "vulinfodata": {
+    "title": "Linux Kernel 用の特定の QuIC Android パッチの drivers/staging/android/ashmem.c におけるアクセス制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel 用の特定の Qualcomm Innovation Center (QuIC) Android パッチの drivers/staging/android/ashmem.c の is_ashmem_file 関数は、KGSL Linux Graphics Module のポインタ検証を誤って処理するため、アクセス制限を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Android",
+          "cpe": {
+            "text": "cpe:/o:google:android",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.4",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、dentry 名として /ashmem 文字列を使用されることで、アクセス制限を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android のセキュリティに関する公開情報 - 2016 年 10 月",
+          "url": "http://source.android.com/security/bulletin/2016-10-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "Invalid Path Check on ashmem Memory File (CVE-2016-5340)",
+          "url": "https://www.codeaurora.org/invalid-path-check-ashmem-memory-file-cve-2016-5340"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "ashmem: Validate ashmem memory with fops pointer",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm-3.10/commit/?id=06e51489061e5473b4e2035c79dcf7c27a6f75a6"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5340",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5340"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5340",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5340"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月15日]\\n  掲載\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Google (Android のセキュリティに関する公開情報 - 2016 年 10 月) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-15T16:46:18+09:00",
+    "datelastupdated": "2016-11-17T18:07:38+09:00",
+    "datepublic": "2016-07-28T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2018-007670",
+  "vulinfodata": {
+    "title": "ISC BIND 9 の Update policy 機能の説明が実際の挙動と異なっている問題",
+    "vulinfodescription": {
+      "overview": "ISC BIND 9 のマニュアルでは、Update policy 機能で提供されているルール krb5-subdomain および ms-subdomain の説明が、実際の挙動と異なっています。  ISC BIND では、Dynamic DNS (DDNS) による DNS レコードのアップデートを制御するために update-policy という機能が提供されています。クライアントから送られてくる DNS レコードのアップデートリクエストの処理を、リクエストで使用される鍵情報に基づいて制限するようなルールを設定することが可能です。 設定できるルールの種類は複数用意されていますが、実装された当初、これらのルールの挙動についてマニュアル (ARM, Administrator's Reference Manual) には記載されていませんでした。その後 change #3112 にて説明が追加されましたが、2つのルール krb5-subdomain と ms-subdomain の説明が実際の挙動と異なっていました。これにより、ARM の説明では許可しないはずのアップデートリクエストを受け付けてしまう可能性があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.11.5 より前",
+            "9.12.3 より前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "認証されたクライアントからのアップデートリクエストにより、DDNS によって更新されることを想定していない DNS レコードが更新される可能性があります。 例えば、以下のような \"example.com\" ゾーンの設定を行っている場合、  zone example.com { 　　　... 　　　update-policy { 　　　　　　　grant SUB.EXAMPLE.COM krb5-subdomain . ANY; 　　　}; };  host/machine.sub.example.com@SUB.EXAMPLE.COM として認証されたクライアントは、\"example.com\" およびそれ以下の DNS レコードを更新することが可能となります。 マニュアルでは、認証されたマシン名からなるドメイン名 \"machine.sub.example.com\" およびそれ以下の DNS レコードのみ更新を許可すると説明されていました。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する]  　*更新を許可する範囲を独立したゾーンとして設定する。例えば、example.com ゾーンの一部の更新を許可するため sub.example.com ゾーンを設定し、適切な update-policy の設定を行う。  [アップデートする] 開発者によると、本件への対策を行った次のバージョンを 2018年10月中にリリース予定とのことです。  　*BIND 9.11.5 　*BIND 9.12.3  設定ファイルの解析処理に関するバグ修正とともに、新たな種類のルール &lt;code>krb5-selfsub&lt;/code> と &lt;code>ms-selfsub&lt;/code> の提供が表明されています。開発者が提供する情報をもとに、最新版へアップデートするとともにゾーン設定の内容を適切に行ってください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ISC, Inc.",
+          "vulinfoid": "CVE-2018-5741: Update policies krb5-subdomain and ms-subdomain",
+          "url": "https://kb.isc.org/docs/cve-2018-5741"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5741",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5741"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90728793",
+          "url": "https://jvn.jp/vu/JVNVU90728793/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5741",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5741"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-09-21T10:36:14+09:00",
+          "description": "[2018年09月21日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-08-28T09:45:02+09:00",
+          "description": "[2019年08月28日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5741) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-09-21T12:08:45+09:00",
+    "datelastupdated": "2019-08-28T09:45:29+09:00",
+    "datepublic": "2018-09-20T00:00:00+09:00"
+  }
+}

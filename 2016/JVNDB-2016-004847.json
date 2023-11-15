@@ -1,0 +1,202 @@
+{
+  "vulinfoid": "JVNDB-2016-004847",
+  "vulinfodata": {
+    "title": "libarchive の archive_read_support_format_7zip.c の read_SubStreamsInfo 関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "libarchive の archive_read_support_format_7zip.c の read_SubStreamsInfo 関数には、整数オーバーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-190: Integer Overflow or Wraparound (整数オーバーフローまたはラップアラウンド) と識別されています。 http://cwe.mitre.org/data/definitions/190.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "libarchive",
+          "productname": "libarchive",
+          "cpe": {
+            "text": "cpe:/a:libarchive:libarchive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.1 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server AUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7.2)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 7) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、大量のサブストリームを持つ 7zip ファイルを介して、ヒープベースのバッファオーバーフローを誘発されることで、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Issue #718: Fix TALOS-CAN-152",
+          "url": "https://github.com/libarchive/libarchive/commit/e79ef306afe332faf22e9b442a2c6b59cb175573"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "TALOS-CAN-152 #718",
+          "url": "https://github.com/libarchive/libarchive/issues/718"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1348439",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1348439"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1844",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1844.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4300",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4300"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4300",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4300"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月27日]\\n  掲載\\n[2016年11月17日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-27T11:50:58+09:00",
+    "datelastupdated": "2016-11-17T17:21:13+09:00",
+    "datepublic": "2016-06-20T00:00:00+09:00"
+  }
+}

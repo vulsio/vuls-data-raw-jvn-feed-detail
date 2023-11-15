@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2013-005317",
+  "vulinfodata": {
+    "title": "Linux Kernel の drivers/scsi/aacraid/linit.c の aac_compat_ioctl 関数におけるアクセス制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の drivers/scsi/aacraid/linit.c の aac_compat_ioctl 関数は、CAP_SYS_RAWIO ケーパビリティを必要としないため、アクセス制限を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.11.8 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された ioctl コールを介して、アクセス制限を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.11.8",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.11.8"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "aacraid: missing capable() check in compat ioctl",
+          "url": "https://github.com/torvalds/linux/commit/f856567b930dfcdbc3323261bf77240ccdde01f5"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "aacraid: missing capable() check in compat ioctl",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f856567b930dfcdbc3323261bf77240ccdde01f5"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1033530",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1033530"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0285",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0285.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0100",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0100.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6383",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6383"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6383",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6383"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月28日]\\n  掲載\\n[2015年08月03日]\\n  ベンダ情報：レッドハット (RHSA-2014:0285) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0100) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-28T18:28:04+09:00",
+    "datelastupdated": "2015-08-03T16:46:04+09:00",
+    "datepublic": "2013-11-13T00:00:00+09:00"
+  }
+}

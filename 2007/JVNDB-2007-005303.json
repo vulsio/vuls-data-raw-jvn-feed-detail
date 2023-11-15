@@ -1,0 +1,79 @@
+{
+  "vulinfoid": "JVNDB-2007-005303",
+  "vulinfodata": {
+    "title": "Studiewijzer における PHP リモートファイルインクルージョンの脆弱性",
+    "vulinfodescription": {
+      "overview": "Study planner (Studiewijzer) には、register_globals が有効になっている際、PHP リモートファイルインクルージョンの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "studiewijzer",
+          "productname": "studiewijzer",
+          "cpe": {
+            "text": "cpe:/a:studiewijzer:studiewijzer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.15 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下のパラメータ内の URL を介して、任意の PHP コードを実行される可能性があります。 (1) inc/ 配下の service.alert.inc.php への SPL_CFG[dirroot] パラメータ (2) inc/ 配下の settings.ses.php への SPL_CFG[dirroot] パラメータ (3) db/mysql/db.inc.php への SPL_CFG[dirroot] パラメータ (4) integration/shortstat/configuration.php への SPL_CFG[dirroot] パラメータ (5) methodology/traditional/class/ 配下の ali.class.php への SPL_CFG[dirroot] パラメータ (6) methodology/traditional/class/ 配下の cat.class.php への SPL_CFG[dirroot] パラメータ (7) methodology/traditional/ui/inc/ 配下の cat_browse.inc.php への SPL_CFG[dirroot] パラメータ (8) methodology/traditional/ui/inc/ 配下の chr_browse.inc.php への SPL_CFG[dirroot] パラメータ (9) methodology/traditional/ui/inc/ 配下の chr_display.inc.php への SPL_CFG[dirroot] パラメータ (10) methodology/traditional/ui/inc/ 配下の dash_browse.inc.php への SPL_CFG[dirroot] パラメータ (11) ws/ 配下の spl.webservice.php への SPL_CFG[dirroot] パラメータ (12) ws/ 配下の konfabulator/gateway_admin.php への SPL_CFG[dirroot] パラメータ"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "studiewijzer",
+          "vulinfoid": "Study planner",
+          "url": "http://sourceforge.net/projects/splanner/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-1628",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1628"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-1628",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-1628"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-20T18:19:13+09:00",
+    "datelastupdated": "2012-12-20T18:19:13+09:00",
+    "datepublic": "2007-03-23T00:00:00+09:00"
+  }
+}

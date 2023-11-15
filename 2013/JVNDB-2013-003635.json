@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2013-003635",
+  "vulinfodata": {
+    "title": "複数の Bitcoin 製品におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "bitcoind、Bitcoin-Qt および wxBitcoin は、ブロックサイズが過剰な数のデータベースロックを必要とするかどうか適切に配慮しないため、サービス運用妨害 (分割) 状態にされる、および特定の二重支払 (double-spending) 機能を有効にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Bitcoin Project",
+          "productname": "Bitcoin-Qt",
+          "cpe": {
+            "text": "cpe:/a:bitcoin:bitcoin-qt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.4.9rc2 未満",
+            "0.5.8rc2 未満の 0.5.x",
+            "0.6.5rc2 未満の 0.6.x",
+            "0.7.3rc2 未満の 0.7.x"
+          ]
+        },
+        {
+          "name": "Bitcoin Project",
+          "productname": "bitcoind",
+          "cpe": {
+            "text": "cpe:/a:bitcoin:bitcoind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.4.9rc2 未満",
+            "0.5.8rc2 未満の 0.5.x",
+            "0.6.5rc2 未満の 0.6.x",
+            "0.7.3rc2 未満の 0.7.x"
+          ]
+        },
+        {
+          "name": "Bitcoin Project",
+          "productname": "wxBitcoin",
+          "cpe": {
+            "text": "cpe:/a:bitcoin:wxbitcoin",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、不正な Berkeley DB ロッキングを誘発する過度に大きなブロックを介して、サービス運用妨害 (分割) 状態にされる、および特定の二重支払 (double-spending) 機能を有効にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bitcoin Project",
+          "vulinfoid": "BIP 0050",
+          "url": "https://en.bitcoin.it/wiki/BIP_0050"
+        },
+        {
+          "type": "vendor",
+          "name": "Bitcoin Project",
+          "vulinfoid": "Common Vulnerabilities and Exposures - CVE-2013-3220",
+          "url": "https://en.bitcoin.it/wiki/Common_Vulnerabilities_and_Exposures#CVE-2013-3220"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-3220",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3220"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-3220",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-3220"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-05T14:46:46+09:00",
+    "datelastupdated": "2013-08-05T14:46:46+09:00",
+    "datepublic": "2013-03-11T00:00:00+09:00"
+  }
+}

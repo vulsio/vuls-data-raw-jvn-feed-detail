@@ -1,0 +1,88 @@
+{
+  "vulinfoid": "JVNDB-2015-005042",
+  "vulinfodata": {
+    "title": "Datalex のエアライン予約ソフトウェアに認証回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "Datalex 社は、航空業界向けに、フライト情報閲覧、予約、支払い、分析等を支援するソフトウェアを提供しています。Datalex のエアライン予約ソフトウェアには、エラー処理の不備に起因する認証回避の脆弱性が存在します。  ユーザ制御のキーによる認証回避 (CWE-639) - CVE-2015-2858  CWE-639: Authorization Bypass Through User-Controlled Key https://cwe.mitre.org/data/definitions/639.html  攻撃者は、データベースに問い合わせを行う際の HTTP POST リクエストのパラメータを変更することで、空の応答を返すよう仕向けます。空の応答に対するエラー処理の内容に問題があり、これを利用して任意のアカウントを乗っ取ることが可能です。ValidateFormAction.do や ProfileConfirmEditAddressAction.do に対する POST リクエストの profileId パラメータを細工する方法が報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Datalex",
+          "productname": "Datalex のエアライン予約ソフトウェア",
+          "cpe": {
+            "text": "cpe:/a:datalex:airline_booking_software",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "すべてのユーザのデータを取得される可能性があります。また、遠隔の攻撃者によって、任意のユーザのデータを変更される可能性があります。本脆弱性の影響はサーバの設定により異なります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ユーザによる対策の必要はありません] 開発者によると、本脆弱性の修正対応は完了しており、2015/09/03 時点において、影響を受けるすべての航空会社でアップデートを完了しているとのことです。 ベンダ情報"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Datalex",
+          "vulinfoid": "Omni Channel | Airline Retail | Airline Ancillary Revenues",
+          "url": "http://www.datalex.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2858",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2858"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96725367",
+          "url": "http://jvn.jp/vu/JVNVU96725367/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2858",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2858"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#693036",
+          "url": "https://www.kb.cert.org/vuls/id/693036"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年10月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-10-05T10:58:05+09:00",
+    "datelastupdated": "2015-10-05T10:58:05+09:00",
+    "datepublic": "2015-09-30T00:00:00+09:00"
+  }
+}

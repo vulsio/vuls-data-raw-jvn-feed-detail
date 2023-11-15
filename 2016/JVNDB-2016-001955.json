@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2016-001955",
+  "vulinfodata": {
+    "title": "BlueDriver LSB2 に認証なしで Bluetooth アクセスが可能な問題",
+    "vulinfodescription": {
+      "overview": "Lemur Vehicle Monitors の BlueDriver LSB2 は、OBD2 ポートに接続して車両の性能に関する情報を提供するデバイスです。BlueDriver LSB2 は Bluetooth によるアクセスに PIN を必要としないため、Bluetooth の無線範囲内にいる誰もが車両の CAN (Controller Area Network) バスに任意のコマンドを送信することが可能です。  重要な機能に対する認証の欠如 (CWE-306) - CVE-2016-2354 CERT/CC は、BlueDriver LSB2 へ Bluetooth でアクセスする際に PIN が必要ないことを確認しました。この問題により、Bluetooth の無線範囲内にいる誰もが、当該車両の標準的な OBD2 診断情報である燃費やトラブルコード、速度、排気量の情報などを取得することが可能です。また、攻撃者は CAN (Controller Area Network) バスに対して、任意のコマンドを送信することが可能です。車両によっては、攻撃者がステアリングやブレーキなどに影響を与える可能性があります。  CWE-306: Missing Authentication for Critical Function http://cwe.mitre.org/data/definitions/306.html  なお、National Vulnerability Database (NVD) では、CWE-284 として公開されています。  CWE-284: Improper Access Control http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Lemur Vehicle Monitors",
+          "productname": "BlueDriver",
+          "cpe": {
+            "text": "cpe:/a:lemur_monitors:bluedriver",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "LSB2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8",
+          "vector": "AV:A/AC:L/Au:N/C:P/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃は Bluetooth の無線範囲内から行う必要がありますが、車両内の携帯電話などを経由して攻撃することが可能です。車種やモデルによって、情報漏えいから命を脅かす危険まで様々な影響が想定されます。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "開発者は CERT/CC に対し、次のように述べています：  　\"BlueDriver scan tool users can update their sensor Firmware (F/W) by opening their BlueDriver App and tapping ‘More’ > ‘Update Sensor F/W’ > 'Check for Updates' and following the instructions. The latest F/W for BlueDriver limits Bluetooth discoverability to 1 minute after plug in. This added feature limits discovering (and then pairing) to your BlueDriver to those who first plug in the sensor.  　BlueDriver Scan Tool のユーザは、アプリを開き、 \"More\" > \"Update Sensor F/W\" > \"Check for Updates\" の順にタップして手順に従うことで機器のファームウェアをアップデートすることが可能です。 最新版ファームウェアでは、Bluetooth の検出が車両への機器接続から 1分間に制限されます。この機能の追加により、BlueDriver を検出 (およびペアリング) できるのは、車両に機器を接続した人物のみに制限されます。\"  開発者の述べる内容を明確にすると、ファームウェアのアップデートによって、Bluetooth の検出は車両の動作中ずっとではなく、車両に機器を接続した時点のみ有効になるよう制限されるとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Lemur Vehicle Monitors",
+          "vulinfoid": "BlueDriver - OBD2 Bluetooth Scan Tool for Apple and Android Smartphones and Tablets",
+          "url": "http://www.lemurmonitors.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "Lemur Vehicle Monitors",
+          "vulinfoid": "BlueDriver OBD2 App - Twitter (13:46 - 2016年4月11日)",
+          "url": "https://twitter.com/BlueDriverApp/status/719627773602455552"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2354",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2354"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92749596",
+          "url": "http://jvn.jp/cert/JVNVU92749596"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2354",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2354"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#615456",
+          "url": "http://www.kb.cert.org/vuls/id/615456"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月11日]\\n  掲載\\n[2016年04月13日]\\n  タイトル：内容を更新\\n[2016年05月30日]\\n  対策：内容を更新\\n  ベンダ情報：Lemur Vehicle Monitors (BlueDriver OBD2 App - Twitter (13:46 - 2016年4月11日)) を追加\\n[2016年05月31日]\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2354) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-11T15:52:07+09:00",
+    "datelastupdated": "2016-05-31T17:28:45+09:00",
+    "datepublic": "2016-04-07T00:00:00+09:00"
+  }
+}

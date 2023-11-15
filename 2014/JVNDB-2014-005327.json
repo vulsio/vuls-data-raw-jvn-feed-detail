@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-005327",
+  "vulinfodata": {
+    "title": "Linux Kernel の virt/kvm/iommu.c 内の kvm_iommu_map_pages 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の virt/kvm/iommu.c 内の kvm_iommu_map_pages 関数には、マッピングの失敗を処理している間、ページ数を誤って計算するため、サービス運用妨害 (ホスト OS ページのピンニング解除) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  本脆弱性は CVE-2014-3601 の修正が不完全だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.17.2 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、ゲスト OS の権限を利用されることで、サービス運用妨害 (ホスト OS ページのピンニング解除) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "kvm: fix excessive pages un-pinning in kvm_iommu_map error path.",
+          "url": "https://github.com/torvalds/linux/commit/3d32e4dbe71374a6780eaf51d719d76f9a9bf22f"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "kvm: fix excessive pages un-pinning in kvm_iommu_map error path.",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=3d32e4dbe71374a6780eaf51d719d76f9a9bf22f"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1156518",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1156518"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0674",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-0674.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8369",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8369"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8369",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8369"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月11日]\\n  掲載\\n[2015年06月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0674) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-11T18:00:33+09:00",
+    "datelastupdated": "2015-06-08T17:20:01+09:00",
+    "datepublic": "2014-10-24T00:00:00+09:00"
+  }
+}

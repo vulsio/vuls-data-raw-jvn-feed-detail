@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2022-001228",
+  "vulinfodata": {
+    "title": "MIPS 上で動作する OpenSSL における BN_mod_exp() の誤った処理",
+    "vulinfodescription": {
+      "overview": "MIPS 上で動作する OpenSSL には、BN_mod_exp() で誤った結果を生成する可能性があります。  OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20220128.txt\"target=\"_blank\">OpenSSL Security Advisory [28 January 2022]</a> が公開されました。 深刻度 - 中（Severity: Moderate） MIPS32 および MIPS64 の二乗計算における桁上がり処理に問題があり、OpenSSL で利用される楕円曲線暗号アルゴリズムが影響を受けます。（CVE-2021-4160） RSA および DSA に対する攻撃は非常に難しく、攻撃発生の確率は高くないと考えられます。ディフィー・ヘルマン（DH）に対する攻撃は、秘密鍵に関する計算のほとんどをオフラインで実行できるため、（非常に難しいものの）可能であると考えられます。ただし、これらの攻撃には大量のリソースが必要です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2",
+            "1.1.1",
+            "3.0.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "第三者によって秘密鍵に関する情報を推測され、暗号化された通信内容を解読される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性の対策版として次のバージョンをリリースしています。  　* OpenSSL 1.0.2 gitcommit 6fc1aaaf3（プレミアムサポートを契約したユーザのみ） 　* OpenSSL 1.1.1m 　* OpenSSL 3.0.1"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Vulnerabilities",
+          "url": "https://www.openssl.org/news/vulnerabilities.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "OpenSSL Security Advisory [28 January 2022]",
+          "url": "https://www.openssl.org/news/secadv/20220128.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-4160",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-4160"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-258-05",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-258-05"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99475301",
+          "url": "https://jvn.jp/vu/JVNVU99475301/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95979433",
+          "url": "https://jvn.jp/vu/JVNVU95979433/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-4160",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4160"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-02-01T11:18:12+09:00",
+          "description": "[2022年02月01日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-09-15T13:30:24+09:00",
+          "description": "[2022年09月15日]\\n  参考情報：JVN (JVNVU#99475301) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-09-20T13:31:08+09:00",
+          "description": "[2022年09月20日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-258-05) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-02-01T11:47:48+09:00",
+    "datelastupdated": "2022-09-20T14:59:22+09:00",
+    "datepublic": "2022-01-31T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2018-000080",
+  "vulinfodata": {
+    "title": "Movable Type 用プラグイン MTAppjQuery において任意の PHP コードが実行可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "bit part 合同会社が提供する MTAppjQuery は Movable Type 用のプラグインです。MTAppjQuery v1.8.1 およびそれ以前のバージョンには、PHP ライブラリ Uploadify の旧バージョンが含まれています。Uploadify の旧バージョンには、任意のファイルを無制限にアップロードが可能な脆弱性 (CWE-434) が存在するため、結果として MTAppjQuery を使用している場合、任意の PHP コードが実行される可能性があります。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 浅井 健 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "bit part 合同会社",
+          "productname": "MTAppjQuery",
+          "cpe": {
+            "text": "cpe:/a:bit-part:mtappjquery",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.8.1 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サーバ上で任意の PHP コードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[MTAppjQuery をアップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者によると、最新版へアップデートできない場合は手動で Uploadify のディレクトリを削除する必要があるとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "bit part 合同会社",
+          "vulinfoid": "過去の MTAppjQuery 同梱の Uploadify への不正アクセス対応について",
+          "url": "http://www.tinybeans.net/blog/2015/06/26-230919.html"
+        },
+        {
+          "type": "vendor",
+          "name": "bit part 合同会社",
+          "vulinfoid": "【再掲】MTAppjQuery v1.8.1 以前に同梱されている Uploadify への不正アクセス対応について",
+          "url": "https://bit-part.net/news/2018/07/mtappjquery-20180717.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-0645",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0645"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#62423700",
+          "url": "https://jvn.jp/jp/JVN62423700/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-0645",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0645"
+        },
+        {
+          "type": "advisory",
+          "name": "Sucuri",
+          "vulinfoid": "Uploadify, Uploadify and Uploadify - The New TimThumb?",
+          "url": "https://blog.sucuri.net/2012/06/uploadify-uploadify-and-uploadify-the-new-timthumb.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-07-17T14:03:57+09:00",
+          "description": "[2018年07月18日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-07-26T15:19:49+09:00",
+          "description": "[2019年07月26日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0645) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-07-18T14:06:07+09:00",
+    "datelastupdated": "2019-07-26T15:20:09+09:00",
+    "datepublic": "2018-07-18T00:00:00+09:00"
+  }
+}

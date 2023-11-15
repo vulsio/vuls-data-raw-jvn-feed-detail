@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2017-001597",
+  "vulinfodata": {
+    "title": "ZoneMinder の web/views/file.php におけるファイル公開/インクルージョンの脆弱性",
+    "vulinfodescription": {
+      "overview": "ZoneMinder の web/views/file.php は、フィルタされていないユーザの入力が readfile() に渡されるため、ファイル公開/インクルージョンの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ZoneMinder",
+          "productname": "ZoneMinder",
+          "cpe": {
+            "text": "cpe:/a:zoneminder:zoneminder",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v1.30.0 までの 1.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、.. (ドットドット) を含む zm/index.php?view=file&path= リクエスト内の path パラメータを介して、Web サーバユーザ (www-data) のコンテキスト内で、ローカルシステムファイル (例 /etc/passwd) を読まれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sanitize the image path before processing",
+          "url": "https://github.com/ZoneMinder/ZoneMinder/commit/8b19fca9927cdec07cc9dd09bdcf2496a5ae69b3"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-5595",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5595"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-5595",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-5595"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年03月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-03-07T17:58:28+09:00",
+    "datelastupdated": "2017-03-07T17:58:28+09:00",
+    "datepublic": "2017-01-25T00:00:00+09:00"
+  }
+}

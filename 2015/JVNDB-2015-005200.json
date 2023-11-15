@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2015-005200",
+  "vulinfodata": {
+    "title": "QNAP QTS にパストラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "QNAP QTS は、Network Attached Storage (NAS) の OS です。QNAP QTS には、AFP プロトコルで OS X からアクセスされる場合にパストラバーサルの脆弱性が存在します。  相対パストラバーサル (CWE-23) - CVE-2015-6003 Apple Filing Protocol (AFP) を有効にしている場合、OS X のユーザ (認証されていないゲストアカウントを含む) が、QNAP QTS 機器上の任意のファイルを閲覧したり書き換えたりする可能性があります。  CWE-23: Relative Path Traversal https://cwe.mitre.org/data/definitions/23.html  Apple Filing Protocol https://developer.apple.com/library/mac/documentation/Networking/Conceptual/AFP/Introduction/Introduction.html  AFP を有効にしているユーザのみが本脆弱性の影響を受けます。製品のドキュメントによれば、初期設定では AFP は無効になっています。  詳しくは、開発者が提供するアドバイザリをご確認ください。  アドバイザリ https://www.qnap.com/i/en/support/con_show.php?cid=85"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "QNAP Systems",
+          "productname": "QNAP QTS",
+          "cpe": {
+            "text": "cpe:/o:qnap:qts",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1.4 Build 0910 より前のバージョン",
+            "4.2.0 RC2 Build 0910 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "Apple Filing Protocol (AFP) を有効にしている場合、機器上の任意のファイルを閲覧されたり書き換えられたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ファームウェアをアップデートする] 開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 開発者は、本脆弱性の対策版として QTS 4.1.4 Build 0910 および QTS 4.2.0 RC2 (Build 0910) をリリースしています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "QNAP Security",
+          "vulinfoid": "Security vulnerabilities addressed in QTS 4.1.4 Build 0910 and 4.2.0 RC2 (Build 0910)",
+          "url": "https://www.qnap.com/i/en/support/con_show.php?cid=85"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6003",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6003"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96884018",
+          "url": "http://jvn.jp/vu/JVNVU96884018/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6003",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6003"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#751328",
+          "url": "https://www.kb.cert.org/vuls/id/751328"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年10月14日]\\n  掲載\\n[2015年10月19日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-6003) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-10-14T17:28:23+09:00",
+    "datelastupdated": "2015-10-19T15:54:44+09:00",
+    "datepublic": "2015-10-12T00:00:00+09:00"
+  }
+}

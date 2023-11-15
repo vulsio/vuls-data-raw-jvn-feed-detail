@@ -1,0 +1,129 @@
+{
+  "vulinfoid": "JVNDB-2017-010586",
+  "vulinfodata": {
+    "title": "NXP Semiconductors 製 MQX RTOS における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "NXP Semiconductors が提供する MQX RTOS には、複数の脆弱性が存在します。  バッファオーバーフロー (CWE-120) - CVE-2017-12718 MQX version 5.0 の RTCS DHCP クライアントでは、DHCP オプション 66 および 67 に該当するデータ長チェックが正しく行われません。遠隔の第三者は、これらのデータ項目を細工した DHCP パケットを送信することによりバッファオーバーフローを発生させ、任意のコードを実行させることが可能です。  境界外読み取り (CWE-125) - CVE-2017-12722 MQX version 4.1 およびそれ以前の DNS クライアントでは、不正な DNS パケットのサイズを適切に処理できず、領域外メモリ参照が発生します。遠隔の第三者は、細工した DNS パケットを送信することにより領域外メモリ参照を発生させ、サービス運用妨害（DoS）を引き起こすことが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "NXP Semiconductors",
+          "productname": "MQX Real-Time Operating System",
+          "cpe": {
+            "text": "cpe:/o:nxp:mqx_rtos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 4.1 およびそれ以前 (CVE-2017-12722)",
+            "version 5.0 (CVE-2017-12718)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者により細工された DHCP パケットを送信されることで、システム権限で任意のコードが実行される - CVE-2017-12718 　* 遠隔の第三者により細工された DNS パケットを送信されることで、サービス運用妨害（DoS）状態にされる - CVE-2017-12722"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] CVE-2017-12718 用のパッチは MQX version 5.0 に対して提供されています。詳細については、開発者へお問い合わせください。  [アップデートする] CVE-2017-12722 は MQX version 4.1 およびそれ以前のバージョンにのみ影響します。影響を受けるユーザは速やかに version 4.2 以降のバージョンへアップデートすることが推奨されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "NXP Semiconductors",
+          "vulinfoid": "MQX Real-Time Operating System (RTOS)",
+          "url": "https://www.nxp.com/support/developer-resources/run-time-software/mqx-software-solutions/mqx-real-time-operating-system-rtos:MQXRTOS?fsrch=1&sr=1&pageNum=1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-12718",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12718"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-12722",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12722"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSMA-17-250-02",
+          "url": "https://ics-cert.us-cert.gov/advisories/ICSMA-17-250-02A"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-17-285-04",
+          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-17-285-04A"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96796469",
+          "url": "http://jvn.jp/vu/JVNVU96796469/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-12722",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-12722"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-12718",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-12718"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#590639",
+          "url": "https://www.kb.cert.org/vuls/id/590639"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html",
+          "title": "古典的バッファオーバーフロー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年12月20日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-04-03T16:31:23+09:00",
+          "description": "[2018年04月03日]\\n  参考情報：ICS-CERT ADVISORY (ICSMA-17-250-02) を追加"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2018-04-11T11:28:23+09:00",
+          "description": "[2018年04月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-12718) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-12722) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-12-20T11:45:17+09:00",
+    "datelastupdated": "2018-04-11T14:01:30+09:00",
+    "datepublic": "2017-10-12T00:00:00+09:00"
+  }
+}

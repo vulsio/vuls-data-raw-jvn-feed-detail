@@ -1,0 +1,96 @@
+{
+  "vulinfoid": "JVNDB-2021-000077",
+  "vulinfodata": {
+    "title": "Huawei 製 EchoLife HG8045Q における OS コマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Huawei が提供する光ネットワーク端末 (ONT : Optical Network Terminal) である EchoLife HG8045Q には、ネットワーク事業者のメンテナンス作業向けのコマンドラインインタフェースが実装されており、初期設定では無効となっています。 コマンドラインインタフェースが有効になっている場合、当該機器にログインするとメンテナンス作業に使われる一定のコマンド群を実行できます。 コマンドラインインタフェースには入力内容の処理に不備があり、細工された入力により BusyBox が提供するコマンドの一部を直接実行可能 (CWE-78) です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Huawei",
+          "productname": "HG8045Q",
+          "cpe": {
+            "text": "cpe:/a:huawei:hg8045q",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Software version : V300R016C00SPC110",
+            "Software version : V300R018C10"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.7",
+          "vector": "AV:A/AC:L/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "コマンドラインインタフェースが有効になっている場合、管理者権限ユーザによって、OS コマンドを直接実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ソフトウェアを最新版にアップデートしてください。 開発者から本脆弱性に対応した次のバージョンが提供されています。 <ul><li>Software version : V300R016C00SPC130 (V300R016C00SPC110 向け)</li><li>Software version : R18C10SPC152 (V300R018C10 向け)</li></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Huawei",
+          "vulinfoid": "HUAWEI",
+          "url": "https://www.huawei.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-37028",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37028"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#41646618",
+          "url": "https://jvn.jp/jp/JVN41646618/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-08-11T16:51:46+09:00",
+          "description": "[2021年08月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-08-17T12:03:49+09:00",
+    "datelastupdated": "2021-08-17T12:03:49+09:00",
+    "datepublic": "2021-08-17T00:00:00+09:00"
+  }
+}

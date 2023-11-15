@@ -1,0 +1,187 @@
+{
+  "vulinfoid": "JVNDB-2015-007208",
+  "vulinfodata": {
+    "title": "mDNSResponder におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "mDNSResponder には、バッファオーバーフローの脆弱性が存在します。  なお、JVNVU#97008560 では、CWE-120 として公開されています。  CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') https://cwe.mitre.org/data/definitions/120.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アップル",
+          "productname": "AirMac (AirPort) ベースステーション",
+          "cpe": {
+            "text": "cpe:/h:apple:airport_base_station",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アップル",
+          "productname": "AirMac (AirPort) ベースステーションファームウェア",
+          "cpe": {
+            "text": "cpe:/o:apple:airport_base_station_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.6.7 より前のバージョン",
+            "7.7.7 より前のバージョン"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.10.5 およびセキュリティアップデート 2015-004 Yosemite より前のバージョン",
+            "v10.11.1 より前のバージョン",
+            "v10.9.5 およびセキュリティアップデート 2015-007 Mavericks より前のバージョン"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "iOS",
+          "cpe": {
+            "text": "cpe:/o:apple:iphone_os",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.1 より前のバージョン"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "mDNSResponder",
+          "cpe": {
+            "text": "cpe:/a:apple:mdnsresponder",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "379.27 以降 625.41.2 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "watchOS",
+          "cpe": {
+            "text": "cpe:/o:apple:watchos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、(1) GetValueForIPv4Addr、(2) GetValueForMACAddr、(3) rfc3110_import、または (4) CopyNSEC3ResourceRecord 関数に関する問題によって、境界外メモリ領域に読み書きされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Developer",
+          "vulinfoid": "Bonjour for Developers",
+          "url": "https://developer.apple.com/bonjour/"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Open Source",
+          "vulinfoid": "mDNSResponder",
+          "url": "http://opensource.apple.com/tarballs/mDNSResponder/"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT206846",
+          "url": "https://support.apple.com/en-us/HT206846"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT206846",
+          "url": "https://support.apple.com/ja-jp/HT206846"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7987",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7987"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97008560",
+          "url": "http://jvn.jp/cert/JVNVU97008560"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7987",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7987"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#143335",
+          "url": "http://www.kb.cert.org/vuls/id/143335"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年06月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-06-28T14:34:31+09:00",
+    "datelastupdated": "2016-06-28T14:34:31+09:00",
+    "datepublic": "2015-10-27T00:00:00+09:00"
+  }
+}

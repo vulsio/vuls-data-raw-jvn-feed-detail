@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2009-000004",
+  "vulinfodata": {
+    "title": "MODx におけるクロスサイトリクエストフォージェリの脆弱性",
+    "vulinfodescription": {
+      "overview": "オープンソースのコンテンツ管理システムである MODx には、クロスサイトリクエストフォージェリの脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者：三井物産セキュアディレクション株式会社 望月 岳 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MODX",
+          "productname": "MODX",
+          "cpe": {
+            "text": "cpe:/a:modx:modxcms",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.9.6.1p2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品にログインした状態で、悪意あるページを読み込んだ場合、意図せず MODx のコンテンツが編集される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新版にアップデートし、設定変更を行なう] 開発者が提供する情報をもとに最新版へアップデートし、さらに以下の設定を行なってください。  　　* MODx の管理画面にログイン後、Referer チェックのデフォルト設定 　　　[いいえ] を [はい] に変更する  [ワークアラウンドを実施する] Referer チェックの設定変更を行えない場合は、以下のワークアラウンドを実施することで、この脆弱性の影響を軽減することが可能です。  　　* ログイン中は信用できないリンクをクリックしない 　　* 作業が終了後は速やかにログアウトする  詳しくは開発者が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MODX",
+          "vulinfoid": "MODx CMS and PHP Application Framework",
+          "url": "http://modxcms.com/Home.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MODX",
+          "vulinfoid": "Get MODx Here - Latest Stable Release",
+          "url": "http://modxcms.com/downloads.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MODX",
+          "vulinfoid": "ChangeLog - [#MODX-206] Vulnerability with CSRF",
+          "url": "http://svn.modxcms.com/svn/tattoo/tattoo/releases/0.9.6.3/install/changelog.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-5941",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5941"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#66828183",
+          "url": "http://jvn.jp/jp/JVN66828183/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN iPedia (English)",
+          "vulinfoid": "JVNDB-2009-000004",
+          "url": "http://jvndb.jvn.jp/en/contents/2009/JVNDB-2009-000004.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-5941",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-5941"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-352",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+          "title": "クロスサイトリクエストフォージェリ"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2009年01月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2009-01-09T15:02:06+09:00",
+    "datelastupdated": "2009-01-09T15:02:06+09:00",
+    "datepublic": "2009-01-09T00:00:00+09:00"
+  }
+}

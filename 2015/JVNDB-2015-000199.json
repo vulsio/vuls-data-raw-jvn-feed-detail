@@ -1,0 +1,102 @@
+{
+  "vulinfoid": "JVNDB-2015-000199",
+  "vulinfodata": {
+    "title": "WinRAR における実行ファイル読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "WinRAR には、ユーザの指定したローカルディスク上のファイルを実行する機能が存在します。WinRAR には、指定したファイルに拡張子がない場合、同一フォルダにある同名の拡張子付きファイルを実行してしまう脆弱性が存在します。  WinRAR には、レジストリに設定を保存したり、ファイルから設定を復元したりする機能が存在します。WinRAR には、画面で表示しているフォルダに例えば REGEDIT.BAT という実行ファイルが存在した場合、設定の保存または復元の際に Windows 標準のレジストリ エディターではなく、REGEDIT.BAT を実行してしまう脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "RARLAB",
+          "productname": "WinRAR",
+          "cpe": {
+            "text": "cpe:/a:rarlab:winrar",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.30 beta 4 (32 bit) およびそれ以前",
+            "5.30 beta 4 (64 bit) およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.1",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品の機能から拡張子がないファイルを実行しようとした場合、アプリケーションの権限で、同一フォルダにある同名の拡張子付きファイルが実行されます。  当該製品に REGEDIT.BAT という実行ファイルを表示している状態で、設定の保存または復元を実行した場合、Windows 標準のレジストリ エディターではなく、アプリケーションの権限で、REGEDIT.BAT が実行されます。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 本脆弱性は WinRAR 5.30 beta 5 で修正されています。 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "RARLAB",
+          "vulinfoid": "WinRAR archiver, a powerful tool to process RAR and ZIP files",
+          "url": "http://www.rarlab.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5663",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5663"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#64636058",
+          "url": "https://jvn.jp/jp/JVN64636058/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5663",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5663"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月17日]\\n  掲載\\n[2016年01月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-5663) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-17T12:05:36+09:00",
+    "datelastupdated": "2016-01-07T15:25:42+09:00",
+    "datepublic": "2015-12-17T00:00:00+09:00"
+  }
+}

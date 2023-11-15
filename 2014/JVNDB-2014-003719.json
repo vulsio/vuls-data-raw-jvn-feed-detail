@@ -1,0 +1,196 @@
+{
+  "vulinfoid": "JVNDB-2014-003719",
+  "vulinfodata": {
+    "title": "OpenSSL クライアントにナルポインタ参照の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL クライアントには、 ナルポインタ参照の脆弱性が存在します。  OpenSSL クライアントがサーバとのネゴシエーションで SRP ciphersuite を指定していないにも関わらず、サーバが SRP ciphersuite を指定した Server Hello メッセージをクライアントに返すと、クライアントはナルポインタ参照の脆弱性（CWE-476）により異常終了します。  CWE-476: NULL Pointer Dereference https://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1 から 1.0.1h まで"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "UNIVERGE PFシリーズ",
+          "cpe": {
+            "text": "cpe:/h:nec:univerge_pf_series",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "クライアントを異常終了され、その結果サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに最新版へアップデートしてください。  OpenSSL プロジェクトが公開したアドバイザリでは次のように記載されています。  　　\"OpenSSL 1.0.1 SSL/TLS client users should upgrade to 1.0.1i.\""
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBHF03293",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142660345230545&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03216",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142350350616251&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03260",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142495837901899&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03262",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142624719706349&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03267",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142624590206005&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03283",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142624679706236&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBMU03304",
+          "url": "http://marc.info/?l=bugtraq&amp;m=142791032306609&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM SECURITY ADVISORY",
+          "vulinfoid": "AIX OpenSSL Denial of Service due to double free",
+          "url": "http://aix.software.ibm.com/aix/efixes/security/openssl_advisory10.asc"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1682293",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21682293"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1686997",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21686997"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV15-006",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv15-006.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "Fix SRP ciphersuite DoS vulnerability. (CVE-2014-2970)",
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=80bd7b41b30af6ee96f519e629463583318de3b0"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "Fix SRP ciphersuite DoS vulnerability. (CVE-2014-5139)",
+          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=83764a989dcc87fbea337da5f8f86806fe767b7e"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": " [6 Aug 2014] Crash with SRP ciphersuite in Server Hello message (CVE-2014-5139)",
+          "url": "http://www.openssl.org/news/secadv_20140806.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisory",
+          "vulinfoid": "Huawei (Huawei-SA-20141008-OpenSSL",
+          "url": "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-372998.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "Tenable Network Security",
+          "vulinfoid": "[R1] OpenSSL Protocol Downgrade Vulnerability Affects Tenable Products",
+          "url": "http://www.tenable.com/security/tns-2014-06"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5139",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5139"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93614707",
+          "url": "http://jvn.jp/vu/JVNVU93614707/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5139",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5139"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "NCSC-FI Advisory (Vulnerabilities fixed in the OpenSSL library)",
+          "url": "https://www.viestintavirasto.fi/en/informationsecurity/vulnerabilities/2014/haavoittuvuus-2014-094.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月12日]\\n  掲載\\n[2014年08月18日]\\n  ベンダ情報：OpenSSL Project (Fix SRP ciphersuite DoS vulnerability. (CVE-2014-2970)) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-5139) を追加\\n[2014年09月17日]\\n  ベンダ情報：OpenSSL Project (Fix SRP ciphersuite DoS vulnerability. (CVE-2014-5139)) を追加\\n  ベンダ情報：Tenable Network Security ([R1] OpenSSL Protocol Downgrade Vulnerability Affects Tenable Products) を追加\\n[2014年12月02日]\\n  ベンダ情報：IBM (1682293) を追加\\n  ベンダ情報：IBM (1686997) を追加\\n  ベンダ情報：Huawei (Huawei-SA-20141008-OpenSSL) を追加\\n[2015年06月08日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：IBM (AIX OpenSSL Denial of Service due to double free) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03293) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03216) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03260) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03262) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03267) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03283) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03304) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV15-006) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-12T15:15:31+09:00",
+    "datelastupdated": "2015-07-29T10:56:31+09:00",
+    "datepublic": "2014-08-11T00:00:00+09:00"
+  }
+}

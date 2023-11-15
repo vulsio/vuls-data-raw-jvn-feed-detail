@@ -1,0 +1,129 @@
+{
+  "vulinfoid": "JVNDB-2013-005803",
+  "vulinfodata": {
+    "title": "OpenStack Nova および Neutron における重要なメタデータを取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenStack Nova および Neutron は、リクエストを生成するテナントのインスタンス ID を検証しないため、重要なメタデータを取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Compute",
+          "cpe": {
+            "text": "cpe:/a:openstack:compute",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Havana 2013.2.1 未満",
+            "icehouse-1"
+          ]
+        },
+        {
+          "name": "OpenStack",
+          "productname": "OpenStack Neutron",
+          "cpe": {
+            "text": "cpe:/a:openstack:neutron",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Havana 2013.2.1 未満",
+            "icehouse-1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートテナントより、ポートにバインドされているデバイス ID を偽装され、(1) Nova の api/metadata/handler.py および (2) Neutron の neutron-metadata-agent (agent/metadata/agent.py) が適切に処理されないことで、重要なメタデータを取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Code Review",
+          "vulinfoid": "neutron/agent/metadata/agent.py",
+          "url": "https://review.openstack.org/#/c/61439/1/neutron/agent/metadata/agent.py"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Review",
+          "vulinfoid": "nova/api/metadata/handler.py",
+          "url": "https://review.openstack.org/#/c/61428/2/nova/api/metadata/handler.py"
+        },
+        {
+          "type": "vendor",
+          "name": "Launchpad",
+          "vulinfoid": "Bug #1235450",
+          "url": "https://bugs.launchpad.net/neutron/+bug/1235450"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0091",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0091.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0231",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0231.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6419",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6419"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6419",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6419"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[OSSA 2013-033] Metadata queries from Neutron to Nova are not restricted by tenant (CVE-2013-6419)",
+          "url": "http://www.openwall.com/lists/oss-security/2013/12/11/8"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年01月09日]\\n  掲載\\n[2015年08月03日]\\n  ベンダ情報：レッドハット (RHSA-2014:0231) を追加\\n[2015年08月10日]\\n  ベンダ情報：レッドハット (RHSA-2014:0091) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-01-09T16:08:59+09:00",
+    "datelastupdated": "2015-08-10T11:40:01+09:00",
+    "datepublic": "2013-12-11T00:00:00+09:00"
+  }
+}

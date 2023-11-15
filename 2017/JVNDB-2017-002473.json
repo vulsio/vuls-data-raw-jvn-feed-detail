@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2017-002473",
+  "vulinfodata": {
+    "title": "Audio File Library の libaudiofile/modules/BlockCodec.cpp の reset1 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Audio File Library (別名 audiofile) の libaudiofile/modules/BlockCodec.cpp の reset1 関数には、サービス運用妨害 (ゼロ除算エラーおよびクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "68k.org",
+          "productname": "audiofile",
+          "cpe": {
+            "text": "cpe:/a:68k:audiofile",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.3.6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの攻撃者により、巧妙に細工されたファイルを介して、サービス運用妨害 (ゼロ除算エラーおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Audio File Library",
+          "vulinfoid": "Top Page",
+          "url": "https://audiofile.68k.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "divide-by-zero in BlockCodec::reset1 (BlockCodec.cpp) #39",
+          "url": "https://github.com/mpruett/audiofile/issues/39"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix multiple ubsan crashes #42",
+          "url": "https://github.com/mpruett/audiofile/pull/42"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-6835",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6835"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-6835",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-6835"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-369",
+          "url": "https://cwe.mitre.org/data/definitions/369.html",
+          "title": "ゼロ除算"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-17T16:46:05+09:00",
+    "datelastupdated": "2017-04-17T16:46:05+09:00",
+    "datepublic": "2017-03-06T00:00:00+09:00"
+  }
+}

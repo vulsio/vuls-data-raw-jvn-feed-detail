@@ -1,0 +1,158 @@
+{
+  "vulinfoid": "JVNDB-2023-000094",
+  "vulinfodata": {
+    "title": "WordPress 用プラグイン Welcart e-Commerce における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "コルネ株式会社が提供する WordPress 用プラグイン Welcart e-Commerce には、次の複数の脆弱性が存在します。  <ul><li>アップロードするファイルの検証が不十分 (CWE-434) - CVE-2023-40219</li><li>パストラバーサル (CWE-22) - CVE-2023-40532</li><li>商品マスター画面の登録処理におけるクロスサイトスクリプティング (CWE-79) - CVE-2023-41233</li><li>クレジット決済設定画面におけるクロスサイトスクリプティング (CWE-79) - CVE-2023-41962</li><li>商品マスター画面におけるクロスサイトスクリプティング (CWE-79) - CVE-2023-43484</li><li>商品マスター画面における SQL インジェクション (CWE-89) - CVE-2023-43493</li><li>受注データ編集画面における SQL インジェクション (CWE-89) - CVE-2023-43610</li><li>受注データ編集画面におけるクロスサイトスクリプティング (CWE-79) - CVE-2023-43614</li></ul>  CVE-2023-40219 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橋本瑛洋 氏  CVE-2023-40532、CVE-2023-41233、CVE-2023-41962、CVE-2023-43484、CVE-2023-43493、CVE-2023-43610、CVE-2023-43614 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ラックサイバーリンク 熊丸 匠伍 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "コルネ株式会社",
+          "productname": "Welcart e-Commerce",
+          "cpe": {
+            "text": "cpe:/a:collne:welcart_e-commerce",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.7 から 2.8.21 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.4",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul><li>当該製品に編集者権限以上でログイン可能なユーザによって、許可されていないディレクトリに任意のファイルをアップロードされる - CVE-2023-40219</li><li>当該製品に投稿者権限以上でログイン可能なユーザによって、ウェブサーバ内のファイルの一部情報を閲覧される - CVE-2023-40532</li><li>当該製品にログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2023-41233、CVE-2023-43484、CVE-2023-43614</li><li>当該製品にログインしているユーザのウェブブラウザ上で、細工されたページにアクセスした場合、管理画面に任意のスクリプトを設置される - CVE-2023-41962</li><li>当該製品に投稿者権限以上でログイン可能なユーザによって、機微な情報を窃取される - CVE-2023-43493</li><li>当該製品に編集者権限（設定権限無し）以上でログイン可能なユーザによって、データベースを操作される - CVE-2023-43610</li></ul>"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性の対策として Welcart e-Commerce 2.8.22 がリリースされています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "コルネ株式会社",
+          "vulinfoid": "Welcart 2.8.22 をリリースしました",
+          "url": "https://www.welcart.com/archives/20106.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-40532",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-40532"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-41233",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-41233"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-41962",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-41962"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-43484",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-43484"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-43493",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-43493"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-43610",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-43610"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-43614",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-43614"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-40219",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-40219"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#97197972",
+          "url": "https://jvn.jp/jp/JVN97197972/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-09-19T13:56:02+09:00",
+          "description": "[2023年09月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-09-22T12:07:40+09:00",
+    "datelastupdated": "2023-09-22T12:07:40+09:00",
+    "datepublic": "2023-09-22T00:00:00+09:00"
+  }
+}

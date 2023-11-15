@@ -1,0 +1,642 @@
+{
+  "vulinfoid": "JVNDB-2022-001476",
+  "vulinfodata": {
+    "title": "OpenSSL の BN_mod_sqrt() における法が非素数のときに無限ループを引き起こす問題",
+    "vulinfodescription": {
+      "overview": "OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20220315.txt\" target=_blank\">OpenSSL Security Advisory [15 March 2022]</a> が公開されました。 深刻度 − 高（Severity: High） OpenSSL の BN_mod_sqrt() は有限体における平方根を計算します。BN_mod_sqrt() には、法が非素数の場合、無限ループを引き起こす問題があります。 BN_mod_sqrt() は圧縮形式の楕円曲線暗号の公開鍵を含む証明書、もしくは圧縮形式でエンコードされた基準点（Base Point）を持つ楕円曲線パラメータを含む証明書をパースする際に使用されます。また、OpenSSL は証明書の署名を検証する前に証明書をパースするため、外部から受け取った証明書をパースする際、無限ループを引き起こされる可能性があります。同様に、秘密鍵に楕円曲線パラメータを含んでいる場合にも細工された秘密鍵をパースすることで無限ループを引き起こされる可能性があります。 この問題は次の状況で起こる可能性があります。  　* TLS クライアントがサーバ証明書を処理する 　* TLS サーバがクライアント証明書を処理する 　* ホスティングサービス事業者が顧客から受け取った証明書や秘密鍵を処理する 　* 認証局が契約者から受け取った CSR (証明書署名要求) データを処理する 　* その他、ASN.1 形式の楕円曲線パラメータを処理する場合 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2zd より前の 1.0.2 系のバージョン",
+            "1.1.0 系すべてのバージョン",
+            "1.1.1n より前の 1.1.1 系のバージョン",
+            "3.0.2 より前の 3.0 系のバージョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ActSecure ポータル",
+          "cpe": {
+            "text": "cpe:/a:nec:actsecure_portal",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "CONNEXIVE Application Platform",
+          "cpe": {
+            "text": "cpe:/a:nec:connexive_application_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V2.0"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "CONNEXIVE PF",
+          "cpe": {
+            "text": "cpe:/a:nec:connexive_pf",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V7.0"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ESMPRO/ServerAgent",
+          "cpe": {
+            "text": "cpe:/a:nec:esmpro_serveragent",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.22-1 以上"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "ESMPRO/ServerAgentService",
+          "cpe": {
+            "text": "cpe:/a:nec:esmpro_serveragentservice",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "IoT 共通基盤",
+          "cpe": {
+            "text": "cpe:/a:nec:iot_common_base",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "iSMサーバ",
+          "cpe": {
+            "text": "cpe:/a:nec:ismserver",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.20.001 から 9.20.004"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "iStorageManager",
+          "cpe": {
+            "text": "cpe:/a:nec:istoragemanager",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "iStorageManager Express",
+          "cpe": {
+            "text": "cpe:/a:nec:istoragemanager_express",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1238 およびそれ以前"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IX ルータ",
+          "cpe": {
+            "text": "cpe:/o:nec:ix_router",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.9.3.12 以上"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "Mission Critical Mail",
+          "cpe": {
+            "text": "cpe:/a:nec:mission_critical_mail",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "NEC Cyber Security Platform",
+          "cpe": {
+            "text": "cpe:/o:nec:nec_cyber_security_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V1.0 から V2.0.7.4"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "NEC Enhanced Video Analytics",
+          "cpe": {
+            "text": "cpe:/a:nec:nec_enhanced_video_analytics",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "NEC エッジゲートウェイ",
+          "cpe": {
+            "text": "cpe:/o:nec:nec_edge_gateway",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "NeoFace Monitor",
+          "cpe": {
+            "text": "cpe:/a:nec:neoface_monitor",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2k-19.amzn2.0.10",
+            "1.0.2k-19.amzn2.0.4",
+            "1.1.0.0000",
+            "1.2.0"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "SimpWright",
+          "cpe": {
+            "text": "cpe:/a:nec:simpwright",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "UNIVERGE",
+          "cpe": {
+            "text": "cpe:/h:nec:univerge",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Soft Client SP350 SP350 R6.19 まで",
+            "WA シリーズ 1.0.2 系 Ver7.4.1 から Ver8.1.3",
+            "WA シリーズ 1.1.0 系 Ver8.2.2 から Ver8.6.7"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebOTX Application Server",
+          "cpe": {
+            "text": "cpe:/a:nec:webotx_application_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Enterprise V8.2 から V9.6",
+            "Express V8.2 から V10.4",
+            "Standard V8.2 から V10.4"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebOTX SIP Application Server",
+          "cpe": {
+            "text": "cpe:/a:nec:webotx_sip_application_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Standard Edition V8.13"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WitchyMail",
+          "cpe": {
+            "text": "cpe:/a:nec:witchymail",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "Cosminexus HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:hitachi:cosminexus_http_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Ops Center Viewpoint",
+          "versionnumber": [
+            "(国内販売のみ)"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "JP1/Automatic Job Management System 3",
+          "cpe": {
+            "text": "cpe:/a:hitachi:jp1_automatic_job_management_system_3",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "- Definition Assistant"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "JP1/Base",
+          "cpe": {
+            "text": "cpe:/a:hitachi:jp1_base",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "JP1/File Transmission Server/FTP",
+          "cpe": {
+            "text": "cpe:/a:hitachi:jp1_file_transmission_server_ftp",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "JP1/Performance Management",
+          "cpe": {
+            "text": "cpe:/a:hitachi:jp1_performance_management",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "- Agent Option for Service Response"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_application_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server(64)",
+          "cpe": {
+            "text": "cpe:/a:hitachi:hitachi_application_server64",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Application Server-R",
+          "cpe": {
+            "text": "cpe:/a:hitachi:hitachi_application_server_r",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Developer",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_developer",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Primary Server Base",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_primary_server_base",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Primary Server Base(64)",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_primary_server_base64",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Service Architect",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_service_architect",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Service Platform",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_service_platform",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "uCosminexus Service Platform(64)",
+          "cpe": {
+            "text": "cpe:/a:hitachi:ucosminexus_service_platform_64",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "日立アドバンストサーバ HA8000V シリーズ",
+          "cpe": {
+            "text": "cpe:/a:hitachi:advanced_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "日立高信頼サーバ RV3000",
+          "cpe": {
+            "text": "cpe:/a:hitachi:highly_reliable_server",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "不正な楕円曲線パラメータを含む証明書や秘密鍵などをパースすることで無限ループを引き起こされ、サービス運用妨害（DoS）状態になる可能性があります。  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性への対策版として次のバージョンをリリースしています。  　* OpenSSL 1.0.2zd （プレミアムサポートを契約したユーザのみ） 　* OpenSSL 1.1.1n 　* OpenSSL 3.0.2  OpenSSL 1.0.2 系はサポートが終了しているため、プレミアムサポートを契約したユーザを除きアップデートは提供されません。 OpenSSL 1.1.0 系はサポートが終了しており、アップデートは提供されません。 開発者は、OpenSSL 1.0.2 プレミアムサポートを契約したユーザ以外に対しては、OpenSSL 3.0 系もしくは 1.1.1 系へのアップデートを推奨しています。  "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2022-132",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2022-132/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2022-118",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2022-118/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2022-121",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2022-121/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2022-126",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2022-126/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2023-126",
+          "url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-126/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV22-008",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv22-008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV22-006",
+          "url": "https://jpn.nec.com/security-info/secinfo/nv22-006.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "OpenSSL Security Advisory [15 March 2022]",
+          "url": "https://www.openssl.org/news/secadv/20220315.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Vulnerabilities / 2022",
+          "url": "https://www.openssl.org/news/vulnerabilities.html#y2022"
+        },
+        {
+          "type": "vendor",
+          "name": "サーバ・クライアント製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-220",
+          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_220.html"
+        },
+        {
+          "type": "vendor",
+          "name": "サーバ・クライアント製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-219",
+          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_219.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-126",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2022-126/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-132",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2022-132/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2023-126",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-126/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-118",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2022-118/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-121",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2022-121/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "複数の FA 製品における OpenSSL に起因するサービス拒否 (DoS) の脆弱性及び悪意のあるコマンドが実行される脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-009.pdf"
+        },
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "MELSOFT iQ AppPortal における複数の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-003.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-0778",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-0778"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-272-02",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-272-02"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-059-01",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-059-01"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-143-02",
+          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-143-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99682885",
+          "url": "https://jvn.jp/vu/JVNVU99682885/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98905589",
+          "url": "http://jvn.jp/vu/JVNVU98905589/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96890975",
+          "url": "http://jvn.jp/vu/JVNVU96890975/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91676340",
+          "url": "https://jvn.jp/vu/JVNVU91676340/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90813125",
+          "url": "https://jvn.jp/vu/JVNVU90813125/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2022-0778",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-0778"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-03-17T14:29:22+09:00",
+          "description": "[2022年03月17日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-05-13T15:31:56+09:00",
+          "description": "[2022年05月13日]\\n  ベンダ情報：三菱電機 (MELSOFT iQ AppPortal における複数の脆弱性) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-06-27T15:23:59+09:00",
+          "description": "[2022年06月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-118) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2022-07-25T17:57:30+09:00",
+          "description": "[2022年07月25日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-121) を追加"
+        },
+        {
+          "historyno": "5",
+          "datetime": "2022-08-03T13:43:22+09:00",
+          "description": "[2022年08月02日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-126) を追加"
+        },
+        {
+          "historyno": "6",
+          "datetime": "2022-08-03T13:40:41+09:00",
+          "description": "[2022年08月03日]\\n  ベンダ情報：三菱電機 (複数の FA 製品における OpenSSL に起因するサービス拒否 (DoS) の脆弱性及び悪意のあるコマンドが実行される脆弱性) を追加"
+        },
+        {
+          "historyno": "7",
+          "datetime": "2022-08-09T13:43:42+09:00",
+          "description": "[2022年08月08日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-006) を追加\\n"
+        },
+        {
+          "historyno": "8",
+          "datetime": "2022-09-26T15:32:55+09:00",
+          "description": "[2022年09月26日]\\n  影響を受けるシステム：ベンダ情報 (NV22-006) の更新に伴い内容を更新"
+        },
+        {
+          "historyno": "9",
+          "datetime": "2022-10-04T14:02:56+09:00",
+          "description": "[2022年10月04日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-219) を追加\\n  ベンダ情報：日立 (hitachi-sec-2022-220) を追加\\n  参考情報：JVN (JVNVVU#99682885) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-272-02) を追加"
+        },
+        {
+          "historyno": "10",
+          "datetime": "2022-10-11T16:23:26+09:00",
+          "description": "[2022年10月11日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-132) を追加"
+        },
+        {
+          "historyno": "11",
+          "datetime": "2022-12-28T09:08:28+09:00",
+          "description": "[2022年12月28日]\\n  影響を受けるシステム：ベンダ情報 (NV22-006) の更新に伴い内容を更新"
+        },
+        {
+          "historyno": "12",
+          "datetime": "2023-03-02T16:03:35+09:00",
+          "description": "[2023年03月02日]\\n  参考情報：JVN (JVNVU#98905589) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-059-01) を追加"
+        },
+        {
+          "historyno": "13",
+          "datetime": "2023-03-03T11:58:49+09:00",
+          "description": "[2023年03月03日]\\n  参考情報：JVN (JVNVU#96890975) を追加"
+        },
+        {
+          "historyno": "14",
+          "datetime": "2023-04-26T11:43:26+09:00",
+          "description": "[2023年04月26日]\\n 影響を受けるシステム：ベンダ情報 (NV22-006) の更新に伴い内容を更新"
+        },
+        {
+          "historyno": "15",
+          "datetime": "2023-05-25T16:23:20+09:00",
+          "description": "[2023年05月25日]\\n  参考情報：JVN (JVNVU#91676340) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-143-02) を追加"
+        },
+        {
+          "historyno": "16",
+          "datetime": "2023-07-20T15:34:11+09:00",
+          "description": "[2023年07月20日]\\n  ベンダ情報：日立 (hitachi-sec-2023-126) を追加"
+        },
+        {
+          "historyno": "17",
+          "datetime": "2023-09-05T16:41:38+09:00",
+          "description": "[2023年09月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-008) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-03-17T15:12:49+09:00",
+    "datelastupdated": "2023-09-05T16:45:48+09:00",
+    "datepublic": "2022-03-16T00:00:00+09:00"
+  }
+}

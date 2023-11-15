@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2015-000177",
+  "vulinfodata": {
+    "title": "OS X におけるスリープモードからの復帰時の認証に関する問題",
+    "vulinfodescription": {
+      "overview": "Apple が提供する OS X には、スリープモードから復帰する際の認証に関する問題が存在します。この問題は、スリープモードからの復帰時に表示されるダイアログに入力された文字列の処理に起因するものです。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: ナビプラス株式会社　サイバーリスク研究所 片山　昌樹 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Mavericks v10.9 より前のバージョン"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Remote Desktop",
+          "cpe": {
+            "text": "cpe:/a:apple:apple_remote_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.7 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.7",
+          "vector": "AV:L/AC:H/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "Apple Remote Desktop がフルスクリーンモードで使用され、リモート接続したままローカルの端末をスリープモードにしていた場合、スリープモードからの復帰時に表示されるダイアログに入力された文字列は、ローカルの端末ではなく接続先の端末に送信されます。結果として、接続先の端末上でコマンドが実行される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[OS X と Apple Remote Desktop をアップデートする] 開発者は OS X と Apple Remote Desktop のそれぞれに、この問題の対策版を提供しています。OS X および Apple Remote Desktop の両方を、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "Appleからの情報",
+          "url": "http://jvn.jp/jp/JVN56210048/741993/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-5229",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-5229"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#56210048",
+          "url": "https://jvn.jp/jp/JVN56210048/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-5229",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-5229"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月13日]\\n  掲載\\n[2015年11月17日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2013-5229) を追加\\n  ベンダ情報：アップル (Appleからの情報) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-13T12:02:45+09:00",
+    "datelastupdated": "2015-11-17T16:13:01+09:00",
+    "datepublic": "2015-11-13T00:00:00+09:00"
+  }
+}

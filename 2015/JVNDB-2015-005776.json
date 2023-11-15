@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2015-005776",
+  "vulinfodata": {
+    "title": "Huawei HG532 シリーズルータにディレクトリトラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "Huawei HG532e, n, s を含む HG532 シリーズルータには、ディレクトリトラバーサルにより任意のファイルにアクセスされる脆弱性が存在します。  ディレクトリトラバーサル (CWE-22) - CVE-2015-7254 本脆弱性の影響を受けるルータ製品では、37215/tcp 経由で /icon/ にアクセスすることで任意のファイルを取得することが可能となります。たとえば、遠隔の攻撃者は http://[IP アドレス]:37215/icon/../../../etc/inittab に直接アクセスすることで inittab ファイルを取得することが可能です。  CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') http://cwe.mitre.org/data/definitions/22.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Huawei",
+          "productname": "HG532e",
+          "cpe": {
+            "text": "cpe:/h:huawei:hg532e",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Huawei",
+          "productname": "HG532n",
+          "cpe": {
+            "text": "cpe:/h:huawei:hg532n",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Huawei",
+          "productname": "HG532s",
+          "cpe": {
+            "text": "cpe:/h:huawei:hg532s",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "LAN 内の攻撃者によって、当該機器内の任意のファイルにアクセスされる可能性があります。設定によっては、LAN 外からこれらの攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Huawei は、本脆弱性を修正したファームウェアアップデートをキャリア向けにリリースする準備を進めています。ユーザは最新版のファームウェアリリースについてキャリアへお問い合わせください。  [ワークアラウンドを実施する] 対策版ファームウェアがリリースされるまでの間、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* 信頼できない通信を制限する "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7254",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7254"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94520968",
+          "url": "http://jvn.jp/vu/JVNVU94520968/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7254",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7254"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#438928",
+          "url": "http://www.kb.cert.org/vuls/id/438928"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-10T15:39:07+09:00",
+    "datelastupdated": "2015-11-10T15:39:07+09:00",
+    "datepublic": "2015-11-06T00:00:00+09:00"
+  }
+}

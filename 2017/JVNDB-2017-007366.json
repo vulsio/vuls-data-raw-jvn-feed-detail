@@ -1,0 +1,138 @@
+{
+  "vulinfoid": "JVNDB-2017-007366",
+  "vulinfodata": {
+    "title": "Microsoft .NET Framework の WSDL 処理に任意コード実行の脆弱性",
+    "vulinfodescription": {
+      "overview": "Microsoft .NET Framework では WSDL の解析処理が適切に行われていません。結果として、遠隔の第三者によって、任意のコードを実行される可能性があります。  Microsoft .NET framework の WSDL 解析コンポーネントに含まれる PrintClientProxy メソッドでは、改行コードの処理が適切に行われていません。細工された WSDL ファイルを .NET Framework が処理することで、任意のコードが実行される可能性があります。  現在確認されている攻撃手法は、SOAP Moniker オブジェクトが埋め込まれた RTF ファイルを使用して、外部サイトにある WSDL を取得および解析させるものです。別の攻撃手法も存在する可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft .NET Framework",
+          "cpe": {
+            "text": "cpe:/a:microsoft:.net_framework",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 SP2",
+            "3.5",
+            "3.5.1",
+            "4.5.2",
+            "4.6",
+            "4.6.1",
+            "4.6.2",
+            "4.7"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された RTF ドキュメントの閲覧などを通じて、細工された WSDL ファイルを処理することで、遠隔の攻撃者によって任意のコードが実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Security TechCenter",
+          "vulinfoid": "CVE-2017-8759 | .NET Framework Remote Code Execution Vulnerability",
+          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-8759"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティテックセンター",
+          "vulinfoid": "CVE-2017-8759 | .NET Framework のリモートでコードが実行される脆弱性",
+          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2017-8759"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-8759",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-8759"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "Microsoft 製品の脆弱性対策について(2017年9月)",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20170913-ms.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2017-0036",
+          "url": "http://www.jpcert.or.jp/at/2017/at170036.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93526380",
+          "url": "http://jvn.jp/vu/JVNVU93526380/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-8759",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-8759"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#101048",
+          "url": "https://www.kb.cert.org/vuls/id/101048"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "FireEye Uncovers CVE-2017-8759: Zero-Day Used in the Wild to Distribute FINSPY",
+          "url": "https://www.fireeye.com/blog/threat-research/2017/09/zero-day-used-to-distribute-finspy.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年09月20日]\\n  掲載\\n[2017年09月22日]\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-8759) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-09-20T10:35:07+09:00",
+    "datelastupdated": "2017-09-22T18:13:25+09:00",
+    "datepublic": "2017-09-13T00:00:00+09:00"
+  }
+}

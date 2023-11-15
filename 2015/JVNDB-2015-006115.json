@@ -1,0 +1,306 @@
+{
+  "vulinfoid": "JVNDB-2015-006115",
+  "vulinfodata": {
+    "title": "OpenSSL の crypto/rsa/rsa_ameth.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の crypto/rsa/rsa_ameth.c には、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1q 未満の 1.0.1",
+            "1.0.2e 未満の 1.0.2"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "MySQL",
+          "cpe": {
+            "text": "cpe:/a:oracle:mysql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.28 およびそれ以前",
+            "5.7.10 およびそれ以前"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Secure Global Desktop",
+          "cpe": {
+            "text": "cpe:/a:oracle:secure_global_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.63",
+            "4.71",
+            "5.2"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle VM VirtualBox",
+          "cpe": {
+            "text": "cpe:/a:oracle:vm_virtualbox",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.36 未満",
+            "5.0.14 未満"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Primavera P6 Enterprise Project Portfolio Management",
+          "cpe": {
+            "text": "cpe:/a:oracle:primavera_p6_enterprise_project_portfolio_management",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "15.1",
+            "15.2",
+            "8.3",
+            "8.4"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Insight Control",
+          "cpe": {
+            "text": "cpe:/a:hp:insight_control",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "サーバープロビジョニング"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Matrix Operating Environment",
+          "cpe": {
+            "text": "cpe:/a:hp:matrix_operating_environment",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Server Migration Pack",
+          "cpe": {
+            "text": "cpe:/a:hp:server_migration_pack",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Systems Insight Manager",
+          "cpe": {
+            "text": "cpe:/a:hp:systems_insight_manager",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Version Control Repository Manager",
+          "cpe": {
+            "text": "cpe:/a:hp:version_control_repository_manager",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "System Management Homepage",
+          "cpe": {
+            "text": "cpe:/a:hp:system_management_homepage",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、マスク生成関数のパラメータが存在しない RSA PSS の ASN.1 署名を介して、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03611",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05150888"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03612",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05158380"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03590",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05131085"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL 1.0.2 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.2-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL 1.0.1 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.1-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "Release Strategy",
+          "url": "https://www.openssl.org/policies/releasestrat.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Add PSS parameter check. (d8541d7)",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=d8541d7e9e63bf5f343af24644046c8d96498c17"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Add PSS parameter check. (c394a48)",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=c394a488942387246653833359a5c94b5832674e"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "Certificate verify crash with missing PSS parameter (CVE-2015-3194)",
+          "url": "http://openssl.org/news/secadv/20151203.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - January 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1288320",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1288320"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "April 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "July 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3194",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3194"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95113540",
+          "url": "http://jvn.jp/vu/JVNVU95113540/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3194",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3194"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月08日]\\n  掲載\\n[2016年01月28日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2016) を追加\\n[2016年05月31日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n[2016年08月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加\\n[2016年09月30日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03612) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03611) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03590) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-08T17:50:22+09:00",
+    "datelastupdated": "2016-09-30T11:27:43+09:00",
+    "datepublic": "2015-12-03T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2016-002857",
+  "vulinfodata": {
+    "title": "cURL および libcurl におけるサーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "cURL および libcurl の (1) lib/vtls/mbedtls.c の mbed_connect_step1 関数、および (2) lib/vtls/polarssl.c の polarssl_connect_step1 関数には、SSLv3 を使用する、または数値 IP アドレスを使用する URL に TLS 接続する場合、サーバになりすまされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Haxx",
+          "productname": "cURL",
+          "cpe": {
+            "text": "cpe:/a:haxx:curl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.21.0 から 7.48.0"
+          ]
+        },
+        {
+          "name": "Haxx",
+          "productname": "libcurl",
+          "cpe": {
+            "text": "cpe:/a:haxx:libcurl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.21.0 から 7.48.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、任意の有効な証明書を介して、サーバになりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "cURL",
+          "vulinfoid": "Fixed in 7.49.0 - May 18 2016",
+          "url": "https://curl.haxx.se/changes.html#7_49_0"
+        },
+        {
+          "type": "vendor",
+          "name": "cURL",
+          "vulinfoid": "CVE-2016-3739.patch",
+          "url": "https://curl.haxx.se/CVE-2016-3739.patch"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisory",
+          "vulinfoid": "TLS certificate check bypass with mbedTLS/PolarSSL",
+          "url": "https://curl.haxx.se/docs/adv_20160518.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3739",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3739"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3739",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3739"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-24T15:08:53+09:00",
+    "datelastupdated": "2016-05-24T15:08:53+09:00",
+    "datepublic": "2016-05-18T00:00:00+09:00"
+  }
+}

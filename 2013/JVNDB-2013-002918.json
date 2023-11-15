@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2013-002918",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/ipv4/tcp.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/ipv4/tcp.c 内の tcp_read_sock 関数は、skb 消費を適切に管理しないため、サービス運用妨害 (システムクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.34 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、TCP ソケットに対する巧妙に細工された splice システムコールを介して、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.34",
+          "url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.34"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "net: Fix oops from tcp_collapse() when using splice()",
+          "url": "https://github.com/torvalds/linux/commit/baff42ab1494528907bf4d5870359e31711746ae"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "net: Fix oops from tcp_collapse() when using splice()",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=baff42ab1494528907bf4d5870359e31711746ae"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 968484",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=968484"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1051",
+          "url": "https://rhn.redhat.com/errata/RHSA-2013-1051.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1080",
+          "url": "https://rhn.redhat.com/errata/RHSA-2013-1080.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2128",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2128"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2128",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2128"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年06月10日]\\n  掲載\\n[2014年02月27日]\\n  ベンダ情報：レッドハット (RHSA-2013:1051) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1080) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-06-10T15:29:15+09:00",
+    "datelastupdated": "2014-02-27T17:20:26+09:00",
+    "datepublic": "2013-03-30T00:00:00+09:00"
+  }
+}

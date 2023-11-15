@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2020-000060",
+  "vulinfodata": {
+    "title": "「攻撃遮断くんサーバセキュリティタイプ」におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社サイバーセキュリティクラウドが提供する「攻撃遮断くんサーバセキュリティタイプ」では、内部で使用しているスクリプトが採番する「ルール id」が重複した際に、新たに検知した攻撃元 IP アドレスを遮断対象として追加できない状態が、10分程度発生します (CWE-703)。 「ルール id」の重複が発生する条件は、次の通りです。  ・多数の送信元 IP アドレスから、10マイクロ秒以下の短時間に複数の攻撃リクエストが発生した場合 ・二つ以上の送信元 IP アドレスから、分単位までが同じ時刻で、10マイクロ秒単位から 100ミリ秒単位までの時刻も一致した、秒単位のみ異なる時刻の攻撃リクエストが発生した場合  "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社サイバーセキュリティクラウド",
+          "productname": "攻撃遮断くんサーバセキュリティタイプ",
+          "cpe": {
+            "text": "cpe:/a:misc:cyber_security_cloud_shadankun_server_security_type",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "（通常遮断方式を除く） Ver.1.5.3 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、当該製品で遮断対象を追加できない状態が 10分程度発生する、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[修正されたスクリプトファイルを使用する] 開発者が提供する情報をもとに、当該製品の内部で使用されているスクリプトファイルを、修正済みのスクリプトファイルに置き換えてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社サイバーセキュリティクラウド",
+          "vulinfoid": "【重要】攻撃遮断くん サーバセキュリティタイプの一部遮断方式におけるDoS（サービス妨害）の脆弱性に関する注意喚起（CVE-2020-5622）",
+          "url": "https://www.shadan-kun.com/news/20200831/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5622",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5622"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#42665874",
+          "url": "https://jvn.jp/jp/JVN42665874/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "2",
+          "datetime": "2020-08-28T14:38:13+09:00",
+          "description": "[2020年08月31日]\\n   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-08-31T12:07:03+09:00",
+    "datelastupdated": "2020-08-31T12:07:03+09:00",
+    "datepublic": "2020-08-31T00:00:00+09:00"
+  }
+}

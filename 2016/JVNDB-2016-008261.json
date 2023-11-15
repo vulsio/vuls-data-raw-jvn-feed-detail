@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2016-008261",
+  "vulinfodata": {
+    "title": "MSM デバイスなどの製品用 Qualcomm Innovation Center Android コントリビューションで使用される Linux Kernel におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイスおよびその他の製品用 Qualcomm Innovation Center (QuIC) Android コントリビューションで使用される Linux Kernel の ipc_router コンポーネントの net/ipc_router/ipc_router_socket.c の msm_ipc_router_close 関数には、サービス運用妨害 (NULL ポインタデリファレンス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、AF_MSM_IPC ソケットの accept システムコールの失敗を誘発されることで、サービス運用妨害 (NULL ポインタデリファレンス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "net: ipc_router: fix NULL pointer de-reference issue",
+          "url": "https://source.codeaurora.org/quic/la//kernel/msm-3.18/commit/?id=71fe5361cbef34e2d606b79e8936a910a3e95566"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "NULL pointer dereference when processing accept system call by user process on AF_MSM_IPC sockets (CVE-2016-5870)",
+          "url": "https://www.codeaurora.org/null-pointer-dereference-when-processing-accept-system-call-user-process-afmsmipc-sockets-cve-2016"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5870",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5870"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5870",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-5870"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-476",
+          "url": "http://cwe.mitre.org/data/definitions/476.html",
+          "title": "NULL ポインタデリファレンス"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-09T18:00:44+09:00",
+    "datelastupdated": "2017-05-09T18:00:44+09:00",
+    "datepublic": "2016-11-30T00:00:00+09:00"
+  }
+}

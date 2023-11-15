@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2013-006702",
+  "vulinfodata": {
+    "title": "libvirt の daemon/remote.c の remoteClientFreeFunc 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libvirt の daemon/remote.c の remoteClientFreeFunc 関数は、ACL が使用される場合、識別情報を設定しないため、イベントハンドラの削除が拒否される原因となり、サービス運用妨害 (解放済みメモリの使用およびクラッシュ) 状態となる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use-after-free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "libvirt",
+          "cpe": {
+            "text": "cpe:/a:redhat:libvirt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、イベントハンドラを登録され、接続をクローズされることで、サービス運用妨害 (解放済みメモリの使用およびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Libvirt Security Notice",
+          "vulinfoid": "LSN-2013-0013",
+          "url": "http://security.libvirt.org/2013/0013.html"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt.org",
+          "vulinfoid": "Fix crash in libvirtd when events are registered & ACLs active",
+          "url": "http://libvirt.org/git/?p=libvirt.git;a=commit;h=8294aa0c1750dcb49d6345cd9bd97bf421580d8b"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4399",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4399"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4399",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4399"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-16T14:04:14+09:00",
+    "datelastupdated": "2014-12-16T14:04:14+09:00",
+    "datepublic": "2013-09-27T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "vulinfoid": "JVNDB-2005-000872",
+  "vulinfodata": {
+    "title": "GNU cpio における大きなサイズのファイル処理によるバッファーオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU cpio には、過度に大きなサイズのファイルを処理する際に不備があり、サイズを示す数値が 8 桁以上あるファイルの cpio アーカイブを生成する際に、バッファオーバーフローが発生する脆弱性が存在します。  本脆弱性は 64 ビット プラットフォーム上で動作する場合のみ影響があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU cpio",
+          "cpe": {
+            "text": "cpe:/a:gnu:cpio",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "4.0 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者が細工したファイルに対して cpio コマンドを実行することで、標的ユーザの権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cpio",
+          "vulinfoid": "Top Page",
+          "url": "http://www.gnu.org/software/cpio/cpio.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2050",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2050"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "1006",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=1006"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2010:0145",
+          "url": "https://rhn.redhat.com/errata/RHSA-2010-0145.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2007:0245",
+          "url": "https://rhn.redhat.com/errata/RHSA-2007-0245.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-4268",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4268"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "23855",
+          "url": "http://xforce.iss.net/xforce/xfdb/23855"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-4268",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-4268"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "22194",
+          "url": "http://www.osvdb.org/22194"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA18251",
+          "url": "http://secunia.com/advisories/18251"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "16057",
+          "url": "http://www.securityfocus.com/bid/16057"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年05月23日]\\n  掲載\\n[2010年03月25日]\\n  影響を受けるシステム：レッドハット (RHSA-2010:0145) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2010:0145) を追加\\n[2010年05月07日]\\n  影響を受けるシステム：ミラクル・リナックス (2050) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (2050) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-05-23T11:16:04+09:00",
+    "datelastupdated": "2010-05-07T16:51:28+09:00",
+    "datepublic": "2005-12-15T00:00:00+09:00"
+  }
+}

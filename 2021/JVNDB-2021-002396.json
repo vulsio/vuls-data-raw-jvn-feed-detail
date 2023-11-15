@@ -1,0 +1,164 @@
+{
+  "vulinfoid": "JVNDB-2021-002396",
+  "vulinfodata": {
+    "title": "AVEVA 製 PCS Portal における DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "AVEVA 社が提供する PCS Portal は AVEVA 製品を実行しているノード間のデータ交換のための共通フレームワークです。PCS Portal には、制御されていない検索パス要素を介した DLL 読み込みに関する脆弱性（CWE-427、CVE-2021-38410）が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA Batch Management",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_batch_management",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2020"
+          ]
+        },
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA Enterprise Data Management",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_enterprise_data_management",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2021"
+          ]
+        },
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA Manufacturing Execution System",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_manufacturing_execution_system",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2020"
+          ]
+        },
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA Mobile Operator",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_mobile_operator",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2020"
+          ]
+        },
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA Software Platform Common Services",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_software_platform_common_services",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.6",
+            "4.5.0",
+            "4.5.1",
+            "4.5.2"
+          ]
+        },
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA System Platform",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_system_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2020",
+            "2020 R2",
+            "2020 R2 P01"
+          ]
+        },
+        {
+          "name": "AVEVA",
+          "productname": "AVEVA Work Tasks",
+          "cpe": {
+            "text": "cpe:/a:aveva:aveva_work_tasks",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2020",
+            "2020 Update 1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者によって DLL 検索パス内の1つ以上の場所を制御され、 PCS Portal アプリケーションのコンテキスト内で悪意のあるコードを実行される可能性があります。  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  本脆弱性を修正したセキュリティアップデート PCS 4.5.3 は、以下の製品で使用できます。  　* AVEVA Mobile Operator 2020 　* AVEVA Enterprise Data Management 2021 　* AVEVA System Platform 2020 R2 P01 　* AVEVA System Platform 2020 R2 　* AVEVA Work Tasks 2020 Update 1  本脆弱性を修正したセキュリティアップデート PCS 4.4.7 は、以下の製品で使用できます。  　* AVEVA System Platform 2020 　* AVEVA Work Tasks 2020 　* AVEVA Manufacturing Execution System 2020 　* AVEVA Batch Management 2020  詳細は、開発者が提供するセキュリティアドバイザリ <a href=\"https://www.aveva.com/content/dam/aveva/documents/support/cyber-security-updates/SecurityBulletin_AVEVA-2021-008.pdf\" target=\"blank\">AVEVA-2021-008（PDF）</a>を確認してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "AVEVA",
+          "vulinfoid": "AVEVA-2021-008（PDF）",
+          "url": "https://www.aveva.com/content/dam/aveva/documents/support/cyber-security-updates/SecurityBulletin_AVEVA-2021-008.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-38410",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38410"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-252-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-252-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98046090",
+          "url": "http://jvn.jp/vu/JVNVU98046090/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-427",
+          "url": "https://cwe.mitre.org/data/definitions/427.html",
+          "title": "制御されていない検索パスの要素"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-09-13T15:57:19+09:00",
+          "description": "[2021年09月13日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-09-13T16:19:55+09:00",
+    "datelastupdated": "2021-09-13T16:19:55+09:00",
+    "datepublic": "2021-09-10T00:00:00+09:00"
+  }
+}

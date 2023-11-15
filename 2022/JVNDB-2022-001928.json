@@ -1,0 +1,87 @@
+{
+  "vulinfoid": "JVNDB-2022-001928",
+  "vulinfodata": {
+    "title": "Spring Security の RegexRequestMatcher における認証回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "VMware が提供する Spring Security の RegexRequestMatcher には、認証回避の脆弱性 (CWE-287) が存在します。 Spring Security では認証が必要な箇所に対してパスやパラメータを指定することで該当の箇所に認証機能を提供することができます。  パスを指定する関数として正規表現が指定できる RegexRequestMatcher を指定しており、かつパスの正規表現内に「.」を含んで認証ページを構成している場合、特定のリクエストを送信することで認証を回避し、本来権限のない第三者がページを閲覧可能となっている場合があります。  2022 年 5 月 26 日現在、本脆弱性の実証コードの公開を確認しています。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "VMware",
+          "productname": "Spring Security",
+          "cpe": {
+            "text": "cpe:/a:vmware:springsource_spring_security",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.7 より前の 5.5 系バージョン",
+            "5.6.4 より前の 5.6 系バージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.2",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、ウェブページの認証を回避され情報を閲覧される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は本脆弱性を修正した以下のバージョンを公開しています。  　* Spring Security 5.5.7 　* Spring Security 5.6.4 　* Spring Security 5.7  "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "VMware",
+          "vulinfoid": "CVE-2022-22978: Authorization Bypass in RegexRequestMatcher",
+          "url": "https://tanzu.vmware.com/security/cve-2022-22978"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-22978",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-22978"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96405576",
+          "url": "https://jvn.jp/vu/JVNVU96405576/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-05-27T12:08:00+09:00",
+          "description": "[2022年05月27日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-05-27T14:36:39+09:00",
+    "datelastupdated": "2022-05-27T14:36:39+09:00",
+    "datepublic": "2022-05-26T00:00:00+09:00"
+  }
+}

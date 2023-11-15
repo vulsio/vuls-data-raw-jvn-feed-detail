@@ -1,0 +1,169 @@
+{
+  "vulinfoid": "JVNDB-2018-009127",
+  "vulinfodata": {
+    "title": "LogonTracer に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "一般社団法人JPCERTコーディネーションセンターが提供する LogonTracer は、イベントログの分析をサポートするツールです。 LogonTracer には、次の複数の脆弱性が存在します。   * クロスサイトスクリプティング (CWE-79) - CVE-2018-16165    CVSS v3 CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N 基本値: 6.1    CVSS v2 AV:N/AC:M/Au:N/C:N/I:P/A:N 基本値: 4.3  * XXE (XML External Entity) インジェクション (CWE-611) - CVE-2018-16166    CVSS v3 CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:L 基本値: 6.1    CVSS v2 AV:N/AC:L/Au:N/C:P/I:N/A:N 基本値: 5.0  * OS コマンドインジェクション (CWE-78) - CVE-2018-16167    CVSS v3 CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H 基本値: 10.0   CVSS v2 AV:N/AC:L/Au:N/C:P/I:P/A:P 基本値: 7.5  * コードインジェクション (CWE-94) - CVE-2018-16168    CVSS v3 CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H 基本値: 10.0    CVSS v2 AV:N/AC:L/Au:N/C:P/I:P/A:P 基本値: 7.5  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が修正対応を行い、対策版を公表しました。 報告者: 株式会社神戸デジタル・ラボ　馬場 将次 氏 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "一般社団法人JPCERTコーディネーションセンター",
+          "productname": "LogonTracer",
+          "cpe": {
+            "text": "cpe:/a:jpcert:logontracer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.2.0 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "* ユーザのウェブブラウザ上で、任意のスクリプトが実行される - CVE-2018-16165 * 当該製品を設置したサーバ上にある任意のファイルを取得される - CVE-2018-16166 * 当該製品を設置したサーバ上で任意の OS コマンドが実行される - CVE-2018-16167 * 当該製品を設置したサーバ上で任意の Python コードが実行される - CVE-2018-16168"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Release V1.2.1 - JPCERTCC/LogonTracer - GitHub ",
+          "url": "https://github.com/JPCERTCC/LogonTracer/releases/tag/v1.2.1"
+        },
+        {
+          "type": "vendor",
+          "name": "一般社団法人 JPCERT コーディネーションセンター",
+          "vulinfoid": "イベントログを可視化して不正使用されたアカウントを調査 〜LogonTracer〜",
+          "url": "https://blogs.jpcert.or.jp/ja/2017/11/logontracer.html#update201811"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-16167",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16167"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-16165",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16165"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-16166",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16166"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-16168",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16168"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98026636",
+          "url": "https://jvn.jp/vu/JVNVU98026636/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-16166",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16166"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-16167",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16167"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-16168",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16168"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-16165",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16165"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-611",
+          "url": "https://cwe.mitre.org/data/definitions/611.html",
+          "title": "XML 外部エンティティ参照の不適切な制限"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-94",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+          "title": "コード・インジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-11-08T11:42:57+09:00",
+          "description": "[2018年11月08日]\\n   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-08-27T10:45:21+09:00",
+          "description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16165) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16166) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16167) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16168) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-11-08T15:47:26+09:00",
+    "datelastupdated": "2019-08-27T11:51:38+09:00",
+    "datepublic": "2018-11-07T00:00:00+09:00"
+  }
+}

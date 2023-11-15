@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2012-006188",
+  "vulinfodata": {
+    "title": "systemd の session_link_x11_socket 関数における任意のファイルを作成される脆弱性",
+    "vulinfodescription": {
+      "overview": "systemd の systemd-logind の login/logind-session.c 内の session_link_x11_socket 関数には、任意のファイルを作成される、または上書きされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Lennart Poettering",
+          "productname": "systemd",
+          "cpe": {
+            "text": "cpe:/a:lennart_poettering:systemd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "37 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.3",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、/run/user/ の X11 ユーザディレクトリへのシンボリックリンク攻撃を介して、任意のファイルを作成される、または上書きされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 747154",
+          "url": "https://bugzilla.novell.com/show_bug.cgi?id=747154"
+        },
+        {
+          "type": "vendor",
+          "name": "freedesktop.org",
+          "vulinfoid": "logind: move X11 socket",
+          "url": "http://cgit.freedesktop.org/systemd/systemd/commit/?id=fc3c1c6e091ea16ad5600b145201ec535bbb5d7c"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SA:2012:001",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2012-02/msg00030.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 795853",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=795853"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-0871",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0871"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-0871",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0871"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-59",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-59.html",
+          "title": "リンク解釈の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-22T18:57:50+09:00",
+    "datelastupdated": "2014-04-22T18:57:50+09:00",
+    "datepublic": "2012-02-29T00:00:00+09:00"
+  }
+}

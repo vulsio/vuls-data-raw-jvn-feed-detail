@@ -1,0 +1,127 @@
+{
+  "vulinfoid": "JVNDB-2015-002004",
+  "vulinfodata": {
+    "title": "PHP の PostgreSQL エクステンションにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の PostgreSQL (別名 pgsql) エクステンションの pgsql.c 内の build_tablename 関数は、テーブル名のトークンの抽出を検証しないため、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.7 まで"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.6.8 以上 10.11 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された名前を介して、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205267",
+          "url": "https://support.apple.com/en-us/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205267",
+          "url": "http://support.apple.com/ja-jp/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "Fixed bug #68739 #68740 #68741",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=124fb22a13fafa3648e4e15b4f207c7096d8155e"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Bug #68741",
+          "url": "https://bugs.php.net/bug.php?id=68741"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1352",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1352"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97220341",
+          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1352",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1352"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月02日]\\n  掲載\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-02T14:50:32+09:00",
+    "datelastupdated": "2015-10-06T10:36:06+09:00",
+    "datepublic": "2015-01-08T00:00:00+09:00"
+  }
+}

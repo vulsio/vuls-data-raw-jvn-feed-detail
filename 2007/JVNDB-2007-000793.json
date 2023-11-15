@@ -1,0 +1,160 @@
+{
+  "vulinfoid": "JVNDB-2007-000793",
+  "vulinfodata": {
+    "title": "Linux Kernel のゾンビプロセスの取り扱いに関するサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel には、親プロセスが終了している際に、待機状態の子プロセスを扱う init 処理を妨害してしまうために、ゾンビプロセスが大量に生成され、結果的にサービス運用妨害 (DoS) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.20 未満のバージョン"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (x86) ",
+            "3 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "5.0 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "悪意あるローカルユーザによってゾンビプロセスを大量に生成されることで、システムのリソースを大量に消費し、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "kernel-2.6.18-8.16AX",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=115"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "kernel-2.6.18-53.11AXS3",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=215"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "ChangeLog-2.6.20",
+          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.20"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2008:0154",
+          "url": "https://rhn.redhat.com/errata/RHSA-2008-0154.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2007:0939",
+          "url": "https://rhn.redhat.com/errata/RHSA-2007-0939.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2007:0939",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0939J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-6921",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6921"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-6921",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-6921"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA27436",
+          "url": "http://secunia.com/advisories/27436"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年11月27日]\\n  掲載\\n[2008年03月18日]\\n  影響を受けるシステム：レッドハット (RHSA-2008:0154) の情報追加。\\n  ベンダ情報：レッドハット (RHSA-2008:0154) 追加。\\n[2008年04月21日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-8.16AX) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (kernel-2.6.18-8.16AX) 追加。\\n[2008年10月30日]\\n  ベンダ情報：ミラクル・リナックス（kernel-2.6.18-53.11AXS3）を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-11-27T16:58:03+09:00",
+    "datelastupdated": "2008-10-30T11:08:31+09:00",
+    "datepublic": "2007-01-12T00:00:00+09:00"
+  }
+}

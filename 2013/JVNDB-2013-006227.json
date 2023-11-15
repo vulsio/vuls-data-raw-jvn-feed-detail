@@ -1,0 +1,260 @@
+{
+  "vulinfoid": "JVNDB-2013-006227",
+  "vulinfodata": {
+    "title": "Apache HTTP Server の mod_dav モジュールの main/util.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server の mod_dav モジュールの main/util.c 内の dav_xml_get_cdata 関数は、CDATA セクションから空白文字を適切に削除しないため、サービス運用妨害 (デーモンクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.8 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.2 (HT204659)",
+            "10.10 未満 (HT6535)",
+            "10.8.5 (HT204659)",
+            "10.9.5 (HT204659)"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:oracle:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.1.3.5.0",
+            "11.1.1.7.0",
+            "12.1.2.0",
+            "12.1.3.0"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Virtualization",
+          "cpe": {
+            "text": "cpe:/a:oracle:virtualization_secure_global_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の Oracle Secure Global Desktop 4.63",
+            "の Oracle Secure Global Desktop 4.71",
+            "の Oracle Secure Global Desktop 5.0",
+            "の Oracle Secure Global Desktop 5.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された DAV WRITE リクエストを介して、サービス運用妨害 (デーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Log of /httpd/httpd/trunk/modules/dav/main/util.c",
+          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/util.c"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Diff of /httpd/httpd/trunk/modules/dav/main/util.c",
+          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/util.c?r1=1528718&r2=1556428&diff_format=h"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT204659",
+          "url": "http://support.apple.com/en-us/HT204659"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT6535",
+          "url": "http://support.apple.com/kb/HT6535"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT6535",
+          "url": "http://support.apple.com/kb/HT6535?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT204659",
+          "url": "http://support.apple.com/ja-jp/HT204659"
+        },
+        {
+          "type": "vendor",
+          "name": "Changes with Apache",
+          "vulinfoid": "Apache 2.4.9",
+          "url": "http://www.apache.org/dist/httpd/CHANGES_2.4.9"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX03150 SSRT101681",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04483248"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1676092",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676092"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1676091",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21676091"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1669554",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21669554"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2014",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2014-1972956.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2014 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2014verbose-1972958.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - January 2015 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2015verbose-1972976.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple Input Validation vulnerabilities in Apache HTTP Server",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_input_validation_vulnerabilities_in1"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "January 2015 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/january_2015_critical_patch_update"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Bulletin",
+          "vulinfoid": "JSA10698",
+          "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10698&actp=search"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2014-14",
+          "url": "http://www.turbolinux.co.jp/security/2014/TLSA-2014-14j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6438",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6438"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97537282",
+          "url": "http://jvn.jp/vu/JVNVU97537282/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91828320",
+          "url": "http://jvn.jp/vu/JVNVU91828320/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6438",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6438"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "APPLE-SA-2014-10-16-1 OS X Yosemite v10.10",
+          "url": "http://archives.neohapsis.com/archives/bugtraq/2014-10/0101.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年03月19日]\\n  掲載\\n[2014年06月02日]\\n  ベンダ情報：オラクル (Multiple Input Validation vulnerabilities in Apache HTTP Server) を追加\\n[2014年07月25日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2014) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2014 Risk Matrices) を追加\\n[2014年11月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT6535) を追加\\n  参考情報：JVN (JVNVU#97537282) を追加\\n  参考情報：関連文書 (APPLE-SA-2014-10-16-1 OS X Yosemite v10.10) を追加\\n[2014年12月08日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03150 SSRT101681) を追加\\n[2015年01月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2015 Critical Patch Update Released) を追加\\n[2015年03月26日]\\n  ベンダ情報：ターボリナックス (TLSA-2014-14) を追加\\n[2015年04月13日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204659) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004) を追加\\n  参考情報：JVN (JVNVU#91828320) を追加\\n[2015年06月26日]\\n  ベンダ情報：IBM (1676092) を追加\\n  ベンダ情報：IBM (1676091) を追加\\n[2015年08月10日]\\n  ベンダ情報：IBM (1669554) を追加\\n[2015年12月02日]\\n  ベンダ情報：ジュニパーネットワークス (JSA10698) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-03-19T14:33:59+09:00",
+    "datelastupdated": "2015-12-02T15:15:01+09:00",
+    "datepublic": "2013-10-03T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2014-005201",
+  "vulinfodata": {
+    "title": "uIP と lwIP の DNS リゾルバにキャッシュポイズニングの脆弱性",
+    "vulinfodescription": {
+      "overview": "uIP と lwIP に実装されている DNS リゾルバには、キャッシュポイズニング攻撃が容易になる脆弱性が存在します。  uIP と lwIP に実装されている DNS リゾルバでは、トランザクション ID およびソースポートのランダム化が行われていません (CWE-330)。  CWE-330: Use of Insufficiently Random Values http://cwe.mitre.org/data/definitions/330.html  なお、National Vulnerability Database (NVD) では、CWE-345 として公開されています。  CWE-345: Insufficient Verification of Data Authenticity (データの信頼性についての不十分な検証) http://cwe.mitre.org/data/definitions/345.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Contiki プロジェクト",
+          "productname": "uIP",
+          "cpe": {
+            "text": "cpe:/a:uip_project:uip",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "lwIP プロジェクト",
+          "productname": "lwIP",
+          "cpe": {
+            "text": "cpe:/a:iwip_project:iwip",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 1.4.1 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "キャッシュポイズニング攻撃によって、偽の DNS 情報をキャッシュさせられる可能性があります。結果として、ユーザが偽のサイトに誘導される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "lwIP は、ソースコードのリポジトリ上では修正がコミットされています。 コミット b8d798158bce0068260302371afb2b4ab4d3678a 以降にアップグレードしてください。  uIP は Contiki プロジェクトに統合されています。 2014年11月4日現在、Contiki プロジェクトの対策方法は不明です。  [ワークアラウンドを実施する] JVNVU#800113 の対策方法を参考に、ワークアラウンドを実施してください。  JVNVU#800113 複数の DNS 実装にキャッシュポイズニングの脆弱性 https://jvn.jp/vu/JVNVU800113/"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GNU Savannah",
+          "vulinfoid": "lwIP - A Lightweight TCP/IP stack",
+          "url": "http://savannah.nongnu.org/projects/lwip/"
+        },
+        {
+          "type": "vendor",
+          "name": "lwIP",
+          "vulinfoid": "lwip.git - added source port randomization to make the DNS client more robust (see bug #43144)",
+          "url": "http://git.savannah.gnu.org/cgit/lwip.git/commit/?id=9fb46e120655ac481b2af8f865d5ae56c39b831a"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-4883",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4883"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98989920",
+          "url": "http://jvn.jp/vu/JVNVU98989920/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#800113",
+          "url": "http://jvn.jp/vu/JVNVU800113/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-4883",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4883"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#210620",
+          "url": "http://www.kb.cert.org/vuls/id/210620"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月05日]\\n  掲載\\n[2014年12月01日]\\n  概要：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-4883) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-05T15:26:25+09:00",
+    "datelastupdated": "2014-12-01T18:06:40+09:00",
+    "datepublic": "2014-11-03T00:00:00+09:00"
+  }
+}

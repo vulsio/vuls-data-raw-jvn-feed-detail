@@ -1,0 +1,89 @@
+{
+  "vulinfoid": "JVNDB-2014-002904",
+  "vulinfodata": {
+    "title": "FreeBSD カーネルにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeBSD カーネルの (1) execve および (2) fexecve システムコールには、すべてのスレッドが終了する前にプロセスの仮想メモリアドレス空間およびマッピングを破壊するため、サービス運用妨害 (トリプルフォールトおよびシステムリブート) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0 以上 p4 未満",
+            "8.4 以上 p11 未満",
+            "9.1 以上 p14 未満",
+            "9.2 以上 p7 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工されたシステムコールを介して、無効なページテーブルポインタデリファレンスを誘発され、運用妨害 (トリプルフォールトおよびシステムリブート) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD Security Advisory",
+          "vulinfoid": "FreeBSD-EN-14:06.exec",
+          "url": "http://www.freebsd.org/security/advisories/FreeBSD-EN-14%3A06.exec.asc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3880",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3880"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3880",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3880"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年06月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-06-13T17:59:01+09:00",
+    "datelastupdated": "2014-06-13T17:59:01+09:00",
+    "datepublic": "2014-06-03T00:00:00+09:00"
+  }
+}

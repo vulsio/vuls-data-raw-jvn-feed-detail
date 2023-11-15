@@ -1,0 +1,147 @@
+{
+  "vulinfoid": "JVNDB-2021-004267",
+  "vulinfodata": {
+    "title": "三菱電機製 GOT2000 シリーズ、GOT SIMPLE シリーズ、GT SoftGOT2000 における不適切な入力確認の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する GOT2000 シリーズ、GOT SIMPLE シリーズ、GT SoftGOT2000 には、デバイス値に対する不適切な入力確認（CWE-20、CVE-2021-20601）の脆弱性が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "GOT SIMPLE シリーズ GS21 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got_simple_series_gs21_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT21 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt21_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT23 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt23_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT25 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt25_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT27 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt27_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GT SoftGOT2000",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:gt_softgot2000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって悪意を持ったパケットを送信され、デバイス値の書き換えが行われた場合、設定された入力範囲の制限を超える値が書き込まれるといった情報改ざんが行われる可能性があります。その結果、システムが誤動作するなどの可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* LAN 内で使用し、信頼できないネットワークやホストからアクセスできないようにする 　* 該当製品やシステムへアクセス可能なパソコンにウイルス対策ソフトを搭載する 　* 当該製品の IP フィルタ機能（*1）を使用し、接続可能な IP アドレスを適切に制限する  （*1）IP フィルタ機能については、開発者が提供する「GT Designer3 (GOT2000) 画面設計マニュアル (SH-081219) 『5.4.3 章 IP フィルタを設定する』」に記載されています。  詳しくは<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-018.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "GOT2000シリーズ、GOT SIMPLEシリーズ、GT SoftGOT2000における情報改ざんの脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-018.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20601",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20601"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-320-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-320-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98072504",
+          "url": "http://jvn.jp/vu/JVNVU98072504/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-11-17T15:55:18+09:00",
+          "description": "[2021年11月17日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-11-17T17:05:07+09:00",
+    "datelastupdated": "2021-11-17T17:05:07+09:00",
+    "datepublic": "2021-11-16T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "vulinfoid": "JVNDB-2016-003438",
+  "vulinfodata": {
+    "title": "Apache HTTPD の HTTP/2 通信における X.509 クライアント証明書の認証処理の問題",
+    "vulinfodescription": {
+      "overview": "Apache HTTPD では、HTTP/2 に対応するモジュール mod_http2 が、バージョン 2.4.17 から提供されています。mod_http2 は実験的なものであり、デフォルトではコンパイルされず、また、設定ファイルの初期設定では HTTP/1.1 のみが有効になっています。  Apache HTTPD は、HTTP/2 経由でリソースへのアクセスを提供する際に、クライアント証明書の検証結果を考慮していません。  なお、National Vulnerability Database (NVD) では、CWE-284 として公開されています。  CWE-284: Improper Access Control http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 2.4.18 から 2.4.20 まで"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Enterprise Manager",
+          "cpe": {
+            "text": "cpe:/a:oracle:enterprise_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.1.4",
+            "12.2.2",
+            "12.3.2"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "WebOTX Application Server",
+          "cpe": {
+            "text": "cpe:/a:nec:webotx_application_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Enterprise V9.4",
+            "Express V9.4",
+            "Standard V9.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "認証を必要とするコンテンツに認証無しでアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに最新版にアップデートしてください。  なお、開発者によると本問題はバージョン 2.4.23 で修正されているとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache",
+          "vulinfoid": "Apache HTTP Server 2.4.23 Released",
+          "url": "http://www.apache.org/dist/httpd/Announcement2.4.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache",
+          "vulinfoid": "Fixed in Apache httpd 2.4.23",
+          "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache",
+          "vulinfoid": "Changes with Apache 2.4.23",
+          "url": "http://www.apache.org/dist/httpd/CHANGES_2.4"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "modssl: reset client-verify state when renegotiation is aborted",
+          "url": "https://github.com/apache/httpd/commit/2d0e4eff04ea963128a41faaef21f987272e05a2"
+        },
+        {
+          "type": "vendor",
+          "name": "Mailing list archives",
+          "vulinfoid": "CVE-2016-4979: HTTPD webserver - X509 Client certificate based authentication can be bypassed when HTTP/2 is used [vs]",
+          "url": "http://mail-archives.apache.org/mod_mbox/httpd-announce/201607.mbox/CVE-2016-4979-68283"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV16-019",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv16-019.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016verbose-2881725.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "October 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/october_2016_critical_patch_update"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4979",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4979"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97485903",
+          "url": "http://jvn.jp/cert/JVNVU97485903"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4979",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4979"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月07日]\\n  掲載\\n[2016年08月03日]\\n  CVSS による深刻度：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Apache Software Foundation (Fixed in Apache httpd 2.4.23) を追加\\n  ベンダ情報：Apache Software Foundation (modssl: reset client-verify state when renegotiation is aborted) を追加\\n  ベンダ情報：Apache Software Foundation (Changes with Apache 2.4.23) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-4979) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2016年11月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV16-019) を追加\\n[2016年11月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2016 Critical Patch Update Released) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-07T16:16:10+09:00",
+    "datelastupdated": "2016-11-22T15:46:07+09:00",
+    "datepublic": "2016-07-05T00:00:00+09:00"
+  }
+}

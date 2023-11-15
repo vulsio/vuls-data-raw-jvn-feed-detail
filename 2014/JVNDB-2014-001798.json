@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2014-001798",
+  "vulinfodata": {
+    "title": "Icinga におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Icinga には、一つずれエラー (Off-by-One error) により、サービス運用妨害 (クラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Icinga GmbH",
+          "productname": "Icinga",
+          "cpe": {
+            "text": "cpe:/a:icinga:icinga",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.10.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.3",
+            "13.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、下記の項目における不特定の要素を介して、スタックベースのバッファオーバーフローを誘発されることで、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。  (1) cgi/cgiutils.c の display_nav_table 関数 (2) cgi/cgiutils.c の print_export_link 関数 (3) cgi/cgiutils.c の page_num_selector 関数 (4) cgi/cgiutils.c の page_limit_selector 関数 (5) cgi/status.c の status_page_num_selector 関数"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Icinga",
+          "vulinfoid": "classic-ui: fix small buffer overflows when checking strlen against MAX_INPUT_BUFFER...",
+          "url": "https://git.icinga.org/?p=icinga-core.git;a=commitdiff;h=73285093b71a5551abdaab0a042d3d6bae093b0d"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2014:0420",
+          "url": "http://lists.opensuse.org/opensuse-updates/2014-03/msg00072.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-2386",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2386"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-2386",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-2386"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年03月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-03-27T11:01:28+09:00",
+    "datelastupdated": "2014-03-27T11:01:28+09:00",
+    "datepublic": "2014-02-18T00:00:00+09:00"
+  }
+}

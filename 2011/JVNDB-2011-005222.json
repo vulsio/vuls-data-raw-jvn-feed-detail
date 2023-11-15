@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2011-005222",
+  "vulinfodata": {
+    "title": "Linux Kernel に同梱されている perf における任意のファイルを上書きされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel に同梱されている perf の tools/perf/util/config.c 内の perf_config 関数には、検索パスに関する処理に不備があるため、任意のファイルを上書きされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-426: Untrusted Search Path (信頼性のない検索パス) と識別されています。 http://cwe.mitre.org/data/definitions/426.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.2",
+          "vector": "AV:L/AC:H/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、カレントワーキングディレクトリ内の巧妙に細工された設定ファイルを介して、任意のファイルを上書きされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.1",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.1"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "perf tools: do not look at ./config for configuration",
+          "url": "https://github.com/torvalds/linux/commit/aba8d056078e47350d85b06a9cabd5afcc4b72ea"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux.git",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=aba8d056078e47350d85b06a9cabd5afcc4b72ea"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 729808",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=729808"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2905",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2905"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2905",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2905"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-05T13:57:30+09:00",
+    "datelastupdated": "2013-03-05T13:57:30+09:00",
+    "datepublic": "2011-10-24T00:00:00+09:00"
+  }
+}

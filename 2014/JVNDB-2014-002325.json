@@ -1,0 +1,133 @@
+{
+  "vulinfoid": "JVNDB-2014-002325",
+  "vulinfodata": {
+    "title": "Ignite Realtime Smack XMPP API の ServerTrustManager コンポーネントにおけるサーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Ignite Realtime Smack XMPP API の ServerTrustManager コンポーネントは、SSL サーバからの X.509 証明書チェーン内の basicConstraints および nameConstraints を検証しないため、サーバになりすまされ、重要な情報を取得される脆弱性が存在します  補足情報 : CWE による脆弱性タイプは、CWE-358: Improperly Implemented Security Check for Standard (不適切に実装されたセキュリティチェック) と識別されています。 http://cwe.mitre.org/data/definitions/358.html  補足情報 : CWE による脆弱性タイプは、CWE-254: Security Features (セキュリティ機能) と識別されています。 http://cwe.mitre.org/data/definitions/254.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Ignite Realtime",
+          "productname": "Smack API",
+          "cpe": {
+            "text": "cpe:/a:igniterealtime:smack",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.0-rc1 未満"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat JBoss Fuse",
+          "cpe": {
+            "text": "cpe:/a:redhat:jboss_fuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.2.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、巧妙に細工された証明書を介して、サーバになりすまされ、重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Ignite Realtime",
+          "vulinfoid": "SMACK-410",
+          "url": "http://issues.igniterealtime.org/browse/SMACK-410"
+        },
+        {
+          "type": "vendor",
+          "name": "Ignite Realtime",
+          "vulinfoid": "Smack API",
+          "url": "http://www.igniterealtime.org/projects/smack/"
+        },
+        {
+          "type": "vendor",
+          "name": "Ignite Realtime Blog",
+          "vulinfoid": "(a)Smack 4.0.0-rc1 has been released",
+          "url": "http://community.igniterealtime.org/blogs/ignite/2014/04/17/asmack-400-rc1-has-been-released"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1093273",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1093273"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1176",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1176.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-0363",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0363"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93342829",
+          "url": "http://jvn.jp/vu/JVNVU93342829/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-0363",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0363"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#489228",
+          "url": "http://www.kb.cert.org/vuls/id/489228"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年05月02日]\\n  掲載\\n[2015年07月30日]\\n  ベンダ情報：レッドハット (RHSA-2015:1176) を追加\\n[2015年07月31日]\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：レッドハット (Bug 1093273) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-05-02T14:41:35+09:00",
+    "datelastupdated": "2015-07-31T15:17:01+09:00",
+    "datepublic": "2014-04-17T00:00:00+09:00"
+  }
+}

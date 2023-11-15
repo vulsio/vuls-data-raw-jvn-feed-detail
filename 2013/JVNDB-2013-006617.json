@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2013-006617",
+  "vulinfodata": {
+    "title": "Apache HTTP Server の mod_cache モジュールの modules/cache/cache_storage.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server の mod_cache モジュールの modules/cache/cache_storage.c 内の cache_invalidate 関数には、キャッシングフォワードプロキシが有効な場合、サービス運用妨害 (NULL ポインタデリファレンスおよびデーモンクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの HTTP サーバにより、hostname 値の欠落を誘発する要素を介して、サービス運用妨害 (NULL ポインタデリファレンスおよびデーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache httpd 2.4 vulnerabilities",
+          "vulinfoid": "Fixed in Apache httpd 2.4.7",
+          "url": "http://httpd.apache.org/security/vulnerabilities_24.html#2.4.7"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Diff of /httpd/httpd/trunk/modules/cache/cache_storage.c",
+          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/cache/cache_storage.c?r1=1491564&r2=1523235&diff_format=h"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache-SVN",
+          "vulinfoid": "Log of /httpd/httpd/trunk/modules/cache/cache_storage.c",
+          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/cache/cache_storage.c"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1120604",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1120604"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple Denial Of Service(DoS) vulnerabilities in Apache HTTP Server",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_denial_of_service_dos5"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4352",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4352"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4352",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4352"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月22日]\\n  掲載\\n[2014年10月06日]\\n  ベンダ情報：オラクル (Multiple Denial Of Service(DoS) vulnerabilities in Apache HTTP Server) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-22T14:32:51+09:00",
+    "datelastupdated": "2014-10-06T18:25:04+09:00",
+    "datepublic": "2013-11-26T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-003015",
+  "vulinfodata": {
+    "title": "Linux kernel の drivers/media/media-device.c 内の media_device_enum_entities 関数における重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の drivers/media/media-device.c 内の media_device_enum_entities 関数は、特定のデータ構造を適切に初期化しないため、カーネルメモリから重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.14.6 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.7",
+          "vector": "AV:L/AC:L/Au:S/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、MEDIA_IOC_ENUM_ENTITIES ioctl コールへの /dev/media0 の読み込みアクセスを利用されることで、カーネルメモリから重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.14.6",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.14.6"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "[media] media-device: fix infoleak in ioctl media_enum_entities()",
+          "url": "https://github.com/torvalds/linux/commit/e6a623460e5fc960ac3ee9f946d3106233fd28d8"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "[media] media-device: fix infoleak in ioctl media_enum_entities()",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=e6a623460e5fc960ac3ee9f946d3106233fd28d8"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1109774",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1109774"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1739",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1739"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1739",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1739"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年06月24日]\\n  掲載\\n[2014年06月27日]\\n  CVSS による深刻度：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-06-24T16:06:34+09:00",
+    "datelastupdated": "2014-06-27T17:57:31+09:00",
+    "datepublic": "2014-06-07T00:00:00+09:00"
+  }
+}

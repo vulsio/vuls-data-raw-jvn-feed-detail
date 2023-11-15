@@ -1,0 +1,208 @@
+{
+  "vulinfoid": "JVNDB-2006-000305",
+  "vulinfodata": {
+    "title": "PostgreSQL における無効なマルチバイト文字列による SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  PostgreSQL には、SQL インジェクション攻撃が可能となる以下の複数の問題が存在します。  1) PostgreSQL サーバにおいて、無効なマルチバイト文字列の処理が不適切であるため、データベースと連携する Web アプリケーションでエスケープ処理が行われている場合に、このエスケープ処理を回避して SQL インジェクションが可能となる問題が存在します。(CVE-2006-2313)  リモートの攻撃者に悪用された場合、結果としてデータベース上で任意の SQL クエリを実行されてしまう可能性があります。  2) PostgreSQL サーバにおいて、特定のマルチバイト文字コード (SJIS, BIG5, GBK, GB18030, UHC など) が使用されている場合に、ASCII コードでバックスラッシュを表す \"0x5c\" の処理に不備が存在するため、データベースと連携する Web アプリケーションで ASCII シングルクォート文字を \"＼’\" (本来は半角) のようにエスケープ処理を行っている場合に、このエスケープ処理を回避して SQL インジェクション攻撃が可能となる問題が存在します。(CVE-2006-2314)  リモートの攻撃者に悪用された場合、結果としてデータベース上で任意の SQL クエリを実行されてしまう可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "PostgreSQL.org",
+          "productname": "PostgreSQL",
+          "cpe": {
+            "text": "cpe:/a:postgresql:postgresql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v7.3.14 およびそれ以前",
+            "v7.4.12 およびそれ以前",
+            "v8.0.7 およびそれ以前",
+            "v8.1.3 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "440",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=440"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "1811",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=1811"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-8-1-4",
+          "url": "http://www.postgresql.org/docs/8.1/static/release.html#RELEASE-8-1-4"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-7-4-13",
+          "url": "http://www.postgresql.org/docs/7.4/static/release.html#RELEASE-7-4-13"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-8-0-8",
+          "url": "http://www.postgresql.org/docs/8.1/static/release-8-0-8.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "release-7-3-15",
+          "url": "http://www.postgresql.org/docs/7.4/static/release-7-3-15.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL techdocs",
+          "vulinfoid": "techdocs.50",
+          "url": "http://www.postgresql.org/docs/techdocs.50"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL techdocs",
+          "vulinfoid": "techdocs.52",
+          "url": "http://www.postgresql.org/docs/techdocs.52"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0526",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0526.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2006-10",
+          "url": "http://www.turbolinux.com/security/2006/TLSA-2006-10.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0526",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0526J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2006-10",
+          "url": "http://www.turbolinux.co.jp/security/2006/TLSA-2006-10j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-2313",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2313"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2006-1941",
+          "url": "http://www.frsirt.com/english/advisories/2006/1941"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-2313",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-2313"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA20231",
+          "url": "http://secunia.com/advisories/20231/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "18092",
+          "url": "http://www.securityfocus.com/bid/18092"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]\\n  掲載\\n[2009年12月18日]\\n  影響を受けるシステム：ミラクル・リナックス (1811) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (1811) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2009-12-18T11:12:33+09:00",
+    "datepublic": "2006-05-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2015-006519",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/utils.c の ff_get_buffer 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/utils.c の ff_get_buffer 関数は、失敗後に幅と高さの値を保持するため、サービス運用妨害 (配列の領域外へのアクセス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.8.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された .mov ファイルを介して、サービス運用妨害 (配列の領域外へのアクセス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "avcodec/utils: Clear dimensions in ff_get_buffer() on failure",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=abee0a1c60612e8638640a8a3738fffb65e16dbf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8663",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8663"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8663",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8663"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-25T11:17:19+09:00",
+    "datelastupdated": "2015-12-25T11:17:19+09:00",
+    "datepublic": "2015-11-29T00:00:00+09:00"
+  }
+}

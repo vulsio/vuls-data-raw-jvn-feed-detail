@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-003019",
+  "vulinfodata": {
+    "title": "Linux kernel の mm/shmem.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の mm/shmem.c は、range の通知とホールパンチングの間の相互運用を適切に実装しないため、サービス運用妨害 (i_mutex ホールド) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.15.1 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、ホールへアクセスするために mmap システムコールを使用されることで、サービス運用妨害 (i_mutex ホールド) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "OzLabs",
+          "vulinfoid": "shmem: fix faulting into a hole while it's punched",
+          "url": "http://ozlabs.org/~akpm/mmots/broken-out/shmem-fix-faulting-into-a-hole-while-its-punched.patch"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1111180",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1111180"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1318",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1318.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0102",
+          "url": "http://rhn.redhat.com/errata/RHSA-2015-0102.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-4171",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4171"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-4171",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4171"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年06月24日]\\n  掲載\\n[2014年06月27日]\\n  CVSS による深刻度：内容を更新\\n[2014年11月20日]\\n  ベンダ情報：レッドハット (RHSA-2014:1318) を追加\\n[2015年06月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0102) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-06-24T16:08:16+09:00",
+    "datelastupdated": "2015-06-08T17:28:35+09:00",
+    "datepublic": "2014-06-19T00:00:00+09:00"
+  }
+}

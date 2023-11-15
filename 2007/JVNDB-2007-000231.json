@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2007-000231",
+  "vulinfodata": {
+    "title": "OpenBSD の IPv6 パケット処理にバッファオーバフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenBSD の IPv6 パケット処理にはバッファオーバーフローの脆弱性があります。結果として、遠隔の第三者が任意のコードを実行したり、システムをクラッシュさせる可能性があります。 なお、すでに攻撃方法に関する情報が公開されています。  OpenBSD ではデフォルトのインストール状態で IPv6 パケットを処理するようになっているため、特に IPv6 に関する設定を行っていない場合にもこの問題の影響を受ける可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenBSD",
+          "productname": "OpenBSD",
+          "cpe": {
+            "text": "cpe:/o:openbsd:openbsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.9 ",
+            "4.0 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者が、細工した IPv6 パケットを送りつけることにより、カーネルのコンテキストで任意のコードを実行したり、サービス運用妨害 (DoS) 攻撃を行う可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。 なお IPv6 通信が不要な場合、パケットフィルタ pf により IPv6 パケットをフィルタリングすることで本問題を回避できます。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "OpenBSD 3.9 errata",
+          "vulinfoid": "020: SECURITY FIX: March 7, 2007",
+          "url": "http://www.openbsd.org/errata39.html#m_dup1"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenBSD 4.0 errata",
+          "vulinfoid": "010: SECURITY FIX: March 7, 2007",
+          "url": "http://www.openbsd.org/errata40.html#m_dup1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-1365",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1365"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT REPORT",
+          "vulinfoid": "JPCERT-WR-2007-1101",
+          "url": "http://www.jpcert.or.jp/wr/2007/wr071101.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#986425",
+          "url": "http://jvn.jp/cert/JVNVU%23986425/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-1365",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-1365"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA24490",
+          "url": "http://secunia.com/advisories/24490"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "22901",
+          "url": "http://www.securityfocus.com/bid/22901"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1017735",
+          "url": "http://securitytracker.com/id?1017735"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#986425",
+          "url": "http://www.kb.cert.org/vuls/id/986425"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月27日]\\n  掲載\\n[2007年05月08日]\\n  CVSSによる深刻度: [IPA値]から[NVD値]に修正しました。"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-27T16:42:34+09:00",
+    "datelastupdated": "2007-04-27T16:42:34+09:00",
+    "datepublic": "2007-03-10T00:00:00+09:00"
+  }
+}

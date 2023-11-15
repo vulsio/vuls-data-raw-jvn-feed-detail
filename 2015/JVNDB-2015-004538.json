@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2015-004538",
+  "vulinfodata": {
+    "title": "Linux Kernel の drivers/vhost/scsi.c の tcm_vhost_make_tpg 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の drivers/vhost/scsi.c の tcm_vhost_make_tpg 関数には、配列のインデックスエラーにより、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  本脆弱性は、公表される前に、影響を受ける関数が vhost_scsi_make_tpg にリネームされました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、 巧妙に細工された VHOST_SCSI_SET_ENDPOINT ioctl コールを介して、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "vhost/scsi: potential memory corruption",
+          "url": "https://github.com/torvalds/linux/commit/59c816c1f24df0204e01851431d3bab3eb76719c"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "vhost/scsi: potential memory corruption",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=59c816c1f24df0204e01851431d3bab3eb76719c"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1189864",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1189864"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-4036",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4036"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-4036",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4036"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-02T17:23:00+09:00",
+    "datelastupdated": "2015-09-02T17:23:00+09:00",
+    "datepublic": "2015-02-05T00:00:00+09:00"
+  }
+}

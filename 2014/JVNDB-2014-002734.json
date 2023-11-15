@@ -1,0 +1,147 @@
+{
+  "vulinfoid": "JVNDB-2014-002734",
+  "vulinfodata": {
+    "title": "GnuTLS の lib/gnutls_handshake.c の read_server_hello 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "GnuTLS の lib/gnutls_handshake.c の read_server_hello 関数には、バッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GnuTLS",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnutls",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1.25 未満",
+            "3.2.15 未満の 3.2.x",
+            "3.3.4 未満の 3.3.x"
+          ]
+        },
+        {
+          "name": "IBM",
+          "productname": "IBM SmartCloud Provisioning",
+          "cpe": {
+            "text": "cpe:/a:ibm:smartcloud_provisioning",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 for IBM Provided Software Virtual Appliance"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートサーバにより、ServerHello メッセージの過度に長いセッション ID を介して、サービス運用妨害 (メモリ破損) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gitorious",
+          "vulinfoid": "Prevent memory corruption due to server hello parsing.",
+          "url": "https://www.gitorious.org/gnutls/gnutls/commit/688ea6428a432c39203d00acd1af0e7684e5ddfd"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuTLS",
+          "vulinfoid": "GNUTLS-SA-2014-3",
+          "url": "http://www.gnutls.org/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM",
+          "vulinfoid": "1678776",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21678776"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "ELSA-2014-0594",
+          "url": "http://linux.oracle.com/errata/ELSA-2014-0594.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "ELSA-2014-0595",
+          "url": "http://linux.oracle.com/errata/ELSA-2014-0595.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1101932",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1101932"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0815",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0815.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0594",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0594.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in GnuTLS",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_gnutls"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3466",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3466"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3466",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3466"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年06月05日]\\n  掲載\\n[2014年07月28日]\\n  ベンダ情報：オラクル (ELSA-2014-0594) を追加\\n  ベンダ情報：オラクル (ELSA-2014-0595) を追加\\n  ベンダ情報：オラクル (Multiple vulnerabilities in GnuTLS) を追加\\n[2014年08月06日]\\n  ベンダ情報：レッドハット (RHSA-2014:0815) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0594) を追加\\n[2014年08月26日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：IBM (1678776) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-06-05T13:48:40+09:00",
+    "datelastupdated": "2014-08-26T17:40:03+09:00",
+    "datepublic": "2014-05-29T00:00:00+09:00"
+  }
+}

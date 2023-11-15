@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2016-005184",
+  "vulinfodata": {
+    "title": "MSM デバイスなどの製品用 QuIC Android コントリビューションで使用される Linux Kernel の ADSPRPC ドライバにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイスおよびその他の製品用 Qualcomm Innovation Center (QuIC) Android コントリビューションで使用される Linux Kernel の ADSPRPC ドライバの drivers/char/adsprpc.c、および drivers/char/adsprpc_compat.c には、競合状態により、サービス運用妨害 (ゼロ値の書き込み) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、COMPAT_FASTRPC_IOCTL_INVOKE_FD ioctl コールを介して、サービス運用妨害 (ゼロ値の書き込み) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android Security Bulletin-October 2016",
+          "url": "http://source.android.com/security/bulletin/2016-10-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "Race condition leading to arbitrary NULL write in ADSP using ioctl COMPAT_FASTRPC_IOCTL_INVOKE_FD (CVE-2015-0572)",
+          "url": "https://www.codeaurora.org/race-condition-leading-arbitrary-null-write-adsp-using-ioctl-compatfastrpcioctlinvokefd-cve-2015"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "msm: ADSPRPC: Do not access user memory directly (34ad3d3)",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm-3.10/commit/?id=34ad3d34fbff11b8e1210b9da0dac937fb956b61"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "msm: ADSPRPC: Do not access user memory directly (8fb32c3)",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm/commit/?id=8fb32c3a8147b82e2bb159b3f70d803c9e68899b"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0572",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0572"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0572",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0572"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年10月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-10-13T17:07:27+09:00",
+    "datelastupdated": "2016-10-13T17:07:27+09:00",
+    "datepublic": "2016-06-10T00:00:00+09:00"
+  }
+}

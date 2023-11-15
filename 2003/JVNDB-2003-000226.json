@@ -1,0 +1,112 @@
+{
+  "vulinfoid": "JVNDB-2003-000226",
+  "vulinfodata": {
+    "title": "Microsoft SQL Server に名前つきパイプにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft SQL Server 7.0/2000、Microsoft Data Engine (MSDE) 1.0、および Microsoft SQL Server 2000 Desktop Engine (MSDE 2000) には、名前付きパイプに関する複数の問題が存在します。  Microsoft SQL Server では、ログオンする際の認証として名前付きパイプを用いる方法があります。問題を抱える SQL Server には、名前付きパイプの妥当性の確認を適切に行わない問題が存在するため、他のユーザが名前付きパイプや Windows 認証を用いて SQL Server へのログオンを行う際に、攻撃者により名前付きパイプを乗っ取られる可能性が存在します。  この問題を利用するローカルの攻撃者は、SQL Server の稼動する標的ホストにログオンし、認証時に使用する名前付きパイプと同じパイプを作成することで、SQL Server へ認証し、標的ユーザと同等の権限を奪取することが可能です。  また、SQL Server には、名前付きパイプを介して、予想以上に大きなサイズのデータを受け取る場合、サービス不能状態に陥る可能性があります。  リモートの攻撃者が、意図的に作成したパケットを名前付きパイプに送りつけることにより、標的サーバをサービス不能状態に陥らせることが可能です。 通常状態に復旧するためには、手動で SQL Server を再起動する必要があります。  尚、Universal Description, Discovery, and Integration (UDDI) をサポートするよう設定してインストールした Microsoft Windows Server 2003 には、この問題の影響を受ける Microsoft SQL Server 2000 Desktop Engine (Windows) が同梱されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft SQL Server",
+          "cpe": {
+            "text": "cpe:/a:microsoft:sql_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2000",
+            "7.0"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2003",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2003",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS03-031",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS03-031.asp"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS03-031",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/MS03-031.mspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2003-0231",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0231"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2003-0231",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0231"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "8276",
+          "url": "http://www.securityfocus.com/bid/8276"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "8274",
+          "url": "http://www.securityfocus.com/bid/8274"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#556356",
+          "url": "http://www.kb.cert.org/vuls/id/556356"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2003-07-23T00:00:00+09:00"
+  }
+}

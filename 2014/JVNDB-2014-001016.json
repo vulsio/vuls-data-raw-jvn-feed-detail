@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2014-001016",
+  "vulinfodata": {
+    "title": "OpenSSL の ssl/s3_both.c 内の ssl3_take_mac 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の ssl/s3_both.c 内の ssl3_take_mac 関数には、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1f 未満の 1.0.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート TLS サーバにより、TLS ハンドシェイクの巧妙に細工された Next Protocol Negotiation レコードを介して、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "00001841",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=isg400001841"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "00001843",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=isg400001843"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL vulnerabilities",
+          "url": "http://www.openssl.org/news/vulnerabilities.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL CHANGES",
+          "url": "http://git.openssl.org/gitweb/?p=openssl.git;a=blob_plain;f=CHANGES;hb=refs/heads/OpenSSL_1_0_1-stable"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "Fix for TLS record tampering bug CVE-2013-4353",
+          "url": "http://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=197e0ea817ad64820789d86711d55ff50d71f631"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1049058",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1049058"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0041",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0041.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0015",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0015.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHBA-2013:1585",
+          "url": "https://rhn.redhat.com/errata/RHBA-2013-1585.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in OpenSSL (Solaris 11.1)",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_openssl3"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in OpenSSL (Solaris 11.2)",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_openssl4"
+        },
+        {
+          "type": "vendor",
+          "name": "Splunk",
+          "vulinfoid": "Splunk 6.0.3 addresses two vulnerabilities - April 10, 2014",
+          "url": "http://www.splunk.com/view/SP-CAAAMB3"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4353",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4353"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4353",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4353"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年01月10日]\\n  掲載\\n[2014年06月26日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in OpenSSL (Solaris 11.1)) を追加\\n[2014年08月11日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in OpenSSL (Solaris 11.2)) を追加\\n[2015年08月03日]\\n  ベンダ情報：IBM (00001841) を追加\\n  ベンダ情報：IBM (00001843) を追加\\n[2015年08月10日]\\n  ベンダ情報：レッドハット (RHSA-2014:0041) を追加\\n  ベンダ情報：Splunk (Splunk 6.0.3 addresses two vulnerabilities - April 10, 2014) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-01-10T16:33:46+09:00",
+    "datelastupdated": "2015-08-10T17:28:33+09:00",
+    "datepublic": "2014-01-06T00:00:00+09:00"
+  }
+}

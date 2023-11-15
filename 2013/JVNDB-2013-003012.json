@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-003012",
+  "vulinfodata": {
+    "title": "X.org libX11 の GetDatabase 関数および _XimParseStringFile 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "X.org libX11 の (1) GetDatabase 関数および (2) _XimParseStringFile 関数は、ファイルをインクルードするディレクティブを処理する場合、再帰の深さ (recursion depth) を制限しないため、サービス運用妨害 (スタック消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "X.Org Foundation",
+          "productname": "libX11",
+          "cpe": {
+            "text": "cpe:/a:x.org:libx11",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.99.901 (1.6 RC1) およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "X Server により、巧妙に細工されたファイルを介して、サービス運用妨害 (スタック消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2693",
+          "url": "http://www.debian.org/security/2013/dsa-2693"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in X.org",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_x_org1"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1854-1",
+          "url": "http://www.ubuntu.com/usn/USN-1854-1"
+        },
+        {
+          "type": "vendor",
+          "name": "X.Org Security Advisory",
+          "vulinfoid": "Advisory-2013-05-23",
+          "url": "http://www.x.org/wiki/Development/Security/Advisory-2013-05-23"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-2004",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2004"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-2004",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2004"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年06月18日]\\n  掲載\\n[2013年07月03日]\\n  ベンダ情報：Ubuntu (USN-1854-1) を追加\\n  ベンダ情報：Debian (DSA-2693) を追加\\n[2013年10月31日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in X.org) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-06-18T15:36:40+09:00",
+    "datelastupdated": "2013-10-31T18:06:23+09:00",
+    "datepublic": "2013-05-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2013-001642",
+  "vulinfodata": {
+    "title": "Linux Kernel の security/integrity/evm/evm_crypto.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の security/integrity/evm/evm_crypto.c 内の evm_update_evmxattr 関数は、Extended Verification Module (EVM) が有効な場合、サービス運用妨害 (Null ポインタデリファレンスおよびシステムクラッシュ) 状態となるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.7.5 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.2",
+          "vector": "AV:L/AC:H/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、sockfs ファイルシステムの inode における removexattr 操作の試行を介して、サービス運用妨害 (Null ポインタデリファレンスおよびシステムクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.7.5",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.7.5"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "evm: checking if removexattr is not a NULL",
+          "url": "https://github.com/torvalds/linux/commit/a67adb997419fb53540d4a4f79c6471c60bc69b6"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "/pub/scm / linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=a67adb997419fb53540d4a4f79c6471c60bc69b6"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 913266",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=913266"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-0313",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0313"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-0313",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0313"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年02月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-02-25T15:37:08+09:00",
+    "datelastupdated": "2013-02-25T15:37:08+09:00",
+    "datepublic": "2013-01-27T00:00:00+09:00"
+  }
+}

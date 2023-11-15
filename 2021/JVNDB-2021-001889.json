@@ -1,0 +1,102 @@
+{
+  "vulinfoid": "JVNDB-2021-001889",
+  "vulinfodata": {
+    "title": "ThroughTek 製 P2P SDK に重要な情報の平文での送信の脆弱性",
+    "vulinfodescription": {
+      "overview": "ThroughTek 社が提供する P2P Software Development Kit (SDK) には、重要な情報の平文での送信の脆弱性が存在します。  P2P Software Development Kit (SDK) は、インターネット経由でオーディオストリームやビデオストリームにアクセスするための機能を提供する ThroughTek 社製の開発キットです。当該 SDK には、それが組み込まれたデバイスと同社のサーバ間で転送されるデータが十分に保護されない、重要な情報の平文での送信 (CWE-319、CVE-2021-32934) の脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ThroughTek Co., Ltd.",
+          "productname": "P2P Software Development Kit",
+          "cpe": {
+            "text": "cpe:/a:misc:throughtek_p2p_software_development_kit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "DTLS を有効にしないで AVAPI モジュールを使用するデバイスのファームウェア",
+            "IOTC への接続に AuthKey を使用していないデバイスのファームウェア",
+            "nossl タグが付いた SDK のバージョン",
+            "P2PTunnel または RDT モジュールを使用するデバイスのファームウェア",
+            "v3.1.5 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、カメラ映像などの機微な情報にアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップグレードする] SDK が v3.1.10 より前の場合、開発者はライブラリを v3.3.1.0 または v3.4.2.0 にアップグレードし、Authkey と DTLS を有効にすることを推奨しています。  [ワークアラウンドを実施する] SDK が v3.1.10 およびそれ以降の場合、開発者は Authkey と DTLS を有効にすることを推奨しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ThroughTek",
+          "vulinfoid": "ThroughTek’s advisory",
+          "url": "https://www.throughtek.com/about-throughteks-kalay-platform-security-mechanism/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32934",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32934"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-166-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-166-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91747873",
+          "url": "http://jvn.jp/cert/JVNVU91747873"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "New IoT Security Risk: ThroughTek P2P Supply Chain Vulnerability",
+          "url": "https://www.nozominetworks.com/blog/new-iot-security-risk-throughtek-p2p-supply-chain-vulnerability/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-319",
+          "url": "https://cwe.mitre.org/data/definitions/319.html",
+          "title": "重要な情報の平文での送信"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-17T15:30:20+09:00",
+          "description": "[2021年06月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-17T15:30:20+09:00",
+    "datelastupdated": "2021-06-17T15:30:20+09:00",
+    "datepublic": "2021-06-16T00:00:00+09:00"
+  }
+}

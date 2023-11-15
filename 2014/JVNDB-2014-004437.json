@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2014-004437",
+  "vulinfodata": {
+    "title": "Linux Kernel の Magic Mouse HID ドライバにおけるスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の Magic Mouse HID ドライバの drivers/hid/hid-magicmouse.c 内の magicmouse_raw_event 関数には、スタックベースのバッファオーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.3 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "物理的に端末の操作が可能な攻撃者により、イベントに関連付けられた大量の (1) EHCI または (2) XHCI データを提供する巧妙に細工されたデバイスを介して、サービス運用妨害 (システムクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "HID: magicmouse: sanity check report size in raw_event() callback",
+          "url": "https://github.com/torvalds/linux/commit/c54def7bd64d7c0b6993336abcffb8444795bf38"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Issue 100:  Magic Mouse HID device driver overflow",
+          "url": "https://code.google.com/p/google-security-research/issues/detail?id=100"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "HID: magicmouse: sanity check report size in raw_event() callback",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c54def7bd64d7c0b6993336abcffb8444795bf38"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1141173",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141173"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1318",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1318.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3181",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3181"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3181",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3181"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年09月30日]\\n  掲載\\n[2014年10月01日]\\n  ベンダ情報：kernel.org (Issue 100:  Magic Mouse HID device driver overflow) を追加\\n[2014年11月21日]\\n  ベンダ情報：レッドハット (RHSA-2014:1318) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-09-30T16:08:22+09:00",
+    "datelastupdated": "2014-11-21T18:16:39+09:00",
+    "datepublic": "2014-08-27T00:00:00+09:00"
+  }
+}

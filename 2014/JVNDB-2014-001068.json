@@ -1,0 +1,173 @@
+{
+  "vulinfoid": "JVNDB-2014-001068",
+  "vulinfodata": {
+    "title": "ISC BIND の named の query.c 内の query_findclosestnsec3 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND の named の query.c 内の query_findclosestnsec3 関数には、サービス運用妨害 (INSIST 表明違反およびデーモンの終了) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.6",
+            "9.6-ESV-R10-P2 未満の 9.6-ESV",
+            "9.7",
+            "9.8.6-P2 未満の 9.8",
+            "9.9.4-P2 未満の 9.9"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "macOS Server (旧 OS X Server)",
+          "cpe": {
+            "text": "cpe:/o:apple:os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 未満 (OS X Yosemite v10.10 以降)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、NSEC3 署名機能を使用する権威 DNS サーバ (authoritative nameserver) への巧妙に細工された DNS クエリを介して、サービス運用妨害 (INSIST 表明違反およびデーモンの終了) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT6536",
+          "url": "http://support.apple.com/kb/HT6536"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT6536",
+          "url": "http://support.apple.com/kb/HT6536?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02961 SSRT101420",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04085336"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2014-0591: A Crafted Query Against an NSEC3-signed Zone Can Crash BIND",
+          "url": "https://kb.isc.org/article/AA-01078"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2014-0591: FAQ and Supplemental Information",
+          "url": "https://kb.isc.org/article/AA-01085"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1051717",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1051717"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0043",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-0043.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2014-0591 Buffer Errors vulnerability in Bind",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2014_0591_buffer_errors"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2014-0591 Buffer Errors vulnerability in Bind (2014/05/22)",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2014_0591_buffer_errors1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-0591",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0591"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（2014年1月14日公開）",
+          "url": "http://jprs.jp/tech/security/2014-01-14-bind9-vuln-nsec3-handling.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "DNS ソフトウェアアップデート情報",
+          "url": "http://jprs.jp/tech/index.html#dns-software-update-info"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97537282",
+          "url": "http://jvn.jp/vu/JVNVU97537282/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-0591",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0591"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "APPLE-SA-2014-10-16-3 OS X Server v4.0",
+          "url": "http://archives.neohapsis.com/archives/bugtraq/2014-10/0103.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年01月16日]\\n  掲載\\n[2014年02月24日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX02961 SSRT101420) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0043) を追加\\n[2014年03月05日]\\n  ベンダ情報：オラクル (CVE-2014-0591 Buffer Errors vulnerability in Bind) を追加\\n[2014年06月02日]\\n  ベンダ情報：オラクル (CVE-2014-0591 Buffer Errors vulnerability in Bind (2014/05/22)) を追加\\n[2014年11月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT6536) を追加\\n  参考情報：JVN (JVNVU#97537282) を追加\\n  参考情報：関連文書 (APPLE-SA-2014-10-16-3 OS X Server v4.0) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-01-16T16:34:34+09:00",
+    "datelastupdated": "2014-11-05T17:54:56+09:00",
+    "datepublic": "2014-01-13T00:00:00+09:00"
+  }
+}

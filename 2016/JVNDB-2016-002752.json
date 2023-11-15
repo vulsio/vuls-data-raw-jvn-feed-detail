@@ -1,0 +1,186 @@
+{
+  "vulinfoid": "JVNDB-2016-002752",
+  "vulinfodata": {
+    "title": "Google Chrome で使用される Blink におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Google Chrome で使用される Blink は、WTF::BitArray および WTF::double_conversion::Vector クラスのアサーションを誤って処理するため、サービス運用妨害 (境界外書き込み) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "50.0.2661.94 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.1"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop Supplementary",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop_supplementary",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server Supplementary",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_supplementary",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server Supplementary EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_supplementary_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6.7.z)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation Supplementary",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation_supplementary",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 6)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された Web サイトを介して、サービス運用妨害 (境界外書き込み) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Chromium",
+          "vulinfoid": "Issue 574802",
+          "url": "https://bugs.chromium.org/p/chromium/issues/detail?id=574802"
+        },
+        {
+          "type": "vendor",
+          "name": "Chromium Code Reviews",
+          "vulinfoid": "Issue 1672603002",
+          "url": "https://codereview.chromium.org/1672603002"
+        },
+        {
+          "type": "vendor",
+          "name": "Chromium Code Reviews",
+          "vulinfoid": "Issue 1677363002",
+          "url": "https://codereview.chromium.org/1677363002"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "https://www.google.com/intl/ja/chrome/browser/features.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update",
+          "url": "http://googlechromereleases.blogspot.jp/2016/04/stable-channel-update_28.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2016:1655",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-06/msg00048.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:0707",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-0707.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-1660",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1660"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-1660",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-1660"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月20日]\\n  掲載\\n[2016年08月29日]\\n  ベンダ情報：レッドハット (RHSA-2016:0707) を追加\\n  ベンダ情報：openSUSE project (openSUSE-SU-2016:1655) を追加\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-20T16:49:38+09:00",
+    "datelastupdated": "2016-08-29T17:38:38+09:00",
+    "datepublic": "2016-04-28T00:00:00+09:00"
+  }
+}

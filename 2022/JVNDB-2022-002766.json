@@ -1,0 +1,125 @@
+{
+  "vulinfoid": "JVNDB-2022-002766",
+  "vulinfodata": {
+    "title": "三菱電機製 GOT2000 シリーズの FTP サーバ機能における不適切な入力確認の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する GOT2000 シリーズの FTP サーバー機能には、不適切な入力確認の脆弱性（CWE-20、CVE-2022-40266）が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT23 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt23_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "01.39.000 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT25 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt25_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "01.39.000 およびそれ以前"
+          ]
+        },
+        {
+          "name": "三菱電機",
+          "productname": "GOT2000 シリーズ GT27 モデル",
+          "cpe": {
+            "text": "cpe:/o:mitsubishielectric:got2000_series_gt27_model",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "01.39.000 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "FTPクライアントを使用してFTPサーバ（GOT）にアクセス可能な攻撃者が、細工したコマンドを送信することによって、当該製品がサービス運用妨害（DoS）状態になる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者は、アップデートを提供しています。 対策済みバージョンは次の通りで、GT Designer3 Version1(GOT2000) Ver.1.285X およびそれ以降に同梱されています。  　* GOT2000 シリーズ 　　* GT27 モデル 01.47.000 およびそれ以降 　　* GT25 モデル 01.47.000 およびそれ以降 　　* GT23 モデル 01.47.000 およびそれ以降  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* LAN内で使用し、信頼できないネットワークやホストからアクセスできないようにする 　* 該当製品やシステムへアクセス可能なパソコンにウイルス対策ソフトを搭載する 　* 第三者に不正に当該製品にログインされないよう、強固なパスワードを設定する 　* 当該製品のIPフィルタ機能（*1）を使用し、接続可能なIPアドレスを適切に制限する  （*1）IPフィルタ機能については、開発者が提供する「GT Designer3 (GOT2000)画面設計マニュアル(SH-081219) 『5.4.3章 IPフィルタを設定する』」に記載されています。  詳しくは<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-016.pdf\" target=\"blank\">開発者が提供する情報</a>をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機",
+          "vulinfoid": "GOT2000 シリーズの FTP サーバ機能におけるサービス拒否（DoS）の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-016.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-40266",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-40266"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "CSA-22-333-01",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-333-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVVU#95633416",
+          "url": "https://jvn.jp/vu/JVNVU95633416"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2022-40266",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-40266"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-11-28T15:39:09+09:00",
+          "description": "[2022年11月28日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-12-16T09:29:18+09:00",
+          "description": "[2022年12月16日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-333-01) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-11-28T15:39:09+09:00",
+    "datelastupdated": "2022-12-16T10:19:15+09:00",
+    "datepublic": "2022-11-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "vulinfoid": "JVNDB-2017-009246",
+  "vulinfodata": {
+    "title": "Savitech 製 USB オーディオドライバがルート CA 証明書を許可なくインストールする問題",
+    "vulinfodescription": {
+      "overview": "Savitech が提供する一部の USB オーディオ機器向けドライバは、Savitech のルート CA 証明書を、ユーザーの許可なく Windows の信頼されたルート証明機関ストアにインストールします。  Savitech は、多くのオーディオ製品向け USB オーディオドライバを提供しています。Savitech ドライバパッケージは、一部のバージョンにおいて、Savitech のルート CA 証明書をユーザの許可なく Windows の信頼されたルート証明機関ストアにインストールします。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "SAVITECH CORP",
+          "productname": "Savitech ドライバ",
+          "cpe": {
+            "text": "cpe:/a:savitech-ic:savitech_driver",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "パッケージ version 2.8.0.3 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "Savitech の秘密鍵を攻撃者が入手した場合、ウェブサイトやその他のサービスのなりすまし、悪意のあるソフトウェアの配布、中間者攻撃による暗号化されたデータやネットワークトラフィックの復号が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[Savitech のルート CA 証明書を削除する] 現在のところ、Savitech の秘密鍵が漏えいしたという報告はありませんが、Savitech ドライバパッケージをインストールしたユーザーに対しては、以下のルート CA 証明書をシステムから削除することを推奨します。  　　* SaviAudio root certificate #1  　　有効期間: Thursday, May 31, 2012 - Tuesday, December 30, 2036 　　シリアル番号: 579885da6f791eb24de819bb2c0eeff0 　　Thumbprint: cb34ebad73791c1399cb62bda51c91072ac5b050  　　* SaviAudio root certificate #2  　　有効期間: Thursday, December 31, 2015 - Tuesday, December 30, 2036 　　シリアル番号: 972ed9bce72451bb4bd78bfc0d8b343c 　　Thumbprint: 23e50cd42214d6252d65052c2a1a591173daace5  Savitech によると、この証明書は Windows XP 向けに用意されたものであり、Windows XP より後の OS では不要のものでしたが、ドライバパッケージから削除されていませんでした。この問題は CVE-2017-9758 として登録されています。  [アップデートする] Savitech のルート CA 証明書を削除した後、最新の Savitech ドライバパッケージをインストールしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft TechNet",
+          "vulinfoid": "Configure Trusted Roots and Disallowed Certificates",
+          "url": "https://technet.microsoft.com/en-us/library/dn265983.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft TechNet",
+          "vulinfoid": "Delete a Certificate",
+          "url": "https://technet.microsoft.com/en-us/library/cc772354.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft TechNet",
+          "vulinfoid": "Microsoft Security Advisory 3119884",
+          "url": "https://technet.microsoft.com/en-us/library/security/3119884.aspx"
+        },
+        {
+          "type": "vendor",
+          "name": "SAVITECH",
+          "vulinfoid": "Top Page",
+          "url": "http://www.savitech-ic.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "CERT/CC blog",
+          "vulinfoid": "The Risks of SSL Inspection",
+          "url": "https://insights.sei.cmu.edu/cert/2015/03/the-risks-of-ssl-inspection.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-9758",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9758"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99936709",
+          "url": "http://jvn.jp/cert/JVNVU99936709"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-9758",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-9758"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#446847",
+          "url": "https://www.kb.cert.org/vuls/id/446847"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "KristoferA's blog",
+          "url": "http://huagati.blogspot.jp/2015/07/do-you-know-which-cas-can-issue-ssltls.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Inaudible Subversion - Did your Hi-Fi just subvert your PC?",
+          "url": "https://community.rsa.com/community/products/netwitness/blog/2017/11/03/inaudible-subversion-did-your-hi-fi-just-subvert-your-pc"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年11月07日]\\n  掲載\\n[2017年11月09日]\\n  想定される影響：内容を更新 \\n  参考情報：関連文書 (Inaudible Subversion - Did your Hi-Fi just subvert your PC?) を追加"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-03-14T10:36:21+09:00",
+          "description": "[2018年03月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-9758) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-11-07T12:23:29+09:00",
+    "datelastupdated": "2018-03-14T14:06:19+09:00",
+    "datepublic": "2017-11-02T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2016-006523",
+  "vulinfodata": {
+    "title": "Tarantool の Msgpuck ライブラリの mp_check 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Tarantool の Msgpuck ライブラリの mp_check 関数には、map16 パケットのデコードによってバッファ外を読み取るかどうかをチェックする際の処理に不備があるため、サービス運用妨害 (DoS) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Tarantool",
+          "productname": "Msgpuck",
+          "cpe": {
+            "text": "cpe:/a:tarantool:msgpuck",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "巧妙に細工されたパケットを介して、成功のステータスを不正に返されることで、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "MsgPuck",
+          "url": "https://github.com/tarantool/msgpuck/tree/1.0.3"
+        },
+        {
+          "type": "vendor",
+          "name": "Talos Vulnerability Report",
+          "vulinfoid": "TALOS-2016-0254",
+          "url": "http://www.talosintelligence.com/reports/TALOS-2016-0254/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9036",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9036"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9036",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9036"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-10T15:57:45+09:00",
+    "datelastupdated": "2017-01-10T15:57:45+09:00",
+    "datepublic": "2016-12-16T00:00:00+09:00"
+  }
+}

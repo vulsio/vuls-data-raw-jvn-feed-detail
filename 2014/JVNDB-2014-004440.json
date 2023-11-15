@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2014-004440",
+  "vulinfodata": {
+    "title": "Linux Kernel の HID サブシステムの report_fixup 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の HID サブシステムの report_fixup 関数には、以下のファイルに関する処理に不備があるため、サービス運用妨害 (out-of-bounds write) 状態にされる脆弱性が存在します。  (1) drivers/hid/hid-cherry.c (2) drivers/hid/hid-kye.c (3) drivers/hid/hid-lg.c (4) drivers/hid/hid-monterey.c (5) drivers/hid/hid-petalynx.c (6) drivers/hid/hid-sunplus.c"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "物理的に端末の操作が可能な攻撃者により、過度に小さなレポート記述子を提供する巧妙に細工されたデバイスを介して、サービス運用妨害 (out-of-bounds write) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.16.2",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.16.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "HID: fix a couple of off-by-ones",
+          "url": "https://github.com/torvalds/linux/commit/4ab25786c87eb20857bbb715c3ae34ec8fd6a214"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Issue 91:Linux kernel HID report fixup multiple off-by-one issues",
+          "url": "https://code.google.com/p/google-security-research/issues/detail?id=91"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "HID: fix a couple of off-by-ones",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=4ab25786c87eb20857bbb715c3ae34ec8fd6a214"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1141391",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141391"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1318",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-1318.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3184",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3184"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3184",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3184"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年09月30日]\\n  掲載\\n[2014年11月21日]\\n  ベンダ情報：レッドハット (RHSA-2014:1318) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-09-30T16:12:14+09:00",
+    "datelastupdated": "2014-11-21T18:15:57+09:00",
+    "datepublic": "2014-09-05T00:00:00+09:00"
+  }
+}

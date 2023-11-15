@@ -1,0 +1,93 @@
+{
+  "vulinfoid": "JVNDB-2014-005711",
+  "vulinfodata": {
+    "title": "Xen の \"REP MOVS\" インストラクション用アクセラレーションサポートにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen の \"REP MOVS\" インストラクション用アクセラレーションサポートは、ハイパーバイザ内でエミュレートされた I/O (MMIO) がマッピングされたメモリに対する適切な境界チェックが欠落しているため、サービス運用妨害 (ホストクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.x およびそれ以前",
+            "4.4.x およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルの HVM ゲストにより、サービス運用妨害 (ホストクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0783",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0783.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-112",
+          "url": "http://xenbits.xenproject.org/xsa/advisory-112.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8867",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8867"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8867",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8867"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月02日]\\n  掲載\\n[2015年05月13日]\\n  ベンダ情報：レッドハット (RHSA-2015:0783) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-02T17:15:31+09:00",
+    "datelastupdated": "2015-05-13T17:55:33+09:00",
+    "datepublic": "2014-11-27T00:00:00+09:00"
+  }
+}

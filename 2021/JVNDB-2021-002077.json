@@ -1,0 +1,181 @@
+{
+  "vulinfoid": "JVNDB-2021-002077",
+  "vulinfodata": {
+    "title": "複数のトレンドマイクロ製企業向けエンドポイントセキュリティ製品における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "トレンドマイクロ株式会社が提供する複数の企業向けエンドポイントセキュリティ製品には、次の複数の脆弱性が存在します。  　* 不適切なパーミッションの割り当て (CWE-732) - CVE-2021-32464 　* パーミッションの不適切な保持 (CWE-281) - CVE-2021-32465 　* 不適切な入力確認 (CWE-20) - CVE-2021-36741 　* 不適切な入力確認 (CWE-20) - CVE-2021-36742  なお、開発者によると、CVE-2021-36741 および CVE-2021-36742 は、本脆弱性を悪用した攻撃が確認されているとのことです。 　 この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "トレンドマイクロ",
+          "productname": "Apex One",
+          "cpe": {
+            "text": "cpe:/a:trendmicro:apex_one",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2019",
+            "SaaS"
+          ]
+        },
+        {
+          "name": "トレンドマイクロ",
+          "productname": "ウイルスバスター コーポレートエディション",
+          "cpe": {
+            "text": "cpe:/a:trendmicro:virus_baster_corporate_edition",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "XG SP1"
+          ]
+        },
+        {
+          "name": "トレンドマイクロ",
+          "productname": "ウイルスバスター ビジネスセキュリティ",
+          "cpe": {
+            "text": "cpe:/a:trendmicro:business_security",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 SP1"
+          ]
+        },
+        {
+          "name": "トレンドマイクロ",
+          "productname": "ウイルスバスタービジネスセキュリティサービス",
+          "cpe": {
+            "text": "cpe:/a:trendmicro:officescan_business_security_service",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.7"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 当該製品が稼働している OS にログイン可能な第三者によって、SYSTEM 権限を取得され、特定のスクリプトを改ざんされる - CVE-2021-32464 　* 当該製品が稼働しているOS にログイン可能な遠隔の第三者によって、認証を回避される - CVE-2021-32465 　* 当該製品にログイン可能な遠隔の第三者によって、任意のファイルをアップロードされる - CVE-2021-36741 　* 当該製品が稼働している OS にログイン可能な第三者によって、SYSTEM 権限を取得される - CVE-2021-36742 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。 開発者は本脆弱性の対策として次のパッチをリリースしています。  　* Apex One 2019 CP 9601 　* ウイルスバスターコーポレートエディション XG SP1 CP 6058 　* ウイルスバスタービジネスセキュリティ 10 SP1 Patch 2329 　* ウイルスバスタービジネスセキュリティサービス 6.7.1538 / 14.2.1295 以降 　 開発者によると、Apex One SaaS は 2021年7月21日のメンテナンスで修正済みとのことです。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品へのアクセスを、信頼できるネットワークからのみに制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "TrendMicro Solution",
+          "vulinfoid": "アラート/アドバイザリ：ウイルスバスター コーポレートエディション、Trend Micro Apex OneとTrend Micro Apex One SaaS の脆弱性について（2021年7月）",
+          "url": "https://success.trendmicro.com/jp/solution/000287796"
+        },
+        {
+          "type": "vendor",
+          "name": "TrendMicro Solution",
+          "vulinfoid": "アラート/アドバイザリ：ウイルスバスター ビジネスセキュリティで確認された複数の脆弱性について（2021年7月）",
+          "url": "https://success.trendmicro.com/jp/solution/000287815"
+        },
+        {
+          "type": "vendor",
+          "name": "TrendMicro Solution",
+          "vulinfoid": "アラート/アドバイザリ：ウイルスバスター ビジネスセキュリティサービスにおける不適切なパーミッション割り当てによる権限昇格の脆弱性",
+          "url": "https://success.trendmicro.com/jp/solution/000286884"
+        },
+        {
+          "type": "vendor",
+          "name": "トレンドマイクロ サポート情報",
+          "vulinfoid": "【注意喚起】弊社製品の脆弱性 (CVE-2021-36741,CVE-2021-36742) を悪用した攻撃を確認したことによる修正プログラム適用のお願い",
+          "url": "https://appweb.trendmicro.com/SupportNews/NewsDetail.aspx?id=4219"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32465",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32465"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-36741",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36741"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-36742",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36742"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32464",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32464"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2021-0033",
+          "url": "https://www.jpcert.or.jp/at/2021/at210033.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93876919",
+          "url": "https://jvn.jp/vu/JVNVU93876919/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-281",
+          "url": "http://cwe.mitre.org/data/definitions/281.html",
+          "title": "パーミッションの不適切な保持"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-732",
+          "url": "https://cwe.mitre.org/data/definitions/732.html",
+          "title": "重要なリソースに対する不適切なパーミッションの割り当て"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-07-30T14:50:57+09:00",
+          "description": "[2021年07月30日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-08-05T12:15:55+09:00",
+          "description": "[2021年08月05日]\\n  対策：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-07-30T15:50:03+09:00",
+    "datelastupdated": "2021-08-05T12:25:35+09:00",
+    "datepublic": "2021-07-29T00:00:00+09:00"
+  }
+}

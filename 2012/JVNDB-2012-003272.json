@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2012-003272",
+  "vulinfodata": {
+    "title": "Linux-PAM の modules/pam_env/pam_env.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux-PAM (略称 pam) の pam_env モジュール (modules/pam_env/pam_env.c) 内の _expand_arg 関数は、環境変数の展開がオーバーフローする場合に適切に対処しないため、サービス運用妨害 (CPU 資源の消費) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "kernel.org",
+          "productname": "Linux-PAM",
+          "cpe": {
+            "text": "cpe:/a:kernel:linux-pam",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.5 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、サービス運用妨害 (CPU 資源の消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugs",
+          "vulinfoid": "Bug #874565 100% CPU utilitization in pam_env parsing",
+          "url": "https://bugs.launchpad.net/ubuntu/+source/pam/+bug/874565"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Hosted",
+          "vulinfoid": "linux-pam.git / commitdiff",
+          "url": "http://git.fedorahosted.org/git/?p=linux-pam.git;a=commitdiff;h=109823cb621c900c07c4b6cdc99070d354d19444"
+        },
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201206-31",
+          "url": "http://www.gentoo.org/security/en/glsa/glsa-201206-31.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "kernel.org",
+          "vulinfoid": "Index of /pub/linux/libs/pam",
+          "url": "http://www.kernel.org/pub/linux/libs/pam/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-3149",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3149"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-3149",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3149"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-24T16:43:59+09:00",
+    "datelastupdated": "2012-07-24T16:43:59+09:00",
+    "datepublic": "2012-07-22T00:00:00+09:00"
+  }
+}

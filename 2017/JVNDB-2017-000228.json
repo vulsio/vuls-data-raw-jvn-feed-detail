@@ -1,0 +1,112 @@
+{
+  "vulinfoid": "JVNDB-2017-000228",
+  "vulinfodata": {
+    "title": "秘文 機密ファイルビューアのインストーラにおける DLL 読み込みおよび実行ファイル呼び出しに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社日立ソリューションズが提供する秘文 機密ファイルビューアのインストーラには、DLL を読み込んだり実行ファイルを呼び出したりする際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んだり特定の実行ファイルを呼び出したりしてしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社日立ソリューションズ",
+          "productname": "秘文 機密ファイルビューア",
+          "cpe": {
+            "text": "cpe:/a:hitachi-solutions:confidential_file_viewer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.20.0001 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 なお、本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザは秘文 機密ファイルビューアをアップデートする必要はありません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Hitachi Solutions",
+          "vulinfoid": "秘文のDLL読み込み問題への対応について",
+          "url": "http://www.hitachi-solutions.co.jp/hibun/sp/support/importance/20170929.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-10864",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-10864"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#94056834",
+          "url": "https://jvn.jp/jp/JVN94056834/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-10864",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-10864"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年10月11日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2018-03-07T11:03:38+09:00",
+          "description": "[2018年03月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-10864) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-10-11T14:06:14+09:00",
+    "datelastupdated": "2018-03-07T12:08:55+09:00",
+    "datepublic": "2017-10-11T00:00:00+09:00"
+  }
+}

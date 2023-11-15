@@ -1,0 +1,225 @@
+{
+  "vulinfoid": "JVNDB-2012-002592",
+  "vulinfodata": {
+    "title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND には、レコードの取り扱いに問題があり、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC が公開している情報では、次のように記載されています。  \"本問題は試験的なDNSのレコード型のテスト中に発見されました。BINDにはヌル(つまり長さが0の)RDATAを持つレコードを追加することが可能です。  このようなレコードを処理することで、想定外の結果が生じる可能性があります。キャッシュ(recursive)サーバの場合、サーバがクラッシュしたり、サーバメモリ内の情報がクライアントに開示されたりする可能性があります。セカンダリサーバの場合、このようなレコードを含むゾーンの転送後の再起動時にクラッシュする可能性があります。プライマリ(マスタ)サーバの場合、auto-dnssecオプションの値が\"maintain\"となるようなゾーンについて、ゾーンデータを破損する可能性があります。\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.7 から v10.7.4",
+            "v10.8",
+            "v10.8.1"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X Server",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.7 から v10.7.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。  ISC が公開している情報では、次のように記載されています。  \"本問題は、とりわけキャッシュサーバに対して影響があります。権威(authoritative)サーバの場合、影響を受けるのは管理者がデータを含まない(RDATAの長さが0である)試験的なレコードタイプを使うように設定している場合だけです。この場合、セカンダリサーバではゾーン転送後の再起動時にクラッシュする可能性があります。プライマリ(マスタ)サーバでは、もしそのレコードがDNSSECの鍵更新に利用されるように設定されていれば、ゾーンデータの破損を引き起こす可能性があります。\""
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] ISC や配布元が提供する情報をもとに、対策済みのバージョンへアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2012-09-19-2",
+          "url": "http://lists.apple.com/archives/security-announce/2012/Sep/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT5501",
+          "url": "http://support.apple.com/kb/HT5501"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT5501",
+          "url": "http://support.apple.com/kb/HT5501?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02795 SSRT100878",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c03388901"
+        },
+        {
+          "type": "vendor",
+          "name": "Internet Systems Consortium Inc.",
+          "vulinfoid": "Handling of zero length rdata can cause named to terminate unexpectedly",
+          "url": "http://www.isc.org/software/bind/advisories/cve-2012-1667"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2012-1667: Handling of zero length rdata can cause named to terminate unexpectedly",
+          "url": "https://kb.isc.org/article/AA-00698"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 828078",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=828078"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:1110",
+          "url": "http://rhn.redhat.com/errata/RHSA-2012-1110.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:0716",
+          "url": "https://rhn.redhat.com/errata/RHSA-2012-0716.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:0717",
+          "url": "https://rhn.redhat.com/errata/RHSA-2012-0717.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2012-1667 Denial of Service (DoS) vulnerability in BIND",
+          "url": "http://blogs.oracle.com/sunsecurity/entry/cve_2012_1667_denial_of"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0016",
+          "url": "http://www.vmware.com/security/advisories/VMSA-2012-0016.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-1667",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1667"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2012-0018",
+          "url": "https://www.jpcert.or.jp/at/2012/at120018.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性（サービス停止を含む）について",
+          "url": "http://jprs.jp/tech/security/2012-06-05-bind9-vuln-zero-length-rdata.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#381963",
+          "url": "http://jvn.jp/cert/JVNVU381963/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#381699",
+          "url": "http://jvn.jp/cert/JVNVU381699/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-1667",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-1667"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#381699",
+          "url": "http://www.kb.cert.org/vuls/id/381699"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "JPNIC - ISC BIND 9の脆弱性について",
+          "url": "http://www.nic.ad.jp/ja/topics/2012/20120605-01.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月05日]\\n  掲載\\n[2012年06月07日]\\n  CVSS による深刻度：基本値と脆弱性評価基準を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2012年07月23日]\\n  ベンダ情報：オラクル (CVE-2012-1667 Denial of Service (DoS) vulnerability in BIND) を追加\\n[2012年07月25日]\\n  ベンダ情報：ISC, Inc. (CVE-2012-1667: Handling of zero length rdata can cause named to terminate unexpectedly) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX02795 SSRT100878) を追加\\n[2012年10月16日]\\n  ベンダ情報：アップル (HT5501) を追加\\n[2012年11月13日]\\n  ベンダ情報：レッドハット (RHSA-2012:1110) を追加\\n[2013年02月08日]\\n  影響を受けるシステム：VMware (VMSA-2012-0016) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0016) を追加\\n[2014年02月04日]\\n  影響を受けるシステム：アップル (HT5501) の情報を追加\\n  ベンダ情報：アップル (APPLE-SA-2012-09-19-2) を追加\\n  ベンダ情報：レッドハット (RHSA-2012:0716) を追加\\n  ベンダ情報：レッドハット (RHSA-2012:0717) を追加\\n  ベンダ情報：レッドハット (Bug 828078) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-05T15:13:18+09:00",
+    "datelastupdated": "2014-02-04T18:13:22+09:00",
+    "datepublic": "2012-06-05T00:00:00+09:00"
+  }
+}

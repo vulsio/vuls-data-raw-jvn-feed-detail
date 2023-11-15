@@ -1,0 +1,96 @@
+{
+  "vulinfoid": "JVNDB-2017-000012",
+  "vulinfodata": {
+    "title": "Apache Struts 2 において devMode が有効な場合に任意の Java(OGNL) コードが実行可能な問題",
+    "vulinfodescription": {
+      "overview": "The Apache Software Foundation が提供する Apache Struts は、Java のウェブアプリケーションを開発するためのソフトウェアフレームワークです。Apache Struts 2 では、devMode (Development Mode) を有効にした状態で運用している場合、任意の Java(OGNL) コードが実行可能です。  なお、devMode を有効にした環境を攻撃する proof-of-concept コードが公開されています。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ラック 藤本 博史 氏、北原 憲 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Struts",
+          "cpe": {
+            "text": "cpe:/a:apache:struts",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.30 およびそれ以前",
+            "2.5.1 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.6",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品にアクセス可能な第三者によって、任意の Java(OGNL) コードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 影響を受けるバージョンを使用している場合は、最新版にアップデートしてください。  [devMode を無効にする] 開発者は、devMode を有効にしておくことによって生じるセキュリティ上のリスクについて説明しています。 必要なとき以外は devMode を無効にしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Struts",
+          "vulinfoid": "Apache Struts",
+          "url": "https://struts.apache.org/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Struts 2 Documentation",
+          "vulinfoid": "Security - Disable devMode",
+          "url": "http://struts.apache.org/docs/security.html#Security-DisabledevMode"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#92395431",
+          "url": "https://jvn.jp/jp/JVN92395431/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-20T12:04:32+09:00",
+    "datelastupdated": "2017-01-20T12:04:32+09:00",
+    "datepublic": "2017-01-20T00:00:00+09:00"
+  }
+}

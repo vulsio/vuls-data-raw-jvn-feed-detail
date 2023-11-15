@@ -1,0 +1,135 @@
+{
+  "vulinfoid": "JVNDB-2014-003869",
+  "vulinfodata": {
+    "title": "KDE kdelibs および kauth におけるアクセス制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "KDE kdelibs および kauth には、polkit authority との通信に D-Bus を適切に使用しないため、アクセス制限を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "kde4libs",
+          "cpe": {
+            "text": "cpe:/a:debian:kde4libs",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "KDE project",
+          "productname": "KAuth",
+          "cpe": {
+            "text": "cpe:/a:kde:kauth",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.1 未満"
+          ]
+        },
+        {
+          "name": "KDE project",
+          "productname": "kdelibs",
+          "cpe": {
+            "text": "cpe:/a:kde:kdelibs",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.14 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、(1) setuid プロセスまたは (2) pkexec プロセスを介して、PolkitUnixProcess PolkitSubjec の競合状態を利用されることで、アクセス制限を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3004",
+          "url": "http://www.debian.org/security/2014/dsa-3004"
+        },
+        {
+          "type": "vendor",
+          "name": "KDE QuickGit",
+          "vulinfoid": "Use dbus system bus name instead of PID for authentication",
+          "url": "http://quickgit.kde.org/?p=kdelibs.git&a=commitdiff&h=e4e7b53b71e2659adaf52691d4accc3594203b23"
+        },
+        {
+          "type": "vendor",
+          "name": "KDE Security Advisory",
+          "vulinfoid": "advisory-20140730-1",
+          "url": "http://www.kde.org/info/security/advisory-20140730-1.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2304-1",
+          "url": "http://www.ubuntu.com/usn/USN-2304-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5033",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5033"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5033",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5033"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-21T17:48:03+09:00",
+    "datelastupdated": "2014-08-21T17:48:03+09:00",
+    "datepublic": "2014-07-30T00:00:00+09:00"
+  }
+}

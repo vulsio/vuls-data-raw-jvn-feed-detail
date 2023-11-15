@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2016-003547",
+  "vulinfodata": {
+    "title": "MSM デバイスなどの製品用 QuIC Android コントリビューションで使用される Linux Kernel の MSM QDSP6 オーディオドライバにおける権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイスおよびその他の製品用 Qualcomm Innovation Center (QuIC) Android コントリビューションで使用される Linux Kernel の MSM QDSP6 オーディオドライバ (別名 サウンドドライバ) には、権限を取得される、またはサービス運用妨害 (整数オーバーフロー、およびバッファオーバーフローまたはバッファオーバーリード) 状態にされる脆弱性が存在します。  ベンダは、本脆弱性を Qualcomm internal bug CR1006609 として公開しています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Android",
+          "cpe": {
+            "text": "cpe:/o:google:android",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、(1) AUDIO_EFFECTS_WRITE または (2) AUDIO_EFFECTS_READ 操作を実行する巧妙に細工されたアプリケーションを介して、権限を取得される、またはサービス運用妨害 (整数オーバーフロー、およびバッファオーバーフローまたはバッファオーバーリード) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android Security Bulletin-July 2016",
+          "url": "http://source.android.com/security/bulletin/2016-07-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "ASoC: msm: audio-effects: misc fixes in h/w accelerated effect (kernel/msm-3.18)",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm-3.18/commit/?id=2c04c0dab66013b7dfbe4d5a523c2c1d6b5b11d6"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "ASoC: msm: audio-effects: misc fixes in h/w accelerated effect (kernel/msm-3.10) [01ee86d]",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm-3.10/commit/?id=01ee86da5a0cd788f134e360e2be517ef52b6b00"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "ASoC: msm: audio-effects: misc fixes in h/w accelerated effect (kernel/msm-3.10) [9900650]",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm-3.10/commit/?id=9900650540c889f761d102202bc80306ae80ab83"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "Multiple Vulnerabilities In MSM QDSP6 Audio Driver Allow Kernel Memory Corruption (CVE-2016-2068)",
+          "url": "https://www.codeaurora.org/multiple-vulnerabilities-msm-qdsp6-audio-driver-allow-kernel-memory-corruption-cve-2016-2068-0"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2068",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2068"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2068",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2068"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-13T16:54:35+09:00",
+    "datelastupdated": "2016-07-13T16:54:35+09:00",
+    "datepublic": "2016-07-06T00:00:00+09:00"
+  }
+}

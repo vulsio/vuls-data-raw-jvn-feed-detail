@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2016-005674",
+  "vulinfodata": {
+    "title": "ISC BIND の DNAME レコードを含む応答パケットの処理に脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND には、DNAME レコードを含む応答パケットの処理に問題があり、db.c もしくは resolver.c で assertion failture (表明違反) が発生し、その結果 named が異常終了する可能性があります。 (resolver.c で assertion failure が発生した場合には \"INSIST((valoptions & 0x0002U) != 0) failed\"、db.c で assertion failure が発生した場合には \"REQUIRE(targetp != ((void *)0) && *targetp == ((void *)0)) failed\" というエラーメッセージが出力されます。)  開発者によると、2016年11月2日時点で攻撃は観測されていませんが、クラッシュを引き起こすクエリについては公開のメーリングリスト上で言及されています。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 https://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.0.x から 9.8.x まで",
+            "9.10.0 から 9.10.4-P3 まで",
+            "9.11.0",
+            "9.9.0 から 9.9.9-P3 まで",
+            "9.9.3-S1 から 9.9.9-S5 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性の対策版として次のバージョンをリリースしています。  　* BIND 9 version 9.9.9-P4 　* BIND 9 version 9.9.9-S6 　* BIND 9 version 9.10.4-P4 　* BIND 9 version 9.11.0-P1  BIND 9 Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2016-8864: A problem handling responses containing a DNAME answer can lead to an assertion failure",
+          "url": "https://kb.isc.org/article/AA-01434"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-8864",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8864"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2016-0044",
+          "url": "https://www.jpcert.or.jp/at/2016/at160044.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPNIC",
+          "vulinfoid": "DNAMEを含む応答の処理に関わる BIND 9の脆弱性について(2016年11月) ",
+          "url": "https://www.nic.ad.jp/ja/topics/2016/20161102-01.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2016-8864）",
+          "url": "https://jprs.jp/tech/security/2016-11-02-bind9-vuln-dname.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92683474",
+          "url": "http://jvn.jp/vu/JVNVU92683474/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-8864",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-8864"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年11月02日]\\n  掲載\\n[2016年11月10日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8864) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-11-02T16:54:29+09:00",
+    "datelastupdated": "2016-11-10T16:07:57+09:00",
+    "datepublic": "2016-11-02T00:00:00+09:00"
+  }
+}

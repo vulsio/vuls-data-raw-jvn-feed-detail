@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2021-001888",
+  "vulinfodata": {
+    "title": "Automation Direct 製 CLICK PLC CPU Modules に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Automation Direct 社が提供する CLICK PLC CPU Modules には、次の複数の脆弱性が存在します。  　* 別のパスやチャンネルを介した認証回避 (CWE-288) - CVE-2021-32980、CVE-2021-32984、CVE-2021-32986 　* 重要な情報の平文での送信 (CWE-319) - CVE-2021-32982 　* 認証情報の平文保存 (CWE-256) - CVE-2021-32978"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Automation Direct",
+          "productname": "CLICK PLC CPU Modules",
+          "cpe": {
+            "text": "cpe:/a:misc:automation_direct_click_plc_cpu_modules",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v3.00 より前のファームウェアを搭載した C0-1x CPU"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 既存の接続が有効な間に、遠隔の第三者によって PLC に接続される - CVE-2021-32980 　* 正規ユーザーが PLC のロックを解除している間に、遠隔の第三者によって許可なしにプロジェクトを読み取られる - CVE-2021-32984 　* プログラミングソフトウェアが中断された場合、PLC はロック解除されたままになり、以降のプログラミング接続が許可なしに行われる - CVE-2021-32986 　* ネットワークを監視できる第三者によって、平文のパスワード交換を覗き見られる - CVE-2021-32982 　* 遠隔の第三者によって過去に入力されたパスワードを読み取られ、PLC のロックを解除される - CVE-2021-32978"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者によれば、 Version 3.00 にて本脆弱性が修正されているとのことです。また開発者はユーザに対し、<a href=\"https://cdn.automationdirect.com/static/manuals/c0userm/appxa.pdf\" target=\"_blank\">security guidelines</a> に従うことを推奨しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Automation Direct",
+          "vulinfoid": "Software Downloads",
+          "url": "https://www.automationdirect.com/support/software-downloads?itemcode=CLICK"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32978",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32978"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32980",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32980"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32984",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32984"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32986",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32986"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32982",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32982"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-166-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-166-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94696836",
+          "url": "http://jvn.jp/cert/JVNVU94696836"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-319",
+          "url": "https://cwe.mitre.org/data/definitions/319.html",
+          "title": "重要な情報の平文での送信"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-288",
+          "url": "https://cwe.mitre.org/data/definitions/288.html",
+          "title": "代替パスまたはチャネルを使用した認証回避"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-256",
+          "url": "https://cwe.mitre.org/data/definitions/256.html",
+          "title": "認証情報の平文保存"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-17T15:19:02+09:00",
+          "description": "[2021年06月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-17T15:19:02+09:00",
+    "datelastupdated": "2021-06-17T15:19:02+09:00",
+    "datepublic": "2021-06-16T00:00:00+09:00"
+  }
+}

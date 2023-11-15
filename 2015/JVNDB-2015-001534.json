@@ -1,0 +1,163 @@
+{
+  "vulinfoid": "JVNDB-2015-001534",
+  "vulinfodata": {
+    "title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND 9 には、トラストアンカーの管理において、特定の条件下で named が終了する、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC のアドバイザリには次のように記載されています。  CVE-2015-1349: A Problem with Trust Anchor Management Can Cause named to Crash https://kb.isc.org/article/AA-01235/  \"BIND servers which are configured to perform DNSSEC validation and which are using managed-keys (which occurs implicitly when using \"dnssec-validation auto;\" or \"dnssec-lookaside auto;\") may terminate with an assertion failure when encountering all of the following conditions in a managed trust anchor:    *a key which was previously trusted is now flagged as revoked;   *there are no other trusted keys available;   *there is a standby key, but it is not trusted yet  This situation results in termination of the named process and denial of service to clients, and can occur in two circumstances:    *during an improperly-managed key rollover for one of the managed trust anchors (e.g., during a botched root key rollover), or    *when deliberately triggered by an attacker, under specific and limited circumstances. ISC has demonstrated a proof-of-concept of this attack; however, the complexity of the attack is very high unless the attacker has a specific network relationship to the BIND server which is targeted\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.7.0 から 9.10.1-P1 まで"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "macOS Server (旧 OS X Server)",
+          "cpe": {
+            "text": "cpe:/o:apple:os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.4",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] ISC が提供する情報をもとに、以下のバージョンにアップデートしてください。  　　　* BIND 9.9.6-P2 　　　* BIND 9.10.1-P2  開発者から Development Version のアップデートとして以下のバージョンが提供されています。  　　　* BIND 9.9.7rc2 　　　* BIND 9.10.2rc2  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を回避することが可能です。  　　　* dnssec-validation に auto を使用しない、また dnssec-lookaside のオプションで managed-keys を設定しない このワークアラウンドを実施する場合、正しい鍵を用いて trusted-keys を明示的に指定する必要があります。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205219",
+          "url": "https://support.apple.com/en-us/HT205219"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205219",
+          "url": "http://support.apple.com/ja-jp/HT205219"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX03379",
+          "url": "http://marc.info/?l=bugtraq&amp;m=143740940810833&amp;w=2"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2015-1349: A Problem with Trust Anchor Management Can Cause named to Crash",
+          "url": "https://kb.isc.org/article/AA-01235/"
+        },
+        {
+          "type": "vendor",
+          "name": "McAfee ServicePortal",
+          "vulinfoid": "SB10116",
+          "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10116"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1193820",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1193820"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0672",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0672.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1349",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1349"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（2015年2月19日公開）",
+          "url": "http://jprs.jp/tech/security/2015-02-19-bind9-vuln-managed-trust-anchors.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93982119",
+          "url": "http://jvn.jp/vu/JVNVU93982119/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99970459",
+          "url": "http://jvn.jp/vu/JVNVU99970459/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1349",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1349"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0082",
+          "url": "http://advisories.mageia.org/MGASA-2015-0082.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年02月20日]\\n  掲載\\n[2015年03月18日]\\n  ベンダ情報：レッドハット (Bug 1193820) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0672) を追加\\n  参考情報：関連文書 (MGASA-2015-0082) を追加\\n[2015年05月20日]\\n  ベンダ情報：マカフィー (SB10116) を追加\\n[2015年09月03日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03379) を追加\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-02-20T11:19:59+09:00",
+    "datelastupdated": "2015-10-05T16:14:40+09:00",
+    "datepublic": "2015-02-18T00:00:00+09:00"
+  }
+}

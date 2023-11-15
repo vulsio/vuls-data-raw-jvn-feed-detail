@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2015-002600",
+  "vulinfodata": {
+    "title": "Subrion CMS に SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Subrion CMS は、ウェブベースのコンテンツ管理システム (CMS) です。Subrion CMS には、Cookie の処理に起因する SQL インジェクションの脆弱性が存在します。  * 信頼していないデータのデシリアライゼーション (CWE-502) http://cwe.mitre.org/data/definitions/502.html  * SQL インジェクション (CWE-89) http://cwe.mitre.org/data/definitions/89.html  ユーザがログインした際、Subrion CMS は salt という名称の Cookie の値をデシリアライズし、SQL UPDATE 文に使用します。この Cookie の値を細工して Subrion CMS に渡すことで、SQL 文を改ざんすることが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Intelliants",
+          "productname": "Subrion CMS",
+          "cpe": {
+            "text": "cpe:/a:intelliants:subrion_cms",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 3.3.3 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品にログイン可能なユーザによって、当該製品で使用しているデータベース上で任意の SQL 文を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  開発者は、本脆弱性の対策バージョンとして version 3.3.3 をリリースしています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Subrion",
+          "vulinfoid": "Subrion CMS 3.3.3 is available!",
+          "url": "http://www.subrion.org/forums/threads/subrion-cms-3-3-3-is-available.2024/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-4129",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4129"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94699739",
+          "url": "http://jvn.jp/vu/JVNVU94699739/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-4129",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4129"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#110532",
+          "url": "http://www.kb.cert.org/vuls/id/110532"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年05月14日]\\n  掲載\\n[2015年07月14日]\\n  共通脆弱性識別子(CVE)：CVE-ID を追加\\n  CVSS による深刻度：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-4129) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-05-14T17:11:38+09:00",
+    "datelastupdated": "2015-07-14T17:39:10+09:00",
+    "datepublic": "2015-05-08T00:00:00+09:00"
+  }
+}

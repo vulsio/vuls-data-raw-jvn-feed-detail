@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2020-000072",
+  "vulinfodata": {
+    "title": "MELSEC iQ-R シリーズシーケンサ CPU ユニットにおけるリソース枯渇の脆弱性",
+    "vulinfodescription": {
+      "overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズの CPU ユニットには、リソース枯渇 (CWE-400) の脆弱性が存在します。  なお開発者によると、エンジニアリングツールで「Webサーバ使用有無」の設定が「使用しない」に設定されている場合、本脆弱性の影響は受けないとのことです (デフォルト設定は「使用しない」) 。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 日本電気（株） 岩田友臣 氏、木下峻一 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "三菱電機",
+          "productname": "MELSEC iQ-R シリーズ",
+          "cpe": {
+            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R00/01/02CPU ファームウェアバージョン \"05\" から \"19\" まで",
+            "R04/08/16/32/120(EN)CPU ファームウェアバージョン \"35\" から \"51\" まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.4",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者から不正な HTTP パケットを受信すると、CPU ユニットでエラーが発生し、プログラム実行および通信がサービス運用妨害 (DoS) 状態となる可能性があります。 なお、復旧にはリセットが必要になります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  ・R00/01/02CPU ファームウェアバージョン \"20\" およびそれ以降 ・R04/08/16/32/120(EN)CPU ファームウェアバージョン \"52\" およびそれ以降  [ワークアラウンドを実施する] 開発者によると、アップデートを適用できない場合には、次の回避策を適用することで本脆弱性の影響を軽減することが可能とのことです。 詳しくは、開発者が提供する情報をご確認ください。  ・Web サーバ機能を使用しない場合、エンジニアリングツールで「Webサーバ使用有無」の設定を「使用しない」に設定する ・当該製品をインターネットに接続する場合は、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する ・当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "三菱電機株式会社",
+          "vulinfoid": "MELSEC iQ-R シリーズ CPU ユニットにおけるサービス拒否 (DoS) の脆弱性",
+          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2020-015.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5666",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5666"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-317-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-317-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#44764844",
+          "url": "https://jvn.jp/jp/JVN44764844/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-11-09T11:33:46+09:00",
+          "description": "[2020年11月12日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2020-11-13T10:42:27+09:00",
+          "description": "[2020年11月13日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-317-01) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-11-12T12:28:15+09:00",
+    "datelastupdated": "2020-11-13T11:24:14+09:00",
+    "datepublic": "2020-11-12T00:00:00+09:00"
+  }
+}

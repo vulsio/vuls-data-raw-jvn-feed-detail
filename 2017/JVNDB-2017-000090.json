@@ -1,0 +1,120 @@
+{
+  "vulinfoid": "JVNDB-2017-000090",
+  "vulinfodata": {
+    "title": "FlashAir のフォトシェア機能におけるアクセス制限不備の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社東芝が提供する FlashAir は、無線 LAN 接続機能を搭載した SDHC メモリカードです。FlashAir のフォトシェア機能では、FlashAir の初期設定による無線 LAN とは別の設定の、フォトシェア専用の無線 LAN に切り替わり、あらかじめ選択した写真データを他ユーザと共有することが可能です。 フォトシェア機能には、アクセス制限不備の脆弱性 (CWE-425) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 諌山 貴由 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "東芝",
+          "productname": "FlashAir",
+          "cpe": {
+            "text": "cpe:/a:toshiba:flashair",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "SDHCメモリカード （SD-WD/WCシリーズ＜W-02＞） V2.00.04 およびそれ以前",
+            "SDHCメモリカード （SD-WEシリーズ＜W-03＞） V3.00.02 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.7",
+          "vector": "AV:A/AC:L/Au:S/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "無線 LAN に接続したユーザによって、フォトシェア機能で共有する設定にしていないデータを取得される可能性があります。 また、JVN#81820501 の問題により、ウェブブラウザからフォトシェアを開始した場合には固定された設定の無線LAN に切り替わるため、想定していない第三者にアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ソフトウェアを更新し、適切な無線 LAN 設定を行う] フォトシェア機能を使用する際には、意図しない第三者によるアクセスを防ぐため、FlashAirTMソフトウェア更新ツールの最新版 (V3.00.02 または V2.00.04) によりカードのソフトウェアを更新したうえで、専用アプリを使用してSSID やパスワードを変更してください。 詳しくは、開発者が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "東芝",
+          "vulinfoid": "FlashAir SDHCメモリカード（SD-WD/WCシリーズ＜W-02＞）",
+          "url": "http://www.toshiba-personalstorage.net/endproduct/flashair/index_j.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "東芝",
+          "vulinfoid": "FlashAir SDHCメモリカード（SD-WEシリーズ＜W-03＞）",
+          "url": "http://www.toshiba-personalstorage.net/product/flashair/index_j.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "東芝",
+          "vulinfoid": "FlashAir のフォトシェア機能におけるアクセス制限不備の脆弱性について",
+          "url": "http://www.toshiba-personalstorage.net/news/20170516b.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "東芝",
+          "vulinfoid": "フォトシェア機能の使い方",
+          "url": "http://www.toshiba-personalstorage.net/support/manual/flashair/wewdwc/photoshare.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-2161",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2161"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#46372675",
+          "url": "https://jvn.jp/jp/JVN46372675/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-2161",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2161"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-284",
+          "url": "https://cwe.mitre.org/data/definitions/284.html",
+          "title": "不適切なアクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月16日]\\n  掲載\\n[2017年12月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2161) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-16T14:02:27+09:00",
+    "datelastupdated": "2017-12-21T19:08:37+09:00",
+    "datepublic": "2017-05-16T00:00:00+09:00"
+  }
+}

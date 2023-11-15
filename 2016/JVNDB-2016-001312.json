@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2016-001312",
+  "vulinfodata": {
+    "title": "Harman AMX 製品がハードコードされたパスワードを使用する問題",
+    "vulinfodescription": {
+      "overview": "複数の Harman AMX 製品には、デバッグ用のアカウントがハードコードされている問題が存在します。  認証情報がハードコードされている問題 (CWE-798) - CVE-2015-8362 発見者のブログ投稿によると、AMX シリーズの複数のモデルには、ハードコードされた管理権限アカウント (\"バックドア\") が存在します。さらに詳しい情報は、発見者の脆弱性アドバイザリをご確認ください。AMX のリリースノートには、これはデバッグ用アカウントであったと記載されています。  CWE-798: Use of Hard-coded Credentials http://cwe.mitre.org/data/definitions/798.html  ブログ投稿 http://blog.sec-consult.com/2016/01/deliberately-hidden-backdoor-account-in.html  脆弱性アドバイザリ https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20160121-0_AMX_Deliberately_hidden_backdoor_account_v10.txt  AMX のリリースノート http://www.amx.com/techcenter/firmware.asp?Category=Hot%20Fix%20Files"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Harman",
+          "productname": "AMX",
+          "cpe": {
+            "text": "cpe:/o:harman:amx_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "NX-1200 ファームウェア v1.2.322",
+            "NX-1200 ファームウェア v1.3.100"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "認証情報を知る攻撃者によって、当該機器に管理者権限でアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 開発者はいくつかの製品に対してアップデートをリリースしています。 アップデートの入手に関するさらに詳しい情報は、開発者へお問い合わせください。  アップデート http://www.amx.com/techcenter/NXSecurityBrief/"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Harman",
+          "vulinfoid": "NetLinx Controller Security Brief",
+          "url": "http://www.amx.com/techcenter/NXSecurityBrief/"
+        },
+        {
+          "type": "vendor",
+          "name": "Harman",
+          "vulinfoid": "Firmware Files - Hot Fix Files",
+          "url": "http://www.amx.com/techcenter/firmware.asp?Category=Hot%20Fix%20Files"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8362",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8362"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-16-049-02",
+          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-16-049-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99819594",
+          "url": "http://jvn.jp/vu/JVNVU99819594/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8362",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8362"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#992624",
+          "url": "https://www.kb.cert.org/vuls/id/992624"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Deliberately hidden backdoor account in several AMX (HARMAN Professional) devices",
+          "url": "http://blog.sec-consult.com/2016/01/deliberately-hidden-backdoor-account-in.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "SEC Consult Vulnerability Lab Security Advisory < 20160121-0 >",
+          "url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20160121-0_AMX_Deliberately_hidden_backdoor_account_v10.txt"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-255",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+          "title": "証明書・パスワードの管理"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月26日]\\n  掲載\\n[2016年02月22日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-16-049-02) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-26T16:24:10+09:00",
+    "datelastupdated": "2016-02-22T16:46:57+09:00",
+    "datepublic": "2016-01-21T00:00:00+09:00"
+  }
+}

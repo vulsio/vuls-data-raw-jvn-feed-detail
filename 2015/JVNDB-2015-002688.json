@@ -1,0 +1,136 @@
+{
+  "vulinfoid": "JVNDB-2015-002688",
+  "vulinfodata": {
+    "title": "XML::LibXML の _clone 関数における XML 外部エンティティ攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "XML::LibXML の _clone 関数は、expand_entities オプションを適切に設定しないため、XML 外部エンティティ (XXE) 攻撃を実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-611: Improper Restriction of XML External Entity Reference ('XXE') (XML 外部エンティティ参照の不適切な制限) と識別されています。 http://cwe.mitre.org/data/definitions/611.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(vivid)",
+            "12.04 LTS",
+            "14.04 LTS",
+            "14.10"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.0",
+            "8.0"
+          ]
+        },
+        {
+          "name": "XML::LibXML project",
+          "productname": "XML::LibXML",
+          "cpe": {
+            "text": "cpe:/a:xml-libxml_project:xml_libxml",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0119 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、(1) new または (2) load_xml 関数への巧妙に細工された XML データを介して、XML 外部エンティティ (XXE) 攻撃を実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bitbucket",
+          "vulinfoid": "Preserve unset options after a _clone() call (e.g: in load_xml()).",
+          "url": "https://bitbucket.org/shlomif/perl-xml-libxml/commits/5962fd067580767777e94640b129ae8930a68a30/raw/"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3243",
+          "url": "https://www.debian.org/security/2015/dsa-3243"
+        },
+        {
+          "type": "vendor",
+          "name": "search.cpan",
+          "vulinfoid": "Revision history for Perl extension XML::LibXML",
+          "url": "http://cpansearch.perl.org/src/SHLOMIF/XML-LibXML-2.0119/Changes"
+        },
+        {
+          "type": "vendor",
+          "name": "search.cpan",
+          "vulinfoid": "XML-LibXML-2.0121",
+          "url": "http://search.cpan.org/~shlomif/XML-LibXML-2.0121/LibXML.pod"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2592-1",
+          "url": "http://www.ubuntu.com/usn/USN-2592-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3451",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3451"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3451",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3451"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年05月19日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-05-19T11:13:05+09:00",
+    "datelastupdated": "2015-05-19T11:13:05+09:00",
+    "datepublic": "2015-04-23T00:00:00+09:00"
+  }
+}

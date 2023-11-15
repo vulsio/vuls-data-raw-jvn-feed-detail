@@ -1,0 +1,167 @@
+{
+  "vulinfoid": "JVNDB-2015-001992",
+  "vulinfodata": {
+    "title": "Henry Spencer の正規表現 (regex) ライブラリにバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Henry Spencer が作成した正規表現 (regex) ライブラリは、ヒープベースのバッファオーバーフローの影響を受ける可能性があります。  発見者によると、正規表現文字列の長さを指定する変数 len の値を使った乗算と加算の結果、整数オーバーフローが発生する可能性があります。このオーバーフローを使用することで、メモリ上のデータを改ざんされる可能性があります。  ヒープベースのバッファオーバーフロー (CWE-122) https://cwe.mitre.org/data/definitions/122.html  詳しくは、発見者が提供する情報をご確認ください。 https://guidovranken.wordpress.com/2015/02/04/full-disclosure-heap-overflow-in-h-spencers-regex-library-on-32-bit-systems/"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Henry Spencer",
+          "productname": "BSD regex library",
+          "cpe": {
+            "text": "cpe:/a:rxspencer_project:rxspencer",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.6.8 以上 10.11 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "現時点で、本脆弱性の具体的影響は不明です。ライブラリは様々な形で使用されているため、影響は製品により異なりますが、最悪の場合、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "開発者が提供する情報や CERT/CC Vulnerability Note VU#695940 の Vendor Information に掲載されている情報を参考に、対策方法を検討してください。  CERT/CC Vulnerability Note VU#695940 の Vendor Information http://www.kb.cert.org/vuls/id/695940#vendors"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205267",
+          "url": "https://support.apple.com/en-us/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205267",
+          "url": "http://support.apple.com/ja-jp/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "ClamAV Blog",
+          "vulinfoid": "ClamAV 0.98.7 has been released! ",
+          "url": "http://blog.clamav.net/2015/04/clamav-0987-has-been-released.html"
+        },
+        {
+          "type": "vendor",
+          "name": "dragonflybsd",
+          "vulinfoid": "libc - Disallow an excessively large pattern space",
+          "url": "http://gitweb.dragonflybsd.org/dragonfly.git/blobdiff/4d133046c59a851141519d03553a70e903b3eefc..2841837793bd095a82f477e9c370cfe6cfb3862c:/lib/libc/regex/regcomp.c"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2015-13",
+          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-13j.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2015-7",
+          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-7j.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2015-8",
+          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-8j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2305",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2305"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92987253",
+          "url": "https://jvn.jp/vu/JVNVU92987253/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97220341",
+          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2305",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2305"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#695940",
+          "url": "http://www.kb.cert.org/vuls/id/695940"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Full disclosure: heap overflow in H. Spencer’s regex library on 32 bit systems",
+          "url": "https://guidovranken.wordpress.com/2015/02/04/full-disclosure-heap-overflow-in-h-spencers-regex-library-on-32-bit-systems/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月01日]\\n  掲載\\n[2015年05月20日]\\n  ベンダ情報：ClamAV (ClamAV 0.98.7 has been released!) を追加\\n[2015年06月05日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-13) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加\\n[2016年02月26日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-7) を追加\\n  ベンダ情報：ターボリナックス (TLSA-2015-8) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-01T15:43:19+09:00",
+    "datelastupdated": "2016-02-26T17:55:38+09:00",
+    "datepublic": "2015-02-13T00:00:00+09:00"
+  }
+}

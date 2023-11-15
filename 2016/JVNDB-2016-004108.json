@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2016-004108",
+  "vulinfodata": {
+    "title": "Google Chrome の midgard/mali_kbase_vinstr.c における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Google Chrome の midgard/mali_kbase_vinstr.c の kbasep_vinstr_attach_client 関数には、整数オーバーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-190: Integer Overflow or Wraparound (整数オーバーフローまたはラップアラウンド) と識別されています。 http://cwe.mitre.org/data/definitions/190.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "52.0.2743.85 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、無制限の乗算を利用されることで、サービス運用妨害 (ヒープベースのバッファオーバーフローおよび解放済みメモリの使用 (use-after-free)) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Chromium",
+          "vulinfoid": "MALI: Fix vinstr issues",
+          "url": "https://chromium.googlesource.com/chromiumos/third_party/kernel/+/d65f7c158dabbb5b9e89723aceb30e874c2d748a"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "https://www.google.com/intl/ja/chrome/browser/features.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update for Chrome OS",
+          "url": "http://googlechromereleases.blogspot.jp/2016/07/stable-channel-update-for-chrome-os_26.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5138",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5138"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5138",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5138"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-02T11:11:26+09:00",
+    "datelastupdated": "2016-08-02T11:11:26+09:00",
+    "datepublic": "2016-07-26T00:00:00+09:00"
+  }
+}

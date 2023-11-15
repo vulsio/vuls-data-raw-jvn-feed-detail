@@ -1,0 +1,151 @@
+{
+  "vulinfoid": "JVNDB-2012-006142",
+  "vulinfodata": {
+    "title": "GNU C Library の libc の stdio-common/vfprintf.c における FORTIFY_SOURCE フォーマットストリング保護メカニズムを回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU C Library (別名 glibc) の libc の stdio-common/vfprintf.c の vfprintf 関数は、バッファ長を適切に計算しないため、FORTIFY_SOURCE フォーマットストリング保護メカニズムを回避され、サービス運用妨害 (スタック破損およびクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.04 LTS",
+            "11.04",
+            "11.10",
+            "12.04 LTS",
+            "8.04 LTS"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GNU C Library",
+          "cpe": {
+            "text": "cpe:/a:gnu:glibc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.12"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Desktop (v. 6)",
+            "HPC Node (v. 6)",
+            "Server (v. 6)",
+            "Server EUS (v. 6.3.z)",
+            "Workstation (v. 6)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Virtualization",
+          "cpe": {
+            "text": "cpe:/a:redhat:enterprise_virtualization",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、位置パラメータおよび多数の書式指定子を利用するフォーマットストリングを介して、FORTIFY_SOURCE フォーマットストリング保護メカニズムを回避され、サービス運用妨害 (スタック破損およびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 833703",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=833703"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:1098",
+          "url": "http://rhn.redhat.com/errata/RHSA-2012-1098.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:1200",
+          "url": "http://rhn.redhat.com/errata/RHSA-2012-1200.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sourceware Bugzilla",
+          "vulinfoid": "Bug 12445",
+          "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=12445"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1589-1",
+          "url": "http://www.ubuntu.com/usn/USN-1589-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-3404",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3404"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-3404",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3404"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年02月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-02-12T19:16:50+09:00",
+    "datelastupdated": "2014-02-12T19:16:50+09:00",
+    "datepublic": "2012-07-18T00:00:00+09:00"
+  }
+}

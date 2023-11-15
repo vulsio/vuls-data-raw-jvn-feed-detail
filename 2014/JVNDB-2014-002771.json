@@ -1,0 +1,166 @@
+{
+  "vulinfoid": "JVNDB-2014-002771",
+  "vulinfodata": {
+    "title": "GNU Libtasn1 の asn1_get_bit_der 関数における領域外にアクセスされる脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU Libtasn1 の asn1_get_bit_der 関数は、負のビット長がが識別される場合、適切にエラーをレポートしないため、領域外にアクセスされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU Libtasn1",
+          "cpe": {
+            "text": "cpe:/a:gnu:libtasn1",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.6 未満"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GnuTLS",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnutls",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5",
+            "6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工された ASN.1 データ を介して、領域外にアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GNU Savannah",
+          "vulinfoid": "index : libtasn1.git",
+          "url": "http://git.savannah.gnu.org/cgit/libtasn1.git/commit/"
+        },
+        {
+          "type": "vendor",
+          "name": "GnuPG Project",
+          "vulinfoid": "GNU Libtasn1 3.6 released",
+          "url": "http://lists.gnu.org/archive/html/help-libtasn1/2014-05/msg00006.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "ELSA-2014-0594",
+          "url": "http://linux.oracle.com/errata/ELSA-2014-0594.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "ELSA-2014-0596",
+          "url": " http://linux.oracle.com/errata/ELSA-2014-0596.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1102323",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1102323"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0815",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0815.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0596",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0596.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:0594",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-0594.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in GNU Libtasn1",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_gnu_libtasn1"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in GnuTLS ",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_gnutls"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3468",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3468"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3468",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3468"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2014-0247",
+          "url": "http://advisories.mageia.org/MGASA-2014-0247.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年06月09日]\\n  掲載\\n[2014年07月28日]\\n  ベンダ情報：オラクル (ELSA-2014-0594) を追加\\n  ベンダ情報：オラクル (ELSA-2014-0596) を追加\\n  ベンダ情報：オラクル (Multiple vulnerabilities in GNU Libtasn1) を追加\\n  ベンダ情報：オラクル (Multiple vulnerabilities in GnuTLS) を追加\\n[2014年08月06日]\\n  ベンダ情報：レッドハット (RHSA-2014:0815) を追加\\n[2015年06月09日]\\n  参考情報：関連文書 (MGASA-2014-0247) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-06-09T18:08:15+09:00",
+    "datelastupdated": "2015-06-09T18:06:22+09:00",
+    "datepublic": "2014-05-25T00:00:00+09:00"
+  }
+}

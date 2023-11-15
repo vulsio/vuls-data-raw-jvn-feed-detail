@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2015-004021",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/ipv4/ping.c 内の ping_unhash 関数における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/ipv4/ping.c 内の ping_unhash 関数は、unhash 操作中に特定のリストデータ構造を初期化しないため、権限を取得される、またはサービス運用妨害 (解放済みメモリの使用 (Use-after-free) およびシステムクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use-after-free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、IPPROTO_ICMP または IPPROTO_ICMPV6 プロトコル用に SOCK_DGRAM の socket システムコールを作成され、その後、切断の後にシステムコール接続を実行されることで、権限を取得される、またはサービス運用妨害 (解放済みメモリの使用 (Use-after-free) およびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.0.3",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.0.3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ipv4: Missing sk_nulls_node_init() in ping_unhash().",
+          "url": "https://github.com/torvalds/linux/commit/a134f083e79fb4c3d0a925691e732c56911b4326"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ipv4: Missing sk_nulls_node_init() in ping_unhash().",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=a134f083e79fb4c3d0a925691e732c56911b4326"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1218074",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1218074"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1564",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1564.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3636",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3636"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3636",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3636"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年08月07日]\\n  掲載\\n[2015年09月03日]\\n  ベンダ情報：レッドハット (RHSA-2015:1564) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-08-07T12:06:03+09:00",
+    "datelastupdated": "2015-09-03T17:36:26+09:00",
+    "datepublic": "2015-05-13T00:00:00+09:00"
+  }
+}

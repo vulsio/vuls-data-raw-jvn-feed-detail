@@ -1,0 +1,194 @@
+{
+  "vulinfoid": "JVNDB-2020-009865",
+  "vulinfodata": {
+    "title": "OpenSSL における NULL ポインタ参照の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL には、NULL ポインタ参照の脆弱性が存在します。  OpenSSL Project より、OpenSSL Security Advisory [08 December 2020] が公開されました。 深刻度 - 高 (Severity: High)  EDIPARTYNAME NULL ポインタ参照 - CVE-2020-1971  OpenSSL の GENERAL_NAME_cmp() 関数は X.509 証明書に含まれるホスト名などのデータの比較を行う関数です。 GENERAL_NAME_cmp() 関数で比較する引数双方が EDIPartyName 型だった場合、GENERAL_NAME_cmp() 関数内で NULL ポインタ参照 (CWE-476) が発生して、当該関数を呼び出しているサーバやクライアントアプリケーションがクラッシュする可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2 から 1.0.2w までの全てのバージョン",
+            "1.1.1 から 1.1.1h までの全てのバージョン"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Ops Center Analyzer viewpoint",
+          "cpe": {
+            "text": "cpe:/a:hitachi:hitachi_ops_center_analyzer_viewpoint",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(海外販売のみ)"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "JP1/Automatic Job Management System 3",
+          "cpe": {
+            "text": "cpe:/a:hitachi:jp1_automatic_job_management_system_3",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "- Agent",
+            "- Agent Minimal Edition",
+            "- Manager"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "JP1/Base",
+          "cpe": {
+            "text": "cpe:/a:hitachi:jp1_base",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "細工された X.509 証明書の検証処理を行うことにより、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性の対策版として次のバージョンをリリースしています。  　* OpenSSL 1.1.1 系 　　　　OpenSSL 1.1.1i 　* OpenSSL 1.0.2 系 (OpenSSL 1.0.2 のプレミアムサポート契約ユーザ向け) 　　　　OpenSSL 1.0.2x  [アップグレードする] OpenSSL 1.1.0 および OpenSSL 1.0.2 はサポートが終了しているため、今後アップデートを受けることができません。そのため開発者は、OpenSSL 1.0.2 のプレミアムサポートを契約したユーザを除き、OpenSSL 1.1.1 へアップグレードすることを推奨しています。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Correctly compare EdiPartyName in GENERAL_NAME_cmp()",
+          "url": "https://github.com/openssl/openssl/commit/f960d81215ebf3f65e03d4d5d857fb9b666d6920"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2023-126",
+          "url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-126/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2021-116",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-116/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2021-119",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-119/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Vulnerabilities",
+          "url": "https://www.openssl.org/news/vulnerabilities.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "OpenSSL Security Advisory [08 December 2020]",
+          "url": "https://www.openssl.org/news/secadv/20201208.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2021-116",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-116/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2021-119",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-119/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2023-126",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-126/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-1971",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-336-06",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-336-06"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "JPCERT-AT-2020-0048",
+          "url": "https://www.jpcert.or.jp/at/2020/at200048.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91053554",
+          "url": "http://jvn.jp/cert/JVNVU91053554"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90348129",
+          "url": "https://jvn.jp/vu/JVNVU90348129/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-476",
+          "url": "http://cwe.mitre.org/data/definitions/476.html",
+          "title": "NULL ポインタデリファレンス"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-12-10T17:27:55+09:00",
+          "description": "[2020年12月10日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-05-14T15:28:16+09:00",
+          "description": "[2021年05月14日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2021-116) を追加 \\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2021-116) を追加"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-05-24T14:21:17+09:00",
+          "description": "[2021年05月24日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2021-119) を追加 \\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2021-119) を追加"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2021-12-07T12:18:28+09:00",
+          "description": "[2021年12月07日]\\n  参考情報：JVN (JVNVU#90348129) を追加\\n  参考情報：ICS-CERT ADVISORY  (ICSA-21-336-06) を追加"
+        },
+        {
+          "historyno": "5",
+          "datetime": "2023-07-20T09:09:16+09:00",
+          "description": "[2023年07月20日]\\n  ベンダ情報：日立 (hitachi-sec-2023-126) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-12-10T17:27:55+09:00",
+    "datelastupdated": "2023-07-20T15:10:51+09:00",
+    "datepublic": "2020-12-09T00:00:00+09:00"
+  }
+}

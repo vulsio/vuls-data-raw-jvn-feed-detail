@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2021-000093",
+  "vulinfodata": {
+    "title": "Movable Type の XMLRPC API における OS コマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "シックス・アパート株式会社が提供する Movable Type の XMLRPC API には、OS コマンドインジェクション (CWE-78) の脆弱性が存在します。 Movable Type の XMLRPC API に細工したメッセージを POST メソッドで送信することで、任意の OS コマンドが実行可能となります。  【2021年11月10日 追記】 2021年11月10日現在、本脆弱性の実証コードの公開と、本脆弱性を悪用した攻撃を確認しています。  この脆弱性情報は、次の方が製品開発者に直接報告し、製品開発者との調整を経て、製品利用者への周知を目的に JVN での公表に至りました。 報告者: &#201;tienne Gervais 氏、Charl-Alexandre Le Brun 氏、Chatwork株式会社"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "シックス・アパート株式会社",
+          "productname": "Movable Type",
+          "cpe": {
+            "text": "cpe:/a:sixapart:movabletype",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Movable Type 6.8.4 およびそれ以前 (Movable Type 6系)",
+            "Movable Type 7 r.5004 およびそれ以前 (Movable Type 7系)"
+          ]
+        },
+        {
+          "name": "シックス・アパート株式会社",
+          "productname": "Movable Type Advanced",
+          "cpe": {
+            "text": "cpe:/a:sixapart:movabletype_advanced",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Movable Type Advanced 6.8.4 およびそれ以前 (Movable Type Advanced 6系)",
+            "Movable Type Advanced 7 r.5004 およびそれ以前 (Movable Type Advanced 7系)"
+          ]
+        },
+        {
+          "name": "シックス・アパート株式会社",
+          "productname": "Movable Type Premium",
+          "cpe": {
+            "text": "cpe:/a:sixapart:movabletype_premium",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Movable Type Premium 1.48 およびそれ以前"
+          ]
+        },
+        {
+          "name": "シックス・アパート株式会社",
+          "productname": "Movable Type Premium Advanced",
+          "cpe": {
+            "text": "cpe:/a:sixapart:movabletype_premium_advanced",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Movable Type Premium Advanced 1.48 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、任意の OS コマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 <ul><li>Movable Type 7 r.5005 (Movable Type 7系)</li><li>Movable Type 6.8.5 (Movable Type 6系)</li><li>Movable Type Advanced 7 r.5005 (Movable Type Advanced 7系)</li><li>Movable Type Advanced 6.8.5 (Movable Type Advanced 6系)</li><li>Movable Type Premium 1.49</li><li>Movable Type Premium Advanced 1.49</li></ul> [ワークアラウンドを実施する] 開発者によると、アップデートを適用できない場合には、Movable Type の設定ファイル mt-config.cgi に対して次の回避策を適用することで、本脆弱性の影響を軽減することが可能とのことです。 <ul><li>現在 XMLRPC API を利用していない、または今後 XMLRPC API を利用しない場合</li><ul><li>mt-xmlrpc.cgi へのアクセスを、信頼できる接続元のみに制限する</li><li>CGI/FCGI として利用している場合</li><ul><li>mt-xmlrpc.cgi を削除、またはパーミッションを削除する</li></ul><li>PSGI で利用している場合</li><ul><li>Movable Type (Advanced) 6.2 以降および Movable Type Premium (Advanced)</li><ul><li>mt-config.cgi に Movable Type 環境変数 RestrictedPSGIApp xmlrpc を設定する</li></ul><li>Movable Type (Advanced) 5.2 から Movable Type (Advanced) 6.1 まで</li><ul><li>mt-config.cgi で使用する Movable Type 環境変数 XMLRPCScript に十分に複雑な文字列を設定する</li></ul></ul></ul><li>継続して XMLRPC API を利用する場合</li><ul><li>mt-xmlrpc.cgi へのアクセスを、信頼できる接続元のみに制限する</li><li>PSGI で利用している場合</li><ul><li>mt-config.cgi で使用する Movable Type 環境変数 XMLRPCScript に十分に複雑な文字列を設定する</li></ul></ul></ul>  詳しくは、開発者が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MOVABLETYPE NEWS",
+          "vulinfoid": "[重要] Movable Type 7 r.5005 / Movable Type 6.8.5 / Movable Type Premium 1.49 の提供を開始（セキュリティアップデート）",
+          "url": "https://www.sixapart.jp/movabletype/news/2021/12/16-1400.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-20837",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20837"
+        },
+        {
+          "type": "advisory",
+          "name": "IPA 重要なセキュリティ情報",
+          "vulinfoid": "「Movable Type」の XMLRPC API における OS コマンドインジェクションの脆弱性について（JVN#41119755）",
+          "url": "https://www.ipa.go.jp/security/ciadr/vul/20211020-jvn.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 注意喚起",
+          "vulinfoid": "Movable TypeのXMLRPC APIにおける脆弱性（CVE-2021-20837）に関する注意喚起",
+          "url": "https://www.jpcert.or.jp/at/2021/at210047.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#41119755",
+          "url": "https://jvn.jp/jp/JVN41119755/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-10-13T17:13:25+09:00",
+          "description": "[2021年10月20日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-11-10T17:10:16+09:00",
+          "description": "[2021年11月10日]\\n  概要：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2021-12-16T15:08:47+09:00",
+          "description": "[2021年12月16日]\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-10-20T14:09:52+09:00",
+    "datelastupdated": "2021-12-16T15:25:12+09:00",
+    "datepublic": "2021-10-20T00:00:00+09:00"
+  }
+}

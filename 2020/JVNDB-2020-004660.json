@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2020-004660",
+  "vulinfodata": {
+    "title": "Schneider Electric 製 EcoStruxure Operator Terminal Expert に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "EcoStruxure Operator Terminal Expert は Schneider Electric が提供するオートメーションシステム制御向けタッチスクリーン設定用ソフトウェアです。EcoStruxure Operator Terminal Expert には次の複数の脆弱性が存在します。  * SQLインジェクション (CWE-89) - CVE-2020-7493 * パストラバーサル (CWE-22) - CVE-2020-7494 * パストラバーサル (CWE-22) - CVE-2020-7495 * 引数の挿入または変更 (CWE-88) - CVE-2020-7496 * パストラバーサル (CWE-22) - CVE-2020-7497"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Schneider Electric",
+          "productname": "EcoStruxure Operator Terminal Expert",
+          "cpe": {
+            "text": "cpe:/o:schneider_electric:ecostruxure_operator_terminal_expert",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1 Service Pack 1 およびそれ以前 (旧製品名: Vijeo XD)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.6",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * 細工されたプロジェクトファイルを開いた際に、悪意のあるコードが実行される - CVE-2020-7493、CVE-2020-7494 * 細工されたプロジェクトファイルを開いた際に、想定外のパスへ不正な書込みが行われる - CVE-2020-7495、CVE-2020-7496 * コンピュータの起動時に、任意のアプリケーションが実行される - CVE-2020-7497"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性を修正した EcoStruxure Operator Terminal Expert Version 3.1 Service Pack 1A がリリースされています。 なお、Schneider Electric は CVE-2020-7497 について、アップデートを公開していません。下記の対策方法の実施をご検討ください。  [ワークアラウンドを実施する - CVE-2020-7497] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 * 信頼されたワークステーション上で、EcoStruxure Operator Terminal Expert を実行する * Windows の管理者権限で EcoStruxure Operator Terminal Expert を実行しない * セキュリティ対策を実施した堅牢なワークステーションと Schneider Electric が推奨するセキュアなネットワークを使用する * 情報漏えいと予期しないデータの変更を防ぐため、プロジェクトをセキュアに管理する * 信頼できるユーザにのみプロジェクトファイルのアクセスを許可する * プロジェクトファイルの保存時にパスワードを要求する * ユーザに複雑なパスワードを使用させる "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Schneider Electric",
+          "vulinfoid": "EcoStruxure Operator Terminal Expert (Vijeo XD)",
+          "url": "https://www.se.com/ww/en/download/document/SEVD-2020-133-04/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-7493",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7493"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-7494",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7494"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-7495",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7495"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-7496",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7496"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-7497",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7497"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-20-142-02",
+          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-142-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92478269",
+          "url": "https://jvn.jp/vu/JVNVU92478269/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-05-25T14:35:14+09:00",
+          "description": "[2020年05月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-05-25T14:35:14+09:00",
+    "datelastupdated": "2020-05-25T14:35:14+09:00",
+    "datepublic": "2020-05-22T00:00:00+09:00"
+  }
+}

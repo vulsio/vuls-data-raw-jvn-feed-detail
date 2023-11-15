@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2016-006502",
+  "vulinfodata": {
+    "title": "Asterisk Open Source におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Asterisk Open Source には、SDP オファー/アンサーが Opus コーデック、およびスペースで分離されたフォーマットパラメータで受信される場合、構文解析を担うコードがパラメータを分離するスペースを適切に処理しないため、再帰的に自己呼び出しを続け、結果としてサービス運用妨害 (クラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Digium",
+          "productname": "Asterisk",
+          "cpe": {
+            "text": "cpe:/a:digium:asterisk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.12.x",
+            "13.13.1 未満の 13.13.x",
+            "14.2.1 未満の 14.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "chan_pjsip の chan_sip に対して有効、または匿名であるゲストにより、SDP オファー/アンサーの処理が続行されることで、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asterisk",
+          "vulinfoid": "AST-2016-008-13",
+          "url": "http://downloads.asterisk.org/pub/security/AST-2016-008-13.diff"
+        },
+        {
+          "type": "vendor",
+          "name": "Asterisk",
+          "vulinfoid": "AST-2016-008-14",
+          "url": "http://downloads.asterisk.org/pub/security/AST-2016-008-14.diff"
+        },
+        {
+          "type": "vendor",
+          "name": "Asterisk Issues",
+          "vulinfoid": "ASTERISK-26579",
+          "url": "https://issues.asterisk.org/jira/browse/ASTERISK-26579"
+        },
+        {
+          "type": "vendor",
+          "name": "Asterisk Project Security Advisory",
+          "vulinfoid": "AST-2016-008",
+          "url": "http://downloads.asterisk.org/pub/security/AST-2016-008.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-9937",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9937"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-9937",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9937"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年01月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-01-06T09:40:57+09:00",
+    "datelastupdated": "2017-01-06T09:40:57+09:00",
+    "datepublic": "2016-11-11T00:00:00+09:00"
+  }
+}

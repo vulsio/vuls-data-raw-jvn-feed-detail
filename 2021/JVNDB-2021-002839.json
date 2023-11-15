@@ -1,0 +1,74 @@
+{
+  "vulinfoid": "JVNDB-2021-002839",
+  "vulinfodata": {
+    "title": "Salesforce Developer Experience Command Line Interface におけるアクセス制限不備の問題",
+    "vulinfodescription": {
+      "overview": "Salesforce Developer Experience Command Line Interface を使用すると、認証されたユーザは自身と同じアクセス権で Salesforce GUI にアクセス可能な URL を生成できます。 この方法でアクセスした場合、ログに記録されません。 Salesforce のセキュリティ設定がデフォルトの場合、IPアドレスやデバイスなどの検証がされることなく、生成した URL を利用し、Salesforce GUI にアクセスすることが可能です。 その結果任意のユーザが、URL を生成したユーザと同じアクセス権で管理アクションを実行可能な問題が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Salesforce.com, inc.",
+          "productname": "Salesforce Developer Experience",
+          "cpe": {
+            "text": "cpe:/a:salesforce:salesforce_developer_experience",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Command Line Interface で管理している Salesforce サービス"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "遠隔の第三者によって、ユーザアカウントの追加やアプリケーションの設定変更などをされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本問題の影響を軽減することが可能です。  　* セッションセキュリティ設定を利用して、IP アドレスまたはドメインによるセッション制限をする  上記の回避策を利用することで、利用している Salesforce に影響を与える可能性があります。詳しくは <a href=\"https://help.salesforce.com/s/articleView?id=sf.admin_sessions.htm&type=5\" target=\"blank\">Salesforce が公開している情報</a>を参照し実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Help",
+          "vulinfoid": "Configuration of Salesforce Developer Experience Command Line Interface",
+          "url": "https://help.salesforce.com/s/articleView?id=000363271&type=1"
+        },
+        {
+          "type": "vendor",
+          "name": "Help",
+          "vulinfoid": "Modify Session Security Settings",
+          "url": "https://help.salesforce.com/s/articleView?id=sf.admin_sessions.htm&type=5"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97731134",
+          "url": "https://jvn.jp/vu/JVNVU97731134/"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#883754",
+          "url": "https://kb.cert.org/vuls/id/883754"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-10-06T11:39:02+09:00",
+          "description": "[2021年10月06日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-10-06T11:54:36+09:00",
+    "datelastupdated": "2021-10-06T11:54:36+09:00",
+    "datepublic": "2021-10-05T00:00:00+09:00"
+  }
+}

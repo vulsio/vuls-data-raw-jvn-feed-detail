@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2021-000007",
+  "vulinfodata": {
+    "title": "インフォサイエンス製の複数のログ管理ツールにおける OS コマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "インフォサイエンス株式会社が提供する複数のログ管理ツールでは、様々なログ収集方法の一つとして当該製品への FTP によるアップロード機能を提供しており、管理者が FTP アップロードを受け付けるように設定することが可能です。 当該製品の FTP アップロード機能を有効にしている状況において、管理者が設定するログ処理機能に入力値の取り扱いに関する不備がある場合、細工されたログを FTP でアップロードされることで、当該製品が稼働しているサーバ上で任意の OS コマンドを実行される可能性 (CWE-78) があります。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 塚本 泰三 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "インフォサイエンス株式会社",
+          "productname": "ELC Analytics",
+          "cpe": {
+            "text": "cpe:/a:misc:infoscience_elc_analytics",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 3.0.0 およびそれ以前"
+          ]
+        },
+        {
+          "name": "インフォサイエンス株式会社",
+          "productname": "Logstorage",
+          "cpe": {
+            "text": "cpe:/a:misc:infoscience_logstorage",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 8.0.0 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:H/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品の FTP アップロード機能を有効にしており、ログ処理を行う ScriptHandler に入力値の取り扱いに関する不備がある場合、細工されたログを FTP でアップロードされることで、当該製品が稼働しているサーバ上で任意の OS コマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 以下の回避策を適用することで本脆弱性の影響を回避することが可能です。 ・ScriptHandler が処理を行う対象ファイル名パターンを、カンマを含むファイル名で実行されない設定にする  詳細は開発者または製品提供元にお問い合わせください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "インフォサイエンス株式会社",
+          "vulinfoid": "Logstorageにおける任意のファイル実行の脆弱性（JVN#41853173）について",
+          "url": "https://logstorage.com/2021/01/27/4460/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5626",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5626"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#41853173",
+          "url": "https://jvn.jp/jp/JVN41853173/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-01-27T14:36:13+09:00",
+          "description": "[2021年01月27日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2021-01-27T16:50:06+09:00",
+          "description": "[2021年01月27日]\\n ベンダ情報：内容を更新"
+        },
+        {
+          "historyno": "3",
+          "datetime": "2022-07-26T11:03:43+09:00",
+          "description": "[2022年07月26日]\\n  ベンダ情報：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-01-27T14:12:17+09:00",
+    "datelastupdated": "2022-07-26T11:12:22+09:00",
+    "datepublic": "2021-01-27T00:00:00+09:00"
+  }
+}

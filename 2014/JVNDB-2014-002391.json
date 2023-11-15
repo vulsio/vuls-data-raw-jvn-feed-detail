@@ -1,0 +1,152 @@
+{
+  "vulinfoid": "JVNDB-2014-002391",
+  "vulinfodata": {
+    "title": "PHP の FastCGI Process Manager の sapi/fpm/fpm/fpm_unix.c における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の FastCGI Process Manager (FPM) の sapi/fpm/fpm/fpm_unix.c は、UNIX のソケットに対して 0666 パーミッションを使用するため、権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.4.28 未満",
+            "5.5.12 未満の 5.5.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.9 から 10.9.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された FastCGI クライアントを介して、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT6443",
+          "url": "http://support.apple.com/kb/HT6443"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT6443",
+          "url": "http://support.apple.com/kb/HT6443?viewlocale=ja_JP"
+        },
+        {
+          "type": "vendor",
+          "name": "Bugs",
+          "vulinfoid": "Bug #1307027",
+          "url": "https://bugs.launchpad.net/ubuntu/+source/php5/+bug/1307027"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix bug #67060: use default mode of 660",
+          "url": "https://github.com/php/php-src/commit/35ceea928b12373a3b1e3eecdc32ed323223a40d"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "PHP 5.4.28 Released",
+          "url": "http://www.php.net/archive/2014.php#id2014-05-01-1"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Bug #67060",
+          "url": "https://bugs.php.net/bug.php?id=67060"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1092815",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1092815"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-0185",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0185"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93868849",
+          "url": "http://jvn.jp/vu/JVNVU93868849/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-0185",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0185"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[PATCH] Fix bug #67060: use default mode of 660",
+          "url": "https://hoffmann-christian.info/files/php-fpm/0001-Fix-bug-67060-use-default-mode-of-660.patch"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年05月08日]\\n  掲載\\n[2014年09月24日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT6443) を追加\\n  参考情報：JVN (JVNVU#93868849) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-05-08T14:38:49+09:00",
+    "datelastupdated": "2014-09-24T13:26:16+09:00",
+    "datepublic": "2014-05-01T00:00:00+09:00"
+  }
+}

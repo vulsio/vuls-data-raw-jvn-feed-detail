@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2020-008662",
+  "vulinfodata": {
+    "title": "HiSilicon 社製 hi3520d を利用したビデオエンコーダー製品に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "HiSilicon 社製のビデオエンコーディングプロセッサ hi3520d を利用した IPTV/H.264/H.265 ビデオエンコーダーデバイスは IP ネットワーク上のビデオストリーミング機能をもつ製品に広く利用されています。hi3520d に以下の複数の脆弱性が発見されました。  * ハードコードされたパスワードで管理者用 Web インターフェースにアクセスできる - CVE-2020-24215 * Telnet からの root アクセス - CVE-2020-24218 * パストラバーサルによる任意のファイル閲覧 - CVE-2020-24219 * 認証されていないファイルのアップロード - CVE-2020-24217 * バッファオーバーフロー - CVE-2020-24214 * 不正な RTSP ビデオストリームアクセス - CVE-2020-24216  本脆弱性の詳細、デバイスの影響範囲については、発見者である Alexei Kojenov 氏による<a href=\"https://kojenov.com/2020-09-15-hisilicon-encoder-vulnerabilities/\">ブログ記事</a>を参照してください。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "HiSilicon Technology Co., Ltd",
+          "productname": "(複数の製品)",
+          "cpe": {
+            "text": "cpe:/a:hisilicon:multiple_product",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、遠隔の第三者によって、次のような影響を受ける可能性があります。  * ハードコードされたパスワードにより管理者用 Web インターフェースにアクセスされる - CVE-2020-24215 * ハードコードされたパスワードにより Telnet 経由で root ユーザとしてログインされる - CVE-2020-24218 * パストラバーサルにより、任意のファイルを読み出される - CVE-2020-24219 * 許可されていないファイルアップロードを実行される - CVE-2020-24217 * 改ざんされたファームウェアをアップロードされることで、任意のコードを実行される * コマンドインジェクションにより、任意のコードを実行される * バッファオーバーフローにより、サービス拒否 (DoS) 攻撃をされる - CVE-2020-24214 * RTSP (Real Time Streaming Protocol) を悪用され、許可されていないビデオストリームにアクセスされる - CVE-2020-24216 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2020年9月16日現在、アップデートは提供されていません。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  * ファイアウォールを設置したり、保護された LAN 内に配置したりすることで、当該デバイスへのインターネットアクセスを制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-24214",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24214"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-24215",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24215"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-24216",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24216"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-24217",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24217"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-24218",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24218"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-24219",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24219"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90624081",
+          "url": "http://jvn.jp/cert/JVNVU90624081"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#896979",
+          "url": "https://kb.cert.org/vuls/id/896979"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Software vulnerabilities in HiSilicon based hardware video encoders",
+          "url": "https://kojenov.com/2020-09-15-hisilicon-encoder-vulnerabilities/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-09-18T10:13:07+09:00",
+          "description": "[2020年09月18日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-09-18T10:13:07+09:00",
+    "datelastupdated": "2020-09-18T10:13:07+09:00",
+    "datepublic": "2020-09-17T00:00:00+09:00"
+  }
+}

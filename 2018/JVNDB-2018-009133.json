@@ -1,0 +1,197 @@
+{
+  "vulinfoid": "JVNDB-2018-009133",
+  "vulinfodata": {
+    "title": "自己暗号化ドライブ製品における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "ATA セキュリティモードや TCG OPAL 規格を実装した自己暗号化ドライブ製品には複数の脆弱性が存在し、攻撃者によって暗号化されたドライブの内容を復号される可能性があります。  CVE-2018-12037 ユーザが設定したパスワードと、データ暗号化に使用される暗号鍵の間に、暗号学的な関連付けがなされていません。そのため、ユーザ設定のパスワードを知らずとも、データの復号が可能となります。  CVE-2018-12038 データ暗号化鍵に関する情報が、ウェアレベリング機能を持った記憶領域に記録されています。 ウェアレベリング機能を持ったデバイスでは、データがアップデートされると、物理的に異なる位置に書き込みがなされるため、元のデータが完全には削除されない可能性があります。その結果、データ暗号鍵を新しいパスワードでアップデートした後も、保護されていない、もしくは古いパスワードで保護された以前のデータ暗号鍵にアクセスされる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Micron Technology, Inc.",
+          "productname": "Crucial (Micron) MX100 ドライブ",
+          "cpe": {
+            "text": "cpe:/a:micron:crucial_mx100_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(CVE-2018-12037)"
+          ]
+        },
+        {
+          "name": "Micron Technology, Inc.",
+          "productname": "Crucial (Micron) MX200 ドライブ",
+          "cpe": {
+            "text": "cpe:/a:micron:crucial_mx200_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(CVE-2018-12037)"
+          ]
+        },
+        {
+          "name": "Micron Technology, Inc.",
+          "productname": "Crucial (Micron) MX300 ドライブ",
+          "cpe": {
+            "text": "cpe:/a:micron:crucial_mx300_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(CVE-2018-12037)"
+          ]
+        },
+        {
+          "name": "Samsung Electronics Co., Ltd.",
+          "productname": "Samsung 840 EVO ドライブ",
+          "cpe": {
+            "text": "cpe:/a:misc:samsung_electronics_samsung_840_evo_drive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(CVE-2018-12037)(CVE-2018-12038)"
+          ]
+        },
+        {
+          "name": "Samsung Electronics Co., Ltd.",
+          "productname": "Samsung 850 EVO ドライブ",
+          "cpe": {
+            "text": "cpe:/a:misc:samsung_electronics_samsung_850_evo_drive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(ATA high モードの場合影響を受けます。TCG モードもしくは ATA MAX モードの場合は影響を受けません。)(CVE-2018-12037)"
+          ]
+        },
+        {
+          "name": "Samsung Electronics Co., Ltd.",
+          "productname": "Samsung ポータブルドライブ",
+          "cpe": {
+            "text": "cpe:/a:misc:samsung_electronics_samsung_portable_drive",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "T3 (CVE-2018-12037)",
+            "T5 (CVE-2018-12037)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.3",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.1",
+          "vector": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性の影響を受ける製品への物理的なアクセスが可能な攻撃者により、暗号化されたデータを復号される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報をもとに、修正パッチを適用してください。  [ワークアラウンドを実施する] 修正パッチが提供されていない、あるいは何らかの理由により適用ができない場合、次のワークアラウンドの実施を検討してください。  * 当該製品のハードウェアベースの暗号化のみに頼らず、ソフトウェアベースの暗号化を使用する  [BitLocker に関する追加情報] NCSC-NL によると、Microsoft Windows に同梱されている BitLocker の初期設定では、使用するディスクがハードウェアベースの暗号化機能を持っている場合には、BitLocker 自身では暗号化を行わずにハードウェアベースの暗号化を使用するようになっているとのことです。 BitLocker 自身が暗号化を行うようにグループポリシーの設定を行ってください。なお、グループポリシーの変更後は、ソフトウェアベースでドライブを暗号化し直すため、BitLocker を一度無効化してから有効化し直す必要があります。詳しくは、Microsoft が提供するページを参照してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Micron Technology, Inc.",
+          "vulinfoid": "SSD Support",
+          "url": "http://www.crucial.com/usa/en/support-ssd-firmware"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft",
+          "vulinfoid": "BitLocker Group Policy Settings",
+          "url": "https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-group-policy-settings"
+        },
+        {
+          "type": "vendor",
+          "name": "Samsung Electronics Co., Ltd.",
+          "vulinfoid": "Consumer Notice regarding Samsung SSDs",
+          "url": "https://www.samsung.com/semiconductor/minisite/ssd/support/consumer-notice/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-12037",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12037"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-12038",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12038"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90149383",
+          "url": "https://jvn.jp/vu/JVNVU90149383/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-12037",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-12037"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-12038",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-12038"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Self-Encrypting Drives Have Multiple Vulnerabilities",
+          "url": "https://kb.cert.org/vuls/id/395981/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "NCSC-2018-0984: Meerdere kwetsbaarheden ontdekt in implementaties Self-Encrypting Drives",
+          "url": "https://www.ncsc.nl/dienstverlening/response-op-dreigingen-en-incidenten/beveiligingsadviezen/NCSC-2018-0984+1.00+Meerdere+kwetsbaarheden+ontdekt+in+implementaties+Self-Encrypting+Drives.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Radboud University researchers discover security flaws in widely used data storage devices",
+          "url": "https://www.ru.nl/english/news-agenda/news/vm/icis/cyber-security/2018/radboud-university-researchers-discover-security/"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-08-06T16:03:12+09:00",
+          "description": "[2018年11月08日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-08-06T15:22:17+09:00",
+          "description": "[2019年08月06日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-12037) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-12038) を追加\\n"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-11-08T16:11:51+09:00",
+    "datelastupdated": "2019-08-06T16:54:02+09:00",
+    "datepublic": "2018-11-07T00:00:00+09:00"
+  }
+}

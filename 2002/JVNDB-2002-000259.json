@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2002-000259",
+  "vulinfodata": {
+    "title": "Sun Solaris の kmen_flags パラメータにおけるカーネルがクラッシュする脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Sun Solaris 8 以降のバージョンに実装されている Solaris kernel memory (kmem) アロケータは、カーネルクラッシュのダンプを容易に解析出来るデバッグ機能を提供します。この kmem アロケータは、kmem_flags のカーネルパラメータを変更することでデバッグ機能を制御することが可能です。kmem_flags のカーネルパラメータの 2 ビット目が立てられている場合、kmem アロケータは、全ての未使用バッファに特定のパターンを書き込み、そのパターンに変化が無いかを確認することでメモリ破壊の検知をします。パターンが上書きされた場合、システムがパニック状態に陥ったことを示します。  kmem_flags のカーネルパラメータの 2 ビット目が立てられている場合、権限の無いローカルの攻撃者がシステムをパニック状態に陥らせることが出来る可能性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8 (sparc) ",
+            "8 (x86) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "48067",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-48067-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "48067",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-48067-3"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2002-2194",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2194"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2002-2194",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-2194"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "6080",
+          "url": "http://www.securityfocus.com/bid/6080"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2002-10-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2022-002692",
+  "vulinfodata": {
+    "title": "複数の UEFI 実装における競合状態に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の UEFI 実装において、高い特権で任意のコードが実行される競合状態の問題が発見されました。  一般的に UEFI は、System Management Mode（SMM）と呼ばれる、カーネル特権（ring-0）よりも高い特権（ring-2）のプロセッサ動作モードで実行されます。SMM はメモリ空間上に SMRAM と呼ばれる専用の領域をマップし、高い優先度のシステム管理割り込み処理により実行されます。この SMRAM に対する検証処理の不備により Time of check to time of use（TOCTOU）競合状態が発生する問題（CVE-2021-33164）が複数の UEFI 実装で発見されました。この問題を悪用した <a href=\"https://eclypsium.com/2020/01/30/direct-memory-access-attacks/\" target=\"blank\">DMA タイミング攻撃</a>（Direct Memory Access timing attack）により、任意のコードが SMM の高い権限で実行される可能性があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "以下のような問題が発生する可能性があります。  　* SecureBoot や BootGuard といった、UEFI のセキュリティ機能がバイパスされる 　* 不正なソフトウェアがインストールされる 　* バックドアが設置される 　* システムが正常に起動できなくなる "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "使用しているシステムのベンダが提供する情報を注視し、最新の UEFI ファームウェアを適用してください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-33164",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2021-33164"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96604488",
+          "url": "https://jvn.jp/vu/JVNVU96604488/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#434994 (Multiple race conditions due to TOCTOU flaws in various UEFI Implementations)",
+          "url": "https://kb.cert.org/vuls/id/434994"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Breaking UEFI security with software DMA attacks",
+          "url": "http://blog.cr4.sh/2015/09/breaking-uefi-security-with-software.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Another Brick in the Wall: Uncovering SMM Vulnerabilities in HP Firmware",
+          "url": "https://www.sentinelone.com/labs/another-brick-in-the-wall-uncovering-smm-vulnerabilities-in-hp-firmware/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Secure Coding Guidelines: General",
+          "url": "https://edk2-docs.gitbook.io/edk-ii-secure-coding-guide/secure_coding_guidelines_general"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Memory Protection in SMM",
+          "url": "https://edk2-docs.gitbook.io/a-tour-beyond-bios-memory-protection-in-uefi-bios/memory-protection-in-smm"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "A Tour Beyond BIOS: Using IOMMU for DMA Protection in UEFI Firmware",
+          "url": "https://www.intel.com/content/dam/develop/external/us/en/documents/intel-whitepaper-using-iommu-for-dma-protection-in-uefi-820238.pdf"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-11-10T17:47:58+09:00",
+          "description": "[2022年11月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-11-10T17:47:58+09:00",
+    "datelastupdated": "2022-11-10T17:47:58+09:00",
+    "datepublic": "2022-11-09T00:00:00+09:00"
+  }
+}

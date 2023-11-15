@@ -1,0 +1,102 @@
+{
+  "vulinfoid": "JVNDB-2020-009891",
+  "vulinfodata": {
+    "title": "GE Healthcare 製品に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "GE Healthcare 社が提供する製品には、次の複数の脆弱性が存在します。  　* 保護されていない認証情報の通信 (CWE-523) - CVE-2020-25175 　* 機密性の高いシステム情報の公開 (CWE-497) - CVE-2020-25179"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GE Healthcare",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/o:gehealthcare:multiple_product",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、リモートサービス機能利用中のネットワークトラフィックが解析されることで、特定の認証情報を取得される - CVE-2020-25175 　* 遠隔の第三者によって、初期設定のままの認証情報を利用して機密性の高い情報を窃取されたり、変更されたりする - CVE-2020-25179"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 また、機器ごとに回避策が提供されています。詳しくは開発者が提供する情報(要ログイン)を参照ください。  開発者が提供する情報(要ログイン) https://securityupdate.gehealthcare.com/  　* 影響を受ける機器のパスワードを初期設定の状態から変更する 　* ネットワーク接続を含む、すべての接続に対して、送信元 IP / 宛先 IP / ポートに基づくアクセスルールを明示的に作成する 　　* TELNET、FTP、REXEC、SSH サービスなどが利用するポートに関するルール作成が推奨されています  　* 病院/臨床ネットワークへの外部からの接続は、IPSecVPN と明示的なアクセスルールを利用して制御する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GE Healthcare",
+          "vulinfoid": "Product Security Portal",
+          "url": "https://www.gehealthcare.com/en-US/security"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25175",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25175"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25179",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25179"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSMA-20-343-01",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsma-20-343-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99742251",
+          "url": "http://jvn.jp/cert/JVNVU99742251"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-497",
+          "url": "https://cwe.mitre.org/data/definitions/497.html",
+          "title": "認可されていない制御領域への重要情報の漏えい"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-523",
+          "url": "https://cwe.mitre.org/data/definitions/523.html",
+          "title": "認証情報の保護しない転送"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-12-11T11:42:04+09:00",
+          "description": "[2020年12月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-12-11T11:42:04+09:00",
+    "datelastupdated": "2020-12-11T11:42:04+09:00",
+    "datepublic": "2020-12-09T00:00:00+09:00"
+  }
+}

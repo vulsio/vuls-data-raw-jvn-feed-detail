@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2004-000319",
+  "vulinfodata": {
+    "title": "Adobe Acrobat Reader のバッククォートの取り扱いにおける任意のコマンドが実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Adobe Acrobat Reader では、バイナリ (8 ビット) データを電子メール転送に最適な 6 ビット形式に変換するアルゴリズムである Uuencoding 形式でエンコードされたファイルをサポートしています。  Unix および Linux プラットフォーム用の Adobe Acrobat Reader 5.0.8 以前では、Uuencoding 形式でエンコードされたファイルをデコードする Uudecoding 処理において以下のような複数のセキュリティ上の問題が存在します。  ・ファイル名に含まれるバッククォート (`) 文字の取り扱いが不適切であるため、任意のコマンドが実行されてしまう問題 (CAN-2004-0630)  ・ファイル名の長さの取り扱いが不適切であるため、バッファオーバーフローが発生する問題 (CAN-2004-0631)  これらの問題を利用するリモート/ローカルの攻撃者は、意図的な名前を持つファイルを送りつけ、Acrobat Reader で開くよう誘導することにより、標的ユーザの実行権限で任意のコマンドや任意のコードを実行することが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "アドビ",
+          "productname": "Adobe Reader",
+          "cpe": {
+            "text": "cpe:/a:adobe:acrobat_reader",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0.8"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Adobe Support Knowledgebase",
+          "vulinfoid": "322914",
+          "url": "http://www.adobe.com/support/techdocs/322914.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Adobe サポートデータベース",
+          "vulinfoid": "322914",
+          "url": "http://support.adobe.co.jp/faq/faq/qadoc.sv?224715+002"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2004:432",
+          "url": "http://rhn.redhat.com/errata/RHSA-2004-432.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2004:432",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-432J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2004-0630",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0630"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2004-0630",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0630"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA12285",
+          "url": "http://secunia.com/advisories/12285/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "10932",
+          "url": "http://www.securityfocus.com/bid/10932"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "10931",
+          "url": "http://www.securityfocus.com/bid/10931"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2004-08-12T00:00:00+09:00"
+  }
+}

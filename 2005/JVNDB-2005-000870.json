@@ -1,0 +1,149 @@
+{
+  "vulinfoid": "JVNDB-2005-000870",
+  "vulinfodata": {
+    "title": "Apache Tomcat の Tomcat Manager とサンプルアプリケーションにおけるクロスサイトスクリプティングの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tomcat の複数の JSP サンプルアプリケーション (el/functions.jsp, el/implicit-objects.jsp, jspx/textRotate.jspx) には、クロスサイトスクリプティングの脆弱性が存在します。  また Tomcat Manager に関するクロスサイトスクリプティングの脆弱性についても併せて報告されていますが、この脆弱性を悪用するためには管理アクセスを必要とし、標的ユーザに Tomcat Manager への認証を行わせる必要があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.6 およびそれ以前",
+            "4.1.31 およびそれ以前",
+            "5.0.30 およびそれ以前",
+            "5.5.6 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "脆弱性が存在するアプリケーションを使用している場合、第三者により任意の HTML や スクリプトを挿入される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています (Apache Tomcat 4.1.32, 5.5.7 で修正済み)。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 4.1.32",
+          "url": "http://tomcat.apache.org/security-4.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Tomcat",
+          "vulinfoid": "Fixed in Apache Tomcat 5.5.7, 5.0.SVN",
+          "url": "http://tomcat.apache.org/security-5.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "tomcat4 (V2.x)",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1168"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-4838",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4838"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "36467",
+          "url": "http://xforce.iss.net/xforce/xfdb/36467"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-4838",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-4838"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "12721",
+          "url": "http://www.osvdb.org/12721"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "34878",
+          "url": "http://www.osvdb.org/34878"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "34879",
+          "url": "http://www.osvdb.org/34879"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA13737",
+          "url": "http://secunia.com/advisories/13737"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1012793",
+          "url": "http://securitytracker.com/id?1012793"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年05月21日]\\n  掲載\\n[2007年12月10日]\\n  影響を受けるシステム：ミラクル・リナックス (tomcat4 (V2.x)) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (tomcat4 (V2.x)) 追加。"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-05-21T17:56:48+09:00",
+    "datelastupdated": "2007-12-10T14:09:18+09:00",
+    "datepublic": "2005-12-31T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2010-005444",
+  "vulinfodata": {
+    "title": "Samba の smbd におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Samba の smbd の sesssetup.c の reply_sesssetup_and_X_spnego 関数には、範囲外読み込みを誘発される、およびサービス運用妨害 (プロセスクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Samba Project",
+          "productname": "Samba",
+          "cpe": {
+            "text": "cpe:/a:samba:samba",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.4.8 未満、および 3.5.2 未満の 3.5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、Session Setup AndX リクエスト内の \\xff\\xff セキュリティの blob 長を介して、範囲外読み込みを誘発される、およびサービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "s3: Fix an uninitialized variable read",
+          "url": "http://git.samba.org/?p=samba.git;a=commit;h=9280051bfba337458722fb157f3082f93cbd9f2b"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-1642",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1642"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-1642",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1642"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年12月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-12-20T19:29:04+09:00",
+    "datelastupdated": "2012-12-20T19:29:04+09:00",
+    "datepublic": "2010-05-14T00:00:00+09:00"
+  }
+}

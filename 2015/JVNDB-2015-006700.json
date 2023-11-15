@@ -1,0 +1,93 @@
+{
+  "vulinfoid": "JVNDB-2015-006700",
+  "vulinfodata": {
+    "title": "Android の kernel/sys.c の prctl_set_vma_anon_name 関数における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Android の kernel/sys.c の prctl_set_vma_anon_name 関数は、特定のアップデート作業において単一の vma のみがアクセスされていることを確認しないため、権限を取得される、またはサービス運用妨害 (vma リストの破損) 状態にされる脆弱性が存在します。  ベンダは、本脆弱性を Bug 20017123 として公開しています。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Android",
+          "cpe": {
+            "text": "cpe:/o:google:android",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2016-01-01 より前の 6.0",
+            "5.1.1 LMY49F 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工されたアプリケーションを介して、権限を取得される、またはサービス運用妨害 (vma リストの破損) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android",
+          "vulinfoid": "mm: fix prctl_set_vma_anon_name",
+          "url": "https://android.googlesource.com/kernel%2Fcommon/+/69bfe2d957d903521d32324190c2754cb073be15"
+        },
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Nexus Security Bulletin - January 2016",
+          "url": "http://source.android.com/security/bulletin/2016-01-01.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6640",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6640"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6640",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6640"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-12T16:01:06+09:00",
+    "datelastupdated": "2016-01-12T16:01:06+09:00",
+    "datepublic": "2015-08-21T00:00:00+09:00"
+  }
+}

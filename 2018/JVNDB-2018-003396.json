@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2018-003396",
+  "vulinfodata": {
+    "title": "BIND に複数のサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "BIND には、次のサービス運用妨害 (DoS) の脆弱性が存在します。  * 少なくとも一つ以上の zone 情報を提供する、 NOTIFY メッセージの送信元を制限していない Slave サーバにおける、データベースのカウント処理に関する assertion failure - CVE-2018-5736 * serve-stale 機能の実装における assertion failure および serve-stale 機能と NSEC aggressive negative caching との相互作用における意図しない動作 - CVE-2018-5737"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.12.0",
+            "9.12.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 　* BIND 9.12.1-P2  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 　* 信頼できるソースからのみ NOTIFY メッセージを受信する - CVE-2018-5736 　* named.conf にて \"max-stale-ttl\" を 0 (ゼロ) に設定する (serve-stale 機能も無効となります) - CVE-2018-5737"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2018-5736: Multiple transfers of a zone in quick succession can cause an assertion failure in rbtdb.c",
+          "url": "https://kb.isc.org/article/AA-01602/74/CVE-2018-5736"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2018-5737: BIND 9.12's serve-stale implementation can cause an assertion failure in rbtdb.c or other undesirable behavior, even if serve-stale is not enabled.",
+          "url": "https://kb.isc.org/article/AA-01606/74/CVE-2018-5737"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5736",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5736"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2018-5737",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5737"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91301831",
+          "url": "https://jvn.jp/vu/JVNVU91301831/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5736",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5736"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2018-5737",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5737"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "BIND 9.12.xの脆弱性（DNSサービスの停止）について（CVE-2018-5736）",
+          "url": "https://jprs.jp/tech/security/2018-05-21-bind9-vuln-zonedb.html"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "BIND 9.12.xの脆弱性（サービス性能の劣化及びDNSサービスの停止）について（CVE-2018-5737）",
+          "url": "https://jprs.jp/tech/security/2018-05-21-bind9-vuln-servestale.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2018-05-23T13:45:06+09:00",
+          "description": "[2018年05月23日]   掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-08-28T09:49:24+09:00",
+          "description": "[2019年08月28日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5736) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5737) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2018-05-23T14:25:47+09:00",
+    "datelastupdated": "2019-08-28T09:50:11+09:00",
+    "datepublic": "2018-05-21T00:00:00+09:00"
+  }
+}

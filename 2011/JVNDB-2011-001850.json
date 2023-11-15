@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2011-001850",
+  "vulinfodata": {
+    "title": "ISC BIND 9.8 系にサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC BIND 9 には、特定の RPZ 設定を実装している場合においてサービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND 9.8 には、キャッシュ DNS サーバがクエリを受信したときに named プロセスが終了する、サービス運用妨害 (DoS) の脆弱性が存在します。 本脆弱性は、RPZ 機能を有効にした named において、RPZ のゾーンファイルに DNAME レコードおよび特定の CNAME レコードが含まれている場合に発生します。  ISC から、以下の脆弱性情報が公開されています。  \"A defect in the affected versions of BIND could cause the \"named\" process to exit when queried, if the server has recursion enabled and was configured with an RPZ zone containing certain types of records. Specifically, these are any DNAME record and certain kinds of CNAME records.  The patch release of BIND 9.8.0-P4 alters the behavior of RPZ zones by ignoring any DNAME records in an RPZ zone, and correctly returning CNAME records from RPZ zones.  Note that DNAME has no defined effect on the RPZ engine and its presence in an RPZ zone is ignored. The definitive list of meaningful patterns in an RPZ zone is given in the BIND 9 Administrative Reference Manual and also in ISC Technical Note 2010-1.\""
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.8.1b1 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] この問題は、使用している OS のベンダや配布元が提供する修正済みのバージョンに更新することで解決します。詳細については、ベンダや配布元が提供する情報を参照してください。  ISC は、対策済みバージョン 9.8.0-P4 を提供しています。  [ワークアラウンドを実施する] 対策版を適用するまでの間、以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　　・ RPZ のゾーンファイルに DNAME レコードおよび CNAME レコードを含めない"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ISC BIND",
+          "vulinfoid": "ISC BIND 9 Remote Crash with Certain RPZ Configurations",
+          "url": "http://www.isc.org/software/bind/advisories/cve-2011-2465"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND",
+          "vulinfoid": "ISC Technical Note 2010-1DNS",
+          "url": "http://ftp.isc.org/isc/dnsrpz/isc-tn-2010-1.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-2465",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2465"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2011-0019",
+          "url": "https://www.jpcert.or.jp/at/2011/at110019.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JPRS",
+          "vulinfoid": "BIND 9.8.xのResponse Policy Zones（RPZ）機能の実装上のバグによるnamedのサービス停止について",
+          "url": "http://jprs.jp/tech/security/2011-07-05-bind98-vuln-rpz-dname.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#137968",
+          "url": "http://jvn.jp/cert/JVNVU137968"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-2465",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2465"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA45185",
+          "url": "http://secunia.com/advisories/45185"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "48565",
+          "url": "http://www.securityfocus.com/bid/48565"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1025743",
+          "url": "http://www.securitytracker.com/id/1025743"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#137968",
+          "url": "http://www.kb.cert.org/vuls/id/137968"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-noinfo",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "情報不足"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年07月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-07-11T14:25:36+09:00",
+    "datelastupdated": "2011-07-11T14:25:36+09:00",
+    "datepublic": "2011-07-06T00:00:00+09:00"
+  }
+}

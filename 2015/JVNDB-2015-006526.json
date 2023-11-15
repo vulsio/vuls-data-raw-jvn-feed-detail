@@ -1,0 +1,169 @@
+{
+  "vulinfoid": "JVNDB-2015-006526",
+  "vulinfodata": {
+    "title": "Seagate および LaCie ワイヤレスストレージ製品に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Seagate が提供するワイヤレスストレージ製品には、複数の脆弱性が存在します。   認証情報 (パスワード) がハードコードされている問題 (CWE-798) - CVE-2015-2874 マニュアルに記載のない telnet サービスが立ち上がっており、ユーザ名 \"root\"、デフォルトのパスワードを使用してアクセス可能です。  CWE-798: Use of Hard-coded Credentials https://cwe.mitre.org/data/definitions/798.html  なお、National Vulnerability Database (NVD) では、CWE-255 として公開されています。   リクエストの直接送信 (Forced Browsing) (CWE-425) - CVE-2015-2875 デフォルト設定で、機器に無線でアクセスした際に、誰でもファイルをダウンロードすることが可能です。ファイルシステム上の任意のファイルを直接ダウンロードできます。  CWE-425: Direct Request ('Forced Browsing') https://cwe.mitre.org/data/definitions/425.html  なお、National Vulnerability Database (NVD) では、CWE-22 として公開されています。   危険なタイプのファイルの無制限アップロード (CWE-434) - CVE-2015-2876 デフォルト設定で、機器に無線でアクセスした際に、/media/sda2 ファイルシステムにファイルをアップロードすることが可能です。このファイルシステムはファイル共有のために用意されているものです。  CWE-434: Unrestricted Upload of File with Dangerous Type https://cwe.mitre.org/data/definitions/434.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "LaCie",
+          "productname": "LaCie FUEL",
+          "cpe": {
+            "text": "cpe:/h:lacie:lacie_fuel",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Seagate Technology LLC",
+          "productname": "Seagate GoFlex Satellite",
+          "cpe": {
+            "text": "cpe:/h:seagate:goflex_sattelite",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Seagate Technology LLC",
+          "productname": "Seagate Wireless Mobile Storage",
+          "cpe": {
+            "text": "cpe:/h:seagate:wireless_mobile_storage",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Seagate Technology LLC",
+          "productname": "Seagate Wireless Plus Mobile Storage",
+          "cpe": {
+            "text": "cpe:/h:seagate:wireless_plus_mobile_storage",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9",
+          "vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、当該製品上の任意のファイルにアクセスされたり、root 権限で操作されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 開発者は、本脆弱性の対策版としてファームウェアバージョン 3.4.1.105 をリリースしています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Seagate",
+          "vulinfoid": "Firmware Updates for Seagate Products",
+          "url": "http://knowledge.seagate.com/articles/en_US/FAQ/207931en"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2874",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2874"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2875",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2875"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2876",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2876"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92833570",
+          "url": "http://jvn.jp/vu/JVNVU92833570/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2876",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2876"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2874",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2874"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2875",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2875"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "LaCie Information for VU#903500",
+          "url": "https://www.kb.cert.org/vuls/id/GWAN-A26L3F"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "Seagate Technology LLC Information for VU#903500",
+          "url": "https://www.kb.cert.org/vuls/id/GWAN-9ZGTUH"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#903500",
+          "url": "https://www.kb.cert.org/vuls/id/903500"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-255",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+          "title": "証明書・パスワードの管理"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月28日]\\n  掲載\\n[2016年01月14日]\\n  概要：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2874) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2875) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2876) を追加\\n  参考情報：US-CERT Vulnerability Note (Seagate Technology LLC Information for VU#903500) を追加\\n  参考情報：US-CERT Vulnerability Note (LaCie Information for VU#903500) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-28T10:28:24+09:00",
+    "datelastupdated": "2016-01-14T18:13:48+09:00",
+    "datepublic": "2015-09-01T00:00:00+09:00"
+  }
+}

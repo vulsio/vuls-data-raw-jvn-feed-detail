@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2015-005719",
+  "vulinfodata": {
+    "title": "MobaXterm にコマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "MobaXterm 8.3 より前のバージョンには、X11 サーバをデフォルト設定で使用している場合に ポート 6000/TCP からコマンドインジェクション攻撃を受ける可能性があります。  重要な機能に対する認証の欠如の問題 (CWE-306) - CVE-2015-7244 MobaXterm の X11 サーバ機能は全てのインターフェースで待ち受け状態になっており、さらに認証なしにポート 6000/TCP への X11 接続が可能です。遠隔の攻撃者はユーザに気づかれることなく当該製品に接続し、当該製品を実行しているユーザの権限で X11 のコマンドを実行するなどの操作を行うことができます。  CWE-306: Missing Authentication for Critical Function http://cwe.mitre.org/data/definitions/306.html  なお、National Vulnerability Database (NVD) では、CWE-284 として公開されています。  CWE-284: Improper Access Control http://cwe.mitre.org/data/definitions/284.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Mobatek",
+          "productname": "MobaXterm",
+          "cpe": {
+            "text": "cpe:/a:mobatek:mobaxterm",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.3 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、当該製品を実行しているユーザの権限で任意の X11 のコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Mobatek は本脆弱性の対策として、外部からの接続をユーザに通知し、接続を許可するか拒否するかを選択できる機能を追加した MobaXterm 8.3 をリリースしています。 開発者が提供する情報をもとに、最新版へアップデートしてください。  MobaXterm 8.3 http://mobaxterm.mobatek.net/download-home-edition.html"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Mobatek",
+          "vulinfoid": "MobaXterm Home Edition",
+          "url": "http://mobaxterm.mobatek.net/download-home-edition.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Mobatek blog",
+          "vulinfoid": "MobaXterm new release 8.3",
+          "url": "http://blog.mobatek.net/post/mobaxterm-new-release-8.3/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7244",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7244"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95822377",
+          "url": "http://jvn.jp/cert/JVNVU95822377"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7244",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7244"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#316888",
+          "url": "http://www.kb.cert.org/vuls/id/316888"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE-2015-7244: MobaXTerm 8.2 Unauthenticated X11",
+          "url": "http://www.securifera.com/advisories/cve-2015-7244/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-05T10:01:43+09:00",
+    "datelastupdated": "2015-11-05T10:01:43+09:00",
+    "datepublic": "2015-11-02T00:00:00+09:00"
+  }
+}

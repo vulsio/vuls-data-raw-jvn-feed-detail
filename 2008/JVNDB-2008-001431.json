@@ -1,0 +1,596 @@
+{
+  "vulinfoid": "JVNDB-2008-001431",
+  "vulinfodata": {
+    "title": "SNMPv3 実装の不適切な HMAC 処理による認証回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "SNMPv3 の実装には、細工されたパケットを適切に処理しないため認証回避の脆弱性が存在します。  SNMP (Simple Network Management Protocol) は、ネットワークデバイスの監視や管理のために広く使用されているプロトコルです。SNMPv3 は、認証やプライバシコントロールといったセキュリティ機能をサポートしています。SNMPv3 の認証では、HMAC (keyed-Hash Message Authentication Code) が使用されています。このコードは、秘密鍵と暗号ハッシュ機能を組み合わせてを生成されています。  SNMPv3 の実装によっては、認証処理に脆弱性があるため細工されたパケットを処理することで認証が回避されてしまう可能性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Net-SNMP",
+          "productname": "Net-SNMP",
+          "cpe": {
+            "text": "cpe:/a:net-snmp:net-snmp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.2.4.1 未満",
+            "5.3.2.1 未満",
+            "5.4.1.1 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.5.4 未満"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X Server",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.5.4 未満"
+          ]
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "CentreCOM",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:centrecom",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9424T/SP",
+            "9424T/SP-E",
+            "9424Ts/XP-E"
+          ]
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "SwitchBlade 5400Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:switchblade_5400s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "SwitchBlade 7800R シリーズ",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:switchblade_7800r",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "SwitchBlade 7800Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:switchblade_7800s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "SwitchBlade x908",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:switchblade_x908",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "x900-12XT/S",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:x900-12xts",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "x900-24XS",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:x900-24xs",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アライドテレシス",
+          "productname": "x900-24XT",
+          "cpe": {
+            "text": "cpe:/h:allied_telesis_k.k.:x900-24xt",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX2400Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax2400s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX3600Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax3600s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX5400Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax5400s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX6300Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax6300s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX6700Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax6700s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX7700Rシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax7700r",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX7800Rシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax7800r",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "アラクサラネットワークス",
+          "productname": "AX7800Sシリーズ",
+          "cpe": {
+            "text": "cpe:/h:alaxala:ax7800s",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/neu",
+          "versionnumber": [
+            "128 2.00 から 2.42"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/Plus",
+          "versionnumber": [
+            "1.00 から 1.91"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/Turbo",
+          "versionnumber": [
+            "1.00 から 1.91"
+          ]
+        },
+        {
+          "name": "インターネットイニシアティブ",
+          "productname": "SEIL/X1,X2",
+          "versionnumber": [
+            "1.00 から 1.20"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3 (x86) ",
+            "3 (x86-64) ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "OpenSolaris",
+          "cpe": {
+            "text": "cpe:/o:sun:opensolaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(sparc) ",
+            "(x86) "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (sparc) ",
+            "10 (x86) "
+          ]
+        },
+        {
+          "name": "シスコシステムズ",
+          "productname": "Cisco CatOS",
+          "cpe": {
+            "text": "cpe:/o:cisco:catos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.x "
+          ]
+        },
+        {
+          "name": "シスコシステムズ",
+          "productname": "Cisco IOS",
+          "cpe": {
+            "text": "cpe:/o:cisco:ios",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.4 "
+          ]
+        },
+        {
+          "name": "シスコシステムズ",
+          "productname": "Cisco IOS XR",
+          "cpe": {
+            "text": "cpe:/o:cisco:ios_xr",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "4.0 ",
+            "5.0 (client) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Linux Advanced Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:linux_advanced_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "IP8800/S,/R",
+          "cpe": {
+            "text": "cpe:/a:nec:ip8800_s_r",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R400シリーズ(AX7800Rシリーズ, AX7700Rシリーズ)",
+            "S2400シリーズ(AX2400Sシリーズ)",
+            "S3600シリーズ(AX3600Sシリーズ)",
+            "S400シリーズ(AX7800Sシリーズ)",
+            "S6300シリーズ(AX6300Sシリーズ)",
+            "S6700シリーズ(AX6700Sシリーズ)"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "GR4000",
+          "cpe": {
+            "text": "cpe:/h:hitachi:gr4000",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "GS3000",
+          "cpe": {
+            "text": "cpe:/h:hitachi:gs3000",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日立",
+          "productname": "GS4000",
+          "cpe": {
+            "text": "cpe:/h:hitachi:gs4000",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "富士通",
+          "productname": "IPCOMシリーズ",
+          "cpe": {
+            "text": "cpe:/h:fujitsu:ipcom",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって SNMP オブジェクトを読まれたり変更されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 各開発元が提供する最新バージョンへアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "Security Update 2008-004",
+          "url": "http://support.apple.com/kb/HT2163"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "net-snmp-5.3.1-19.1.1AXS3",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=146"
+        },
+        {
+          "type": "vendor",
+          "name": "Cisco Security Advisory",
+          "vulinfoid": "cisco-sa-20080610-snmpv3",
+          "url": "http://www.cisco.com/warp/public/707/cisco-sa-20080610-snmpv3.shtml"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "1291",
+          "url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=1291"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "1328",
+          "url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=1328"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV08-007",
+          "url": "http://www.nec.co.jp/security-info/secinfo/nv08-007.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Net-SNMP",
+          "vulinfoid": "Fixes VU#878044 and CVE-2008-0960",
+          "url": "https://sourceforge.net/tracker/index.php?func=detail&aid=1989089&group_id=12694&atid=456380"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2008:0529",
+          "url": "https://rhn.redhat.com/errata/RHSA-2008-0529.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2008:0528",
+          "url": "https://rhn.redhat.com/errata/RHSA-2008-0528.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SEIL シリーズ セキュリティ&脆弱性情報",
+          "vulinfoid": "Net-SNMP SNMPv3 USM 認証処理の脆弱性",
+          "url": "http://www.seil.jp/seilseries/security/2008/06111446.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "238865",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-66-238865-1"
+        },
+        {
+          "type": "vendor",
+          "name": "サポート技術情報",
+          "vulinfoid": "snmp_12",
+          "url": "http://fenics.fujitsu.com/products/support/2008/snmp_12.html"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティ・脆弱性について",
+          "vulinfoid": "SNMPv3に関する認証回避の脆弱性について",
+          "url": "http://www.allied-telesis.co.jp/support/list/faq/vuls/20080924.html"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティ情報",
+          "vulinfoid": "AX-VU2008-02",
+          "url": "http://www.alaxala.com/jp/support/security/20080630.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2008:0529",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0529J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2008:0528",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0528J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "横河セキュリティ対策情報",
+          "vulinfoid": "YSAR-15-0002: Vnet/IP用ネットワークスイッチにSNMPv3認証迂回の脆弱性",
+          "url": "http://www.yokogawa.co.jp/dcs/security/ysar/dcs-ysar-index-ja.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "株式会社日立製作所",
+          "vulinfoid": "SNMPv3",
+          "url": "http://www.hitachi.co.jp/Prod/comp/network/notice/SNMPv3.html"
+        },
+        {
+          "type": "vendor",
+          "name": "富士通 セキュリティ情報",
+          "vulinfoid": "TA08-162A",
+          "url": "http://software.fujitsu.com/jp/security/vulnerabilities/ta08-162a.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-0960",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0960"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA08-162A",
+          "url": "http://jvn.jp/cert/JVNTA08-162A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#878044",
+          "url": "http://jvn.jp/cert/JVNVU878044/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA08-162A",
+          "url": "http://jvn.jp/tr/TRTA08-162A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-0960",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-0960"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA30574",
+          "url": "http://secunia.com/advisories/30574/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "29623",
+          "url": "http://www.securityfocus.com/bid/29623"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA08-162A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA08-162A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#878044",
+          "url": "http://www.kb.cert.org/vuls/id/878044"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2008年07月03日]\\n  掲載\\n[2008年07月14日]\\n  影響を受けるシステム：ミラクル・リナックス (1291) の情報を追加\\n  影響を受けるシステム：日本電気 (NV08-007) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (1291) を追加\\n  ベンダ情報：日本電気 (NV08-007) を追加\\n[2008年09月11日]\\n  影響を受けるシステム：ミラクル・リナックス (net-snmp-5.3.1-19.1.1AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (net-snmp-5.3.1-19.1.1AXS3) を追加\\n[2008年10月09日]\\n  影響を受けるシステム：アライドテレシス (SNMPv3に関する認証回避の脆弱性について) の情報を追加\\n  ベンダ情報：アライドテレシス (SNMPv3に関する認証回避の脆弱性について) を追加\\n[2008年11月10日]\\n  影響を受けるシステム：ミラクル・リナックス（1328）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（1328）を追加\\n[2009年02月05日]\\n  影響を受けるシステム：富士通（snmp_12）の情報を追加\\n  ベンダ情報：富士通（snmp_12）を追加\\n[2016年11月10日]\\n  ベンダ情報：横河電機株式会社（YSAR-15-0002: Vnet/IP用ネットワークスイッチにSNMPv3認証迂回の脆弱性）を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2008-07-03T14:08:36+09:00",
+    "datelastupdated": "2016-11-10T16:06:45+09:00",
+    "datepublic": "2008-06-11T00:00:00+09:00"
+  }
+}

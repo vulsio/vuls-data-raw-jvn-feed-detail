@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-005514",
+  "vulinfodata": {
+    "title": "GNU C Library の sysdeps/posix/getaddrinfo.c の getaddrinfo 関数におけるスタックベースのバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "GNU C Library (別名 glibc または libc6) の sysdeps/posix/getaddrinfo.c の getaddrinfo 関数には、スタックベースのバッファオーバーフローの脆弱性が存在します。  本脆弱性は、CVE-2013-1914 に対する修正が不十分だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GNU C Library",
+          "cpe": {
+            "text": "cpe:/a:gnu:glibc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.18 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、大量の AF_INET6 のアドレス結果 (AF_INET6 address results) を誘発する (1) ホストネーム、または (2) IP アドレスを介して、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2013:283",
+          "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:283"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2013:284",
+          "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:284"
+        },
+        {
+          "type": "vendor",
+          "name": "sourceware.org",
+          "vulinfoid": "Bug 16072",
+          "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=16072"
+        },
+        {
+          "type": "vendor",
+          "name": "sourceware.org",
+          "vulinfoid": "[PATCH][BZ #16072] Fix stack overflow due to large AF_INET6 requests",
+          "url": "https://sourceware.org/ml/libc-alpha/2013-10/msg00733.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4458",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4458"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4458",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4458"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年12月16日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-12-16T19:58:54+09:00",
+    "datelastupdated": "2013-12-16T19:58:54+09:00",
+    "datepublic": "2013-10-22T00:00:00+09:00"
+  }
+}

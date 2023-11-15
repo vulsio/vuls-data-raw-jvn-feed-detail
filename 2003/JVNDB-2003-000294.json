@@ -1,0 +1,135 @@
+{
+  "vulinfoid": "JVNDB-2003-000294",
+  "vulinfodata": {
+    "title": "saned の RPC リクエスト SANE_NET_INIT によるアクセス制御を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "sane-backend に含まれている saned では、 SANE_NET_INIT リクエストによる RPC 接続の確立後に、接続元の IP アドレスの妥当性の確認が行われているため、本来なら拒否するべきクライアントからの SANE_NET_INIT リクエストを受信してしまう脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "SANE",
+          "productname": "SANE",
+          "cpe": {
+            "text": "cpe:/a:sane:sane",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.10 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.1  ",
+            "7.2  ",
+            "7.3  ",
+            "8.0  "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "SANE_NET_INIT リクエストを送りつけることにより、アクセスコントロールを回避される、あるいは、大量の RPC リクエストを送信されることで、 saned がサービス運用妨害 (DoS) 状態となる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "sane-backends (V2.x)",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1108"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:278",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-278.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SANE - Scanner Access Now Easy",
+          "vulinfoid": "Top Page",
+          "url": "http://www.sane-project.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:278",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-278J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2003-0773",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0773"
+        },
+        {
+          "type": "advisory",
+          "name": "ISS X-Force Database",
+          "vulinfoid": "13155",
+          "url": "http://xforce.iss.net/xforce/xfdb/13155"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2003-0773",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0773"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "8595",
+          "url": "http://www.securityfocus.com/bid/8595"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]\\n  掲載\\n[2007年08月02日]\\n  影響を受けるシステム：ミラクル・リナックス (sane-backends (V2.x)) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (sane-backends (V2.x)) 追加。"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-08-02T14:16:59+09:00",
+    "datepublic": "2003-10-07T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2023-000079",
+  "vulinfodata": {
+    "title": "SIG情報連携ポータルの API における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "一般社団法人JPCERTコーディネーションセンターが提供する SIG情報連携ポータルの 「SOC間連携API」 には、次の複数の脆弱性が存在します。<ul><li>「情報提供機能」における認可処理の不備 (CWE-285) - CVE-2023-38751 <li>「情報提供機能」および「グループメッセージ機能」における認可処理の不備 (CWE-285) - CVE-2023-38752</ul>この脆弱性情報は、製品利用者への周知を目的に、開発者と下記の方が連携して JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 一般社団法人JPCERTコーディネーションセンター 情報基盤サービスグループ 根岸祐介 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "一般社団法人JPCERTコーディネーションセンター",
+          "productname": "SIG情報連携ポータル",
+          "cpe": {
+            "text": "cpe:/a:jpcert:sig_portal",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 4.4.0 から 4.7.7 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。<ul><li>情報提供操作時に非開示指定された情報提供先の組織情報が、API の利用権限を有するユーザーによって閲覧可能となる - CVE-2023-38751<li>システム設定により非開示指定された投稿者の属性情報が、API の利用権限を有するユーザーによって閲覧可能となる - CVE-2023-38752</ul>"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。 詳細は、開発者に確認してください。  [ワークアラウンドを実施する] パッチを適用できない場合には、次の回避策を適用することで、本脆弱性の影響を回避することが可能です。<ul><li>API 利用停止の設定を行う</ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "一般社団法人JPCERTコーディネーションセンターからの情報",
+          "url": "https://jvn.jp/jp/JVN83334799/996874/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-38752",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-38752"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-38751",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-38751"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#83334799",
+          "url": "https://jvn.jp/jp/JVN83334799/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-08-03T10:04:22+09:00",
+          "description": "[2023年08月07日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-08-07T12:03:16+09:00",
+    "datelastupdated": "2023-08-07T12:03:16+09:00",
+    "datepublic": "2023-08-07T00:00:00+09:00"
+  }
+}

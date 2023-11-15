@@ -1,0 +1,302 @@
+{
+  "vulinfoid": "JVNDB-2011-001668",
+  "vulinfodata": {
+    "title": "APR ライブラリおよび Apache HTTP Server の fnmatch 実装におけるサービス運用妨害 (無限ループ) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Portable Runtime (APR) ライブラリおよび Apache HTTP Server の apr_fnmatch.c 内にある、fnmatch 実装には、サービス運用妨害 (無限ループ) 状態となる脆弱性が存在します。 本脆弱性は CVE-2011-0419 の修正が不完全だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.19 未満"
+          ]
+        },
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Portable Runtime",
+          "cpe": {
+            "text": "cpe:/a:apache:portable_runtime",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.5 未満"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 ",
+            "11 Express"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (x86) ",
+            "3 (x86-64) ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP Secure Web Server for OpenVMS",
+          "cpe": {
+            "text": "cpe:/a:hp:secure_web_server_for_open_vms",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V2.2 およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "4.8 (as) ",
+            "4.8 (es) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "5.0 (client) ",
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.z (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Long Life",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_long_life",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(v. 5.6 server)"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_server_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.1.z  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、ワイルドカードのパターンタイプと一致しない URI を介して、サービス運用妨害 (無限ループ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Software Foundation",
+          "vulinfoid": "Apache HTTP Server 2.2.19 Released",
+          "url": "http://www.apache.org/dist/httpd/Announcement2.2.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Software Foundation",
+          "vulinfoid": "Changes for APR 1.4.5",
+          "url": "http://www.apache.org/dist/apr/CHANGES-APR-1.4"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "apr-1.2.7-11.AXS3.5",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1444"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Support document",
+          "vulinfoid": "HPSBOV02822 SSRT100966",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c03517954"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2223",
+          "url": "https://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2223"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "2229",
+          "url": "https://www.miraclelinux.com/support/index.php?q=node/99&errata_id=2229"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:0844",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-0844.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "multiple_vulnerabilities_in_apache_portable",
+          "url": "http://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_apache_portable"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-1928",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1928"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-1928",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1928"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA44558",
+          "url": "http://secunia.com/advisories/44558"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA44661",
+          "url": "http://secunia.com/advisories/44661"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "47929",
+          "url": "http://www.securityfocus.com/bid/47929"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年06月02日]\\n  掲載\\n[2011年06月14日]\\n  影響を受けるシステム：ミラクル・リナックス (2223) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (2223) を追加\\n[2011年07月19日]\\n  影響を受けるシステム：ミラクル・リナックス (apr-1.2.7-11.AXS3.5) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (apr-1.2.7-11.AXS3.5) を追加\\n[2011年08月01日]\\n  影響を受けるシステム：ミラクル・リナックス (2229) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (2229) を追加\\n[2011年11月28日]\\n  影響を受けるシステム：オラクル (multiple_vulnerabilities_in_apache_portable) の情報を追加\\n  ベンダ情報：オラクル (multiple_vulnerabilities_in_apache_portable) を追加\\n[2012年11月28日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBOV02822 SSRT100966) を追加\\n  影響を受けるシステム：ヒューレット・パッカード (HPSBOV02822 SSRT100966) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-06-02T09:44:41+09:00",
+    "datelastupdated": "2012-11-28T15:46:12+09:00",
+    "datepublic": "2011-05-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "vulinfoid": "JVNDB-2005-000354",
+  "vulinfodata": {
+    "title": "GNU shtool における不適切な一時ファイルの作成によりシンボリックリンク攻撃を受ける脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  GNU shtool は libtool などと同様に、シェル上で使用する複数のコマンド群をマシンに依存しないようして一つにまとめたシェルスクリプトで、PHP や mm、nmap などのさまざまな製品に同梱されています。  GNU shtool 2.0.1 以前には、一時ファイルを取り扱う際に競合状態が発生してセキュリティ上不適切な方法で一時ファイルを作成してしまう不備が存在し、シンボリックリンク攻撃を受ける問題が存在します。(CAN-2005-1751)  この問題を利用するローカルの攻撃者は、shtool が使用される際にシンボリックリンク攻撃を試みることにより、shtool のスクリプトを実行するユーザの権限で任意のファイルを作成する、あるいは上書きする可能性があります。  尚、Gentoo Linux より、上記の問題とは異なる変種の問題が加えて報告されています。 (CAN-2005-1759)"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.11 およびそれ以前",
+            "5.0.4 およびそれ以前"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.2",
+          "vector": "AV:L/AC:H/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "ChangeLog-4",
+          "url": "http://jp2.php.net/ChangeLog-4.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "ChangeLog-5",
+          "url": "http://jp2.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "33150",
+          "url": "http://bugs.php.net/bug.php?id=33150"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "159000",
+          "url": "http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=159000"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:564",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-564.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:564",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-564J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1759",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1759"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1759",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1759"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA15496",
+          "url": "http://secunia.com/advisories/15496/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13767",
+          "url": "http://www.securityfocus.com/bid/13767"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1014059",
+          "url": "http://securitytracker.com/alerts/2005/May/1014059.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-05-25T00:00:00+09:00"
+  }
+}

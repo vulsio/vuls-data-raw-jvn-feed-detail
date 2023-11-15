@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2009-003901",
+  "vulinfodata": {
+    "title": "Cacti におけるクロスサイトスクリプティングの脆弱性",
+    "vulinfodescription": {
+      "overview": "Cacti には、以下に関連する処理に不備があるため、クロスサイトスクリプティングの脆弱性が存在します。  (1) graph.php (2) include/top_graph_header.php (3) lib/html_form.php (4) lib/timespan_settings.php  この脆弱性は、以下のパラメータを介した処理で実証されています。  (a) graph.php の graph_end パラメータ (b) graph.php の graph_start パラメータ (c) graph_view.php の action=tree 時の date1 パラメータ (d) graph_settings.php の page_refresh パラメータ (e) graph_settings.php の default_dual_pane_width パラメータ"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The Cacti Group",
+          "productname": "Cacti",
+          "cpe": {
+            "text": "cpe:/a:cacti:cacti",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.8.7e およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、任意の Web スクリプトまたは HTML を挿入される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cacti",
+          "vulinfoid": "cacti-0.8.7e-patched",
+          "url": "http://www.cacti.net/downloads/patches/0.8.7e/cross_site_fix.patch"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2009-4032",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4032"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#09758120",
+          "url": "https://jvn.jp/jp/JVN09758120/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2009-4032",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-4032"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載\\n[2015年07月09日]\\n  JVN#09758120 にあわせ、概要、影響を受けるシステム、参考情報を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T16:18:54+09:00",
+    "datelastupdated": "2015-07-09T12:02:37+09:00",
+    "datepublic": "2009-06-28T00:00:00+09:00"
+  }
+}

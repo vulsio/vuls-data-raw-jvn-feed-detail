@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2015-003061",
+  "vulinfodata": {
+    "title": "libmspack の lzxd.c 内の lzxd_decompress 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libmspack の lzxd.c 内の lzxd_decompress 関数には、一つずれエラー (Off-by-One error) により、サービス運用妨害 (バッファアンダーリードおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Stuart Caie",
+          "productname": "libmspack",
+          "cpe": {
+            "text": "cpe:/a:cabextract:libmspack",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.5 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された CAB アーカイブを介して、サービス運用妨害 (バッファアンダーリードおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "775499",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=775499"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Prevent a 1-byte underread of the input buffer if an odd-sized data block comes just before an uncompressed block header",
+          "url": "https://github.com/kyz/libmspack/commit/18b6a2cc0b87536015bedd4f7763e6b02d5aa4f3"
+        },
+        {
+          "type": "vendor",
+          "name": "Stuart Caie",
+          "vulinfoid": "libmspack",
+          "url": "http://www.cabextract.org.uk/libmspack/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-4471",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4471"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-4471",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4471"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年06月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-06-12T17:44:50+09:00",
+    "datelastupdated": "2015-06-12T17:44:50+09:00",
+    "datepublic": "2015-01-26T00:00:00+09:00"
+  }
+}

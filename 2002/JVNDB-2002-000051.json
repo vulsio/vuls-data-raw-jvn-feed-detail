@@ -1,0 +1,161 @@
+{
+  "vulinfoid": "JVNDB-2002-000051",
+  "vulinfodata": {
+    "title": "Java 仮想マシン におけるセッションハイジャックの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft VM は Win32 オペレーションシステム上で動作する Java 仮想マシンです。Windows 95、Windows NT 以降の Windows 系 OS で動作します。Microsoft VM は Windwos 98、Windows ME および Windows 2000 と Internet Explorer 5.5 およびそれ以前のバージョンの Internet Explorer に含まれています。   Internet Explorer バージョン 4.x および 5.x に同梱されている Microsoft VM には Java のプロキシリソースへのリクエストと操作の実装に不備が存在します。悪意のある Java アプレットをを用いることで、ターゲットホストのプロキシサーバに接続しているユーザの情報を、任意の送信先にリダイレクトすることにより取得される可能性が存在します。   この問題を利用することにより、リモートの攻撃者はユーザ情報の取得だけでなく、セッション情報を破棄することにより DoS 攻撃に見せかけたり、ユーザの接続先を詐称することが可能です。   尚、この問題はプロキシサーバを介して Internet Explorer を使用しているシステムが影響を受ける可能性があります。   また、この問題とは異なる Java 仮想マシンの Bytecode Verifier のセキュリティ上の不備が存在し、サンドボックスによる制限を回避される問題が存在します。  そのため、この問題を利用するリモートの攻撃者により、結果として悪意ある Java アプレットを介して標的ユーザの権限で任意のコードを実行される可能性も指摘されています。   これら Java 仮想マシンの問題に関しては、Microsoft VM 以外にも発見されており、多くの製品が影響を受ける可能性が示唆されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM WebSphere Application Server",
+          "cpe": {
+            "text": "cpe:/a:ibm:websphere_application_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 2000",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_2000",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 9X",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows-9x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "95  ",
+            "98  ",
+            "98 scd ",
+            "me  "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows NT",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_nt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 (server) ",
+            "4.0 (terminal_srv) ",
+            "4.0 (workstation) "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows XP",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_xp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "sp3 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "1055402",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=swg21055402&rs=260"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS02-013",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS02-013.asp"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Security Bulletin",
+          "vulinfoid": "#218",
+          "url": "http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&amp;doc=secbull/218&amp;type=0&amp;nav=sec.sba"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Security Bulletin",
+          "vulinfoid": "#216",
+          "url": "http://sunsolve.sun.com/pub-cgi/retrieve.pl?doctype=coll&amp;doc=secbull/216&amp;type=0&amp;nav=sec.sba"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS02-013",
+          "url": "http://www.microsoft.com/japan/technet/security/Bulletin/MS02-013.mspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2002-0058",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0058"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2002-0058",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-0058"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "4228",
+          "url": "http://www.securityfocus.com/bid/4228"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "4313",
+          "url": "http://www.securityfocus.com/bid/4313"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2002-03-04T00:00:00+09:00"
+  }
+}

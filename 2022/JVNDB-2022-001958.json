@@ -1,0 +1,170 @@
+{
+  "vulinfoid": "JVNDB-2022-001958",
+  "vulinfodata": {
+    "title": "CAMS for HIS の通信の設計に不備",
+    "vulinfodescription": {
+      "overview": "横河電機株式会社が提供する CAMS for HIS には、通信の設計に不備が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者および ICS-CERT との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "横河電機株式会社",
+          "productname": "B/M9000 CS",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:b%2fm9000cs_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R5.04.01 から R5.05.01 まで"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "B/M9000 VP",
+          "cpe": {
+            "text": "cpe:/a:yokogawa:b%2fm9000_vp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R6.01.01 から R8.03.01 まで"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 3000",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_cs_3000",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R3.08.10 から R3.09.00 まで (LHS4800（CAMS for HIS）をインストールしている場合)"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM CS 3000 Small",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_cs_3000_small",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R3.08.10 から R3.09.00 まで (LHS4800（CAMS for HIS）をインストールしている場合)"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP",
+          "cpe": {
+            "text": "cpe:/a:yokogawa:centum_vp_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R4.01.00 から R4.03.00 まで (CAMS 機能を使用している場合)",
+            "R5.01.00 から R5.04.20 まで、R6.01.00 から R6.09.00 まで (CAMS 機能の使用有無を問わず影響を受ける CENTUM シリーズ)"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP Basic",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_vp_basic",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R4.01.00 から R4.03.00 まで (CAMS 機能を使用している場合)",
+            "R5.01.00 から R5.04.20 まで、R6.01.00 から R6.09.00 まで (CAMS 機能の使用有無を問わず影響を受ける CENTUM シリーズ)"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "CENTUM VP Small",
+          "cpe": {
+            "text": "cpe:/h:yokogawa:centum_vp_small",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R4.01.00 から R4.03.00 まで (CAMS 機能を使用している場合)",
+            "R5.01.00 から R5.04.20 まで、R6.01.00 から R6.09.00 まで (CAMS 機能の使用有無を問わず影響を受ける CENTUM シリーズ)"
+          ]
+        },
+        {
+          "name": "横河電機株式会社",
+          "productname": "Exaopc",
+          "cpe": {
+            "text": "cpe:/a:yokogawa:exaopc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "R3.72.00 から R3.80.00 まで (NTPF100-S6「CENTUM VP 用 CAMS for HIS 対応」をインストールしている場合)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性が悪用された場合、次のような影響を受ける可能性があります。  * 当該製品がインストールされたコンピューターにアクセス可能な攻撃者によって、当該コンピューターに格納されているアカウントおよびパスワードが取得される。その結果、別の CAMS for HIS が管理するデータが漏洩したり、改ざんされたりする。 * アカウントおよびパスワードを取得した攻撃者により別の CAMS for HIS においてリソース枯渇を引き起こされ、CAMS for HIS の機能を停止させられる。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[マイグレーションを行う] 次の CENTUM シリーズは、保守期間終了製品のため対策パッチは提供されません。最新の CENTUM VP へのマイグレーションを行う必要があります。  * CENTUM CS 3000、CENTUM CS 3000 Small R3.08.10 から R3.09.00 まで * CENTUM VP、CENTUM VP Small、CENTUM VP Basic R4.01.00 から R4.03.0 まで R5.01.00 から R5.04.20 まで  [アップデートした上で最新のパッチを適用する] 次の CENTUM VP シリーズの場合は、R6.09.00 へアップデートした上で、パッチ （R6.09.03） を適用してください。  * CENTUM VP、CENTUM VP Small、CENTUM VP Basic R6.01.00 から R6.09.00 まで  次のバージョンの Exaopc の場合は、R3.80.00 へアップデートした上で、パッチ （R3.80.01） を適用してください。  * Exaopc R3.72.00 から R3.80.0 まで  開発者によると、B/M9000 CS および B/M9000 VP 自体は本脆弱性の影響を受けないが、一緒にインストールされる CENTUM VP シリーズに本脆弱性が存在しており、CENTUM VP シリーズをアップデートする場合は、B/M9000 CS および B/M9000 VP も、適切なバージョンにアップデートする必要があるとのことです。  詳しくは、開発者が提供する情報をご覧ください。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "横河セキュリティ対策情報",
+          "vulinfoid": "YSAR-22-0006: CAMS for HIS にデータ漏洩／改ざん、リソース枯渇の脆弱性",
+          "url": "https://www.yokogawa.co.jp/library/resources/white-papers/yokogawa-security-advisory-report-list/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-30707",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-30707"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-174-02",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-174-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92819891",
+          "url": "http://jvn.jp/vu/JVNVU92819891/index.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-06-23T17:34:25+09:00",
+          "description": "[2022年06月23日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-06-28T10:43:33+09:00",
+          "description": "[2022年06月28日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-174-02) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-06-23T17:34:25+09:00",
+    "datelastupdated": "2022-06-28T10:48:12+09:00",
+    "datepublic": "2022-06-22T00:00:00+09:00"
+  }
+}

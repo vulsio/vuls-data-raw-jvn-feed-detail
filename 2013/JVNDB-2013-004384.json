@@ -1,0 +1,162 @@
+{
+  "vulinfoid": "JVNDB-2013-004384",
+  "vulinfodata": {
+    "title": "libvirt の daemon/remote.c の remoteDispatchDomainMemoryStats 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libvirt の daemon/remote.c の remoteDispatchDomainMemoryStats 関数には、サービス運用妨害 (未初期化ポインタデリファレンスおよびクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.04 LTS",
+            "12.04 LTS",
+            "12.10",
+            "13.04"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "libvirt",
+          "cpe": {
+            "text": "cpe:/a:redhat:libvirt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.10.2.8 未満の 0.10.2.x",
+            "0.9.1 から 0.10.1.x",
+            "1.0.5.6 未満の 1.0.x",
+            "1.1.2 未満の 1.1.x"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、巧妙に細工された RPC 呼び出しを介して、サービス運用妨害 (未初期化ポインタのデリファレンスおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2764",
+          "url": "http://www.debian.org/security/2013/dsa-2764"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt.org",
+          "vulinfoid": "Contents",
+          "url": "http://wiki.libvirt.org/page/Maintenance_Releases"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt.org",
+          "vulinfoid": "Fix crash in remoteDispatchDomainMemoryStats even when parsing label",
+          "url": "http://libvirt.org/git/?p=libvirt.git;a=commit;h=e7f400a110e2e3673b96518170bfea0855dd82c0"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1549",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00023.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1550",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00024.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1006173",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1006173"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1460",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1460.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1272",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1272.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1954-1",
+          "url": "http://www.ubuntu.com/usn/USN-1954-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4296",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4296"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4296",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4296"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年10月02日]\\n  掲載\\n[2013年10月28日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Debian (DSA-2764) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1549) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1550) を追加\\n  ベンダ情報：Ubuntu (USN-1954-1) を追加\\n[2013年11月11日]\\n  ベンダ情報：レッドハット (RHSA-2013:1460) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-10-02T16:47:40+09:00",
+    "datelastupdated": "2013-11-11T18:08:49+09:00",
+    "datepublic": "2013-09-20T00:00:00+09:00"
+  }
+}

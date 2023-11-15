@@ -1,0 +1,141 @@
+{
+  "vulinfoid": "JVNDB-2013-005322",
+  "vulinfodata": {
+    "title": "PHP の ext/date/lib/parse_iso_intervals.c の scan 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/date/lib/parse_iso_intervals.c の scan 関数は、DateInterval オブジェクトの生成を適切に制限しないため、サービス運用妨害 (ヒープベースのバッファオーバーリード) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.6 まで"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.2",
+            "10.8.5",
+            "10.9.5"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された間隔の指定を介して、サービス運用妨害 (ヒープベースのバッファオーバーリード) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT204659",
+          "url": "http://support.apple.com/en-us/HT204659"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT204659",
+          "url": "http://support.apple.com/ja-jp/HT204659"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "Fixed bug #66060 (Heap buffer over-read in DateInterval)",
+          "url": "http://git.php.net/?p=php-src.git;a=commit;h=12fe4e90be7bfa2a763197079f68f5568a14e071"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Bug #66060",
+          "url": "https://bugs.php.net/bug.php?id=66060"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1765",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1765.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple Buffer Errors vulnerabilities in PHP",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_buffer_errors_vulnerabilities_in1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6712",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6712"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91828320",
+          "url": "http://jvn.jp/vu/JVNVU91828320/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6712",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6712"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年12月02日]\\n  掲載\\n[2014年06月02日]\\n  ベンダ情報：オラクル (Multiple Buffer Errors vulnerabilities in PHP) を追加\\n[2015年04月13日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204659) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004) を追加\\n  参考情報：JVN (JVNVU#91828320) を追加\\n[2015年08月03日]\\n  ベンダ情報：レッドハット (RHSA-2014:1765) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-12-02T16:07:27+09:00",
+    "datelastupdated": "2015-08-03T17:12:08+09:00",
+    "datepublic": "2013-11-27T00:00:00+09:00"
+  }
+}

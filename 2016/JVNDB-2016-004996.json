@@ -1,0 +1,139 @@
+{
+  "vulinfoid": "JVNDB-2016-004996",
+  "vulinfodata": {
+    "title": "OpenSSL の crypto/x509/x509_vfy.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の crypto/x509/x509_vfy.c には、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.2i"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Module for Web Scripting",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_module_for_web_scripting",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、CRL 操作を誘発されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cisco Security Advisory",
+          "vulinfoid": "cisco-sa-20160927-openssl",
+          "url": "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl"
+        },
+        {
+          "type": "vendor",
+          "name": "News",
+          "vulinfoid": "OpenSSL 1.0.2 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.2-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "Add some sanity checks when checking CRL scores",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=6e629b5be45face20b4ca71c4fcbfed78b864a2e"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "Missing CRL sanity check (CVE-2016-7052)",
+          "url": "https://www.openssl.org/news/secadv/20160926.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:2470",
+          "url": "https://lists.opensuse.org/opensuse-security-announce/2016-10/msg00013.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-7052",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7052"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99474230",
+          "url": "http://jvn.jp/vu/JVNVU99474230/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-7052",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-7052"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月30日]\\n  掲載\\n[2016年12月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：opensuse-security-announce (SUSE-SU-2016:2470) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-30T16:38:59+09:00",
+    "datelastupdated": "2016-12-05T16:57:18+09:00",
+    "datepublic": "2016-09-26T00:00:00+09:00"
+  }
+}

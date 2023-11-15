@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2010-004669",
+  "vulinfodata": {
+    "title": "WAFP におけるサービス運用妨害 (DoS) などの脆弱性",
+    "vulinfodescription": {
+      "overview": "Web Application Finger Printer (WAFP) は、テンポラリファイルおよびディレクトリ用に /tmp という固定されたパス名を使用し、以下に関する処理に不備があるため、(1) サービス運用妨害 (アプリケーション停止) 状態となる、(2) 任意のファイルを上書きされる、(3) 任意のファイルおよびディレクトリを削除される、および (4) 重要な情報を取得される脆弱性が存在します。 (a) lib/wafp_pidify.rb (b) utils/generate_wafp_fingerprint.sh (c) utils/online_update.sh (d) utils/extract_from_db.sh"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "mytty",
+          "productname": "webapplication finger printer",
+          "cpe": {
+            "text": "cpe:/a:mytty:webapplication_finger_printer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.01-26c3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、以下の影響を受ける可能性があります。 (1) 製品が内部使用するファイル名のファイルを作成されることで、サービス運用妨害 (アプリケーション停止) 状態にされる (2) /tmp 内の特定のファイルへのシンボリックリンク攻撃を介して、任意のファイルを上書きされる (3) /tmp 配下のディレクトリへのシンボリックリンク攻撃を介して、任意のファイルおよびディレクトリを削除される (4) /tmp 配下のディレクトリ内のファイルを読み取られることで、重要な情報を取得される"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "mytty",
+          "vulinfoid": "webapplicationfingerprinter",
+          "url": "http://code.google.com/p/webapplicationfingerprinter/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-1438",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1438"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-1438",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1438"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:38:32+09:00",
+    "datelastupdated": "2012-09-25T17:38:32+09:00",
+    "datepublic": "2010-05-06T00:00:00+09:00"
+  }
+}

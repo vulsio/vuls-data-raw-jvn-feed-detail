@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2011-005240",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/bridge/br_netfilter.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/bridge/br_netfilter.c 内の br_parse_ip_options 関数は、特定のデータ構造を適切に初期化しないため、サービス運用妨害 (DoS) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.39 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、Ethernet ブリッジデバイスを使用するネットワークインタフェースへの接続を利用されることで、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-2.6.39",
+          "url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.39"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "bridge: reset IPCB in br_parse_ip_options",
+          "url": "https://github.com/torvalds/linux/commit/f8e9881c2aef1e982e5abc25c046820cd0b7cf64"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "bridge: reset IPCB in br_parse_ip_options",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=f8e9881c2aef1e982e5abc25c046820cd0b7cf64"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-4087",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4087"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-4087",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4087"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年06月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-06-11T16:16:58+09:00",
+    "datelastupdated": "2013-06-11T16:16:58+09:00",
+    "datepublic": "2011-05-18T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2013-002843",
+  "vulinfodata": {
+    "title": "MIT Kerberos の kadmind におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MIT Kerberos 5 (別名 krb5) の kadmind の kpasswd サービス内の schpw.c は、レスポンスを送信する前に UDP パケットを適切に検証しないため、サービス運用妨害 (CPU および帯域幅消費) 状態にされる脆弱性が存在します。  本脆弱性は、CVE-1999-0103 と関連する問題です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MIT Kerberos",
+          "productname": "Kerberos",
+          "cpe": {
+            "text": "cpe:/a:mit:kerberos",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 1.11.3未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、通信ループを誘発する偽造されたパケットを介して、サービス運用妨害 (CPU および帯域幅消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2701",
+          "url": "http://www.debian.org/security/2013/dsa-2701"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fix kpasswd UDP ping-pong [CVE-2002-2443]",
+          "url": "https://github.com/krb5/krb5/commit/cf1a0c411b2668c57c41e9c4efd15ba17b6b322c"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1119",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-07/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1122",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-07/msg00007.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 962531",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=962531"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:0942",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-0942.html"
+        },
+        {
+          "type": "vendor",
+          "name": "RT/krbdev.mit.edu",
+          "vulinfoid": "Ticket #7637 Fix kpasswd UDP ping-pong [CVE-2002-2443]",
+          "url": "http://krbdev.mit.edu/rt/Ticket/Display.html?id=7637"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "MDVSA-2013:166",
+          "url": "http://www.mandriva.com/security/advisories?name=MDVSA-2013:166"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "CVE-2002-2443 Denial of Service vulnerability in Kerberos",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2002_2443_denial_of"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2002-2443",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-2443"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2002-2443",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2002-2443"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年05月30日]\\n  掲載\\n[2013年10月30日]\\n  CWE による脆弱性タイプ一覧：内容を更新\\n  ベンダ情報：Debian (DSA-2701) を追加\\n  ベンダ情報：Mandriva, Inc. (MDVSA-2013:166) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1119) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1122) を追加\\n  ベンダ情報：オラクル (CVE-2002-2443 Denial of Service vulnerability in Kerberos) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:0942) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-05-30T14:10:57+09:00",
+    "datelastupdated": "2013-10-30T18:12:38+09:00",
+    "datepublic": "2013-05-13T00:00:00+09:00"
+  }
+}

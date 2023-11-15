@@ -1,0 +1,109 @@
+{
+  "vulinfoid": "JVNDB-2014-003550",
+  "vulinfodata": {
+    "title": "sgminer および cgminer の util.c の parse_notify 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "sgminer および cgminer の util.c の parse_notify 関数には、サービス運用妨害 (アプリケーションの終了) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Con Kolivas",
+          "productname": "cgminer",
+          "cpe": {
+            "text": "cpe:/a:cgminer_project:cgminer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3.0 から 4.0.1"
+          ]
+        },
+        {
+          "name": "sgminer project",
+          "productname": "sgminer",
+          "cpe": {
+            "text": "cpe:/a:sgminer_project:sgminer",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、巧妙に細工された mining.notify アクションの stratum メッセージの (1) bbversion、(2) prev_hash、(3) nbit、または (4) ntime パラメータを介して、サービス運用妨害 (アプリケーションの終了) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sgminer-dev/sgminer",
+          "url": "https://github.com/sgminer-dev/sgminer/commit/910c36089940e81fb85c65b8e63dcd2fac71470c"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ckolivas/cgminer",
+          "url": "https://github.com/ckolivas/cgminer"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-4503",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4503"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-4503",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4503"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE-2014-4503 : Invalid Parameters in mining.notify Stratum Message Leads to Denial of Service",
+          "url": "http://seclists.org/fulldisclosure/2014/Jul/120"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-24T18:01:38+09:00",
+    "datelastupdated": "2014-07-24T18:01:38+09:00",
+    "datepublic": "2014-06-06T00:00:00+09:00"
+  }
+}

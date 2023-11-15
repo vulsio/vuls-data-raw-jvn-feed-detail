@@ -1,0 +1,151 @@
+{
+  "vulinfoid": "JVNDB-2015-004731",
+  "vulinfodata": {
+    "title": "Mediabridge Medialink Wireless-N Broadband Router に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Mediabridge が提供する Medialink Wireless-N Broadband Router は、デフォルト設定では全ての機器に共通の認証情報を使用しています。また、認証回避の脆弱性やクロスサイトリクエストフォージェリの脆弱性が存在します。  証明書やパスワード管理 (CWE-255) - CVE-2015-5994 当該製品は、デフォルト設定で、ウェブインターフェースへのアクセスに admin:admin という認証情報を使用しています。また、無線ネットワークに medialink:password という共通の認証情報を使用しています。これらの認証情報はすべての機器に共通です。当該製品をデフォルト設定で使用している場合、無線ネットワークの範囲内にいる攻撃者によって、ウェブインターフェースを直接操作されたり、クロスサイトリクエストフォージェリなどの攻撃に使用されたりする可能性があります。  CWE-255: Credentials Management https://cwe.mitre.org/data/definitions/255.html  セキュリティに関する決定において、検証や整合性確認をせずに Cookie を信頼する (CWE-784) - CVE-2015-5995 当該製品は、クライアントから送られる HTTP Cookie ヘッダの値を確認することで認証を行います。LAN に接続可能な攻撃者によって、HTTP Cookie ヘッダが \"Cookie: language-en; admin:language-en\" に書き換えられることで、認証情報が知られていなくとも、管理者権限でアクセスされる可能性があります。  CWE-784: Reliance on Cookies without Validation and Integrity Checking in a Security Decision https://cwe.mitre.org/data/definitions/784.html  なお、National Vulnerability Database (NVD) では、CWE-264 として公開されています。   クロスサイトリクエストフォージェリ (CWE-352) - CVE-2015-5996 当該製品にはクロスサイトリクエストフォージェリの脆弱性が存在します。当該製品にログインしているユーザが、遠隔の攻撃者が用意した URL にアクセスすることで、当該製品を操作させられる可能性があります。なお、当該製品のデフォルト設定では、ユーザがログインしていなくても攻撃可能です。  CWE-352: Cross-Site Request Forgery (CSRF) https://cwe.mitre.org/data/definitions/352.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Mediabridge",
+          "productname": "Medialink Wireless-N Broadband Router MWN-WAPR300N",
+          "cpe": {
+            "text": "cpe:/h:mediabridge:medialink_mwn-wapr300n",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Mediabridge",
+          "productname": "Medialink Wireless-N Broadband Router MWN-WAPR300N ファームウェア",
+          "cpe": {
+            "text": "cpe:/o:mediabridge:medialink_mwn-wapr300n_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 5.07.50"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、当該製品にログインしているユーザが意図しない操作をさせられる可能性があります。また、LAN にアクセス可能な攻撃者によって、認証を回避してデバイスを直接操作される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2015年9月4日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* アクセスを制限し、強固なパスワードを使用する  一般的なセキュリティ対策として、LAN に接続できるのは信頼できるホストのみに制限してください。また、WiFi の接続やウェブインターフェースに強固なパスワードを使用してください。パスワードの設定は LAN に接続して認証回避の脆弱性を使用する攻撃には効果がありませんが、クロスサイトリクエストフォージェリの対策に役立ちます。また、当該製品のウェブインターフェースにアクセスしている間、他のサイトへのアクセスはしないでください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Mediabridge",
+          "vulinfoid": "Medialink Wireless-N Broadband Router with Internal Antennas (300 Mbps)",
+          "url": "http://www.mediabridgeproducts.com/store/pc/viewPrd.asp?idproduct=374"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5994",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5994"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5995",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5995"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5996",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5996"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94201169",
+          "url": "http://jvn.jp/vu/JVNVU94201169/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5996",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5996"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5994",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5994"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5995",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5995"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#630872",
+          "url": "https://www.kb.cert.org/vuls/id/630872"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-352",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+          "title": "クロスサイトリクエストフォージェリ"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-255",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+          "title": "証明書・パスワードの管理"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月18日]\\n  掲載\\n[2016年01月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-5994) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-5995) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-5996) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  概要：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-18T18:19:07+09:00",
+    "datelastupdated": "2016-01-07T16:06:43+09:00",
+    "datepublic": "2015-09-03T00:00:00+09:00"
+  }
+}

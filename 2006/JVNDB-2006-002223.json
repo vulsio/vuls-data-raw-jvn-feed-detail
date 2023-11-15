@@ -1,0 +1,76 @@
+{
+  "vulinfoid": "JVNDB-2006-002223",
+  "vulinfodata": {
+    "title": "Linux kernel におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel は、コンテキストスイッチ中に EFLAGS を適切に保存または復元しない、あるいは新規のスレッドを作成する際、このフラグをリセットしないため、サービス運用妨害 (プロセスクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、unaligned access のプロセス内で SIGBUS を誘発され、サービス運用妨害 (プロセスクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "x86: save/restore eflags in context switch",
+          "url": "http://kernel.org/git/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=47a5c6fa0e204a2b63309c648bb2fde36836c826"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-5173",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5173"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-5173",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-5173"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T15:36:03+09:00",
+    "datelastupdated": "2012-09-25T15:36:03+09:00",
+    "datepublic": "2006-09-18T00:00:00+09:00"
+  }
+}

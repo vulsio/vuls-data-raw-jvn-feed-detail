@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2015-003932",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/mjpegdec.c の ff_mjpeg_decode_sof 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/mjpegdec.c の ff_mjpeg_decode_sof 関数は、JPEG-LS Start Of Frame セグメントのコンポーネント数を適切に検証しないため、サービス運用妨害 (配列の領域外へのアクセス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された Motion JPEG データを介して、サービス運用妨害 (配列の領域外へのアクセス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "avcodec/mjpegdec: Check number of components for JPEG-LS",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=fabbfaa095660982cc0bc63242c459561fa37037"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1872",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1872"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1872",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1872"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-28T14:27:35+09:00",
+    "datelastupdated": "2015-07-28T14:27:35+09:00",
+    "datepublic": "2015-02-05T00:00:00+09:00"
+  }
+}

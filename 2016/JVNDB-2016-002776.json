@@ -1,0 +1,219 @@
+{
+  "vulinfoid": "JVNDB-2016-002776",
+  "vulinfodata": {
+    "title": "libxml2 の parser.c の xmlParserEntityCheck および xmlParseAttValueComplex 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libxml2 の parser.c の (1) xmlParserEntityCheck および (2) xmlParseAttValueComplex 関数は、再帰の深さを適切に把握しないため、サービス運用妨害 (スタックの消費およびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "15.10",
+            "16.04 LTS"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        },
+        {
+          "name": "xmlsoft.org",
+          "productname": "libxml2",
+          "cpe": {
+            "text": "cpe:/a:xmlsoft:libxml2",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.9.3"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "IceWall Federation Agent",
+          "cpe": {
+            "text": "cpe:/a:hp:icewall_federation_agent",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "IceWall File Manager",
+          "cpe": {
+            "text": "cpe:/a:hp:icewall_file_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、大量のネストされたエンティティ参照を含む巧妙に細工された XML ドキュメントを介して、サービス運用妨害 (スタックの消費およびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3593",
+          "url": "https://www.debian.org/security/2016/dsa-3593"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME Bugzilla",
+          "vulinfoid": "Bug 765207",
+          "url": "https://bugzilla.gnome.org/show_bug.cgi?id=765207"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBGN03617",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05157239"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:1298",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-05/msg00055.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1292",
+          "url": "https://access.redhat.com/errata/RHSA-2016:1292"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2016-22",
+          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-22j.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2994-1",
+          "url": "http://www.ubuntu.com/usn/USN-2994-1"
+        },
+        {
+          "type": "vendor",
+          "name": "xmlsoft.org",
+          "vulinfoid": "Top Pages",
+          "url": "http://www.xmlsoft.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-3705",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3705"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-3705",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3705"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE-2016-3627 CVE-2016-3705: libxml2: stack overflow in xml validator (parser)",
+          "url": "http://seclists.org/fulldisclosure/2016/May/10"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月23日]\\n  掲載\\n[2016年06月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03617) を追加\\n[2016年09月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：レッドハット (RHSA-2016:1292) を追加\\n  ベンダ情報：Debian (DSA-3593) を追加\\n  ベンダ情報：Canonical (USN-2994-1) を追加\\n[2016年10月27日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-22) を追加\\n[2016年11月17日]\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-23T11:58:40+09:00",
+    "datelastupdated": "2016-11-17T16:31:06+09:00",
+    "datepublic": "2016-05-03T00:00:00+09:00"
+  }
+}

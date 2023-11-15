@@ -1,0 +1,188 @@
+{
+  "vulinfoid": "JVNDB-2006-000666",
+  "vulinfodata": {
+    "title": "PHP の symlink() 関数における open_basedir 制限回避の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP に実装されている symlink() 関数には、引数として渡されるファイルパスのチェックに不備が存在するため、ディレクトリトラバーサル攻撃を介して、open_basedir やセーフモードによる制限を回避可能となる脆弱性が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.4 およびそれ以前",
+            "5.2.0 およびそれ以前"
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10_f "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Appliance Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0 (hosting) ",
+            "1.0 (workgroup) ",
+            "2.0  "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Desktop",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Multimedia",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_multimedia",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Personal",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_personal",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "8  "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "ターボリナックス ホーム ",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_home",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:L/AC:H/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "PHP スクリプトによるアクセス制限を回避され、重要な情報が取得されてしまう可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。 なお、Hardened-PHP Project より symlink() 関数を無効化する、最新の Suhosin エクステンションの利用が回避策として示されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "Top Page",
+          "url": "http://www.php.net/"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2006-38",
+          "url": "http://www.turbolinux.com/security/2006/TLSA-2006-38.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2006-38",
+          "url": "http://www.turbolinux.co.jp/security/2006/TLSA-2006-38j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-5178",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5178"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2006-3901",
+          "url": "http://www.frsirt.com/english/advisories/2006/3901"
+        },
+        {
+          "type": "advisory",
+          "name": "Hardened-PHP Project",
+          "vulinfoid": "advisory_082006.132",
+          "url": "http://www.hardened-php.net/advisory_082006.132.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-5178",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-5178"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA22235",
+          "url": "http://secunia.com/advisories/22235/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "20326",
+          "url": "http://www.securityfocus.com/bid/20326"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-10-04T00:00:00+09:00"
+  }
+}

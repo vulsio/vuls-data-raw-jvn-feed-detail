@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2014-005316",
+  "vulinfodata": {
+    "title": "Linux Kernel の KVM サブシステムの arch/x86/kvm/i8254.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の KVM サブシステムの arch/x86/kvm/i8254.c 内の __kvm_migrate_pit_timer 関数には、競合状態により、サービス運用妨害 (ホスト OS クラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.17.2 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、不正な PIT エミュレーションを利用されることで、サービス運用妨害 (ホスト OS クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KVM: x86: Improve thread safety in pit",
+          "url": "https://github.com/torvalds/linux/commit/2febc839133280d5a5e8e1179c94ea674489dae2"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "KVM: x86: Improve thread safety in pit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=2febc839133280d5a5e8e1179c94ea674489dae2"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1144878",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1144878"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0284",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0284.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0126",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0126.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3611",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3611"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3611",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3611"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月11日]\\n  掲載\\n[2015年06月09日]\\n  ベンダ情報：レッドハット (RHSA-2015:0284) を追加\\n　ベンダ情報：レッドハット (RHSA-2015:0126) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-11T15:55:40+09:00",
+    "datelastupdated": "2015-06-09T18:00:23+09:00",
+    "datepublic": "2014-10-24T00:00:00+09:00"
+  }
+}

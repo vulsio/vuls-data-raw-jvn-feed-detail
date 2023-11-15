@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2010-004627",
+  "vulinfodata": {
+    "title": "Linux kernel の fs/cifs/dir.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の fs/cifs/dir.c の cifs_create 関数には、サービス運用妨害 (NULL ポインタデリファレンスおよび OOPS) 状態となるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.33.2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、UNIX エクステンションをサポートするサーバへの POSIX file-creation リクエストの NULL nameidata フィールドを介して、サービス運用妨害 (NULL ポインタデリファレンスおよび OOPS) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "Bug 579445",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=579445"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-1148",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1148"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-1148",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1148"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T17:38:30+09:00",
+    "datelastupdated": "2012-09-25T17:38:30+09:00",
+    "datepublic": "2010-04-12T00:00:00+09:00"
+  }
+}

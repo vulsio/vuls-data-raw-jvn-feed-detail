@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2013-006673",
+  "vulinfodata": {
+    "title": "FreeIPA のディレクトリサーバにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeIPA のディレクトリサーバ (dirsrv) の daemons/ipa-slapi-plugins/ipa-pwd-extop/ipa_pwd_extop.c 内の ipapwd_chpwop 関数には、389 ディレクトリサーバに関する処理に不備があるため、サービス運用妨害 (クラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "FreeIPA",
+          "cpe": {
+            "text": "cpe:/a:redhat:freeipa",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、username/dn を伴わない接続リクエストを介して、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Hosted",
+          "vulinfoid": "チケット #3539 (closed defect: fixed)",
+          "url": "https://fedorahosted.org/freeipa/ticket/3539"
+        },
+        {
+          "type": "vendor",
+          "name": "Fedora Hosted",
+          "vulinfoid": "ipa-pwd-extop: do not use dn until it is really set",
+          "url": "https://git.fedorahosted.org/cgit/freeipa.git/commit/?id=7b45e33400355df44e75576ef7f70a39d163bf8e"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 913751",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=913751"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-0336",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0336"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-0336",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0336"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-06T15:48:37+09:00",
+    "datelastupdated": "2014-11-06T15:48:37+09:00",
+    "datepublic": "2013-02-26T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "vulinfoid": "JVNDB-2023-000017",
+  "vulinfodata": {
+    "title": "tsClinical Define.xml Generator および tsClinical Metadata Desktop Tools における XML 外部実体参照 (XXE) に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "富士通株式会社が提供する tsClinical Define.xml Generator および tsClinical Metadata Desktop Tools には、XML 外部実体参照 (XXE) に関する脆弱性 (CWE-611) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 日本電気株式会社 外山 拓 氏、榊 龍太郎 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "富士通",
+          "productname": "tsClinical Define.xml Generator",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:tsclinical_define.xml_generator",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "すべてのバージョン (v1.0.0 から v1.4.0 まで)"
+          ]
+        },
+        {
+          "name": "富士通",
+          "productname": "tsClinical Metadata Desktop Tools",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:tsclinical_metadata_desktop_tools",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 1.0.3 から Version 1.1.0 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.2",
+          "vector": "AV:L/AC:H/Au:N/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.5",
+          "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された XML ファイルを読み込むことにより、特定の条件に合致した任意のファイルを攻撃者に取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] tsClinical Metadata Desktop Tools については、本脆弱性を修正した tsClinical Metadata Desktop Tools Version 1.1.1 がリリースされています。 開発者が提供する情報をもとに、最新版にアップデートしてください。  [代替製品に移行する] tsClinical Define.xml Generator については開発が終了しており、修正アップデートが提供される予定はありません。 tsClinical Metadata Desktop Tools への移行が推奨されています。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を回避することが可能です。 <ul><li>以下のメニューを使用しない、または以下のメニューで不明な XML ファイルを読み込まない</li><ul><li>tsClinical Define.xml Generator を使用している場合</li><ul><li>Import Define.xml</li><li>Validate against XML Schema</li></ul><li>tsClinical Metadata Desktop Tools を使用している場合</li><ul><li>Convert from Define-XML to Excel</li><li>Convert from XML to HTML</li><li>Convert from ODM-XML to Excel</li><li>Validate against XML Schema</li></ul></ul></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "富士通株式会社からの情報",
+          "url": "https://jvn.jp/jp/JVN00712821/2390/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22377",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22377"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#00712821",
+          "url": "https://jvn.jp/jp/JVN00712821/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-02-09T16:33:36+09:00",
+          "description": "[2023年02月14日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-02-14T12:06:00+09:00",
+    "datelastupdated": "2023-02-14T12:06:00+09:00",
+    "datepublic": "2023-02-14T00:00:00+09:00"
+  }
+}

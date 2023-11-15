@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-001967",
+  "vulinfodata": {
+    "title": "Linux-PAM 用 pam_timestamp モジュールの pam_timestamp.c におけるディレクトリトラバーサルの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux-PAM (別名 pam) 用 pam_timestamp モジュールの pam_timestamp.c には、ディレクトリトラバーサルの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "kernel.org",
+          "productname": "Linux-PAM",
+          "cpe": {
+            "text": "cpe:/a:kernel:linux-pam",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.8"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、.. (ドットドット) を含む (1) get_ruser 関数の PAM_RUSER 値 または (2) check_tty 関数の PAM_TTY 値を介して、format_timestamp_name 関数により使用されることで、任意のファイルを作成される、または認証を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Fedora Update Notification",
+          "vulinfoid": "pam_timestamp: fix potential directory traversal issue (ticket #27)",
+          "url": "https://git.fedorahosted.org/cgit/linux-pam.git/commit/?id=Linux-PAM-1_1_8-32-g9dcead8"
+        },
+        {
+          "type": "vendor",
+          "name": "kernel.org",
+          "vulinfoid": "Index of /pub/linux/libs/pam",
+          "url": "https://www.kernel.org/pub/linux/libs/pam/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-2583",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2583"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-2583",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-2583"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月14日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-14T18:04:34+09:00",
+    "datelastupdated": "2014-04-14T18:04:34+09:00",
+    "datepublic": "2014-03-26T00:00:00+09:00"
+  }
+}

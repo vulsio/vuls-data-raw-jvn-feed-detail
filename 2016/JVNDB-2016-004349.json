@@ -1,0 +1,143 @@
+{
+  "vulinfoid": "JVNDB-2016-004349",
+  "vulinfodata": {
+    "title": "特定の カスタム PHP の設定で使用される GD Graphics Library の gd_xbm.c におけるプロセスメモリから重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "特定の カスタム PHP の設定で使用される GD Graphics Library (別名 libgd) の gd_xbm.c には、プロセスメモリから重要な情報を取得される、またはサービス運用妨害 (スタックベースのバッファアンダーリードおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "LibGD project",
+          "productname": "LibGD",
+          "cpe": {
+            "text": "cpe:/a:libgd:libgd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2.0 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.4",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.1",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、過度に長い名前を介して、プロセスメモリから重要な情報を取得される、またはサービス運用妨害 (スタックベースのバッファアンダーリードおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3619",
+          "url": "https://www.debian.org/security/2016/dsa-3619"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "gdCtxPrintf vsnprintf return value not checked - leaks stack memory #211",
+          "url": "https://github.com/libgd/libgd/issues/211"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "xbm: avoid stack overflow (read) with large names #211",
+          "url": "https://github.com/libgd/libgd/commit/4dc1a2d7931017d3625f2d7cff70a17ce58b53b4"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:2363",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-09/msg00078.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5116",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5116"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5116",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5116"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月17日]\\n  掲載\\n[2016年11月21日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：openSUSE project (openSUSE-SU-2016:2363) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-17T15:55:08+09:00",
+    "datelastupdated": "2016-11-21T10:37:00+09:00",
+    "datepublic": "2016-05-13T00:00:00+09:00"
+  }
+}

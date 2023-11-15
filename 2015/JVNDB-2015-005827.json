@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2015-005827",
+  "vulinfodata": {
+    "title": "QEMU の Virtual Network Device サポートの hw/virtio/virtio.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "QEMU の Virtual Network Device (virtio-net) サポートの hw/virtio/virtio.c には、大きな、またはマージ可能な受信バッファがサポートされていない場合、サービス運用妨害 (ゲストネットワーク資源の消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fabrice Bellard",
+          "productname": "QEMU",
+          "cpe": {
+            "text": "cpe:/a:qemu:qemu",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、(1) tuntap または (2) macvtap インターフェース上の大量の過度に大きなフレームを介して、サービス運用妨害 (ゲストネットワーク資源の消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "QEMU",
+          "vulinfoid": "Top Page",
+          "url": "http://wiki.qemu.org/Main_Page"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7295",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7295"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7295",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7295"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE request Qemu: net: virtio-net possible remote DoS",
+          "url": "http://www.openwall.com/lists/oss-security/2015/09/18/9"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE request Qemu: net: virtio-net possible remote DoS",
+          "url": "http://www.openwall.com/lists/oss-security/2015/09/18/5"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-11T15:01:04+09:00",
+    "datelastupdated": "2015-11-11T15:01:04+09:00",
+    "datepublic": "2015-09-18T00:00:00+09:00"
+  }
+}

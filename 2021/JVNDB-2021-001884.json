@@ -1,0 +1,260 @@
+{
+  "vulinfoid": "JVNDB-2021-001884",
+  "vulinfodata": {
+    "title": "複数の Schneider Electric 製品における脆弱性",
+    "vulinfodescription": {
+      "overview": "Schneider Electric 社が提供する複数の製品には、次の脆弱性が存在します。  IGSS  　* 境界外書き込み (CWE-787) - CVE-2021-22750、CVE-2021-22751、CVE-2021-22752、CVE-2021-22754、CVE-2021-22755 　* 境域外読み取り (CWE-125) - CVE-2021-22753、CVE-2021-22756、CVE-2021-22757 　* 初期化されていないポインタのアクセス (CWE-824) - CVE-2021-22758 　* 解放済みメモリの使用 (Use-after-free) (CWE-416) - CVE-2021-22759 　* 無効なポインタや参照の解放 (CWE-763) - CVE-2021-22760 　* バッファエラー (CWE-119) - CVE-2021-22761 　* ディレクトリトラバーサル (CWE-22) - CVE-2021-22762  Modicon X80  　* 情報漏えいの脆弱性 (CWE-200) - CVE-2021-22749"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Schneider Electric",
+          "productname": "IGSS Definition (Def.exe)",
+          "cpe": {
+            "text": "cpe:/a:schneider_electric:eigss_definition",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V15.0.0.21140 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Schneider Electric",
+          "productname": "Modicon X80 BMXNOR0200H RTU",
+          "cpe": {
+            "text": "cpe:/a:schneider_electric:modicon_x80_bmxnor0200h_rtu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "SV1.70 IR22 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  IGSS  　* 第三者によって細工された、不正な CGF (Configuration Group File) ファイルをインポートした際に、データが損失する、またはコードを実行される - CVE-2021-22750、CVE-2021-22754、CVE-2021-22758、CVE-2021-22759、CVE-2021-22760 　* 第三者によって細工された、不正な CGF (Configuration Group File) ファイルをインポートした際に、情報が窃取される、または任意のコードが実行される - CVE-2021-22751 　* 第三者によって細工された、不正な CGF (Configuration Group File) ファイルをインポートした際に、情報が窃取される、またはコードが実行される - CVE-2021-22755、CVE-2021-22756、CVE-2021-22757、CVE-2021-22761 　* 第三者によって細工された、不正な WSP (Workspace) ファイルをパースした際に、データが消失する、またはコードが実行される - CVE-2021-22752、CVE-2021-22753 　* 第三者によって細工された、不正な CGF (Configuration Group File)、または WSP (Workspace) ファイルをインポートした際に、コードが実行される - CVE-2021-22762  Modicon X80  　* 遠隔の第三者によって細工された、HTTP リクエストを受信した際に、テレメトリーに用いる通信パラメータを含む RTU 設定に関して情報が窃取される - CVE-2021-22749"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Schneider Electric 社が提供する情報をもとに、以下のバージョンにアップデートしてください。  IGSS  　* IGSS Definition (Def.exe) V15.0.0.21042  [ワークアラウンドを実施する] IGSS  　* 信頼できない CGF や WSP ファイルをインポートしない  Modicon X80  　* 特定のメンテナンスや設定にのみ必要なため、不要な場合は Web (HTTP）サービスを Ecostruxure Control Expert アプリケーションより、無効化する (デフォルト設定では無効化されている) 　* ネットワーク分離とファイヤーウォールにより、コントローラー上の Port 80 番宛の通信を、信頼できる通信に制限する 　* BMXNOCモジュールを含むアーキテクチャで使用する場合は、<a href=\"https://download.schneider-electric.com/files?p_Doc_Ref=EIO0000001999\" target=\"_blank\">Modicon Controllers Platform Cyber Security Reference Manual</a> の推奨事項に従って、Access Control Lists を設定する  　　また、次のベストプラクティスを合わせて行うことが推奨されています。  　* 機器の Web サーバーにアクセスするためのパスワードを変更する。セットアップページの Security リンクから HTTP アクセス権限のユーザー名とパスワードを更新する。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Schneider Electric",
+          "vulinfoid": "IGSS Version 15.0.0.21141 (ZIPファイル)",
+          "url": "https://igss.schneider-electric.com/igss/igssupdates/v150/IGSSUPDATE.ZIP"
+        },
+        {
+          "type": "vendor",
+          "name": "Schneider Electric",
+          "vulinfoid": "Modicon Controllers Platform Cyber Security Reference Manual",
+          "url": "https://download.schneider-electric.com/files?p_Doc_Ref=EIO0000001999"
+        },
+        {
+          "type": "vendor",
+          "name": "Schneider Electric",
+          "vulinfoid": "Modicon X80 BMXNOR0200H RTU Module User Manual",
+          "url": "https://download.schneider-electric.com/files?p_enDocType=User+guide&p_File_Name=EIO0000000505.11.pdf&p_Doc_Ref=EIO0000000505"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Notification",
+          "vulinfoid": "IGSS (Interactive Graphical SCADA System)",
+          "url": "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-159-01"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Notification",
+          "vulinfoid": "Embedded Web Server for Modicon X80 BMXNOR0200H RTU Module",
+          "url": "https://download.schneider-electric.com/files?p_Doc_Ref=SEVD-2021-159-05"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22749",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22749"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22757",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22757"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22750",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22750"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22758",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22758"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22751",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22751"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22759",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22759"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22752",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22752"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22760",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22760"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22753",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22753"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22761",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22761"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22754",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22754"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22762",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22762"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22755",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22755"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-22756",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22756"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-159-04",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-159-04"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-159-05",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-159-05"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94079949",
+          "url": "http://jvn.jp/cert/JVNVU94079949"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-22",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+          "title": "パス・トラバーサル"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-416",
+          "url": "https://cwe.mitre.org/data/definitions/416.html",
+          "title": "解放済みメモリの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-787",
+          "url": "https://cwe.mitre.org/data/definitions/787.html",
+          "title": "境界外書き込み"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-824",
+          "url": "https://cwe.mitre.org/data/definitions/824.html",
+          "title": "初期化されていないポインタのアクセス"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-763",
+          "url": "https://cwe.mitre.org/data/definitions/763.html",
+          "title": "無効なポインタや参照の解放"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-11T16:10:19+09:00",
+          "description": "[2021年06月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-11T16:10:19+09:00",
+    "datelastupdated": "2021-06-11T16:10:19+09:00",
+    "datepublic": "2021-06-09T00:00:00+09:00"
+  }
+}

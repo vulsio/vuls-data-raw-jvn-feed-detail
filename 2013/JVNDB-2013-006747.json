@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2013-006747",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/unix/af_unix.c における AF_UNIX ソケットのパーミッションを回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/unix/af_unix.c には、解放済みメモリの使用 (Use-after-free) により、AF_UNIX ソケットのパーミッションを回避される、またはサービス運用妨害 (パニック) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use-after-free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.4",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された epoll_ctl コールを介して、AF_UNIX ソケットのパーミッションを回避される、またはサービス運用妨害 (パニック) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.3.3",
+          "url": "https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.3.3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "unix: avoid use-after-free in ep_remove_wait_queue",
+          "url": "https://github.com/torvalds/linux/commit/7d267278a9ece963d77eefec61630223fce08c6c"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "Use-after-free in ep_remove_wait_queue",
+          "url": "https://groups.google.com/forum/#!topic/syzkaller/3twDUI4Cpm8"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "unix: avoid use-after-free in ep_remove_wait_queue",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=7d267278a9ece963d77eefec61630223fce08c6c"
+        },
+        {
+          "type": "vendor",
+          "name": "LKML.ORG",
+          "vulinfoid": "List corruption on epoll_ctl(EPOLL_CTL_DEL) an AF_UNIX socket",
+          "url": "https://lkml.org/lkml/2015/9/13/195"
+        },
+        {
+          "type": "vendor",
+          "name": "LKML.ORG",
+          "vulinfoid": "eventpoll __list_del_entry corruption (was: perf: use after free in perf_remove_from_context)",
+          "url": "https://lkml.org/lkml/2014/5/15/532"
+        },
+        {
+          "type": "vendor",
+          "name": "LKML.ORG",
+          "vulinfoid": "Re: epoll oops.",
+          "url": "https://lkml.org/lkml/2013/10/14/424"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1282688",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1282688"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-7446",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7446"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-7446",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-7446"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年01月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-01-05T11:12:46+09:00",
+    "datelastupdated": "2016-01-05T11:12:46+09:00",
+    "datepublic": "2013-10-14T00:00:00+09:00"
+  }
+}

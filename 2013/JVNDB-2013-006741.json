@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-006741",
+  "vulinfodata": {
+    "title": "Async Http Client における HTTPS サーバになりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Async Http Client (別名 AHC または async-http-client) は、キーストアおよびトラストストアの両方のロケーションが明示的に設定されている場合を除いて、X.509 証明書の検証をスキップするため、HTTPS サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-345: Insufficient Verification of Data Authenticity (データの信頼性についての不十分な検証) と識別されています。 http://cwe.mitre.org/data/definitions/345.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Async Http Client project",
+          "productname": "Async Http Client",
+          "cpe": {
+            "text": "cpe:/a:async-http-client_project:async-http-client",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.9.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、一般的な AHC 設定での使用中に任意の証明書を提示されることで、HTTPS サーバになりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "SSL/TLS certificate verification disabled #352",
+          "url": "https://github.com/AsyncHttpClient/async-http-client/issues/352"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1176",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1176.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0850",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0850.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:0851",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-0851.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-7397",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7397"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-7397",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-7397"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年06月26日]\\n  掲載\\n[2015年07月30日]\\n  ベンダ情報：レッドハット (RHSA-2015:1176) を追加\\n[2015年08月11日]\\n  ベンダ情報：レッドハット (RHSA-2015:0850) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0851) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-06-26T13:49:36+09:00",
+    "datelastupdated": "2015-08-11T16:33:27+09:00",
+    "datepublic": "2013-07-30T00:00:00+09:00"
+  }
+}

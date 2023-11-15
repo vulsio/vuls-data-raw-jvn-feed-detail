@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2019-008546",
+  "vulinfodata": {
+    "title": "ISC Kea DHCP サーバにおける複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "ISC (Internet Systems Consortium) が提供する Kea DHCP サーバには、サービス運用妨害 (DoS) の脆弱性が存在します。  Kea DHCP サーバには、次の複数の脆弱性が存在します。   * DHCPv6 サーバで動作している際に、不正な形式の DUID を含むパケットにより Kea DHCPv6 server process (kea-dhcp6) が終了する - CVE-2019-6472 * DHCPv4 サーバで動作している際に、不正な hostname オプションにより assertion failure が発生し、Kea DHCPv4 server process (kea-dhcp4) が終了する - CVE-2019-6473 * リース情報の保存先として memfile が指定されている場合、無効なリース情報が一定数以上ストレージに保存されていると Kea サーバが再起動できなくなる - CVE-2019-6474"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ISC, Inc.",
+          "productname": "ISC Kea",
+          "cpe": {
+            "text": "cpe:/a:isc:kea",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.0 から 1.5.0",
+            "1.6.0-beta1",
+            "1.6.0-beta2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "当該製品が接続しているネットワークにアクセス可能な第三者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　　* Kea 1.4.0-P2 　　* Kea 1.5.0-P1 　　* Kea 1.6.0"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2019-6472: A packet containing a malformed DUID can cause the kea-dhcp6 server to terminate",
+          "url": "https://kb.isc.org/docs/cve-2019-6472"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2019-6473: An invalid hostname option can cause the kea-dhcp4 server to terminate",
+          "url": "https://kb.isc.org/docs/cve-2019-6473"
+        },
+        {
+          "type": "vendor",
+          "name": "Knowledge Base",
+          "vulinfoid": "CVE-2019-6474: An oversight when validating incoming client requests can lead to a situation where the Kea server will exit when trying to restart",
+          "url": "https://kb.isc.org/docs/cve-2019-6474"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-6472",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6472"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-6473",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6473"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-6474",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6474"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93863470",
+          "url": "https://jvn.jp/vu/JVNVU93863470"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-6473",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6473"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-6474",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6474"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-6472",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6472"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-09-03T11:39:31+09:00",
+          "description": "[2019年09月03日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-12-02T13:58:36+09:00",
+          "description": "[2019年12月02日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-6472) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-6473) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-6474) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-09-03T11:39:31+09:00",
+    "datelastupdated": "2019-12-02T15:20:48+09:00",
+    "datepublic": "2019-09-02T00:00:00+09:00"
+  }
+}

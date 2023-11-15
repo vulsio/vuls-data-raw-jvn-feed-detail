@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2015-007063",
+  "vulinfodata": {
+    "title": "LibTIFF の tif_next.c の NeXTDecode 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "LibTIFF の tif_next.c の NeXTDecode 関数には、サービス運用妨害 (境界外書き込み) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.0",
+            "8.0"
+          ]
+        },
+        {
+          "name": "LibTIFF",
+          "productname": "LibTIFF",
+          "cpe": {
+            "text": "cpe:/a:libtiff_project:libtiff",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された TIFF 画像を介して、サービス運用妨害 (境界外書き込み) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 2508",
+          "url": "http://bugzilla.maptools.org/show_bug.cgi?id=2508"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3467",
+          "url": "https://www.debian.org/security/2016/dsa-3467"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "* libtiff/tif_next.c: fix potential out-of-bound write in NeXTDecode()",
+          "url": "https://github.com/vadz/libtiff/commit/b18012dae552f85dcc5c57d3bf4e997a15b1cc1c"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8784",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8784"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8784",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8784"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-20T17:08:12+09:00",
+    "datelastupdated": "2016-04-20T17:08:12+09:00",
+    "datepublic": "2015-12-27T00:00:00+09:00"
+  }
+}

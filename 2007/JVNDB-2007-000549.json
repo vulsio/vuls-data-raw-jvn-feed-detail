@@ -1,0 +1,412 @@
+{
+  "vulinfoid": "JVNDB-2007-000549",
+  "vulinfodata": {
+    "title": "BIND9 の乱数生成に脆弱性",
+    "vulinfodescription": {
+      "overview": "BIND9 が DNS メッセージの識別に使うために生成する ID 情報は推測しやすい乱数になっており、遠隔の第三者からの不正な response パケットによってキャッシュ汚染を引き起こされる可能性があります。  ネームサーバは他のネームサーバに問い合わせを行なう際、複数の問い合わせを識別するために DNS 問い合わせメッセージ毎に異なる ID を割り当てます。通常この ID には乱数を用い、容易には推測できないように実装されていますが、BIND 9 における実装では少数のパケットの情報から、次に使われる ID を容易に推測できることが判明しました。結果として、遠隔の第三者がネームサーバのキャッシュに不正な値を紛れ込ませる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM AIX",
+          "cpe": {
+            "text": "cpe:/o:ibm:aix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.2 ",
+            "5.3 "
+          ]
+        },
+        {
+          "name": "ISC, Inc.",
+          "productname": "BIND",
+          "cpe": {
+            "text": "cpe:/a:isc:bind",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.0 (all versions)",
+            "9.1 (all versions)",
+            "9.2.0, 9.2.1, 9.2.2, 9.2.3, 9.2.4, 9.2.5, 9.2.6, 9.2.7, 9.2.8",
+            "9.3.0, 9.3.1, 9.3.2, 9.3.3, 9.3.4",
+            "9.4.0, 9.4.1",
+            "9.5.0a1, 9.5.0a2, 9.5.0a3, 9.5.0a4, 9.5.0a5"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.3.9",
+            "v10.4 から v10.4.10 のバージョン"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X Server",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v10.3.9",
+            "v10.4 から v10.4.10 のバージョン"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "3 (x86) ",
+            "3 (x86-64) ",
+            "3.0 ",
+            "3.0 (x86-64) ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (sparc) ",
+            "10 (x86) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Appliance Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0 (hosting) ",
+            "1.0 (workgroup) ",
+            "2.0  "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "10 (x64) ",
+            "8  "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.11 ",
+            "11.23 ",
+            "11.31 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "4.0 ",
+            "5.0 (client) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Linux Advanced Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:linux_advanced_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "キャッシュが汚染されることにより、通信の妨害やフィッシング攻撃が行なわれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダが提供する最新版へアップデートしてください。 BINDの開発元である ISC.ORG からは 9.2 系以降について、それぞれ 9.2.8-P1, BIND 9.3.4-P1, BIND 9.4.1-P1, BIND 9.5.0a6 が公開されています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Downloads",
+          "vulinfoid": "Security Update 2007-008 (10.3.9 Server)",
+          "url": "http://www.apple.com/support/downloads/securityupdate20070081039server.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Downloads",
+          "vulinfoid": "Security Update 2007-008 (10.3.9 Client)",
+          "url": "http://www.apple.com/support/downloads/securityupdate20070081039client.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "Mac OS X v10.4.11 and Security Update 2007-008",
+          "url": "http://docs.info.apple.com/article.html?artnum=307041-en"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "Mac OS X v10.4.11 およびセキュリティアップデート 2007-008",
+          "url": "http://docs.info.apple.com/article.html?artnum=307041-ja"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "bind-9.3.3-9.0.1.1AX",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=10"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02251",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c01123426"
+        },
+        {
+          "type": "vendor",
+          "name": "HP セキュリティ報告",
+          "vulinfoid": "HPSBUX02251",
+          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX02251.html"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "IZ02218",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IZ02218"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "IZ02219",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IZ02219"
+        },
+        {
+          "type": "vendor",
+          "name": "ISC BIND Vulnerabilities",
+          "vulinfoid": "BIND 9: cryptographically weak query ids",
+          "url": "http://www.isc.org/index.pl?/sw/bind/bind-security.php"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "bind (V2.x)",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1113"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "bind (V3.0/V4.0)",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1117"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2007:0740",
+          "url": "https://rhn.redhat.com/errata/RHSA-2007-0740.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "103018",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103018-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2007-38",
+          "url": "http://www.turbolinux.com/security/2007/TLSA-2007-38.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "アップル ソフトウェアアップデート",
+          "vulinfoid": "セキュリティアップデート 2007-008 (10.3.9 Server)",
+          "url": "http://www.apple.com/jp/ftp-info/reference/securityupdate20070081039server.html"
+        },
+        {
+          "type": "vendor",
+          "name": "アップル ソフトウェアアップデート",
+          "vulinfoid": "セキュリティアップデート 2007-008 (10.3.9 Client)",
+          "url": "http://www.apple.com/jp/ftp-info/reference/securityupdate20070081039client.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2007:0740",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0740J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2007-38",
+          "url": "http://www.turbolinux.co.jp/security/2007/TLSA-2007-38j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-2926",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2926"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2007-2627",
+          "url": "http://www.frsirt.com/english/advisories/2007/2627"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA07-319A",
+          "url": "http://jvn.jp/cert/JVNTA07-319A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#252735",
+          "url": "http://jvn.jp/cert/JVNVU%23252735/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA08-190B",
+          "url": "http://jvn.jp/cert/JVNTA08-190B/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA07-319A",
+          "url": "http://jvn.jp/tr/TRTA07-319A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-2926",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2926"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA26152",
+          "url": "http://secunia.com/advisories/26152"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "25037",
+          "url": "http://www.securityfocus.com/bid/25037"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Cyber Security Alerts",
+          "vulinfoid": "SA07-319A",
+          "url": "http://www.us-cert.gov/cas/alerts/SA07-319A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA07-319A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA07-319A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#252735",
+          "url": "http://www.kb.cert.org/vuls/id/252735"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年08月02日]\\n  掲載\\n[2007年08月10日]\\n  影響を受けるシステム：ヒューレット・パッカード (HPSBUX02251) の情報追加。\\n  ベンダ情報: ヒューレット・パッカード (HPSBUX02251) 追加。\\n[2007年08月23日]\\n  影響を受けるシステム: IBM を更新しました。\\n  ベンダ情報: IBM の情報を追加しました。\\n  ・IZ02218\\n　・IZ02219\\n[2007年11月28日]\\n  影響を受けるシステム：アップル (Security Update 2007-008) の情報追加。\\n  影響を受けるシステム：ミラクル・リナックス (bind-9.3.3-9.0.1.1AX) の情報追加。\\n  ベンダ情報：アップル (Security Update 2007-008) 追加。\\n  ベンダ情報：ミラクル・リナックス (bind-9.3.3-9.0.1.1AX) 追加。"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-08-02T14:31:50+09:00",
+    "datelastupdated": "2007-11-28T13:47:41+09:00",
+    "datepublic": "2007-07-26T00:00:00+09:00"
+  }
+}

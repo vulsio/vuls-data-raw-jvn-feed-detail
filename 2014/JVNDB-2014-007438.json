@@ -1,0 +1,202 @@
+{
+  "vulinfoid": "JVNDB-2014-007438",
+  "vulinfodata": {
+    "title": "Apache HTTP Server の mod_lua モジュールの mod_lua.c におけるアクセス制限を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server の mod_lua モジュールの mod_lua.c は、同一の Lua authorization provider が異なるコンテキスト内の異なる引数を使用する httpd 設定をサポートしないため、アクセス制限を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.x",
+            "2.4.10 未満の 2.4.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.4",
+            "10.9.5"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "macOS Server (旧 OS X Server)",
+          "cpe": {
+            "text": "cpe:/o:apple:os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Enterprise Manager",
+          "cpe": {
+            "text": "cpe:/a:oracle:enterprise_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ops Center 12.1.4 未満",
+            "Ops Center 12.2.0",
+            "Ops Center 12.2.1",
+            "Ops Center 12.3.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、複数の Require 命令 (directive) を利用されることで、アクセス制限を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205031",
+          "url": "http://support.apple.com/en-us/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205219",
+          "url": "https://support.apple.com/en-us/HT205219"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205219",
+          "url": "http://support.apple.com/ja-jp/HT205219"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205031",
+          "url": "http://support.apple.com/ja-jp/HT205031"
+        },
+        {
+          "type": "vendor",
+          "name": "ASF Bugzilla",
+          "vulinfoid": "Bug 57204",
+          "url": "https://issues.apache.org/bugzilla/show_bug.cgi?id=57204"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Merge r1642499 from trunk",
+          "url": "https://github.com/apache/httpd/commit/3f1693d558d0758f829c8b53993f1749ddf6ffcb"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2016verbose-2367956.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1174077",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1174077"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "January 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/january_2016_critical_patch_update"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8109",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8109"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99970459",
+          "url": "http://jvn.jp/vu/JVNVU99970459/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8109",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8109"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0011",
+          "url": "http://advisories.mageia.org/MGASA-2015-0011.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月06日]\\n  掲載\\n[2015年06月04日]\\n  参考情報：関連文書 (MGASA-2015-0011) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n[2016年01月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2016 Critical Patch Update Released) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-06T16:51:08+09:00",
+    "datelastupdated": "2016-01-29T16:28:17+09:00",
+    "datepublic": "2014-11-12T00:00:00+09:00"
+  }
+}

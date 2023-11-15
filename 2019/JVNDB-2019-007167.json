@@ -1,0 +1,122 @@
+{
+  "vulinfoid": "JVNDB-2019-007167",
+  "vulinfodata": {
+    "title": "Cylance のアンチウイルス製品にマルウエア検知を回避される問題",
+    "vulinfodescription": {
+      "overview": "2019年7月21日より前の状態の Cylance の AI ベースのアンチウイルス製品には、悪性コンテンツを良性なものであると誤認識してしまう問題が存在します。  Cylance PROTECT には、実行ファイルが悪性か良性かを判断するための、機械学習アルゴリズム (ニューラルネットワーク) を使用したアンチウイルス機能が搭載されています。 この機械学習アルゴリズムの調査を行った研究グループから、マルウエアファイルに改変を加えることで、良性であると Cylance 製品が判断するようなファイルを作成することが可能であることが報告されました。Dridex、Gh0stRAT、Zeus など複数のよく知られたマルウエアファイルに手を加えて検知を回避することが可能であったとのことです。 調査に使用されたマルウエアのおよそ 85％ ほどが検知回避に成功したと報告されています。一方、Cylance が内部で行った調査では 50% 程度の成功率であったとのことです。どちらの数字にしても、検知を回避できるようにする改変がそれほど難しくはないことを示していると考えられます。実際の改変作業は、文字列を末尾に追加するだけであるとのことです。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Cylance",
+          "productname": "Cylance",
+          "cpe": {
+            "text": "cpe:/a:cylance:cylance",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "の AI ベースのアンチウイルス製品 2019年7月21日より前の状態"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "本件の手法を使って細工されたマルウエアは検知されない可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 2019年7月21日以降に Cylance のサービスに接続した対象製品には自動的にパッチが適用されているとのことです。 ただし、このパッチで全ての問題に対応できているかは不明であるため、下記のワークアラウンドも検討してください。  [ワークアラウンド(システム運用者向け)] 多層防御の考え方を取り入れてシステムを構成してください。例えば、ホストがファイルをダウンロードする際には、network IDS, web proxy, email サーバそれぞれがファイルを検証するような構成にするべきです。  [ワークアラウンド(セキュリティ製品開発者向け)] セキュリティ製品開発においても、多層防御の考え方が重要です。機械学習によるマルウエア検知機能は基本的にファイルの改変にたいして脆弱であると考えられます。機械学習機能に加え、シグネチャベースやルールベースなど既存の手法も組み合わせてください。また、機械学習機能を実装したツールに対しては、<a href=\"https://github.com/tensorflow/cleverhans\">CleverHans</a>、<a href=\"https://github.com/bethgelab/foolbox\">Foolbox</a>、<a href=\"https://github.com/IBM/adversarial-robustness-toolbox\">Adversarial Robustness Toolbox</a> など広く知られているツールを使って生成したデータ(\"adversarial example\")を使ったテストを行ってください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cylance",
+          "vulinfoid": "Resolution for BlackBerry Cylance Bypass",
+          "url": "https://threatvector.cylance.com/en_us/home/resolution-for-blackberry-cylance-bypass.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98738756",
+          "url": "http://jvn.jp/cert/JVNVU98738756"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#489481",
+          "url": "https://www.kb.cert.org/vuls/id/489481/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Adversarial Examples in Constrained Domains",
+          "url": "https://etda.libraries.psu.edu/catalog/15337rms5643"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "GitHub - tensorflow/cleverhans",
+          "url": "https://github.com/tensorflow/cleverhans"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "GitHub - bethgelab/foolbox",
+          "url": "https://github.com/bethgelab/foolbox"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "GitHub - IBM/adversarial-robustness-toolbox",
+          "url": "https://github.com/IBM/adversarial-robustness-toolbox"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Cylance, I Kill You!",
+          "url": "https://skylightcyber.com/2019/07/18/cylance-i-kill-you/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "SoK: Security and Privacy in Machine Learning",
+          "url": "https://ieeexplore.ieee.org/document/8406613"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Accessorize to a Crime: Real and Stealthy Attacks onState-of-the-Art Face Recognition",
+          "url": "https://www.cs.cmu.edu/~sbhagava/papers/face-rec-ccs16.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Robust Physical-World Attacks on Deep Learning Models",
+          "url": "https://arxiv.org/abs/1707.08945"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Experimental Security Research of Tesla Autopilot",
+          "url": "https://keenlab.tencent.com/en/whitepapers/Experimental_Security_Research_of_Tesla_Autopilot.pdf"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-08-05T11:41:34+09:00",
+          "description": "[2019年08月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-08-05T11:41:34+09:00",
+    "datelastupdated": "2019-08-05T11:41:34+09:00",
+    "datepublic": "2019-08-01T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2015-007189",
+  "vulinfodata": {
+    "title": "gdk-pixbuf の pixops/pixops.c の pixops_composite_nearest などの関数における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "gdk-pixbuf の pixops/pixops.c の (1) pixops_composite_nearest、(2) pixops_composite_color_nearest、および (3) pixops_process 関数には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.0"
+          ]
+        },
+        {
+          "name": "GNOME Project",
+          "productname": "gdk-pixbuf",
+          "cpe": {
+            "text": "cpe:/a:gnome:gdk-pixbuf",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.33.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された画像を介して、ヒープベースのバッファオーバーフローを誘発されることで、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3589",
+          "url": "https://www.debian.org/security/2016/dsa-3589"
+        },
+        {
+          "type": "vendor",
+          "name": "GNOME GIT REPOSITORY",
+          "vulinfoid": "pixops: use gint64 in more places to avoid overflow when shifting",
+          "url": "https://git.gnome.org/browse/gdk-pixbuf/commit/?id=dbfe8f70471864818bf458a39c8a99640895bd22"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8875",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8875"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8875",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8875"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE Request: gdk-pixbuf: Additional fixes to protect against overlows in pixops_* functions (similar to CVE-2015-7674)",
+          "url": "http://www.openwall.com/lists/oss-security/2016/05/17/7"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年06月03日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-06-03T12:17:16+09:00",
+    "datelastupdated": "2016-06-03T12:17:16+09:00",
+    "datepublic": "2015-10-06T00:00:00+09:00"
+  }
+}

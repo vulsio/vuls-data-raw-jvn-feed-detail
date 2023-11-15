@@ -1,0 +1,93 @@
+{
+  "vulinfoid": "JVNDB-2014-000028",
+  "vulinfodata": {
+    "title": "spモードメールで作成中のメールへのアクセスに関する問題",
+    "vulinfodescription": {
+      "overview": "株式会社NTTドコモが提供する spモードメールには、外部アプリケーションとの間で作成中のメールデータの受け渡しを行うためのアプリ連携インターフェースが実装されています。連携するアプリケーションを選択した時点で、受け渡しされるメール本文および添付ファイルが SD カードに保存されるため、他の Android アプリケーションからも読み取ることが可能です。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき次の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 徳田裕典 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社NTTドコモ",
+          "productname": "spモードメールアプリ",
+          "cpe": {
+            "text": "cpe:/a:nttdocomo:spmode_mail_android",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "rev.6100 から rev.6300 まで (Android 4.0.X およびそれ以前向け)",
+            "rev.6130 から rev.6700 まで (Android 4.1 およびそれ以降向け)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "不正な他の Android アプリケーションがインストールされている場合、作成中のメールの内容を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "この問題を修正するアップデートは提供されません。  [使用に関する注意] 開発者によると、Android 4.1 以降向け spモードメール バージョン 6800 以降ならびに Android 4.0.X 以前向け spモードメール バージョン 6400 以降において、初回起動時に表示される利用許諾、アプリ連携インターフェースを初めて使用する際のポップアップおよび当該製品のヘルプページに注意喚起の文が追加されているとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "JVN",
+          "vulinfoid": "株式会社エヌ・ティ・ティ・ドコモからの情報",
+          "url": "http://jvn.jp/jp/JVN05951929/995312/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1978",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1978"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#05951929",
+          "url": "http://jvn.jp/jp/JVN05951929/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1978",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1978"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年03月18日]\\n  掲載\\n[2014年03月25日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-1978) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-03-18T12:04:02+09:00",
+    "datelastupdated": "2014-03-25T19:23:37+09:00",
+    "datepublic": "2014-03-18T00:00:00+09:00"
+  }
+}

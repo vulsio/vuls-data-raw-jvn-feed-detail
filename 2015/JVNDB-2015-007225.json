@@ -1,0 +1,107 @@
+{
+  "vulinfoid": "JVNDB-2015-007225",
+  "vulinfodata": {
+    "title": "MSM デバイスなどの製品用 QuIC Android コントリビューションで使用される Linux Kernel の TSC ドライバにおけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイスおよびその他の製品用 Qualcomm Innovation Center (QuIC) Android コントリビューションで使用される Linux Kernel の TSC ドライバの drivers/media/platform/msm/broadcast/tsc.c には、サービス運用妨害 (不正なポインタデリファレンス) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、TSC_GET_CARD_STATUS ioctl コールを実行する巧妙に細工されたアプリケーションを介して、サービス運用妨害 (不正なポインタデリファレンス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "msm: broadcast: Remove unused TSC and TSPP2 drivers",
+          "url": "https://source.codeaurora.org/quic/la/kernel/msm-3.10/commit/?id=e20f20aaed6b6d2fd1667bad9be9ef35103a51df"
+        },
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "Issues in the TSC, TSPP2, and BusPM Drivers (CVE-2015-0573, CVE-2016-2441, CVE-2016-2442)",
+          "url": "https://www.codeaurora.org/issues-tsc-tspp2-and-buspm-drivers-cve-2015-0573-cve-2016-2441-cve-2016-2442"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0573",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0573"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0573",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0573"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年08月15日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-08-15T15:12:04+09:00",
+    "datelastupdated": "2016-08-15T15:12:04+09:00",
+    "datepublic": "2015-10-05T00:00:00+09:00"
+  }
+}

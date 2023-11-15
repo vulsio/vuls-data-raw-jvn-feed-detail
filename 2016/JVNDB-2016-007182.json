@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2016-007182",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/ext4/super.c の ext4_fill_super 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/ext4/super.c の ext4_fill_super 関数は、メタブロックグループを適切に検証しないため、サービス運用妨害 (境界外読み取りおよびシステムクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.9.8 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "CVSS:3.0/AV:P/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "物理的に端末の操作が可能な攻撃者により、巧妙に細工された ext4 イメージを介して、サービス運用妨害 (境界外読み取りおよびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ext4: validate s_first_meta_bg at mount time",
+          "url": "https://github.com/torvalds/linux/commit/3a4b77cd47bb837b8557595ec7425f281f2ca1fe"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ext4: validate s_first_meta_bg at mount time",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=3a4b77cd47bb837b8557595ec7425f281f2ca1fe"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1395190",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1395190"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-10208",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10208"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-10208",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-10208"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年02月14日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-02-14T11:31:20+09:00",
+    "datelastupdated": "2017-02-14T11:31:20+09:00",
+    "datepublic": "2016-12-01T00:00:00+09:00"
+  }
+}

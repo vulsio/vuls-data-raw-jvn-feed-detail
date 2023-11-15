@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2008-002935",
+  "vulinfodata": {
+    "title": "Comodo Firewall Pro におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Comodo Firewall Pro は、System Service Descriptor Table (SSDT) 関数にフックする特定のパラメータを検証しないため、サービス運用妨害 (システムクラッシュ) 状態となる脆弱性が存在します。 本脆弱性は、CVE-2007-0709 とは異なる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Comodo",
+          "productname": "comodo personal firewall",
+          "cpe": {
+            "text": "cpe:/a:comodo:comodo_personal_firewall",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 未満の Pro"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、以下を介して、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。 (1) NtDeleteFile 関数への呼び出し内の巧妙に細工された OBJECT_ATTRIBUTES 構造を介して、ZwQueryObject 結果の不適切な検証を誘発させる (2) NtCreateFile 関数への呼び出し (3) NtSetThreadContext 関数への呼び出し"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Comodo",
+          "vulinfoid": "Top Page",
+          "url": "http://personalfirewall.comodo.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2008-1736",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1736"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2008-1736",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-1736"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年06月26日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-06-26T16:02:23+09:00",
+    "datelastupdated": "2012-06-26T16:02:23+09:00",
+    "datepublic": "2008-04-29T00:00:00+09:00"
+  }
+}

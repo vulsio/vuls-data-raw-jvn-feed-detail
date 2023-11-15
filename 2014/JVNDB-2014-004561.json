@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2014-004561",
+  "vulinfodata": {
+    "title": "libvirt の qemu/qemu_driver.c 内の qemuDomainGetBlockIoTune 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libvirt の qemu/qemu_driver.c の qemuDomainGetBlockIoTune 関数には、ディスクがホットプラグされている、またはライブイメージから削除されている場合、サービス運用妨害 (クラッシュ) 状態にされる、または重要なヒープ情報を読まれる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.04 LTS",
+            "12.04 LTS",
+            "14.04 LTS"
+          ]
+        },
+        {
+          "name": "libvirt.org",
+          "productname": "libvirt",
+          "cpe": {
+            "text": "cpe:/a:libvirt:libvirt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.2.9 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された blkiotune クエリを介して、out-of-bounds read を誘発されることで、サービス運用妨害 (クラッシュ) 状態にされる、または重要なヒープ情報を読まれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Libvirt Security Notice",
+          "vulinfoid": "LSN-2014-0004",
+          "url": "http://security.libvirt.org/2014/0004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt.org",
+          "vulinfoid": "CVE-2014-3633: qemu: blkiotune: Use correct definition when looking up disk",
+          "url": "http://libvirt.org/git/?p=libvirt.git;a=commitdiff;h=3e745e8f775dfe6f64f18b5c2fe4791b35d3546b"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2366-1",
+          "url": "http://www.ubuntu.com/usn/USN-2366-1/"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット",
+          "vulinfoid": "RHSA-2014:1352",
+          "url": "https://rhn.redhat.com/errata/RHSA-2014-1352.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3633",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3633"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3633",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3633"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年10月08日]\\n  掲載\\n[2015年01月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Ubuntu (USN-2366-1) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-10-08T16:56:58+09:00",
+    "datelastupdated": "2015-01-09T17:57:42+09:00",
+    "datepublic": "2014-09-17T00:00:00+09:00"
+  }
+}

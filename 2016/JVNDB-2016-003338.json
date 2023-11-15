@@ -1,0 +1,251 @@
+{
+  "vulinfoid": "JVNDB-2016-003338",
+  "vulinfodata": {
+    "title": "Linux Kernel の security/keys/key.c の key_reject_and_link 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の security/keys/key.c の key_reject_and_link 関数は、特定のデータ構造が初期化されることを確認しないため、サービス運用妨害 (システムクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-416: Use After Free (解放済みメモリの使用) と識別されています。 http://cwe.mitre.org/data/definitions/416.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.6.3 まで"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Real Time Extension",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_real_time_extension",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Linux",
+          "cpe": {
+            "text": "cpe:/o:oracle:linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle VM サーバー",
+          "cpe": {
+            "text": "cpe:/o:oracle:vm_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux for Real Time",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_for_real_time",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux HPC Node EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server AUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_workstation",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise MRG",
+          "cpe": {
+            "text": "cpe:/a:redhat:enterprise_mrg",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工された keyctl request2 コマンドに関する問題によって、サービス運用妨害 (システムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KEYS: potential uninitialized variable",
+          "url": "https://github.com/torvalds/linux/commit/38327424b40bcebe2de92d07312c89360ac9229a"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "KEYS: potential uninitialized variable",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=38327424b40bcebe2de92d07312c89360ac9229a"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:1937",
+          "url": "https://lists.opensuse.org/opensuse-security-announce/2016-08/msg00000.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Linux Bulletin - October 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinoct2016-3090545.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1341716",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1341716"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1532",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1532.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1539",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1539.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2016:1541",
+          "url": "http://rhn.redhat.com/errata/RHSA-2016-1541.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4470",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4470"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4470",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4470"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年06月28日]\\n  掲載\\n[2016年09月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：レッドハット (RHSA-2016:1532) を追加\\n  ベンダ情報：レッドハット (RHSA-2016:1539) を追加\\n  ベンダ情報：レッドハット (RHSA-2016:1541) を追加\\n[2016年11月16日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - October 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加\\n  ベンダ情報：openSUSE project (SUSE-SU-2016:1937) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-06-28T16:36:13+09:00",
+    "datelastupdated": "2016-11-16T18:14:39+09:00",
+    "datepublic": "2016-06-16T00:00:00+09:00"
+  }
+}

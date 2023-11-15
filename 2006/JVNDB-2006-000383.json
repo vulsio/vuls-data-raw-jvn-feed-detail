@@ -1,0 +1,190 @@
+{
+  "vulinfoid": "JVNDB-2006-000383",
+  "vulinfodata": {
+    "title": "Microsoft Windows の Mailslot メッセージの処理におけるヒープオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft Windows で SMB トラフィックを取り扱う Server ドライバ（Srv.sys）には、以下の複数のセキュリティ上の問題が存在します。  1) SMB を介して一方向のデータ転送を構築する通信メカニズムである Mailslot において、メッセージ長に対する妥当性確認が不適切であるため、ヒープオーバーフローが発生する問題が存在します。(CVE-2006-1314)  リモートの攻撃者に悪用された場合、ring0 (カーネルモード) 権限で任意のコードを実行される可能性があります。  2) クライアントからの要求に応答する前に、SMB バッファの初期化が適切に行われていない問題が存在します。(CVE-2006-1315)  ローカルの攻撃者に悪用された場合、応答メッセージから通信中の SMB トラフィックで使用されるメモリの一部の情報が取得される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 2000",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_2000",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows Server 2003",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_server_2003",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(itanium) ",
+            "(x64) "
+          ]
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows XP",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_xp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "(x64) ",
+            "sp3 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS06-035",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS06-035.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS06-035",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/MS06-035.mspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-1314",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1314"
+        },
+        {
+          "type": "advisory",
+          "name": "JPCERT 緊急報告",
+          "vulinfoid": "JPCERT-AT-2006-0010",
+          "url": "http://www.jpcert.or.jp/at/2006/at060010.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA06-192A",
+          "url": "http://jvn.jp/cert/JVNTA06-192A/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA06-167A",
+          "url": "http://jvn.jp/cert/JVNTA06-167A/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA06-192A",
+          "url": "http://jvn.jp/tr/TRTA06-192A/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN Status Tracking Notes",
+          "vulinfoid": "TRTA06-167A",
+          "url": "http://jvn.jp/tr/TRTA06-167A/"
+        },
+        {
+          "type": "advisory",
+          "name": "McAfee Avert Labs Security Advisories",
+          "vulinfoid": "smb_info_disclosure_vulnerability",
+          "url": "http://www.mcafee.com/us/local_content/misc/threat_center/smb_info_disclosure_vulnerability.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-1314",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1314"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "18891",
+          "url": "http://www.securityfocus.com/bid/18891"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "18863",
+          "url": "http://www.securityfocus.com/bid/18863"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Cyber Security Alerts",
+          "vulinfoid": "SA06-192A",
+          "url": "http://www.us-cert.gov/cas/alerts/SA06-192A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA06-192A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA06-192A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Technical Cyber Security Alert",
+          "vulinfoid": "TA06-167A",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA06-167A.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#189140",
+          "url": "http://www.kb.cert.org/vuls/id/189140"
+        },
+        {
+          "type": "advisory",
+          "name": "警察庁 @police",
+          "vulinfoid": "マイクロソフト社のセキュリティ修正プログラムについて",
+          "url": "http://www.cyberpolice.go.jp/important/2006/20060712_072107.html"
+        },
+        {
+          "type": "advisory",
+          "name": "警察庁 @police",
+          "vulinfoid": "マイクロソフト社の Microsoft Excel の脆弱性について",
+          "url": "http://www.cyberpolice.go.jp/important/2006/20060621_110225.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-07-11T00:00:00+09:00"
+  }
+}

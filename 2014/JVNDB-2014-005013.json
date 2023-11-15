@@ -1,0 +1,100 @@
+{
+  "vulinfoid": "JVNDB-2014-005013",
+  "vulinfodata": {
+    "title": "複数の NAT-PMP デバイスが WAN 側から操作可能な問題",
+    "vulinfodescription": {
+      "overview": "NAT Port Mapping Protocol (NAT-PMP) を実装している複数のデバイスには、 外部から情報を取得されたり、ポートマッピング設定を操作されたりする問題があることが報告されています。  NAT-PMP は、NAT デバイスと LAN 側ホストとの間でアドレス/ポートマッピングリクエストのやりとりを行うためのプロトコルです。RFC 6886 では次のように記載されています。  RFC 6886 - NAT Port Mapping Protocol (NAT-PMP) https://tools.ietf.org/html/rfc6886  　　「NAT ゲートウェイは、WAN 側 IP アドレス宛てに送られてきたマッピングリクエストや、ゲートウェイの WAN 側ネットワークインターフェースから受信したマッピングリクエストを受け入れてはならない。」  また、作成されるマッピングにおける LAN 側アドレスには、受信したマッピングリクエストパケットのソースアドレスを使わなければ「ならない」とされています。  NAT-PMP デバイスがこれらの制約を正しく実装していない場合、不正なポートマッピングが作成されたり、デバイスに関する情報が漏えいしたりする可能性があります。  インターネット上に、(WAN 側からの) リクエストに対して応答するNAT-PMP デバイスが大量に存在することが報告されています。報告者のレポートでは、NAT-PMP の実装 miniupnpd を使った製品における実装上の不具合や使用時の不適切な設定が、原因のひとつとして考えられると記載されています。  なお、miniupnpd バージョン 1.8.20141022 では、NAT-PMP パケットを WAN 側インターフェースから受信した場合にはこれを破棄するように更新されています。また、設定ファイル miniupnpd.conf には、より適切な設定を促すコメントが追加されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、NAT デバイスに関する情報を取得されたり、ポートマッピングの設定を操作されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[製品開発者向けの対策] RFC 6866 に記載されている制約条件を正しく実装する  [製品ユーザ向けの対策] NAT デバイスが適切に設定されていることを確認する  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　・ 5351/udp へのアクセスを制限する 　・ NAT-PMP を無効にする"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "miniupnpd: Discard NAT-PMP packets coming from the WAN ",
+          "url": "https://github.com/miniupnp/miniupnp/commit/16389fda3c5313bffc83fb6594f5bb5872e37e5e"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "miniupnpd/miniupnpd.conf: add comments regarding security",
+          "url": "https://github.com/miniupnp/miniupnp/commit/82604ec5d0a12e87cb5326ac2a34acda9f83e837"
+        },
+        {
+          "type": "vendor",
+          "name": "MiniUPnPd",
+          "vulinfoid": "MiniUPnP Project HomePage",
+          "url": "http://miniupnp.free.fr/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99291862",
+          "url": "http://jvn.jp/vu/JVNVU99291862/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Request for Comments (RFC)",
+          "vulinfoid": " RFC 6886 - NAT Port Mapping Protocol (NAT-PMP) ",
+          "url": "https://tools.ietf.org/html/rfc6886"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#184540",
+          "url": "http://www.kb.cert.org/vuls/id/184540"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "R7-2014-17: NAT-PMP Implementation and Configuration Vulnerabilities ",
+          "url": "https://community.rapid7.com/community/metasploit/blog/2014/10/21/r7-2014-17-nat-pmp-implementation-and-configuration-vulnerabilities"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年10月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-10-27T14:46:37+09:00",
+    "datelastupdated": "2014-10-27T14:46:37+09:00",
+    "datepublic": "2014-10-23T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2015-001771",
+  "vulinfodata": {
+    "title": "Telerik Analytics Monitor ライブラリに DLL ハイジャックが可能な脆弱性",
+    "vulinfodescription": {
+      "overview": "Telerik Analytics Monitor ライブラリは、アプリケーション使用に関するメトリクス情報を収集するためのアプリケーション使用解析サービスです。特定のバージョンの Telerik Analytics Monitor ライブラリには、DLL ハイジャックが可能な脆弱性が存在するため、ライブラリを実装するアプリケーションのコンテキストで任意のコードをロードさせられる可能性があります。  プロセスの制御 (CWE-114) CWE-114: Process Control https://cwe.mitre.org/data/definitions/114.html  Telerik Analytics Monitor ライブラリは、アプリケーションに統合する DLL として提供されています。このライブラリは、HTTPS 通信をサポートする目的で、独自にビルドした OpenSSL を含んでいます。  本脆弱性は、2014年8月3日にリリースされた Telerik Analytics Monitor ライブラリ バージョン 3.2.96 において作りこまれました。このバージョンでは、OpenSSL ライブラリが暗号化演算ハードウェアをサポートする形でビルドされており、関連する DLL を実行時にロードしようとします。具体的には、4つの DLL (sunsapi.dll、swift.dll、nfhwcrhk.dll、surewarehook.dll) をロードしようとしますが、これらは Telerik からは提供されていません。本脆弱性の影響を受ける Telerik Analytics Monitor ライブラリのファイル名は、EQATEC.Analytics.Monitor.Win32_vc100.dll (32-bit 版システム向け) と EQATEC.Analytics.Monitor.Win32_vc100-x64.dll (64-bit 版システム向け) です。  なお、National Vulnerability Database (NVD) では、CWE-426 として公開されています。  補足情報 : CWE による脆弱性タイプは、CWE-426: Untrusted Search Path (信頼性のない検索パス) と識別されています。 http://cwe.mitre.org/data/definitions/426.html "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Telerik",
+          "productname": "Analytics Monitor ライブラリ",
+          "cpe": {
+            "text": "cpe:/a:telerik:analytics_monitor_library",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 3.2.96 およびそれ以降、3.2.125 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.9",
+          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者によって提供された悪意ある DLL が Telerik Analytics Monitor ライブラリを実装するアプリケーションにロードされることで、アプリケーションのコンテキストで任意のコードを実行される可能性があります。Telerik Analytics Monitor ライブラリは制御システム (ICS) 等で利用されており、脆弱性が悪用された場合、第三者によって、制御システムにアクセスされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 本脆弱性は Telerik Analytics Monitor ライブラリ バージョン 3.2.125 で対策されています。バージョン 3.2.125 以降では OpenSSL が暗号化演算ハードウェアのサポートを無効にしてビルドされており、実行時に DLL がロードされることはありません。  Telerik Analytics Monitor ライブラリ バージョン 3.2.125 http://www.telerik.com/support/whats-new/analytics/release-history/analytics-monitor-library-3.2.125  開発者は、バージョン 3.2.129 にアップデートすることを推奨しています (バージョン 3.2.125 より後で発生した問題も修正されているため)。  バージョン 3.2.129 http://www.telerik.com/support/whats-new/analytics/release-history/analytics-monitor-library-v3.2.129"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Telerik",
+          "vulinfoid": "Analytics Monitor Library v3.2.125",
+          "url": "http://www.telerik.com/support/whats-new/analytics/release-history/analytics-monitor-library-3.2.125"
+        },
+        {
+          "type": "vendor",
+          "name": "Telerik",
+          "vulinfoid": "Analytics Monitor Library v3.2.129",
+          "url": "http://www.telerik.com/support/whats-new/analytics/release-history/analytics-monitor-library-v3.2.129"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-2264",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2264"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-15-069-04A",
+          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-15-069-04A"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98897821",
+          "url": "http://jvn.jp/vu/JVNVU98897821/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-2264",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2264"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#794095",
+          "url": "http://www.kb.cert.org/vuls/id/794095"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年03月13日]\\n  掲載\\n[2015年03月16日]\\n  概要：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2264) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-03-13T11:24:42+09:00",
+    "datelastupdated": "2015-03-16T16:57:36+09:00",
+    "datepublic": "2015-03-10T00:00:00+09:00"
+  }
+}

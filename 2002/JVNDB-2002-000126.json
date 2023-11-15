@@ -1,0 +1,166 @@
+{
+  "vulinfoid": "JVNDB-2002-000126",
+  "vulinfodata": {
+    "title": "hanterm にエスケープシーケンスによりウィンドウタイトルを改変される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Hanterm (hanterm-xf) は、X Window システムに用いられるハングル文字対応のターミナルエミュレータです。  Hanterm には、エスケープシーケンスを用いてウインドウタイトルを設定できる機能とエスケープシーケンスを用いてウインドウタイトルの内容をターミナルエミュレータのコマンドライン上に表示する機能が備わっています。 Hanterm-xf 2.0.4 以前には、これらのエスケープシーケンスを利用することで、ウィンドウタイトルにコマンドを含む文字列を設定し、コマンドライン上にそれを表示可能な問題が存在します。    この問題を利用するリモートの攻撃者は、ウインドウタイトルに任意のコマンドを含む文字列を設定し、それを標的ホストのターミナルエミュレータ内のコマンドライン上で実行することが可能です。 尚、ウインドウタイトルには CR コード (改行文字コード) を挿入不能であるため、攻撃者はユーザに攻撃対象のターミナルエミュレータ内のコマンドライン上で明示的に改行キーをキーボードから入力させる必要があります。  また、Hanterm -xf 2.0.4 以前には、DEC UDK 処理中に適切にエスケープシーケンスを取り扱わないため、無限ループに陥る可能性が存在します。  この問題を利用する攻撃者は、悪意あるエスケープシーケンスをターミナルエミュレータで表示させることにより、エミュレータをクラッシュさせることが可能です。  尚、ウインドウタイトルに関する問題と同様の問題が XFree86 4.2.0 以前に、また DEC UDK に関する問題と同様の問題が XFree86 4.2.99.4 以前に存在することが報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.1  ",
+            "7.2  ",
+            "7.3  ",
+            "8.0  "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "XFree86",
+          "url": "http://www.miraclelinux.com/support/update/data/XFree86.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:067",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-067.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:066",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-066.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:064",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-064.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2003:070",
+          "url": "https://rhn.redhat.com/errata/RHSA-2003-070.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:067",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-067J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:066",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-066J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:064",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-064J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2003:070",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-070J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2003-0077",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0077"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2003-0077",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0077"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "6940",
+          "url": "http://www.securityfocus.com/bid/6940"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "6946",
+          "url": "http://www.securityfocus.com/bid/6946"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "6944",
+          "url": "http://www.securityfocus.com/bid/6944"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "6950",
+          "url": "http://www.securityfocus.com/bid/6950"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2002-06-06T00:00:00+09:00"
+  }
+}

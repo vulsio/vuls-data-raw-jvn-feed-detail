@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2017-003135",
+  "vulinfodata": {
+    "title": "libsndfile の flac_buffer_copy() 関数におけるセグメンテーション違反を引き起こされる脆弱性",
+    "vulinfodescription": {
+      "overview": "libsndfile の flac_buffer_copy() 関数 (flac.c) には、セグメンテーション違反を引き起こされる脆弱性が存在します。  本脆弱性は、CVE-2017-7585 と同様の問題です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Erik de Castro Lopo",
+          "productname": "libsndfile",
+          "cpe": {
+            "text": "cpe:/a:mega-nerd:libsndfile",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.28 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "メモリの読み取りアクセスにより、リサンプリングの試行中に、巧妙に細工された FLAC ファイルを介して、セグメンテーション違反を引き起こされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "src/flac.c: Improve error handling",
+          "url": "https://github.com/erikd/libsndfile/commit/60b234301adf258786d8b90be5c1d437fc8799e0"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-7742",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7742"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-7742",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7742"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-17T12:32:47+09:00",
+    "datelastupdated": "2017-05-17T12:32:47+09:00",
+    "datepublic": "2017-03-24T00:00:00+09:00"
+  }
+}

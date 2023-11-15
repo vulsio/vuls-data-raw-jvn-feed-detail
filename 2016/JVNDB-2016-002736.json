@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2016-002736",
+  "vulinfodata": {
+    "title": "Chef Manage に Cookie のデシリアライズ処理に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Chef Manage アドオン version 1.11.4 およびそれ以前には、Cookie データのデシリアライズ処理に問題があり、遠隔の第三者によって任意のコードを実行される可能性があります。  信頼できないデータのデシリアライズ (CWE-502) - CVE-2016-4326 Chef Manage (旧称：opscode-manage) アドオンを有効にした Chef は、ユーザから渡された Cookie を適切に検証することなくデシリアライズします。認証されていない攻撃者が細工した Cookie を送信し、それがデシリアライズされることで、結果としてウェブサーバの権限で任意のコードが実行される可能性があります。  CWE-502: Deserialization of Untrusted Data http://cwe.mitre.org/data/definitions/502.html  Chef Manage (旧称：opscode-manage) アドオン https://downloads.chef.io/chef-manage/ubuntu/  Chef https://www.chef.io/chef/"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Chef Software, Inc.",
+          "productname": "Chef Manage アドオン",
+          "cpe": {
+            "text": "cpe:/a:chef:chef_manage",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "version 1.11.4 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者から送られた、細工された Cookie を当該製品がデシリアライズすることで、ウェブサーバの権限で任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 Chef Manage または opscode-manage の version 1.12.0 以降のリリースでは本脆弱性の影響を受けません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Chef",
+          "vulinfoid": "Chef | IT Automation for speed and awesomeness | Chef",
+          "url": "https://www.chef.io/chef/"
+        },
+        {
+          "type": "vendor",
+          "name": "Chef",
+          "vulinfoid": "Chef Manage | Chef Downloads | Chef",
+          "url": "https://downloads.chef.io/chef-manage/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4326",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4326"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90579091",
+          "url": "http://jvn.jp/vu/JVNVU90579091/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4326",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4326"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#586503",
+          "url": "http://www.kb.cert.org/vuls/id/586503"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年05月19日]\\n  掲載\\n[2016年06月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-4326) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-05-19T13:50:41+09:00",
+    "datelastupdated": "2016-06-14T16:08:59+09:00",
+    "datepublic": "2016-05-17T00:00:00+09:00"
+  }
+}

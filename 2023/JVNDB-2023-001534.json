@@ -1,0 +1,213 @@
+{
+  "vulinfoid": "JVNDB-2023-001534",
+  "vulinfodata": {
+    "title": "FINS プロトコルにおけるセキュリティ上の問題について",
+    "vulinfodescription": {
+      "overview": "FINS プロトコルは、オムロン社製 PLC や PC ソフトウェアなど、FA ネットワークや FA 制御システムの制御をコマンド・レスポンス方式にて行う通信プロトコルです。FINS コマンドには、次のような機能があり、それらのコマンドを使って対象機器からの情報の読み書き、各種操作、設定をすることができます。機種により、サポートされている FINS コマンドは異なります。  　* I/O メモリエリアの読み出し/書き込み 　* パラメータエリアの読み出し/書き込み 　* プログラムエリアの読み出し/書き込み 　* 動作モード変更 　* 機器構成の読み出し 　* CPU ユニットのステータスの読み出し 　* 時間情報のアクセス 　* メッセージの読み出し/解除 　* アクセス権の獲得・開放 　* 異常履歴の読み出しなど 　* ファイル操作 　* 強制セット/リセット  FINS コマンドのメッセージは「FINS ヘッダ」「FINS コマンドコード」「パラメータ」の３つから構成されています。FINS コマンドメッセージを受信した制御機器/ソフトウェアは、「FINS コマンドコード」に対応する処理を実行し、その処理結果をFINSレスポンスメッセージとして「FINSヘッダ」にある送信元へ返信します。FINS のプロトコル設計では、FAネットワークは工場やライン・装置に閉じたローカルネットワークであることを前提としています。そのため FINS メッセージの暗号化や検証、認証などの機能は定義されていません。FINS プロトコルに対して、次に示すような問題が指摘されています。  1. 平文通信 FINS プロトコルでは暗号化通信を定義していません。通信経路上の FINS メッセージは平文で送受信されるため、傍受することで容易に内容を読み取ることが可能です。また、FINS メッセージの改ざんを検知する機能も定義されていません。 　* 機微な情報の平文通信（CWE-319） 　* データの信頼性についての不十分な検証（CWE-345）  2. 認証不要 FINS プロトコルでは認証処理を定義していません。よって、悪意ある通信相手からの攻撃であることを識別することはできません。  　* なりすましによる認証回避 (CWE-290) 　* Capture-replay 攻撃による認証回避 (CWE-294) 　* 重要な機能に対する認証の欠如 (CWE-306) 　* データの信頼性についての不十分な検証（CWE-345） 　* サービス運用妨害 (DoS) の脆弱性 (CWE-400) 　* 外部からの操作制限不備 (CWE-412) 　* インタラクション頻度の不適切な制限  (CWE-799)  本文書はオムロンおよびJPCERT/CCが共同で執筆しました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC CJ シリーズ CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_cj_series_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC CP シリーズ CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_cp_series_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC CS シリーズ CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_cs_series_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC NJ シリーズ CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_nj_series_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC NX102 シリーズ CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_nx102_series_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC NX1P シリーズ CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_nx1p_series_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        },
+        {
+          "name": "オムロン株式会社",
+          "productname": "SYSMAC NX7 データベース接続 CPU ユニット",
+          "cpe": {
+            "text": "cpe:/o:omron:sysmac_nx7_database_connection_cpu_unit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "全バージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "FINS メッセージを傍受された場合、その内容を読み取られる可能性があります。また、不正な FINS メッセージを注入された場合、想定外の制御コマンドを実行されたり、デバイス内の情報にアクセスされたりする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "オムロン社によれば、現在のプロトコル仕様を改訂する予定はないとのことです。FINS プロトコルを実装した製品の利用者は、[詳細情報]や[想定される影響]に記載された内容を踏まえ、製品を使用する環境を適切に保護してください。FINS の悪用リスクを最小限に抑えるため、以下の対策が推奨されています。  1. FINS を使用しない(FINS を無効化する) FINS を使用していない FA ネットワークの場合、FINS プロトコルの機能を無効化してください。以下の機種では、FINS を無効化することができます。  　* SYSMAC NJ シリーズ CPU ユニット (Ver.1.49 以降) 　* SYSMAC NX1P シリーズ CPU ユニット (Ver.1.49 以降) 　* SYSMAC NX102 シリーズ CPU ユニット (Ver.1.49 以降) 　* SYSMAC NX7 データベース接続 CPU ユニット (Ver.1.29 以降)  2.不正アクセスの防止  　* アクセス元 IP アドレスを制限する 　* 許可されていないネットワークアセスを制限する 　* FINS 書込プロテクト機能を有効にする 　* PLC 保護パスワードを使用することで、書き込み権限を制約する。 　* PLC 上のハードウェア DIP スイッチを使用することで、PLC プログラム変更を禁止する  さらに以下に示す対策も推奨されています。  　* 制御システムや装置のネットワーク接続を最小限に抑え、信頼できないデバイスからのアクセス禁止 　* ファイアウォールの導入によるITネットワークからの分離（未使通信ポートの遮断、通信ホストの制限、FINS ポート (9600) へのアクセスを制限） 　* 制御システムや装置へのリモートアクセスが必要な場合、仮想プライベートネットワーク (VPN) の使用 　* 強固なパスワードの採用と頻繁な変更 　* 権限保有者のみを制御システムや装置へのアクセスを可能とする物理的統制の導入 　* 制御システムや装置で USB メモリなど外部ストレージデバイスを使用する場合の事前ウイルススキャン 　* 制御システムや装置へのリモートアクセス時の多要素認証の導入  3. アンチウィルス保護 制御システムに接続するパソコンに最新の商用品質のウイルス対策ソフトの導入・保守  4. データ入出力の保護 制御システムや装置への入出力データの意図せぬ改変に備えた、バックアップや範囲チェックなどの妥当性の確認  5. 紛失データの復元 データ紛失対策としての定期的な設定データのバックアップと保守  オムロン社によると、FINS プロトコルに起因する問題は CVE-2023-27396 として扱うとのことです。 "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "オムロン株式会社",
+          "vulinfoid": "複数のオムロン製品に実装されている FINS プロトコルにおける既知の問題について",
+          "url": "https://www.fa.omron.co.jp/product/vulnerability/OMSR-2023-003_ja.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-27396",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-27396"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91952379",
+          "url": "https://jvn.jp/vu/JVNVU91952379/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97111518",
+          "url": "https://jvn.jp/vu/JVNVU97111518/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91513661",
+          "url": "https://jvn.jp/ta/JVNTA91513661/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91000130",
+          "url": "https://jvn.jp/vu/JVNVU91000130/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-294",
+          "url": "https://cwe.mitre.org/data/definitions/294.html",
+          "title": "Capture-replay による認証回避"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-799",
+          "url": "https://cwe.mitre.org/data/definitions/799.html",
+          "title": "インタラクション頻度の不適切な制御"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-290",
+          "url": "https://cwe.mitre.org/data/definitions/290.html",
+          "title": "スプーフィングによる認証回避"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-345",
+          "url": "https://cwe.mitre.org/data/definitions/345.html",
+          "title": "データの信頼性についての不十分な検証"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-400",
+          "url": "https://cwe.mitre.org/data/definitions/400.html",
+          "title": "リソースの枯渇"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-412",
+          "url": "https://cwe.mitre.org/data/definitions/412.html",
+          "title": "外部からの操作の制限不備"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-306",
+          "url": "https://cwe.mitre.org/data/definitions/306.html",
+          "title": "重要な機能に対する認証の欠如"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-319",
+          "url": "https://cwe.mitre.org/data/definitions/319.html",
+          "title": "重要な情報の平文での送信"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-04-18T11:17:32+09:00",
+          "description": "[2023年04月18日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-09-20T11:55:44+09:00",
+          "description": "[2023年09月20日]\\n  影響を受けるシステム：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-04-18T11:17:32+09:00",
+    "datelastupdated": "2023-09-20T14:21:31+09:00",
+    "datepublic": "2023-04-17T00:00:00+09:00"
+  }
+}

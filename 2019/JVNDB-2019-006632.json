@@ -1,0 +1,89 @@
+{
+  "vulinfoid": "JVNDB-2019-006632",
+  "vulinfodata": {
+    "title": "Oracle Solaris における任意のコード実行の脆弱性",
+    "vulinfodescription": {
+      "overview": "Oracle Solaris 11 および 10 のプロセスファイルシステム (/proc) には、現在実行中のプロセスへのエイリアス (self/) が存在しています。Oracle Solaris 11 および 10 には self/ へのアクセスが適切に制限されていない問題があります。この問題により、/proc/self の読み書き権限を持つ攻撃者により、ファイル I/O を持つ現在実行中のプロセスを介して任意のコードを実行される可能性があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10",
+            "11"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.6",
+          "vector": "AV:L/AC:M/Au:S/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "/proc/self の読み書き権限を持つ攻撃者により、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  [/proc へのアクセスを制限する] 一般的に、遠隔からのファイル I/O 操作が可能なサービスは、chroot 等により /proc へのアクセスが制限されていなければなりません。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Oracle",
+          "vulinfoid": "proc(4)",
+          "url": "https://docs.oracle.com/cd/E19253-01/816-5174/proc-4/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99222951",
+          "url": "https://jvn.jp/vu/JVNVU99222951/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#790507",
+          "url": "https://www.kb.cert.org/vuls/id/790507"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-07-24T15:52:28+09:00",
+          "description": "[2019年07月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-07-24T15:52:28+09:00",
+    "datelastupdated": "2019-07-24T15:52:28+09:00",
+    "datepublic": "2019-07-17T00:00:00+09:00"
+  }
+}

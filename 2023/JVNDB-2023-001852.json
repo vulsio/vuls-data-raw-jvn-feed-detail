@@ -1,0 +1,161 @@
+{
+  "vulinfoid": "JVNDB-2023-001852",
+  "vulinfodata": {
+    "title": "因幡電機産業製 Wi-Fi AP UNIT における OS コマンドインジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "因幡電機産業株式会社が提供する Wi-Fi AP UNIT には、OS コマンドインジェクション (CWE-78) の脆弱性が存在します。  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ゼロゼロワン 早川 宙也 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-PD-WAPU",
+          "versionnumber": [
+            "v1.05_B04 およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-PD-WAPU-P",
+          "versionnumber": [
+            "v1.05_B04P およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-PD-WAPUM",
+          "versionnumber": [
+            "v1.05_B04 およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-PD-WAPUM-P",
+          "versionnumber": [
+            "v1.05_B04P およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-WAPU-300",
+          "cpe": {
+            "text": "cpe:/o:misc:inaba_dennki_sanngyou_ac-wapu-300",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v1.00_B07 およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-WAPU-300-P",
+          "cpe": {
+            "text": "cpe:/o:misc:inaba_dennki_sanngyou_ac-wapu-300-p",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v1.00_B08P およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-WAPUM-300",
+          "cpe": {
+            "text": "cpe:/o:misc:inaba_dennki_sanngyou_ac-wapum-300",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v1.00_B07 およびそれ以前のバージョン"
+          ]
+        },
+        {
+          "name": "因幡電機産業株式会社",
+          "productname": "AC-WAPUM-300-P",
+          "cpe": {
+            "text": "cpe:/o:misc:inaba_dennki_sanngyou_ac-wapum-300-p",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "v1.00_B08P およびそれ以前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品にログイン可能な第三者によって、ウェブブラウザから任意の OS コマンドを実行される可能性があります  "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[ワークアラウンドを実施する] 開発者によると、当該製品はすでにサポートを終了しているとのことです。 開発者は、下記の回避・軽減策を提供しています。  　* 初期設定値の変更 　　　* IP アドレスを変更する 　* 機器動作設定の変更 　　　* WAN/Wireless からの WEB UI（設定画面）へのアクセスを禁止する（本体正面 LAN 接続のみ許可） 　* 接続フィルタリング機能の変更 　　　* Wireless 接続を許可する端末の MAC アドレスを入力する 　　　* VPN や IP フィルターなどによる接続端末の制限を行う 　* 使用上の注意喚起 　　　* ネットワーク上位にファイヤウォールを設置する 　　　* 設定画面にログインしている間、他のウェブサイトにアクセスしない 　　　* 設定画面での操作終了後は、ウェブブラウザを終了する 　　　* ウェブブラウザに保存された設定画面のパスワードを削除する "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-28392",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28392"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98968780",
+          "url": "https://jvn.jp/vu/JVNVU98968780/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2023-28392",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28392"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-05-17T14:17:54+09:00",
+          "description": "[2023年05月17日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-06-12T11:02:38+09:00",
+          "description": "[2023年06月12日]\\n  影響を受けるシステム：ベンダ情報 (因幡電機産業株式会社) の更新に伴い内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-05-17T14:17:54+09:00",
+    "datelastupdated": "2023-05-17T14:17:54+09:00",
+    "datepublic": "2023-05-16T00:00:00+09:00"
+  }
+}

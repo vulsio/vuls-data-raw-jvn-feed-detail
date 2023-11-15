@@ -1,0 +1,176 @@
+{
+  "vulinfoid": "JVNDB-2019-000005",
+  "vulinfodata": {
+    "title": "UNLHA32.DLL、UNARJ32.DLL および LHMelting のインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Micco が提供する UNLHA32.DLL、UNARJ32.DLL および LHMelting のインストーラは、古いバージョンの UNLHA32.DLL で作成された自己解凍書庫ファイルが使用されており、CVE-2018-16189 の影響を受けるため、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 英利 雅美 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Micco",
+          "productname": "LHMelting for Win32",
+          "cpe": {
+            "text": "cpe:/a:micco:lhmelting",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver 1.65.3.6 およびそれ以前 (CVE-2019-5913)"
+          ]
+        },
+        {
+          "name": "Micco",
+          "productname": "UNARJ32.DLL for Win32",
+          "cpe": {
+            "text": "cpe:/a:micco:unarj32.dll",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver 1.10.1.25 およびそれ以前 (CVE-2019-5912)"
+          ]
+        },
+        {
+          "name": "Micco",
+          "productname": "UNLHA32.DLL for Win32",
+          "cpe": {
+            "text": "cpe:/a:micco:unlha32.dll",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver 2.67.1.2 およびそれ以前 (CVE-2019-5911)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用し、アップデートする] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 また、インストーラを実行する際には、インストーラと同じディレクトリに不審なファイルがないことを確認してください。  なお、本脆弱性の影響を受けるのはインストーラの起動時のみですが、最新のバージョンでは本脆弱性とは別の脆弱性 (CVE-2018-16190) も修正されているとのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ソフト脆弱性情報",
+          "vulinfoid": "MHSVI#20170515-01",
+          "url": "https://micco.mars.jp/vul/2017/mhsvi20170515_01.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフト脆弱性情報",
+          "vulinfoid": "MHSVI#20170515-04",
+          "url": "https://micco.mars.jp/vul/2017/mhsvi20170515_04.htm"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフト脆弱性情報",
+          "vulinfoid": "MHSVI#20170515-05",
+          "url": "https://micco.mars.jp/vul/2017/mhsvi20170515_05.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5913",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5913"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5911",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5911"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-5912",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5912"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#83826673",
+          "url": "https://jvn.jp/jp/JVN83826673/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#52168232",
+          "url": "https://jvn.jp/jp/JVN52168232/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "http://jvn.jp/ta/JVNTA91240916/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5911",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5911"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5912",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5912"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-5913",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-5913"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-01-25T12:26:05+09:00",
+          "description": "[2019年01月31日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2019-08-28T12:07:25+09:00",
+          "description": "[2019年08月28日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-5911) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-5912) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-5913) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-01-31T12:15:45+09:00",
+    "datelastupdated": "2019-08-28T12:07:40+09:00",
+    "datepublic": "2019-01-31T00:00:00+09:00"
+  }
+}

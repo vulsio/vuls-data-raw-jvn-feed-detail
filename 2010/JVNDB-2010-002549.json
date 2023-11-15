@@ -1,0 +1,168 @@
+{
+  "vulinfoid": "JVNDB-2010-002549",
+  "vulinfodata": {
+    "title": "OpenSSL における共有秘密鍵の認証要求を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL は、J-PAKE が有効な際、J-PAKE プロトコル内のパブリックパラメータを適切に認証しないため、共有秘密鍵の認証要求を回避される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.0c 未満"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESXi",
+          "cpe": {
+            "text": "cpe:/a:vmware:esxi",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1",
+            "5.0"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.11 ",
+            "11.23 ",
+            "11.31 "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された値をプロトコルの各ラウンド内に送信されることにより、認証を突破され、共有秘密鍵の認証要求を回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02638",
+          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c02737002"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "20131",
+          "url": "http://cvs.openssl.org/chngview?cn=20131"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "20098",
+          "url": "http://cvs.openssl.org/chngview?cn=20098"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "secadv_20101202",
+          "url": "http://openssl.org/news/secadv_20101202.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0013",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0013.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-4252",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4252"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-4252",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4252"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "45163",
+          "url": "http://www.securityfocus.com/bid/45163"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1024823",
+          "url": "http://www.securitytracker.com/id?1024823"
+        },
+        {
+          "type": "advisory",
+          "name": "VUPEN Security",
+          "vulinfoid": "VUPEN/ADV-2010-3120",
+          "url": "http://www.vupen.com/english/advisories/2010/3120"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年12月24日]\\n  掲載\\n[2011年03月22日]\\n  影響を受けるシステム：ヒューレット・パッカード (HPSBUX02638) の情報を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX02638) を追加\\n[2012年11月02日]\\n  影響を受けるシステム：VMware (VMSA-2012-0013) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0013) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-12-24T16:13:54+09:00",
+    "datelastupdated": "2012-11-02T17:36:25+09:00",
+    "datepublic": "2010-11-29T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "vulinfoid": "JVNDB-2015-003860",
+  "vulinfodata": {
+    "title": "SolarWinds N-able N-central にドメイン管理パスワードを復号するためのパラメータがハードコードされている問題",
+    "vulinfodescription": {
+      "overview": "SolarWinds N-able が提供する N-central は、エージェントベースの企業向け管理ソリューションです。N-central のウェブインターフェースには暗号化に用いられる複数のパラメータがハードコードされているため、これらのパラメータを組み合わせることで、パスワードの解読が可能です。  ハードコードされたセキュリティコンスタントを使用する問題 (CWE-547) N-central の RSM サービスは、N-able ドメイン管理者アカウントのパスワードを AES128 で暗号化し保持します。認証済みのローカルもしくは遠隔のユーザは、RSM ウェブページのソースから暗号化されたパスワードにアクセスすることができます。この認証情報は、プログラムファイルの閲覧権限を持つローカルユーザであれば、ローカルの RSM 設定ファイルから取得することも可能です。解読に必要な暗号鍵とパラメータはハードコードされているため、ローカルユーザシステムに保存された N-central の RSM から抜き出される可能性があります。攻撃者はこの情報を用いて、N-central のドメイン管理者パスワードを復号し、取得することが可能です。  CWE-547: Use of Hard-coded, Security-relevant Constants http://cwe.mitre.org/data/definitions/547.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "SolarWinds",
+          "productname": "N-Able N-Central",
+          "cpe": {
+            "text": "cpe:/a:solarwinds:n-able_n-central",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Agent version 9.5.0"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "ドメインのユーザ認証情報を持つ遠隔の攻撃者、あるいは当該製品をインストールしたシステム上の RSM ファイルにアクセス可能な攻撃者によって、ドメインの管理者権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 発見者によると、本脆弱性は以下のバージョンで修正されているとのことですが、CERT/CC はこれらの脆弱性の開発者による修正を確認していません。製品のユーザは、速やかにアップデートを適用するとともに、開発者に詳細を確認することが推奨されます。  　* N-Able Support Manager Build 178 および N-Able N-Central Agent version 9.5.1.4514 およびそれ以降 　* N-Able Support Manager Build 178 および N-Able N-Central Agent version 10.0.0.1722 およびそれ以降"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "SolarWinds",
+          "vulinfoid": "N-central is software for better IT service",
+          "url": "http://www.n-able.com/products/n-central"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-5610",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5610"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91026764",
+          "url": "http://jvn.jp/vu/JVNVU91026764/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-5610",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5610"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#912036",
+          "url": "https://www.kb.cert.org/vuls/id/912036"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-23T11:33:05+09:00",
+    "datelastupdated": "2015-07-23T11:33:05+09:00",
+    "datepublic": "2015-07-20T00:00:00+09:00"
+  }
+}

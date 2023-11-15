@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2016-001346",
+  "vulinfodata": {
+    "title": "Comodo Chromodo に同一生成元ポリシーを適用していない問題および旧バージョンの Chromium を使用している問題",
+    "vulinfodescription": {
+      "overview": "Comodo が提供するウェブブラウザ Chromodo は同一生成元ポリシーの適用が行われていないため、悪意のある、または第三者によって細工されたウェブサイトによるクロスドメイン攻撃を受ける可能性があります。 また、Chromodo は旧バージョンの Chromium を使用しているため、既知の脆弱性が存在します。  Comodo Internet Security には、Chromodo ウェブブラウザが同梱されています。Chromodo は 2015年9月にリリースされた Chromium 45.0.2454.93 をベースとしています。デフォルト設定では同一生成元ポリシーの適用を行っていないため、攻撃者は細工したウェブページを使用して別のドメインのウェブコンテンツを取得することが可能です。さらに詳しい情報は、Google の Project Zero team が公開した情報をご確認ください。  Google の Project Zero team が公開した情報 https://code.google.com/p/google-security-research/issues/detail?id=704  Chromodo 45.8.12.392 では当初発表された execCode を使用した攻撃コードへの対策がされていますが、Chromodo 45.8.12.392 でも依然として同一生成元ポリシーは無効化されています。  execCode を使用した攻撃コード https://code.google.com/p/google-security-research/issues/attachmentText?id=704&aid=7040001000&name=exploit.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Comodo",
+          "productname": "Chromodo",
+          "cpe": {
+            "text": "cpe:/a:comodo:chromodo",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "45.8.12.391",
+            "45.8.12.392"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "細工されたウェブサイトにアクセスすることで、ウェブブラウザに表示されている他のドメインのウェブコンテンツを取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2016年2月5日現在、CERT/CC ではこの問題を解決できる現実的な方法を把握していません。 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  [JavaScript を無効にする] JavaScript を無効にすることで、クロスドメイン攻撃を回避することが可能です。手順については、Comodo が提供する情報をご確認ください。  Comodo が提供する情報 https://help.comodo.com/topic-249-1-593-6747-Configuring-Settings-for-Images,-Java-Scripts-and-other-Web-Contents.html  ただし、JavaScript を無効にしても、Chromodo がベースにしている旧バージョンの Chromium に存在する他の既知の脆弱性による影響を防ぐことはできません。そのため、ユーザは次の回避策を検討してください。  [Chromodo を使用しない] これらの問題が修正されるまでの間、Chromodo の使用停止を検討してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Comodo",
+          "vulinfoid": "Configuring Settings For Images, Java Scripts, Web Contents | Web Browser",
+          "url": "https://help.comodo.com/topic-249-1-593-6747-Configuring-Settings-for-Images,-Java-Scripts-and-other-Web-Contents.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Issue 704 attachment: exploit.html",
+          "url": "https://code.google.com/p/google-security-research/issues/attachmentText?id=704&aid=7040001000&name=exploit.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Issue 704:  Comodo: Comodo \"Chromodo\" Browser disables same origin policy, Effectively turning off web security.",
+          "url": "https://code.google.com/p/google-security-research/issues/detail?id=704"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93051628",
+          "url": "http://jvn.jp/vu/JVNVU93051628/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#305096",
+          "url": "http://www.kb.cert.org/vuls/id/305096"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-09T15:14:25+09:00",
+    "datelastupdated": "2016-02-09T15:14:25+09:00",
+    "datepublic": "2016-02-04T00:00:00+09:00"
+  }
+}

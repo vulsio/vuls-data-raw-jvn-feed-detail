@@ -1,0 +1,123 @@
+{
+  "vulinfoid": "JVNDB-2006-000237",
+  "vulinfodata": {
+    "title": "Ethereal の SNDCP 解析部におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Ethereal には下記の複数のセキュリティ上の問題が存在します。  - 以下の部位の不備により Ethereal がクラッシュする問題  ・H.248、X.509if 解析部 (0.10.14) (CVE-2006-1937) ・SRVLOC 解析部、statistics コンテナ (0.10.0 - 0.10.14) (CVE-2006-1937) ・H.245 解析部 (0.10.13 - 0.10.14) (CVE-2006-1937) ・パケット共通の解析部 (0.10.9 - 0.10.14) (CVE-2006-1937) ・AIM 解析部 (0.10.7 - 0.10.14) (CVE-2006-1937) ・H.248 解析部 (0.10.11 - 0.10.14) (CVE-2006-1937) ・sniffer キャプチャデータの処理 (0.8.12 - 0.10.14) (CVE-2006-1938) ・SMB PIPE 解析部 (0.8.20 - 0.10.14) (CVE-2006-1938) ・ディスプレイフィルタ、DCERPC 解析部、GSM SMS 解析部 (0.9.16 - 0.10.14) (CVE-2006-1939) ・RPC 解析部、ASN.1 解析部 (0.9.8 - 0.10.14) (CVE-2006-1939) ・ASN.1-based 解析部 (0.9.10 - 0.10.14) (CVE-2006-1939) ・DCERPC NT 解析部、PER 解析部 (0.9.14 - 0.10.14) (CVE-2006-1939) ・SNDCP 解析部 (0.10.4 - 0.10.14) (CVE-2006-1940)  - 以下の部位の不備により Ethereal が無限ループに陥る問題  ・UMA 解析部 (0.10.12 - 0.10.14) (CVE-2006-1933) ・BER 解析部 (0.10.4 - 0.10.14) (CVE-2006-1933)  - 以下の部位の不備により Ethereal が 1 つずれによるエラーを生じる問題  ・Ethereal の OID 表示ルーチン (0.10.14) (CVE-2006-1932)  - 以下の部位の不備により Ethereal がバッファオーバーフローを生じる問題  ・ALCAP 解析部 (0.10.14) (CVE-2006-1934) ・Network Instruments ファイルの処理 (0.10.0 - 0.10.14) (CVE-2006-1934) ・NetXray/Windows sniffer ファイルの処理 (0.10.13 - 0.10.14) (CVE-2006-1934) ・COPS 解析部 (0.9.15 - 0.10.14) (CVE-2006-1935) ・telnet 解析部 (0.8.5 - 0.10.14) (CVE-2006-1936)  リモートの攻撃者に悪用された場合、Ethereal がクラッシュしサービス不能状態に陥る、あるいは Ethereal の実行権限 (通常 root 権限) で任意のコードを実行される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "AXSA-2006-78:1",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=367"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0420",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0420.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0420",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0420J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-1940",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1940"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-1940",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1940"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA19769",
+          "url": "http://secunia.com/advisories/19769"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "17682",
+          "url": "http://www.securityfocus.com/bid/17682"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2006-04-24T00:00:00+09:00"
+  }
+}

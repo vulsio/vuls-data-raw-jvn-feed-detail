@@ -1,0 +1,99 @@
+{
+  "vulinfoid": "JVNDB-2011-005112",
+  "vulinfodata": {
+    "title": "Chef の Chef Server における cookbooks をアップロードまたは削除される脆弱性",
+    "vulinfodescription": {
+      "overview": "Chef の Chef Server の chef-server-api/app/controllers/cookbooks.rb は、メソッドの更新および破棄に管理者権限を必要としないため、cookbooks をアップロードまたは削除される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Chef Software, Inc.",
+          "productname": "Chef",
+          "cpe": {
+            "text": "cpe:/a:chef:chef",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.10.2 未満の 0.10.x",
+            "0.9.18 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、(1) knife cookbook upload コマンドを介して、cookbooks をアップロードされる、または (2) knife cookbook delete コマンドを介して、cookbooks を削除される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Do not allow non-admins to upload or delete cookbooks.",
+          "url": "https://github.com/opscode/chef/commit/a4ea6edab2fecb922f999cffb0daa04eeeec7a26"
+        },
+        {
+          "type": "vendor",
+          "name": "Opscode",
+          "vulinfoid": "Chef",
+          "url": "http://www.opscode.com/chef/"
+        },
+        {
+          "type": "vendor",
+          "name": "Opscode",
+          "vulinfoid": "Permissions not checked when maniupulating cookbookds",
+          "url": "http://tickets.opscode.com/browse/CHEF-2436"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-5097",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-5097"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-5097",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-5097"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年08月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-08-10T10:11:45+09:00",
+    "datelastupdated": "2012-08-10T10:11:45+09:00",
+    "datepublic": "2011-06-23T00:00:00+09:00"
+  }
+}

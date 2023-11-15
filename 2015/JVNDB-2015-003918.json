@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2015-003918",
+  "vulinfodata": {
+    "title": "Google Chrome で使用される Blink の core/frame/LocalFrame.cpp の LocalFrame::isURLAllowed 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Google Chrome で使用される Blink の core/frame/LocalFrame.cpp の LocalFrame::isURLAllowed 関数は、ページの最大フレーム数を適切にチェックしないため、サービス運用妨害 (無効なカウント値および解放済みメモリの使用 (Use-after-free)) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Google Chrome",
+          "cpe": {
+            "text": "cpe:/a:google:chrome",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "44.0.2403.89 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、IFRAME 要素への多数の createElement コールを行う巧妙に細工された JavaScript コードを介して、サービス運用妨害 (無効なカウント値および解放済みメモリの使用 (Use-after-free)) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Chromium",
+          "vulinfoid": "Revision 197139",
+          "url": "https://src.chromium.org/viewvc/blink?revision=197139&view=revision"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Google Chrome",
+          "url": "https://www.google.com/intl/ja/chrome/browser/features.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Google",
+          "vulinfoid": "Stable Channel Update",
+          "url": "http://googlechromereleases.blogspot.jp/2015/07/stable-channel-update_21.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2015:1499",
+          "url": "https://rhn.redhat.com/errata/RHSA-2015-1499.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1284",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1284"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1284",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1284"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月27日]\\n  掲載\\n[2015年09月03日]\\n  ベンダ情報：レッドハット (RHSA-2015:1499) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-27T13:53:49+09:00",
+    "datelastupdated": "2015-09-03T17:13:36+09:00",
+    "datepublic": "2015-07-21T00:00:00+09:00"
+  }
+}

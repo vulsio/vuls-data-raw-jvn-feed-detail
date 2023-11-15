@@ -1,0 +1,97 @@
+{
+  "vulinfoid": "JVNDB-2013-005980",
+  "vulinfodata": {
+    "title": "MSM デバイス用 Qualcomm Innovation Center Android コントリビューションなどで使用される Linux Kernel 用 MSM カメラドライバにおける重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "MSM デバイス用 Qualcomm Innovation Center (QuIC) Android コントリビューション、およびその他の製品で使用される Linux Kernel 3.x 用 MSM カメラドライバには、以下に関する処理に不備があるため、カーネルスタックメモリから重要な情報を取得される脆弱性が存在します。  (1) drivers/media/platform/msm/camera_v1/mercury/msm_mercury_sync.c (2) drivers/media/platform/msm/camera_v2/jpeg_10/msm_jpeg_sync.c"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Android for MSM",
+          "productname": "Android for MSM",
+          "cpe": {
+            "text": "cpe:/o:codeaurora:android-msm",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.29"
+          ]
+        },
+        {
+          "name": "クアルコム",
+          "productname": "QuIC Mobile Station Modem",
+          "cpe": {
+            "text": "cpe:/o:qualcomm:quic_mobile_station_modem_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.4"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、以下の項目を介して、権限を取得される可能性があります。  (1) 巧妙に細工された MSM_MCR_IOCTL_EVT_GET システムコール (2) 巧妙に細工された MSM_JPEG_IOCTL_EVT_GET システムコール"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Code Aurora Forum",
+          "vulinfoid": "QCIR-2013-00008-1",
+          "url": "https://www.codeaurora.org/projects/security-advisories/stack-based-buffer-overflow-and-memory-disclosure-camera-driver-cve-2013-4738-cve-2013-4739"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4739",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4739"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4739",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4739"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年02月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-02-05T11:54:12+09:00",
+    "datelastupdated": "2014-02-05T11:54:12+09:00",
+    "datepublic": "2013-10-15T00:00:00+09:00"
+  }
+}

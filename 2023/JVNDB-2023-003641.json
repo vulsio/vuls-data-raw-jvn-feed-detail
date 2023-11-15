@@ -1,0 +1,80 @@
+{
+  "vulinfoid": "JVNDB-2023-003641",
+  "vulinfodata": {
+    "title": "Apache Tomcat Connectors (mod_jk) における情報漏えいの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Tomcat Connectors (mod_jk) には、設定情報に「JkOptions +ForwardDirectories」が含まれているのに、これがプロキシされるリクエストに対して明示的なマウントがない場合などに、暗黙的なマッピングを使用して、リクエストを最初に定義されたワーカーにマップしてしまうことによる情報漏えいの脆弱性 (CVE-2023-41081) があります。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache Tomcat Connectors",
+          "cpe": {
+            "text": "cpe:/a:apache:tomcat_connectors",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "mod_jk Connector 1.2.0 から 1.2.48"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "impactitem": {
+        "description": "この暗黙的なマッピングにより、ステータスワーカーが意図せず公開されたり、httpd で構成されたセキュリティ制約がバイパスされたりする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者によると、次のバージョンで暗黙的なマッピング機能は削除され、すべてのマッピングは明示的な構成によって行われるように修正されているとのことです。  　* Apache Tomcat Connector (mod_jk) 1.2.49 以降  [ワークアラウンドを実施する] 想定されるすべてのプロキシリクエストに対して、明示的なマウントが設定されていることを確認してください。  "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Pony Mail",
+          "vulinfoid": "[SECURITY] CVE-2023-41081 Apache Tomcat Connectors (mod_jk) Information Disclosure",
+          "url": "https://lists.apache.org/thread/rd1r26w7271jyqgzr4492tooyt583d8b"
+        },
+        {
+          "type": "vendor",
+          "name": "The Apache Software Foundation",
+          "vulinfoid": "Fixed in Apache Tomcat JK Connector 1.2.49",
+          "url": "https://tomcat.apache.org/security-jk.html#Fixed_in_Apache_Tomcat_JK_Connector_1.2.49"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-41081",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-41081"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#96802408",
+          "url": "https://jvn.jp/vu/JVNVU96802408/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2023-41081",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-41081"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-09-15T11:58:48+09:00",
+          "description": "[2023年09月15日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-09-15T12:09:00+09:00",
+    "datelastupdated": "2023-09-15T12:09:00+09:00",
+    "datepublic": "2023-09-14T00:00:00+09:00"
+  }
+}

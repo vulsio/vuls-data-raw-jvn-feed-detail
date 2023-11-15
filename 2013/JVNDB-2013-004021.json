@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2013-004021",
+  "vulinfodata": {
+    "title": "WordPress 用 IndiaNIC Testimonial プラグインにおけるクロスサイトリクエストフォージェリの脆弱性",
+    "vulinfodescription": {
+      "overview": "WordPress 用 IndiaNIC Testimonial プラグインの wp-admin/admin-ajax.php には、クロスサイトリクエストフォージェリの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IndiaNIC",
+          "productname": "Testimonial プラグイン",
+          "cpe": {
+            "text": "cpe:/a:indianic:testimonial_plugin",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、管理者の認証をハイジャックされ、wp-admin/admin-ajax.php に対して下記を実行される可能性があります。  (1) iNIC_testimonial_save アクションを介して、証明書を追加 (add a testimonial)  (2) iNIC_testimonial_save_listing_template アクションを介して、リストテンプレートを追加 (add a listing template)  (3) iNIC_testimonial_save_widget アクションを介して、ウィジェットテンプレートを追加 (add a widget template)   および、下記のパラメータを介して、クロスサイトスクリプティング (XSS) シーケンスを挿入される可能性があります。   (4) project_name (5) project_url (6) client_name (7) client_city (8) client_state (9) description (10) tag (11) video_url (12) is_featured (13) title (14) widget_title (15) no_of_testimonials (16) filter_by_country (17) filter_by_tags"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IndiaNIC",
+          "vulinfoid": "Top Page",
+          "url": "http://www.indianic.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "WordPress.org",
+          "vulinfoid": "IndiaNIC",
+          "url": "http://profiles.wordpress.org/indianic/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-5672",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-5672"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-5672",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-5672"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-352",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+          "title": "クロスサイトリクエストフォージェリ"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年09月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-09-12T14:31:32+09:00",
+    "datelastupdated": "2013-09-12T14:31:32+09:00",
+    "datepublic": "2013-09-01T00:00:00+09:00"
+  }
+}

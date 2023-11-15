@@ -1,0 +1,179 @@
+{
+  "vulinfoid": "JVNDB-2019-002622",
+  "vulinfodata": {
+    "title": "複数の VPN アプリケーションにおいてセッション cookie を不適切に保存する問題",
+    "vulinfodescription": {
+      "overview": "仮想プライベートネットワーク (VPN) は、複数のネットワークをインターネットを介して安全に接続するために使用されます。複数の VPN アプリケーションでは、認証やセッション管理に用いられる cookie をメモリやログファイルに不適切に保存する、センシティブなデータを暗号化しない問題 (CWE-311) が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Palo Alto Networks",
+          "productname": "GlobalProtect agent",
+          "cpe": {
+            "text": "cpe:/a:palo_alto_networks:globalprotect_agent",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.1.0 for Windows",
+            "4.1.10 for macOS およびそれ以前"
+          ]
+        },
+        {
+          "name": "シスコシステムズ",
+          "productname": "Cisco AnyConnect",
+          "cpe": {
+            "text": "cpe:/a:cisco:anyconnect",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.7.x 系およびそれ以前"
+          ]
+        },
+        {
+          "name": "パルスセキュア",
+          "productname": "Pulse Connect Secure",
+          "cpe": {
+            "text": "cpe:/a:pulsesecure:pulse_connect_secure",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.1R13 およびそれ以前",
+            "8.3R6 およびそれ以前",
+            "9.0R2 およびそれ以前"
+          ]
+        },
+        {
+          "name": "パルスセキュア",
+          "productname": "Pulse Secure Desktop Client",
+          "cpe": {
+            "text": "cpe:/a:pulsesecure:pulse_secure_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3R6 およびそれ以前",
+            "9.0R2 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.7",
+          "vector": "AV:L/AC:L/Au:S/C:C/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.9",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "Cookie を取得可能な第三者によって、リプレイ攻撃による正規ユーザへのなりすましが行われる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "Palo Alto Networks GlobalProtectについて:  [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性に対応した GlobalProtect Agent 4.1.1 for Windows および GlobalProtect Agent 4.1.11 for macOS が提供されています。  Cisco AnyConnect および Pulse Secure Connect Secureについて:  [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性に対応した以下のバージョンが提供されています。    &#8226;Pulse Secure Desktop 5.3R7 およびそれ以降   &#8226;Pulse Secure Desktop 9.0R3 およびそれ以降   &#8226;Pulse Connect Secure 8.1R14 およびそれ以降   &#8226;Pulse Connect Secure 8.3R7 およびそれ以降   &#8226;Pulse Connect Secure 9.0R3 およびそれ以降"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cisco",
+          "vulinfoid": "Top Page",
+          "url": "https://www.cisco.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "Palo Alto Networks",
+          "vulinfoid": "Information Disclosure in GlobalProtect Agent (PAN-SA-2019-0008)",
+          "url": "https://securityadvisories.paloaltonetworks.com/Home/Detail/146"
+        },
+        {
+          "type": "vendor",
+          "name": "Pulse Secure",
+          "vulinfoid": "Pulse Security Advisory: SA44114 - 2019-04: Out-of-Cycle Advisory: Pulse Desktop Client and Network Connect improper handling of session cookies (CVE-2019-11213) ",
+          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44114/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-11213",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11213"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2019-1573",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1573"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97651416",
+          "url": "https://jvn.jp/vu/JVNVU97651416/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-11213",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-11213"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2019-1573",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1573"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#192371",
+          "url": "https://www.kb.cert.org/vuls/id/192371/"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "GlobalProtect Agent on Windows/macOS privilege escalation",
+          "url": "https://vuldb.com/?id.133258"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-287",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+          "title": "不適切な認証"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2019-04-16T10:56:07+09:00",
+          "description": "[2019年04月16日]\\n  掲載"
+        },
+        {
+          "historyno": "4",
+          "datetime": "2019-04-23T11:19:12+09:00",
+          "description": "[2019年04月23日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2019-04-16T10:56:07+09:00",
+    "datelastupdated": "2019-09-30T17:48:55+09:00",
+    "datepublic": "2019-04-12T00:00:00+09:00"
+  }
+}

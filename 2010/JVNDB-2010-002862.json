@@ -1,0 +1,166 @@
+{
+  "vulinfoid": "JVNDB-2010-002862",
+  "vulinfodata": {
+    "title": "Samba の client/mount.cifs.c におけるサービス運用妨害 (mtab 破損) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Samba の smbfs 内にある mount.cifs の client/mount.cifs.c は、デバイス名、およびマウントポイントの文字列が、有効なキャラクタで構成されていることを確認しないため、サービス運用妨害 (mtab 破損) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Samba Project",
+          "productname": "Samba",
+          "cpe": {
+            "text": "cpe:/a:samba:samba",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.4.5 およびそれ以前"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) ",
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 ",
+            "5.0 (client) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Workstation",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_workstation",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、巧妙に細工されたデバイス名およびマウントポイントの文字列を介して、サービス運用妨害 (mtab 破損) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2011:1219",
+          "url": "https://rhn.redhat.com/errata/RHSA-2011-1219.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba",
+          "vulinfoid": "Release History",
+          "url": "http://samba.org/samba/history/"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0001",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0001.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-0547",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0547"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-0547",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0547"
+        },
+        {
+          "type": "advisory",
+          "name": "OPEN SOURCE VULNERABILITY DATABASE (OSVDB)",
+          "vulinfoid": "62155",
+          "url": "http://osvdb.org/62155"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA45806",
+          "url": "http://secunia.com/advisories/45806"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "38326",
+          "url": "http://www.securityfocus.com/bid/38326"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2011年09月16日]\\n  掲載\\n[2012年12月21日]\\n  影響を受けるシステム：VMware (VMSA-2012-0001) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0001) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2011-09-16T11:48:42+09:00",
+    "datelastupdated": "2012-12-21T16:48:43+09:00",
+    "datepublic": "2010-02-04T00:00:00+09:00"
+  }
+}

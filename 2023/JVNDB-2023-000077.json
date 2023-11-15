@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2023-000077",
+  "vulinfodata": {
+    "title": "FUJITSU Software Infrastructure Manager (ISM) における重要な情報の平文保存の脆弱性",
+    "vulinfodescription": {
+      "overview": "富士通株式会社が提供する FUJITSU Software Infrastructure Manager (ISM) には、重要な情報の平文保存の脆弱性 (CWE-312) が存在します。 ISM V2.8.0.060 において次の条件を満たす場合、保守資料 (ismsnap) にプロキシのパスワードが平文で記録される可能性があります。  <ul><li>ISM から外部への接続において、認証が必要なプロキシサーバを利用している</li><li>プロキシサーバの認証で要求されるユーザ ID やパスワードに \"&#92;\" (バックスラッシュ) が入る構成</li><li>ファームウェアダウンロード機能を有効化している (*)</li> * 本機能は欧州地域向けの提供機能であり、初期状態では無効化されています</ul>  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "富士通",
+          "productname": "FUJITSU Software Infrastructure Manager Advanced Edition",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:software_infrastructure_manager_advanced_edition",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V2.8.0.060"
+          ]
+        },
+        {
+          "name": "富士通",
+          "productname": "FUJITSU Software Infrastructure Manager Advanced Edition for PRIMEFLEX",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:software_infrastructure_manager_advanced_edition_for_primeflex",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V2.8.0.060"
+          ]
+        },
+        {
+          "name": "富士通",
+          "productname": "FUJITSU Software Infrastructure Manager Essential Edition",
+          "cpe": {
+            "text": "cpe:/a:fujitsu:software_infrastructure_manager_essential_edition",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V2.8.0.060"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "1.5",
+          "vector": "AV:L/AC:M/Au:S/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:C/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品の保守資料から、ISM で設定したプロキシのパスワードが漏えいする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。 開発者は本脆弱性の対策として、V2.8.0.061 をリリースしています。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 <ul><li>プロキシサーバの認証で要求されるユーザ ID やパスワードに \"&#92;\" (バックスラッシュ) を含まない設定で、ファームウェアのダウンロードを実行する</li><li>保守資料はマニュアルに従い安全な場所で管理し、不要な保守資料は削除する</li></ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "富士通",
+          "vulinfoid": "「FUJITSU Software Infrastructure Manager」の脆弱性のお知らせ",
+          "url": "https://www.fujitsu.com/jp/products/software/infrastructure-software/infrastructure-software/serverviewism/enhancement/v280-061/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-39379",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-39379"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#38847224",
+          "url": "https://jvn.jp/jp/JVN38847224/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-07-31T11:08:45+09:00",
+          "description": "[2023年08月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-08-04T14:04:38+09:00",
+    "datelastupdated": "2023-08-04T14:04:38+09:00",
+    "datepublic": "2023-08-04T00:00:00+09:00"
+  }
+}

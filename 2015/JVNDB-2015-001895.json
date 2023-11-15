@@ -1,0 +1,82 @@
+{
+  "vulinfoid": "JVNDB-2015-001895",
+  "vulinfodata": {
+    "title": "複数の BIOS 実装において SMRAM の領域外を参照する SMM 関数呼び出しが可能な問題",
+    "vulinfodescription": {
+      "overview": "複数の BIOS 実装には、SMRAM 領域外のメモリを参照する、安全でないシステム管理モード (SMM) での関数呼び出しが可能な問題が存在します。  LegbaCore の Corey Kallenberg 氏は次のように述べています。  　　System Management Mode (SMM) is the most privileged execution mode on the x86 processor. Non-SMM code can neither read nor write SMRAM (SMM RAM). Hence, even a ring 0 level attacker should be unable to gain access to SMM.  　　However, on modern systems, some SMM code calls or interprets function pointers located outside of SMRAM in an unsafe way. This provides opportunity for a ring 0 level attacker to break into SMM.  この脆弱性を使用するために、攻撃者は物理メモリにアクセスする必要があります。攻撃者はまず、SMM が使用する関数ポインタあるいは SMM で呼び出される関数を操作し、次に SMI (システム管理割り込み) コマンドポート 0xb2 にデータを書き込み、SMM へ遷移させることで、SMM のコンテキストでコードを実行することが可能です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:L/AC:H/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "システムにログイン可能な攻撃者によって SMM のコンテキスト内で任意のコードを実行され、Secure Boot を回避される可能性があります。また、保護された範囲レジスタを使用しないシステムでは、攻撃者によってファームウェアを書き換えられる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "開発者が提供する情報や CERT/CC Vulnerability Note VU#631788 の Vendor Information に掲載されている情報を参考に、対策方法を検討してください。 CERT/CC では、本脆弱性について開発者との調整を継続して進めています。  CERT/CC Vulnerability Note VU#631788：Vendor Information http://www.kb.cert.org/vuls/id/631788#vendors  Intel は BIOS 開発者に向け、脅威を緩和するためのガイダンスとして次の情報を提供しています。  　　Starting in Haswell-based client and server platforms, the \"SMM Code Access Check\" feature is available in the CPU. If SMM code enables this in the appropriate MSR, then logical processors are prevented from executing SMM code outside the ranges defined by the SMRR. If SMI code jumps outside these ranges, the CPU will assert a machine check exception. During BIOS development, this can be an effective mechanism for BIOS developers to identify insecure call-outs from SMM, and during runtime, this feature can also be effective at blocking certain attacks that redirect SMM execution outside SMRAM."
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-0949",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0949"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94580091",
+          "url": "http://jvn.jp/vu/JVNVU94580091/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-0949",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-0949"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#631788",
+          "url": "http://www.kb.cert.org/vuls/id/631788"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年03月24日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-03-24T12:13:44+09:00",
+    "datelastupdated": "2015-03-24T12:13:44+09:00",
+    "datepublic": "2015-03-20T00:00:00+09:00"
+  }
+}

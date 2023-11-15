@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2013-004381",
+  "vulinfodata": {
+    "title": "libvirt の util/virbitmap.c 内の virBitmapParse 関数おけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libvirt の util/virbitmap.c 内の virBitmapParse 関数には、サービス運用妨害 (out-of-bounds read およびクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "レッドハット",
+          "productname": "libvirt",
+          "cpe": {
+            "text": "cpe:/a:redhat:libvirt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工されたビットマップを介して、サービス運用妨害 (out-of-bounds read およびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "libvirt.org",
+          "vulinfoid": "virbitmap: Refactor virBitmapParse to avoid access beyond bounds of array",
+          "url": "http://libvirt.org/git/?p=libvirt.git;a=commit;h=47b9127e883677a0d60d767030a147450e919a25"
+        },
+        {
+          "type": "vendor",
+          "name": "libvirt.org",
+          "vulinfoid": "Releases",
+          "url": "http://libvirt.org/news.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1550",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00024.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 997367",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=997367"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-1954-1",
+          "url": "http://www.ubuntu.com/usn/USN-1954-1"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-5651",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-5651"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-5651",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-5651"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE request -- libvirt: virBitmapParse out-of-bounds read access",
+          "url": "http://www.openwall.com/lists/oss-security/2013/08/30/1"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年10月02日]\\n  掲載\\n[2013年10月24日]\\n  CVSS による深刻度：内容を更新\\n  ベンダ情報：Ubuntu (USN-1954-1) を追加\\n[2013年11月12日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:1550) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-10-02T16:45:37+09:00",
+    "datelastupdated": "2013-11-12T14:20:14+09:00",
+    "datepublic": "2013-09-02T00:00:00+09:00"
+  }
+}

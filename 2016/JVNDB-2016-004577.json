@@ -1,0 +1,154 @@
+{
+  "vulinfoid": "JVNDB-2016-004577",
+  "vulinfodata": {
+    "title": "libidn の lib/nfkc.c の stringprep_utf8_nfkc_normalize 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "libidn の lib/nfkc.c の stringprep_utf8_nfkc_normalize 関数には、サービス運用妨害 (境界外読み取りおよびクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-125: Out-of-bounds Read (境界外読み取り) と識別されています。 http://cwe.mitre.org/data/definitions/125.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "16.04 LTS"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "libidn",
+          "cpe": {
+            "text": "cpe:/a:gnu:libidn",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.33 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.2"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工された UTF-8 データを介して、サービス運用妨害 (境界外読み取りおよびクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GNU Project",
+          "vulinfoid": "Libidn 1.33 released",
+          "url": "https://lists.gnu.org/archive/html/help-libidn/2016-07/msg00009.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GNU Savannah",
+          "vulinfoid": "stringprep_utf8_nfkc_normalize: Reject invalid UTF8 instead of crashing.",
+          "url": "http://git.savannah.gnu.org/cgit/libidn.git/commit/?id=1fbee57ef3c72db2206dd87e4162108b2f425555"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:2135",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-08/msg00098.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:1924",
+          "url": "https://lists.opensuse.org/opensuse-updates/2016-08/msg00005.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-3068-1",
+          "url": "http://www.ubuntu.com/usn/USN-3068-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6263",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6263"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6263",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6263"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月12日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-12T11:45:46+09:00",
+    "datelastupdated": "2016-09-12T11:45:46+09:00",
+    "datepublic": "2016-07-20T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "vulinfoid": "JVNDB-2014-005210",
+  "vulinfodata": {
+    "title": "複数の製品で使用される Akeeba 製品 における暗号化を回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Joomla! で使用される Akeeba Restore (restore.php)、Joomla! Professional 用 Akeeba Backup、WordPress 用 Backup Professional、Admin Tools Core and Professional、および CMS Update は、アーカイブのバックアップ、またはアップデートを行う際、$_REQUESTをクレンジングし、$_GET および $_POST からパラメータを削除しないため、getQueryParam 関数を使用し、$_GET および $_POST にアクセスされてしまうため、暗号化を回避し、任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Akeeba",
+          "productname": "Akeeba Restore",
+          "cpe": {
+            "text": "cpe:/a:akeeba:akeeba_restore",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Joomla!",
+          "productname": "Joomla!",
+          "cpe": {
+            "text": "cpe:/a:joomla:joomla%21",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.4 から 2.5.25",
+            "3.3.0 から 3.3.4",
+            "3.x から 3.2.5"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたアーカイブを抽出するコマンドメッセージを介して、暗号化を回避し、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Akeeba",
+          "vulinfoid": "Security update, September 2014",
+          "url": "https://www.akeebabackup.com/home/news/1605-security-update-sep-2014.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Joomla! Developer Network",
+          "vulinfoid": "[20140903] - Core - Remote File Inclusion",
+          "url": "http://developer.joomla.org/security/595-20140903-core-remote-file-inclusion.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-7228",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-7228"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-7228",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-7228"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-310",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+          "title": "暗号の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-06T15:48:09+09:00",
+    "datelastupdated": "2014-11-06T15:48:09+09:00",
+    "datepublic": "2014-09-30T00:00:00+09:00"
+  }
+}

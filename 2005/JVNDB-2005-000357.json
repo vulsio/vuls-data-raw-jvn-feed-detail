@@ -1,0 +1,211 @@
+{
+  "vulinfoid": "JVNDB-2005-000357",
+  "vulinfodata": {
+    "title": "Apache HTTP Server に含まれる mod_ssl の ssl_callback_SSLVerify_CRL() 関数におけるバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache HTTP Server に同梱されている mod_ssl では、ssl_engine_kernel.c に実装されている ssl_callback_SSLVerify_CRL() 関数において、BIO_read() 関数の引数に指定されるバイト長のチェックが不適切であるため、バッファオーバーフローが発生する脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "Apache HTTP Server",
+          "cpe": {
+            "text": "cpe:/a:apache:http_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0.54"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (sparc) ",
+            "10 (x86) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード",
+          "productname": "HP-UX",
+          "cpe": {
+            "text": "cpe:/o:hp:hp-ux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.00 ",
+            "11.04 ",
+            "11.11 ",
+            "11.23 "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "Apache HTTP Server の子プロセスがサービス運用妨害 (DoS) 状態となる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache httpd 2.0 vulnerabilities",
+          "vulinfoid": "2.0.55",
+          "url": "http://httpd.apache.org/security/vulnerabilities_20.html#2.0.55"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Software Foundation",
+          "vulinfoid": "CHANGES_2.0",
+          "url": "http://www.apache.org/dist/httpd/CHANGES_2.0"
+        },
+        {
+          "type": "vendor",
+          "name": "HP Security Bulletin",
+          "vulinfoid": "HPSBUX02074",
+          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBGN01041"
+        },
+        {
+          "type": "vendor",
+          "name": "HP セキュリティ報告",
+          "vulinfoid": "HPSBUX02074",
+          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX02074.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "httpd",
+          "url": "http://www.miraclelinux.com/support/update/data/httpd.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:582",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-582.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "102198",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102198-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "102198",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102198-3"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-81",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-81.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:582",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-582J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-81",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-81j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1268",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1268"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1268",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1268"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "14366",
+          "url": "http://www.securityfocus.com/bid/14366"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-05-26T00:00:00+09:00"
+  }
+}

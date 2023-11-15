@@ -1,0 +1,121 @@
+{
+  "vulinfoid": "JVNDB-2012-003035",
+  "vulinfodata": {
+    "title": "複数の Asterisk 製品の apps/app_voicemail.c におけるメモリ二重解放の脆弱性",
+    "vulinfodescription": {
+      "overview": "複数の Asterisk 製品の apps/app_voicemail.c は、メモリを二重に解放する不備があるため、サービス運用妨害 (デーモンクラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Digium",
+          "productname": "Asterisk",
+          "cpe": {
+            "text": "cpe:/a:digium:asterisk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Digiumphones 10.5.2-digiumphones 未満の 10.x.x-digiumphones"
+          ]
+        },
+        {
+          "name": "Digium",
+          "productname": "Asterisk Open Source",
+          "cpe": {
+            "text": "cpe:/a:digium:open_source",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.8.13.1 未満の 1.8.x",
+            "10.5.2 未満の 10.x"
+          ]
+        },
+        {
+          "name": "Digium",
+          "productname": "Certified Asterisk",
+          "cpe": {
+            "text": "cpe:/a:digium:certified_asterisk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.8.11-cert4 未満の 1.8.11-certx"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:L/Au:S/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、複数のボイスメールセッションを確立され、URGENT メールボックスと INBOX メールボックスの両方にアクセスされることで、サービス運用妨害 (デーモンクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asterisk Issues",
+          "vulinfoid": "ASTERISK-20052",
+          "url": "https://issues.asterisk.org/jira/browse/ASTERISK-20052"
+        },
+        {
+          "type": "vendor",
+          "name": "Asterisk Project Security Advisory",
+          "vulinfoid": "AST-2012-011",
+          "url": "http://downloads.asterisk.org/pub/security/AST-2012-011.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2550",
+          "url": "http://www.debian.org/security/2012/dsa-2550"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-3812",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3812"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-3812",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3812"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月11日]\\n  掲載\\n[2012年11月08日]\\n  ベンダ情報：Debian (DSA-2550) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-11T16:13:36+09:00",
+    "datelastupdated": "2012-11-08T17:50:30+09:00",
+    "datepublic": "2012-06-13T00:00:00+09:00"
+  }
+}

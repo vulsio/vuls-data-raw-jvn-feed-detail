@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2007-004532",
+  "vulinfodata": {
+    "title": "Linux kernel の net/ipv4/tcp_input.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の net/ipv4/tcp_input.c の tcp_sacktag_write_queue 関数には、サービス運用妨害 (クラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.21 から 2.6.23.7、および 2.6.24-rc から 2.6.24-rc2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された ACK リクエストを介して、NULL ポインタデリファレンスを誘発され、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "Fedora Core 6 Update",
+          "url": "https://www.redhat.com/archives/fedora-package-announce/2007-December/msg00302.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-5501",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5501"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-5501",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-5501"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T16:59:20+09:00",
+    "datelastupdated": "2012-09-25T16:59:20+09:00",
+    "datepublic": "2007-11-15T00:00:00+09:00"
+  }
+}

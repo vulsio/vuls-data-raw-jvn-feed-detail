@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2015-005700",
+  "vulinfodata": {
+    "title": "Xen におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Xen には、メモリリークにより、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 から 4.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルのゲスト管理者または特定のパーミッションを持つドメインにより、以下の vcpu ポインタの配列を伴ったドメインの大量の \"ティアダウン (teardowns)\" を介して、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。  (1) XEN_DOMCTL_max_vcpus ハイパーコールを用いて割り当てられた vcpu ポインタの配列 (2) XENOPROF_get_buffer ハイパーコールを用いて割り当てられた xenoprofile ステートの vcpu ポインタの配列 (3) XENOPROF_set_passive ハイパーコールを用いて割り当てられた xenoprofile ステートの vcpu ポインタの配列"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-149",
+          "url": "http://xenbits.xen.org/xsa/advisory-149.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen Security Advisory",
+          "vulinfoid": "XSA-151",
+          "url": "http://xenbits.xen.org/xsa/advisory-151.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-7969",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7969"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-7969",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7969"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年11月04日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-11-04T16:29:42+09:00",
+    "datelastupdated": "2015-11-04T16:29:42+09:00",
+    "datepublic": "2015-10-29T00:00:00+09:00"
+  }
+}

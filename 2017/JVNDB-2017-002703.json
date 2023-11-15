@@ -1,0 +1,142 @@
+{
+  "vulinfoid": "JVNDB-2017-002703",
+  "vulinfodata": {
+    "title": "Linux Kernel の net/xfrm/xfrm_user.c の xfrm_replay_verify_len 関数における root 権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の net/xfrm/xfrm_user.c の xfrm_replay_verify_len 関数は、XFRM_MSG_NEWAE アップデート後に特定のサイズのデータを検証しないため、root 権限を取得される、またはサービス運用妨害 (ヒープベースの境界外アクセス) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.10.6 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、CAP_NET_ADMIN ケーパビリティを利用されることで、root 権限を取得される、またはサービス運用妨害 (ヒープベースの境界外アクセス) 状態にされるされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "xfrm_user: validate XFRM_MSG_NEWAE XFRMA_REPLAY_ESN_VAL replay_window",
+          "url": "https://github.com/torvalds/linux/commit/677e806da4d916052585301785d847c3b3e6186a"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "xfrm_user: validate XFRM_MSG_NEWAE incoming ESN size harder",
+          "url": "https://github.com/torvalds/linux/commit/f843ee6dd019bcece3e74e76ad9df0155655d0df"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "xfrm_user: validate XFRM_MSG_NEWAE incoming ESN size harder",
+          "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f843ee6dd019bcece3e74e76ad9df0155655d0df"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "xfrm_user: validate XFRM_MSG_NEWAE XFRMA_REPLAY_ESN_VAL replay_window",
+          "url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=677e806da4d916052585301785d847c3b3e6186a"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-7184",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7184"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-280-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-280-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93417317",
+          "url": "https://jvn.jp/vu/JVNVU93417317/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-7184",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-7184"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "CVE-2017-7184: kernel: Local privilege escalation in XFRM framework",
+          "url": "http://openwall.com/lists/oss-security/2017/03/29/2"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月26日]\\n  掲載"
+        },
+        {
+          "historyno": "1",
+          "datetime": "2021-10-15T14:24:48+09:00",
+          "description": "[2021年10月15日]\\n  参考情報：JVN (JVNVU#93417317) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-280-02) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-26T10:45:55+09:00",
+    "datelastupdated": "2021-10-15T16:14:33+09:00",
+    "datepublic": "2017-03-29T00:00:00+09:00"
+  }
+}

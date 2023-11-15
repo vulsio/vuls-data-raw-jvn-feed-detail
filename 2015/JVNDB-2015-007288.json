@@ -1,0 +1,149 @@
+{
+  "vulinfoid": "JVNDB-2015-007288",
+  "vulinfodata": {
+    "title": "Linux Kernel の ext2 および ext4 ファイルシステムの実装の mbcache 機能におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の ext2 および ext4 ファイルシステムの実装の mbcache 機能は、xattr ブロックキャッシングを誤って処理するため、サービス運用妨害 (ソフトロックアップ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.6 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、大量の属性を使用する環境でのファイルシステム操作を介して、サービス運用妨害 (ソフトロックアップ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ext4: convert to mbcache2",
+          "url": "https://github.com/torvalds/linux/commit/82939d7999dfc1f1998c4b1c12e2f19edbdff272"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ext2: convert to mbcache2",
+          "url": "https://github.com/torvalds/linux/commit/be0726d33cb8f411945884664924bed3cb8c70ee"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mbcache2: reimplement mbcache",
+          "url": "https://github.com/torvalds/linux/commit/f9a61eb4e2471c56a63cd804c7474128138c38ac"
+        },
+        {
+          "type": "vendor",
+          "name": "Kernel Bug Tracker",
+          "vulinfoid": "Bug 107301",
+          "url": "https://bugzilla.kernel.org/show_bug.cgi?id=107301"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ext4: convert to mbcache2",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=82939d7999dfc1f1998c4b1c12e2f19edbdff272"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "ext2: convert to mbcache2",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=be0726d33cb8f411945884664924bed3cb8c70ee"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "mbcache2: reimplement mbcache",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f9a61eb4e2471c56a63cd804c7474128138c38ac"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1360968",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1360968"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8952",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8952"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8952",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8952"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "[PATCH 0/7 v2] ext[24]: MBCache rewrite",
+          "url": "https://lwn.net/Articles/668718/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年10月20日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-10-20T18:00:38+09:00",
+    "datelastupdated": "2016-10-20T18:00:38+09:00",
+    "datepublic": "2015-11-05T00:00:00+09:00"
+  }
+}

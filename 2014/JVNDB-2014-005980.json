@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2014-005980",
+  "vulinfodata": {
+    "title": "X.Org Server におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "X.Org Server (別名 xserver および xorg-server) には、サービス運用妨害 (out-of-bounds read または out-of-bounds write) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "X.Org Foundation",
+          "productname": "X.Org Server",
+          "cpe": {
+            "text": "cpe:/a:x.org:xorg-server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.15.0 から 1.16.3 未満の 1.16.x"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10",
+            "11.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモート認証されたユーザにより、(a) DRI3 エクステンションまたは (b) Present エクステンションの以下の関数に対する巧妙に細工された length 値または index 値を介して、サービス運用妨害 (out-of-bounds read または out-of-bounds write) 状態にされる、または任意のコードを実行される可能性があります。  (1) sproc_dri3_query_version (2) sproc_dri3_open (3) sproc_dri3_pixmap_from_buffer (4) sproc_dri3_buffer_from_pixmap (5) sproc_dri3_fence_from_fd (6) sproc_dri3_fd_from_fence (7) proc_present_query_capabilities (8) sproc_present_query_version (9) sproc_present_pixmap (10) sproc_present_notify_msc (11) sproc_present_select_input (12) sproc_present_query_capabilities"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Third Party Bulletin - January 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+        },
+        {
+          "type": "vendor",
+          "name": "X.Org Security Advisory",
+          "vulinfoid": "Advisory-2014-12-09",
+          "url": "http://www.x.org/wiki/Development/Security/Advisory-2014-12-09/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8103",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8103"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8103",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8103"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月15日]\\n  掲載\\n[2015年01月30日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-15T19:10:09+09:00",
+    "datelastupdated": "2015-01-30T15:42:41+09:00",
+    "datepublic": "2014-12-09T00:00:00+09:00"
+  }
+}

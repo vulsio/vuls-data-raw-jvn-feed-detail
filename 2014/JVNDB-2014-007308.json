@@ -1,0 +1,155 @@
+{
+  "vulinfoid": "JVNDB-2014-007308",
+  "vulinfodata": {
+    "title": "複数の Dell iDRAC 製品にセッション管理に関する脆弱性",
+    "vulinfodescription": {
+      "overview": "Intelligent Platform Management Interface (IPMI) v1.5 プロトコルを実装している複数の Dell iDRAC 製品には、セッション管理の問題に起因するコマンドインジェクションの脆弱性が存在します。  不十分なランダム値の使用 (CWE-330) - CVE-2014-8272 複数の Dell iDRAC 製品 (iDRAC6 modular、iDRAC6 monolithic、iDRAC7 を含む) における IPMI v1.5 プロトコルの実装で使われているセッション ID は、乱数としての品質が悪く予測可能となっています。  CWE-330: Use of Insufficiently Random Values http://cwe.mitre.org/data/definitions/330.html  ランダムな値が使われるべきセッション ID の値が規則的に割り当てられるため、Dell iDRAC にログインしたユーザによって、次に使われるセッション ID が推測される可能性があります。また、セッション ID として使われる値の範囲が小さいため、ブルートフォース攻撃による推測も容易になっています。  Dell Computer Corporation, Inc. Information for VU#843044 (http://www.kb.cert.org/vuls/id/BLUU-9RDQHM) では、Dell は次のように述べています。  　　The legacy nature of the IPMI 1.5 protocol exposes several weaknesses in 　　the overall design and implementation. These are: 　　Use of an insecure (unencrypted) channel for communication. 　　Poor password management including limited password length. 　　Limited session management capability.  　　These weaknesses are inherent in the overall design and implementation  　　of the protocol, therefore support for the IPMI 1.5 version of the protocol  　　has been permanently removed. This means that it will not be possible to  　　reactivate or enable it in an operational setting."
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "インテル",
+          "productname": "IPMI",
+          "cpe": {
+            "text": "cpe:/a:intel:ipmi",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5"
+          ]
+        },
+        {
+          "name": "デル",
+          "productname": "iDRAC6 MODULAR",
+          "cpe": {
+            "text": "cpe:/a:dell:idrac6_modular",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 3.60 およびそれ以前"
+          ]
+        },
+        {
+          "name": "デル",
+          "productname": "iDRAC6 Monolithic ファームウェア",
+          "cpe": {
+            "text": "cpe:/a:dell:idrac6_monolithic",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 1.97 およびそれ以前"
+          ]
+        },
+        {
+          "name": "デル",
+          "productname": "iDRAC7 Module",
+          "cpe": {
+            "text": "cpe:/a:dell:idrac7",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 1.56.55 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、Dell iDRAC に接続するセッションを乗っ取られ、任意のコマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに最新版へアップデートしてください。このアップデートにより、IPMI v1.5 を実装するコードは削除されます。  　　iDRAC6 modular - version 3.65 　　http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=61W8X      　　iDRAC6 monolithic - version 1.98 　　http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=78M0V 　　 　　iDRAC7 - version 1.57.57 　　http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=XH6FX"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Intel",
+          "vulinfoid": "Intelligent Platform Management Interface (IPMI) Information",
+          "url": "http://www.intel.com/content/www/us/en/servers/ipmi/ipmi-home.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Product Support",
+          "vulinfoid": "iDRAC6 MODULAR 3.65 release Driver Details",
+          "url": "http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=61W8X"
+        },
+        {
+          "type": "vendor",
+          "name": "Product Support",
+          "vulinfoid": "DELL iDRAC 1.57.57 Driver Details",
+          "url": "http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=XH6FX"
+        },
+        {
+          "type": "vendor",
+          "name": "Product Support",
+          "vulinfoid": "iDRAC6 Monolithic Release 1.98 Driver Details",
+          "url": "http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=78M0V"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8272",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8272"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#90515133",
+          "url": "http://jvn.jp/vu/JVNVU90515133/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8272",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8272"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#843044",
+          "url": "http://www.kb.cert.org/vuls/id/843044"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "Dell Computer Corporation, Inc. Information for VU#843044",
+          "url": "http://www.kb.cert.org/vuls/id/BLUU-9RDQHM"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年12月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-12-22T12:35:56+09:00",
+    "datelastupdated": "2014-12-22T12:35:56+09:00",
+    "datepublic": "2014-12-18T00:00:00+09:00"
+  }
+}

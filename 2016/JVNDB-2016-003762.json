@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2016-003762",
+  "vulinfodata": {
+    "title": "Apache Qpid AMQP 0-x JMS Client および JMS における任意のオブジェクトをデシリアライズされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Apache Qpid AMQP 0-x JMS Client および JMS (AMQP 1.0) は、クラスパスで使用可能なクラスを制限しないため、任意のオブジェクトをデシリアライズされる、および任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Apache Software Foundation",
+          "productname": "AMQP 0-x JMS Client",
+          "cpe": {
+            "text": "cpe:/a:apache:amqp_0-x_jms_client",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.4 未満"
+          ]
+        },
+        {
+          "name": "Apache Software Foundation",
+          "productname": "JMS Client (AMQP 1.0)",
+          "cpe": {
+            "text": "cpe:/a:apache:jms_client_amqp",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.10.0 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、getObject 関数で処理される JMS ObjectMessage の巧妙に細工されたシリアル化されたオブジェクトを利用されることで、任意のオブジェクトをデシリアライズされる、および任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apache Qpid",
+          "vulinfoid": "AMQP 0-x JMS Client (AMQP 0-8, 0-9, 0-9-1, 0-10)",
+          "url": "http://qpid.apache.org/components/jms/security-0-x.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apache Qpid",
+          "vulinfoid": "JMS Client (AMQP 1.0)",
+          "url": "http://qpid.apache.org/components/jms/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "ASF JIRA",
+          "vulinfoid": "QPIDJMS-188",
+          "url": "https://issues.apache.org/jira/browse/QPIDJMS-188"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-4974",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4974"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-4974",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4974"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年07月20日]\\n  掲載\\n[2016年09月06日]\\n  CVSS による深刻度：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-07-20T16:46:19+09:00",
+    "datelastupdated": "2016-09-06T15:25:07+09:00",
+    "datepublic": "2016-06-27T00:00:00+09:00"
+  }
+}

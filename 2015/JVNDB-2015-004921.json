@@ -1,0 +1,76 @@
+{
+  "vulinfoid": "JVNDB-2015-004921",
+  "vulinfodata": {
+    "title": "HTTP リクエスト経由で設定された Cookie によって HTTPS 接続がバイパスされたり情報漏えいが発生する問題",
+    "vulinfodescription": {
+      "overview": "RFC 6265 (旧 RFC 2965) は、いわゆる Cookie による HTTP セッションの状態管理の仕組みを規定しています。RFC 6265 を実装しているほとんどのウェブブラウザでは、HTTP リクエストを通じて設定される Cookie によって、HTTPS 接続がバイパスされたり、セッション情報が取得されたりする問題が存在します。  RFC 6265 https://tools.ietf.org/html/rfc6265  Cookie を用いて HTTP セッションの状態管理を行う場合、様々なセキュリティ上の問題が発生する可能性があることが知られています。 例えば、RFC 6265 の Section 8.6 には次のように記載されています。  RFC 6265 の Section 8.6 https://tools.ietf.org/html/rfc6265#section-8.6  　\"Cookies do not provide integrity guarantees for sibling domains (and their subdomains). For example, consider foo.example.com and bar.example.com. The foo.example.com server can set a cookie with a Domain attribute of \"example.com\" (possibly overwriting an existing \"example.com\" cookie set by bar.example.com), and the user agent will include that cookie in HTTP requests to bar.example.com. In the worst case, bar.example.com will be unable to distinguish this cookie from a cookie it set itself. The foo.example.com server might be able to leverage this ability to mount an attack against bar.example.com.\" (Cookie の設定では、隣接するドメインやサブドメインとの整合性は確保されない。例えば、foo.example.com と bar.example.com を考えてみよう。foo.example.com のサーバは Domain 属性 \"example.com\" の Cookie を設定することができる(bar.example.com のサーバが \"example.com\" の Cookie を設定していた場合には上書きされる)。この状態で bar.example.com にアクセスすると、foo.example.com によって上書きされた Cookie がサーバに送られることになる。bar.example.com のサーバは、この Cookie は自分が設定したものと誤認する可能性もある。ウェブブラウザのこのような挙動を使えば、foo.example.com のサーバから bar.example.com に対して何らかの攻撃が可能になるかもしれない。)  また、RFC 6265 の Section 8.5 には次のように記載されています。  RFC 6265 の Section 8.5 https://tools.ietf.org/html/rfc6265#section-8.5  　\"Cookies do not provide isolation by port. If a cookie is readable by a service running on one port, the cookie is also readable by a service running on another port of the same server. If a cookie is writable by a service on one port, the cookie is also writable by a service running on another port of the same server. ... Cookies do not provide isolation by scheme. Although most commonly used with the http and https schemes, the cookies for a given host might also be available to other schemes, such as ftp and gopher.\" (Cookie はポート番号では区別されない。あるポート番号で稼働しているサービスに Cookie が送信される場合、同一サーバの異なるポート番号のサービスにも当該 Cookie は送信される。あるポート番号で稼働しているサービスが Cookie を設定できる場合、同一サーバの異なるポート番号のサービスが当該 Cookie を上書きできる。 ...... Cookie はプロトコルスキームでは区別されない。プロトコルスキームとして最も頻繁に使われるのは http および https だが、同一サーバの異なるプロトコルスキーム、例えば ftp や gopher など、に対しても当該 Cookie は共有される。)  本脆弱性の報告者は、次のように述べています。  　\"A cookie can contain a “secure” flag, indicating that it should be only sent over an HTTPS connection. Yet there is no corresponding flag to indicate how a cookie was set: attackers who act as a man-in-the-midddle even temporarily on an HTTP session can inject cookies which will be attached to subsequent HTTPS connections.\" (Cookie には \"secure\" フラグをつけることができる。\"secure\" フラグは、当該 Cookie が HTTPS 接続でのみ送信されるべきであることを示す。一方、Cookie が設定された際の状況を示すフラグは存在しない。ブラウザとサーバの間の通信に HTTPS でなく HTTP セッションが存在する場合、中間者攻撃によって ブラウザに Cookie を設定し、その後の HTTPS 通信に使わせる、という攻撃が可能である。)  RFC 6265 では、様々なサイトへのアクセスによってウェブブラウザに設定される Cookie の独立性と整合性を保証するための仕組みを規定しておらず、ウェブブラウザで Cookie が設定される際にドメインの確認が行われるとは限りません。攻撃者はこの性質を利用し、HTTPS で接続するサイトに使われる Cookie を上書きする可能性があります。例えば、あらかじめ \"example.com\" の Cookie を設定しておくことで、\"www.example.com\" に HTTPS 接続する際に使われる Cookie を上書きすることが可能です。サーバに存在する他の弱点と組み合わせることで、HTTPS セッションで保護されるべき情報が漏えいする可能性があります。同一生成元ポリシー (RFC 6454) は Cookie には適用されないため、このような攻撃を防ぐことはできません。  同一生成元ポリシー (RFC 6454) https://tools.ietf.org/html/rfc6454  上記のような HTTPS セッションに対する攻撃の詳細については、USENIX Security 2015 で発表された論文を参照してください。  論文 https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/zheng  いくつかのウェブブラウザベンダによれば、より安全な Cookie 管理の仕組みを実装する試みは行われていたが広く実装される標準となるには至らなかった、とのことです。  RFC 6265 を作成した IETF HTTP State Management Mechanism (httpstate) Working Group は、2011年4月に活動を終了しています。  IETF HTTP State Management Mechanism (httpstate) Working Group https://datatracker.ietf.org/wg/httpstate/charter/ "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "HTTPS セッションで保護されている情報が漏えいする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "本問題の対策には、Cookie に対する新たな同一生成元ポリシーのもとでより安全な Cookie の取扱いを規定するために、RFC 6265 や RFC 6454 の更新が必要となるでしょう。  現時点では、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。   [HTTP Strict Transport Security (HSTS) を導入する] ウェブサイト運営者がとるべき対策として報告者が推奨しているのは、運営者が管理しているドメインの最上位において HSTS (RFC 6797) を導入すること、また、あわせてオプション includeSubDomains も使用することです。これによって、トップレベルの Cookie を設定されサブドメインの Cookie を上書きされる攻撃をある程度防止することができます。  RFC 6797 https://tools.ietf.org/html/rfc6797   [ウェブブラウザをアップデートする] ウェブブラウザを常に最新版にしてください。Internet Explorer の場合は IE 11 以降のバージョンにアップデートしてください。IE 11 は 2015年6月の更新で HSTS に対応しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92999848",
+          "url": "http://jvn.jp/vu/JVNVU92999848/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#804060",
+          "url": "https://www.kb.cert.org/vuls/id/804060"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Cookies Lack Integrity: Real-World Implications",
+          "url": "https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/zheng"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月29日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-29T16:02:52+09:00",
+    "datelastupdated": "2015-09-29T16:02:52+09:00",
+    "datepublic": "2015-09-24T00:00:00+09:00"
+  }
+}

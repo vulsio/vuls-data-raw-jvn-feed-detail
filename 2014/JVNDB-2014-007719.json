@@ -1,0 +1,130 @@
+{
+  "vulinfoid": "JVNDB-2014-007719",
+  "vulinfodata": {
+    "title": "libsndfile の sd2.c の sd2_parse_rsrc_fork 関数における脆弱性",
+    "vulinfodescription": {
+      "overview": "libsndfile の sd2.c の sd2_parse_rsrc_fork 関数には、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Erik de Castro Lopo",
+          "productname": "libsndfile",
+          "cpe": {
+            "text": "cpe:/a:mega-nerd:libsndfile",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.1",
+            "13.2"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "Oracle Solaris",
+          "cpe": {
+            "text": "cpe:/o:oracle:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、(1) map オフセットまたは (2) rsrc マーカの設定に関する処理により、out-of-bounds read を誘発されることで、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sd2.c: 2 buffer overruns #93",
+          "url": "https://github.com/erikd/libsndfile/issues/93"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "src/sd2.c : Fix two potential buffer read overflows.",
+          "url": "https://github.com/erikd/libsndfile/commit/dbe14f00030af5d3577f4cabbf9861db59e9c378"
+        },
+        {
+          "type": "vendor",
+          "name": "openSUSE",
+          "vulinfoid": "openSUSE-SU-2015:0041-1: moderate: Security update for libsndfile",
+          "url": "http://lists.opensuse.org/opensuse-updates/2015-01/msg00016.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Third Party Bulletin - January 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9496",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9496"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9496",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9496"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0015",
+          "url": "http://advisories.mageia.org/MGASA-2015-0015.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年01月23日]\\n  掲載\\n[2015年03月02日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加\\n[2015年05月14日]      \\n  参考情報：関連文書 (MGASA-2015-0015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-01-23T10:34:10+09:00",
+    "datelastupdated": "2015-05-14T17:57:31+09:00",
+    "datepublic": "2014-12-23T00:00:00+09:00"
+  }
+}

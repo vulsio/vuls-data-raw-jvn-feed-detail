@@ -1,0 +1,79 @@
+{
+  "vulinfoid": "JVNDB-2007-003866",
+  "vulinfodata": {
+    "title": "PHP の ext/mcrypt/mcyrpt.c における特定のデータを解読される脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP の ext/mcrypt/mcyrpt.c の mcypt_create_iv 関数は、初期化してない seed 変数を伴う php_rand_r を呼び出し、いつも同じ初期化ベクタ (IV) を生成するため、特定のデータを解読される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.7 未満、および 5.2.1以外の 5.0.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.6",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、予測可能な暗号鍵のため、特定のデータを解読される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PHP",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://www.php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-2727",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2727"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-2727",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-2727"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T16:47:42+09:00",
+    "datelastupdated": "2012-09-25T16:47:42+09:00",
+    "datepublic": "2007-05-16T00:00:00+09:00"
+  }
+}

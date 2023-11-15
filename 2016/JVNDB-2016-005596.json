@@ -1,0 +1,315 @@
+{
+  "vulinfoid": "JVNDB-2016-005596",
+  "vulinfodata": {
+    "title": "Linux カーネルのメモリサブシステムに実装されている copy-on-write 機構に競合状態が発生する脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux カーネルのメモリサブシステムに実装されている copy-on-write 機構には、競合状態が発生する脆弱性が存在します。  競合状態 (CWE-362) - CVE-2016-5195 Linux カーネルのメモリサブシステムには、copy-on-write 機構の実装の問題に起因して、 競合状態が発生する脆弱性が存在します。 再現コードなどの詳しい情報は Dirty COW を参照してください。  Dirty COW https://dirtycow.ninja/  なお、本脆弱性を使用した攻撃活動が確認されているとのことです。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu Core",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu_core",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4.26 より前のバージョン",
+            "4.7.9 より前のバージョン",
+            "4.8.3 より前のバージョン"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Long Life",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_long_life",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server AUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server EUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Server TUS",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_server_tus",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "日本電気",
+          "productname": "CSVIEW",
+          "cpe": {
+            "text": "cpe:/a:nec:csview",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "/WebアンケートV5.1/5.2/5.4 (Red Hat Enterprise Linux Server 5)",
+            "/WebアンケートV5.5 (Red Hat Enterprise Linux Server 7/ CentOS 7)"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "NEC Cyber Security Platform",
+          "cpe": {
+            "text": "cpe:/h:nec:nec_cyber_security_platform",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "V1.0以降"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "refam",
+          "cpe": {
+            "text": "cpe:/a:nec:refam",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "/E 全バージョン",
+            "VX 全バージョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "UniversalBackup",
+          "cpe": {
+            "text": "cpe:/a:nec:universalbackup",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Server 全バージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ログイン可能なユーザによって、システムの root 権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[パッチを適用する] 各 Linux ディストリビューターが提供する情報をもとに、パッチを適用してください。 Linux カーネルでは、対策版としてバージョン 4.8.3、バージョン 4.7.9 およびバージョン 4.4.26 がリリースされています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android のセキュリティに関する公開情報 - 2016 年 12 月",
+          "url": "https://source.android.com/security/bulletin/2016-12-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 1004418",
+          "url": "https://bugzilla.suse.com/show_bug.cgi?id=1004418"
+        },
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.4.26",
+          "url": "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.4.26"
+        },
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.7.9",
+          "url": "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.9"
+        },
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-4.8.3",
+          "url": "https://cdn.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "mm: remove gup_flags FOLL_WRITE games from __get_user_pages()",
+          "url": "https://github.com/torvalds/linux/commit/19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBGN03681",
+          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05352241"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "mm: remove gup_flags FOLL_WRITE games from __get_user_pages()",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619"
+        },
+        {
+          "type": "vendor",
+          "name": "McAfee Security Bulletin",
+          "vulinfoid": "SB10176",
+          "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10176"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV17-005",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv17-005.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1384344",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1384344"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Customer Portal",
+          "vulinfoid": "Kernel Local Privilege Escalation \"Dirty COW\" - CVE-2016-5195",
+          "url": "https://access.redhat.com/security/vulnerabilities/2706661"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Customer Portal",
+          "vulinfoid": "CVE-2016-5195",
+          "url": "https://access.redhat.com/security/cve/cve-2016-5195"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "SA134",
+          "url": "https://bto.bluecoat.com/security-advisory/sa134"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Bug Tracker",
+          "vulinfoid": "CVE-2016-5195",
+          "url": "https://security-tracker.debian.org/tracker/CVE-2016-5195"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Team",
+          "vulinfoid": "CVE-2016-5195",
+          "url": "http://people.canonical.com/~ubuntu-security/cve/2016/CVE-2016-5195.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-5195",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5195"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91983575",
+          "url": "http://jvn.jp/vu/JVNVU91983575/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-5195",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5195"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#243144",
+          "url": "http://www.kb.cert.org/vuls/id/243144"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-362",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+          "title": "競合状態"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年10月25日]\\n  掲載\\n[2016年11月16日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：kernel.org (mm: remove gup_flags FOLL_WRITE games from __get_user_pages()) を追加\\n  ベンダ情報：SUSE (Bug 1004418) を追加\\n  ベンダ情報：レッドハット (Bug 1384344) を追加\\n  ベンダ情報：レッドハット (Kernel Local Privilege Escalation \"Dirty COW\" - CVE-2016-5195) を追加\\n  CVSS による深刻度：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-5195) を追加\\n[2017年02月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-005) を追加\\n  ベンダ情報：Google (Android のセキュリティに関する公開情報 - 2016 年 12 月) を追加\\n  ベンダ情報：ブルーコートシステムズ (SA134) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03681) を追加\\n  ベンダ情報：マカフィー (SB10176) を追加\\n[2017年03月09日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2017年07月25日]\\n  影響を受けるシステム：ベンダ情報 (NV17-005) の更新に伴い内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-10-25T11:02:39+09:00",
+    "datelastupdated": "2017-07-25T13:45:11+09:00",
+    "datepublic": "2016-10-21T00:00:00+09:00"
+  }
+}

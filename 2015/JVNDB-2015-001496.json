@@ -1,0 +1,135 @@
+{
+  "vulinfoid": "JVNDB-2015-001496",
+  "vulinfodata": {
+    "title": "OpenLDAP の servers/slapd/filter.c 内の get_vrFilter 関数におけるメモリ二重解放の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenLDAP の servers/slapd/filter.c 内の get_vrFilter 関数には、メモリを二重に解放する不備があるため、サービス運用妨害 (クラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-415: Double Free (二重解放) と識別されています。 http://cwe.mitre.org/data/definitions/415.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenLDAP Foundation",
+          "productname": "OpenLDAP",
+          "cpe": {
+            "text": "cpe:/a:openldap:openldap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.4.40"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.10 から 10.10.2",
+            "10.8.5",
+            "10.9.5"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、一致する値の制御を伴う巧妙に細工された検索クエリを介して、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT204659",
+          "url": "https://support.apple.com/en-us/HT204659"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT204659",
+          "url": "https://support.apple.com/ja-jp/HT204659"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "#776991",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=776991"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenLDAP",
+          "vulinfoid": "query caused slapd to stop",
+          "url": "http://www.openldap.org/its/?findid=8046"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenLDAP",
+          "vulinfoid": "ITS#8046 fix vrFilter_free",
+          "url": "http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=commit;h=2f1a2dd329b91afe561cd06b872d09630d4edb6a"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-1546",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1546"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91828320",
+          "url": "http://jvn.jp/vu/JVNVU91828320/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-1546",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-1546"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年02月18日]\\n  掲載\\n[2015年03月03日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：OpenLDAP Foundation (query caused slapd to stop) を追加\\n[2015年04月10日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204659) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004) を追加\\n  参考情報：JVN (JVNVU#91828320) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-02-18T12:05:54+09:00",
+    "datelastupdated": "2015-04-10T18:14:20+09:00",
+    "datepublic": "2015-01-19T00:00:00+09:00"
+  }
+}

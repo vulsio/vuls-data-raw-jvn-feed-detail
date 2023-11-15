@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2010-002987",
+  "vulinfodata": {
+    "title": "Squid の dns_internal.cc におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Squid の dns_internal.cc は、IPv6 DNS 解決が有効でない際、IPv4 TCP DNS クエリ実行中に無効なソケットにアクセスするため、サービス運用妨害 (アサーション失敗およびデーモン終了) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Squid-cache.org",
+          "productname": "Squid",
+          "cpe": {
+            "text": "cpe:/a:squid-cache:squid",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1.6"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、TC ビットセットを伴う IPv4 DNS レスポンスを誘発され、サービス運用妨害 (アサーション失敗およびデーモン終了) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "squid-cache",
+          "vulinfoid": "revno: 10072",
+          "url": "http://www.squid-cache.org/Versions/v3/3.1/changesets/squid-3.1-10072.patch"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-2951",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2951"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-2951",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2951"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-DesignError",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "設計上の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:42:09+09:00",
+    "datelastupdated": "2012-03-27T18:42:09+09:00",
+    "datepublic": "2010-10-12T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "vulinfoid": "JVNDB-2010-001172",
+  "vulinfodata": {
+    "title": "KVM の x86 エミュレータにおける権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "KVM の x86 エミュレータには、ゲストが SMP (対称型マルチプロセッサ) を構成している場合、セグメントレジスタへのセグメントセレクタの書き込みを適切に制限しないため、サービス運用妨害 (DoS) 状態となる、またはゲスト OS 上で権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "KVM",
+          "productname": "KVM",
+          "cpe": {
+            "text": "cpe:/a:kvm_qumranet:kvm",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "83"
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Desktop Multi OS",
+          "cpe": {
+            "text": "cpe:/o:redhat:rhel_desktop_multi_os",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (client) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Virtualization",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_virtualization",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "RHEL Virtualization EUS",
+          "cpe": {
+            "text": "cpe:/a:redhat:rhel_virtualization_eus",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.4.z (server) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "IO ポート、または MMIO 領域へのアクセスを利用する、およびエミュレータのエントリ、および命令の読み出しの間において命令を置き換えることによって、ゲスト OS ユーザにより、サービス運用妨害 (DoS) 状態にされる、またはゲスト OS 上で権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "KVM",
+          "vulinfoid": "Top Page",
+          "url": "http://www.linux-kvm.org/page/Main_Page"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2010:0126",
+          "url": "https://rhn.redhat.com/errata/RHSA-2010-0126.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2010-0419",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0419"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2010-0419",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0419"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "38467",
+          "url": "http://www.securityfocus.com/bid/38467"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1023663",
+          "url": "http://securitytracker.com/id?1023663"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2010年03月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2010-03-23T14:09:23+09:00",
+    "datelastupdated": "2010-03-23T14:09:23+09:00",
+    "datepublic": "2010-03-01T00:00:00+09:00"
+  }
+}

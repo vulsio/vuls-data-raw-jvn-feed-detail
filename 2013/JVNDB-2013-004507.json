@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2013-004507",
+  "vulinfodata": {
+    "title": "Django の utils/http.py 内の is_safe_url 関数におけるクロスサイトスクリプティングの脆弱性",
+    "vulinfodescription": {
+      "overview": "Django の utils/http.py 内の is_safe_url 関数は、URL スキームを HTTP または HTTPS でない場合にも安全なものとして扱うため、クロスサイトスクリプティングを実行される、またはその他の脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Django Software Foundation",
+          "productname": "Django",
+          "cpe": {
+            "text": "cpe:/a:djangoproject:django",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.6 未満の 1.4.x",
+            "1.5.2 未満の 1.5.x",
+            "1.6 beta 2 未満の 1.6.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、クロスサイトスクリプティングを実行される、またはその他の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Django weblog",
+          "vulinfoid": "Security releases issued",
+          "url": "https://www.djangoproject.com/weblog/2013/aug/13/security-releases-issued/"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fixed is_safe_url() to reject URLs that use a scheme other than HTTP/S (stable/1.4.x)",
+          "url": "https://github.com/django/django/commit/ec67af0bd609c412b76eaa4cc89968a2a8e5ad6a"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fixed is_safe_url() to reject URLs that use a scheme other than HTTP/S (master)",
+          "url": "https://github.com/django/django/commit/ae3535169af804352517b7fea94a42a1c9c4b762"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fixed is_safe_url() to reject URLs that use a scheme other than HTTP/S (stable/1.5.x)",
+          "url": "https://github.com/django/django/commit/1a274ccd6bc1afbdac80344c9b6e5810c1162b5f"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1016394",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1016394"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2013:1521",
+          "url": "http://rhn.redhat.com/errata/RHSA-2013-1521.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-6044",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6044"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-6044",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6044"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-79",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+          "title": "クロスサイトスクリプティング"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年10月08日]\\n  掲載\\n[2014年02月18日]\\n  ベンダ情報：レッドハット (Bug 1016394) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1521) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-10-08T14:30:11+09:00",
+    "datelastupdated": "2014-02-18T18:16:49+09:00",
+    "datepublic": "2013-08-13T00:00:00+09:00"
+  }
+}

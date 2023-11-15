@@ -1,0 +1,199 @@
+{
+  "vulinfoid": "JVNDB-2015-002844",
+  "vulinfodata": {
+    "title": "PostgreSQL におけるメモリ二重解放の脆弱性",
+    "vulinfodescription": {
+      "overview": "PostgreSQL には、メモリを二重に解放する不備があるため、サービス運用妨害 (クラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-415: Double Free (二重解放) と識別されています。 http://cwe.mitre.org/data/definitions/415.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "14.10",
+            "15.04"
+          ]
+        },
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.0",
+            "8.0"
+          ]
+        },
+        {
+          "name": "PostgreSQL.org",
+          "productname": "PostgreSQL",
+          "cpe": {
+            "text": "cpe:/a:postgresql:postgresql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "9.0.20 未満",
+            "9.1.16 未満の 9.1.x",
+            "9.2.11 未満の 9.2.x",
+            "9.3.7 未満の 9.3.x",
+            "9.4.2 未満の 9.4.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "macOS Server (旧 OS X Server)",
+          "cpe": {
+            "text": "cpe:/o:apple:os_x_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、セッションのシャットダウンシーケンス中、認証のタイムアウトが期限切れになる際に SSL セッションを閉じられることで、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205219",
+          "url": "https://support.apple.com/en-us/HT205219"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205219",
+          "url": "http://support.apple.com/ja-jp/HT205219"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3270",
+          "url": "https://www.debian.org/security/2015/dsa-3270"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3269",
+          "url": "https://www.debian.org/security/2015/dsa-3269"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL NEWS",
+          "vulinfoid": "PostgreSQL 9.4.2, 9.3.7, 9.2.11, 9.1.16, and 9.0.20 released!",
+          "url": "http://www.postgresql.org/about/news/1587/"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.3.7",
+          "url": "http://www.postgresql.org/docs/9.3/static/release-9-3-7.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.0.20",
+          "url": "http://www.postgresql.org/docs/9.0/static/release-9-0-20.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.1.16",
+          "url": "http://www.postgresql.org/docs/9.1/static/release-9-1-16.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.4.2",
+          "url": "http://www.postgresql.org/docs/9.4/static/release-9-4-2.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PostgreSQL Release Notes",
+          "vulinfoid": "Release 9.2.11",
+          "url": "http://www.postgresql.org/docs/9.2/static/release-9-2-11.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2621-1",
+          "url": "http://www.ubuntu.com/usn/USN-2621-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3165",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3165"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99970459",
+          "url": "http://jvn.jp/vu/JVNVU99970459/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3165",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3165"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年06月01日]\\n  掲載\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-06-01T12:11:13+09:00",
+    "datelastupdated": "2015-10-05T16:14:42+09:00",
+    "datepublic": "2015-05-22T00:00:00+09:00"
+  }
+}

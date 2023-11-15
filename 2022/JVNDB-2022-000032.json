@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2022-000032",
+  "vulinfodata": {
+    "title": "トレンドマイクロ製パスワードマネージャーのインストーラにおける DLL 読み込みに関する脆弱性",
+    "vulinfodescription": {
+      "overview": "トレンドマイクロ株式会社が提供するパスワードマネージャーのインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 合同会社セキュリティ・プロフェッショナルズ・ネットワーク 吉田 英二（Eiji James Yoshida） 氏"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "トレンドマイクロ",
+          "productname": "パスワードマネージャー",
+          "cpe": {
+            "text": "cpe:/a:trendmicro:password_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Version 3.7.0.1223 より前のインストーラ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 また、インストーラを実行する際には、インストーラと同じディレクトリに不審なファイルがないことを確認してください。  開発者によると、バージョン 3.7.0.1223 で対策が行われている、ただしパスワードマネージャー 3.x はサポートを終了しているため、現行バージョンであるパスワードマネージャー 5.x への移行を推奨する、とのことです。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Trend Micro",
+          "vulinfoid": "アラート/アドバイザリ：パスワードマネージャーの脆弱性について (CVE-2022-28394)",
+          "url": "https://helpcenter.trendmicro.com/ja-jp/article/TMKA-10977"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-28394",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-28394"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#60037444",
+          "url": "https://jvn.jp/jp/JVN60037444/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNTA#91240916",
+          "url": "https://jvn.jp/ta/JVNTA91240916/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-05-09T13:37:15+09:00",
+          "description": "[2022年05月11日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-05-11T12:06:19+09:00",
+    "datelastupdated": "2022-05-11T12:06:19+09:00",
+    "datepublic": "2022-05-11T00:00:00+09:00"
+  }
+}

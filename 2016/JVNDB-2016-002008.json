@@ -1,0 +1,206 @@
+{
+  "vulinfoid": "JVNDB-2016-002008",
+  "vulinfodata": {
+    "title": "Samba の MS-SAMR および MS-LSAD プロトコルの実装におけるプロトコルダウングレード攻撃を実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Samba の MS-SAMR および MS-LSAD プロトコルの実装は、DCERPC 接続を誤って処理するため、プロトコルダウングレード攻撃を実行され、ユーザになりすまされる脆弱性が存在します。  本脆弱性は、\"BADLOCK\" と呼ばれています。  なお、National Vulnerability Database (NVD) では、CWE-254、JVNVU#92232364 では、CWE-757 として公開されています。  CWE-254: Security Features http://cwe.mitre.org/data/definitions/254.html  CWE-757: Selection of Less-Secure Algorithm During Negotiation ('Algorithm Downgrade') https://cwe.mitre.org/data/definitions/757.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Samba Project",
+          "productname": "Samba",
+          "cpe": {
+            "text": "cpe:/a:samba:samba",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x",
+            "4.2.11 未満の 4.x",
+            "4.3.8 未満の 4.3.x",
+            "4.4.2 未満の 4.4.x"
+          ]
+        },
+        {
+          "name": "ヒューレット・パッカード・エンタープライズ",
+          "productname": "HPE Systems Insight Manager",
+          "cpe": {
+            "text": "cpe:/a:hp:systems_insight_manager",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "すべてのバージョン"
+          ]
+        },
+        {
+          "name": "日本電気",
+          "productname": "Express5800",
+          "cpe": {
+            "text": "cpe:/h:nec:express5800",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "/SG シリーズ InterSecVM/SG v1.2、v3.0、v3.1、v4.0",
+            "/SG シリーズ SG3600LM/LG/LJ v6.1、v6.2、v7.0、v7.1、v8.0、v8.2",
+            "/SG シリーズ UNIVERGE SG3000LG/LJ"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.9",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "中間者攻撃 (man-in-the-middle attack) により、クライアント-サーバデータストリームを変更されることで、プロトコルダウングレード攻撃を実行され、ユーザになりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "AXSA:2016-206:03",
+          "url": "https://tsn.miraclelinux.com/ja/node/6593"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "AXSA:2016-208:01",
+          "url": "https://tsn.miraclelinux.com/ja/node/6595"
+        },
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "AXSA:2016-209:01",
+          "url": "https://tsn.miraclelinux.com/ja/node/6596"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBUX03616",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05162399"
+        },
+        {
+          "type": "vendor",
+          "name": "HPE Security Bulletin",
+          "vulinfoid": "HPSBMU03614",
+          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05166182"
+        },
+        {
+          "type": "vendor",
+          "name": "NEC製品セキュリティ情報",
+          "vulinfoid": "NV16-016",
+          "url": "http://jpn.nec.com/security-info/secinfo/nv16-016.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba News",
+          "vulinfoid": "12 April 2016 Samba 4.4.2, 4.3.8 and 4.2.11 Security Releases Available for Download",
+          "url": "https://www.samba.org/samba/latest_news.html#4.4.2"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba Security Announcement",
+          "vulinfoid": "CVE-2016-2118.html",
+          "url": "https://www.samba.org/samba/security/CVE-2016-2118.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Samba Security Releases",
+          "vulinfoid": "Samba Security Releases",
+          "url": "https://www.samba.org/samba/history/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "SA40196",
+          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40196"
+        },
+        {
+          "type": "vendor",
+          "name": "セキュリティ情報",
+          "vulinfoid": "Microsoft Windows および Samba の認証機能における脆弱性(\"Badlock\")について",
+          "url": "http://www.iodata.jp/support/information/2016/badlock/"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "Microsoft Windows および Samba の認証機能に脆弱性（\"Badlock\"）",
+          "url": "http://buffalo.jp/support_s/s20160414.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2118",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2118"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92232364",
+          "url": "http://jvn.jp/vu/JVNVU92232364/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2118",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2118"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#813296",
+          "url": "http://www.kb.cert.org/vuls/id/813296"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Badlock Bug",
+          "url": "http://badlock.org/"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月14日]\\n  掲載\\n[2016年04月19日]\\n  ベンダ情報：バッファロー (Microsoft Windows および Samba の認証機能に脆弱性（\"Badlock\"）) を追加\\n  ベンダ情報：ミラクル・リナックス (AXSA:2016-209:01) を追加\\n  ベンダ情報：ミラクル・リナックス (AXSA:2016-208:01) を追加\\n  ベンダ情報：ミラクル・リナックス (AXSA:2016-206:03) を追加\\n[2016年05月31日]\\n  ベンダ情報：株式会社アイ・オー・データ機器 (Microsoft Windows および Samba の認証機能における脆弱性(\"Badlock\")について) を追加\\n[2016年06月06日]\\n  ベンダ情報：パルスセキュア (SA40196) を追加\\n[2016年06月24日]\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBUX03616) を追加\\n[2016年07月01日]\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03614) を追加\\n[2016年08月25日]\\n  ベンダ情報：日本電気 (NV16-016) を追加\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-14T11:59:32+09:00",
+    "datelastupdated": "2016-08-25T13:43:08+09:00",
+    "datepublic": "2016-04-12T00:00:00+09:00"
+  }
+}

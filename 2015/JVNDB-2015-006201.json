@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2015-006201",
+  "vulinfodata": {
+    "title": "TaxiHail に複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Mobile Knowledge が提供する HaxiHail には、情報漏えいとセンシティブなデータを暗号化しない問題が存在します。  Mobile Knowledge が提供する TaxiHail は、タクシーの \"利用者が iOS、Android またはウェブからリアルタイムに予約およびその管理ができ、ピーク時の電話の混雑を緩和することができる\" アプリケーションフレームワークです。TaxiHail には、次の脆弱性が報告されています：  不適切なデフォルトパーミッション (CWE-276) TaxiHail はユーザの GPS 情報をログに出力します。ログファイルのパーミッションは適切でないため、他のアプリケーションがログに含まれた位置情報を取得することが可能となります。  CWE-276: Incorrect Default Permissions http://cwe.mitre.org/data/definitions/276.html  センシティブなデータを暗号化しない問題 (CWE-311) TaxiHail はサーバとの通信を暗号化しません。  CWE-311: Missing Encryption of Sensitive Data http://cwe.mitre.org/data/definitions/311.html  タクシー会社のサービスが、TaxiHail をカスタマイズして使用している可能性があります。それはつまり、複数の iOS 向け、Android 向けアプリにこの脆弱性が受け継がれていることを意味しています。報告者によると、100 を超えるアプリが TaxiHail から作られているとのことです。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Mobile Knowledge Systems Inc.",
+          "productname": "TaxiHail",
+          "cpe": {
+            "text": "cpe:/a:misc:mobile_knowledge_taxihail",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1.26 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって、ユーザのプライベートな情報を取得されたり、アプリの通信内容を傍受されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] Mobile Knowledge は TaxiHail version 3.1.26 (Android 版および iOS 版) で本脆弱性を修正しており、TaxiHail をもとに作成されたアプリも同様に修正されています。  TaxiHail の旧バージョンでは SSL 証明書を適切に検証していないことも報告されています。報告者によると、この問題は TaxiHail の最新版では修正されているとのことです。現時点では、どのバージョンでこの問題の修正が行われたのかは判明していません。  報告 http://jvn.jp/vu/JVNVU90369988  可能な限り早く、修正を行ったバージョンにアプリをアップデートすることを推奨します。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Mobile Knowledge Systems Inc.",
+          "vulinfoid": "TaxiHail",
+          "url": "http://www.mobile-knowledge.com/products/passenger-solutions/taxihail/"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#91109359",
+          "url": "http://jvn.jp/vu/JVNVU91109359/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#439016",
+          "url": "http://www.kb.cert.org/vuls/id/439016"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年12月10日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-12-10T17:57:20+09:00",
+    "datelastupdated": "2015-12-10T17:57:20+09:00",
+    "datepublic": "2015-12-08T00:00:00+09:00"
+  }
+}

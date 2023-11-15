@@ -1,0 +1,200 @@
+{
+  "vulinfoid": "JVNDB-2016-002005",
+  "vulinfodata": {
+    "title": "Git の revision.c における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "Git の revision.c は、不正な整数データ型を使用するため、任意のコードを実行される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Git project",
+          "productname": "Git",
+          "cpe": {
+            "text": "cpe:/a:git_project:git",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.7.4 未満"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.2"
+          ]
+        },
+        {
+          "name": "openSUSE project",
+          "productname": "openSUSE Leap",
+          "cpe": {
+            "text": "cpe:/o:opensuse_project:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Debuginfo",
+          "cpe": {
+            "text": "cpe:/a:suse:linux_enterprise_debuginfo",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11-SP4"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Server",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12",
+            "12-SP1"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE Linux Enterprise Software Development Kit",
+          "cpe": {
+            "text": "cpe:/o:suse:linux_enterprise_software_development_kit",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "11-SP4",
+            "12",
+            "12-SP1"
+          ]
+        },
+        {
+          "name": "SUSE",
+          "productname": "SUSE OpenStack Cloud",
+          "cpe": {
+            "text": "cpe:/a:suse:openstack_cloud",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、(1) 過度に長いファイル名または (2) 過度に多いネストされたツリーを介して、ヒープベースのバッファオーバーフローを引き起こされることで、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Git",
+          "vulinfoid": "Git v2.7.4 Release Notes",
+          "url": "https://raw.githubusercontent.com/git/git/master/Documentation/RelNotes/2.7.4.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "list-objects: pass full pathname to callbacks",
+          "url": "https://github.com/git/git/commit/de1e67d0703894cb6ea782e36abb63976ab07e60"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "prefer memcpy to strcpy",
+          "url": "https://github.com/git/git/commit/34fa79a6cde56d6d428ab0d3160cb094ebad3305"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2016:0803",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00062.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "openSUSE-SU-2016:0802",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00061.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00059.html"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-security-announce",
+          "vulinfoid": "SUSE-SU-2016:0798",
+          "url": "http://lists.opensuse.org/opensuse-security-announce/2016-03/msg00060.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-2315",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2315"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-2315",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2315"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-13T14:15:41+09:00",
+    "datelastupdated": "2016-04-13T14:15:41+09:00",
+    "datepublic": "2016-02-12T00:00:00+09:00"
+  }
+}

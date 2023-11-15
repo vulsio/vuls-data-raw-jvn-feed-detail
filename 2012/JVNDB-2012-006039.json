@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2012-006039",
+  "vulinfodata": {
+    "title": "FreeBSD のカーネルのマルチキャストの実装における整数オーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeBSD のカーネルのマルチキャストの実装の (1) sys/netinet/in_mcast.c および (2) sys/netinet6/in6_mcast.c 内の IP_MSFILTER および IPV6_MSFILTER 機能には、整数オーバーフローの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "8.3 から 9.2-PRERELEASE"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、過度に大きなソースフィルタエントリ数に関する問題によって、カーネルメモリの読み込みおよび書き込み操作における制限を回避され、その結果、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD",
+          "vulinfoid": "Revision 254629",
+          "url": "http://svnweb.freebsd.org/base?view=revision&revision=254629"
+        },
+        {
+          "type": "vendor",
+          "name": "FreeBSD Security Advisory",
+          "vulinfoid": "FreeBSD-SA-13:09.ip_multicast",
+          "url": "http://www.freebsd.org/security/advisories/FreeBSD-SA-13:09.ip_multicast.asc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-3077",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3077"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-3077",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-3077"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年08月29日]\\n  掲載\\n[2013年10月16日]\\n  CWE による脆弱性タイプ一覧：内容を更新"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-08-29T13:55:29+09:00",
+    "datelastupdated": "2013-10-16T18:11:47+09:00",
+    "datepublic": "2012-08-22T00:00:00+09:00"
+  }
+}

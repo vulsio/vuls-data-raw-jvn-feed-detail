@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2014-002174",
+  "vulinfodata": {
+    "title": "Python Image Library および Pillow における任意のファイルを上書きされる脆弱性",
+    "vulinfodescription": {
+      "overview": "Python Image Library (PIL) および Pillow の (1) JpegImagePlugin.py の load_djpeg 関数、(2) EpsImagePlugin.py の Ghostscript 関数、(3) IptcImagePlugin.py の load 関数、および (4) Image.py の _copy 関数 は、一時ファイルを適切に作成しないため、任意のファイルを上書きされる、および重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Fredrik Lundh",
+          "productname": "Python Imaging Library",
+          "cpe": {
+            "text": "cpe:/a:pythonware:python_imaging_library",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.7 およびそれ以前"
+          ]
+        },
+        {
+          "name": "Python Software Foundation",
+          "productname": "Python Pillow",
+          "cpe": {
+            "text": "cpe:/a:python:pillow",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.3.1 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.4",
+          "vector": "AV:L/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、一時ファイルへのシンボリックリンク攻撃を介して、任意のファイルを上書きされる、および重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Bug report logs",
+          "vulinfoid": "#737059",
+          "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=737059"
+        },
+        {
+          "type": "vendor",
+          "name": "Fredrik Lundh",
+          "vulinfoid": "Python Imaging Library (PIL)",
+          "url": "http://www.pythonware.com/products/pil/"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Removed tempfile.mktemp, fixes CVE-2014-1932 CVE-2014-1933, debian bug #737059",
+          "url": "https://github.com/python-imaging/Pillow/commit/4e9f367dfd3f04c8f5d23f7f759ec12782e10ee7"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in Python Image Library (PIL)",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_python_image"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-1932",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-1932"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-1932",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-1932"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-59",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-59.html",
+          "title": "リンク解釈の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年04月22日]\\n  掲載\\n[2014年08月11日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Python Image Library (PIL)) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-04-22T15:57:32+09:00",
+    "datelastupdated": "2014-08-11T18:33:12+09:00",
+    "datepublic": "2014-03-15T00:00:00+09:00"
+  }
+}

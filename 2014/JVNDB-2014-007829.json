@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2014-007829",
+  "vulinfodata": {
+    "title": "FreeBSD の Stream Control Transmission Protocol モジュールにおける権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeBSD の Stream Control Transmission Protocol (SCTP) モジュールには、配列のインデックスエラーにより、(1) SCTIP_SS_VALUE オプションが設定されている場合、権限を取得される、または (2) SCTP_SS_PRIORITY オプションが有効の場合、任意のカーネルメモリを読まれる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FreeBSD",
+          "productname": "FreeBSD",
+          "cpe": {
+            "text": "cpe:/o:freebsd:freebsd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.0 p17 未満の 10.0",
+            "10.1 p5 未満の 10.1",
+            "8.4 p23 未満の 8.4",
+            "9.3 p9 未満の 9.3"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、(1) setsockopt 関数のストリーム ID を介して、権限を取得される、または (2) 任意のカーネルメモリを読まれる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FreeBSD Security Advisory",
+          "vulinfoid": "FreeBSD-SA-15:02.kmem",
+          "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-15:02.kmem.asc"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8612",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8612"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8612",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8612"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "FreeBSD Kernel Multiple Vulnerabilities",
+          "url": "http://www.coresecurity.com/advisories/freebsd-kernel-multiple-vulnerabilities"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年02月13日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-02-13T14:09:43+09:00",
+    "datelastupdated": "2015-02-13T14:09:43+09:00",
+    "datepublic": "2014-11-04T00:00:00+09:00"
+  }
+}

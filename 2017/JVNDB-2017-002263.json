@@ -1,0 +1,98 @@
+{
+  "vulinfoid": "JVNDB-2017-002263",
+  "vulinfodata": {
+    "title": "virglrenderer の vrend_renderer.c の vrend_create_vertex_elements_state 関数 におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "virglrenderer の vrend_renderer.c の vrend_create_vertex_elements_state 関数には、メモリリークにより、サービス運用妨害 (ホストメモリ消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "virglrenderer project",
+          "productname": "virglrenderer",
+          "cpe": {
+            "text": "cpe:/a:virglrenderer_project:virglrenderer_virglrenderer",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.5",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルのゲスト OS ユーザにより、多数の VIRGL_OBJECT_VERTEX_ELEMENTS コマンドを介して、サービス運用妨害 (ホストメモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "freedesktop.org",
+          "vulinfoid": "renderer: fix memory leak in vertex elements state create",
+          "url": "https://cgit.freedesktop.org/virglrenderer/commit/?id=737c3350850ca4dbc5633b3bdb4118176ce59920"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1427472",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1427472"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2017-6386",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-6386"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2017-6386",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-6386"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年04月06日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-04-06T20:11:18+09:00",
+    "datelastupdated": "2017-04-06T20:11:18+09:00",
+    "datepublic": "2017-02-28T00:00:00+09:00"
+  }
+}

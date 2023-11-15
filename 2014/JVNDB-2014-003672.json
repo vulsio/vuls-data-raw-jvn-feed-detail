@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2014-003672",
+  "vulinfodata": {
+    "title": "Symantec Endpoint Protection にバッファオーバーフローの脆弱性",
+    "vulinfodescription": {
+      "overview": "Symantec Endpoint Protection には、バッファオーバーフローの脆弱性が存在します。  Symantec Endpoint Protection クライアントをインストールした Windows では、初期設定において sysplant ドライバがロードされます。sysplant ドライバには、細工された IOCTL により攻撃可能なバッファオーバーフロー (CWE-788) の脆弱性が存在します。  CWE-788: Access of Memory Location After End of Buffer http://cwe.mitre.org/data/definitions/788.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "シマンテック",
+          "productname": "Symantec Endpoint Protection",
+          "cpe": {
+            "text": "cpe:/a:symantec:endpoint_protection",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.0 Small Business Edition およびそれ以前",
+            "クライアント 11.0 およびそれ以前",
+            "クライアント 12.1 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "Symantec Endpoint Protection クライアントをインストールした Windows にログインした一般ユーザによって、sysplant ドライバ上でバッファオーバーフローを引き起こされる可能性があります。結果として、一般ユーザに SYSTEM 権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報（SYM14-013）をもとに、最新版へアップデートしてください。  SYM14-013 http://www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20140804_00  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　・ sysplant ドライバを無効化する  詳しくは開発者が提供する情報（TECH223338）をご確認ください。  TECH223338 http://www.symantec.com/business/support/index?page=content&id=TECH223338"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Symantec Corporation",
+          "vulinfoid": "About the SYM14-013 Symantec Endpoint Protection zero-day vulnerability (TECH223338)",
+          "url": "http://www.symantec.com/business/support/index?page=content&id=TECH223338"
+        },
+        {
+          "type": "vendor",
+          "name": "Symantec Security Advisory",
+          "vulinfoid": "Symantec Endpoint Protection Local Client Application Device Control Buffer Overflow （SYM14-013）",
+          "url": "http://www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20140804_00"
+        },
+        {
+          "type": "vendor",
+          "name": "シマンテック セキュリティ・アドバイザリー",
+          "vulinfoid": "SYM14-013",
+          "url": "http://www.symantec.com/ja/jp/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20140804_00"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-3434",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3434"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#98222914",
+          "url": "https://jvn.jp/vu/JVNVU98222914/"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-3434",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3434"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#252068",
+          "url": "http://www.kb.cert.org/vuls/id/252068"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月05日]\\n  掲載\\n[2014年08月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-3434) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2014年08月19日]\\n  ベンダ情報：シマンテック (SYM14-013) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-05T14:15:34+09:00",
+    "datelastupdated": "2014-08-19T18:04:58+09:00",
+    "datepublic": "2014-08-04T00:00:00+09:00"
+  }
+}

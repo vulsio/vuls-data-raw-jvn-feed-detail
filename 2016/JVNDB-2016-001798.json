@@ -1,0 +1,115 @@
+{
+  "vulinfoid": "JVNDB-2016-001798",
+  "vulinfodata": {
+    "title": "Android で使用される Linux Kernel の include/linux/poison.h におけるポイズンポインタ保護メカニズムを回避される脆弱性",
+    "vulinfodescription": {
+      "overview": "Android で使用される Linux Kernel の include/linux/poison.h の LIST_POISON 関数は、mmap_min_addr 値との関係を適切に考慮しないため、ポイズンポインタ (poison-pointer) 保護メカニズムを回避される脆弱性が存在します。  ベンダは、本脆弱性を Bug 26186802 として公開しています。  本脆弱性は、CVE-2015-3636 とは異なる脆弱性です。  補足情報 : CWE による脆弱性タイプは、CWE-254: Security Features (セキュリティ機能) と識別されています。 http://cwe.mitre.org/data/definitions/254.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Google",
+          "productname": "Android",
+          "cpe": {
+            "text": "cpe:/o:google:android",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2016-03-01 より前の 6.0.1"
+          ]
+        },
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、初期化されていないリストのエントリの使用を誘発されることで、ポイズンポインタ (poison-pointer) 保護メカニズムを回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Nexus Security Bulletin - March 2016",
+          "url": "http://source.android.com/security/bulletin/2016-03-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "include/linux/poison.h: fix LIST_POISON{1,2} offset",
+          "url": "https://github.com/torvalds/linux/commit/8a5e5e02fc83aaf67053ab53b359af08c6c49aaf"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "https://www.kernel.org/"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "include/linux/poison.h: fix LIST_POISON{1,2} offset",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8a5e5e02fc83aaf67053ab53b359af08c6c49aaf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-0821",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0821"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-0821",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0821"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-22T15:57:24+09:00",
+    "datelastupdated": "2016-03-22T15:57:24+09:00",
+    "datepublic": "2016-03-07T00:00:00+09:00"
+  }
+}

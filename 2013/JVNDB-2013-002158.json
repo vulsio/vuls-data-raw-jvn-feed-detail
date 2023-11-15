@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2013-002158",
+  "vulinfodata": {
+    "title": "Linux Kernel の clone システムコールの実装における権限を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の clone システムコールの実装は、CLONE_NEWUSER と CLONE_FS フラグの組み合わせを適切に処理しないため、権限を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.8.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、chroot を呼び出される、および親プロセスと子プロセス間での / ディレクトリの共有を利用されることで、権限を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.8.3",
+          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.8.3"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "userns: Don't allow CLONE_NEWUSER | CLONE_FS",
+          "url": "https://github.com/torvalds/linux/commit/e66eded8309ebf679d3d3c1f5820d1f2ca332c71"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux.git",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=e66eded8309ebf679d3d3c1f5820d1f2ca332c71"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 921448",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=921448"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-1858",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1858"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-1858",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1858"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年04月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-04-09T16:07:12+09:00",
+    "datelastupdated": "2013-04-09T16:07:12+09:00",
+    "datepublic": "2013-03-14T00:00:00+09:00"
+  }
+}

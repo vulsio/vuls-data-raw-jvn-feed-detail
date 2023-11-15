@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2023-000008",
+  "vulinfodata": {
+    "title": "Pgpool-II における情報漏えいの脆弱性",
+    "vulinfodescription": {
+      "overview": "Pgpool-II は PostgreSQL のクラスタ管理ツールです。Pgpool-II の watchdog 機能には、情報漏えい (CWE-200) の脆弱性があります。 ただし、次の条件をすべて満たすシステムに限り本脆弱性の影響を受けます。 <ul> <li>Watchdog 機能が有効 (use_watchdog = on) <li>Watchdog の死活監視方式に queryモードが利用されている (wd_lifecheck_method = 'query') <li>wd_lifecheck_password に平文のパスワードが設定されている </ul> この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "PgPool Global Development Group",
+          "productname": "Pgpool-II",
+          "cpe": {
+            "text": "cpe:/a:pgpool:pgpool-ii",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.3系のすべてのバージョン",
+            "3.4系のすべてのバージョン",
+            "3.5系のすべてのバージョン",
+            "3.6系のすべてのバージョン",
+            "3.7系のすべてのバージョン",
+            "4.0.0から4.0.21までのバージョン (4.0系)",
+            "4.1.0から4.1.14までのバージョン (4.1系)",
+            "4.2.0から4.2.11までのバージョン (4.2系)",
+            "4.3.0から4.3.4までのバージョン (4.3系)",
+            "4.4.0から4.4.1までのバージョン (4.4系)"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "3.5",
+          "vector": "AV:N/AC:M/Au:S/C:P/I:N/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.3",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "特定のデータベースユーザの認証情報が他のデータベースユーザに取得される可能性があります。 結果として、取得した認証情報でログインした攻撃者によって、データベース内の情報を改ざんされたり、データベースを停止されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は次のバージョンで修正されています。 <ul> <li>Pgpool-II 4.4.2 (4.4系) <li>Pgpool-II 4.3.5 (4.3系) <li>Pgpool-II 4.2.12 (4.2系) <li>Pgpool-II 4.1.15 (4.1系) <li>Pgpool-II 4.0.22 (4.0系) </ul> Pgpool-II 3.3系から 3.7系まではサポートが終了しているため、修正版はリリースされません。 Pgpool-II 3.7系およびそれ以前のバージョンを使用している場合は、Pgpool-II 4.0系以降の最新バージョンへのアップグレードを検討してください。  [ワークアラウンドを実施する] 次のいずれかを実施することで、本脆弱性の影響を回避することが可能です。 Pgpool-II 3.3系から 3.7系まで <ul> <li>Watchdog の利用を止める (use_watchdog = off) <li>wd_lifecheck_method = 'heartbeat' と設定する </ul> Pgpool-II 4.0系から4.4系まで <ul> <li>Watchdog の利用を止める(use_watchdog = off) <li>wd_lifecheck_method = 'heartbeat' と設定する <li>wd_lifecheck_password に平文のパスワードを設定せず、AES で暗号化したパスワードを設定する <li>wd_lifecheck_password には空文字を設定し、パスワードは pool_passwd ファイルに設定する </ul>"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "PgPool Global Development Group",
+          "vulinfoid": "PgPool Global Development Group の告知ページ",
+          "url": "https://www.pgpool.net/mediawiki/index.php/Main_Page#News"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-22332",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22332"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#72418815",
+          "url": "https://jvn.jp/jp/JVN72418815/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-01-18T11:29:16+09:00",
+          "description": "[2023年01月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-01-23T14:05:59+09:00",
+    "datelastupdated": "2023-01-23T14:05:59+09:00",
+    "datepublic": "2023-01-23T00:00:00+09:00"
+  }
+}

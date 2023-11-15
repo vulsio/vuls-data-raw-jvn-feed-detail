@@ -1,0 +1,117 @@
+{
+  "vulinfoid": "JVNDB-2003-000157",
+  "vulinfodata": {
+    "title": "Microsoft Windows の nsiislog.dll におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft Windows 2000 Server ファミリーに同梱されている nsiislog.dll は、IIS で利用される ISAPI エクステンションです。この nsiislog.dll は、Microsoft Media Services におけるストリーミング配信のためのロギング機能を提供します。Nsiislog.dll はプログラムの追加/削除を利用してインストールすることが可能です。デフォルトではシステム上には存在しません。  この Windows Media Services の実装で利用される nsiislog.dll では、リクエストに対する境界チェックが適切に行われていないため、バッファオーバーフローが生じる問題が存在します。  リモートの攻撃者は、意図的に作成されたリクエストを IIS が稼動する標的ホストに送りつけ、nsiislog.dll に引渡すことにより、バッファオーバーフローを発生させ、結果として、IIS をサービス不能状態に陥らせることが可能です。  さらに、攻撃者は IWAM アカウント (IWAM_< machinename >) で任意のコードを実行することが可能です。  尚、Windows Media Services は Windows 2000 Server、Advanced Server や Datacenter Server、もしくは Windows NT 4.0 Server などの Windows Server オペレーティングシステム上に限り、利用することが可能です。 この中の Windows 2000 Server ファミリーでは、IIS はデフォルトで動作しています。Windows NT 4.0 Server では、NTOP (Windows NT 4.0 Option Pack) がインストールされている場合に IIS はデフォルトで動作しています。  Windows 2000 Server に関して、この問題を解消するためにリリースされた MS03-019 のパッチ (817772) を適用後も同様の問題の影響を受けることが報告されています。MS03-022 のパッチ (822343) を適用することでこの問題を解消することが可能です。  また、修正プログラムの適用前に、Windows Media Services がアンインストールされていた場合に正しく修正プログラムが適用されない問題がベンダより新たに報告されており、修正プログラムが 2004/03/09 付けで再度リリースされています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows 2000",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_2000",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "マイクロソフト",
+          "productname": "Microsoft Windows NT",
+          "cpe": {
+            "text": "cpe:/o:microsoft:windows_nt",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0 (server) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS03-022",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS03-022.asp"
+        },
+        {
+          "type": "vendor",
+          "name": "Microsoft Security Bulletin",
+          "vulinfoid": "MS03-019",
+          "url": "http://www.microsoft.com/technet/security/bulletin/MS03-019.asp"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS03-022",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/MS03-022.mspx"
+        },
+        {
+          "type": "vendor",
+          "name": "マイクロソフト セキュリティ情報",
+          "vulinfoid": "MS03-019",
+          "url": "http://www.microsoft.com/japan/technet/security/bulletin/MS03-019.mspx"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2003-0227",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0227"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2003-0227",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0227"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "8035",
+          "url": "http://www.securityfocus.com/bid/8035"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "7727",
+          "url": "http://www.securityfocus.com/bid/7727"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2003-05-28T00:00:00+09:00"
+  }
+}

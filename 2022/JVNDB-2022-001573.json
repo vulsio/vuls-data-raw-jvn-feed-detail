@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2022-001573",
+  "vulinfodata": {
+    "title": "Automated Logic 製 WebCTRL におけるオープンリダイレクトの脆弱性",
+    "vulinfodescription": {
+      "overview": "Automated Logic 社（Carrier 社子会社）が提供する WebCTRL は、Web ベースで動作するビルディングオートメーションシステムです。 WebCTRL には、オープンリダイレクト（CWE-601、CVE-2022-1019）の脆弱性が存在します。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Automated Logic Corporation",
+          "productname": "WebCTRL",
+          "cpe": {
+            "text": "cpe:/a:automatedlogic:webctrl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.0 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5.2",
+          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "細工された URL にアクセスすることで、悪意のある Web ページにリダイレクトされたり、悪意のあるファイルをダウンロードされたりする可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性を修正したアップデートの入手については、Automated Logic 社の販売店にお問い合わせください。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を回避することが可能です。  * <install_dir>/webroot/_common /lvl5/help/ 配下の各ディレクトリにある index.htm を編集し、コンテンツセキュリティポリシー（CSP）を有効にする * 追加するタグの例 ：< meta http-equiv=\"Content-Security-Policy\" content=\"default-src  'self'; img-src 'self' data:; font-src 'self' data:; script-src 'self'  'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'\" >"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Carrier",
+          "vulinfoid": "CARR-PSA-001-1121（PDF）",
+          "url": "https://www.corporate.carrier.com/Images/CARR-PSA-ALC-WebCTRL-001-1121_tcm558-149395.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2022-1019",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-1019"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-22-109-02",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-109-02"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#93490026",
+          "url": "http://jvn.jp/vu/JVNVU93490026/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-601",
+          "url": "https://cwe.mitre.org/data/definitions/601.html",
+          "title": "オープンリダイレクト"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2022-04-22T15:38:30+09:00",
+          "description": "[2022年04月22日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2022-04-22T15:38:30+09:00",
+    "datelastupdated": "2022-04-22T15:38:30+09:00",
+    "datepublic": "2022-04-21T00:00:00+09:00"
+  }
+}

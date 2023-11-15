@@ -1,0 +1,110 @@
+{
+  "vulinfoid": "JVNDB-2014-004443",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/udf/inode.c の __udf_read_inode 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/udf/inode.c の __udf_read_inode 関数は、ICB インダイレクションの量を適切に制限しないため、サービス運用妨害 (無限ループまたはスタック消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.16.3 まで"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.7",
+          "vector": "AV:L/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "物理的に端末の操作が可能な攻撃者により、巧妙に細工された inode を持つ UDF ファイルシステムを介して、サービス運用妨害 (無限ループまたはスタック消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "udf: Avoid infinite loop when processing indirect ICBs",
+          "url": "https://github.com/torvalds/linux/commit/c03aa9f6e1f938618e6db2e23afef0574efeeb65"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "udf: Avoid infinite loop when processing indirect ICBs",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=c03aa9f6e1f938618e6db2e23afef0574efeeb65"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1141809",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141809"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2014:1318",
+          "url": "http://rhn.redhat.com/errata/RHSA-2014-1318.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-6410",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6410"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-6410",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-6410"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年09月30日]\\n  掲載\\n[2014年11月26日]\\n  ベンダ情報：レッドハット (RHSA-2014:1318) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-09-30T16:14:06+09:00",
+    "datelastupdated": "2014-11-26T18:04:22+09:00",
+    "datepublic": "2014-09-04T00:00:00+09:00"
+  }
+}

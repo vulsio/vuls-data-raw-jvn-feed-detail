@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2013-005183",
+  "vulinfodata": {
+    "title": "GnuTLS の DANE ライブラリ の dane_raw_tlsa におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "GnuTLS の DANE ライブラリ (libdane) の dane_raw_tlsa には、一つずれエラー (Off-by-One error) により、サービス運用妨害 (メモリ破損) 状態にされる脆弱性が存在します。  本問題は、CVE-2013-4466 に対する修正が不完全だったことによる問題です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GNU Project",
+          "productname": "GnuTLS",
+          "cpe": {
+            "text": "cpe:/a:gnu:gnutls",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1.16 未満の 3.1.x",
+            "3.2.6 未満の 3.2.x"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートサーバにより、4 つ以上の DANE エントリを伴うレスポンスを介して、サービス運用妨害 (メモリ破損) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gitorious",
+          "vulinfoid": "Reorganized main loop in dane_raw_tlsa",
+          "url": "https://gitorious.org/gnutls/gnutls/commit/0dd5529509e46b11d5c0f3f26f99294e0e5fa6dc"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2013:1714",
+          "url": "http://lists.opensuse.org/opensuse-updates/2013-11/msg00064.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4487",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4487"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4487",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4487"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年11月21日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-11-21T15:00:38+09:00",
+    "datelastupdated": "2013-11-21T15:00:38+09:00",
+    "datepublic": "2013-10-29T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2011-004180",
+  "vulinfodata": {
+    "title": "WWW::Mechanize などの製品で使用される LWP の Net::HTTPS モジュールにおけるサーバをなりすまされる脆弱性",
+    "vulinfodescription": {
+      "overview": "WWW::Mechanize、LWP::UserAgent および他の製品で使用される libwww-perl (LWP) の Net::HTTPS モジュールは、If-SSL-Cert-Subject ヘッダが設定されていない環境で実行される際、デフォルトで SSL 証明書の検証を有効にしないため、サーバをなりすまされる脆弱性が存在します。 本問題は、Net::HTTPS API の仕様によるものと考えられ、異なる実装には、この仕様の影響を受けない CVE が割り当てられるべきである。しかしながら、この API は LWP 内で変更されるため、単一 CVE が割り当てられています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Gisle Aas",
+          "productname": "libwww-perl",
+          "cpe": {
+            "text": "cpe:/a:search.cpan:libwww-perl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.00 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、適切に検証されていないホスト名を含む中間者攻撃 (MITM attack) を介して、サーバをなりすまされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "search.cpan",
+          "vulinfoid": "Release 6.02",
+          "url": "http://cpansearch.perl.org/src/GAAS/libwww-perl-6.02/Changes"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-0633",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0633"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-0633",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0633"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-20",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+          "title": "不適切な入力確認"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年03月27日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-03-27T18:42:58+09:00",
+    "datelastupdated": "2012-03-27T18:42:58+09:00",
+    "datepublic": "2011-03-27T00:00:00+09:00"
+  }
+}

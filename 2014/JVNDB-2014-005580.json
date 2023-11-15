@@ -1,0 +1,92 @@
+{
+  "vulinfoid": "JVNDB-2014-005580",
+  "vulinfodata": {
+    "title": "Gogs における SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Gogs (別名 Go Git Service) には、SQL インジェクションの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "GoGits",
+          "productname": "Gogs",
+          "cpe": {
+            "text": "cpe:/a:gogits:gogs",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "0.3.1-9 から 0.5.6.1105 Beta 未満の 0.5.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、以下のパラメータを介して、任意の SQL コマンドを実行される可能性があります。  (1) models/repo.go を適切に処理しない api/v1/repos/search の q パラメータ (2) models/user.go を適切に処理しない api/v1/users/search の q パラメータ"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "fix session API broken and SQL pretection",
+          "url": "https://github.com/gogits/gogs/commit/0c5ba4573aecc9eaed669e9431a70a5d9f184b8d"
+        },
+        {
+          "type": "vendor",
+          "name": "Gogs",
+          "vulinfoid": "Change Log",
+          "url": "http://gogs.io/docs/intro/change_log.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-8682",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8682"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-8682",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-8682"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-25T12:01:42+09:00",
+    "datelastupdated": "2014-11-25T12:01:42+09:00",
+    "datepublic": "2014-11-19T00:00:00+09:00"
+  }
+}

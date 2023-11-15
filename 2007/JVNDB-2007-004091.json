@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2007-004091",
+  "vulinfodata": {
+    "title": "Linux kernel の net/netfilter/nf_conntrack_h323_asn1.c におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の net/netfilter/nf_conntrack_h323_asn1.c の decode_choice 関数には、サービス運用妨害 (クラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.20.15 未満、および 2.6.21.6 未満の 2.6.21.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、choice フィールドに対するエンコードされた範囲外のインデックス値を介して、NULL ポインタデリファレンスを誘発され、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "USN-510-1",
+          "url": "http://www.ubuntu.com/usn/usn-510-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-3642",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3642"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-3642",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-3642"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T16:47:54+09:00",
+    "datelastupdated": "2012-09-25T16:47:54+09:00",
+    "datepublic": "2007-07-09T00:00:00+09:00"
+  }
+}

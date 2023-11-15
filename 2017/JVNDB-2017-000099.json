@@ -1,0 +1,101 @@
+{
+  "vulinfoid": "JVNDB-2017-000099",
+  "vulinfodata": {
+    "title": "SSL Visibility Appliance における RST パケットの生成に関する問題",
+    "vulinfodescription": {
+      "overview": "Blue Coat が提供する SSL Visibility Appliance は、特定のウェブブラウザから HTTPS リクエストを受け付けた際に、誤ったシーケンス番号を持つ RST パケットを生成します。そのため、これらの不正な RST パケットをサーバ側で処理できなかった場合、セッションが適切に終了しないため、サーバに対するサービス運用妨害 (DoS) 攻撃に使用される可能性があります。 なお、開発者によると、当該製品自体はサービス運用妨害 (DoS) の影響を受けないとのことです。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社エヌ・ティ・ティ エムイー サイバーセキュリティセンタ"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "ブルーコートシステムズ",
+          "productname": "SSL Visibility Appliance",
+          "cpe": {
+            "text": "cpe:/a:bluecoat:ssl_visibility_appliance",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.8.4FC, 3.9, 3.10, 3.11.3.1 より前の 3.11 系"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:L"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、サーバに対するサービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "SA142: Invalid TCP Packet Generation DoS in SSL Visibility",
+          "url": "https://www.symantec.com/security-center/network-protection-security-advisories/SA142"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-10259",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10259"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#91438377",
+          "url": "https://jvn.jp/jp/JVN91438377/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-10259",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-10259"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2017年05月24日]\\n  掲載\\n[2017年05月31日]\\n  ベンダ情報：リンクを修正"
+        }
+      ]
+    },
+    "datefirstpublished": "2017-05-24T14:02:30+09:00",
+    "datelastupdated": "2017-05-31T19:15:40+09:00",
+    "datepublic": "2017-05-24T00:00:00+09:00"
+  }
+}

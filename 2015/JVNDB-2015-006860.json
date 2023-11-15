@@ -1,0 +1,128 @@
+{
+  "vulinfoid": "JVNDB-2015-006860",
+  "vulinfodata": {
+    "title": "libMatroska の KaxInternalBlock::ReadData 関数におけるプロセスヒープメモリから重要な情報を取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "libMatroska の KaxInternalBlock::ReadData 関数には、プロセスヒープメモリから重要な情報を取得される脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Matroska.org",
+          "productname": "libMatroska",
+          "cpe": {
+            "text": "cpe:/a:matroska:libmatroska",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.4.4 未満"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "Leap",
+          "cpe": {
+            "text": "cpe:/o:novell:leap",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "42.1"
+          ]
+        },
+        {
+          "name": "Novell",
+          "productname": "openSUSE",
+          "cpe": {
+            "text": "cpe:/o:novell:opensuse",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "13.1",
+            "13.2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、巧妙に細工された EBML lacing を介して、不正なメモリアクセスを誘発されることで、プロセスヒープメモリから重要な情報を取得される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "KaxBlockInternal: check EBML lace sizes against available buffer space",
+          "url": "https://github.com/Matroska-Org/libmatroska/commit/0a2d3e3644a7453b6513db2f9bc270f77943573f"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "libmatroska/ChangeLog at release-1.4.4",
+          "url": "https://github.com/Matroska-Org/libmatroska/blob/release-1.4.4/ChangeLog"
+        },
+        {
+          "type": "vendor",
+          "name": "opensuse-updates",
+          "vulinfoid": "openSUSE-SU-2016:0125",
+          "url": "http://lists.opensuse.org/opensuse-updates/2016-01/msg00035.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8792",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8792"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8792",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8792"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年02月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-02-09T16:07:01+09:00",
+    "datelastupdated": "2016-02-09T16:07:01+09:00",
+    "datepublic": "2015-10-20T00:00:00+09:00"
+  }
+}

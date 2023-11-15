@@ -1,0 +1,135 @@
+{
+  "vulinfoid": "JVNDB-2012-002544",
+  "vulinfodata": {
+    "title": "Linux Kernel の CIFSFindNext 関数における整数符号エラーの脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の fs/cifs/cifssmb.c 内の CIFSFindNext 関数には、整数符号エラーの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.1 未満"
+          ]
+        },
+        {
+          "name": "VMware",
+          "productname": "VMware ESX",
+          "cpe": {
+            "text": "cpe:/a:vmware:esx",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.5",
+            "4.0",
+            "4.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "10",
+          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの CIFS サーバにより、ディレクトリへの読み取り要求の応答に含まれた過度に大きな値を介して、サービス運用妨害 (メモリ破損) 状態にされる、またはその他の詳細不明な影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.1",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.1"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "cifs: fix possible memory corruption in CIFSFindNext",
+          "url": "https://github.com/torvalds/linux/commit/9438fabb73eb48055b58b89fc51e0bc4db22fabd"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=9438fabb73eb48055b58b89fc51e0bc4db22fabd"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 732869",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=732869"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0006",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0006.html"
+        },
+        {
+          "type": "vendor",
+          "name": "VMware Security Advisories",
+          "vulinfoid": "VMSA-2012-0008",
+          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2012-0008.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2011-3191",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3191"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2011-3191",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3191"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年05月28日]\\n  掲載\\n[2012年12月17日]\\n  影響を受けるシステム：VMware (VMSA-2012-0006) の情報を追加\\n  影響を受けるシステム：VMware (VMSA-2012-0008) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0006) を追加\\n  ベンダ情報：VMware (VMSA-2012-0008) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-05-28T16:48:56+09:00",
+    "datelastupdated": "2012-12-17T16:27:07+09:00",
+    "datepublic": "2012-05-24T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "vulinfoid": "JVNDB-2014-008127",
+  "vulinfodata": {
+    "title": "FreeType の type1/t1load.c 内の parse_encoding 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FreeType の type1/t1load.c 内の parse_encoding 関数には、サービス運用妨害 (無限ループ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Canonical",
+          "productname": "Ubuntu",
+          "cpe": {
+            "text": "cpe:/o:canonical:ubuntu",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "12.04 LTS",
+            "14.04 LTS",
+            "15.04"
+          ]
+        },
+        {
+          "name": "FreeType Project",
+          "productname": "FreeType",
+          "cpe": {
+            "text": "cpe:/a:freetype:freetype",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.5.3 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、Postscript ストリームの \"破損したベースを持つ数 (broken number-with-base)\" (例：8#garbage) を介して、サービス運用妨害 (無限ループ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugs",
+          "vulinfoid": "Bug #1492124",
+          "url": "https://bugs.launchpad.net/ubuntu/+source/freetype/+bug/1492124"
+        },
+        {
+          "type": "vendor",
+          "name": "freetype",
+          "vulinfoid": "Fix Savannah bug #41590.",
+          "url": "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/commit/?id=df14e6c0b9592cbb24d5381dfc6106b14f915e75"
+        },
+        {
+          "type": "vendor",
+          "name": "GNU Savannah",
+          "vulinfoid": "bug #41590: infinite loop in parse_encoding (t1load.c)",
+          "url": "http://savannah.nongnu.org/bugs/index.php?41590"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Code",
+          "vulinfoid": "Issue 459050",
+          "url": "https://code.google.com/p/chromium/issues/detail?id=459050"
+        },
+        {
+          "type": "vendor",
+          "name": "Ubuntu Security Notice",
+          "vulinfoid": "USN-2739-1",
+          "url": "http://www.ubuntu.com/usn/USN-2739-1/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9745",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9745"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9745",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9745"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-17T14:38:27+09:00",
+    "datelastupdated": "2015-09-17T14:38:27+09:00",
+    "datepublic": "2014-02-19T00:00:00+09:00"
+  }
+}

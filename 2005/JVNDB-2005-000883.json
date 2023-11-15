@@ -1,0 +1,123 @@
+{
+  "vulinfoid": "JVNDB-2005-000883",
+  "vulinfodata": {
+    "title": "sudo の Perl スクリプト実行時における権限昇格の脆弱性",
+    "vulinfodescription": {
+      "overview": "sudo には、Perl の Taint フラグが有効になっていない場合、PERLLIB、PERL5LIB および PERL5OPT 環境変数の初期化に不備があるため、権限昇格の脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Todd C. Miller",
+          "productname": "Sudo",
+          "cpe": {
+            "text": "cpe:/a:todd_miller:sudo",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.6.8p11 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.0 ",
+            "2.1 ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "悪意あるローカルユーザに、任意のシステムライブラリファイル名を含むスクリプトを実行されることで、任意のライブラリを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています (sudo 1.6.8p12 で修正済)。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "1067",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=1067"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "1982",
+          "url": "http://www.miraclelinux.com/support/index.php?q=node/99&errata_id=1982"
+        },
+        {
+          "type": "vendor",
+          "name": "Sudo Security Alerts",
+          "vulinfoid": "perl_env",
+          "url": "http://www.sudo.ws/sudo/alerts/perl_env.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-4158",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4158"
+        },
+        {
+          "type": "advisory",
+          "name": "FrSIRT Advisories",
+          "vulinfoid": "FrSIRT/ADV-2005-2386",
+          "url": "http://www.frsirt.com/english/advisories/2005/2386"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-4158",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-4158"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA17534",
+          "url": "http://secunia.com/advisories/17534/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "15394",
+          "url": "http://www.securityfocus.com/bid/15394"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年07月10日]\\n  掲載\\n[2010年02月15日]\\n  影響を受けるシステム：ミラクル・リナックス (1982) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (1982) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-07-10T12:33:05+09:00",
+    "datelastupdated": "2010-02-15T11:03:05+09:00",
+    "datepublic": "2005-11-08T00:00:00+09:00"
+  }
+}

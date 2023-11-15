@@ -1,0 +1,119 @@
+{
+  "vulinfoid": "JVNDB-2014-003712",
+  "vulinfodata": {
+    "title": "Cobham thraneLINK デバイスのファームウェアアップデート機能に脆弱性",
+    "vulinfodescription": {
+      "overview": "Cobham thraneLINK デバイスのファームウェアアップデート機能には、脆弱性が存在します。  Cobham の thraneLINK プロトコルでは、ファームウェアのアップデートの電子署名を検証しません（CWE-347）。また、ネットワークに接続された thraneLINK デバイスは、SLPFindSrvs プロトコルで列挙することができます。結果として、細工された SNMP リクエストにより、第三者が用意した TFTP サーバ から不正なファームウェアアップデートをダウンロードさせられる可能性があります。  CWE-347: Improper Verification of Cryptographic Signature http://cwe.mitre.org/data/definitions/347.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Cobham plc",
+          "productname": "SAILOR 6006 Message Terminal",
+          "cpe": {
+            "text": "cpe:/h:cobham:sailor_6006_message_terminal",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Cobham plc",
+          "productname": "SAILOR 6110 mini-C GMDSS",
+          "cpe": {
+            "text": "cpe:/h:cobham:sailor_6110_mini-c_gmdss",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Cobham plc",
+          "productname": "SAILOR 6222 VHF",
+          "cpe": {
+            "text": "cpe:/h:cobham:sailor_6222_vhf",
+            "version": "2.2"
+          }
+        },
+        {
+          "name": "Cobham plc",
+          "productname": "SAILOR 6300 MF/HF",
+          "cpe": {
+            "text": "cpe:/h:cobham:sailor_6300_mf_%2F_hf",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の第三者によって、thraneLINK デバイスに悪意あるファームウェアイメージを展開され、任意のコードを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "2014年8月8日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　・ thraneLINK デバイスからの TFTP アクセスを制限する 　・ ネットワークに接続されている thraneLINK デバイスの検出を防ぐため、427/UDP へのブロードキャストを制限する"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Cobham plc",
+          "vulinfoid": "SAILOR 6000 Series",
+          "url": "http://thrane.sailor6000series.com/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-0328",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0328"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#99941229",
+          "url": "http://jvn.jp/vu/JVNVU99941229/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-0328",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0328"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#179732",
+          "url": "http://www.kb.cert.org/vuls/id/179732"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年08月11日]\\n  掲載\\n[2014年08月18日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-0328) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-08-11T13:59:52+09:00",
+    "datelastupdated": "2014-08-18T18:02:08+09:00",
+    "datepublic": "2014-08-07T00:00:00+09:00"
+  }
+}

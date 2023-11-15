@@ -1,0 +1,134 @@
+{
+  "vulinfoid": "JVNDB-2016-004541",
+  "vulinfodata": {
+    "title": "Open Dental がデータベースのデフォルトパスワードとしてブランクを設定する問題",
+    "vulinfodescription": {
+      "overview": "Open Dental は、歯科記録の管理ソフトウェアです。Open Dental はインストール時にデータベース (MySQL) のデフォルトパスワードとしてブランクを設定します。Open Dental の MySQL データベースにアクセス可能な攻撃者は、データベース上の情報を読み取ったり、改ざんしたり、削除したりすることが可能です。  認証情報の管理 (CWE-255) - CVE-2016-6531 Open Dental はインストール時にデフォルトの認証情報を設定します。この認証情報を変更していない場合、デフォルトの認証情報を知る遠隔の攻撃者は、管理者権限で患者情報データベースにアクセスすることが可能です。  CWE-255: Credentials Management http://cwe.mitre.org/data/definitions/255.html  JPCERT/CCからの補足情報 [2016年9月8日 追記] CERT/CC Vulnerability Note VU#619767 の公表当初、CERT/CC は本脆弱性情報を \"Open Dental contains hard-coded credentials\" としており、本アドバイザリ (Japan Vulnerability Notes JVNVU#94993132) においても 2016年9月7日に \"Open Dental に認証情報がハードコードされている問題\" として公表しました。  しかし、CERT/CC Vulnerability Note VU#619767 の公表後、開発者から異論があったため、CERT/CC は VU#619767 を修正しました。これを受け、本アドバイザリも \"Open Dental がインストール時にデフォルトの認証情報を設定する問題\" として情報を修正しています。  開発者からの異論は次の通りです：  　　\"This vulnerability note by [CERT/CC] that Open Dental hard-codes credentials in its software is factually false. Open Dental feels that it is detrimental to our reputation to state this. In fact, there is indeed a default blank password, but it can be changed, and is not hard-coded. http://www.opendental.com/manual/securitymysql.html . 　　(CERT/CC が述べている Open Dental に認証情報がハードコードされているという脆弱性情報は事実と異なります。Open Dental として、この記述はソフトウェアの評価に影響を及ぼすと考えています。実際には、デフォルトでパスワードはブランクですが、変更することができ、ハードコードされてはいません。)  　　We recommend that users change it, each customer receives direction with a link to http://www.opendental.com/manual/computernetworksetup.html see the step linking to http://www.opendental.com/manual/securitymysql.html . 　　(Open Dental は、このパスワードを変更するよう推奨します。ユーザは、 　　http://www.opendental.com/manual/computernetworksetup.html および  　　http://www.opendental.com/manual/securitymysql.html をご確認ください。)  　　NOTE: setting a MySQL password does not mean that a bad actor who has access to the data on your server cannot access the data. If I have a copy of your MySQL database, all I have to do is replace the grant tables and I have access to your database. You must encrypt your database to prevent this http://www.opendental.com/manual/encryption.html , and securing your network is always the first step http://www.opendental.com/manual/securityoverview.html . 　　(注意：MySQL のパスワードを変更することは、攻撃者がデータベースの内容を取得することができないということと同義ではありません。仮に MySQL データベースのコピーを取得されれば、コピーしたデータベースの権限設定を変更することでデータベースの内容を取得されてしまいます。この問題を防ぐため、データベースは  　　http://www.opendental.com/manual/encryption.html を参考に暗号化し、 　　http://www.opendental.com/manual/securityoverview.html を参考にネットワーク環境を安全に保ってください。)\"  [2016年9月9日 追記] CERT/CC Vulnerability Note VU#619767 の修正更新を受け、開発者は次の通り追加の見解を述べています：  　　\"Open Dental would like to respond to the revised VU#619767. While it is true that Open Dental does not force clients to use MySQL passwords, it is important to give more context for what would be needed to exploit this. It is not true that an unauthenticated remote attacker can gain access just because an Open Dental user does not have a root password on a database. It would be true if an administrator of the database host network edge router also had added a specific port forwarding rule to forward traffic from a designated port to the database host server on the same port MySQL was set to send traffic from, which is a terrible idea. Users do not need to take action in this case, they need to continue to not intentionally expose Open Dental MySQL databases directly to the internet without our Middle Tier product (http://www.opendental.com/manual/middletier.html). If a bad actor has sufficient access to your network set up a port forwarding rule without you knowing, you are already completely compromised and a MySQL password is not helpful.  　　(VU#619767 が更新されたため、それについて見解を述べます。Open Dental はユーザに MySQL のパスワードを使用するよう強制しませんが、それを突いた攻撃を成立させるためにはさらにいくつかの条件が必要です。Open Dental のデータベースの root パスワードが設定されていなかったからといって、遠隔の攻撃者がただちにデータベースにアクセスできるわけではありません。確かに、外部からの通信を MySQL にポートフォワードするような不適切な設定をしているなら、そのようなことが起こらないわけではありません。本件の場合、ユーザは何らかのアクションを起こす必要はありません。Open Dental の MySQL データベースを、Middle Tier 製品を介さず、意図的に直接インターネットに晒すことのないよう気をつけてください。仮にネットワークに侵入した攻撃者がユーザに気付かれることなくポートフォワーディングの設定を変更できる状況であれば、その時点でユーザ環境は完全に攻撃者の手中にあり、MySQL のパスワードによる保護は意味をなしません。)\"  Middle Tier http://www.opendental.com/manual/middletier.html  [2016年9月13日 追記] 2016年9月8日の更新で、本アドバイザリのタイトルを \"Open Dental がインストール時にデフォルトの認証情報を設定する問題\" と変更しましたが、2016年9月9日分の開発者見解を受け、CERT/CC Vulnerability Note VU#619767 が更新され、タイトルも \"Open Dental installs with default database credentials\" から \"Open Dental uses blank database password by default\" に変更されました。これを受け、本アドバイザリのタイトルも \"Open Dental がデータベースのデフォルトパスワードとしてブランクを設定する問題\" に変更しています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Open Dental Software",
+          "productname": "Open Dental",
+          "cpe": {
+            "text": "cpe:/a:misc:open_dental_software_open_dental",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "当該製品の MySQL データベースにアクセス可能な攻撃者によって、データベース上の情報を読み取られたり、改ざんされたり、削除されたりする可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[MySQL データベースの認証情報を更新し、さらなる防護策を検討する] Open Dental は、バックエンドに MySQL データベースを使用しています。この認証情報は変更することが可能です。認証情報の変更方法は、開発者が提供する情報をご確認ください。また、より安全に当該製品を使用するため、Network and Computer Setup や MySQL Security もご確認ください。  開発者が提供する情報 http://www.opendental.com/manual/mysql.html  Network and Computer Setup http://www.opendental.com/manual/computernetworksetup.html  MySQL Security http://www.opendental.com/manual/securitymysql.html"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Open Dental Software",
+          "vulinfoid": "Open Source Practice Management",
+          "url": "http://www.opendental.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "Open Dental Software",
+          "vulinfoid": "Manual - MySQL Security",
+          "url": "http://www.opendental.com/manual/securitymysql.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Open Dental Software",
+          "vulinfoid": "Network and Computer Setup",
+          "url": "http://www.opendental.com/manual/computernetworksetup.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Open Dental Software",
+          "vulinfoid": "Encryption of Data 'at rest' and 'in transit'",
+          "url": "http://www.opendental.com/manual/encryption.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Open Dental Software",
+          "vulinfoid": "Computer System Security Issues",
+          "url": "http://www.opendental.com/manual/securityoverview.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Open Dental Software",
+          "vulinfoid": "Middle Tier",
+          "url": "http://www.opendental.com/manual/middletier.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-6531",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6531"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94993132",
+          "url": "http://jvn.jp/vu/JVNVU94993132/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-6531",
+          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6531"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#619767",
+          "url": "http://www.kb.cert.org/vuls/id/619767"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-255",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+          "title": "証明書・パスワードの管理"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年09月08日]\\n  掲載\\n[2016年09月12日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Open Dental Software (Network and Computer Setup) を追加\\n  ベンダ情報：Open Dental Software (Encryption of Data 'at rest' and 'in transit') を追加\\n  ベンダ情報：Open Dental Software (Computer System Security Issues) を追加\\n  ベンダ情報：Open Dental Software (Middle Tier) を追加\\n  CWE による脆弱性タイプ一覧：内容を更新\\n[2016年09月16日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n[2016年10月27日]\\n  CVSS による深刻度：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6531) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-09-08T14:07:13+09:00",
+    "datelastupdated": "2016-10-27T09:48:57+09:00",
+    "datepublic": "2016-09-06T00:00:00+09:00"
+  }
+}

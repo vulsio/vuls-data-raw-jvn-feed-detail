@@ -1,0 +1,168 @@
+{
+  "vulinfoid": "JVNDB-2016-001615",
+  "vulinfodata": {
+    "title": "OpenSSL の SRP_VBASE_get_by_user の実装におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "OpenSSL の SRP_VBASE_get_by_user の実装には、apps/s_server.c および crypto/srp/srp_vfy.c に関する処理に不備があるため、メモリリークにより、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "OpenSSL Project",
+          "productname": "OpenSSL",
+          "cpe": {
+            "text": "cpe:/a:openssl:openssl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.0.1s 未満の 1.0.1",
+            "1.0.2g 未満の 1.0.2"
+          ]
+        },
+        {
+          "name": "オラクル",
+          "productname": "MySQL",
+          "cpe": {
+            "text": "cpe:/a:oracle:mysql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.6.29 およびそれ以前",
+            "5.7.11 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、接続試行に不正なユーザ名を提供されることで、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL 1.0.2 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.2-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL",
+          "vulinfoid": "OpenSSL 1.0.1 Series Release Notes",
+          "url": "https://www.openssl.org/news/openssl-1.0.1-notes.html"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Project",
+          "vulinfoid": "CVE-2016-0798: avoid memory leak in SRP",
+          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=259b664f950c2ba66fbf4b0fe5281327904ead21"
+        },
+        {
+          "type": "vendor",
+          "name": "OpenSSL Security Advisory",
+          "vulinfoid": "Memory leak in SRP database lookups (CVE-2016-0798)",
+          "url": "https://openssl.org/news/secadv/20160301.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
+          "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Critical Patch Update",
+          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Security Advisories",
+          "vulinfoid": "SA40168",
+          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40168"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "April 2016 Critical Patch Update Released",
+          "url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2016-0798",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0798"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2016-0798",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0798"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月08日]\\n  掲載\\n[2016年05月31日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n  ベンダ情報：パルスセキュア (SA40168) を追加\\n[2016年11月22日]\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-08T16:26:27+09:00",
+    "datelastupdated": "2016-11-22T17:47:11+09:00",
+    "datepublic": "2016-03-01T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "vulinfoid": "JVNDB-2014-005203",
+  "vulinfodata": {
+    "title": "FFMpeg の libavcodec/iff.c における脆弱性",
+    "vulinfodescription": {
+      "overview": "FFMpeg の libavcodec/iff.c には、rgb8 および rgbn フォーマットに関する処理に不備があるため、不特定の影響を受ける脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.1.14 未満",
+            "1.2.8 未満の 1.2.x",
+            "2.2.7 未満の 2.2.x",
+            "2.3.2 未満の 2.3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.8",
+          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された iff 画像を介して、配列の領域外へのアクセスを誘発されることで、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "FFmpeg Security",
+          "url": "https://www.ffmpeg.org/security.html"
+        },
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "avcodec/iff: check pixfmt for rgb8 / rgbn",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=abc1fa7c5a1dca1345b9471b81cfcda00c56220d"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5272",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5272"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5272",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5272"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年11月05日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-11-05T15:41:05+09:00",
+    "datelastupdated": "2014-11-05T15:41:05+09:00",
+    "datepublic": "2014-08-11T00:00:00+09:00"
+  }
+}

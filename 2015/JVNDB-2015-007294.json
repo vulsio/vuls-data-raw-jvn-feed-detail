@@ -1,0 +1,113 @@
+{
+  "vulinfoid": "JVNDB-2015-007294",
+  "vulinfodata": {
+    "title": "Linux Kernel の drivers/scsi/sg.c の sg_common_write 関数におけるメモリ二重解放の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の drivers/scsi/sg.c の sg_common_write 関数には、メモリ二重解放の脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-415: Double Free (二重解放) と識別されています。 https://cwe.mitre.org/data/definitions/415.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.4 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Critical",
+            "type": "Base"
+          },
+          "base": "9.3",
+          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.3",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、SG_IO ioctl コール中にデバイスを取り外されることで、権限を取得される、またはサービス運用妨害 (メモリ破損およびシステムクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Android Open Source Project",
+          "vulinfoid": "Android Security Bulletin-November 2016",
+          "url": "http://source.android.com/security/bulletin/2016-11-01.html"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "sg: Fix double-free when drives detach during SG_IO",
+          "url": "https://github.com/torvalds/linux/commit/f3951a3709ff50990bf3e188c27d346792103432"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux kernel source tree",
+          "vulinfoid": "sg: Fix double-free when drives detach during SG_IO",
+          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=f3951a3709ff50990bf3e188c27d346792103432"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-8962",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8962"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-8962",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8962"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年11月17日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-11-17T14:31:19+09:00",
+    "datelastupdated": "2016-11-17T14:31:19+09:00",
+    "datepublic": "2015-10-31T00:00:00+09:00"
+  }
+}

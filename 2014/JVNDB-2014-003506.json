@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2014-003506",
+  "vulinfodata": {
+    "title": "LimeSurvey の application/controllers/admin/participantsaction.php の CPDB における SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "LimeSurvey の application/controllers/admin/participantsaction.php の CPDB には、search パラメータに関する処理に不備があるため、SQL インジェクションの脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "LimeSurvey",
+          "productname": "LimeSurvey",
+          "cpe": {
+            "text": "cpe:/a:limesurvey:limesurvey",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.05+ Build 140618"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、admin/participants/sa/getParticipants_json の JSON リクエストの sidx パラメータを介して、任意の SQL コマンドを実行される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "Fixed issue: Search parameter vulnerability in CPDB",
+          "url": "https://github.com/LimeSurvey/LimeSurvey/commit/9938bcd1df8ea27052557c722a67b00c0e7d6cb6"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-5017",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-5017"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-5017",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-5017"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2014年07月23日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2014-07-23T11:59:58+09:00",
+    "datelastupdated": "2014-07-23T11:59:58+09:00",
+    "datepublic": "2014-07-02T00:00:00+09:00"
+  }
+}

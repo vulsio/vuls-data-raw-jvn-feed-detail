@@ -1,0 +1,227 @@
+{
+  "vulinfoid": "JVNDB-2021-001881",
+  "vulinfodata": {
+    "title": "Open Design Alliance 製 Drawings SDK における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "Open Design Alliance が提供する Drawings SDK は、製図用ソフトウェア開発キットです。 当該製品には、次の複数の脆弱性が存在します。  　* 境界外読み取り (CWE-125) - CVE-2021-32938 　* 境界外書き込み (CWE-787) - CVE-2021-32936 　* 境界外読み取り (CWE-125) - CVE-2021-32940 　* DGN ファイルの異常または例外条件に対する不適切なチェック (CWE-754) - CVE-2021-32946 　* 境界外書き込み (CWE-787) - CVE-2021-32948 　* 境界外読み取り (CWE-125) - CVE-2021-32950 　* 境界外書き込み (CWE-787) - CVE-2021-32952 　* 解放済みメモリの使用 (use-after-free) (CWE-416) - CVE-2021-32944"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Open Design Alliance",
+          "productname": "Drawings SDK",
+          "cpe": {
+            "text": "cpe:/a:opendesign:drawings_sdk",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "バージョン 2022.4 より前のすべてのバージョン - CVE-2021-32938、CVE-2021-32936、CVE-2021-32940、CVE-2021-32948、CVE-2021-32950、CVE-2021-32944",
+            "バージョン 2022.5 より前のすべてのバージョン - CVE-2021-32946、CVE-2021-32952"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.8",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 攻撃者によって細工された DWG ファイルを開くことで、サービス運用妨害 (DoS) 状態が引き起こされたり、メモリから機密情報を読み取られたりする - CVE-2021-32938 　* 攻撃者によって細工された DXF ファイルをリカバリ経由で開くことで、サービス運用妨害 (DoS) 状態が引き起こされたり、コードを実行されたりする - CVE-2021-32936 　* 攻撃者によって細工された DWG ファイルをリカバリ経由で開くことで、サービス運用妨害 (DoS) 状態が引き起こされたり、メモリから機密情報を読み取られたりする - CVE-2021-32940 　* 攻撃者によって細工された DGN ファイルを読み取ることで、サービス運用妨害 (DoS) 状態が引き起こされたり、コードを実行されたりする - CVE-2021-32946、CVE-2021-32952 　* 攻撃者によって細工された DWG ファイルを開くことで、サービス運用妨害 (DoS) 状態が引き起こされたり、コードを実行されたりする - CVE-2021-32948 　* 攻撃者によって細工された DXF ファイルを開くことで、サービス運用妨害 (DoS) 状態が引き起こされたり、メモリから機密情報を読み取られたりする - CVE-2021-32950 　* 攻撃者によって攻撃者によって細工された DGN ファイルを開くことで、サービス運用妨害 (DoS) 状態が引き起こされたり、任意のコードを実行されたりする - CVE-2021-32944"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は Drawings SDK バージョン 2022.5 以降のバージョンにアップデートすることを推奨しています。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Open Design Alliance",
+          "vulinfoid": "Open Design Alliance (要ログイン)",
+          "url": "https://docs.opendesign.com/td/frames.html?frmname=topic&frmfile=MovingToNewVersion.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Open Design Alliance",
+          "vulinfoid": "ODA Security Advisories",
+          "url": "https://www.opendesign.com/security-advisories"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32936",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32936"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32940",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32940"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32948",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32948"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32950",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32950"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32944",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32944"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32946",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32946"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32952",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32952"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2021-32938",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32938"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-21-159-02",
+          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-159-02"
+        },
+        {
+          "type": "advisory",
+          "name": "ICS-CERT ADVISORY",
+          "vulinfoid": "ICSA-23-047-01",
+          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-23-047-01"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#95145431",
+          "url": "http://jvn.jp/cert/JVNVU95145431"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97514209",
+          "url": "http://jvn.jp/vu/JVNVU97514209/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32936",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32936"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32938",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32938"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32940",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32940"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32944",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32944"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32946",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32946"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32948",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32948"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32950",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32950"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2021-32952",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-32952"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-416",
+          "url": "https://cwe.mitre.org/data/definitions/416.html",
+          "title": "解放済みメモリの使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-787",
+          "url": "https://cwe.mitre.org/data/definitions/787.html",
+          "title": "境界外書き込み"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-125",
+          "url": "https://cwe.mitre.org/data/definitions/125.html",
+          "title": "境界外読み取り"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-754",
+          "url": "https://cwe.mitre.org/data/definitions/754.html",
+          "title": "例外的な状態における不適切なチェック"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2021-06-11T15:43:23+09:00",
+          "description": "[2021年06月11日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2023-02-17T14:33:23+09:00",
+          "description": "[2023年02月17日]\\n  参考情報：JVN (JVNVU#97514209) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-047-01) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32936) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32938) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32940) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32944) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32946) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32948) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32950) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-32952) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2021-06-11T15:43:23+09:00",
+    "datelastupdated": "2023-02-17T14:48:58+09:00",
+    "datepublic": "2021-06-09T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "vulinfoid": "JVNDB-2012-002972",
+  "vulinfodata": {
+    "title": "Linux Kernel の fs/ext4/super.c におけるファイルシステムグループデータの不整合を誘発される脆弱性",
+    "vulinfodescription": {
+      "overview": "x86 プラットフォームおよびその他の不特定のプラットフォームで稼働する Linux Kernel の fs/ext4/super.c の ext4_fill_flex_info 関数には、ファイルシステムグループデータの不整合を誘発する、およびサービス運用妨害 (DoS) 状態となる脆弱性が存在します。  本脆弱性は、CVE-2009-4307 に対する修正が不十分だったことによる脆弱性です。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.2.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.1",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "攻撃者により、FLEX_BG グループのサイズが過度に大きいスーパーブロックを含む不正な形式の ext4 ファイルシステムを介して、ファイルシステムグループデータの不整合を誘発される、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "ChangeLog",
+          "vulinfoid": "ChangeLog-3.2.2",
+          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.2.2"
+        },
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "ext4: fix undefined behavior in ext4_fill_flex_info()",
+          "url": "https://github.com/torvalds/linux/commit/d50f2ab6f050311dbf7b8f5501b25f0bf64a439b"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit",
+          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=d50f2ab6f050311dbf7b8f5501b25f0bf64a439b"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "Linux Kernel Archives",
+          "url": "http://www.kernel.org"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 809687",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=809687"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2012:1445",
+          "url": "http://rhn.redhat.com/errata/RHSA-2012-1445.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-2100",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2100"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-2100",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-2100"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年07月04日]\\n  掲載\\n[2012年12月25日]\\n  ベンダ情報：レッドハット (RHSA-2012:1445) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-07-04T15:29:32+09:00",
+    "datelastupdated": "2012-12-25T17:44:19+09:00",
+    "datepublic": "2012-07-03T00:00:00+09:00"
+  }
+}

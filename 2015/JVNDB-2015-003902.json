@@ -1,0 +1,104 @@
+{
+  "vulinfoid": "JVNDB-2015-003902",
+  "vulinfodata": {
+    "title": "Wireshark の WCCP ディセクタの epan/dissectors/packet-wccp.c 内の dissect_wccp2r1_address_table_info 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Wireshark の WCCP ディセクタ (解析機能) の epan/dissectors/packet-wccp.c 内の dissect_wccp2r1_address_table_info 関数は、IP アドレスの文字列を格納するために利用可能なメモリが十分であるかどうかを適切に判定しないため、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Wireshark",
+          "productname": "Wireshark",
+          "cpe": {
+            "text": "cpe:/a:wireshark:wireshark",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.12.6 未満の 1.12.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工されたパケットを介して、サービス運用妨害 (アプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Code Review",
+          "vulinfoid": "WCCP: Fix up storing and decoding of IP addresses.",
+          "url": "https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=524ed1df6e6126cd63ba419ccb82c83636d77ee4"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark Bug Database",
+          "vulinfoid": "Bug 11153",
+          "url": "https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11153"
+        },
+        {
+          "type": "vendor",
+          "name": "Wireshark Security Advisories",
+          "vulinfoid": "wnpa-sec-2015-19",
+          "url": "https://www.wireshark.org/security/wnpa-sec-2015-19.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-4651",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4651"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-4651",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4651"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月24日]\\n  掲載\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-24T14:48:58+09:00",
+    "datelastupdated": "2015-10-30T16:37:19+09:00",
+    "datepublic": "2015-06-17T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "vulinfoid": "JVNDB-2015-003939",
+  "vulinfodata": {
+    "title": "Ruby on Rails などの製品で使用される Rack の lib/rack/utils.rb におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Ruby on Rails およびその他の製品で使用される Rack の lib/rack/utils.rb には、サービス運用妨害 (SystemStackError) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Rack",
+          "productname": "Rack",
+          "cpe": {
+            "text": "cpe:/a:rack_project:rack",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.5.4 未満",
+            "1.6.2 未満の 1.6.x"
+          ]
+        },
+        {
+          "name": "Ruby on Rails project",
+          "productname": "Rails",
+          "cpe": {
+            "text": "cpe:/a:rubyonrails:ruby_on_rails",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x",
+            "4.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、過度に大きなパラメータの depth を伴うリクエストを介して、サービス運用妨害 (SystemStackError) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "GitHub",
+          "vulinfoid": "rack/HISTORY.md",
+          "url": "https://github.com/rack/rack/blob/master/HISTORY.md"
+        },
+        {
+          "type": "vendor",
+          "name": "Google Groups",
+          "vulinfoid": "[CVE-2015-3225] Potential Denial of Service Vulnerability in Rack",
+          "url": "https://groups.google.com/forum/message/raw?msg=rubyonrails-security/gcUbICUmKMc/qiCotVZwXrMJ"
+        },
+        {
+          "type": "vendor",
+          "name": "Ruby on Rails project",
+          "vulinfoid": "Top Page",
+          "url": "http://rubyonrails.org/"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-3225",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3225"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-3225",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3225"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年07月28日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-07-28T17:04:02+09:00",
+    "datelastupdated": "2015-07-28T17:04:02+09:00",
+    "datepublic": "2015-06-16T00:00:00+09:00"
+  }
+}

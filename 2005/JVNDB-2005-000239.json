@@ -1,0 +1,164 @@
+{
+  "vulinfoid": "JVNDB-2005-000239",
+  "vulinfodata": {
+    "title": "IBM Lotus Domino の @SetHTTPHeader 関数における proxy キャッシュ汚染の脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  IBM Lotus Notes/Domino 6.0.4 以前、6.5.3 以前には、以下の複数のセキュリティ上の問題が存在します。  1) Domino サーバにおいて Web ページより更新可能な特定の日付/時刻フィールドの境界チェックが適切に行われないために、バッファオーバーフローが発生し Domino サーバがクラッシュする問題が存在します。  Web ページにアクセス可能なローカルの攻撃者により、Domino サーバがサービス不能状態に陥る可能性があります。  2) Domino サーバにおいて NRPC Notes プロトコルを使用して認証を行う際に入力データのサニティチェックが適切でないために、フォーマット指示子を含む意図的に作成された文字列を処理した場合に、フォーマットストリングエラーが発生し Domino サーバがクラッシュする問題が存在します。  この問題を利用するリモートの攻撃者により、Domino サーバがサービス不能状態に陥る可能性があります。  3) Lotus Notes クライアントの NOTES.INI の処理で境界チェックが適切に行われないために、バッファオーバーフローが発生し Lotus Notes クライアントがクラッシュする問題が存在します。  現時点で詳細は不明ですが、NOTES.INI にアクセス可能なローカルの攻撃者により、Lotus Notes クライアントがサービス不能状態に陥る可能性があります。  4) @SetHTTPHeader 関数には任意のコンテンツをヘッダに挿入できる不備が存在し、HTTP response splitting 攻撃を受けたり、proxy のキャッシュを汚染されたりする可能性がある問題が存在します。  この問題を利用するリモートの攻撃者は、Web ブラウザや proxy キャッシュを汚染することにより、フィッシング詐欺に悪用できる可能性があります。  但し、通常 @SetHTTPHeader 関数はアプリケーション開発者のみが利用可能であり、この問題を利用して攻撃を行うためには、意図的に作成されたプログラムを Lotus Domino サーバにインストールする必要があります。  尚、1)、2)、3) の問題により悪意あるコードを実行できないことが IBM より報告されています。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM Domino (旧 IBM Lotus Domino)",
+          "cpe": {
+            "text": "cpe:/a:ibm:lotus_domino",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.4 およびそれ以前",
+            "6.5.3 およびそれ以前"
+          ]
+        },
+        {
+          "name": "IBM",
+          "productname": "IBM Notes",
+          "cpe": {
+            "text": "cpe:/a:ibm:notes",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "6.0.4 およびそれ以前",
+            "6.5.3 およびそれ以前"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "21202431",
+          "url": "http://www-1.ibm.com/support/docview.wss?rs=463&amp;uid=swg21202431"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "21202437",
+          "url": "http://www-1.ibm.com/support/docview.wss?rs=463&amp;uid=swg21202437"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "21202525",
+          "url": "http://www-1.ibm.com/support/docview.wss?rs=463&amp;uid=swg21202525"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM Support Document",
+          "vulinfoid": "21202526",
+          "url": "http://www-1.ibm.com/support/docview.wss?rs=463&amp;uid=swg21202526"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM セキュリティー情報",
+          "vulinfoid": "728139_2",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=lsj1d570c5aa1b94822b49256fe00025a1ff"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM セキュリティー情報",
+          "vulinfoid": "728137",
+          "url": "http://www-6.ibm.com/jp/domino04/lotus/support/faqs/faqs.nsf/all/728137"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM セキュリティー情報",
+          "vulinfoid": "728138",
+          "url": "http://www-6.ibm.com/jp/domino04/lotus/support/faqs/faqs.nsf/all/728138"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM セキュリティー情報",
+          "vulinfoid": "728139_1",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=lsj18e4b0de22377f96749256fe00025a200"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-1405",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1405"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-1405",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1405"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14879",
+          "url": "http://secunia.com/advisories/14879/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13448",
+          "url": "http://www.securityfocus.com/bid/13448"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13447",
+          "url": "http://www.securityfocus.com/bid/13447"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13446",
+          "url": "http://www.securityfocus.com/bid/13446"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "13130",
+          "url": "http://www.securityfocus.com/bid/13130"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-04-08T00:00:00+09:00"
+  }
+}

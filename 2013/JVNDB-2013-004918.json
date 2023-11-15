@@ -1,0 +1,124 @@
+{
+  "vulinfoid": "JVNDB-2013-004918",
+  "vulinfodata": {
+    "title": "MediaWiki の includes/api/ 配下の複数の PHP ファイルにおける CSRF トークンを取得される脆弱性",
+    "vulinfodescription": {
+      "overview": "MediaWiki の includes/api/ 配下の下記の PHP ファイルには、CSRF トークンを取得され、クロスサイトリクエストフォージェリ (CSRF) 保護メカニズムを回避される脆弱性が存在します。  (1) ApiBlock.php (2) ApiCreateAccount.php (3) ApiLogin.php (4) ApiMain.php (5) ApiQueryDeletedrevs.php (6) ApiTokens.php (7) ApiUnblock.php"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MediaWiki",
+          "productname": "MediaWiki",
+          "cpe": {
+            "text": "cpe:/a:mediawiki:mediawiki",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1.19.8 未満の 1.19.x",
+            "1.20.7 未満の 1.20.x",
+            "1.21.2 未満の 1.21.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、wiki/api.php への JSONP リクエストを介して、CSRF トークンを取得され、クロスサイトリクエストフォージェリ (CSRF) 保護メカニズムを回避される可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Bugzilla",
+          "vulinfoid": "Bug 49090",
+          "url": "https://bugzilla.wikimedia.org/show_bug.cgi?id=49090"
+        },
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-2753",
+          "url": "http://www.debian.org/security/2013/dsa-2753"
+        },
+        {
+          "type": "vendor",
+          "name": "MediaWiki",
+          "vulinfoid": "Release notes/1.19",
+          "url": "https://www.mediawiki.org/wiki/Release_notes/1.19"
+        },
+        {
+          "type": "vendor",
+          "name": "MediaWiki",
+          "vulinfoid": "Release notes/1.20",
+          "url": "https://www.mediawiki.org/wiki/Release_notes/1.20"
+        },
+        {
+          "type": "vendor",
+          "name": "MediaWiki",
+          "vulinfoid": "Release notes/1.21",
+          "url": "https://www.mediawiki.org/wiki/Release_notes/1.21"
+        },
+        {
+          "type": "vendor",
+          "name": "MediaWiki-announce",
+          "vulinfoid": "MediaWiki Security Release: 1.21.2, 1.20.7 and 1.19.8",
+          "url": "http://lists.wikimedia.org/pipermail/mediawiki-announce/2013-September/000133.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4302",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4302"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4302",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4302"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Re: CVE request: MediaWiki Security Release: 1.21.2, 1.20.7 and 1.19.8",
+          "url": "http://seclists.org/oss-sec/2013/q3/553"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年10月29日]\\n  掲載\\n[2013年12月26日]\\n  ベンダ情報：Debian (DSA-2753) を追加\\n  ベンダ情報：MediaWiki (MediaWiki Security Release: 1.21.2, 1.20.7 and 1.19.8) を追加\\n  参考情報：関連文書 (Re: CVE request: MediaWiki Security Release: 1.21.2, 1.20.7 and 1.19.8) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-10-29T19:02:19+09:00",
+    "datelastupdated": "2013-12-26T18:17:41+09:00",
+    "datepublic": "2013-09-03T00:00:00+09:00"
+  }
+}

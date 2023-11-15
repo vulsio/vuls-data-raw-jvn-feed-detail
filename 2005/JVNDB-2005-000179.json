@@ -1,0 +1,225 @@
+{
+  "vulinfoid": "JVNDB-2005-000179",
+  "vulinfodata": {
+    "title": "MySQL のユーザ定義関数における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL 4.0.23 以前、4.1.10 以前には、以下の複数のセキュリティ上の問題が存在します。  ・ユーザ定義関数の取り扱いに不備が存在し、mysql データベースに対して INSERT および DELETE の実行権限を持つユーザは、CREATE FUNCTION ステートメントより libc 関数 (strcat、on_exit、exit など) を使用することで、メモリアドレスを任意の値で上書き可能な問題 (CAN-2005-0709)  ・mysql.func システムテーブルよりユーザ定義関数をロードする際に、参照するオブジェクトファイルのパスの検証が不適切であるため、mysql データベースに対して INSERT および DELETE の実行権限を持つユーザが任意のディレクトリにあるオブジェクトファイルを参照する関数を作成可能な問題 (CAN-2005-0710)  ・CREATE TEMPORARY TABLE ステートメントにおいて、セキュリティ上不適切な方法で一時ファイルを作成してしまう不備が存在するため、シンボリックリンク攻撃を受ける問題 (CAN-2005-0711)  これらの問題を利用するローカルの攻撃者は、結果として、シンボリックリンク攻撃を行う、あるいは mysqld プロセスの権限で任意のコードを実行できる可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "MySQL AB",
+          "productname": "MySQL",
+          "cpe": {
+            "text": "cpe:/a:mysql:mysql",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.0.23a およびそれ以前",
+            "4.1.10 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 "
+          ]
+        },
+        {
+          "name": "サン・マイクロシステムズ",
+          "productname": "Sun Solaris",
+          "cpe": {
+            "text": "cpe:/o:sun:solaris",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (sparc) ",
+            "10 (x86) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10  ",
+            "7  ",
+            "8  "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1 (as) ",
+            "2.1 (es) ",
+            "2.1 (ws) ",
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "mysql",
+          "url": "http://www.miraclelinux.com/support/update/data/mysql.html"
+        },
+        {
+          "type": "vendor",
+          "name": "MySQL",
+          "vulinfoid": "Top Page",
+          "url": "http://www.mysql.com/"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:334",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-334.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:348",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-348.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification",
+          "vulinfoid": "101864",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101864-1"
+        },
+        {
+          "type": "vendor",
+          "name": "Sun Alert Notification 日本語版",
+          "vulinfoid": "101864",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101864-3"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2005-48",
+          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-48.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:348",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-348J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:334",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-334J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2005-48",
+          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-48j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0709",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0709"
+        },
+        {
+          "type": "advisory",
+          "name": "K-OTik Security Advisory",
+          "vulinfoid": "KOTIK/ADV-2005-0252",
+          "url": "http://www.k-otik.com/english/advisories/2005/0252"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0709",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0709"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14547",
+          "url": "http://secunia.com/advisories/14547/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12781",
+          "url": "http://www.securityfocus.com/bid/12781"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1013414",
+          "url": "http://securitytracker.com/alerts/2005/Mar/1013414.html"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1013413",
+          "url": "http://securitytracker.com/alerts/2005/Mar/1013413.html"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityTracker",
+          "vulinfoid": "1013415",
+          "url": "http://securitytracker.com/alerts/2005/Mar/1013415.html"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2007-04-01T00:00:00+09:00",
+    "datepublic": "2005-03-11T00:00:00+09:00"
+  }
+}

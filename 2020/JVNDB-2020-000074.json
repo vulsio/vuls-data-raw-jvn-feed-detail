@@ -1,0 +1,129 @@
+{
+  "vulinfoid": "JVNDB-2020-000074",
+  "vulinfodata": {
+    "title": "Hibernate ORM における SQL インジェクションの脆弱性",
+    "vulinfodescription": {
+      "overview": "Hibernate ORM は Java 向けの ORM フレームワークです。Hibernate ORM では、デバッグに役立つよう、内部で生成する SQL 文にコメントをつけることができます。(hibernate.use_sql_comments を true に設定する。初期設定では false。) hibernate.use_sql_comments を true に設定した場合の入力処理には不備があり、SQL インジェクションの脆弱性 (CWE-89) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: （株）NTTデータ 技術革新統括本部 システム技術本部 デジタル技術部 インテグレーション技術担当 TERASOLUNA Framework 開発チーム"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Hibernate",
+          "productname": "Hibernate ORM",
+          "cpe": {
+            "text": "cpe:/a:hibernate:hibernate_orm",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.3.20 より前のバージョン",
+            "5.4.24 より前のバージョン"
+          ]
+        },
+        {
+          "name": "日立",
+          "productname": "Hitachi Ops Center Common Services"
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4",
+          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:N"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.4",
+          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "hibernate.use_sql_comments を true に設定している場合、細工した入力を処理することで SQL インジェクション攻撃を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報を参考に、Hibernate ORM を更新してください。  [ワークアラウンドを実施する] hibernamte.use_sql_comments を false に設定してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Hibernate",
+          "vulinfoid": "HHH-14225: CVE-2020-25638 Potential for SQL injection on use_sql_comments logging enabled",
+          "url": "https://hibernate.atlassian.net/browse/HHH-14225"
+        },
+        {
+          "type": "vendor",
+          "name": "Hitachi Software Vulnerability Information",
+          "vulinfoid": "hitachi-sec-2022-136",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2022-136/index.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Red Hat Bugzilla - Bug 1881353 ",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1881353"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat CVE Database",
+          "vulinfoid": "Red Hat CVE Database: CVE-2020-25638 ",
+          "url": "https://access.redhat.com/security/cve/CVE-2020-25638"
+        },
+        {
+          "type": "vendor",
+          "name": "ソフトウェア製品セキュリティ情報",
+          "vulinfoid": "hitachi-sec-2022-136",
+          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2022-136/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-25638",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25638"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#90729322",
+          "url": "https://jvn.jp/jp/JVN90729322/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-89",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+          "title": "SQLインジェクション"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-11-17T15:23:34+09:00",
+          "description": "[2020年11月19日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2022-11-02T16:00:04+09:00",
+          "description": "[2022年11月02日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-136) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-11-19T12:08:04+09:00",
+    "datelastupdated": "2022-11-02T16:42:28+09:00",
+    "datepublic": "2020-11-19T00:00:00+09:00"
+  }
+}

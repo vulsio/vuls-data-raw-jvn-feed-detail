@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2015-004606",
+  "vulinfodata": {
+    "title": "FFmpeg の libavcodec/alac.c の allocate_buffers 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "FFmpeg の libavcodec/alac.c の allocate_buffers 関数は、特定のコンテキストデータを初期化しないため、サービス運用妨害 (セグメンテーション違反) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "FFmpeg",
+          "productname": "FFmpeg",
+          "cpe": {
+            "text": "cpe:/a:ffmpeg:ffmpeg",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.7.2 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、巧妙に細工された Apple Lossless Audio Codec (ALAC) のデータを介して、サービス運用妨害 (セグメンテーション違反) 状態にされるなど、不特定の影響を受ける可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "FFmpeg",
+          "vulinfoid": "avcodec/alac: Clear pointers in allocate_buffers()",
+          "url": "http://git.videolan.org/?p=ffmpeg.git;a=commit;h=f7068bf277a37479aecde2832208d820682b35e6"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2015-6823",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6823"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2015-6823",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-6823"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年09月09日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-09-09T12:27:24+09:00",
+    "datelastupdated": "2015-09-09T12:27:24+09:00",
+    "datepublic": "2015-07-13T00:00:00+09:00"
+  }
+}

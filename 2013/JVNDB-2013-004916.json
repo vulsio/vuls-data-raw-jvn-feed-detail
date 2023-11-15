@@ -1,0 +1,103 @@
+{
+  "vulinfoid": "JVNDB-2013-004916",
+  "vulinfodata": {
+    "title": "Cyrus SASL におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Cyrus SASL は、glibc に実装された crypt 関数によるエラーで NULL 値が返された場合、適切に処理されないため、サービス運用妨害 (スレッドクラッシュおよび消費) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Carnegie Mellon University (Project Cyrus)",
+          "productname": "Cyrus SASL",
+          "cpe": {
+            "text": "cpe:/a:cmu:cyrus-sasl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.26 およびそれ以前"
+          ]
+        },
+        {
+          "name": "GNU Project",
+          "productname": "GNU C Library",
+          "cpe": {
+            "text": "cpe:/a:gnu:glibc",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.17 以降"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.3",
+          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、(1) FIPS-140 が有効な不正なソルト (salt)、(2) DES、または (3) MD5 で暗号化されたパスワードを介して、NULL ポインタデリファレンスを誘発されることで、サービス運用妨害 (スレッドクラッシュおよび消費) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201309-01",
+          "url": "http://security.gentoo.org/glsa/glsa-201309-01.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "Project Cyrus",
+          "vulinfoid": "Handle NULL returns from glibc 2.17+ crypt()",
+          "url": "http://git.cyrusimap.org/cyrus-sasl/commit/?id=dedad73e5e7a75d01a5f3d5a6702ab8ccd2ff40d"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-4122",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4122"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-4122",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4122"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-189",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+          "title": "数値処理の問題"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年10月29日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-10-29T18:47:49+09:00",
+    "datelastupdated": "2013-10-29T18:47:49+09:00",
+    "datepublic": "2013-07-11T00:00:00+09:00"
+  }
+}

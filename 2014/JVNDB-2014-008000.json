@@ -1,0 +1,175 @@
+{
+  "vulinfoid": "JVNDB-2014-008000",
+  "vulinfodata": {
+    "title": "PHP で使用される LibGD の gd_gif_in.c 内の GetCode_ 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "PHP で使用される LibGD の gd_gif_in.c 内の GetCode_ 関数には、サービス運用妨害 (バッファオーバーリードおよびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "LibGD project",
+          "productname": "LibGD",
+          "cpe": {
+            "text": "cpe:/a:libgd:libgd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.1.1 およびそれ以前"
+          ]
+        },
+        {
+          "name": "The PHP Group",
+          "productname": "PHP",
+          "cpe": {
+            "text": "cpe:/a:php:php",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.5.21 未満",
+            "5.6.5 未満の 5.6.x"
+          ]
+        },
+        {
+          "name": "アップル",
+          "productname": "Apple Mac OS X",
+          "cpe": {
+            "text": "cpe:/o:apple:mac_os_x",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10.6.8 以上 10.11 未満"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        }
+      ],
+      "impactitem": {
+        "description": "第三者により、gdImageCreateFromGif 関数により適切に処理されない巧妙に細工された GIF 画像を介して、サービス運用妨害 (バッファオーバーリードおよびアプリケーションクラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Apple Mailing Lists",
+          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple Security Updates",
+          "vulinfoid": "HT205267",
+          "url": "https://support.apple.com/en-us/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "Apple セキュリティアップデート",
+          "vulinfoid": "HT205267",
+          "url": "http://support.apple.com/ja-jp/HT205267"
+        },
+        {
+          "type": "vendor",
+          "name": "Bitbucket",
+          "vulinfoid": "Fix possible buffer read overflow",
+          "url": "https://bitbucket.org/libgd/gd-libgd/commits/47eb44b2e90ca88a08dca9f9a1aa9041e9587f43"
+        },
+        {
+          "type": "vendor",
+          "name": "LibGD",
+          "vulinfoid": "Top Page",
+          "url": "http://libgd.github.io/"
+        },
+        {
+          "type": "vendor",
+          "name": "Oracle Technology Network",
+          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2015",
+          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2015-2511959.html"
+        },
+        {
+          "type": "vendor",
+          "name": "PHP Bugs",
+          "vulinfoid": "Sec Bug #68601",
+          "url": "https://bugs.php.net/bug.php?id=68601"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Bugzilla",
+          "vulinfoid": "Bug 1188639",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1188639"
+        },
+        {
+          "type": "vendor",
+          "name": "The PHP Group",
+          "vulinfoid": "PHP 5 ChangeLog",
+          "url": "http://php.net/ChangeLog-5.php"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory",
+          "vulinfoid": "TLSA-2015-13",
+          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-13j.html"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2014-9709",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9709"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#97220341",
+          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2014-9709",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9709"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "MGASA-2015-0040",
+          "url": "http://advisories.mageia.org/MGASA-2015-0040.html "
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2015年04月02日]\\n  掲載\\n[2015年06月05日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-13) を追加\\n　参考情報：関連文書 (MGASA-2015-0040) を追加\\n[2015年06月19日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2015) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2015-04-02T15:15:00+09:00",
+    "datelastupdated": "2015-10-06T10:34:19+09:00",
+    "datepublic": "2014-12-13T00:00:00+09:00"
+  }
+}

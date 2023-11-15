@@ -1,0 +1,93 @@
+{
+  "vulinfoid": "JVNDB-2013-001776",
+  "vulinfodata": {
+    "title": "x86_32 プラットフォーム上で稼働する Xen におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "x86_32 プラットフォーム上で稼働する Xen の xen/arch/x86/hvm/hvm.c 内の do_hvm_op 関数は、HVM_PARAM_NESTEDHVM オペレーションを適切に制限しないため、サービス運用妨害 (長時間のページマッピングおよびホスト OS クラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Xen プロジェクト",
+          "productname": "Xen",
+          "cpe": {
+            "text": "cpe:/o:xen:xen",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "4.2.0",
+            "4.2.1"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:A/AC:H/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ゲスト OS ユーザにより、多数の VCPU を有するドメイン内の HVM ゲストへの管理アクセスを利用されることで、サービス運用妨害 (長時間のページマッピングおよびホスト OS クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Gentoo Linux Security Advisory",
+          "vulinfoid": "GLSA 201309-24",
+          "url": "http://security.gentoo.org/glsa/glsa-201309-24.xml"
+        },
+        {
+          "type": "vendor",
+          "name": "Xen",
+          "vulinfoid": "xen.git / commit",
+          "url": "http://xenbits.xen.org/gitweb/?p=xen.git;a=commit;h=d60d7082289a74e44b3dc8f67df46c3404ca08bf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2013-0151",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0151"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2013-0151",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0151"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-264",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+          "title": "認可・権限・アクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2013年03月08日]\\n  掲載\\n[2013年11月01日]\\n  ベンダ情報：Gentoo Linux (GLSA 201309-24) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2013-03-08T19:28:41+09:00",
+    "datelastupdated": "2013-11-01T15:21:58+09:00",
+    "datepublic": "2013-03-07T00:00:00+09:00"
+  }
+}

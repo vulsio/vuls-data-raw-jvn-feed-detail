@@ -1,0 +1,118 @@
+{
+  "vulinfoid": "JVNDB-2016-002011",
+  "vulinfodata": {
+    "title": "dhcpcd の dhcp.c の decode_search 関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "dhcpcd の dhcp.c の decode_search 関数は、割り当てられたメモリを適切に解放しないため、サービス運用妨害 (DoS) 状態にされる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Debian",
+          "productname": "Debian GNU/Linux",
+          "cpe": {
+            "text": "cpe:/o:debian:debian_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "7.0"
+          ]
+        },
+        {
+          "name": "dhcpcd project",
+          "productname": "dhcpcd",
+          "cpe": {
+            "text": "cpe:/a:dhcpcd_project:dhcpcd",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.x"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "5",
+          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.5",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "リモートの DHCP サーバにより、巧妙に細工されたレスポンスを介して、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Debian Security Advisory",
+          "vulinfoid": "DSA-3534",
+          "url": "https://www.debian.org/security/2016/dsa-3534"
+        },
+        {
+          "type": "vendor",
+          "name": "Launchpad",
+          "vulinfoid": "dhcp.c.patch",
+          "url": "https://launchpadlibrarian.net/228152582/dhcp.c.patch"
+        },
+        {
+          "type": "vendor",
+          "name": "Launchpad",
+          "vulinfoid": "Bug #1517226",
+          "url": "https://bugs.launchpad.net/ubuntu/+source/dhcpcd/+bug/1517226"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2012-6700",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6700"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2012-6700",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6700"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-119",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+          "title": "バッファエラー"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年04月14日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-04-14T14:38:35+09:00",
+    "datelastupdated": "2016-04-14T14:38:35+09:00",
+    "datepublic": "2016-03-31T00:00:00+09:00"
+  }
+}

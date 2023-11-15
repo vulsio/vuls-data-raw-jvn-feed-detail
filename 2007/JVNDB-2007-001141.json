@@ -1,0 +1,174 @@
+{
+  "vulinfoid": "JVNDB-2007-001141",
+  "vulinfodata": {
+    "title": "Linux Kernel の shmem_getpage() 関数における不適切なメモリ配置の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux Kernel の shmem_getpage() 関数 (mm/shmem.c) には、特定の状況下において、tmpfs に関連するメモリ配置を適切に行わない脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.24 未満のバージョン"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (x86) ",
+            "3 (x86-64) "
+          ]
+        },
+        {
+          "name": "ターボリナックス",
+          "productname": "Turbolinux Server",
+          "cpe": {
+            "text": "cpe:/o:turbolinux:turbolinux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "10 (x64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5 (server) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux Desktop",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux_desktop",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.0 (client) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "7.2",
+          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "悪意あるローカルユーザによって、カーネルデータを奪取される、またはシステムをサービス運用妨害 (DoS) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "Asianux Technical Support Network",
+          "vulinfoid": "kernel-2.6.18-53.14AXS3",
+          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=378"
+        },
+        {
+          "type": "vendor",
+          "name": "Linux Kernel",
+          "vulinfoid": "ChangeLog-2.6.24",
+          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.24"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2008:0885",
+          "url": "https://rhn.redhat.com/errata/RHSA-2008-0885.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Turbolinux Security Advisory (英語)",
+          "vulinfoid": "TLSA-2008-11",
+          "url": "http://www.turbolinux.com/security/2008/TLSA-2008-11.txt"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2008:0885",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0885J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "製品セキュリティ情報",
+          "vulinfoid": "TLSA-2008-11",
+          "url": "http://www.turbolinux.co.jp/security/2008/TLSA-2008-11j.txt"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2007-6417",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6417"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2007-6417",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-6417"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "27694",
+          "url": "http://www.securityfocus.com/bid/27694"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-399",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+          "title": "リソース管理の問題"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-200",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+          "title": "情報漏えい"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2008年03月26日]\\n  掲載\\n[2008年10月22日]\\n  影響を受けるシステム：レッドハット (RHSA-2008:0885) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2008:0885) を追加\\n[2009年01月22日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-53.14AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (kernel-2.6.18-53.14AXS3) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2008-03-26T12:04:42+09:00",
+    "datelastupdated": "2009-01-22T14:14:43+09:00",
+    "datepublic": "2007-12-17T00:00:00+09:00"
+  }
+}

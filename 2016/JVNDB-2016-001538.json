@@ -1,0 +1,89 @@
+{
+  "vulinfoid": "JVNDB-2016-001538",
+  "vulinfodata": {
+    "title": "コンテンツデリバリネットワーク (CDN) に対するサービス運用妨害 (DoS) の問題 (Forwarding Loop 攻撃)",
+    "vulinfodescription": {
+      "overview": "コンテンツデリバリネットワーク (CDN) に対する攻撃手法として、Forwarding Loop を発生させサービス運用妨害 (DoS) 状態にする攻撃 (Forwarding Loop 攻撃) が指摘されています。  無制限なリソースの消費 (リソース枯渇) (CWE-400) コンテンツデリバリネットワーク (CDN) は、コンテンツへのアクセスリクエストを地理的に近いサーバに転送して処理することで、ウェブサイトの処理効率とスケーラビリティを向上させます。CDN の動作には、CDN サービスのユーザが配信したいコンテンツを CDN 上にアップロードするための push モードと、コンテンツへのアクセスに対してリバースプロキシのように動作する pull モードの 2つが存在します。  CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion') http://cwe.mitre.org/data/definitions/400.html  pull モード動作の設定によっては、リクエストの転送を内部的にループさせることが可能であると指摘されています。リクエストの転送処理がループすることにより膨大なリソース消費につながるため、サービス運用妨害 (DoS) 攻撃を行うことが可能です。  さらなる詳細は、研究者の発表資料を確認してください。  研究者の発表資料 (Forwarding-Loop Attacks in Content Delivery Networks) http://www.internetsociety.org/sites/default/files/blogs-media/forwarding-loop-attacks-content-delivery-networks.pdf "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "（複数のベンダ）",
+          "productname": "（複数の製品）",
+          "cpe": {
+            "text": "cpe:/a:misc:multiple_vendors",
+            "version": "2.2"
+          }
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "6.3",
+          "vector": "AV:N/AC:M/Au:S/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "遠隔の攻撃者によって CDN をサービス運用妨害 (DoS) 状態にされる可能性があります。結果として、CDN 上のコンテンツにアクセスできなくなる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "研究者と CERT/CC は、影響を受けることが判明している CDN 事業者に連絡し、この攻撃についての情報を提供しています。これら CDN 事業者はそれぞれ対策を実施しています。  CDN サービスを提供している事業者は、自身の提供する CDN が本脆弱性の影響を受けるかどうか、研究者の発表資料を確認してください。  研究者の発表資料 (Forwarding-Loop Attacks in Content Delivery Networks) http://www.internetsociety.org/sites/default/files/blogs-media/forwarding-loop-attacks-content-delivery-networks.pdf "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#94080110",
+          "url": "http://jvn.jp/vu/JVNVU94080110/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "US-CERT Vulnerability Note",
+          "vulinfoid": "VU#938151",
+          "url": "http://www.kb.cert.org/vuls/id/938151"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Forwarding-Loop Attacks in Content Delivery Networks",
+          "url": "http://www.internetsociety.org/sites/default/files/blogs-media/forwarding-loop-attacks-content-delivery-networks.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "関連文書",
+          "vulinfoid": "Forwarding-Loop Attacks in Content Delivery Networks (slides)",
+          "url": "http://www.internetsociety.org/sites/default/files/04_2-ndss2016-slides.pdf"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2016年03月02日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2016-03-02T14:04:44+09:00",
+    "datelastupdated": "2016-03-02T14:04:44+09:00",
+    "datepublic": "2016-02-29T00:00:00+09:00"
+  }
+}

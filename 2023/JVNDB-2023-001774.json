@@ -1,0 +1,148 @@
+{
+  "vulinfoid": "JVNDB-2023-001774",
+  "vulinfodata": {
+    "title": "コンテック製 SolarView Compact における複数の脆弱性",
+    "vulinfodescription": {
+      "overview": "株式会社コンテックが提供する SolarView Compact は、太陽光発電計測監視装置です。 SolarView Compact には、次の複数の脆弱性が存在します。  　* ハードコードされた認証情報の使用 (CWE-798) - CVE-2023-27512 　* ダウンロード画面におけるOSコマンドインジェクション (CWE-78) - CVE-2023-27514 　* 複数の設定画面におけるバッファオバーフロー (CWE-120) - CVE-2023-27518 　* メール送信設定画面におけるOSコマンドインジェクション (CWE-78) - CVE-2023-27521 　　CVE-2022-29303の修正不十分による脆弱性 　* システム日時設定画面におけるアクセス制御の不備 (CWE-284) - CVE-2023-27920  CVE-2023-27512、CVE-2023-27514、CVE-2023-27518、CVE-2023-27521 この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ゼロゼロワン 早川 宙也 氏  CVE-2023-27920 この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "株式会社コンテック",
+          "productname": "SolarView Compact SV-CPT-MC310",
+          "cpe": {
+            "text": "cpe:/o:contec:sv-cpt-mc310_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.8.10 より前のバージョン"
+          ]
+        },
+        {
+          "name": "株式会社コンテック",
+          "productname": "SolarView Compact SV-CPT-MC310F",
+          "cpe": {
+            "text": "cpe:/o:contec:sv-cpt-mc310F_firmware",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "Ver.8.10 より前のバージョン"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.8",
+          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 非公開の管理者アカウントでログインされ、当該製品上で任意の操作を実行される - CVE-2023-27512 　* 当該製品上で OS コマンドを実行される - CVE-2023-27514、CVE-2023-27521 　* 当該製品上でバッファオーバーフローが発生し、任意のコードを実行される - CVE-2023-27518 　* 当該製品のユーザ権限でアクセスされ、システム日時を変更される - CVE-2023-27920 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "[アップデートする] 開発者が提供する情報をもとに、ソフトウェア（ファームウェア）を最新版にアップデートしてください。 本脆弱性は次のファームウェアバージョンで修正されています。  <ul> <li>SolarView Compact <ul> <li>SV-CPT-MC310 Ver.8.10 およびそれ以降のバージョン</li> <li>SV-CPT-MC310F Ver.8.10 およびそれ以降のバージョン</li> </ul> </li> </ul>  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  <ul> <li>当該製品をネットワーク回線から切り離す</li> <li>当該製品のネットワークの上流側にファイアウォールを設置する</li> <li>当該製品のネットワークアクセスを信頼できる閉域網で構成する</li> <li>当該製品の「ユーザー設定」にて「ユーザー認証範囲の設定」を「全画面を認証対象にする」で設定する</li> </ul> "
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "株式会社コンテック",
+          "vulinfoid": "SV-CPT-MC310 | ファームウェア",
+          "url": "https://www.contec.com/jp/download/donwload-list/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e#firmware"
+        },
+        {
+          "type": "vendor",
+          "name": "株式会社コンテック",
+          "vulinfoid": "SolarView Compact(SV-CPT-MC310)の脆弱性について（PDF）",
+          "url": "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_solarview_230508.pdf"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-27512",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-27512"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-27514",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-27514"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-27518",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-27518"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-27521",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-27521"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2023-27920",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2023-27920"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVNVU#92106300",
+          "url": "https://jvn.jp/vu/JVNVU92106300/index.html"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-78",
+          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+          "title": "OSコマンドインジェクション"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-798",
+          "url": "https://cwe.mitre.org/data/definitions/798.html",
+          "title": "ハードコードされた認証情報の使用"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html",
+          "title": "古典的バッファオーバーフロー"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-284",
+          "url": "https://cwe.mitre.org/data/definitions/284.html",
+          "title": "不適切なアクセス制御"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2023-05-09T12:31:21+09:00",
+          "description": "[2023年05月09日]   掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2023-05-09T14:13:31+09:00",
+    "datelastupdated": "2023-05-09T14:13:31+09:00",
+    "datepublic": "2023-05-08T00:00:00+09:00"
+  }
+}

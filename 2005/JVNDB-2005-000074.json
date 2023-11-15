@@ -1,0 +1,198 @@
+{
+  "vulinfoid": "JVNDB-2005-000074",
+  "vulinfodata": {
+    "title": "Perl の PerlIO の実装における任意のコードを実行される脆弱性",
+    "vulinfodescription": {
+      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Perl は、CGI の開発などに活用されているプログラミング言語であり、UNIX や LINUX などの広範なオペレーティングシステムで利用されています。  PERLIO_DEBUG は PerlIO サブシステムの一定の操作を記録するファイル名を指定する環境変数です。   Perl には、PERLIO_DEBUG 環境変数の取り扱いに不備による、以下の複数のセキュリティ上の問題が存在します。   ・setuid-root ビットが付与された Perl スクリプトが実行される際に、PERLIO_DEBUG 環境変数により指定される任意のファイルが Perl デバッグメッセージによって上書きされる問題 (CVE-2005-0155)   ・PERLIO_DEBUG 環境変数が設定されている場合、Perl スクリプトのパス名の妥当性が適切にチェックされずに、バッファオーバーフローが発生する問題 (CVE-2005-0156)   ローカルの攻撃者に悪用された場合、root 権限で任意のファイルを上書きされる、あるいは任意のコードを実行される可能性があります。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "IBM",
+          "productname": "IBM AIX",
+          "cpe": {
+            "text": "cpe:/o:ibm:aix",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.2 ",
+            "5.3 "
+          ]
+        },
+        {
+          "name": "The Perl Foundation",
+          "productname": "Perl",
+          "cpe": {
+            "text": "cpe:/a:perl:perl",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "5.8.6 およびそれ以前"
+          ]
+        },
+        {
+          "name": "サイバートラスト株式会社",
+          "productname": "Asianux Server",
+          "cpe": {
+            "text": "cpe:/o:misc:miraclelinux_asianux_server",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3.0 ",
+            "4.0 ",
+            "4.0 (x86-64) "
+          ]
+        },
+        {
+          "name": "レッドハット",
+          "productname": "Red Hat Enterprise Linux",
+          "cpe": {
+            "text": "cpe:/o:redhat:enterprise_linux",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "3 (as) ",
+            "3 (es) ",
+            "3 (ws) ",
+            "4 (as) ",
+            "4 (es) ",
+            "4 (ws) "
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Low",
+            "type": "Base"
+          },
+          "base": "2.1",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:P/A:N"
+        }
+      ],
+      "impactitem": {
+        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "IBM APAR",
+          "vulinfoid": "IY68464",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY68464"
+        },
+        {
+          "type": "vendor",
+          "name": "IBM APAR",
+          "vulinfoid": "IY68463",
+          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY68463"
+        },
+        {
+          "type": "vendor",
+          "name": "MIRACLE LINUX アップデート情報",
+          "vulinfoid": "perl",
+          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=453"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:103",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-103.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2005:105",
+          "url": "https://rhn.redhat.com/errata/RHSA-2005-105.html"
+        },
+        {
+          "type": "vendor",
+          "name": "Red Hat Security Advisory",
+          "vulinfoid": "RHSA-2006:0605",
+          "url": "https://rhn.redhat.com/errata/RHSA-2006-0605.html"
+        },
+        {
+          "type": "vendor",
+          "name": "SECURITY BLOG",
+          "vulinfoid": "Multiple vulnerabilities in Perl 5.8",
+          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_perl_5"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2006:0605",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0605J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:103",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-103J.html"
+        },
+        {
+          "type": "vendor",
+          "name": "レッドハット セキュリティーアップデート",
+          "vulinfoid": "RHSA-2005:105",
+          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-105J.html"
+        },
+        {
+          "type": "advisory",
+          "name": "AUSCERT Advisory",
+          "vulinfoid": "ESB-2005.0174",
+          "url": "http://www.auscert.org.au/render.html?it=4856"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2005-0156",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0156"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2005-0156",
+          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0156"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14120",
+          "url": "http://secunia.com/advisories/14120/"
+        },
+        {
+          "type": "advisory",
+          "name": "Secunia Advisory",
+          "vulinfoid": "SA14345",
+          "url": "http://secunia.com/advisories/14345/"
+        },
+        {
+          "type": "advisory",
+          "name": "SecurityFocus",
+          "vulinfoid": "12426",
+          "url": "http://www.securityfocus.com/bid/12426"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2007年04月01日]\\n  掲載\\n[2013年11月01日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Perl 5.8) を追加"
+        }
+      ]
+    },
+    "datefirstpublished": "2007-04-01T00:00:00+09:00",
+    "datelastupdated": "2013-11-01T14:09:23+09:00",
+    "datepublic": "2005-01-31T00:00:00+09:00"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "vulinfoid": "JVNDB-2020-000025",
+  "vulinfodata": {
+    "title": "東芝デバイス＆ストレージ株式会社製品によって登録される Windows サービスの実行ファイルパスが引用符で囲まれていない脆弱性",
+    "vulinfodescription": {
+      "overview": "東芝デバイス＆ストレージ株式会社が提供する一部のアプリケーションは、Windows サービスに登録する実行ファイルパスを引用符で囲んでいません(CWE-428)。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "東芝デバイス＆ストレージ株式会社",
+          "productname": "CANVIO PREMIUM",
+          "cpe": {
+            "text": "cpe:/h:toshiba:canvio_premium",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1TB HD-MA10TS",
+            "1TB HD-MA10TY",
+            "1TB HD-MB10TS",
+            "1TB HD-MB10TY",
+            "2TB HD-MA20TS",
+            "2TB HD-MA20TY",
+            "2TB HD-MB20TS",
+            "2TB HD-MB20TY",
+            "3TB HD-MA30TS",
+            "3TB HD-MA30TY",
+            "3TB HD-MB30TS",
+            "3TB HD-MB30TY"
+          ]
+        },
+        {
+          "name": "東芝デバイス＆ストレージ株式会社",
+          "productname": "CANVIO SLIM",
+          "cpe": {
+            "text": "cpe:/h:toshiba:canvio_slim",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "1TB HD-SB10TK",
+            "1TB HD-SB10TS ",
+            "500GB HD-SA50GK",
+            "500GB HD-SA50GS",
+            "500GB HD-SB50GK",
+            "500GB HD-SB50GS"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.6",
+          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+        },
+        {
+          "version": "3.0",
+          "severity": {
+            "text": "High",
+            "type": "Base"
+          },
+          "base": "8.4",
+          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ],
+      "impactitem": {
+        "description": "Windows サービスの実行ファイルパスに空白文字が含まれ、かつ引用符で囲まれていない場合に、空白文字を含むパスを利用して、当該サービスの権限で不正なファイルが実行される可能性があります。 "
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "開発者は、2020年4月28日に本脆弱性を修正した対策版をリリースしてい ます。  [パスワードツールをアンインストールする、あるいはアップデートする] 開発者が提供する情報をもとに Windows 用パスワードツールをアンインストールする、 あるいは継続使用する場合は最新版にアップデートしてください。  アンインストールやアップデートにより、不適切な Windows サービスの登録は削除あるいは修正されます。  アンインストール方法: ・パスワードを設定している場合は、アンインストール前に必ずパスワードを削除する。 ・パソコンから Windows用パスワードツールのバージョン 1.20.6620 およびそれ以前をアンインストールする。 ・対象製品およびパソコンから当該ソフトウェアのインストーラも全て削除する。  アップデート方法： ・開発者が提供する情報をもとに最新版にアップデートしてください。  詳しくは、開発者が提供する情報をご確認ください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "東芝デバイス＆ストレージ株式会社",
+          "vulinfoid": "重要なお知らせ",
+          "url": "https://www.canvio.jp/news/20200420.htm"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2020-5569",
+          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5569"
+        },
+        {
+          "type": "advisory",
+          "name": "JVN",
+          "vulinfoid": "JVN#13467854",
+          "url": "https://jvn.jp/jp/JVN13467854/index.html"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2020-5569",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5569"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-428",
+          "url": "https://cwe.mitre.org/data/definitions/428.html",
+          "title": "引用されない検索パスまたは要素"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "1",
+          "datetime": "2020-04-17T11:05:09+09:00",
+          "description": "[2020年04月20日]\\n  掲載"
+        },
+        {
+          "historyno": "2",
+          "datetime": "2020-04-28T15:51:52+09:00",
+          "description": "[2020年04月28日]\\n  【対策方法】を更新しました。"
+        }
+      ]
+    },
+    "datefirstpublished": "2020-04-20T15:06:03+09:00",
+    "datelastupdated": "2020-04-28T16:04:03+09:00",
+    "datepublic": "2020-04-20T00:00:00+09:00"
+  }
+}

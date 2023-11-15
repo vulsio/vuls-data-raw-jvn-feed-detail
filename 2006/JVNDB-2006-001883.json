@@ -1,0 +1,86 @@
+{
+  "vulinfoid": "JVNDB-2006-001883",
+  "vulinfodata": {
+    "title": "Linux kernel の __futex_atomic_op などの関数におけるサービス運用妨害 (DoS) の脆弱性",
+    "vulinfodescription": {
+      "overview": "Linux kernel の (1) __futex_atomic_op および (2) futex_atomic_cmpxchg_inatomic 関数は、ユーザアドレススペースの代わりにカーネルアドレススペース内の atomic futex 操作を実行するため、サービス運用妨害 (クラッシュ) 状態となる脆弱性が存在します。"
+    },
+    "affected": {
+      "affecteditem": [
+        {
+          "name": "Linux",
+          "productname": "Linux Kernel",
+          "cpe": {
+            "text": "cpe:/o:linux:linux_kernel",
+            "version": "2.2"
+          },
+          "versionnumber": [
+            "2.6.17-rc4 から 2.6.18-rc2"
+          ]
+        }
+      ]
+    },
+    "impact": {
+      "cvss": [
+        {
+          "version": "2.0",
+          "severity": {
+            "text": "Medium",
+            "type": "Base"
+          },
+          "base": "4.9",
+          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+        }
+      ],
+      "impactitem": {
+        "description": "ローカルユーザにより、サービス運用妨害 (クラッシュ) 状態にされる可能性があります。"
+      }
+    },
+    "solution": {
+      "solutionitem": {
+        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+      }
+    },
+    "related": {
+      "relateditem": [
+        {
+          "type": "vendor",
+          "name": "kernel",
+          "vulinfoid": "s390: fix in-user atomic futex operation.",
+          "url": "http://www.kernel.org/git/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=bafe00cc9297ca77b66e5c83e5e65e17c0c997c8"
+        },
+        {
+          "type": "advisory",
+          "name": "Common Vulnerabilities and Exposures (CVE)",
+          "vulinfoid": "CVE-2006-3634",
+          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3634"
+        },
+        {
+          "type": "advisory",
+          "name": "National Vulnerability Database (NVD)",
+          "vulinfoid": "CVE-2006-3634",
+          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-3634"
+        },
+        {
+          "type": "cwe",
+          "name": "JVNDB",
+          "vulinfoid": "CWE-Other",
+          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+          "title": "その他"
+        }
+      ]
+    },
+    "history": {
+      "historyitem": [
+        {
+          "historyno": "0",
+          "datetime": "2018-02-17T10:37:52+09:00",
+          "description": "[2012年09月25日]\\n  掲載"
+        }
+      ]
+    },
+    "datefirstpublished": "2012-09-25T15:35:48+09:00",
+    "datelastupdated": "2012-09-25T15:35:48+09:00",
+    "datepublic": "2006-06-08T00:00:00+09:00"
+  }
+}
