@@ -1,104 +1,104 @@
 {
-  "vulinfoid": "JVNDB-2018-008978",
-  "vulinfodata": {
-    "title": "Texas Instruments 製マイクロコントローラ CC2640 および CC2650 にバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "Texas Instruments 製マイクロコントローラ CC2640 および CC2650 のファームウェアで使用されている BLE-Stack には、バッファオーバーフローの脆弱性が存在します。  メモリ操作範囲の制限不備 (CWE-119) - CVE-2018-16986 Texas Instruments 製マイクロコントローラ CC2640 および CC2650 のファームウェアで使用されている BLE-Stack には、BLE advertising パケットの処理に問題があります。 チップ内の ROM イメージに含まれている llGetAdvChanPDU 関数は、受信した advertising パケットを解析してその内容を別のバッファにコピーします。また、受信したデータが一定の長さを超えている場合には BLE-Stack 上で動作するアプリケーションに含まれている halAssertHandler 関数を呼び出して処理を継続する仕組みになっています。 細工された advertizing パケットを受信した場合、パケット長が実際よりも大きな値であるとして処理が行われ、バッファオーバーフローが発生する可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Texas Instrument",
-          "productname": "BLE-Stack",
-          "cpe": {
-            "text": "cpe:/a:texas_instrument:ble-stack",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v2.2.2 よりも前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "当該デバイスがスキャンモードで動作しているときに、一連の細工された BLE パケットを受信することにより、バッファオーバーフローが発生し任意のコードが実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[BLE-Stack をアップデートする] 本脆弱性は、2018年3月28日に Texas Instruments がリリースした BLE-Stack v2.2.2 で修正されています。 当該デバイスを使用している製品では、BLE-Stack を更新するファームウェアアップデートが必要です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Aruba Networks",
-          "vulinfoid": " Aruba BLE Radio Firmware Vulnerability  ",
-          "url": "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2018-006.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Texas Instrument",
-          "vulinfoid": "BLE-Stack 2.2.2",
-          "url": "http://software-dl.ti.com/lprf/ble_stack/exports/release_notes_BLE_Stack_2_2_2.html"
-        },
-        {
-          "type": "advisory",
-          "name": "CERT Advisory",
-          "vulinfoid": "CERT/CC Vulnerability Note VU#317277",
-          "url": "https://www.kb.cert.org/vuls/id/317277"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-16986",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16986"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98767431",
-          "url": "https://jvn.jp/vu/JVNVU98767431/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-16986",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16986"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "BleedingBit Information from the Research Team - Armis Labs",
-          "url": "https://armis.com/bleedingbit/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-11-05T14:01:37+09:00",
-          "description": "[2018年11月05日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-07-25T15:26:06+09:00",
-          "description": "[2019年07月25日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16986) を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-11-05T14:01:37+09:00",
-    "datelastupdated": "2019-07-25T15:27:00+09:00",
-    "datepublic": "2018-11-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-008978",
+	"vulinfodata": {
+		"title": "Texas Instruments 製マイクロコントローラ CC2640 および CC2650 にバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "Texas Instruments 製マイクロコントローラ CC2640 および CC2650 のファームウェアで使用されている BLE-Stack には、バッファオーバーフローの脆弱性が存在します。  メモリ操作範囲の制限不備 (CWE-119) - CVE-2018-16986 Texas Instruments 製マイクロコントローラ CC2640 および CC2650 のファームウェアで使用されている BLE-Stack には、BLE advertising パケットの処理に問題があります。 チップ内の ROM イメージに含まれている llGetAdvChanPDU 関数は、受信した advertising パケットを解析してその内容を別のバッファにコピーします。また、受信したデータが一定の長さを超えている場合には BLE-Stack 上で動作するアプリケーションに含まれている halAssertHandler 関数を呼び出して処理を継続する仕組みになっています。 細工された advertizing パケットを受信した場合、パケット長が実際よりも大きな値であるとして処理が行われ、バッファオーバーフローが発生する可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Texas Instrument",
+					"productname": "BLE-Stack",
+					"cpe": {
+						"text": "cpe:/a:texas_instrument:ble-stack",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v2.2.2 よりも前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "当該デバイスがスキャンモードで動作しているときに、一連の細工された BLE パケットを受信することにより、バッファオーバーフローが発生し任意のコードが実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[BLE-Stack をアップデートする] 本脆弱性は、2018年3月28日に Texas Instruments がリリースした BLE-Stack v2.2.2 で修正されています。 当該デバイスを使用している製品では、BLE-Stack を更新するファームウェアアップデートが必要です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Aruba Networks",
+					"vulinfoid": " Aruba BLE Radio Firmware Vulnerability  ",
+					"url": "https://www.arubanetworks.com/assets/alert/ARUBA-PSA-2018-006.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Texas Instrument",
+					"vulinfoid": "BLE-Stack 2.2.2",
+					"url": "http://software-dl.ti.com/lprf/ble_stack/exports/release_notes_BLE_Stack_2_2_2.html"
+				},
+				{
+					"type": "advisory",
+					"name": "CERT Advisory",
+					"vulinfoid": "CERT/CC Vulnerability Note VU#317277",
+					"url": "https://www.kb.cert.org/vuls/id/317277"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-16986",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16986"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98767431",
+					"url": "https://jvn.jp/vu/JVNVU98767431/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-16986",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16986"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "BleedingBit Information from the Research Team - Armis Labs",
+					"url": "https://armis.com/bleedingbit/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-11-05T14:01:37+09:00",
+					"description": "[2018年11月05日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-07-25T15:26:06+09:00",
+					"description": "[2019年07月25日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16986) を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2018-11-05T14:01:37+09:00",
+		"datelastupdated": "2019-07-25T15:27:00+09:00",
+		"datepublic": "2018-11-02T00:00:00+09:00"
+	}
 }

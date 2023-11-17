@@ -1,80 +1,80 @@
 {
-  "vulinfoid": "JVNDB-2021-005751",
-  "vulinfodata": {
-    "title": "OpenSSL の libssl における X509_verify_cert() 内部エラーの不正な処理",
-    "vulinfodescription": {
-      "overview": "OpenSSL の libssl には、内部エラーの発生を示す X509_verify_cert() 関数からの戻り値（負の値）の処理に問題があります。  深刻度 - 中（Severity: Moderate） OpenSSL の libssl は、クライアント側でサーバ証明書の検証を行う際に、X509_verify_cert() 関数を呼び出しますが、この関数内でメモリ不足が発生した場合などに、内部エラーを示す負の値が戻されます。 OpenSSL では、このような負の戻り値の処理に問題があり、結果として、OpenSSL を利用するアプリケーション側にアプリケーションが予期していない戻り値（SSL_ERROR_WANT_RETRY_VERIFY）を返すことになり、アプリケーションが正常に動作しない可能性があります。（CVE-2021-4044） "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0.0 SSL/TLS クライアント"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "影響は、アプリケーションによって異なりますが、次のような影響を受ける可能性があります。  　* クラッシュ 　* 無限ループ 　* その他、不正な動作  また、OpenSSL 3.0 の別のバグと組み合わせることで、攻撃者によってアプリケーションが誤った動作をさせられる可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性への対策版として次のバージョンをリリースしています。  　* OpenSSL 3.0.1  [アップグレードする] OpenSSL 1.1.0 および OpenSSL 1.0.2 はサポートが終了しているため、アップデートは配信されていません。 そのため、開発者は OpenSSL 1.0.2 プレミアムサポート契約ユーザを除き、OpenSSL 3.0 または 1.1.1 へのアップグレードを推奨しています。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Vulnerabilities",
-          "url": "https://www.openssl.org/news/vulnerabilities.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "OpenSSL Security Advisory [14 December 2021]",
-          "url": "https://www.openssl.org/news/secadv/20211214.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-4044",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4044"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90127554",
-          "url": "https://jvn.jp/vu/JVNVU90127554/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-4044",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4044"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-12-17T13:46:22+09:00",
-          "description": "[2021年12月17日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-12-17T14:27:31+09:00",
-    "datelastupdated": "2021-12-17T14:27:31+09:00",
-    "datepublic": "2021-12-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-005751",
+	"vulinfodata": {
+		"title": "OpenSSL の libssl における X509_verify_cert() 内部エラーの不正な処理",
+		"vulinfodescription": {
+			"overview": "OpenSSL の libssl には、内部エラーの発生を示す X509_verify_cert() 関数からの戻り値（負の値）の処理に問題があります。  深刻度 - 中（Severity: Moderate） OpenSSL の libssl は、クライアント側でサーバ証明書の検証を行う際に、X509_verify_cert() 関数を呼び出しますが、この関数内でメモリ不足が発生した場合などに、内部エラーを示す負の値が戻されます。 OpenSSL では、このような負の戻り値の処理に問題があり、結果として、OpenSSL を利用するアプリケーション側にアプリケーションが予期していない戻り値（SSL_ERROR_WANT_RETRY_VERIFY）を返すことになり、アプリケーションが正常に動作しない可能性があります。（CVE-2021-4044） "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.0 SSL/TLS クライアント"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "影響は、アプリケーションによって異なりますが、次のような影響を受ける可能性があります。  　* クラッシュ 　* 無限ループ 　* その他、不正な動作  また、OpenSSL 3.0 の別のバグと組み合わせることで、攻撃者によってアプリケーションが誤った動作をさせられる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性への対策版として次のバージョンをリリースしています。  　* OpenSSL 3.0.1  [アップグレードする] OpenSSL 1.1.0 および OpenSSL 1.0.2 はサポートが終了しているため、アップデートは配信されていません。 そのため、開発者は OpenSSL 1.0.2 プレミアムサポート契約ユーザを除き、OpenSSL 3.0 または 1.1.1 へのアップグレードを推奨しています。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Vulnerabilities",
+					"url": "https://www.openssl.org/news/vulnerabilities.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "OpenSSL Security Advisory [14 December 2021]",
+					"url": "https://www.openssl.org/news/secadv/20211214.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-4044",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4044"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90127554",
+					"url": "https://jvn.jp/vu/JVNVU90127554/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-4044",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-4044"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-12-17T13:46:22+09:00",
+					"description": "[2021年12月17日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-12-17T14:27:31+09:00",
+		"datelastupdated": "2021-12-17T14:27:31+09:00",
+		"datepublic": "2021-12-16T00:00:00+09:00"
+	}
 }

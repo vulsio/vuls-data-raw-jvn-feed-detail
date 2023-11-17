@@ -1,87 +1,87 @@
 {
-  "vulinfoid": "JVNDB-2022-002449",
-  "vulinfodata": {
-    "title": "Heimdal の Kerberos 実装に NULL ポインタ参照の脆弱性",
-    "vulinfodescription": {
-      "overview": "Heimdal の Kerberos 実装には、GSS-API の上で動作する SPNEGO を有効にしている場合、negTokenInit トークンの処理の不備により、クライアントから不正な negTokenInit トークンを受信した際に NULL ポインタ参照が発生する脆弱性（CWE-476、CVE-2022-3116）が存在します。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "HEIMDAL SECURITY",
-          "productname": "Heimdal",
-          "cpe": {
-            "text": "cpe:/a:heimdalsecurity:heimdal",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.7.0 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "攻撃者によりクライアントから不正な negTokenInit を含むパケットを送信されることにより、脆弱な Heimdal 実装を含むアプリケーションがクラッシュし、サービス運用妨害（DoS）状態にされる可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[修正コードを適用する] 本脆弱性に対して、2020 年 2 月に <a href=\"https://github.com/heimdal/heimdal\" target=\"blank\">Heimdal プロジェクト</a>のソースコード（master ブランチ）に<a href=\"https://github.com/heimdal/heimdal/commit/4fb6a6adc9d5593079e37addb40fd80834df77b4\" target=\"blank\">修正コード</a>がコミットされています。 ただし、2022 年 10 月 11 日現在、Heimdal の最新の安定版である 7.7.0 には本脆弱性の修正が含まれていません。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "heimdal/heimdal",
-          "url": "https://github.com/heimdal/heimdal"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "gss: port NegoEx implementation from MIT",
-          "url": "https://github.com/heimdal/heimdal/commit/4fb6a6adc9d5593079e37addb40fd80834df77b4"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-3116",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-3116"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93736410",
-          "url": "https://jvn.jp/vu/JVNVU93736410/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#730793 (Heimdal Kerbos vulnerable to remotely triggered NULL pointer dereference)",
-          "url": "https://kb.cert.org/vuls/id/730793"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-476",
-          "url": "http://cwe.mitre.org/data/definitions/476.html",
-          "title": "NULL ポインタデリファレンス"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-10-12T16:12:41+09:00",
-          "description": "[2022年10月12日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-10-12T16:12:41+09:00",
-    "datelastupdated": "2022-10-12T16:12:41+09:00",
-    "datepublic": "2022-10-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-002449",
+	"vulinfodata": {
+		"title": "Heimdal の Kerberos 実装に NULL ポインタ参照の脆弱性",
+		"vulinfodescription": {
+			"overview": "Heimdal の Kerberos 実装には、GSS-API の上で動作する SPNEGO を有効にしている場合、negTokenInit トークンの処理の不備により、クライアントから不正な negTokenInit トークンを受信した際に NULL ポインタ参照が発生する脆弱性（CWE-476、CVE-2022-3116）が存在します。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "HEIMDAL SECURITY",
+					"productname": "Heimdal",
+					"cpe": {
+						"text": "cpe:/a:heimdalsecurity:heimdal",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.7.0 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "攻撃者によりクライアントから不正な negTokenInit を含むパケットを送信されることにより、脆弱な Heimdal 実装を含むアプリケーションがクラッシュし、サービス運用妨害（DoS）状態にされる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[修正コードを適用する] 本脆弱性に対して、2020 年 2 月に <a href=\"https://github.com/heimdal/heimdal\" target=\"blank\">Heimdal プロジェクト</a>のソースコード（master ブランチ）に<a href=\"https://github.com/heimdal/heimdal/commit/4fb6a6adc9d5593079e37addb40fd80834df77b4\" target=\"blank\">修正コード</a>がコミットされています。 ただし、2022 年 10 月 11 日現在、Heimdal の最新の安定版である 7.7.0 には本脆弱性の修正が含まれていません。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "heimdal/heimdal",
+					"url": "https://github.com/heimdal/heimdal"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "gss: port NegoEx implementation from MIT",
+					"url": "https://github.com/heimdal/heimdal/commit/4fb6a6adc9d5593079e37addb40fd80834df77b4"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-3116",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-3116"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93736410",
+					"url": "https://jvn.jp/vu/JVNVU93736410/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#730793 (Heimdal Kerbos vulnerable to remotely triggered NULL pointer dereference)",
+					"url": "https://kb.cert.org/vuls/id/730793"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-476",
+					"url": "http://cwe.mitre.org/data/definitions/476.html",
+					"title": "NULL ポインタデリファレンス"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-10-12T16:12:41+09:00",
+					"description": "[2022年10月12日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2022-10-12T16:12:41+09:00",
+		"datelastupdated": "2022-10-12T16:12:41+09:00",
+		"datepublic": "2022-10-11T00:00:00+09:00"
+	}
 }

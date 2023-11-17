@@ -1,165 +1,165 @@
 {
-  "vulinfoid": "JVNDB-2022-000030",
-  "vulinfodata": {
-    "title": "FUJITSU Network IPCOM の運用管理インタフェースにおける複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "富士通株式会社が提供する FUJITSU Network IPCOM は統合ネットワークアプライアンスです。 FUJITSU Network IPCOM の操作時に使用する運用管理インタフェースには、次の複数の脆弱性が存在します。 <ul><li>Web コンソールにおける OS コマンドインジェクション (CWE-78) - CVE-2022-29516 <li>コマンドラインインタフェースにおけるバッファオーバーフロー (CWE-120) - CVE-2020-10188</ul>この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "富士通",
-          "productname": "IPCOM EX2シリーズ",
-          "cpe": {
-            "text": "cpe:/a:fujitsu:ipcom_ex2",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "IPCOM EXシリーズ",
-          "cpe": {
-            "text": "cpe:/a:fujitsu:ipcom_ex",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "IPCOM VA2/VE1シリーズ",
-          "cpe": {
-            "text": "cpe:/a:fujitsu:ipcom_va2%2fve1",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "IPCOM VE2シリーズ",
-          "cpe": {
-            "text": "cpe:/a:fujitsu:ipcom_ve2",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって次のような影響を受ける可能性があります。 <ul><li>任意の OS コマンドを実行される <li>機微な情報を窃取されたり、改ざんされたりする <li>サービス運用妨害 (DoS) 攻撃を受ける</ul>"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 <ul><li>IPCOM EX2シリーズ(V01L0x系) V01L05 NF0501</li><li>IPCOM EX2シリーズ(V01L20系) V01L20 NF0301</li><li>IPCOM EX2シリーズ(V02L21系) V02L21 NF0201</li><li>IPCOM EX シリーズ(E20系) E20L33 NF1101</li><li>IPCOM EXシリーズ(E30系) E30L11 NF0501</li><li>IPCOM VE2シリーズ V01L05 NF0303</li><li>IPCOM VA2/VE1シリーズ E20L33 NF0902</li></ul>[ワークアラウンドを実施する] 以下のいずれかの回避策を適用することで、許可された運用管理端末以外からの不正なアクセスを防いでください。 <ul><li>運用管理端末を配置する専用のネットワークを用意し、運用管理インタフェースへのアクセスをこのネットワークからのみに制限する <li>個々の運用管理端末に対してアクセス許可を設定する</ul>詳しくは開発者が提供する情報をご確認ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "富士通",
-          "vulinfoid": "IPCOM シリーズのコマンド操作端末／Webブラウザ端末とIPCOM間通信における脆弱性について",
-          "url": "https://www.fujitsu.com/jp/products/network/support/2022/ipcom-01/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-10188",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2020-10188"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-29516",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-29516"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2022-0013",
-          "url": "https://www.jpcert.or.jp/at/2022/at220013.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#96561229",
-          "url": "https://jvn.jp/jp/JVN96561229/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-78",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
-          "title": "OSコマンドインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-04-28T11:02:40+09:00",
-          "description": "[2022年05月09日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-05-10T14:17:51+09:00",
-          "description": "[2022年05月10日]\\n  参考情報：JPCERT 緊急報告 (JPCERT-AT-2022-0013) を追加\\n"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2022-05-17T10:12:20+09:00",
-          "description": "[2022年05月19日]\\n  対策：内容を更新"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2022-05-27T10:34:29+09:00",
-          "description": "[2022年05月30日]\\n  対策：内容を更新"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2022-06-02T14:47:50+09:00",
-          "description": "[2022年06月03日]\\n  対策：内容を更新"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2022-06-09T09:39:11+09:00",
-          "description": "[2022年06月10日]\\n  対策：内容を更新"
-        },
-        {
-          "historyno": "7",
-          "datetime": "2022-06-15T09:57:55+09:00",
-          "description": "[2022年06月16日]\\n  対策：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-05-09T14:05:26+09:00",
-    "datelastupdated": "2022-06-16T14:03:40+09:00",
-    "datepublic": "2022-05-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-000030",
+	"vulinfodata": {
+		"title": "FUJITSU Network IPCOM の運用管理インタフェースにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "富士通株式会社が提供する FUJITSU Network IPCOM は統合ネットワークアプライアンスです。 FUJITSU Network IPCOM の操作時に使用する運用管理インタフェースには、次の複数の脆弱性が存在します。 <ul><li>Web コンソールにおける OS コマンドインジェクション (CWE-78) - CVE-2022-29516 <li>コマンドラインインタフェースにおけるバッファオーバーフロー (CWE-120) - CVE-2020-10188</ul>この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "富士通",
+					"productname": "IPCOM EX2シリーズ",
+					"cpe": {
+						"text": "cpe:/a:fujitsu:ipcom_ex2",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "IPCOM EXシリーズ",
+					"cpe": {
+						"text": "cpe:/a:fujitsu:ipcom_ex",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "IPCOM VA2/VE1シリーズ",
+					"cpe": {
+						"text": "cpe:/a:fujitsu:ipcom_va2%2fve1",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "IPCOM VE2シリーズ",
+					"cpe": {
+						"text": "cpe:/a:fujitsu:ipcom_ve2",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって次のような影響を受ける可能性があります。 <ul><li>任意の OS コマンドを実行される <li>機微な情報を窃取されたり、改ざんされたりする <li>サービス運用妨害 (DoS) 攻撃を受ける</ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 <ul><li>IPCOM EX2シリーズ(V01L0x系) V01L05 NF0501</li><li>IPCOM EX2シリーズ(V01L20系) V01L20 NF0301</li><li>IPCOM EX2シリーズ(V02L21系) V02L21 NF0201</li><li>IPCOM EX シリーズ(E20系) E20L33 NF1101</li><li>IPCOM EXシリーズ(E30系) E30L11 NF0501</li><li>IPCOM VE2シリーズ V01L05 NF0303</li><li>IPCOM VA2/VE1シリーズ E20L33 NF0902</li></ul>[ワークアラウンドを実施する] 以下のいずれかの回避策を適用することで、許可された運用管理端末以外からの不正なアクセスを防いでください。 <ul><li>運用管理端末を配置する専用のネットワークを用意し、運用管理インタフェースへのアクセスをこのネットワークからのみに制限する <li>個々の運用管理端末に対してアクセス許可を設定する</ul>詳しくは開発者が提供する情報をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "富士通",
+					"vulinfoid": "IPCOM シリーズのコマンド操作端末／Webブラウザ端末とIPCOM間通信における脆弱性について",
+					"url": "https://www.fujitsu.com/jp/products/network/support/2022/ipcom-01/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-10188",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2020-10188"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-29516",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-29516"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2022-0013",
+					"url": "https://www.jpcert.or.jp/at/2022/at220013.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#96561229",
+					"url": "https://jvn.jp/jp/JVN96561229/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-04-28T11:02:40+09:00",
+					"description": "[2022年05月09日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-05-10T14:17:51+09:00",
+					"description": "[2022年05月10日]\\n  参考情報：JPCERT 緊急報告 (JPCERT-AT-2022-0013) を追加\\n"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2022-05-17T10:12:20+09:00",
+					"description": "[2022年05月19日]\\n  対策：内容を更新"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2022-05-27T10:34:29+09:00",
+					"description": "[2022年05月30日]\\n  対策：内容を更新"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2022-06-02T14:47:50+09:00",
+					"description": "[2022年06月03日]\\n  対策：内容を更新"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2022-06-09T09:39:11+09:00",
+					"description": "[2022年06月10日]\\n  対策：内容を更新"
+				},
+				{
+					"historyno": "7",
+					"datetime": "2022-06-15T09:57:55+09:00",
+					"description": "[2022年06月16日]\\n  対策：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2022-05-09T14:05:26+09:00",
+		"datelastupdated": "2022-06-16T14:03:40+09:00",
+		"datepublic": "2022-05-09T00:00:00+09:00"
+	}
 }

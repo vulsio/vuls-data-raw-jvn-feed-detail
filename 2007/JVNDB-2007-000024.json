@@ -1,167 +1,167 @@
 {
-  "vulinfoid": "JVNDB-2007-000024",
-  "vulinfodata": {
-    "title": "Kerberos administration daemon が初期化されていないポインタを解放する脆弱性",
-    "vulinfodescription": {
-      "overview": "Kerberos administration daemon (kadmind) には、初期化されていないポインタを解放してしまう脆弱性が存在します。  この問題は GSS-API ライブラリの mechglue 抽象インタフェースのメモリ管理の実装によって生じる問題のため、MIT Kerberos が提供する GSS-API ライブラリを使用するアプリケーションも影響を受ける可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "MIT Kerberos",
-          "productname": "Kerberos",
-          "cpe": {
-            "text": "cpe:/a:mit:kerberos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "krb5-1.5.1 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 (sparc) ",
-            "10 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "kadmind がサービス運用妨害 (DoS) 状態となる可能性があります。また MIT Kerberos の情報によると、任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIT krb5 Security Advisory",
-          "vulinfoid": "MITKerberos krb5-SA-2006-003",
-          "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2006-003-mechglue.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "201294",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-66-201294-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "102772",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102772-1"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2006-6144",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6144"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2007-0111",
-          "url": "http://www.frsirt.com/english/advisories/2007/0111"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "31417",
-          "url": "http://xforce.iss.net/xforce/xfdb/31417"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNTA07-009B",
-          "url": "http://jvn.jp/cert/JVNTA07-009B/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#831452",
-          "url": "http://jvn.jp/cert/JVNVU%23831452/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN Status Tracking Notes",
-          "vulinfoid": "TRTA07-009B",
-          "url": "http://jvn.jp/tr/TRTA07-009B/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2006-6144",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-6144"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA23690",
-          "url": "http://secunia.com/advisories/23690/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "21975",
-          "url": "http://www.securityfocus.com/bid/21975"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1017494",
-          "url": "http://securitytracker.com/id?1017494"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Technical Cyber Security Alert",
-          "vulinfoid": "TA07-009B",
-          "url": "http://www.us-cert.gov/cas/techalerts/TA07-009B.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#831452",
-          "url": "http://www.kb.cert.org/vuls/id/831452"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載\\n[2009年06月30日]\\n  ベンダ情報：サン・マイクロシステムズ (201294) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2009-06-30T11:57:09+09:00",
-    "datepublic": "2007-01-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2007-000024",
+	"vulinfodata": {
+		"title": "Kerberos administration daemon が初期化されていないポインタを解放する脆弱性",
+		"vulinfodescription": {
+			"overview": "Kerberos administration daemon (kadmind) には、初期化されていないポインタを解放してしまう脆弱性が存在します。  この問題は GSS-API ライブラリの mechglue 抽象インタフェースのメモリ管理の実装によって生じる問題のため、MIT Kerberos が提供する GSS-API ライブラリを使用するアプリケーションも影響を受ける可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "MIT Kerberos",
+					"productname": "Kerberos",
+					"cpe": {
+						"text": "cpe:/a:mit:kerberos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"krb5-1.5.1 およびそれ以前"
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 (sparc) ",
+						"10 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "kadmind がサービス運用妨害 (DoS) 状態となる可能性があります。また MIT Kerberos の情報によると、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIT krb5 Security Advisory",
+					"vulinfoid": "MITKerberos krb5-SA-2006-003",
+					"url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2006-003-mechglue.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "201294",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-66-201294-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "102772",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102772-1"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2006-6144",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6144"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2007-0111",
+					"url": "http://www.frsirt.com/english/advisories/2007/0111"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "31417",
+					"url": "http://xforce.iss.net/xforce/xfdb/31417"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA07-009B",
+					"url": "http://jvn.jp/cert/JVNTA07-009B/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#831452",
+					"url": "http://jvn.jp/cert/JVNVU%23831452/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN Status Tracking Notes",
+					"vulinfoid": "TRTA07-009B",
+					"url": "http://jvn.jp/tr/TRTA07-009B/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2006-6144",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-6144"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA23690",
+					"url": "http://secunia.com/advisories/23690/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "21975",
+					"url": "http://www.securityfocus.com/bid/21975"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1017494",
+					"url": "http://securitytracker.com/id?1017494"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA07-009B",
+					"url": "http://www.us-cert.gov/cas/techalerts/TA07-009B.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#831452",
+					"url": "http://www.kb.cert.org/vuls/id/831452"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載\\n[2009年06月30日]\\n  ベンダ情報：サン・マイクロシステムズ (201294) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2009-06-30T11:57:09+09:00",
+		"datepublic": "2007-01-10T00:00:00+09:00"
+	}
 }

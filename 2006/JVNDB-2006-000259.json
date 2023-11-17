@@ -1,144 +1,144 @@
 {
-  "vulinfoid": "JVNDB-2006-000259",
-  "vulinfodata": {
-    "title": "Quagga の RIPd におけるルーティング情報が漏洩する脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Quagga、GNU Zebra は TCP/IP ベースのルーティング関連プロトコルをサポートしたデーモン群をまとめたものです。それらのうち RIP、BGP プロトコルを処理するデーモンとして RIPd、bgpd が同梱されています。  Quagga、GNU Zebra には、以下の複数のセキュリティ上の問題が存在します。  1) RIPd デーモンには、RIPv2 のみ有効である設定においても、認証の有無に関わらず RIPv1 のリクエストに対してレスポンスしてしまう問題が存在します。(CVE-2006-2223)  リモートの攻撃者に悪用された場合、SEND UPDATE などの REQUEST パケットを使用することにより、ルーティング情報を不正に取得される可能性があります。  2) RIPd デーモンには RIPv2 の認証が有効に設定されているにも関わらず、RIPv1 のパケットを認証なしで受け入れてしまう問題が存在します。(CVE-2006-2224)  リモートの攻撃者に悪用された場合、RIPv1 の RESPONSE パケット使用することにより RIP ルーティングテーブルを不正に修正される可能性があります。  3) bgpd デーモンの community_str2com() 関数に不備が存在し、Telnet 管理インタフェースより show ip bgp コマンドを実行した場合、無限ループに陥り大量の CPU リソースを消費してしまう問題が存在します。(CVE-2006-2276)  ローカルの攻撃者に悪用された場合、結果として標的システムがサービス不能状態に陥る可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0 ",
-            "4.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "3 (as) ",
-            "3 (es) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "quagga",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=396"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0525",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0525.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0533",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0533.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0533",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0533J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0525",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0525J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2006-2223",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2223"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2006-2223",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-2223"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA20116",
-          "url": "http://secunia.com/advisories/20116/"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA19910",
-          "url": "http://secunia.com/advisories/19910/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "17979",
-          "url": "http://www.securityfocus.com/bid/17979"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "17808",
-          "url": "http://www.securityfocus.com/bid/17808"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2006-05-03T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2006-000259",
+	"vulinfodata": {
+		"title": "Quagga の RIPd におけるルーティング情報が漏洩する脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Quagga、GNU Zebra は TCP/IP ベースのルーティング関連プロトコルをサポートしたデーモン群をまとめたものです。それらのうち RIP、BGP プロトコルを処理するデーモンとして RIPd、bgpd が同梱されています。  Quagga、GNU Zebra には、以下の複数のセキュリティ上の問題が存在します。  1) RIPd デーモンには、RIPv2 のみ有効である設定においても、認証の有無に関わらず RIPv1 のリクエストに対してレスポンスしてしまう問題が存在します。(CVE-2006-2223)  リモートの攻撃者に悪用された場合、SEND UPDATE などの REQUEST パケットを使用することにより、ルーティング情報を不正に取得される可能性があります。  2) RIPd デーモンには RIPv2 の認証が有効に設定されているにも関わらず、RIPv1 のパケットを認証なしで受け入れてしまう問題が存在します。(CVE-2006-2224)  リモートの攻撃者に悪用された場合、RIPv1 の RESPONSE パケット使用することにより RIP ルーティングテーブルを不正に修正される可能性があります。  3) bgpd デーモンの community_str2com() 関数に不備が存在し、Telnet 管理インタフェースより show ip bgp コマンドを実行した場合、無限ループに陥り大量の CPU リソースを消費してしまう問題が存在します。(CVE-2006-2276)  ローカルの攻撃者に悪用された場合、結果として標的システムがサービス不能状態に陥る可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0 ",
+						"4.0 (x86-64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"3 (as) ",
+						"3 (es) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "quagga",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=396"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0525",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0525.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0533",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0533.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0533",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0533J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0525",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0525J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2006-2223",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2223"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2006-2223",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-2223"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA20116",
+					"url": "http://secunia.com/advisories/20116/"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA19910",
+					"url": "http://secunia.com/advisories/19910/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "17979",
+					"url": "http://www.securityfocus.com/bid/17979"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "17808",
+					"url": "http://www.securityfocus.com/bid/17808"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2006-05-03T00:00:00+09:00"
+	}
 }

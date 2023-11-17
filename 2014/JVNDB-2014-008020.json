@@ -1,155 +1,155 @@
 {
-  "vulinfoid": "JVNDB-2014-008020",
-  "vulinfodata": {
-    "title": "Windows NTLM が file:// URL へのリダイレクト時に SMB 接続を行いユーザ認証情報を送信する問題",
-    "vulinfodescription": {
-      "overview": "HTTP 通信を行う Windows ソフトウェアには、HTTP リクエストを file:// プロトコル に転送された場合に、SMB を使って攻撃者が用意した SMB サーバに認証情報を送信する問題が存在します。 攻撃者の SMB サーバには、ユーザの認証情報が暗号化された形で記録されます。本脆弱性は別名 \"Redirect to SMB\" (SMB へのリダイレクト) として知られています。  データ送信による情報漏えい (CWE-201) ソフトウェアの多くは、ソフトウェアアップデートの確認等さまざまな機能に HTTP リクエストを使用しています。攻撃者は、中間者攻撃を行うことで HTTP リクエストを傍受し、HTTP リダイレクトを使って攻撃者が用意した SMB サーバへリダイレクトします。リダイレクト先が file:// ではじまる URL であり、かつ被害者の PC が Windows である場合、Windows は自動的に攻撃者の SMB サーバに接続しようとしてユーザの認証情報を送信します。送信された認証情報は、SMB サーバのログに記録されます。認証情報は暗号化されているものの、総当たり攻撃 (brute force attack) によって解読される可能性があります。  CWE-201: Information Exposure Through Sent Data http://cwe.mitre.org/data/definitions/201.html  HTTP リダイレクトによる攻撃手法は新規に発見されたものですが、SMB を使った同種の問題は以前から知られており、たとえば 1997年には Aaron Spangler のレポート が、2009年には Microsoft Security Advisory 974926 が公開されています。その他の参考情報は、本アドバイザリ末尾の【参考情報】を参照してください。  Aaron Spangler のレポート http://insecure.org/sploits/winnt.automatic.authentication.html  Microsoft Security Advisory 974926 https://technet.microsoft.com/en-us/library/security/974926.aspx"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "（複数のベンダ）",
-          "productname": "（複数の製品）",
-          "cpe": {
-            "text": "cpe:/a:misc:multiple_vendors",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "CapsSuite",
-          "cpe": {
-            "text": "cpe:/a:nec:capssuite",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V4〜V5.1"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "暗号化されたユーザの認証情報を攻撃者に取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2015年4月13日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* 外部ネットワーク向けの SMB 通信 (139/tcp, 445/tcp) を遮断する 　* Using security policies to restrict NTLM traffic や Restricting NTLM usage 等を参考に NTLM の設定を変更する  　Using security policies to restrict NTLM traffic 　https://technet.microsoft.com/en-us/library/jj865668%28v=ws.10%29.aspx  　Restricting NTLM usage 　https://technet.microsoft.com/en-us/library/jj865676%28v=ws.10%29.aspx  　* ソフトウェアのデフォルトの認証機能として NTLM を使用しない 　* 強固なパスワードを設定し、定期的に変更する"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft Developer Network",
-          "vulinfoid": "URLDownloadToCacheFile function",
-          "url": "https://msdn.microsoft.com/en-us/library/ms775122%28v=vs.85%29.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Developer Network",
-          "vulinfoid": "URLDownloadToFile function",
-          "url": "https://msdn.microsoft.com/en-us/library/ms775123%28v=vs.85%29.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Developer Network",
-          "vulinfoid": "Urlmon library",
-          "url": "https://msdn.microsoft.com/en-us/library/aa939357%28v=WinEmbedded.5%29.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Security Advisory",
-          "vulinfoid": "Credential Relaying Attacks on Integrated Windows Authentication (974926)",
-          "url": "https://technet.microsoft.com/en-us/library/security/974926.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Security Advisory",
-          "vulinfoid": "Extended Protection for Authentication (973811)",
-          "url": "https://technet.microsoft.com/en-us/library/security/973811.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV15-014",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv15-014.html"
-        },
-        {
-          "type": "vendor",
-          "name": "TechNet Blogs",
-          "vulinfoid": "NTLM Blocking and You: Application Analysis and Auditing Methodologies in Windows 7",
-          "url": "http://blogs.technet.com/b/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "TechNet Library",
-          "vulinfoid": "Using security policies to restrict NTLM traffic",
-          "url": "https://technet.microsoft.com/en-us/library/jj865668%28v=ws.10%29.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "TechNet Library",
-          "vulinfoid": "Restricting NTLM usage",
-          "url": "https://technet.microsoft.com/en-us/library/jj865676%28v=ws.10%29.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "TechNet Library",
-          "vulinfoid": "Network Security: Restrict NTLM: Outgoing NTLM traffic to remote servers",
-          "url": "https://technet.microsoft.com/library/jj852213%28v=ws.10%29.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "Windows Dev Center",
-          "vulinfoid": "WinINet Reference",
-          "url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385483%28v=vs.85%29.aspx"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99430390",
-          "url": "http://jvn.jp/cert/JVNVU99430390"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#672268",
-          "url": "https://www.kb.cert.org/vuls/id/672268"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SPEAR - Redirect to SMB",
-          "url": "http://blog.cylance.com/redirect-to-smb"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "WinNT/Win95 Automatic Authentication Vulnerability (IE Bug #4) - 14 March 1997",
-          "url": "http://insecure.org/sploits/winnt.automatic.authentication.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年04月15日]\\n  掲載\\n[2015年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV15-014) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-04-15T17:46:52+09:00",
-    "datelastupdated": "2015-10-28T11:40:11+09:00",
-    "datepublic": "2014-04-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-008020",
+	"vulinfodata": {
+		"title": "Windows NTLM が file:// URL へのリダイレクト時に SMB 接続を行いユーザ認証情報を送信する問題",
+		"vulinfodescription": {
+			"overview": "HTTP 通信を行う Windows ソフトウェアには、HTTP リクエストを file:// プロトコル に転送された場合に、SMB を使って攻撃者が用意した SMB サーバに認証情報を送信する問題が存在します。 攻撃者の SMB サーバには、ユーザの認証情報が暗号化された形で記録されます。本脆弱性は別名 \"Redirect to SMB\" (SMB へのリダイレクト) として知られています。  データ送信による情報漏えい (CWE-201) ソフトウェアの多くは、ソフトウェアアップデートの確認等さまざまな機能に HTTP リクエストを使用しています。攻撃者は、中間者攻撃を行うことで HTTP リクエストを傍受し、HTTP リダイレクトを使って攻撃者が用意した SMB サーバへリダイレクトします。リダイレクト先が file:// ではじまる URL であり、かつ被害者の PC が Windows である場合、Windows は自動的に攻撃者の SMB サーバに接続しようとしてユーザの認証情報を送信します。送信された認証情報は、SMB サーバのログに記録されます。認証情報は暗号化されているものの、総当たり攻撃 (brute force attack) によって解読される可能性があります。  CWE-201: Information Exposure Through Sent Data http://cwe.mitre.org/data/definitions/201.html  HTTP リダイレクトによる攻撃手法は新規に発見されたものですが、SMB を使った同種の問題は以前から知られており、たとえば 1997年には Aaron Spangler のレポート が、2009年には Microsoft Security Advisory 974926 が公開されています。その他の参考情報は、本アドバイザリ末尾の【参考情報】を参照してください。  Aaron Spangler のレポート http://insecure.org/sploits/winnt.automatic.authentication.html  Microsoft Security Advisory 974926 https://technet.microsoft.com/en-us/library/security/974926.aspx"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "CapsSuite",
+					"cpe": {
+						"text": "cpe:/a:nec:capssuite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V4〜V5.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "暗号化されたユーザの認証情報を攻撃者に取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2015年4月13日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* 外部ネットワーク向けの SMB 通信 (139/tcp, 445/tcp) を遮断する 　* Using security policies to restrict NTLM traffic や Restricting NTLM usage 等を参考に NTLM の設定を変更する  　Using security policies to restrict NTLM traffic 　https://technet.microsoft.com/en-us/library/jj865668%28v=ws.10%29.aspx  　Restricting NTLM usage 　https://technet.microsoft.com/en-us/library/jj865676%28v=ws.10%29.aspx  　* ソフトウェアのデフォルトの認証機能として NTLM を使用しない 　* 強固なパスワードを設定し、定期的に変更する"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft Developer Network",
+					"vulinfoid": "URLDownloadToCacheFile function",
+					"url": "https://msdn.microsoft.com/en-us/library/ms775122%28v=vs.85%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Developer Network",
+					"vulinfoid": "URLDownloadToFile function",
+					"url": "https://msdn.microsoft.com/en-us/library/ms775123%28v=vs.85%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Developer Network",
+					"vulinfoid": "Urlmon library",
+					"url": "https://msdn.microsoft.com/en-us/library/aa939357%28v=WinEmbedded.5%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Security Advisory",
+					"vulinfoid": "Credential Relaying Attacks on Integrated Windows Authentication (974926)",
+					"url": "https://technet.microsoft.com/en-us/library/security/974926.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Security Advisory",
+					"vulinfoid": "Extended Protection for Authentication (973811)",
+					"url": "https://technet.microsoft.com/en-us/library/security/973811.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV15-014",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv15-014.html"
+				},
+				{
+					"type": "vendor",
+					"name": "TechNet Blogs",
+					"vulinfoid": "NTLM Blocking and You: Application Analysis and Auditing Methodologies in Windows 7",
+					"url": "http://blogs.technet.com/b/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "TechNet Library",
+					"vulinfoid": "Using security policies to restrict NTLM traffic",
+					"url": "https://technet.microsoft.com/en-us/library/jj865668%28v=ws.10%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "TechNet Library",
+					"vulinfoid": "Restricting NTLM usage",
+					"url": "https://technet.microsoft.com/en-us/library/jj865676%28v=ws.10%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "TechNet Library",
+					"vulinfoid": "Network Security: Restrict NTLM: Outgoing NTLM traffic to remote servers",
+					"url": "https://technet.microsoft.com/library/jj852213%28v=ws.10%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Windows Dev Center",
+					"vulinfoid": "WinINet Reference",
+					"url": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385483%28v=vs.85%29.aspx"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99430390",
+					"url": "http://jvn.jp/cert/JVNVU99430390"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#672268",
+					"url": "https://www.kb.cert.org/vuls/id/672268"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SPEAR - Redirect to SMB",
+					"url": "http://blog.cylance.com/redirect-to-smb"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "WinNT/Win95 Automatic Authentication Vulnerability (IE Bug #4) - 14 March 1997",
+					"url": "http://insecure.org/sploits/winnt.automatic.authentication.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年04月15日]\\n  掲載\\n[2015年10月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV15-014) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-04-15T17:46:52+09:00",
+		"datelastupdated": "2015-10-28T11:40:11+09:00",
+		"datepublic": "2014-04-13T00:00:00+09:00"
+	}
 }

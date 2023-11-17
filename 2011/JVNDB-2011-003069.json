@@ -1,304 +1,304 @@
 {
-  "vulinfoid": "JVNDB-2011-003069",
-  "vulinfodata": {
-    "title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC BIND には、サービス運用妨害 (DoS) の脆弱性が存在します。 ISC BIND には、不正なレコードの取り扱いに問題があり、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC が公開している情報では、以下のように記載されています。  \"ある種のネットワーク上のイベント(まだ特定されていません)によってBIND 9キャッシュサーバが不正なレコードをキャッシュすることがあり、そのレコードに対する問い合わせによってキャッシュサーバが表明違反(assertion failure)でクラッシュすることがあります。ISCでは現在このような不整合な状態を生じさせるレコードがどのようにしてキャッシュされたのか調査中です。現状の対策として、ISCではこの状態から安全に復帰し、異常終了を防止するパッチを作成しました。 このパッチは2つの部分からなります。クライアントからの問い合わせを処理する際、クライアントへの応答を作成するプログラムコードはまず問い合わせられた名前がキャッシュされているか調べます。パッチの第一の部分では不整合なデータがキャッシュから取り出されないようにします。パッチの第二の部分では、クライアントへの応答作成中にこの類いの不整合なデータが現れてもnamedがクラッシュしないようにします。\""
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "IBM",
-          "productname": "IBM AIX",
-          "cpe": {
-            "text": "cpe:/o:ibm:aix",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.1 Standard Edition",
-            "7.1 "
-          ]
-        },
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.0.x から 9.6.x",
-            "9.4-ESV から 9.4-ESV-R5",
-            "9.6-ESV から 9.6-ESV-R5",
-            "9.7.0 から 9.7.4",
-            "9.8.0 から 9.8.1",
-            "9.9.0a1 から 9.9.0b1"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.7 から v10.7.4"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X Server",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.7 から v10.7.4"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Solaris",
-          "cpe": {
-            "text": "cpe:/o:oracle:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 (SPARC)",
-            "10 (x86)",
-            "11 ",
-            "8 (SPARC)",
-            "8 (x86)",
-            "9 (SPARC)",
-            "9 (x86)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0 (client) ",
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux HPC Node",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server EUS",
-          "cpe": {
-            "text": "cpe:/a:redhat:rhel_server_eus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.1.z  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] ISC や配布元が提供する情報をもとに、対策済みのバージョンへアップデートしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT5501",
-          "url": "http://support.apple.com/kb/HT5501"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT5501",
-          "url": "http://support.apple.com/kb/HT5501?viewlocale=ja_JP"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "IV11106",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=isg1IV11106"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "IV11248",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=isg1IV11248"
-        },
-        {
-          "type": "vendor",
-          "name": "ISC BIND",
-          "vulinfoid": "BIND 9キャッシュサーバがquery.cでエラーログを出してクラッシュする",
-          "url": "https://www.isc.org/advisorycve20114313JP"
-        },
-        {
-          "type": "vendor",
-          "name": "ISC BIND",
-          "vulinfoid": "BIND 9 Resolver crashes after logging an error in query.c",
-          "url": "https://www.isc.org/software/bind/advisories/cve-2011-4313"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2011:1458",
-          "url": "http://rhn.redhat.com/errata/RHSA-2011-1458.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2011:1459",
-          "url": "http://rhn.redhat.com/errata/RHSA-2011-1459.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "cve_2011_4313_denial_of",
-          "url": "http://blogs.oracle.com/sunsecurity/entry/cve_2011_4313_denial_of"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-4313",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4313"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT REPORT",
-          "vulinfoid": "JPCERT-WR-2011-4501",
-          "url": "https://www.jpcert.or.jp/wr/2011/wr114501.html#1"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2011-0031",
-          "url": "https://www.jpcert.or.jp/at/2011/at110031.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "(緊急) BIND 9.xのキャッシュDNSサーバー機能の実装上の問題によるnamedのサービス停止について",
-          "url": "http://jprs.jp/tech/security/2011-11-17-bind9-vuln-crash-after-logging-an-error.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#381963",
-          "url": "http://jvn.jp/cert/JVNVU381963/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#606539",
-          "url": "http://jvn.jp/cert/JVNVU606539/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2011-4313",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4313"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#606539",
-          "url": "http://www.kb.cert.org/vuls/id/606539"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-noinfo",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "情報不足"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2011年11月28日]\\n  掲載\\n[2011年12月08日]\\n  CVSSによる深刻度：情報を追加\\n  影響を受けるシステム：IBM (IV11106、IV11248)、オラクル、レッドハット (RHSA-2011:1458、RHSA-2011:1459) の情報を追加\\n  ベンダ情報：IBM (IV11106、IV11248)、オラクル、レッドハット (RHSA-2011:1458、RHSA-2011:1459) を追加\\n  CWEによる脆弱性タイプ一覧：情報を追加\\n[2012年10月05日]\\n  影響を受けるシステム：アップル (HT5501) の情報を追加\\n  ベンダ情報：アップル (HT5501) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2011-11-28T14:57:15+09:00",
-    "datelastupdated": "2012-10-05T18:27:20+09:00",
-    "datepublic": "2011-11-24T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2011-003069",
+	"vulinfodata": {
+		"title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC BIND には、サービス運用妨害 (DoS) の脆弱性が存在します。 ISC BIND には、不正なレコードの取り扱いに問題があり、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC が公開している情報では、以下のように記載されています。  \"ある種のネットワーク上のイベント(まだ特定されていません)によってBIND 9キャッシュサーバが不正なレコードをキャッシュすることがあり、そのレコードに対する問い合わせによってキャッシュサーバが表明違反(assertion failure)でクラッシュすることがあります。ISCでは現在このような不整合な状態を生じさせるレコードがどのようにしてキャッシュされたのか調査中です。現状の対策として、ISCではこの状態から安全に復帰し、異常終了を防止するパッチを作成しました。 このパッチは2つの部分からなります。クライアントからの問い合わせを処理する際、クライアントへの応答を作成するプログラムコードはまず問い合わせられた名前がキャッシュされているか調べます。パッチの第一の部分では不整合なデータがキャッシュから取り出されないようにします。パッチの第二の部分では、クライアントへの応答作成中にこの類いの不整合なデータが現れてもnamedがクラッシュしないようにします。\""
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "IBM",
+					"productname": "IBM AIX",
+					"cpe": {
+						"text": "cpe:/o:ibm:aix",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.1 Standard Edition",
+						"7.1 "
+					]
+				},
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.0.x から 9.6.x",
+						"9.4-ESV から 9.4-ESV-R5",
+						"9.6-ESV から 9.6-ESV-R5",
+						"9.7.0 から 9.7.4",
+						"9.8.0 から 9.8.1",
+						"9.9.0a1 から 9.9.0b1"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.7 から v10.7.4"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X Server",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.7 から v10.7.4"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Solaris",
+					"cpe": {
+						"text": "cpe:/o:oracle:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 (SPARC)",
+						"10 (x86)",
+						"11 ",
+						"8 (SPARC)",
+						"8 (x86)",
+						"9 (SPARC)",
+						"9 (x86)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0 (client) ",
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux HPC Node",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server EUS",
+					"cpe": {
+						"text": "cpe:/a:redhat:rhel_server_eus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.1.z  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] ISC や配布元が提供する情報をもとに、対策済みのバージョンへアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT5501",
+					"url": "http://support.apple.com/kb/HT5501"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT5501",
+					"url": "http://support.apple.com/kb/HT5501?viewlocale=ja_JP"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "IV11106",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=isg1IV11106"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "IV11248",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=isg1IV11248"
+				},
+				{
+					"type": "vendor",
+					"name": "ISC BIND",
+					"vulinfoid": "BIND 9キャッシュサーバがquery.cでエラーログを出してクラッシュする",
+					"url": "https://www.isc.org/advisorycve20114313JP"
+				},
+				{
+					"type": "vendor",
+					"name": "ISC BIND",
+					"vulinfoid": "BIND 9 Resolver crashes after logging an error in query.c",
+					"url": "https://www.isc.org/software/bind/advisories/cve-2011-4313"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2011:1458",
+					"url": "http://rhn.redhat.com/errata/RHSA-2011-1458.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2011:1459",
+					"url": "http://rhn.redhat.com/errata/RHSA-2011-1459.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "cve_2011_4313_denial_of",
+					"url": "http://blogs.oracle.com/sunsecurity/entry/cve_2011_4313_denial_of"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-4313",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4313"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT REPORT",
+					"vulinfoid": "JPCERT-WR-2011-4501",
+					"url": "https://www.jpcert.or.jp/wr/2011/wr114501.html#1"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2011-0031",
+					"url": "https://www.jpcert.or.jp/at/2011/at110031.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "(緊急) BIND 9.xのキャッシュDNSサーバー機能の実装上の問題によるnamedのサービス停止について",
+					"url": "http://jprs.jp/tech/security/2011-11-17-bind9-vuln-crash-after-logging-an-error.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#381963",
+					"url": "http://jvn.jp/cert/JVNVU381963/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#606539",
+					"url": "http://jvn.jp/cert/JVNVU606539/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2011-4313",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4313"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#606539",
+					"url": "http://www.kb.cert.org/vuls/id/606539"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-noinfo",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "情報不足"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2011年11月28日]\\n  掲載\\n[2011年12月08日]\\n  CVSSによる深刻度：情報を追加\\n  影響を受けるシステム：IBM (IV11106、IV11248)、オラクル、レッドハット (RHSA-2011:1458、RHSA-2011:1459) の情報を追加\\n  ベンダ情報：IBM (IV11106、IV11248)、オラクル、レッドハット (RHSA-2011:1458、RHSA-2011:1459) を追加\\n  CWEによる脆弱性タイプ一覧：情報を追加\\n[2012年10月05日]\\n  影響を受けるシステム：アップル (HT5501) の情報を追加\\n  ベンダ情報：アップル (HT5501) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2011-11-28T14:57:15+09:00",
+		"datelastupdated": "2012-10-05T18:27:20+09:00",
+		"datepublic": "2011-11-24T00:00:00+09:00"
+	}
 }

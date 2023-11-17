@@ -1,86 +1,86 @@
 {
-  "vulinfoid": "JVNDB-2021-001378",
-  "vulinfodata": {
-    "title": "Windows 版 MySQL に権限昇格の脆弱性",
-    "vulinfodescription": {
-      "overview": "Windows 版 MySQL には権限昇格の脆弱性 (CVE-2021-2307) が存在します。 当該製品に含まれる OpenSSL コンポーネントは、環境変数 OPENSSLDIR で /build_area/ のサブディレクトリを指定しています。Windows システムにおいて、このパスは C:\\build_area と解釈されます。MySQL には OpenSSL コンポーネントを利用する特権サービスがあり、Windows システム上の一般ユーザはシステムのルートディレクトリからサブディレクトリを作成できるため、細工された openssl.cnf への適切なパスを作成され、SYSTEM 権限で任意のコードを実行される可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "オラクル",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:oracle:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.7.33 およびそれ以前",
-            "8.0.23 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.1",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "当該製品がインストールされている Windows システムにおいて、ユーザが SYSTEM 権限で任意のコードを実行する可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] アップデートが適用できない環境では、C:\\build_area ディレクトリを作成し、一般ユーザが書き込みできないようにアクセス制限してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2021",
-          "url": "https://www.oracle.com/security-alerts/cpuapr2021.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-2307",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2307"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92599577",
-          "url": "http://jvn.jp/cert/JVNVU92599577"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#567764",
-          "url": "https://kb.cert.org/vuls/id/567764"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-04-23T16:14:20+09:00",
-          "description": "[2021年04月23日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-04-23T16:14:20+09:00",
-    "datelastupdated": "2021-04-23T16:14:20+09:00",
-    "datepublic": "2021-04-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001378",
+	"vulinfodata": {
+		"title": "Windows 版 MySQL に権限昇格の脆弱性",
+		"vulinfodescription": {
+			"overview": "Windows 版 MySQL には権限昇格の脆弱性 (CVE-2021-2307) が存在します。 当該製品に含まれる OpenSSL コンポーネントは、環境変数 OPENSSLDIR で /build_area/ のサブディレクトリを指定しています。Windows システムにおいて、このパスは C:\\build_area と解釈されます。MySQL には OpenSSL コンポーネントを利用する特権サービスがあり、Windows システム上の一般ユーザはシステムのルートディレクトリからサブディレクトリを作成できるため、細工された openssl.cnf への適切なパスを作成され、SYSTEM 権限で任意のコードを実行される可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "オラクル",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:oracle:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.7.33 およびそれ以前",
+						"8.0.23 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.1",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品がインストールされている Windows システムにおいて、ユーザが SYSTEM 権限で任意のコードを実行する可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] アップデートが適用できない環境では、C:\\build_area ディレクトリを作成し、一般ユーザが書き込みできないようにアクセス制限してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - April 2021",
+					"url": "https://www.oracle.com/security-alerts/cpuapr2021.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-2307",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2307"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92599577",
+					"url": "http://jvn.jp/cert/JVNVU92599577"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#567764",
+					"url": "https://kb.cert.org/vuls/id/567764"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-04-23T16:14:20+09:00",
+					"description": "[2021年04月23日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-04-23T16:14:20+09:00",
+		"datelastupdated": "2021-04-23T16:14:20+09:00",
+		"datepublic": "2021-04-22T00:00:00+09:00"
+	}
 }

@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2016-002136",
-  "vulinfodata": {
-    "title": "Xen の arch/x86/xstate.c の xrstor 関数における他のゲストから重要なレジスタコンテンツ情報を取得される脆弱性",
-    "vulinfodescription": {
-      "overview": "Xen の arch/x86/xstate.c の xrstor 関数は、AMD64 プロセッサ上で稼動する場合、ハードウェアの FSW.ES ビットへの書き込みを適切に処理しないため、他のゲストから重要なレジスタコンテンツ情報を取得される脆弱性が存在します。  本脆弱性は CVE-2013-2076 の修正が不完全だったことによる脆弱性です。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御) と識別されています。 http://cwe.mitre.org/data/definitions/284.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Fedora Project",
-          "productname": "Fedora",
-          "cpe": {
-            "text": "cpe:/o:fedoraproject:fedora",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "22",
-            "23"
-          ]
-        },
-        {
-          "name": "Xen プロジェクト",
-          "productname": "Xen",
-          "cpe": {
-            "text": "cpe:/o:xen:xen",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.x"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle VM サーバー",
-          "cpe": {
-            "text": "cpe:/o:oracle:vm_server",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "1.7",
-          "vector": "AV:L/AC:L/Au:S/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "3.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルのゲスト OS ユーザにより、保留中の例外およびマスクビットを利用されることで、他のゲストから重要なレジスタコンテンツ情報を取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-5f196e4e4a",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/181699.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-e5432ca977",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/181729.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Xen",
-          "vulinfoid": "xsa172.patch",
-          "url": "http://xenbits.xen.org/xsa/xsa172.patch"
-        },
-        {
-          "type": "vendor",
-          "name": "Xen",
-          "vulinfoid": "xsa172-4.3.patch",
-          "url": "http://xenbits.xen.org/xsa/xsa172-4.3.patch"
-        },
-        {
-          "type": "vendor",
-          "name": "Xen Security Advisory",
-          "vulinfoid": "XSA-172",
-          "url": "http://xenbits.xen.org/xsa/advisory-172.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-3158",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3158"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-3158",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3158"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年04月21日]\\n  掲載\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-04-21T17:07:00+09:00",
-    "datelastupdated": "2016-11-17T16:30:10+09:00",
-    "datepublic": "2016-03-24T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-002136",
+	"vulinfodata": {
+		"title": "Xen の arch/x86/xstate.c の xrstor 関数における他のゲストから重要なレジスタコンテンツ情報を取得される脆弱性",
+		"vulinfodescription": {
+			"overview": "Xen の arch/x86/xstate.c の xrstor 関数は、AMD64 プロセッサ上で稼動する場合、ハードウェアの FSW.ES ビットへの書き込みを適切に処理しないため、他のゲストから重要なレジスタコンテンツ情報を取得される脆弱性が存在します。  本脆弱性は CVE-2013-2076 の修正が不完全だったことによる脆弱性です。  補足情報 : CWE による脆弱性タイプは、CWE-284: Improper Access Control (不適切なアクセス制御) と識別されています。 http://cwe.mitre.org/data/definitions/284.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Fedora Project",
+					"productname": "Fedora",
+					"cpe": {
+						"text": "cpe:/o:fedoraproject:fedora",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"22",
+						"23"
+					]
+				},
+				{
+					"name": "Xen プロジェクト",
+					"productname": "Xen",
+					"cpe": {
+						"text": "cpe:/o:xen:xen",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.x"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle VM サーバー",
+					"cpe": {
+						"text": "cpe:/o:oracle:vm_server",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "1.7",
+					"vector": "AV:L/AC:L/Au:S/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "3.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルのゲスト OS ユーザにより、保留中の例外およびマスクビットを利用されることで、他のゲストから重要なレジスタコンテンツ情報を取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-5f196e4e4a",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/181699.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-e5432ca977",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/181729.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Xen",
+					"vulinfoid": "xsa172.patch",
+					"url": "http://xenbits.xen.org/xsa/xsa172.patch"
+				},
+				{
+					"type": "vendor",
+					"name": "Xen",
+					"vulinfoid": "xsa172-4.3.patch",
+					"url": "http://xenbits.xen.org/xsa/xsa172-4.3.patch"
+				},
+				{
+					"type": "vendor",
+					"name": "Xen Security Advisory",
+					"vulinfoid": "XSA-172",
+					"url": "http://xenbits.xen.org/xsa/advisory-172.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-3158",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3158"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-3158",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3158"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年04月21日]\\n  掲載\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-04-21T17:07:00+09:00",
+		"datelastupdated": "2016-11-17T16:30:10+09:00",
+		"datepublic": "2016-03-24T00:00:00+09:00"
+	}
 }

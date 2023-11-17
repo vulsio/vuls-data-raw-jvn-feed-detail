@@ -1,244 +1,244 @@
 {
-  "vulinfoid": "JVNDB-2018-000102",
-  "vulinfodata": {
-    "title": "Denbun における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社ネオジャパンが提供する Denbun は Web メールシステムです。Denbun には、次の複数の脆弱性が存在します。 ・ユーザアカウントに関する認証情報がハードコードされている問題 (CWE-798) - CVE-2018-0680 ・管理設定画面に関する認証情報がハードコードされている問題 (CWE-798) - CVE-2018-0681 ・セッション管理不備の脆弱性 (CWE-639) - CVE-2018-0682 ・Cookie データの処理に起因するスタックベースのバッファオーバーフローの脆弱性 (CWE-121) - CVE-2018-0683 ・multipart/form-data 形式データの処理に起因するスタックベースのバッファオーバーフローの脆弱性 (CWE-121) - CVE-2018-0684 ・メール検索に関する HTTP リクエストの処理における SQL インジェクションの脆弱性 (CWE-89) - CVE-2018-0685 ・任意の実行ファイルをアップロード可能な脆弱性 (CWE-434) - CVE-2018-0686 ・HTML メールの表示機能にクロスサイトスクリプティングの脆弱性 (CWE-79) - CVE-2018-0687 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社ネオジャパン",
-          "productname": "Denbun IMAP",
-          "cpe": {
-            "text": "cpe:/a:neo_japan:denbun_imap",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "版 V3.3I R3.0 およびそれ以前（CVE-2018-0684）",
-            "版 V3.3I R4.0 およびそれ以前（CVE-2018-0680, CVE-2018-0681, CVE-2018-0682, CVE-2018-0683, CVE-2018-0686, CVE-2018-0687）"
-          ]
-        },
-        {
-          "name": "株式会社ネオジャパン",
-          "productname": "Denbun POP",
-          "cpe": {
-            "text": "cpe:/a:neo_japan:denbun_pop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "版 V3.3P R3.0 およびそれ以前（CVE-2018-0684）",
-            "版 V3.3P R4.0 およびそれ以前（CVE-2018-0680, CVE-2018-0681, CVE-2018-0682, CVE-2018-0683, CVE-2018-0685, CVE-2018-0686, CVE-2018-0687）"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・遠隔の第三者によって、メールの閲覧や送信、設定変更などが行われる - CVE-2018-0680, CVE-2018-0682 ・遠隔の第三者によって、管理設定画面にログインされ、メールサーバの設定を変更される - CVE-2018-0681 ・遠隔の第三者によって、任意のコードを実行されたり、サービス運用妨害 (DoS) 攻撃を受けたりする - CVE-2018-0683, CVE-2018-0684 ・当該製品にログインしているユーザによって、任意の SQL 文を実行される - CVE-2018-0685 ・当該製品にログインしているユーザによって、任意の実行ファイルをアップロードされ実行される - CVE-2018-0686 ・当該製品にログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2018-0687"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "CVE-2018-0680, CVE-2018-0681, CVE-2018-0682, CVE-2018-0683, CVE-2018-0684, CVE- 2018-0685, CVE-2018-0687 への対応: [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  CVE-2018-0686 への対応: [ワークアラウンドを実施する] 当該製品と組み合わせて使う web サーバの設定で、アップロードされたファイルを実行しないよう制限する  詳しくは、製品開発者が提供する情報をご確認ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "株式会社ネオジャパン",
-          "vulinfoid": "Denbun POP版",
-          "url": "http://denbun.com/ja/pop/support/security/181003.html"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社ネオジャパン",
-          "vulinfoid": "Denbun IMAP版",
-          "url": "http://denbun.com/ja/imap/support/security/181003.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0685",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0685"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0686",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0686"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0687",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0687"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0680",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0680"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0681",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0681"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0682",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0682"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0683",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0683"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0684",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0684"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#00344155",
-          "url": "https://jvn.jp/jp/JVN00344155/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0684",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0684"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0685",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0685"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0686",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0686"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0687",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0687"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0680",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0680"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0681",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0681"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0682",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0682"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0683",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0683"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-89",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
-          "title": "SQLインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-255",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
-          "title": "証明書・パスワードの管理"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-09-28T18:48:27+09:00",
-          "description": "[2018年10月04日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-07-11T15:34:26+09:00",
-          "description": "[2019年07月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0680) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0681) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0682) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0683) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0684) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0685) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0686) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0687) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-10-04T12:16:43+09:00",
-    "datelastupdated": "2019-07-11T15:56:56+09:00",
-    "datepublic": "2018-10-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-000102",
+	"vulinfodata": {
+		"title": "Denbun における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社ネオジャパンが提供する Denbun は Web メールシステムです。Denbun には、次の複数の脆弱性が存在します。 ・ユーザアカウントに関する認証情報がハードコードされている問題 (CWE-798) - CVE-2018-0680 ・管理設定画面に関する認証情報がハードコードされている問題 (CWE-798) - CVE-2018-0681 ・セッション管理不備の脆弱性 (CWE-639) - CVE-2018-0682 ・Cookie データの処理に起因するスタックベースのバッファオーバーフローの脆弱性 (CWE-121) - CVE-2018-0683 ・multipart/form-data 形式データの処理に起因するスタックベースのバッファオーバーフローの脆弱性 (CWE-121) - CVE-2018-0684 ・メール検索に関する HTTP リクエストの処理における SQL インジェクションの脆弱性 (CWE-89) - CVE-2018-0685 ・任意の実行ファイルをアップロード可能な脆弱性 (CWE-434) - CVE-2018-0686 ・HTML メールの表示機能にクロスサイトスクリプティングの脆弱性 (CWE-79) - CVE-2018-0687 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社ネオジャパン",
+					"productname": "Denbun IMAP",
+					"cpe": {
+						"text": "cpe:/a:neo_japan:denbun_imap",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"版 V3.3I R3.0 およびそれ以前（CVE-2018-0684）",
+						"版 V3.3I R4.0 およびそれ以前（CVE-2018-0680, CVE-2018-0681, CVE-2018-0682, CVE-2018-0683, CVE-2018-0686, CVE-2018-0687）"
+					]
+				},
+				{
+					"name": "株式会社ネオジャパン",
+					"productname": "Denbun POP",
+					"cpe": {
+						"text": "cpe:/a:neo_japan:denbun_pop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"版 V3.3P R3.0 およびそれ以前（CVE-2018-0684）",
+						"版 V3.3P R4.0 およびそれ以前（CVE-2018-0680, CVE-2018-0681, CVE-2018-0682, CVE-2018-0683, CVE-2018-0685, CVE-2018-0686, CVE-2018-0687）"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・遠隔の第三者によって、メールの閲覧や送信、設定変更などが行われる - CVE-2018-0680, CVE-2018-0682 ・遠隔の第三者によって、管理設定画面にログインされ、メールサーバの設定を変更される - CVE-2018-0681 ・遠隔の第三者によって、任意のコードを実行されたり、サービス運用妨害 (DoS) 攻撃を受けたりする - CVE-2018-0683, CVE-2018-0684 ・当該製品にログインしているユーザによって、任意の SQL 文を実行される - CVE-2018-0685 ・当該製品にログインしているユーザによって、任意の実行ファイルをアップロードされ実行される - CVE-2018-0686 ・当該製品にログインしているユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2018-0687"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "CVE-2018-0680, CVE-2018-0681, CVE-2018-0682, CVE-2018-0683, CVE-2018-0684, CVE- 2018-0685, CVE-2018-0687 への対応: [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  CVE-2018-0686 への対応: [ワークアラウンドを実施する] 当該製品と組み合わせて使う web サーバの設定で、アップロードされたファイルを実行しないよう制限する  詳しくは、製品開発者が提供する情報をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "株式会社ネオジャパン",
+					"vulinfoid": "Denbun POP版",
+					"url": "http://denbun.com/ja/pop/support/security/181003.html"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社ネオジャパン",
+					"vulinfoid": "Denbun IMAP版",
+					"url": "http://denbun.com/ja/imap/support/security/181003.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0685",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0685"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0686",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0686"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0687",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0687"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0680",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0680"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0681",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0681"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0682",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0682"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0683",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0683"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0684",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0684"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#00344155",
+					"url": "https://jvn.jp/jp/JVN00344155/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0684",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0684"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0685",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0685"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0686",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0686"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0687",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0687"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0680",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0680"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0681",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0681"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0682",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0682"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0683",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0683"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-255",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+					"title": "証明書・パスワードの管理"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-09-28T18:48:27+09:00",
+					"description": "[2018年10月04日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-07-11T15:34:26+09:00",
+					"description": "[2019年07月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0680) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0681) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0682) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0683) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0684) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0685) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0686) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0687) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-10-04T12:16:43+09:00",
+		"datelastupdated": "2019-07-11T15:56:56+09:00",
+		"datepublic": "2018-10-04T00:00:00+09:00"
+	}
 }

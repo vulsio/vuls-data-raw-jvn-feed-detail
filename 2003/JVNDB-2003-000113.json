@@ -1,253 +1,253 @@
 {
-  "vulinfoid": "JVNDB-2003-000113",
-  "vulinfodata": {
-    "title": "Samba の trans2.c におけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Samba 2.2.8 以前には、非常に長いファイル名を持つファイルを取り扱う際に、smbd/trans2.c 内の StrnCpy() 関数においてバッファオーバーフローが生じる問題が存在します。  StrnCpy(fname,pname,namelen) と記された StrnCpy() 関数では、namelen を使用して pstring 型 (1024 バイトの char 型配列) の変数 fname 内に pname をコピーします。そのため、pname に 1024 バイトより大きい値が与えられることにより、バッファオーバーフローを発生させ、メモリ領域を上書きすることが可能です。  結果として、リモートの攻撃者により意図的に作成されたファイルを取り扱うことにより、smbd の実行権限 (通常 root 権限) で任意のコードを実行される可能性があります。(CAN-2003-0201)  さらに、この問題に由来する潜在的なバッファオーバーフローの問題がこの他 3 箇所でベンダで発見されており (CAN-2003-0196)、これら全ての問題に対して修正されたバージョン Samba 2.2.8a が公開されています。  尚、現時点でこの問題 (CAN-2003-0196) の詳細は未詳です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Samba Project",
-          "productname": "Samba",
-          "cpe": {
-            "text": "cpe:/a:samba:samba",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.2.8 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ4",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_4",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ550",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_550",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQXTR",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_xtr",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.00 ",
-            "11.11 ",
-            "11.22 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  ",
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX00254",
-          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00956530"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX0304-254",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0304-254.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:137",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-137.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Samba News",
-          "vulinfoid": "samba",
-          "url": "http://www.samba.org/samba/samba.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "53924",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53924-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "53581",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53581-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "53924",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53924-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "53581",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53581-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2003-27",
-          "url": "http://www.turbolinux.com/security/2003/TLSA-2003-27.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "ミラクル・リナックス株式会社",
-          "vulinfoid": "Top Page",
-          "url": "http://www.miraclelinux.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:137",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-137J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2003-27",
-          "url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-27j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0201",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0201"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0201",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0201"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7295",
-          "url": "http://www.securityfocus.com/bid/7295"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7294",
-          "url": "http://www.securityfocus.com/bid/7294"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#267873",
-          "url": "http://www.kb.cert.org/vuls/id/267873"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-04-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000113",
+	"vulinfodata": {
+		"title": "Samba の trans2.c におけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Samba 2.2.8 以前には、非常に長いファイル名を持つファイルを取り扱う際に、smbd/trans2.c 内の StrnCpy() 関数においてバッファオーバーフローが生じる問題が存在します。  StrnCpy(fname,pname,namelen) と記された StrnCpy() 関数では、namelen を使用して pstring 型 (1024 バイトの char 型配列) の変数 fname 内に pname をコピーします。そのため、pname に 1024 バイトより大きい値が与えられることにより、バッファオーバーフローを発生させ、メモリ領域を上書きすることが可能です。  結果として、リモートの攻撃者により意図的に作成されたファイルを取り扱うことにより、smbd の実行権限 (通常 root 権限) で任意のコードを実行される可能性があります。(CAN-2003-0201)  さらに、この問題に由来する潜在的なバッファオーバーフローの問題がこの他 3 箇所でベンダで発見されており (CAN-2003-0196)、これら全ての問題に対して修正されたバージョン Samba 2.2.8a が公開されています。  尚、現時点でこの問題 (CAN-2003-0196) の詳細は未詳です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Samba Project",
+					"productname": "Samba",
+					"cpe": {
+						"text": "cpe:/a:samba:samba",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.2.8 およびそれ以前"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ4",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_4",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ550",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_550",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQXTR",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_xtr",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.00 ",
+						"11.11 ",
+						"11.22 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  ",
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX00254",
+					"url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00956530"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX0304-254",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0304-254.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:137",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-137.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Samba News",
+					"vulinfoid": "samba",
+					"url": "http://www.samba.org/samba/samba.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "53924",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53924-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "53581",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53581-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "53924",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53924-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "53581",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-53581-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2003-27",
+					"url": "http://www.turbolinux.com/security/2003/TLSA-2003-27.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "ミラクル・リナックス株式会社",
+					"vulinfoid": "Top Page",
+					"url": "http://www.miraclelinux.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:137",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-137J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2003-27",
+					"url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-27j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0201",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0201"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0201",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0201"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7295",
+					"url": "http://www.securityfocus.com/bid/7295"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7294",
+					"url": "http://www.securityfocus.com/bid/7294"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#267873",
+					"url": "http://www.kb.cert.org/vuls/id/267873"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-04-07T00:00:00+09:00"
+	}
 }

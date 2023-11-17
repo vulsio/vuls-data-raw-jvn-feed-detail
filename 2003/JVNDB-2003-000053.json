@@ -1,286 +1,286 @@
 {
-  "vulinfoid": "JVNDB-2003-000053",
-  "vulinfodata": {
-    "title": "Apache HTTP Server のアクセスログ作成時の不備により任意のコードを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Apache には、アクセスログおよびエラーログを生成する際に、特定のエスケープシーケンスに対して適切なフィルタリングを行わない問題が存在します。  リモートの攻撃者は、意図的な HTTP リクエストを作成し、問題を抱えるサーバに送信することで、アクセスログ、もしくはエラーログに特定のエスケープシーケンスを注入することが可能です。更に、多くのターミナルエミュレータに存在する、エスケープシーケンスを用いた任意の文字列をタイトルバーに表示可能な問題と併用することで、ターミナルエミュレータを利用するユーザの権限で任意のコードを実行できる可能性があります。  尚、このターミナルエミュレータの問題の詳細に関しては CAN-2003-0070 を参照してください。  この 2 つのログファイル生成時における問題は、Apahe 1.3 では、当初 Apache 1.3.25 以降で解消されると報告されていましたが、エラーログファイルの問題 (CAN-2003-0020) に関しては、Apache 1.3.29 以前においても影響を受けることがベンダより報告され、2004 年 5 月 12 日付けでこの問題を修正した Apache 1.3.31 がリリースされています。  尚、アクセスログの問題 (CAN-2003-0083) に関しては、Apache 1.3.26 以降で解消されることがベンダより報告されています。  また、Apahe 2.0 では、当初 Apache 2.0.46 以降で解消されると報告されていましたが、エラーログファイルの問題 (CAN-2003-0020) に関しては、Apache 2.0.48 以前においても \"-DAP_UNSAFE_ERROR_LOG_UNESCAPED\" オプションをコンパイル時に指定した場合に影響を受けることがベンダより報告され、2004 年 3 月 19 日付けでこの問題を修正した Apache 2.0.49 がリリースされています。 尚、アクセスログの問題 (CAN-2003-0083) に関しては、Apache 2.0.46 以降で解消されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:apache:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.3.29 およびそれ以前",
-            "2.0.48 およびそれ以前"
-          ]
-        },
-        {
-          "name": "IBM",
-          "productname": "IBM HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:ibm:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0.42.2",
-            "2.0.47.1 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ4",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_4",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ550",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_550",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQXTR",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_xtr",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.00 ",
-            "11.04 ",
-            "11.11 ",
-            "11.22 ",
-            "11.23 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  ",
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "2.0 CHANGES",
-          "url": "http://www.apache.org/dist/httpd/CHANGES_2.0"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "1.3 CHANGES",
-          "url": "http://www.apache.org/dist/httpd/CHANGES_1.3"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX01069",
-          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01069"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX01022",
-          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01022"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX01022",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01022.html"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX01069",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01069.html"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "PK13230",
-          "url": "http://www-1.ibm.com/support/docview.wss?uid=swg1PK13230"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "apache",
-          "url": "http://www.miraclelinux.com/support/update/data/apache.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:139",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-139.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:243",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-243.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "4 Apache &amp; mod_ssl Security Update 2.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "550 Apache &amp; mod_ssl Security Update 0.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "XTR Apache &amp; mod_ssl Security Update 1.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2004-17",
-          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-17.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:139",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-139J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:243",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-243J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2004-17",
-          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-17j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0083",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0083"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "11412",
-          "url": "http://xforce.iss.net/xforce/xfdb/11412"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0083",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0083"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA12377",
-          "url": "http://secunia.com/advisories/12377/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "9930",
-          "url": "http://www.securityfocus.com/bid/9930"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-02-24T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000053",
+	"vulinfodata": {
+		"title": "Apache HTTP Server のアクセスログ作成時の不備により任意のコードを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Apache には、アクセスログおよびエラーログを生成する際に、特定のエスケープシーケンスに対して適切なフィルタリングを行わない問題が存在します。  リモートの攻撃者は、意図的な HTTP リクエストを作成し、問題を抱えるサーバに送信することで、アクセスログ、もしくはエラーログに特定のエスケープシーケンスを注入することが可能です。更に、多くのターミナルエミュレータに存在する、エスケープシーケンスを用いた任意の文字列をタイトルバーに表示可能な問題と併用することで、ターミナルエミュレータを利用するユーザの権限で任意のコードを実行できる可能性があります。  尚、このターミナルエミュレータの問題の詳細に関しては CAN-2003-0070 を参照してください。  この 2 つのログファイル生成時における問題は、Apahe 1.3 では、当初 Apache 1.3.25 以降で解消されると報告されていましたが、エラーログファイルの問題 (CAN-2003-0020) に関しては、Apache 1.3.29 以前においても影響を受けることがベンダより報告され、2004 年 5 月 12 日付けでこの問題を修正した Apache 1.3.31 がリリースされています。  尚、アクセスログの問題 (CAN-2003-0083) に関しては、Apache 1.3.26 以降で解消されることがベンダより報告されています。  また、Apahe 2.0 では、当初 Apache 2.0.46 以降で解消されると報告されていましたが、エラーログファイルの問題 (CAN-2003-0020) に関しては、Apache 2.0.48 以前においても \"-DAP_UNSAFE_ERROR_LOG_UNESCAPED\" オプションをコンパイル時に指定した場合に影響を受けることがベンダより報告され、2004 年 3 月 19 日付けでこの問題を修正した Apache 2.0.49 がリリースされています。 尚、アクセスログの問題 (CAN-2003-0083) に関しては、Apache 2.0.46 以降で解消されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:apache:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.3.29 およびそれ以前",
+						"2.0.48 およびそれ以前"
+					]
+				},
+				{
+					"name": "IBM",
+					"productname": "IBM HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:ibm:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0.42.2",
+						"2.0.47.1 およびそれ以前"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ4",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_4",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ550",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_550",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQXTR",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_xtr",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.00 ",
+						"11.04 ",
+						"11.11 ",
+						"11.22 ",
+						"11.23 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  ",
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "2.0 CHANGES",
+					"url": "http://www.apache.org/dist/httpd/CHANGES_2.0"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "1.3 CHANGES",
+					"url": "http://www.apache.org/dist/httpd/CHANGES_1.3"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX01069",
+					"url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01069"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX01022",
+					"url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01022"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX01022",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01022.html"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX01069",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01069.html"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "PK13230",
+					"url": "http://www-1.ibm.com/support/docview.wss?uid=swg1PK13230"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "apache",
+					"url": "http://www.miraclelinux.com/support/update/data/apache.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:139",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-139.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:243",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-243.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "4 Apache &amp; mod_ssl Security Update 2.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "550 Apache &amp; mod_ssl Security Update 0.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "XTR Apache &amp; mod_ssl Security Update 1.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2004-17",
+					"url": "http://www.turbolinux.com/security/2004/TLSA-2004-17.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:139",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-139J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:243",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-243J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2004-17",
+					"url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-17j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0083",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0083"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "11412",
+					"url": "http://xforce.iss.net/xforce/xfdb/11412"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0083",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0083"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA12377",
+					"url": "http://secunia.com/advisories/12377/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "9930",
+					"url": "http://www.securityfocus.com/bid/9930"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-02-24T00:00:00+09:00"
+	}
 }

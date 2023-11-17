@@ -1,219 +1,219 @@
 {
-  "vulinfoid": "JVNDB-2021-000016",
-  "vulinfodata": {
-    "title": "SolarView Compact における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社コンテックが提供する SolarView Compact には、次の複数の脆弱性が存在します。 ・ディレクトリ情報の露呈による情報漏えい (CWE-548) - CVE-2021-20656 ・アクセス制限不備 (CWE-284) - CVE-2021-20657 ・OS コマンドインジェクション (CWE-78) - CVE-2021-20658 ・任意のファイルのアップロード (CWE-434) - CVE-2021-20659 ・クロスサイトスクリプティング (CWE-79) - CVE-2021-20660 ・ディレクトリトラバーサル (CWE-23) - CVE-2021-20661 ・重要な機能に対する認証の欠如 (CWE-306) - CVE-2021-20662 ・既知の脆弱性を持つコンポーネントの使用 (CWE-1035) - CVE-2011-0762, CVE-2011-4362, CVE-2013-4508, CVE-2013-4559, CVE-2013-4560, CVE-2014-2323, CVE-2014-2324 SolarView Compact では既知の脆弱性を含む旧バージョンの vsftpd と lighttpd が使用されています。  CVE-2021-20656 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 岡田晃市郎 氏、吉岡克成 氏  CVE-2021-20657, CVE-2021-20658 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 佐々木貴之 氏、吉岡克成 氏  CVE-2021-20659, CVE-2021-20660, CVE-2021-20661, CVE-2021-20662 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 岡田晃市郎 氏、佐々木貴之 氏、吉岡克成 氏  CVE-2011-0762, CVE-2011-4362, CVE-2013-4508, CVE-2013-4559, CVE-2013-4560, CVE-2014-2323, CVE-2014-2324 の脆弱性が当該製品に存在することを下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 岡田晃市郎 氏、吉岡克成 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社コンテック",
-          "productname": "SolarView Compact SV-CPT-MC310",
-          "cpe": {
-            "text": "cpe:/a:contec:sv-cpt-mc310_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.6.50 より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.8",
-          "vector": "AV:A/AC:L/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.3",
-          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品にログイン可能な第三者に、ディレクトリやファイルの構成といったシステムの内部情報が漏えいする - CVE-2021-20656 ・当該製品にログイン可能な第三者によって、本来アクセスできない設定情報の閲覧や、変更などが行われる。また、管理者権限で当該製品にログインされ、任意の操作を実行される - CVE-2021-20657 ・第三者によって、Web サーバの権限で任意の OS コマンドを実行される。また、管理者権限で当該製品にログインされ、任意の操作を実行される - CVE-2021-20658 ・当該製品にログイン可能な第三者によって、任意のファイルをアップロードされる。ファイルが PHP スクリプトの場合、任意のコードを実行される - CVE-2021-20659 ・当該製品にログインした状態のユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2021-20660 ・当該製品にログイン可能な第三者によって、サーバ内の任意のファイルやディレクトリを削除される - CVE-2021-20661 ・当該製品にログイン可能な第三者によって、本来変更できないはずの設定情報が変更される - CVE-2021-20662 ・既知の脆弱性を悪用し、当該製品を攻撃される - CVE-2011-0762, CVE-2011-4362, CVE-2013-4508, CVE-2013-4559, CVE-2013-4560, CVE-2014-2323, CVE-2014-2324"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版にアップデートしてください。 開発者は、本脆弱性を修正した次のファームウェアをリリースしています。 <ul><li>SolarView Compact <ul><li>SV-CPT-MC310 Ver.6.50 </li></ul></li> </ul>"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "株式会社コンテック",
-          "vulinfoid": "SolarView Compact(SV-CPT-MC310)の脆弱性について (PDF)",
-          "url": "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社コンテック",
-          "vulinfoid": "SolarView Compact ファームウェア アップデータ Ver.6.50",
-          "url": "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-4559",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4559"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20660",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20660"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-4560",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4560"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20661",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20661"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-2323",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2323"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20662",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20662"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-2324",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2324"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20656",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20656"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-0762",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0762"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20657",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20657"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-4362",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4362"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20658",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20658"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-4508",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4508"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20659",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20659"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#37417423",
-          "url": "https://jvn.jp/jp/JVN37417423/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-78",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
-          "title": "OSコマンドインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-22",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
-          "title": "パス・トラバーサル"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-02-15T18:47:41+09:00",
-          "description": "[2021年02月19日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-02-25T09:41:18+09:00",
-          "description": "[2021年02月25日]\\n  想定される影響：内容を更新\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-02-19T12:10:36+09:00",
-    "datelastupdated": "2021-02-25T11:05:59+09:00",
-    "datepublic": "2021-02-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-000016",
+	"vulinfodata": {
+		"title": "SolarView Compact における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社コンテックが提供する SolarView Compact には、次の複数の脆弱性が存在します。 ・ディレクトリ情報の露呈による情報漏えい (CWE-548) - CVE-2021-20656 ・アクセス制限不備 (CWE-284) - CVE-2021-20657 ・OS コマンドインジェクション (CWE-78) - CVE-2021-20658 ・任意のファイルのアップロード (CWE-434) - CVE-2021-20659 ・クロスサイトスクリプティング (CWE-79) - CVE-2021-20660 ・ディレクトリトラバーサル (CWE-23) - CVE-2021-20661 ・重要な機能に対する認証の欠如 (CWE-306) - CVE-2021-20662 ・既知の脆弱性を持つコンポーネントの使用 (CWE-1035) - CVE-2011-0762, CVE-2011-4362, CVE-2013-4508, CVE-2013-4559, CVE-2013-4560, CVE-2014-2323, CVE-2014-2324 SolarView Compact では既知の脆弱性を含む旧バージョンの vsftpd と lighttpd が使用されています。  CVE-2021-20656 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 岡田晃市郎 氏、吉岡克成 氏  CVE-2021-20657, CVE-2021-20658 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 佐々木貴之 氏、吉岡克成 氏  CVE-2021-20659, CVE-2021-20660, CVE-2021-20661, CVE-2021-20662 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 岡田晃市郎 氏、佐々木貴之 氏、吉岡克成 氏  CVE-2011-0762, CVE-2011-4362, CVE-2013-4508, CVE-2013-4559, CVE-2013-4560, CVE-2014-2323, CVE-2014-2324 の脆弱性が当該製品に存在することを下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 岡田晃市郎 氏、吉岡克成 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社コンテック",
+					"productname": "SolarView Compact SV-CPT-MC310",
+					"cpe": {
+						"text": "cpe:/a:contec:sv-cpt-mc310_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.6.50 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.8",
+					"vector": "AV:A/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.3",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・当該製品にログイン可能な第三者に、ディレクトリやファイルの構成といったシステムの内部情報が漏えいする - CVE-2021-20656 ・当該製品にログイン可能な第三者によって、本来アクセスできない設定情報の閲覧や、変更などが行われる。また、管理者権限で当該製品にログインされ、任意の操作を実行される - CVE-2021-20657 ・第三者によって、Web サーバの権限で任意の OS コマンドを実行される。また、管理者権限で当該製品にログインされ、任意の操作を実行される - CVE-2021-20658 ・当該製品にログイン可能な第三者によって、任意のファイルをアップロードされる。ファイルが PHP スクリプトの場合、任意のコードを実行される - CVE-2021-20659 ・当該製品にログインした状態のユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2021-20660 ・当該製品にログイン可能な第三者によって、サーバ内の任意のファイルやディレクトリを削除される - CVE-2021-20661 ・当該製品にログイン可能な第三者によって、本来変更できないはずの設定情報が変更される - CVE-2021-20662 ・既知の脆弱性を悪用し、当該製品を攻撃される - CVE-2011-0762, CVE-2011-4362, CVE-2013-4508, CVE-2013-4559, CVE-2013-4560, CVE-2014-2323, CVE-2014-2324"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版にアップデートしてください。 開発者は、本脆弱性を修正した次のファームウェアをリリースしています。 <ul><li>SolarView Compact <ul><li>SV-CPT-MC310 Ver.6.50 </li></ul></li> </ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "株式会社コンテック",
+					"vulinfoid": "SolarView Compact(SV-CPT-MC310)の脆弱性について (PDF)",
+					"url": "https://www.contec.com/jp/api/downloadlogger?download=https://www.contec.com/jp/-/media/contec/jp/support/security-info/contec_security_solarview_210216.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社コンテック",
+					"vulinfoid": "SolarView Compact ファームウェア アップデータ Ver.6.50",
+					"url": "https://www.contec.com/jp/download/contract/contract2/?itemid=b28c8b7c-9f40-40b2-843c-b5b04c035b0e&downloaditemid=fa248fba-8901-4d9e-8212-b139f2defbdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-4559",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4559"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20660",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20660"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-4560",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4560"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20661",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20661"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-2323",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2323"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20662",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20662"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-2324",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2324"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20656",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20656"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-0762",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0762"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20657",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20657"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-4362",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4362"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20658",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20658"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-4508",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4508"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20659",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20659"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#37417423",
+					"url": "https://jvn.jp/jp/JVN37417423/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-02-15T18:47:41+09:00",
+					"description": "[2021年02月19日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-02-25T09:41:18+09:00",
+					"description": "[2021年02月25日]\\n  想定される影響：内容を更新\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2021-02-19T12:10:36+09:00",
+		"datelastupdated": "2021-02-25T11:05:59+09:00",
+		"datepublic": "2021-02-19T00:00:00+09:00"
+	}
 }

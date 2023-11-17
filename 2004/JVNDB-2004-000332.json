@@ -1,182 +1,182 @@
 {
-  "vulinfoid": "JVNDB-2004-000332",
-  "vulinfodata": {
-    "title": "Qt の GIF 解析部におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Qt は Linux/Unix 環境で広く利用されている C++ 言語の GUI クラスライブラリであり、KDE Konqueror などの画像ファイルを処理するアプリケーションで利用されています。  Qt 3.3.2 以前に実装されている read_dib() 関数には、8 ビット RLE でエンコードされた BMP ファイルを表示またはデコードする際に境界チェックが適切に行われないため、ヒープオーバーフローが生じる問題 (CAN-2004-0691) が存在します。  また、現時点では詳細は不明ですが、BMP ファイル以外の XPM、GIF および JPEG ファイルを処理する際に生じる NULL ポインタがデリファレンスされ、Qt ライブラリを使用しているアプリケーションがサービス不能状態に陥る問題 (CAN-2004-0692/CAN-2004-0693) も報告されています。  これらの問題を利用するリモート/ローカルの攻撃者は、意図的に作成した画像ファイルを送りつけ、Qt ライブラリを使用しているアプリケーションでこのファイルを開かせることにより、結果としてサービス不能状態を引き起こす、あるいは標的ユーザの権限で任意のコードを実行する可能性があります。  尚、CAN-2004-0692 の問題に関しては、一部の Linux ディストリビューションに同梱されている XFree86 パッケージが影響を受けることがベンダより報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 ",
-            "3.0 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "qt",
-          "url": "http://www.miraclelinux.com/support/update/data/qt.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "XFree86",
-          "url": "http://www.miraclelinux.com/support/update/data/XFree86.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:478",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-478.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:414",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-414.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:479",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-479.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2004-21",
-          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-21.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:479",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-479J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:478",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-478J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:414",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-414J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2004-21",
-          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-21j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0693",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0693"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0693",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0693"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA12325",
-          "url": "http://secunia.com/advisories/12325/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10977",
-          "url": "http://www.securityfocus.com/bid/10977"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1010985",
-          "url": "http://www.securitytracker.com/alerts/2004/Aug/1010985.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-08-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000332",
+	"vulinfodata": {
+		"title": "Qt の GIF 解析部におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Qt は Linux/Unix 環境で広く利用されている C++ 言語の GUI クラスライブラリであり、KDE Konqueror などの画像ファイルを処理するアプリケーションで利用されています。  Qt 3.3.2 以前に実装されている read_dib() 関数には、8 ビット RLE でエンコードされた BMP ファイルを表示またはデコードする際に境界チェックが適切に行われないため、ヒープオーバーフローが生じる問題 (CAN-2004-0691) が存在します。  また、現時点では詳細は不明ですが、BMP ファイル以外の XPM、GIF および JPEG ファイルを処理する際に生じる NULL ポインタがデリファレンスされ、Qt ライブラリを使用しているアプリケーションがサービス不能状態に陥る問題 (CAN-2004-0692/CAN-2004-0693) も報告されています。  これらの問題を利用するリモート/ローカルの攻撃者は、意図的に作成した画像ファイルを送りつけ、Qt ライブラリを使用しているアプリケーションでこのファイルを開かせることにより、結果としてサービス不能状態を引き起こす、あるいは標的ユーザの権限で任意のコードを実行する可能性があります。  尚、CAN-2004-0692 の問題に関しては、一部の Linux ディストリビューションに同梱されている XFree86 パッケージが影響を受けることがベンダより報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 ",
+						"3.0 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "qt",
+					"url": "http://www.miraclelinux.com/support/update/data/qt.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "XFree86",
+					"url": "http://www.miraclelinux.com/support/update/data/XFree86.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:478",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-478.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:414",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-414.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:479",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-479.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2004-21",
+					"url": "http://www.turbolinux.com/security/2004/TLSA-2004-21.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:479",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-479J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:478",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-478J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:414",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-414J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2004-21",
+					"url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-21j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0693",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0693"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0693",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0693"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA12325",
+					"url": "http://secunia.com/advisories/12325/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10977",
+					"url": "http://www.securityfocus.com/bid/10977"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1010985",
+					"url": "http://www.securitytracker.com/alerts/2004/Aug/1010985.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-08-19T00:00:00+09:00"
+	}
 }

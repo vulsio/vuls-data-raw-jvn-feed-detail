@@ -1,141 +1,141 @@
 {
-  "vulinfoid": "JVNDB-2014-003811",
-  "vulinfodata": {
-    "title": "OpenSSL の DTLS の実装の d1_both.c におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL の DTLS の実装の d1_both.c には、メモリリークにより、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "0.9.8 以上 0.9.8zb 未満",
-            "1.0.0 以上 1.0.0n 未満",
-            "1.0.1 以上 1.0.1i 未満"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP Virtual Connect",
-          "cpe": {
-            "text": "cpe:/a:hp:virtual_connect",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8Gb 24ポート ファイバーチャネル モジュール 3.00 未満 (VC (バーチャルコネクト) 4.40 未満)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、特定の insert 関数の戻り値の不適切な処理を誘発する zero-length DTLS フラグメントを介して、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX03095 SSRT101674",
-          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04404655"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBOV03099 SSRT101686",
-          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04426586"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBHF03293",
-          "url": "http://marc.info/?l=bugtraq&m=142660345230545&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1682293",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21682293"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1686997",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21686997"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Fix memory leak from zero-length DTLS fragments.",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=d0a4b7d1a2948fce38515b8d862f43e7ba0ebf74"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "DTLS memory leak from zero-length fragments (CVE-2014-3507)",
-          "url": "https://www.openssl.org/news/secadv_20140806.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisory",
-          "vulinfoid": "Huawei-SA-20141008-OpenSSL",
-          "url": "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-372998.htm"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-3507",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3507"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-3507",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3507"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-399",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
-          "title": "リソース管理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年08月15日]\\n  掲載\\n[2014年11月14日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03095 SSRT101674) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBOV03099 SSRT101686) を追加\\n[2014年11月28日]\\n  ベンダ情報：IBM (1682293) を追加\\n  ベンダ情報：IBM (1686997) を追加\\n  ベンダ情報：Huawei (Huawei-SA-20141008-OpenSSL) を追加\\n[2015年06月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03293) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-08-15T16:48:18+09:00",
-    "datelastupdated": "2015-06-09T18:00:02+09:00",
-    "datepublic": "2014-08-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-003811",
+	"vulinfodata": {
+		"title": "OpenSSL の DTLS の実装の d1_both.c におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL の DTLS の実装の d1_both.c には、メモリリークにより、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"0.9.8 以上 0.9.8zb 未満",
+						"1.0.0 以上 1.0.0n 未満",
+						"1.0.1 以上 1.0.1i 未満"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP Virtual Connect",
+					"cpe": {
+						"text": "cpe:/a:hp:virtual_connect",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8Gb 24ポート ファイバーチャネル モジュール 3.00 未満 (VC (バーチャルコネクト) 4.40 未満)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、特定の insert 関数の戻り値の不適切な処理を誘発する zero-length DTLS フラグメントを介して、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX03095 SSRT101674",
+					"url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04404655"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBOV03099 SSRT101686",
+					"url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04426586"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBHF03293",
+					"url": "http://marc.info/?l=bugtraq&m=142660345230545&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1682293",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21682293"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1686997",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21686997"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Fix memory leak from zero-length DTLS fragments.",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=d0a4b7d1a2948fce38515b8d862f43e7ba0ebf74"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "DTLS memory leak from zero-length fragments (CVE-2014-3507)",
+					"url": "https://www.openssl.org/news/secadv_20140806.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisory",
+					"vulinfoid": "Huawei-SA-20141008-OpenSSL",
+					"url": "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-372998.htm"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-3507",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3507"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-3507",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3507"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-399",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+					"title": "リソース管理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年08月15日]\\n  掲載\\n[2014年11月14日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03095 SSRT101674) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBOV03099 SSRT101686) を追加\\n[2014年11月28日]\\n  ベンダ情報：IBM (1682293) を追加\\n  ベンダ情報：IBM (1686997) を追加\\n  ベンダ情報：Huawei (Huawei-SA-20141008-OpenSSL) を追加\\n[2015年06月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03293) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-08-15T16:48:18+09:00",
+		"datelastupdated": "2015-06-09T18:00:02+09:00",
+		"datepublic": "2014-08-06T00:00:00+09:00"
+	}
 }

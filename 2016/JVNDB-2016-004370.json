@@ -1,132 +1,132 @@
 {
-  "vulinfoid": "JVNDB-2016-004370",
-  "vulinfodata": {
-    "title": "プロキシサーバを使った通信を行うアプリケーションに中間者攻撃 (MITM) が可能な脆弱性",
-    "vulinfodescription": {
-      "overview": "HTTP CONNECT リクエスト と HTTP 407 Proxy Authentication Required レスポンスは平文で通信されるため、中間者攻撃 (man-in-the-middle attack) を受ける可能性があります。さらに、WebKit を使って作成されたアプリケーションは、HTTPS リクエスト送信先ドメインのコンテキストで、任意のスクリプトを実行される可能性があります。  ウェブブラウザやオペレーティングシステムからプロキシサーバを経由して HTTPS リクエストを送信する場合、最初にプロキシサーバに対して HTTP CONNECT リクエストを送信します。HTTP CONNECT リクエストやプロキシサーバからの応答メッセージは平文でやりとりされるため、中間者攻撃 (man-in-the-middle attack) を受ける可能性があります。 中間者攻撃において、プロキシサーバからの応答メッセージを改ざんして 407 Proxy Authentication Required メッセージを返すことにより、認証情報を取得される可能性があります。  さらに、WebKit を使って作成されたアプリケーションのクライアントは、プロキシサーバからの応答メッセージを HTTPS リクエスト送信先ドメインのコンテキストで処理するため、中間者攻撃によって、ウェブブラウザ上で任意のスクリプトを実行される可能性があります。  詳しくは、 FalseCONNECT のウェブサイトをご参照ください。  FalseCONNECT のウェブサイト http://falseconnect.com/"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "日本電気",
-          "productname": "ESMPRO/ServerAgent",
-          "cpe": {
-            "text": "cpe:/a:nec:esmpro_serveragent",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.4.4.22-1以降 (Linux版)",
-            "エクスプレス通報サービス 全バージョン (Windows版)"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "ESMPRO/ServerAgentService",
-          "cpe": {
-            "text": "cpe:/a:nec:esmpro_serveragentservice",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "エクスプレス通報サービス 全バージョン (Windows版)",
-            "全バージョン (Linux版)"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "Express5800",
-          "cpe": {
-            "text": "cpe:/h:nec:express5800",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "SG3600全シリーズ"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "SystemDirector Enterprise",
-          "cpe": {
-            "text": "cpe:/a:nec:systemdirector_enterprise",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:A/AC:M/Au:N/C:P/I:P/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.4",
-          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "中間者攻撃 (man-in-the-middle attack) により、認証情報を取得される可能性があります。また、WebKit を使って作成されたアプリケーションの場合、任意のスクリプトが実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] JVNVU#90754453 の [ベンダ情報] や CERT/CC VU#905344 の [Vendor Information] 欄を参照し、開発者が提供する情報をもとに、アップデートを適用してください。  JVNVU#90754453 の [ベンダ情報]  http://jvn.jp/vu/JVNVU90754453/  CERT/CC VU#905344 の [Vendor Information] 欄 https://www.kb.cert.org/vuls/id/905344#vendors  [ワークアラウンドを実施する] 信頼できないネットワークに接続しない 公共 WiFi を含め、信頼できないネットワークに接続している場合、プロキシサーバ経由で通信するクライアントを使用しないようにしてください。  [プロキシ設定を無効にする] Proxy auto-configuration (PAC) や Web proxy auto-discovery (WPAD) の使用が不要である場合、それらの設定を無効にしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV17-010",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv17-010.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90754453",
-          "url": "http://jvn.jp/cert/JVNVU90754453"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#905344",
-          "url": "https://www.kb.cert.org/vuls/id/905344"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "3.2. 407 Proxy Authentication Required",
-          "url": "https://tools.ietf.org/html/rfc7235#section-3.2"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "FalseCONNECT",
-          "url": "http://falseconnect.com/"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年08月17日]\\n  掲載\\n[2017年03月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-010) を追加\\n[2018年02月07日]\\n  影響を受けるシステム：ベンダ情報 (NV17-010) の更新に伴い内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-08-17T18:04:22+09:00",
-    "datelastupdated": "2018-02-07T17:14:34+09:00",
-    "datepublic": "2016-08-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-004370",
+	"vulinfodata": {
+		"title": "プロキシサーバを使った通信を行うアプリケーションに中間者攻撃 (MITM) が可能な脆弱性",
+		"vulinfodescription": {
+			"overview": "HTTP CONNECT リクエスト と HTTP 407 Proxy Authentication Required レスポンスは平文で通信されるため、中間者攻撃 (man-in-the-middle attack) を受ける可能性があります。さらに、WebKit を使って作成されたアプリケーションは、HTTPS リクエスト送信先ドメインのコンテキストで、任意のスクリプトを実行される可能性があります。  ウェブブラウザやオペレーティングシステムからプロキシサーバを経由して HTTPS リクエストを送信する場合、最初にプロキシサーバに対して HTTP CONNECT リクエストを送信します。HTTP CONNECT リクエストやプロキシサーバからの応答メッセージは平文でやりとりされるため、中間者攻撃 (man-in-the-middle attack) を受ける可能性があります。 中間者攻撃において、プロキシサーバからの応答メッセージを改ざんして 407 Proxy Authentication Required メッセージを返すことにより、認証情報を取得される可能性があります。  さらに、WebKit を使って作成されたアプリケーションのクライアントは、プロキシサーバからの応答メッセージを HTTPS リクエスト送信先ドメインのコンテキストで処理するため、中間者攻撃によって、ウェブブラウザ上で任意のスクリプトを実行される可能性があります。  詳しくは、 FalseCONNECT のウェブサイトをご参照ください。  FalseCONNECT のウェブサイト http://falseconnect.com/"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日本電気",
+					"productname": "ESMPRO/ServerAgent",
+					"cpe": {
+						"text": "cpe:/a:nec:esmpro_serveragent",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.4.4.22-1以降 (Linux版)",
+						"エクスプレス通報サービス 全バージョン (Windows版)"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "ESMPRO/ServerAgentService",
+					"cpe": {
+						"text": "cpe:/a:nec:esmpro_serveragentservice",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"エクスプレス通報サービス 全バージョン (Windows版)",
+						"全バージョン (Linux版)"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "Express5800",
+					"cpe": {
+						"text": "cpe:/h:nec:express5800",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"SG3600全シリーズ"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "SystemDirector Enterprise",
+					"cpe": {
+						"text": "cpe:/a:nec:systemdirector_enterprise",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:A/AC:M/Au:N/C:P/I:P/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.4",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "中間者攻撃 (man-in-the-middle attack) により、認証情報を取得される可能性があります。また、WebKit を使って作成されたアプリケーションの場合、任意のスクリプトが実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] JVNVU#90754453 の [ベンダ情報] や CERT/CC VU#905344 の [Vendor Information] 欄を参照し、開発者が提供する情報をもとに、アップデートを適用してください。  JVNVU#90754453 の [ベンダ情報]  http://jvn.jp/vu/JVNVU90754453/  CERT/CC VU#905344 の [Vendor Information] 欄 https://www.kb.cert.org/vuls/id/905344#vendors  [ワークアラウンドを実施する] 信頼できないネットワークに接続しない 公共 WiFi を含め、信頼できないネットワークに接続している場合、プロキシサーバ経由で通信するクライアントを使用しないようにしてください。  [プロキシ設定を無効にする] Proxy auto-configuration (PAC) や Web proxy auto-discovery (WPAD) の使用が不要である場合、それらの設定を無効にしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV17-010",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv17-010.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90754453",
+					"url": "http://jvn.jp/cert/JVNVU90754453"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#905344",
+					"url": "https://www.kb.cert.org/vuls/id/905344"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "3.2. 407 Proxy Authentication Required",
+					"url": "https://tools.ietf.org/html/rfc7235#section-3.2"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "FalseCONNECT",
+					"url": "http://falseconnect.com/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年08月17日]\\n  掲載\\n[2017年03月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-010) を追加\\n[2018年02月07日]\\n  影響を受けるシステム：ベンダ情報 (NV17-010) の更新に伴い内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2016-08-17T18:04:22+09:00",
+		"datelastupdated": "2018-02-07T17:14:34+09:00",
+		"datepublic": "2016-08-15T00:00:00+09:00"
+	}
 }

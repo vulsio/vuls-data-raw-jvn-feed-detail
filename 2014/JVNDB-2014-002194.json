@@ -1,129 +1,129 @@
 {
-  "vulinfoid": "JVNDB-2014-002194",
-  "vulinfodata": {
-    "title": "IBM Notes および IBM Domino に問題",
-    "vulinfodescription": {
-      "overview": "32bit 版 Linux で動作する IBM Notes および IBM Domino は、実行不可属性によるメモリ領域の保護が行われていません。  32bit 版 Linux で動作する IBM Notes および IBM Domino は、gcc のオプションに -z execstack を指定してコンパイルされています。そのため、これらの製品では実行不可属性による stack、heap、data セクションなどのメモリ領域の保護が行われていません。この設定は添付ファイルのプレビューを生成したり、全文検索用のインデックスを生成したりする子プロセスにも引き継がれます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "IBM",
-          "productname": "IBM Domino (旧 IBM Lotus Domino)",
-          "cpe": {
-            "text": "cpe:/a:ibm:lotus_domino",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.5.x",
-            "9.0.1 Interim Fix 2 およびそれ以前"
-          ]
-        },
-        {
-          "name": "IBM",
-          "productname": "IBM Notes",
-          "cpe": {
-            "text": "cpe:/a:ibm:notes",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.5.x",
-            "9.0.1 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "脆弱性が存在した場合、攻撃されやすくなります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　・ execstack ユーティリティを使用して ELF ヘッダを変更することで、実行不可属性の無効化を解除する  　execstack 　http://linux.die.net/man/8/execstack"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "Download Options for Notes & Domino 9.0.1 Fix Packs",
-          "url": "https://www-01.ibm.com/support/docview.wss?uid=swg24037141"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "Security Bulletin: IBM Notes & Domino fixes for multiple vulnerabilities (CVE-2014-0892 and Oracle Java Critical Patch Updates for Oct 2013, Jan 2014)",
-          "url": "https://www-01.ibm.com/support/docview.wss?uid=swg21670264"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM セキュリティー情報",
-          "vulinfoid": "(参考) IBM Notes/Domino における複数の脆弱性の問題の修正 (CVE-2014-0892 および 2013 年 10 月と 2014 年 1 月の Oracle Java Critical Patch Update)",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21671008"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-0892",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0892"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98935174",
-          "url": "https://jvn.jp/vu/JVNVU98935174/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-0892",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0892"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#350089",
-          "url": "http://www.kb.cert.org/vuls/id/350089"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Feeling Insecure? Blame Your Parent!",
-          "url": "https://www.cert.org/blogs/certcc/post.cfm?EntryID=190"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年04月23日]\\n  掲載\\n[2014年04月30日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-0892) を追加\\n[2014年06月26日]\\n  ベンダ情報：IBM ((参考) IBM Notes/Domino における複数の脆弱性の問題の修正 (CVE-2014-0892 および 2013 年 10 月と 2014 年 1 月の Oracle Java Critical Patch Update)) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-04-23T18:59:19+09:00",
-    "datelastupdated": "2014-06-26T17:34:41+09:00",
-    "datepublic": "2014-04-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-002194",
+	"vulinfodata": {
+		"title": "IBM Notes および IBM Domino に問題",
+		"vulinfodescription": {
+			"overview": "32bit 版 Linux で動作する IBM Notes および IBM Domino は、実行不可属性によるメモリ領域の保護が行われていません。  32bit 版 Linux で動作する IBM Notes および IBM Domino は、gcc のオプションに -z execstack を指定してコンパイルされています。そのため、これらの製品では実行不可属性による stack、heap、data セクションなどのメモリ領域の保護が行われていません。この設定は添付ファイルのプレビューを生成したり、全文検索用のインデックスを生成したりする子プロセスにも引き継がれます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "IBM",
+					"productname": "IBM Domino (旧 IBM Lotus Domino)",
+					"cpe": {
+						"text": "cpe:/a:ibm:lotus_domino",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.5.x",
+						"9.0.1 Interim Fix 2 およびそれ以前"
+					]
+				},
+				{
+					"name": "IBM",
+					"productname": "IBM Notes",
+					"cpe": {
+						"text": "cpe:/a:ibm:notes",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.5.x",
+						"9.0.1 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "脆弱性が存在した場合、攻撃されやすくなります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　・ execstack ユーティリティを使用して ELF ヘッダを変更することで、実行不可属性の無効化を解除する  　execstack 　http://linux.die.net/man/8/execstack"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "Download Options for Notes & Domino 9.0.1 Fix Packs",
+					"url": "https://www-01.ibm.com/support/docview.wss?uid=swg24037141"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "Security Bulletin: IBM Notes & Domino fixes for multiple vulnerabilities (CVE-2014-0892 and Oracle Java Critical Patch Updates for Oct 2013, Jan 2014)",
+					"url": "https://www-01.ibm.com/support/docview.wss?uid=swg21670264"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM セキュリティー情報",
+					"vulinfoid": "(参考) IBM Notes/Domino における複数の脆弱性の問題の修正 (CVE-2014-0892 および 2013 年 10 月と 2014 年 1 月の Oracle Java Critical Patch Update)",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21671008"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-0892",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0892"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98935174",
+					"url": "https://jvn.jp/vu/JVNVU98935174/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-0892",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-0892"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#350089",
+					"url": "http://www.kb.cert.org/vuls/id/350089"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Feeling Insecure? Blame Your Parent!",
+					"url": "https://www.cert.org/blogs/certcc/post.cfm?EntryID=190"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年04月23日]\\n  掲載\\n[2014年04月30日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2014-0892) を追加\\n[2014年06月26日]\\n  ベンダ情報：IBM ((参考) IBM Notes/Domino における複数の脆弱性の問題の修正 (CVE-2014-0892 および 2013 年 10 月と 2014 年 1 月の Oracle Java Critical Patch Update)) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-04-23T18:59:19+09:00",
+		"datelastupdated": "2014-06-26T17:34:41+09:00",
+		"datepublic": "2014-04-22T00:00:00+09:00"
+	}
 }

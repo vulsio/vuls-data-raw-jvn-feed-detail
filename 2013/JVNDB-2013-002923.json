@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2013-002923",
-  "vulinfodata": {
-    "title": "Linux Kernel の iSCSI ターゲットサブシステムにおけるヒープベースのバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux Kernel の iSCSI ターゲットサブシステムの drivers/target/iscsi/iscsi_target_parameters.c 内の iscsi_add_notunderstood_response 関数には、ヒープベースのバッファオーバーフローの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.9.4 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.9",
-          "vector": "AV:A/AC:M/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、エラーレスポンスパケット生成中に適切に処理されない過度に長いキーを介して、サービス運用妨害 (メモリ破損および OOPS) 状態にされる、または任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "kernel.org",
-          "vulinfoid": "iscsi-target: fix heap buffer overflow on error",
-          "url": "https://github.com/torvalds/linux/commit/cea4dcfdad926a27a18e188720efe0f2c9403456"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "iscsi-target: fix heap buffer overflow on error",
-          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=cea4dcfdad926a27a18e188720efe0f2c9403456"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "https://www.kernel.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-security-announce",
-          "vulinfoid": "SUSE-SU-2013:0845",
-          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-05/msg00017.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-security-announce",
-          "vulinfoid": "openSUSE-SU-2013:1005",
-          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00011.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-security-announce",
-          "vulinfoid": "openSUSE-SU-2013:1042",
-          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00017.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-security-announce",
-          "vulinfoid": "openSUSE-SU-2013:1043",
-          "url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00018.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 968036",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=968036"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1844-1",
-          "url": "http://www.ubuntu.com/usn/USN-1844-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1845-1",
-          "url": "http://www.ubuntu.com/usn/USN-1845-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1846-1",
-          "url": "http://www.ubuntu.com/usn/USN-1846-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1847-1",
-          "url": "http://www.ubuntu.com/usn/USN-1847-1"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-2850",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2850"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-2850",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2850"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年06月10日]\\n  掲載\\n[2013年07月02日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:1005) を追加\\n[2013年12月20日]\\n  ベンダ情報：Novell (SUSE-SU-2013:0845) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1042) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1043) を追加\\n  ベンダ情報：Ubuntu (USN-1844-1) を追加\\n  ベンダ情報：Ubuntu (USN-1845-1) を追加\\n  ベンダ情報：Ubuntu (USN-1846-1) を追加\\n  ベンダ情報：Ubuntu (USN-1847-1) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-06-10T15:42:04+09:00",
-    "datelastupdated": "2013-12-20T17:51:31+09:00",
-    "datepublic": "2013-05-31T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-002923",
+	"vulinfodata": {
+		"title": "Linux Kernel の iSCSI ターゲットサブシステムにおけるヒープベースのバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux Kernel の iSCSI ターゲットサブシステムの drivers/target/iscsi/iscsi_target_parameters.c 内の iscsi_add_notunderstood_response 関数には、ヒープベースのバッファオーバーフローの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.9.4 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.9",
+					"vector": "AV:A/AC:M/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、エラーレスポンスパケット生成中に適切に処理されない過度に長いキーを介して、サービス運用妨害 (メモリ破損および OOPS) 状態にされる、または任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "kernel.org",
+					"vulinfoid": "iscsi-target: fix heap buffer overflow on error",
+					"url": "https://github.com/torvalds/linux/commit/cea4dcfdad926a27a18e188720efe0f2c9403456"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "iscsi-target: fix heap buffer overflow on error",
+					"url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=cea4dcfdad926a27a18e188720efe0f2c9403456"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "https://www.kernel.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-security-announce",
+					"vulinfoid": "SUSE-SU-2013:0845",
+					"url": "http://lists.opensuse.org/opensuse-security-announce/2013-05/msg00017.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-security-announce",
+					"vulinfoid": "openSUSE-SU-2013:1005",
+					"url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00011.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-security-announce",
+					"vulinfoid": "openSUSE-SU-2013:1042",
+					"url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00017.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-security-announce",
+					"vulinfoid": "openSUSE-SU-2013:1043",
+					"url": "http://lists.opensuse.org/opensuse-security-announce/2013-06/msg00018.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 968036",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=968036"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1844-1",
+					"url": "http://www.ubuntu.com/usn/USN-1844-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1845-1",
+					"url": "http://www.ubuntu.com/usn/USN-1845-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1846-1",
+					"url": "http://www.ubuntu.com/usn/USN-1846-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1847-1",
+					"url": "http://www.ubuntu.com/usn/USN-1847-1"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-2850",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2850"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-2850",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2850"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年06月10日]\\n  掲載\\n[2013年07月02日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:1005) を追加\\n[2013年12月20日]\\n  ベンダ情報：Novell (SUSE-SU-2013:0845) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1042) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1043) を追加\\n  ベンダ情報：Ubuntu (USN-1844-1) を追加\\n  ベンダ情報：Ubuntu (USN-1845-1) を追加\\n  ベンダ情報：Ubuntu (USN-1846-1) を追加\\n  ベンダ情報：Ubuntu (USN-1847-1) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-06-10T15:42:04+09:00",
+		"datelastupdated": "2013-12-20T17:51:31+09:00",
+		"datepublic": "2013-05-31T00:00:00+09:00"
+	}
 }

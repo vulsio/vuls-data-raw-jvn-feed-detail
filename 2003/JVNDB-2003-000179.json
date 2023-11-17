@@ -1,124 +1,124 @@
 {
-  "vulinfoid": "JVNDB-2003-000179",
-  "vulinfodata": {
-    "title": "Ethereal の SPNEGO 解析部におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Ethereal 0.9.12 以前には、以下の複数のプロトコルの取り扱いに不備が存在します。  DCERPC OSI SPNEGO BGP WTP DNS 802.11 ISAKMP WSP CLNP ISIS RMI  DCE プロトコルの解析部には NDR 文字列の復号時に必要以上のメモリを割り当てる問題が存在し、OSI プロトコルの解析部には不正な IPv4 prefix 長、あるいは不正な IPv6 prefix 長が与えられることでバッファオーバーフローを生じる問題が存在します。  また、SPNEGO プロトコルの解析部には不正な ASN.1 値が設定されている際にセグメンテーション違反を生じる問題が存在し、tvb_get_nstringz0() 関数では長さが 0 のバッファを適切に取り扱っていない問題が存在します。  更には、この他のプロトコル (BGP, WTP, DNS, 802.11, ISAKMP, WSP, CLNP, ISIS, RMI) の解析部では、文字列を適切に取り扱っていない問題が存在します。  これらの問題を利用し、リモートの攻撃者は意図的に組み立てたパケットを送信することにより、Ethereal をクラッシュさせ、結果としてサービス不能状態に陥らせることが可能です。更には、Ethereal の実行権限で任意のコードを実行できる可能性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.2  ",
-            "7.3  ",
-            "8.0  ",
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:203",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-203.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:203",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-203J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0430",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0430"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0430",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0430"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7879",
-          "url": "http://www.securityfocus.com/bid/7879"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7880",
-          "url": "http://www.securityfocus.com/bid/7880"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7881",
-          "url": "http://www.securityfocus.com/bid/7881"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7883",
-          "url": "http://www.securityfocus.com/bid/7883"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7878",
-          "url": "http://www.securityfocus.com/bid/7878"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#542540",
-          "url": "http://www.kb.cert.org/vuls/id/542540"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-06-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000179",
+	"vulinfodata": {
+		"title": "Ethereal の SPNEGO 解析部におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Ethereal 0.9.12 以前には、以下の複数のプロトコルの取り扱いに不備が存在します。  DCERPC OSI SPNEGO BGP WTP DNS 802.11 ISAKMP WSP CLNP ISIS RMI  DCE プロトコルの解析部には NDR 文字列の復号時に必要以上のメモリを割り当てる問題が存在し、OSI プロトコルの解析部には不正な IPv4 prefix 長、あるいは不正な IPv6 prefix 長が与えられることでバッファオーバーフローを生じる問題が存在します。  また、SPNEGO プロトコルの解析部には不正な ASN.1 値が設定されている際にセグメンテーション違反を生じる問題が存在し、tvb_get_nstringz0() 関数では長さが 0 のバッファを適切に取り扱っていない問題が存在します。  更には、この他のプロトコル (BGP, WTP, DNS, 802.11, ISAKMP, WSP, CLNP, ISIS, RMI) の解析部では、文字列を適切に取り扱っていない問題が存在します。  これらの問題を利用し、リモートの攻撃者は意図的に組み立てたパケットを送信することにより、Ethereal をクラッシュさせ、結果としてサービス不能状態に陥らせることが可能です。更には、Ethereal の実行権限で任意のコードを実行できる可能性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.2  ",
+						"7.3  ",
+						"8.0  ",
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:203",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-203.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:203",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-203J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0430",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0430"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0430",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0430"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7879",
+					"url": "http://www.securityfocus.com/bid/7879"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7880",
+					"url": "http://www.securityfocus.com/bid/7880"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7881",
+					"url": "http://www.securityfocus.com/bid/7881"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7883",
+					"url": "http://www.securityfocus.com/bid/7883"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7878",
+					"url": "http://www.securityfocus.com/bid/7878"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#542540",
+					"url": "http://www.kb.cert.org/vuls/id/542540"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-06-11T00:00:00+09:00"
+	}
 }

@@ -1,223 +1,223 @@
 {
-  "vulinfoid": "JVNDB-2004-000098",
-  "vulinfodata": {
-    "title": "MySQL の mysql_real_connect() 関数におけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL 3.23.58 以前/4.0.20 以前には、以下のような複数のセキュリティ問題が存在します。   ・ALTER TABLE RENAME のセキュリティ制限回避の問題 (CAN-2004-0835)  テーブル名を変更する ALTER TABLE RENAME 実行時に、新規テーブルではなく、古いテーブルの CREATE/INSERT 権限が参照されるため、セキュリティ制限が回避される問題が存在します。   ・mysql_real_connect() 関数のバッファオーバーフローの問題 (CAN-2004-0836)  mysql_real_connect() 関数には、ホスト名の逆引きにより DNS サーバによって返された IP アドレスの長さのチェックに不備があるため、バッファオーバーフローが発生する問題が存在します。リモートの攻撃者の用意した悪意ある DNS サーバを介して任意のコードが実行される可能性があります。   ・MERGE テーブルに ALTER を実行時にクラッシュする問題 (CAN-2004-0837)  同時に複数のスレッドが、MERGE テーブルの UNION を変更するために ALTER を実行すると、MySQL サーバがクラッシュし、サービス不能状態に陥る可能性があります。   これらの問題を利用する攻撃者は、データベースに対して不正行為を実行する、あるいは MySQL サーバをサービス不能状態に陥らせる、潜在的に任意のコードを実行されてしまう可能性があります。   また、\"_\" (アンダースコア) が含まれているデータベース名に対する権限チェックの問題 (CAN-2004-0957) のため、データベースに対して権限を所有するローカルユーザにより、類似する名前を持つ他のデータベースの権限を取得されてしまう可能性についても報告されています。   尚、Red Hat Enterprise Linux 3 に関しては、mysql-server パッケージが同梱されていないため、これらの問題の影響は受けません。  ただし、Red Hat Network の Red Hat Enterprise Linux 3 Extras channel より、mysql-server パッケージを入手し使用している場合には、問題の影響を受けます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "MySQL AB",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:mysql:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0.20 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 (sparc) ",
-            "10 (x86) "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MySQL BUGS",
-          "vulinfoid": "#3933",
-          "url": "http://bugs.mysql.com/bug.php?id=3933"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL BUGS",
-          "vulinfoid": "#2408",
-          "url": "http://bugs.mysql.com/bug.php?id=2408"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL BUGS",
-          "vulinfoid": "#4017",
-          "url": "http://bugs.mysql.com/bug.php?id=4017"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL BUGS",
-          "vulinfoid": "#3270",
-          "url": "http://bugs.mysql.com/bug.php?id=3270"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:611",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:597",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-597.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "101864",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101864-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "101864",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101864-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2005-23",
-          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-23.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:597",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-597J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:611",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-611J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2005-23",
-          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-23j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0836",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0836"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0836",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0836"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA12783",
-          "url": "http://secunia.com/advisories/12783/"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA12305",
-          "url": "http://secunia.com/advisories/12305/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11435",
-          "url": "http://www.securityfocus.com/bid/11435"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10981",
-          "url": "http://www.securityfocus.com/bid/10981"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11357",
-          "url": "http://www.securityfocus.com/bid/11357"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-03-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000098",
+	"vulinfodata": {
+		"title": "MySQL の mysql_real_connect() 関数におけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL 3.23.58 以前/4.0.20 以前には、以下のような複数のセキュリティ問題が存在します。   ・ALTER TABLE RENAME のセキュリティ制限回避の問題 (CAN-2004-0835)  テーブル名を変更する ALTER TABLE RENAME 実行時に、新規テーブルではなく、古いテーブルの CREATE/INSERT 権限が参照されるため、セキュリティ制限が回避される問題が存在します。   ・mysql_real_connect() 関数のバッファオーバーフローの問題 (CAN-2004-0836)  mysql_real_connect() 関数には、ホスト名の逆引きにより DNS サーバによって返された IP アドレスの長さのチェックに不備があるため、バッファオーバーフローが発生する問題が存在します。リモートの攻撃者の用意した悪意ある DNS サーバを介して任意のコードが実行される可能性があります。   ・MERGE テーブルに ALTER を実行時にクラッシュする問題 (CAN-2004-0837)  同時に複数のスレッドが、MERGE テーブルの UNION を変更するために ALTER を実行すると、MySQL サーバがクラッシュし、サービス不能状態に陥る可能性があります。   これらの問題を利用する攻撃者は、データベースに対して不正行為を実行する、あるいは MySQL サーバをサービス不能状態に陥らせる、潜在的に任意のコードを実行されてしまう可能性があります。   また、\"_\" (アンダースコア) が含まれているデータベース名に対する権限チェックの問題 (CAN-2004-0957) のため、データベースに対して権限を所有するローカルユーザにより、類似する名前を持つ他のデータベースの権限を取得されてしまう可能性についても報告されています。   尚、Red Hat Enterprise Linux 3 に関しては、mysql-server パッケージが同梱されていないため、これらの問題の影響は受けません。  ただし、Red Hat Network の Red Hat Enterprise Linux 3 Extras channel より、mysql-server パッケージを入手し使用している場合には、問題の影響を受けます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "MySQL AB",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:mysql:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0.20 およびそれ以前"
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 (sparc) ",
+						"10 (x86) "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MySQL BUGS",
+					"vulinfoid": "#3933",
+					"url": "http://bugs.mysql.com/bug.php?id=3933"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL BUGS",
+					"vulinfoid": "#2408",
+					"url": "http://bugs.mysql.com/bug.php?id=2408"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL BUGS",
+					"vulinfoid": "#4017",
+					"url": "http://bugs.mysql.com/bug.php?id=4017"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL BUGS",
+					"vulinfoid": "#3270",
+					"url": "http://bugs.mysql.com/bug.php?id=3270"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:611",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-611.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:597",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-597.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "101864",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101864-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "101864",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-101864-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2005-23",
+					"url": "http://www.turbolinux.com/security/2005/TLSA-2005-23.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:597",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-597J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:611",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-611J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2005-23",
+					"url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-23j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0836",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0836"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0836",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0836"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA12783",
+					"url": "http://secunia.com/advisories/12783/"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA12305",
+					"url": "http://secunia.com/advisories/12305/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11435",
+					"url": "http://www.securityfocus.com/bid/11435"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10981",
+					"url": "http://www.securityfocus.com/bid/10981"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11357",
+					"url": "http://www.securityfocus.com/bid/11357"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-03-23T00:00:00+09:00"
+	}
 }

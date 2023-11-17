@@ -1,142 +1,142 @@
 {
-  "vulinfoid": "JVNDB-2016-001835",
-  "vulinfodata": {
-    "title": "OpenSSH の sshd の session.c における CRLF インジェクションの脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSH の sshd の session.c には、(1) do_authenticated1 および (2) session_x11_req 関数に関する処理に不備があるため、CRLF インジェクションの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-93: Improper Neutralization of CRLF Sequences (CRLF インジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/93.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenBSD",
-          "productname": "OpenSSH",
-          "cpe": {
-            "text": "cpe:/a:openbsd:openssh",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.2p2 未満"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle VM サーバー",
-          "cpe": {
-            "text": "cpe:/o:oracle:vm_server",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.5",
-          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "リモート認証されたユーザにより、巧妙に細工された X11 forwarding データを介して、シェルコマンド制限を回避される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "OpenBSD",
-          "vulinfoid": "CVS log for src/usr.bin/ssh/session.c",
-          "url": "http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/session.c"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenBSD",
-          "vulinfoid": "Diff for /src/usr.bin/ssh/session.c between version 1.281 and 1.282",
-          "url": "http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/session.c.diff?r1=1.281&r2=1.282&f=h"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSH",
-          "vulinfoid": "OpenSSH Security Advisory: x11fwd.adv",
-          "url": "http://www.openssh.com/txt/x11fwd.adv"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSH",
-          "vulinfoid": "Top Page",
-          "url": "http://www.openssh.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSH",
-          "vulinfoid": "Security - March 9, 2016",
-          "url": "http://www.openssh.com/security.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Linux Bulletin - April 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2016-10",
-          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-10j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-3115",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3115"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-3115",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3115"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年03月23日]\\n  掲載\\n[2016年03月24日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-10) を追加\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-03-23T17:45:13+09:00",
-    "datelastupdated": "2016-11-17T16:29:45+09:00",
-    "datepublic": "2016-03-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-001835",
+	"vulinfodata": {
+		"title": "OpenSSH の sshd の session.c における CRLF インジェクションの脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSH の sshd の session.c には、(1) do_authenticated1 および (2) session_x11_req 関数に関する処理に不備があるため、CRLF インジェクションの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-93: Improper Neutralization of CRLF Sequences (CRLF インジェクション) と識別されています。 http://cwe.mitre.org/data/definitions/93.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenBSD",
+					"productname": "OpenSSH",
+					"cpe": {
+						"text": "cpe:/a:openbsd:openssh",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.2p2 未満"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle VM サーバー",
+					"cpe": {
+						"text": "cpe:/o:oracle:vm_server",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.5",
+					"vector": "AV:N/AC:L/Au:S/C:P/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "リモート認証されたユーザにより、巧妙に細工された X11 forwarding データを介して、シェルコマンド制限を回避される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenBSD",
+					"vulinfoid": "CVS log for src/usr.bin/ssh/session.c",
+					"url": "http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/session.c"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenBSD",
+					"vulinfoid": "Diff for /src/usr.bin/ssh/session.c between version 1.281 and 1.282",
+					"url": "http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/session.c.diff?r1=1.281&r2=1.282&f=h"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSH",
+					"vulinfoid": "OpenSSH Security Advisory: x11fwd.adv",
+					"url": "http://www.openssh.com/txt/x11fwd.adv"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSH",
+					"vulinfoid": "Top Page",
+					"url": "http://www.openssh.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSH",
+					"vulinfoid": "Security - March 9, 2016",
+					"url": "http://www.openssh.com/security.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Linux Bulletin - April 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinapr2016-2952096.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2016-10",
+					"url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-10j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-3115",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3115"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-3115",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3115"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年03月23日]\\n  掲載\\n[2016年03月24日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-10) を追加\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-03-23T17:45:13+09:00",
+		"datelastupdated": "2016-11-17T16:29:45+09:00",
+		"datepublic": "2016-03-09T00:00:00+09:00"
+	}
 }

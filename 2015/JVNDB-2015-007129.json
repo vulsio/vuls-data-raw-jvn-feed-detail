@@ -1,108 +1,108 @@
 {
-  "vulinfoid": "JVNDB-2015-007129",
-  "vulinfodata": {
-    "title": "Linux Kernel の net/core/datagram.c の skb_copy_and_csum_datagram_iovec 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux Kernel の net/core/datagram.c の skb_copy_and_csum_datagram_iovec 関数は、length 引数を受け取らないため、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.14.54",
-            "3.18.22"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルユーザにより、後に recvmsg システムコールが続く write システムコールを介して、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1276588",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1276588"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-8019",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8019"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-8019",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8019"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Patchwork [stable,<=,3.18] net: add length argument to skb_copy_and_csum_datagram_iovec",
-          "url": "http://patchwork.ozlabs.org/patch/530642/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年05月11日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-05-11T16:56:37+09:00",
-    "datelastupdated": "2016-05-11T16:56:37+09:00",
-    "datepublic": "2015-10-30T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-007129",
+	"vulinfodata": {
+		"title": "Linux Kernel の net/core/datagram.c の skb_copy_and_csum_datagram_iovec 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux Kernel の net/core/datagram.c の skb_copy_and_csum_datagram_iovec 関数は、length 引数を受け取らないため、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.14.54",
+						"3.18.22"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルユーザにより、後に recvmsg システムコールが続く write システムコールを介して、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1276588",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1276588"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-8019",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8019"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-8019",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8019"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Patchwork [stable,<=,3.18] net: add length argument to skb_copy_and_csum_datagram_iovec",
+					"url": "http://patchwork.ozlabs.org/patch/530642/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年05月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2016-05-11T16:56:37+09:00",
+		"datelastupdated": "2016-05-11T16:56:37+09:00",
+		"datepublic": "2015-10-30T00:00:00+09:00"
+	}
 }

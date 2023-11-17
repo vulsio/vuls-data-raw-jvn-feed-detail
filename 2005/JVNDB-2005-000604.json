@@ -1,118 +1,118 @@
 {
-  "vulinfoid": "JVNDB-2005-000604",
-  "vulinfodata": {
-    "title": "Linux Kernel の request_key_auth_destroy() 関数にメモリリークが発生する脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には以下の複数のセキュリティ上の問題が存在します。   1) mm/mempolicy.c の sys_set_mempolicy() 関数では、第一引数に指定される policy フィールドにおいて負数に対するチェックが不適切であるため、カーネルパニックを生じる問題が存在します。(CVE-2005-3053)   ローカルの攻撃者に悪用された場合、システムがサービス不能状態に陥る可能性があります。   2) x86_64 システムにおける mm/ioremap.c には、ioremap でマップしたメモリ領域を解放する iounmap において存在しないアドレスが指定された場合の処理が不適切である問題が存在します。(CVE-2005-3108)   ローカルの攻撃者に悪用された場合、システムがサービス不能状態に陥る、あるいは不正にメモリ中の情報を取得される可能性があります。   3) security/keys/request_key_auth.c の request_key_auth_destroy() 関数において、適切にメモリの解放が行われていないため、メモリリークが発生する問題が存在します。(CVE-2005-3119)   ローカルの攻撃者に意図的に多数の認証トークンキーが取り扱われた場合、システムがサービス不能状態に陥る可能性があります。   4) fs/namei.c には、メモリの解放を行う際に、本来 __putname() 関数を使用するべき箇所で putname() 関数を使用しているため、CONFIG_AUDITSYSCALL オプションを有効にしている場合にメモリリークが発生する問題が存在します。(CVE-2005-3181)   ローカルの攻撃者に悪用された場合、システムがサービス不能状態に陥る可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "2.1",
-          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:808",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-808.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:808",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-808J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-3119",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3119"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2005-2039",
-          "url": "http://www.frsirt.com/english/advisories/2005/2039"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-3119",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-3119"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA17114",
-          "url": "http://secunia.com/advisories/17114/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "15076",
-          "url": "http://www.securityfocus.com/bid/15076"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "15049",
-          "url": "http://www.securityfocus.com/bid/15049"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-399",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
-          "title": "リソース管理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-10-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000604",
+	"vulinfodata": {
+		"title": "Linux Kernel の request_key_auth_destroy() 関数にメモリリークが発生する脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には以下の複数のセキュリティ上の問題が存在します。   1) mm/mempolicy.c の sys_set_mempolicy() 関数では、第一引数に指定される policy フィールドにおいて負数に対するチェックが不適切であるため、カーネルパニックを生じる問題が存在します。(CVE-2005-3053)   ローカルの攻撃者に悪用された場合、システムがサービス不能状態に陥る可能性があります。   2) x86_64 システムにおける mm/ioremap.c には、ioremap でマップしたメモリ領域を解放する iounmap において存在しないアドレスが指定された場合の処理が不適切である問題が存在します。(CVE-2005-3108)   ローカルの攻撃者に悪用された場合、システムがサービス不能状態に陥る、あるいは不正にメモリ中の情報を取得される可能性があります。   3) security/keys/request_key_auth.c の request_key_auth_destroy() 関数において、適切にメモリの解放が行われていないため、メモリリークが発生する問題が存在します。(CVE-2005-3119)   ローカルの攻撃者に意図的に多数の認証トークンキーが取り扱われた場合、システムがサービス不能状態に陥る可能性があります。   4) fs/namei.c には、メモリの解放を行う際に、本来 __putname() 関数を使用するべき箇所で putname() 関数を使用しているため、CONFIG_AUDITSYSCALL オプションを有効にしている場合にメモリリークが発生する問題が存在します。(CVE-2005-3181)   ローカルの攻撃者に悪用された場合、システムがサービス不能状態に陥る可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.1",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:808",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-808.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:808",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-808J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-3119",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3119"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2005-2039",
+					"url": "http://www.frsirt.com/english/advisories/2005/2039"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-3119",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-3119"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA17114",
+					"url": "http://secunia.com/advisories/17114/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "15076",
+					"url": "http://www.securityfocus.com/bid/15076"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "15049",
+					"url": "http://www.securityfocus.com/bid/15049"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-399",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+					"title": "リソース管理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-10-11T00:00:00+09:00"
+	}
 }

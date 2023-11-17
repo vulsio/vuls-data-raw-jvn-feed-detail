@@ -1,120 +1,120 @@
 {
-  "vulinfoid": "JVNDB-2018-002442",
-  "vulinfodata": {
-    "title": "Microsoft Outlook の OLE コンテンツ取得における問題",
-    "vulinfodescription": {
-      "overview": "Microsoft Outlook はリッチテキスト形式 (RTF) のメールを表示する際、リモート・ホスト上の OLE コンテンツをユーザによる操作を介さずに取得してしまいます。その結果、攻撃者によりユーザのパスワードのハッシュ値を含む個人情報が窃取される可能性があります。  Microsoft Outlook は、リッチテキスト形式のメールを表示する際にリモート・ホスト上の OLE コンテンツを自動的に取得します。リモート・ホスト上の OLE コンテンツが SMB/CIFS サーバにホストされている場合、Windows クライアントはシングルサインオン (SSO) を用いて認証を行うため、ユーザの IP アドレスやドメイン名、ユーザ名、ホスト名およびパスワードのハッシュ値が流出する恐れがあります。 ユーザのパスワードが平易な場合、攻撃者はパスワードを短時間で解読することが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Outlook",
-          "cpe": {
-            "text": "cpe:/a:microsoft:outlook",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の攻撃者により Microsoft Outlook 上でリッチテキストメッセージを閲覧させられることで、ユーザの IP アドレスやドメイン名、ユーザ名、ホスト名およびパスワードのハッシュ値が取得される可能性があります。取得されたハッシュ値に対してはオフライン攻撃が可能です。また、本脆弱性は、他の脆弱性との組み合わせにより想定される影響が異なります。例えば <a href=\"https://jvn.jp/vu/JVNVU95841181/index.html\"target=\"blank\">JVNVU#95841181</a> と併用された場合、攻撃者は特別に細工したメールを Microsoft Outlook で閲覧させることで、Windows システム上でブルースクリーン (BSOD) を発生させることが可能になります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 本脆弱性は、<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-0950\"target=\"blank\">Microsoft update for CVE-2018-0950</a> で修正されています。このアップデートでは、リッチテキストメッセージを閲覧した際に Outlook が自動で SMB コネクションを開始しないよう対処されています。なお、このパッチの適用後も他のユーザ操作を要する機能は動作します。例えば、メールが \"\\\\attacker\\foo\" のような UNC リンクを含む場合、Outlook はこの文字列を自動でハイパーリンク化します。ユーザがそのようなリンクをクリックした場合、本脆弱性で想定される影響が再現します。よって、次のワークアラウンドを実施することを推奨します。  [インバウンドおよびアウトバウンドのSMB コネクションをブロックする] TCP ポート番号 445, 137, 139 および UDP ポート番号 137, 139 を閉じることで可能です。  [NTLM シングルサインオン (SSO) 認証を無効にする] <a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV170014\"target=\"blank\">Microsoft Security Advisory ADV170014</a> で明記されている通り、NTLM シングルサインオン (SSO) 認証を無効にしてください。 Windows 10 および Windows Server 2016 以降では、レジストリ値 \"EnterpriseAccountSSO\" が 0 に設定された場合、不特定の外部ネットワークリソースによる SSO 認証が無効化されます。 このレジストリ値を変更しても、SMB リソースへのアクセスは許可されます。ただし、不特定の外部ネットワーク上の SMB リソースに対しては、直近にログインしたユーザのパスワードをそのまま利用せず、ユーザに対して改めて認証情報の入力を要求します。  [複雑なパスワードを設定する] クライアントが攻撃者のサーバとの SMB コネクションを確立してしまうことを想定し、Windows のログインパスワードは容易に解読されないように、以下の2点を参考にし十分複雑なものを設定してください。  * パスワードマネージャを活用し複雑でランダム性の高いパスワードを生成する  使用するコンピュータリソース間でパスワードの一意性を確保しつつ、十分複雑でランダム性の高いパスワードの生成に役立ちます。  * パスワードの代わりに、大文字 / 小文字、数字や記号を織り交ぜた長いパスフレーズを使用する  保存や入力に別途ソフトウェアを用意せずとも覚えやすく、堅牢な認証情報になります。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Security TechCenter",
-          "vulinfoid": "CVE-2018-0950 | Microsoft Office Information Disclosure Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-0950"
-        },
-        {
-          "type": "vendor",
-          "name": "セキュリティ TechCenter",
-          "vulinfoid": "CVE-2018-0950 | Microsoft Office Information Disclosure Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2018-0950"
-        },
-        {
-          "type": "advisory",
-          "name": "CERT/CC blog",
-          "vulinfoid": "Automatically Stealing Password Hashes with Microsoft Outlook and OLE",
-          "url": "https://insights.sei.cmu.edu/cert/2018/04/automatically-stealing-password-hashes-with-microsoft-outlook-and-ole.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0950",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0950"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95312708",
-          "url": "http://jvn.jp/vu/JVNVU95312708/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0950",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0950"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#974272",
-          "url": "https://www.kb.cert.org/vuls/id/974272"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "ADV170014 | Optional Windows NTLM SSO authentication changes",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV170014"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-04-12T11:49:55+09:00",
-          "description": "[2018年04月12日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-08-22T17:21:04+09:00",
-          "description": "[2018年08月22日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0950) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-04-12T11:49:55+09:00",
-    "datelastupdated": "2018-08-22T17:21:49+09:00",
-    "datepublic": "2018-04-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-002442",
+	"vulinfodata": {
+		"title": "Microsoft Outlook の OLE コンテンツ取得における問題",
+		"vulinfodescription": {
+			"overview": "Microsoft Outlook はリッチテキスト形式 (RTF) のメールを表示する際、リモート・ホスト上の OLE コンテンツをユーザによる操作を介さずに取得してしまいます。その結果、攻撃者によりユーザのパスワードのハッシュ値を含む個人情報が窃取される可能性があります。  Microsoft Outlook は、リッチテキスト形式のメールを表示する際にリモート・ホスト上の OLE コンテンツを自動的に取得します。リモート・ホスト上の OLE コンテンツが SMB/CIFS サーバにホストされている場合、Windows クライアントはシングルサインオン (SSO) を用いて認証を行うため、ユーザの IP アドレスやドメイン名、ユーザ名、ホスト名およびパスワードのハッシュ値が流出する恐れがあります。 ユーザのパスワードが平易な場合、攻撃者はパスワードを短時間で解読することが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Outlook",
+					"cpe": {
+						"text": "cpe:/a:microsoft:outlook",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の攻撃者により Microsoft Outlook 上でリッチテキストメッセージを閲覧させられることで、ユーザの IP アドレスやドメイン名、ユーザ名、ホスト名およびパスワードのハッシュ値が取得される可能性があります。取得されたハッシュ値に対してはオフライン攻撃が可能です。また、本脆弱性は、他の脆弱性との組み合わせにより想定される影響が異なります。例えば <a href=\"https://jvn.jp/vu/JVNVU95841181/index.html\"target=\"blank\">JVNVU#95841181</a> と併用された場合、攻撃者は特別に細工したメールを Microsoft Outlook で閲覧させることで、Windows システム上でブルースクリーン (BSOD) を発生させることが可能になります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 本脆弱性は、<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-0950\"target=\"blank\">Microsoft update for CVE-2018-0950</a> で修正されています。このアップデートでは、リッチテキストメッセージを閲覧した際に Outlook が自動で SMB コネクションを開始しないよう対処されています。なお、このパッチの適用後も他のユーザ操作を要する機能は動作します。例えば、メールが \"\\\\attacker\\foo\" のような UNC リンクを含む場合、Outlook はこの文字列を自動でハイパーリンク化します。ユーザがそのようなリンクをクリックした場合、本脆弱性で想定される影響が再現します。よって、次のワークアラウンドを実施することを推奨します。  [インバウンドおよびアウトバウンドのSMB コネクションをブロックする] TCP ポート番号 445, 137, 139 および UDP ポート番号 137, 139 を閉じることで可能です。  [NTLM シングルサインオン (SSO) 認証を無効にする] <a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV170014\"target=\"blank\">Microsoft Security Advisory ADV170014</a> で明記されている通り、NTLM シングルサインオン (SSO) 認証を無効にしてください。 Windows 10 および Windows Server 2016 以降では、レジストリ値 \"EnterpriseAccountSSO\" が 0 に設定された場合、不特定の外部ネットワークリソースによる SSO 認証が無効化されます。 このレジストリ値を変更しても、SMB リソースへのアクセスは許可されます。ただし、不特定の外部ネットワーク上の SMB リソースに対しては、直近にログインしたユーザのパスワードをそのまま利用せず、ユーザに対して改めて認証情報の入力を要求します。  [複雑なパスワードを設定する] クライアントが攻撃者のサーバとの SMB コネクションを確立してしまうことを想定し、Windows のログインパスワードは容易に解読されないように、以下の2点を参考にし十分複雑なものを設定してください。  * パスワードマネージャを活用し複雑でランダム性の高いパスワードを生成する  使用するコンピュータリソース間でパスワードの一意性を確保しつつ、十分複雑でランダム性の高いパスワードの生成に役立ちます。  * パスワードの代わりに、大文字 / 小文字、数字や記号を織り交ぜた長いパスフレーズを使用する  保存や入力に別途ソフトウェアを用意せずとも覚えやすく、堅牢な認証情報になります。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Security TechCenter",
+					"vulinfoid": "CVE-2018-0950 | Microsoft Office Information Disclosure Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-0950"
+				},
+				{
+					"type": "vendor",
+					"name": "セキュリティ TechCenter",
+					"vulinfoid": "CVE-2018-0950 | Microsoft Office Information Disclosure Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2018-0950"
+				},
+				{
+					"type": "advisory",
+					"name": "CERT/CC blog",
+					"vulinfoid": "Automatically Stealing Password Hashes with Microsoft Outlook and OLE",
+					"url": "https://insights.sei.cmu.edu/cert/2018/04/automatically-stealing-password-hashes-with-microsoft-outlook-and-ole.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0950",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0950"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95312708",
+					"url": "http://jvn.jp/vu/JVNVU95312708/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0950",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0950"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#974272",
+					"url": "https://www.kb.cert.org/vuls/id/974272"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "ADV170014 | Optional Windows NTLM SSO authentication changes",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV170014"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-04-12T11:49:55+09:00",
+					"description": "[2018年04月12日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-08-22T17:21:04+09:00",
+					"description": "[2018年08月22日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0950) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-04-12T11:49:55+09:00",
+		"datelastupdated": "2018-08-22T17:21:49+09:00",
+		"datepublic": "2018-04-10T00:00:00+09:00"
+	}
 }

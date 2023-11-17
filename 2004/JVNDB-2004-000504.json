@@ -1,162 +1,162 @@
 {
-  "vulinfoid": "JVNDB-2004-000504",
-  "vulinfodata": {
-    "title": "Microsoft WINS における WINS パケット内のコンピュータ名の妥当性確認における任意のコードを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft Windows のサーバ系のオペレーティングシステムに実装されている WINS (Windows Internet Naming Service) サービスは、NetBIOS 名と IP アドレスのマッピングを行うサービスです。  WINS には、複数の WINS サーバ間でネットワーク情報を共有するためにレプリケーション機能が実装されています。レプリケーションにおける処理では、Microsoft 独自のプロトコルと TCP ポート 42 が使用され、通信のためにメモリポインタが送信されます。   WINS に実装されるレプリケーション機能には、取り扱うパケットの処理に不備が存在し、意図的に作成されたパケットを受信することにより、参照を行うメモリポインタが不正に上書きされる問題 (CAN-2004-1080) が存在します。   この問題を利用するリモートの攻撃者は、意図的に作成したパケットを標的 WINS サーバに送信し、メモリポインタを操作することにより、Local System 権限で任意のコードを実行できる可能性があります。   この問題に加え、Microsoft アドバイザリ (MS04-045) の公開により、パケット内の特定の名前の値に対するチェックの問題 (CAN-2004-0567) が新たに報告されており、この問題はレプリケーション機能における問題 (CAN-2004-1080) と同様の影響を受けます。  また、Windows Server 2003 上の WINS サーバの場合、これらの問題を利用することで WINS サーバがサービス不能状態に陥る可能性があります。Microsoft では、この Windows Server 2003 上の WINS サーバに対する攻撃が、最も可能性が高いシナリオであるとしています。   尚、Microsoft Windows のデフォルトインストール (Microsoft Windows Small Business Server 2003 を除く) では、WINS はインストールされないため、これらの問題の影響を受けません。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 2000",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_2000",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows NT",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_nt",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0 (server) ",
-            "4.0 (terminal_srv) "
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2003",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2003",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft Knowledge Base",
-          "vulinfoid": "890710",
-          "url": "http://support.microsoft.com/default.aspx?scid=kb;ja;890710"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Security Bulletin",
-          "vulinfoid": "MS04-045",
-          "url": "http://www.microsoft.com/technet/security/bulletin/MS04-045.mspx"
-        },
-        {
-          "type": "vendor",
-          "name": "マイクロソフト セキュリティ情報",
-          "vulinfoid": "MS04-045",
-          "url": "http://www.microsoft.com/japan/technet/security/bulletin/ms04-045.asp"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0567",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0567"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0567",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0567"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA13466",
-          "url": "http://secunia.com/advisories/13466/"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA13328",
-          "url": "http://secunia.com/advisories/13328/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11922",
-          "url": "http://www.securityfocus.com/bid/11922"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11763",
-          "url": "http://www.securityfocus.com/bid/11763"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1012341",
-          "url": "http://www.securitytracker.com/alerts/2004/Nov/1012341.html"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1012517",
-          "url": "http://www.securitytracker.com/alerts/2004/Dec/1012517.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#145134",
-          "url": "http://www.kb.cert.org/vuls/id/145134"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#378160",
-          "url": "http://www.kb.cert.org/vuls/id/378160"
-        },
-        {
-          "type": "advisory",
-          "name": "X-Force Security Alerts and Advisories",
-          "vulinfoid": "184",
-          "url": "http://xforce.iss.net/xforce/alerts/id/184"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-11-26T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000504",
+	"vulinfodata": {
+		"title": "Microsoft WINS における WINS パケット内のコンピュータ名の妥当性確認における任意のコードを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft Windows のサーバ系のオペレーティングシステムに実装されている WINS (Windows Internet Naming Service) サービスは、NetBIOS 名と IP アドレスのマッピングを行うサービスです。  WINS には、複数の WINS サーバ間でネットワーク情報を共有するためにレプリケーション機能が実装されています。レプリケーションにおける処理では、Microsoft 独自のプロトコルと TCP ポート 42 が使用され、通信のためにメモリポインタが送信されます。   WINS に実装されるレプリケーション機能には、取り扱うパケットの処理に不備が存在し、意図的に作成されたパケットを受信することにより、参照を行うメモリポインタが不正に上書きされる問題 (CAN-2004-1080) が存在します。   この問題を利用するリモートの攻撃者は、意図的に作成したパケットを標的 WINS サーバに送信し、メモリポインタを操作することにより、Local System 権限で任意のコードを実行できる可能性があります。   この問題に加え、Microsoft アドバイザリ (MS04-045) の公開により、パケット内の特定の名前の値に対するチェックの問題 (CAN-2004-0567) が新たに報告されており、この問題はレプリケーション機能における問題 (CAN-2004-1080) と同様の影響を受けます。  また、Windows Server 2003 上の WINS サーバの場合、これらの問題を利用することで WINS サーバがサービス不能状態に陥る可能性があります。Microsoft では、この Windows Server 2003 上の WINS サーバに対する攻撃が、最も可能性が高いシナリオであるとしています。   尚、Microsoft Windows のデフォルトインストール (Microsoft Windows Small Business Server 2003 を除く) では、WINS はインストールされないため、これらの問題の影響を受けません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 2000",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_2000",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows NT",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_nt",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0 (server) ",
+						"4.0 (terminal_srv) "
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2003",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2003",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft Knowledge Base",
+					"vulinfoid": "890710",
+					"url": "http://support.microsoft.com/default.aspx?scid=kb;ja;890710"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Security Bulletin",
+					"vulinfoid": "MS04-045",
+					"url": "http://www.microsoft.com/technet/security/bulletin/MS04-045.mspx"
+				},
+				{
+					"type": "vendor",
+					"name": "マイクロソフト セキュリティ情報",
+					"vulinfoid": "MS04-045",
+					"url": "http://www.microsoft.com/japan/technet/security/bulletin/ms04-045.asp"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0567",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0567"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0567",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0567"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA13466",
+					"url": "http://secunia.com/advisories/13466/"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA13328",
+					"url": "http://secunia.com/advisories/13328/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11922",
+					"url": "http://www.securityfocus.com/bid/11922"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11763",
+					"url": "http://www.securityfocus.com/bid/11763"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1012341",
+					"url": "http://www.securitytracker.com/alerts/2004/Nov/1012341.html"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1012517",
+					"url": "http://www.securitytracker.com/alerts/2004/Dec/1012517.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#145134",
+					"url": "http://www.kb.cert.org/vuls/id/145134"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#378160",
+					"url": "http://www.kb.cert.org/vuls/id/378160"
+				},
+				{
+					"type": "advisory",
+					"name": "X-Force Security Alerts and Advisories",
+					"vulinfoid": "184",
+					"url": "http://xforce.iss.net/xforce/alerts/id/184"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-11-26T00:00:00+09:00"
+	}
 }

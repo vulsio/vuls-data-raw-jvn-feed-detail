@@ -1,106 +1,106 @@
 {
-  "vulinfoid": "JVNDB-2021-002274",
-  "vulinfodata": {
-    "title": "Microsoft Windows の印刷スプーラにリモートコード実行の脆弱性",
-    "vulinfodescription": {
-      "overview": "Microsoft Windows の Print Spooler サービスには、特権的なファイル操作を不適切に実施した場合、リモートコード実行が可能となる脆弱性があります。  Print Spooler サービスは、印刷において印刷待ちを実現するためのサービスです。2021年8月10日にリリースされたセキュリティ更新プログラムを適用していない Microsoft Windows において、管理者権限を持たないユーザが要求した場合であっても Print Spooler サービスはプリンタドライバを SYSTEM 権限でインストールします。また、Microsoft Windows は、プリンタドライバをインストールする際にドライバパッケージが信頼できるソースによって署名されていることを検証しますが、Windows のプリンタドライバはデバイスの使用に関する <a href=\"https://docs.microsoft.com/en-us/windows-hardware/drivers/print/installing-queue-specific-files\"target=\"blank\">queue-spesific</a> ファイルを指定でき、このファイルへの署名の検証は要求されません。 そのため、例えばプリンタドライバのインストール時に、これらのファイルを用いることですでにシステムに配置されている署名検証済みのファイルを上書きし、リモートのプリンタ側にファイル内のコードを自動的に実行するように設定することで、結果としてローカルでの権限昇格が可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "(複数の製品)",
-          "cpe": {
-            "text": "cpe:/a:microsoft:multiple_product",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.3",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者が、Microsoft Windows を細工したプリンタに接続することで、SYSTEM 権限で任意のコードを実行する可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2021年8月16日時点では、脆弱性を修正したバージョンはリリースされておらず、準備中とのことです。 詳しくは <a href=\"https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36958\"target=\"blank\">Microsoft が公開している情報</a>を参照ください。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* Print Spooler サービスを停止し、無効にする  なお、この緩和策を実行した場合、ローカルとリモートの両方で印刷ができなくなります。  また、CERT/CC より次のワークアラウンドが提示されています。 　* 外部ネットワークへの SMB 通信をブロックする（同一ネットワーク内からの SMB 共有による攻撃は軽減できません） 　* 管理者以外のユーザが Point and Point を利用して、プリンタをインストールする際に使用可能なサーバを制限する 　* SYSTEM アカウントが C:WindowsSystem32spool\\\\drivers ディレクトリの内容を変更できないよう制限する  詳しくは <a href=\"https://www.kb.cert.org/vuls/id/131152\"target=\"blank\">CERT/CC が公開している情報</a>を参照ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "CVE-2021-36958 | Windows Print Spooler Remote Code Execution Vulnerability",
-          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36958"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "Microsoft Security Bulletin MS16-087 - Critical",
-          "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-087"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "Introduction to Point and Print",
-          "url": "https://docs.microsoft.com/en-us/windows-hardware/drivers/print/introduction-to-point-and-print"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "WHQL Release Signature",
-          "url": "https://docs.microsoft.com/en-us/windows-hardware/drivers/install/whql-release-signature"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "Installing Queue-Specific Files",
-          "url": "https://docs.microsoft.com/en-us/windows-hardware/drivers/print/installing-queue-specific-files"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-36958",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36958"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96414899",
-          "url": "http://jvn.jp/cert/JVNVU96414899"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#131152",
-          "url": "https://www.kb.cert.org/vuls/id/131152"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-08-18T11:52:15+09:00",
-          "description": "[2021年08月18日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-08-18T12:30:36+09:00",
-    "datelastupdated": "2021-08-18T12:30:36+09:00",
-    "datepublic": "2021-08-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-002274",
+	"vulinfodata": {
+		"title": "Microsoft Windows の印刷スプーラにリモートコード実行の脆弱性",
+		"vulinfodescription": {
+			"overview": "Microsoft Windows の Print Spooler サービスには、特権的なファイル操作を不適切に実施した場合、リモートコード実行が可能となる脆弱性があります。  Print Spooler サービスは、印刷において印刷待ちを実現するためのサービスです。2021年8月10日にリリースされたセキュリティ更新プログラムを適用していない Microsoft Windows において、管理者権限を持たないユーザが要求した場合であっても Print Spooler サービスはプリンタドライバを SYSTEM 権限でインストールします。また、Microsoft Windows は、プリンタドライバをインストールする際にドライバパッケージが信頼できるソースによって署名されていることを検証しますが、Windows のプリンタドライバはデバイスの使用に関する <a href=\"https://docs.microsoft.com/en-us/windows-hardware/drivers/print/installing-queue-specific-files\"target=\"blank\">queue-spesific</a> ファイルを指定でき、このファイルへの署名の検証は要求されません。 そのため、例えばプリンタドライバのインストール時に、これらのファイルを用いることですでにシステムに配置されている署名検証済みのファイルを上書きし、リモートのプリンタ側にファイル内のコードを自動的に実行するように設定することで、結果としてローカルでの権限昇格が可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:microsoft:multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.3",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者が、Microsoft Windows を細工したプリンタに接続することで、SYSTEM 権限で任意のコードを実行する可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2021年8月16日時点では、脆弱性を修正したバージョンはリリースされておらず、準備中とのことです。 詳しくは <a href=\"https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36958\"target=\"blank\">Microsoft が公開している情報</a>を参照ください。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* Print Spooler サービスを停止し、無効にする  なお、この緩和策を実行した場合、ローカルとリモートの両方で印刷ができなくなります。  また、CERT/CC より次のワークアラウンドが提示されています。 　* 外部ネットワークへの SMB 通信をブロックする（同一ネットワーク内からの SMB 共有による攻撃は軽減できません） 　* 管理者以外のユーザが Point and Point を利用して、プリンタをインストールする際に使用可能なサーバを制限する 　* SYSTEM アカウントが C:WindowsSystem32spool\\\\drivers ディレクトリの内容を変更できないよう制限する  詳しくは <a href=\"https://www.kb.cert.org/vuls/id/131152\"target=\"blank\">CERT/CC が公開している情報</a>を参照ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "CVE-2021-36958 | Windows Print Spooler Remote Code Execution Vulnerability",
+					"url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36958"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "Microsoft Security Bulletin MS16-087 - Critical",
+					"url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-087"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "Introduction to Point and Print",
+					"url": "https://docs.microsoft.com/en-us/windows-hardware/drivers/print/introduction-to-point-and-print"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "WHQL Release Signature",
+					"url": "https://docs.microsoft.com/en-us/windows-hardware/drivers/install/whql-release-signature"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "Installing Queue-Specific Files",
+					"url": "https://docs.microsoft.com/en-us/windows-hardware/drivers/print/installing-queue-specific-files"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-36958",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36958"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96414899",
+					"url": "http://jvn.jp/cert/JVNVU96414899"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#131152",
+					"url": "https://www.kb.cert.org/vuls/id/131152"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-08-18T11:52:15+09:00",
+					"description": "[2021年08月18日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-08-18T12:30:36+09:00",
+		"datelastupdated": "2021-08-18T12:30:36+09:00",
+		"datepublic": "2021-08-11T00:00:00+09:00"
+	}
 }

@@ -1,145 +1,145 @@
 {
-  "vulinfoid": "JVNDB-2004-000558",
-  "vulinfodata": {
-    "title": "Linux Kernel の ip_option_get 関数におけるメモリリークの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel では、VT (仮想端末) コンソールのドライバ (vt.c) において vc_resize() 関数が、TCP/IP プロトコル実装のためのオプション解析モジュール (ip_options.c) において ip_options_get() 関数がそれぞれ使用されています。  Linux Kernel 2.4.28/2.6.9 以前の vc_resize() および ip_options_get() 関数には、引数に対する妥当性の確認が適切に行われていないため、整数オーバーフローが発生する問題が存在します。(CAN-2004-1333、CAN-2004-1334)   これらの問題を利用するローカルの攻撃者は、不正な値を引き渡す悪意あるプログラムを実行することにより、カーネルをクラッシュさせ、結果としてシステムをサービス不能状態に陥らせることが可能です。  尚、この vc_resize() 関数における整数オーバーフローの問題を利用するためには、攻撃者はコンソール経由で悪意あるプログラムを実行する必要があります。 Ip_options_get() 関数における整数オーバーフローの問題に関しては、Linux Kernel 2.6 のみが影響を受けます。  また、上記の問題とは別に cmsg_send により ip_options_get() 関数が繰り返し呼び出されることにより生じるメモリリークの問題 (CAN-2004-1335) が報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0 ",
-            "2.1 ",
-            "3.0 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "2.1",
-          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:016",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-016.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:017",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-017.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ミラクル・リナックス株式会社",
-          "vulinfoid": "Top Page",
-          "url": "http://www.miraclelinux.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:016",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-016J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:017",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-017J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-1335",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1335"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-1335",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1335"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11956",
-          "url": "http://www.securityfocus.com/bid/11956"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1012547",
-          "url": "http://securitytracker.com/alerts/2004/Dec/1012547.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-12-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000558",
+	"vulinfodata": {
+		"title": "Linux Kernel の ip_option_get 関数におけるメモリリークの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel では、VT (仮想端末) コンソールのドライバ (vt.c) において vc_resize() 関数が、TCP/IP プロトコル実装のためのオプション解析モジュール (ip_options.c) において ip_options_get() 関数がそれぞれ使用されています。  Linux Kernel 2.4.28/2.6.9 以前の vc_resize() および ip_options_get() 関数には、引数に対する妥当性の確認が適切に行われていないため、整数オーバーフローが発生する問題が存在します。(CAN-2004-1333、CAN-2004-1334)   これらの問題を利用するローカルの攻撃者は、不正な値を引き渡す悪意あるプログラムを実行することにより、カーネルをクラッシュさせ、結果としてシステムをサービス不能状態に陥らせることが可能です。  尚、この vc_resize() 関数における整数オーバーフローの問題を利用するためには、攻撃者はコンソール経由で悪意あるプログラムを実行する必要があります。 Ip_options_get() 関数における整数オーバーフローの問題に関しては、Linux Kernel 2.6 のみが影響を受けます。  また、上記の問題とは別に cmsg_send により ip_options_get() 関数が繰り返し呼び出されることにより生じるメモリリークの問題 (CAN-2004-1335) が報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0 ",
+						"2.1 ",
+						"3.0 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.1",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:016",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-016.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:017",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-017.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ミラクル・リナックス株式会社",
+					"vulinfoid": "Top Page",
+					"url": "http://www.miraclelinux.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:016",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-016J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:017",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-017J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-1335",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1335"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-1335",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1335"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11956",
+					"url": "http://www.securityfocus.com/bid/11956"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1012547",
+					"url": "http://securitytracker.com/alerts/2004/Dec/1012547.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-12-15T00:00:00+09:00"
+	}
 }

@@ -1,231 +1,231 @@
 {
-  "vulinfoid": "JVNDB-2013-003320",
-  "vulinfodata": {
-    "title": "Apache HTTP Server の mod_dav.c におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache HTTP Server の mod_dav.c は、URI 用に DAV が有効であるかを適切に判断しないため、サービス運用妨害 (セグメンテーション違反) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:apache:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.2.25 未満"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.7.5",
-            "v10.8.5",
-            "v10.9",
-            "v10.9.1"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X Server",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.7.5"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、mod_dav_svn モジュールに処理される URI に対して、DAV ではない URI (non-DAV URI) を参照する href 属性を含む XML データを持つ MERGE リクエストを介して、サービス運用妨害 (セグメンテーション違反) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache httpd 2.2 vulnerabilities",
-          "vulinfoid": "Apache HTTP Server 2.2.25 Released",
-          "url": "http://www.apache.org/dist/httpd/Announcement2.2.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache-SVN",
-          "vulinfoid": "Log of /httpd/httpd/trunk/modules/dav/main/mod_dav.c",
-          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?view=log"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache-SVN",
-          "vulinfoid": "Diff of /httpd/httpd/trunk/modules/dav/main/mod_dav.c",
-          "url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?r1=1482522&r2=1485668&diff_format=h"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2014-02-25-1",
-          "url": "http://lists.apple.com/archives/security-announce/2014/Feb/msg00000.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT6150",
-          "url": "http://support.apple.com/kb/HT6150"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT6150",
-          "url": "http://support.apple.com/kb/HT6150?viewlocale=ja_JP"
-        },
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "Apache HTTP Server MERGE Request Denial of Service Vulnerability",
-          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-1896"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX02927 SSRT101288",
-          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c03922406"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1644047",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21644047"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1337",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00026.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1340",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00029.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1341",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00030.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1156",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1156.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1207",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1207.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1208",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1208.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1209",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1209.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "CVE-2013-1896 Denial of Service (DoS) vulnerability in Apache HTTP Server",
-          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2013_1896_denial_of"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1903-1",
-          "url": "http://www.ubuntu.com/usn/USN-1903-1"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2014-14",
-          "url": "http://www.turbolinux.co.jp/security/2014/TLSA-2014-14j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-1896",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1896"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95868425",
-          "url": "http://jvn.jp/vu/JVNVU95868425/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-1896",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1896"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Secunia Advisory SA55032",
-          "url": "http://secunia.com/advisories/55032"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年07月12日]\\n  掲載\\n[2013年09月04日]\\n  ベンダ情報：シスコシステムズ (Apache HTTP Server MERGE Request Denial of Service Vulnerability) を追加\\n[2013年10月28日]\\n  ベンダ情報：IBM (1644047)\\n  ベンダ情報：Novell (openSUSE-SU-2013:1337)\\n  ベンダ情報：Novell (openSUSE-SU-2013:1340)\\n  ベンダ情報：Novell (openSUSE-SU-2013:1341)\\n  ベンダ情報：Ubuntu (USN-1903-1)\\n  ベンダ情報：オラクル (CVE-2013-1896 Denial of Service (DoS) vulnerability in Apache HTTP Server) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX02927 SSRT101288) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1156)\\n  ベンダ情報：レッドハット (RHSA-2013:1207)\\n  ベンダ情報：レッドハット (RHSA-2013:1208)\\n  ベンダ情報：レッドハット (RHSA-2013:1209)\\n  参考情報：関連文書 (Secunia Advisory SA55032) を追加\\n[2014年02月28日]\\n  影響を受けるシステム：アップル (HT6150) の情報を追加\\n  ベンダ情報：アップル (APPLE-SA-2014-02-25-1) を追加\\n  ベンダ情報：アップル (HT6150) を追加\\n  参考情報：JVN (JVNVU#95868425) を追加\\n[2015年03月26日]\\n  ベンダ情報：ターボリナックス (TLSA-2014-14) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-07-12T15:42:08+09:00",
-    "datelastupdated": "2015-03-26T17:54:36+09:00",
-    "datepublic": "2013-07-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-003320",
+	"vulinfodata": {
+		"title": "Apache HTTP Server の mod_dav.c におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache HTTP Server の mod_dav.c は、URI 用に DAV が有効であるかを適切に判断しないため、サービス運用妨害 (セグメンテーション違反) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:apache:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.2.25 未満"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.7.5",
+						"v10.8.5",
+						"v10.9",
+						"v10.9.1"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X Server",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.7.5"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、mod_dav_svn モジュールに処理される URI に対して、DAV ではない URI (non-DAV URI) を参照する href 属性を含む XML データを持つ MERGE リクエストを介して、サービス運用妨害 (セグメンテーション違反) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache httpd 2.2 vulnerabilities",
+					"vulinfoid": "Apache HTTP Server 2.2.25 Released",
+					"url": "http://www.apache.org/dist/httpd/Announcement2.2.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache-SVN",
+					"vulinfoid": "Log of /httpd/httpd/trunk/modules/dav/main/mod_dav.c",
+					"url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?view=log"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache-SVN",
+					"vulinfoid": "Diff of /httpd/httpd/trunk/modules/dav/main/mod_dav.c",
+					"url": "http://svn.apache.org/viewvc/httpd/httpd/trunk/modules/dav/main/mod_dav.c?r1=1482522&r2=1485668&diff_format=h"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2014-02-25-1",
+					"url": "http://lists.apple.com/archives/security-announce/2014/Feb/msg00000.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT6150",
+					"url": "http://support.apple.com/kb/HT6150"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT6150",
+					"url": "http://support.apple.com/kb/HT6150?viewlocale=ja_JP"
+				},
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "Apache HTTP Server MERGE Request Denial of Service Vulnerability",
+					"url": "http://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-1896"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX02927 SSRT101288",
+					"url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c03922406"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1644047",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21644047"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1337",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00026.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1340",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00029.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1341",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-08/msg00030.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1156",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1156.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1207",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1207.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1208",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1208.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1209",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1209.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "CVE-2013-1896 Denial of Service (DoS) vulnerability in Apache HTTP Server",
+					"url": "https://blogs.oracle.com/sunsecurity/entry/cve_2013_1896_denial_of"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1903-1",
+					"url": "http://www.ubuntu.com/usn/USN-1903-1"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2014-14",
+					"url": "http://www.turbolinux.co.jp/security/2014/TLSA-2014-14j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-1896",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1896"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95868425",
+					"url": "http://jvn.jp/vu/JVNVU95868425/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-1896",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1896"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Secunia Advisory SA55032",
+					"url": "http://secunia.com/advisories/55032"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年07月12日]\\n  掲載\\n[2013年09月04日]\\n  ベンダ情報：シスコシステムズ (Apache HTTP Server MERGE Request Denial of Service Vulnerability) を追加\\n[2013年10月28日]\\n  ベンダ情報：IBM (1644047)\\n  ベンダ情報：Novell (openSUSE-SU-2013:1337)\\n  ベンダ情報：Novell (openSUSE-SU-2013:1340)\\n  ベンダ情報：Novell (openSUSE-SU-2013:1341)\\n  ベンダ情報：Ubuntu (USN-1903-1)\\n  ベンダ情報：オラクル (CVE-2013-1896 Denial of Service (DoS) vulnerability in Apache HTTP Server) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX02927 SSRT101288) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1156)\\n  ベンダ情報：レッドハット (RHSA-2013:1207)\\n  ベンダ情報：レッドハット (RHSA-2013:1208)\\n  ベンダ情報：レッドハット (RHSA-2013:1209)\\n  参考情報：関連文書 (Secunia Advisory SA55032) を追加\\n[2014年02月28日]\\n  影響を受けるシステム：アップル (HT6150) の情報を追加\\n  ベンダ情報：アップル (APPLE-SA-2014-02-25-1) を追加\\n  ベンダ情報：アップル (HT6150) を追加\\n  参考情報：JVN (JVNVU#95868425) を追加\\n[2015年03月26日]\\n  ベンダ情報：ターボリナックス (TLSA-2014-14) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-07-12T15:42:08+09:00",
+		"datelastupdated": "2015-03-26T17:54:36+09:00",
+		"datepublic": "2013-07-10T00:00:00+09:00"
+	}
 }

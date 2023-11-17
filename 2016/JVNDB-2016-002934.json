@@ -1,120 +1,120 @@
 {
-  "vulinfoid": "JVNDB-2016-002934",
-  "vulinfodata": {
-    "title": "Uptime Infrastructure Monitor (旧称 up.time) の Linux 向けエージェントに認証欠如の問題",
-    "vulinfodescription": {
-      "overview": "Uptime Infrastructure Monitor (旧称 up.time) の Linux 向けエージェントには、ユーザがシステム内の任意のファイルを参照可能な問題が存在します。  重要な機能に対する認証の欠如 (CWE-306) - CVE-2015-8268 研究者は「Linux 向けの uptime.agent version 7.5 が読み出し権限を持つ任意のファイルをリモートから認証なしで取得できる」と述べています。開発者は、version 7.5 および 7.6 がこの問題の影響を受けることを確認しています。  CWE-306: Missing Authentication for Critical Function http://cwe.mitre.org/data/definitions/306.html  関連する脆弱性情報が JVNVU#99135508 で報告されています。  JVNVU#99135508 http://jvn.jp/vu/JVNVU99135508/"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "IDERA, Inc.",
-          "productname": "Uptime Infrastructure Monitor",
-          "cpe": {
-            "text": "cpe:/a:idera:uptime_infrastructure_monitor",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(旧称 up.time) の Linux 向けエージェント Version 7.5 および 7.6"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、当該製品が動作しているシステム上の任意のファイルを取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者は本脆弱性を修正した Uptime Infrastructure Monitor Version 7.7 をリリースしています。開発者が提供する情報をもとに、最新版へアップデートしてください。  Uptime Infrastructure Monitor Version 7.7 http://docs.uptimesoftware.com/display/UT/Release+Notes  [ワークアラウンドを実施する] 開発者は、アップデートのほかに、影響回避のための設定について次のように述べています。  　1. All agents run in a read only mode by default, where they can only poll metrics. 　(エージェントはデフォルトで読み取り専用になっており、ポーリングのみ可能です。)  　2. In order to use custom scripts or trigger recovery actions, you need to set a password on the agent, or add commands to the .uptmpasswd file for the linux agent. 　(カスタムスクリプトを使用したりリカバリ動作を指示したりしたい場合は、エージェントにパスワードを設定するか、Linux 向けエージェントでは .uptmpasswd ファイルへコマンドを追加してください。)  　3. Agents communication can be encrypted with SSL by using various SSL Tunneling/Proxy Utilities (openSSL, etc). KB articles cover the specifics for implementing with Stunnel on various platforms. 　(エージェントの通信は OpenSSL など様々なトンネリング / プロキシ用ツールを使って暗号化することが可能です。Securing the Linux agent (tcpwrappers and ssl) では、様々なプラットフォームで stunnel を使って設定する場合の詳細が説明されています。)  KB articles http://docs.uptimesoftware.com/pages/viewpage.action?pageId=4555083  Securing the Linux agent (tcpwrappers and ssl) http://docs.uptimesoftware.com/pages/viewpage.action?pageId=4555083  　4. Agents running under xinet.d can also be secured at the service level by restricting incoming connections to only accept connections from the Monitoring Station, or limit the total number of connections, etc. 　(エージェントが xinet.d 下で動作する場合も、Monitoring Station 以外からの通信の制限、同時接続数の制限などを行うことができます。)  　5. Disable Agent Commands you don't use either via the Agent Console or editing conf/agent_commands.txt. 　(使用しない Agent Command については、Agent Console からの設定または conf/agent_commands.txt を直接編集することで、無効化してください。)"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "IDERA",
-          "vulinfoid": "Uptime Infrastructure Monitor Version 7.7 Release Notes - May 2016",
-          "url": "http://docs.uptimesoftware.com/display/UT/Release+Notes"
-        },
-        {
-          "type": "vendor",
-          "name": "IDERA",
-          "vulinfoid": "Knowledge Base: Securing the Linux agent (tcpwrappers and ssl)",
-          "url": "http://docs.uptimesoftware.com/pages/viewpage.action?pageId=4555083"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-8268",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8268"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97365498",
-          "url": "http://jvn.jp/cert/JVNVU97365498"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-8268",
-          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8268"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#204232",
-          "url": "http://www.kb.cert.org/vuls/id/204232"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年05月30日]\\n  掲載\\n[2016年06月14日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-8268) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-05-30T14:32:45+09:00",
-    "datelastupdated": "2016-06-14T16:08:58+09:00",
-    "datepublic": "2016-05-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-002934",
+	"vulinfodata": {
+		"title": "Uptime Infrastructure Monitor (旧称 up.time) の Linux 向けエージェントに認証欠如の問題",
+		"vulinfodescription": {
+			"overview": "Uptime Infrastructure Monitor (旧称 up.time) の Linux 向けエージェントには、ユーザがシステム内の任意のファイルを参照可能な問題が存在します。  重要な機能に対する認証の欠如 (CWE-306) - CVE-2015-8268 研究者は「Linux 向けの uptime.agent version 7.5 が読み出し権限を持つ任意のファイルをリモートから認証なしで取得できる」と述べています。開発者は、version 7.5 および 7.6 がこの問題の影響を受けることを確認しています。  CWE-306: Missing Authentication for Critical Function http://cwe.mitre.org/data/definitions/306.html  関連する脆弱性情報が JVNVU#99135508 で報告されています。  JVNVU#99135508 http://jvn.jp/vu/JVNVU99135508/"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "IDERA, Inc.",
+					"productname": "Uptime Infrastructure Monitor",
+					"cpe": {
+						"text": "cpe:/a:idera:uptime_infrastructure_monitor",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(旧称 up.time) の Linux 向けエージェント Version 7.5 および 7.6"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、当該製品が動作しているシステム上の任意のファイルを取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者は本脆弱性を修正した Uptime Infrastructure Monitor Version 7.7 をリリースしています。開発者が提供する情報をもとに、最新版へアップデートしてください。  Uptime Infrastructure Monitor Version 7.7 http://docs.uptimesoftware.com/display/UT/Release+Notes  [ワークアラウンドを実施する] 開発者は、アップデートのほかに、影響回避のための設定について次のように述べています。  　1. All agents run in a read only mode by default, where they can only poll metrics. 　(エージェントはデフォルトで読み取り専用になっており、ポーリングのみ可能です。)  　2. In order to use custom scripts or trigger recovery actions, you need to set a password on the agent, or add commands to the .uptmpasswd file for the linux agent. 　(カスタムスクリプトを使用したりリカバリ動作を指示したりしたい場合は、エージェントにパスワードを設定するか、Linux 向けエージェントでは .uptmpasswd ファイルへコマンドを追加してください。)  　3. Agents communication can be encrypted with SSL by using various SSL Tunneling/Proxy Utilities (openSSL, etc). KB articles cover the specifics for implementing with Stunnel on various platforms. 　(エージェントの通信は OpenSSL など様々なトンネリング / プロキシ用ツールを使って暗号化することが可能です。Securing the Linux agent (tcpwrappers and ssl) では、様々なプラットフォームで stunnel を使って設定する場合の詳細が説明されています。)  KB articles http://docs.uptimesoftware.com/pages/viewpage.action?pageId=4555083  Securing the Linux agent (tcpwrappers and ssl) http://docs.uptimesoftware.com/pages/viewpage.action?pageId=4555083  　4. Agents running under xinet.d can also be secured at the service level by restricting incoming connections to only accept connections from the Monitoring Station, or limit the total number of connections, etc. 　(エージェントが xinet.d 下で動作する場合も、Monitoring Station 以外からの通信の制限、同時接続数の制限などを行うことができます。)  　5. Disable Agent Commands you don't use either via the Agent Console or editing conf/agent_commands.txt. 　(使用しない Agent Command については、Agent Console からの設定または conf/agent_commands.txt を直接編集することで、無効化してください。)"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "IDERA",
+					"vulinfoid": "Uptime Infrastructure Monitor Version 7.7 Release Notes - May 2016",
+					"url": "http://docs.uptimesoftware.com/display/UT/Release+Notes"
+				},
+				{
+					"type": "vendor",
+					"name": "IDERA",
+					"vulinfoid": "Knowledge Base: Securing the Linux agent (tcpwrappers and ssl)",
+					"url": "http://docs.uptimesoftware.com/pages/viewpage.action?pageId=4555083"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-8268",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8268"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97365498",
+					"url": "http://jvn.jp/cert/JVNVU97365498"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-8268",
+					"url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8268"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#204232",
+					"url": "http://www.kb.cert.org/vuls/id/204232"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年05月30日]\\n  掲載\\n[2016年06月14日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-8268) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-05-30T14:32:45+09:00",
+		"datelastupdated": "2016-06-14T16:08:58+09:00",
+		"datepublic": "2016-05-19T00:00:00+09:00"
+	}
 }

@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2003-000057",
-  "vulinfodata": {
-    "title": "tcpdump の isakmp_sub_print におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------   ネットワークトラフィック解析ツール tcpdump では、UDP port 500 番を使用して IPSEC や TLS などのセキュリティプロトコルのための Security Association (SA) の確立に利用される ISAKMP (Internet Security Association and Key Management Protocol) がサポートされています。  特定のバージョンの tcpdump には、意図的に作成された特定の悪意ある ISAKMP パケットを受け取り、パケットを解析することにより、無限ループ状態に陥る問題が存在します。  この問題を利用することで、リモートの攻撃者は tcpdump をサービス不能状態に陥らせることが可能です。結果として、攻撃者は標的ホストで管理されているネットワークトラフィック解析を妨げることが可能です。 通常動作への復旧には、tcpdump を再起動する必要があります。  この問題は libpcap 0.6.x および 0.7.x に対してビルドされた tcpdump 3.6、3.6.3、3.7.1 において再現することが報告されており、tcpdump 3.6 から 3.7.1 以前、もしくは tcpdump が同梱されている多くのディストリビューションが影響を受ける可能性があります。 さらには、tcpdump のコードをベースに作成されているアプリケーションにも影響が及ぶ可能性があります。  しかし、2002/09/06 時点での CVS バージョン管理による print-isakmp.c バージョン 1.34 へのアップデート、もしくは最新バージョン tcpdump 3.7.2 へのアップデートを済ませたユーザは、これらの問題の影響は受けません。  Tcpdump 3.7.2 へのアップデートにより、この他に重要なセキュリティの問題 (悪意ある BGP パケットを取り扱うことにより、無限ループに陥る問題、および悪意ある NFS パケットを取り扱うことにより、バッファオーバーフローが生じる問題) を解消することが可能です。 また、各ディストリビューションより提供されているパッチを適用することによっても、tcpdump 3.7.2 で解消された問題を解消することが可能です。  Red Hat Linux より提供されている RPM を適用する場合、この他にも tcpdump 3.6.2-2.2 で解消されている問題 (BGP デコーディングルーチンにおいて、データのコピー時の境界チェックが適切に行われていない問題) も解消することが可能です。 この問題は、意図的に作成された BGP パケットを受け取ることで、サービス不能状態に陥る、さらには任意のコードを実行されてしまう可能性が示唆されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2  ",
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "tcpdump",
-          "url": "http://www.miraclelinux.com/support/update/data/tcpdump.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:032",
-          "url": "http://rhn.redhat.com/errata/RHSA-2003-032.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2003-14",
-          "url": "http://www.turbolinux.com/security/2003/TLSA-2003-14.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003-032",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-032J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2003-14",
-          "url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-14j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0108",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0108"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0108",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0108"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6213",
-          "url": "http://www.securityfocus.com/bid/6213"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "4890",
-          "url": "http://www.securityfocus.com/bid/4890"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6974",
-          "url": "http://www.securityfocus.com/bid/6974"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-02-27T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000057",
+	"vulinfodata": {
+		"title": "tcpdump の isakmp_sub_print におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------   ネットワークトラフィック解析ツール tcpdump では、UDP port 500 番を使用して IPSEC や TLS などのセキュリティプロトコルのための Security Association (SA) の確立に利用される ISAKMP (Internet Security Association and Key Management Protocol) がサポートされています。  特定のバージョンの tcpdump には、意図的に作成された特定の悪意ある ISAKMP パケットを受け取り、パケットを解析することにより、無限ループ状態に陥る問題が存在します。  この問題を利用することで、リモートの攻撃者は tcpdump をサービス不能状態に陥らせることが可能です。結果として、攻撃者は標的ホストで管理されているネットワークトラフィック解析を妨げることが可能です。 通常動作への復旧には、tcpdump を再起動する必要があります。  この問題は libpcap 0.6.x および 0.7.x に対してビルドされた tcpdump 3.6、3.6.3、3.7.1 において再現することが報告されており、tcpdump 3.6 から 3.7.1 以前、もしくは tcpdump が同梱されている多くのディストリビューションが影響を受ける可能性があります。 さらには、tcpdump のコードをベースに作成されているアプリケーションにも影響が及ぶ可能性があります。  しかし、2002/09/06 時点での CVS バージョン管理による print-isakmp.c バージョン 1.34 へのアップデート、もしくは最新バージョン tcpdump 3.7.2 へのアップデートを済ませたユーザは、これらの問題の影響は受けません。  Tcpdump 3.7.2 へのアップデートにより、この他に重要なセキュリティの問題 (悪意ある BGP パケットを取り扱うことにより、無限ループに陥る問題、および悪意ある NFS パケットを取り扱うことにより、バッファオーバーフローが生じる問題) を解消することが可能です。 また、各ディストリビューションより提供されているパッチを適用することによっても、tcpdump 3.7.2 で解消された問題を解消することが可能です。  Red Hat Linux より提供されている RPM を適用する場合、この他にも tcpdump 3.6.2-2.2 で解消されている問題 (BGP デコーディングルーチンにおいて、データのコピー時の境界チェックが適切に行われていない問題) も解消することが可能です。 この問題は、意図的に作成された BGP パケットを受け取ることで、サービス不能状態に陥る、さらには任意のコードを実行されてしまう可能性が示唆されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2  ",
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "tcpdump",
+					"url": "http://www.miraclelinux.com/support/update/data/tcpdump.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:032",
+					"url": "http://rhn.redhat.com/errata/RHSA-2003-032.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2003-14",
+					"url": "http://www.turbolinux.com/security/2003/TLSA-2003-14.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003-032",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-032J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2003-14",
+					"url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-14j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0108",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0108"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0108",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0108"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6213",
+					"url": "http://www.securityfocus.com/bid/6213"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "4890",
+					"url": "http://www.securityfocus.com/bid/4890"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6974",
+					"url": "http://www.securityfocus.com/bid/6974"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-02-27T00:00:00+09:00"
+	}
 }

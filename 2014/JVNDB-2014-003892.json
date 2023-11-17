@@ -1,257 +1,257 @@
 {
-  "vulinfoid": "JVNDB-2014-003892",
-  "vulinfodata": {
-    "title": "Apache HttpComponents HttpClient および HttpAsyncClient の org.apache.http.conn.ssl.AbstractVerifier における SSL サーバになりすまされる脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache HttpComponents HttpClient および HttpAsyncClient の org.apache.http.conn.ssl.AbstractVerifier は、サーバのホスト名が X.509 証明書のサブジェクトの Common Name (CN) または subjectAltName フィールドのドメイン名と一致することを適切に検証しないため、SSL サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-297: Improper Validation of Certificate with Host Mismatch (ホストの不一致による証明書の不適切な検証) と識別されています。 http://cwe.mitre.org/data/definitions/297.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "HttpAsyncClient",
-          "cpe": {
-            "text": "cpe:/a:apache:httpasyncclient",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0.2 未満"
-          ]
-        },
-        {
-          "name": "Apache Software Foundation",
-          "productname": "HttpClient",
-          "cpe": {
-            "text": "cpe:/a:apache:httpclient",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.3.5 未満"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "HPE Network Node Manager i",
-          "cpe": {
-            "text": "cpe:/a:hp:network_node_manager_i",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.00",
-            "10.01",
-            "9.20",
-            "9.23",
-            "9.24",
-            "9.25"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "中間者攻撃 (man-in-the-middle attack) により、証明書の識別名 (DN) のフィールド内の \"CN=\" 文字列を介して、SSL サーバになりすまされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "HttpClient Overview",
-          "url": "http://hc.apache.org/httpcomponents-client-ga/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "HttpAsyncClient Overview",
-          "url": "http://hc.apache.org/httpcomponents-asyncclient-4.0.x/"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03584",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05103564"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1972799",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21972799"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat",
-          "vulinfoid": "Do CVE-2012-6153 and CVE-2014-3577 affect Red Hat products?",
-          "url": "https://access.redhat.com/solutions/1165533"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1835",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1835.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0765",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0765.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1166",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1166.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0850",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0850.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1833",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1833.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0851",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0851.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0234",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0234.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0158",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0158.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0125",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0125.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0235",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0235.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:1176",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-1176.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1891",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1891.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1146",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1146.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1836",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1836.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:1177",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-1177.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1892",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1892.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0675",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0675.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1834",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1834.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0720",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0720.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-3577",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3577"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-3577",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3577"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Apache HttpComponents Man-In-The-Middle",
-          "url": "http://packetstormsecurity.com/files/127913/Apache-HttpComponents-Man-In-The-Middle.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年08月22日]\\n  掲載\\n[2015年03月02日]\\n  ベンダ情報：レッドハット (RHSA-2015:0234) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0235) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1891) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1146) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1892) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1834) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1835) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1166) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1833) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0158) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1836) を追加\\n  ベンダ情報：レッドハット (Do CVE-2012-6153 and CVE-2014-3577 affect Red Hat products?) を追加\\n[2015年05月11日]\\n  ベンダ情報：レッドハット (RHSA-2015:0675) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0720) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0765) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0850) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0851) を追加\\n[2015年06月09日]\\n  ベンダ情報：レッドハット (RHSA-2015:0125) を追加\\n[2015年07月30日]\\n  ベンダ情報：レッドハット (RHSA-2015:1176) を追加\\n[2015年07月31日]\\n  ベンダ情報：レッドハット (RHSA-2015:1177) を追加\\n[2016年02月03日]\\n  ベンダ情報：IBM (1972799) を追加\\n[2016年09月30日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03584) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-08-22T16:42:48+09:00",
-    "datelastupdated": "2016-09-30T09:57:55+09:00",
-    "datepublic": "2014-08-18T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-003892",
+	"vulinfodata": {
+		"title": "Apache HttpComponents HttpClient および HttpAsyncClient の org.apache.http.conn.ssl.AbstractVerifier における SSL サーバになりすまされる脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache HttpComponents HttpClient および HttpAsyncClient の org.apache.http.conn.ssl.AbstractVerifier は、サーバのホスト名が X.509 証明書のサブジェクトの Common Name (CN) または subjectAltName フィールドのドメイン名と一致することを適切に検証しないため、SSL サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-297: Improper Validation of Certificate with Host Mismatch (ホストの不一致による証明書の不適切な検証) と識別されています。 http://cwe.mitre.org/data/definitions/297.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "HttpAsyncClient",
+					"cpe": {
+						"text": "cpe:/a:apache:httpasyncclient",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0.2 未満"
+					]
+				},
+				{
+					"name": "Apache Software Foundation",
+					"productname": "HttpClient",
+					"cpe": {
+						"text": "cpe:/a:apache:httpclient",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.3.5 未満"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "HPE Network Node Manager i",
+					"cpe": {
+						"text": "cpe:/a:hp:network_node_manager_i",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.00",
+						"10.01",
+						"9.20",
+						"9.23",
+						"9.24",
+						"9.25"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "中間者攻撃 (man-in-the-middle attack) により、証明書の識別名 (DN) のフィールド内の \"CN=\" 文字列を介して、SSL サーバになりすまされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "HttpClient Overview",
+					"url": "http://hc.apache.org/httpcomponents-client-ga/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "HttpAsyncClient Overview",
+					"url": "http://hc.apache.org/httpcomponents-asyncclient-4.0.x/"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03584",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05103564"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1972799",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21972799"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat",
+					"vulinfoid": "Do CVE-2012-6153 and CVE-2014-3577 affect Red Hat products?",
+					"url": "https://access.redhat.com/solutions/1165533"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1835",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1835.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0765",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0765.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1166",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1166.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0850",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0850.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1833",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1833.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0851",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0851.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0234",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0234.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0158",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0158.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0125",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0125.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0235",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0235.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:1176",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-1176.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1891",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1891.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1146",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1146.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1836",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1836.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:1177",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-1177.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1892",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1892.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0675",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0675.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1834",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1834.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0720",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0720.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-3577",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3577"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-3577",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3577"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Apache HttpComponents Man-In-The-Middle",
+					"url": "http://packetstormsecurity.com/files/127913/Apache-HttpComponents-Man-In-The-Middle.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年08月22日]\\n  掲載\\n[2015年03月02日]\\n  ベンダ情報：レッドハット (RHSA-2015:0234) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0235) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1891) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1146) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1892) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1834) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1835) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1166) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1833) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0158) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1836) を追加\\n  ベンダ情報：レッドハット (Do CVE-2012-6153 and CVE-2014-3577 affect Red Hat products?) を追加\\n[2015年05月11日]\\n  ベンダ情報：レッドハット (RHSA-2015:0675) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0720) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0765) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0850) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0851) を追加\\n[2015年06月09日]\\n  ベンダ情報：レッドハット (RHSA-2015:0125) を追加\\n[2015年07月30日]\\n  ベンダ情報：レッドハット (RHSA-2015:1176) を追加\\n[2015年07月31日]\\n  ベンダ情報：レッドハット (RHSA-2015:1177) を追加\\n[2016年02月03日]\\n  ベンダ情報：IBM (1972799) を追加\\n[2016年09月30日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03584) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-08-22T16:42:48+09:00",
+		"datelastupdated": "2016-09-30T09:57:55+09:00",
+		"datepublic": "2014-08-18T00:00:00+09:00"
+	}
 }

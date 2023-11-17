@@ -1,167 +1,167 @@
 {
-  "vulinfoid": "JVNDB-2006-000976",
-  "vulinfodata": {
-    "title": "LibTIFF の tiff2pdf におけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "LibTIFF の tiff2pdf には、t2p_write_pdf_string() 関数において DocumentName タグに UTF-8 文字を含む TIFF ファイルを処理した際に、バッファオーバーフローの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "LibTIFF",
-          "productname": "LibTIFF",
-          "cpe": {
-            "text": "cpe:/a:libtiff_project:libtiff",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.8.2 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 (sparc) ",
-            "10 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0 "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者に巧妙に作成された TIFF ファイルを処理することで、アプリケーションがクラッシュし、サービス運用妨害 (DoS) 状態となる、もしくは任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "LibTIFF - TIFF Library and Utilities",
-          "vulinfoid": "Top Page",
-          "url": "http://www.remotesensing.org/libtiff/"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2008:0848",
-          "url": "https://rhn.redhat.com/errata/RHSA-2008-0848.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "103160",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103160-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "103099",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103099-1"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2008:0848",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0848J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2006-2193",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2193"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2006-2197",
-          "url": "http://www.frsirt.com/english/advisories/2006/2197"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "26991",
-          "url": "http://xforce.iss.net/xforce/xfdb/26991"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2006-2193",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-2193"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA20488",
-          "url": "http://secunia.com/advisories/20488/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "18331",
-          "url": "http://www.securityfocus.com/bid/18331"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年10月23日]\\n  掲載\\n[2007年12月04日]\\n  ベンダ情報：サン・マイクロシステムズ (103160) 追加。\\n[2008年09月12日]\\n  影響を受けるシステム：レッドハット (RHSA-2008:0848) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2008:0848) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-10-23T15:43:12+09:00",
-    "datelastupdated": "2008-09-12T14:32:48+09:00",
-    "datepublic": "2006-06-08T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2006-000976",
+	"vulinfodata": {
+		"title": "LibTIFF の tiff2pdf におけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "LibTIFF の tiff2pdf には、t2p_write_pdf_string() 関数において DocumentName タグに UTF-8 文字を含む TIFF ファイルを処理した際に、バッファオーバーフローの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "LibTIFF",
+					"productname": "LibTIFF",
+					"cpe": {
+						"text": "cpe:/a:libtiff_project:libtiff",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.8.2 およびそれ以前"
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 (sparc) ",
+						"10 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0 "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者に巧妙に作成された TIFF ファイルを処理することで、アプリケーションがクラッシュし、サービス運用妨害 (DoS) 状態となる、もしくは任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "LibTIFF - TIFF Library and Utilities",
+					"vulinfoid": "Top Page",
+					"url": "http://www.remotesensing.org/libtiff/"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2008:0848",
+					"url": "https://rhn.redhat.com/errata/RHSA-2008-0848.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "103160",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103160-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "103099",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103099-1"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2008:0848",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0848J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2006-2193",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2193"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2006-2197",
+					"url": "http://www.frsirt.com/english/advisories/2006/2197"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "26991",
+					"url": "http://xforce.iss.net/xforce/xfdb/26991"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2006-2193",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-2193"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA20488",
+					"url": "http://secunia.com/advisories/20488/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "18331",
+					"url": "http://www.securityfocus.com/bid/18331"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年10月23日]\\n  掲載\\n[2007年12月04日]\\n  ベンダ情報：サン・マイクロシステムズ (103160) 追加。\\n[2008年09月12日]\\n  影響を受けるシステム：レッドハット (RHSA-2008:0848) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2008:0848) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-10-23T15:43:12+09:00",
+		"datelastupdated": "2008-09-12T14:32:48+09:00",
+		"datepublic": "2006-06-08T00:00:00+09:00"
+	}
 }

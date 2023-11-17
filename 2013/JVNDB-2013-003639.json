@@ -1,219 +1,219 @@
 {
-  "vulinfoid": "JVNDB-2013-003639",
-  "vulinfodata": {
-    "title": "Open Shortest Path First (OSPF) プロトコルの Link State Advertisement (LSA) に関する問題",
-    "vulinfodescription": {
-      "overview": "Open Shortest Path First (OSPF) プロトコルの仕様には、Link State Advertisement (LSA) の識別に関する問題が存在します。  OSPF プロトコルで規定されている LSA には、LS Type、Advertising Router および Link State ID が含まれています。OSPF の規定では、router-LSA の Link State ID と Advertising Router には同一の値が設定されることになっています。この二つの値が異なる、細工された router-LSA を受信することでルーティングテーブルの内容が改ざんされる可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco ASA 5500 シリーズ",
-          "cpe": {
-            "text": "cpe:/h:cisco:asa_5500",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.x から 9.1"
-          ]
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco Firewall Services Module (FWSM)",
-          "cpe": {
-            "text": "cpe:/h:cisco:firewall_services_module",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco IOS",
-          "cpe": {
-            "text": "cpe:/o:cisco:ios",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.0 から 12.4",
-            "15.0 から 15.3"
-          ]
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco IOS XE",
-          "cpe": {
-            "text": "cpe:/o:cisco:ios_xe",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.x から 3.9.xS"
-          ]
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco NX-OS",
-          "cpe": {
-            "text": "cpe:/o:cisco:nx-os",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco Pix Firewall ソフトウェア",
-          "cpe": {
-            "text": "cpe:/o:cisco:pix_firewall_software",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.x から 9.1"
-          ]
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco StarOS",
-          "cpe": {
-            "text": "cpe:/o:cisco:staros",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "14.0.50488 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各製品や実装により異なりますが、ルーティングテーブルを改ざんされることで、サービス運用妨害 (DoS) 攻撃を受けたり、ネットワークのトラフィックを別のルータに誘導されたりする可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 各製品の開発者が提供する情報をもとにアップデートを行ってください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Cisco Applied Mitigation Bulletin",
-          "vulinfoid": "29974",
-          "url": "http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=29974"
-        },
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "OSPF LSA Manipulation Vulnerability in Multiple Cisco Products  (cisco-sa-20130801-lsaospf)",
-          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130801-lsaospf"
-        },
-        {
-          "type": "vendor",
-          "name": "Juniper Networks",
-          "vulinfoid": "2013-07 Out of Cycle Security Bulletin: Multiple products: OSPF protocol vulnerability (CVE-2013-0149)",
-          "url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10582"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV13-006",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv13-006.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2013",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2013-1899837.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2013 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2013verbose-1899842.html"
-        },
-        {
-          "type": "vendor",
-          "name": "RTシリーズのTCP/IPに関するFAQ",
-          "vulinfoid": "RFCの記述の不整合を起因とするOSPFv2の脆弱性(VU#229804)について",
-          "url": "http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/VU96465452.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "October 2013 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/october_2013_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "Vulnerability Alert",
-          "vulinfoid": "30210",
-          "url": "http://tools.cisco.com/security/center/viewAlert.x?alertId=30210"
-        },
-        {
-          "type": "vendor",
-          "name": "シスコ セキュリティアドバイザリ",
-          "vulinfoid": "OSPF LSA Manipulation Vulnerability in Multiple Cisco Products  (cisco-sa-20130801-lsaospf)",
-          "url": "http://www.cisco.com/cisco/web/support/JP/111/1119/1119243_cisco-sa-20130801-lsaospf-j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-0149",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0149"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96465452",
-          "url": "http://jvn.jp/cert/JVNVU96465452/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-0149",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0149"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#229804",
-          "url": "http://www.kb.cert.org/vuls/id/229804"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "RFC2328 - OSPF Version 2 ",
-          "url": "http://tools.ietf.org/html/rfc2328"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-noinfo",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "情報不足"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年08月06日]\\n  掲載\\n[2013年09月09日]\\n  ベンダ情報：日本電気 (NV13-006) を追加\\n[2013年10月23日]\\n  影響を受けるシステム：オラクル (Oracle Critical Patch Update Advisory - October 2013) の情報を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2013) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2013 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2013 Critical Patch Update Released) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-08-06T11:46:18+09:00",
-    "datelastupdated": "2013-10-23T14:46:43+09:00",
-    "datepublic": "2013-08-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-003639",
+	"vulinfodata": {
+		"title": "Open Shortest Path First (OSPF) プロトコルの Link State Advertisement (LSA) に関する問題",
+		"vulinfodescription": {
+			"overview": "Open Shortest Path First (OSPF) プロトコルの仕様には、Link State Advertisement (LSA) の識別に関する問題が存在します。  OSPF プロトコルで規定されている LSA には、LS Type、Advertising Router および Link State ID が含まれています。OSPF の規定では、router-LSA の Link State ID と Advertising Router には同一の値が設定されることになっています。この二つの値が異なる、細工された router-LSA を受信することでルーティングテーブルの内容が改ざんされる可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco ASA 5500 シリーズ",
+					"cpe": {
+						"text": "cpe:/h:cisco:asa_5500",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.x から 9.1"
+					]
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco Firewall Services Module (FWSM)",
+					"cpe": {
+						"text": "cpe:/h:cisco:firewall_services_module",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco IOS",
+					"cpe": {
+						"text": "cpe:/o:cisco:ios",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.0 から 12.4",
+						"15.0 から 15.3"
+					]
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco IOS XE",
+					"cpe": {
+						"text": "cpe:/o:cisco:ios_xe",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.x から 3.9.xS"
+					]
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco NX-OS",
+					"cpe": {
+						"text": "cpe:/o:cisco:nx-os",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco Pix Firewall ソフトウェア",
+					"cpe": {
+						"text": "cpe:/o:cisco:pix_firewall_software",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.x から 9.1"
+					]
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco StarOS",
+					"cpe": {
+						"text": "cpe:/o:cisco:staros",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"14.0.50488 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各製品や実装により異なりますが、ルーティングテーブルを改ざんされることで、サービス運用妨害 (DoS) 攻撃を受けたり、ネットワークのトラフィックを別のルータに誘導されたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 各製品の開発者が提供する情報をもとにアップデートを行ってください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Cisco Applied Mitigation Bulletin",
+					"vulinfoid": "29974",
+					"url": "http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=29974"
+				},
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "OSPF LSA Manipulation Vulnerability in Multiple Cisco Products  (cisco-sa-20130801-lsaospf)",
+					"url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130801-lsaospf"
+				},
+				{
+					"type": "vendor",
+					"name": "Juniper Networks",
+					"vulinfoid": "2013-07 Out of Cycle Security Bulletin: Multiple products: OSPF protocol vulnerability (CVE-2013-0149)",
+					"url": "http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10582"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV13-006",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv13-006.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - October 2013",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuoct2013-1899837.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - October 2013 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuoct2013verbose-1899842.html"
+				},
+				{
+					"type": "vendor",
+					"name": "RTシリーズのTCP/IPに関するFAQ",
+					"vulinfoid": "RFCの記述の不整合を起因とするOSPFv2の脆弱性(VU#229804)について",
+					"url": "http://www.rtpro.yamaha.co.jp/RT/FAQ/Security/VU96465452.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "October 2013 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/october_2013_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "Vulnerability Alert",
+					"vulinfoid": "30210",
+					"url": "http://tools.cisco.com/security/center/viewAlert.x?alertId=30210"
+				},
+				{
+					"type": "vendor",
+					"name": "シスコ セキュリティアドバイザリ",
+					"vulinfoid": "OSPF LSA Manipulation Vulnerability in Multiple Cisco Products  (cisco-sa-20130801-lsaospf)",
+					"url": "http://www.cisco.com/cisco/web/support/JP/111/1119/1119243_cisco-sa-20130801-lsaospf-j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-0149",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0149"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96465452",
+					"url": "http://jvn.jp/cert/JVNVU96465452/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-0149",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0149"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#229804",
+					"url": "http://www.kb.cert.org/vuls/id/229804"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "RFC2328 - OSPF Version 2 ",
+					"url": "http://tools.ietf.org/html/rfc2328"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-noinfo",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "情報不足"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年08月06日]\\n  掲載\\n[2013年09月09日]\\n  ベンダ情報：日本電気 (NV13-006) を追加\\n[2013年10月23日]\\n  影響を受けるシステム：オラクル (Oracle Critical Patch Update Advisory - October 2013) の情報を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2013) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2013 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2013 Critical Patch Update Released) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-08-06T11:46:18+09:00",
+		"datelastupdated": "2013-10-23T14:46:43+09:00",
+		"datepublic": "2013-08-01T00:00:00+09:00"
+	}
 }

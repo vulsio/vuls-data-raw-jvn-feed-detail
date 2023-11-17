@@ -1,182 +1,182 @@
 {
-  "vulinfoid": "JVNDB-2023-002315",
-  "vulinfodata": {
-    "title": "BIND における一連の serve-stale-related のルックアップを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "BIND には、'stale-answer-enable yes;' および 'stale-answer-client-timeout 0;' の両方が設定された BIND リゾルバで 'recursive-clients' クォータに達した場合、一連の serve-stale-related のルックアップを実行される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Debian",
-          "productname": "Debian GNU/Linux",
-          "cpe": {
-            "text": "cpe:/o:debian:debian_linux",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Fedora Project",
-          "productname": "Fedora",
-          "cpe": {
-            "text": "cpe:/o:fedoraproject:fedora",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.16.33 から 9.16.41",
-            "9.18.11 から 9.18.15",
-            "9.18.7 から 9.18.15"
-          ]
-        },
-        {
-          "name": "NetApp",
-          "productname": "Active IQ Unified Manager",
-          "cpe": {
-            "text": "cpe:/a:netapp:active_iq_unified_manager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "H300S ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:netapp:h300s_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "H410C ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:netapp:h410c_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "H410S ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:netapp:h410s_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "H500S ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:netapp:h500s_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "H700S ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:netapp:h700s_firmware",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "一連の serve-stale-related のルックアップを実行され、`named` がループし、スタックオーバーフローが原因で予期せず終了される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Debian Security Advisory",
-          "vulinfoid": "DSA-5439-1",
-          "url": "https://www.debian.org/security/2023/dsa-5439"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2023-8e1ddb1fa2",
-          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/U3K6AJK7RRSR53HRF5GGKPA6PDUDWOD2/"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2023-1d526d551c",
-          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SEFCEVCTYEMKTWA7V7EYPI5YQQ4JWDLI/"
-        },
-        {
-          "type": "vendor",
-          "name": "NetApp Advisory",
-          "vulinfoid": "NTAP-20230703-0010",
-          "url": "https://security.netapp.com/advisory/ntap-20230703-0010/"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisories",
-          "vulinfoid": "CVE-2023-2911: Exceeding the recursive-clients quota may cause named to terminate unexpectedly when stale-answer-client-timeout is set to 0",
-          "url": "https://kb.isc.org/docs/cve-2023-2911"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-2911",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-2911"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99441653",
-          "url": "https://jvn.jp/vu/JVNVU99441653/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2023-2911",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2911"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-787",
-          "url": "https://cwe.mitre.org/data/definitions/787.html",
-          "title": "境界外書き込み"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-07-05T13:53:38+09:00",
-          "description": "[2023年07月05日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-07-05T13:53:38+09:00",
-    "datelastupdated": "2023-07-05T13:53:38+09:00",
-    "datepublic": "2023-06-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-002315",
+	"vulinfodata": {
+		"title": "BIND における一連の serve-stale-related のルックアップを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "BIND には、'stale-answer-enable yes;' および 'stale-answer-client-timeout 0;' の両方が設定された BIND リゾルバで 'recursive-clients' クォータに達した場合、一連の serve-stale-related のルックアップを実行される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Debian",
+					"productname": "Debian GNU/Linux",
+					"cpe": {
+						"text": "cpe:/o:debian:debian_linux",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Fedora Project",
+					"productname": "Fedora",
+					"cpe": {
+						"text": "cpe:/o:fedoraproject:fedora",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.16.33 から 9.16.41",
+						"9.18.11 から 9.18.15",
+						"9.18.7 から 9.18.15"
+					]
+				},
+				{
+					"name": "NetApp",
+					"productname": "Active IQ Unified Manager",
+					"cpe": {
+						"text": "cpe:/a:netapp:active_iq_unified_manager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "H300S ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:netapp:h300s_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "H410C ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:netapp:h410c_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "H410S ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:netapp:h410s_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "H500S ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:netapp:h500s_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "H700S ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:netapp:h700s_firmware",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "一連の serve-stale-related のルックアップを実行され、`named` がループし、スタックオーバーフローが原因で予期せず終了される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Debian Security Advisory",
+					"vulinfoid": "DSA-5439-1",
+					"url": "https://www.debian.org/security/2023/dsa-5439"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2023-8e1ddb1fa2",
+					"url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/U3K6AJK7RRSR53HRF5GGKPA6PDUDWOD2/"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2023-1d526d551c",
+					"url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SEFCEVCTYEMKTWA7V7EYPI5YQQ4JWDLI/"
+				},
+				{
+					"type": "vendor",
+					"name": "NetApp Advisory",
+					"vulinfoid": "NTAP-20230703-0010",
+					"url": "https://security.netapp.com/advisory/ntap-20230703-0010/"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisories",
+					"vulinfoid": "CVE-2023-2911: Exceeding the recursive-clients quota may cause named to terminate unexpectedly when stale-answer-client-timeout is set to 0",
+					"url": "https://kb.isc.org/docs/cve-2023-2911"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-2911",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-2911"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99441653",
+					"url": "https://jvn.jp/vu/JVNVU99441653/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-2911",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-2911"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-07-05T13:53:38+09:00",
+					"description": "[2023年07月05日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-07-05T13:53:38+09:00",
+		"datelastupdated": "2023-07-05T13:53:38+09:00",
+		"datepublic": "2023-06-21T00:00:00+09:00"
+	}
 }

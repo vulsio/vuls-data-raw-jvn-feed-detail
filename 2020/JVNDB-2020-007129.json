@@ -1,158 +1,158 @@
 {
-  "vulinfoid": "JVNDB-2020-007129",
-  "vulinfodata": {
-    "title": "横河電機製 CAMS for HIS に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "横河電機株式会社が提供する CAMS for HIS には、次の複数の脆弱性が存在します。  * 不適切な認証 (CWE-287) - CVE-2020-5608 * パス・トラバーサル (CWE-22) - CVE-2020-5609"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "横河電機株式会社",
-          "productname": "B/M9000 CS",
-          "cpe": {
-            "text": "cpe:/h:yokogawa:b%2fm9000cs_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            " VP R6.01.01 から R8.03.01 まで",
-            "R5.04.01 から R5.05.01 まで"
-          ]
-        },
-        {
-          "name": "横河電機株式会社",
-          "productname": "CENTUM CS 3000 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:yokogawa:centum_cs_3000_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(CENTUM CS 3000 Small 含む) R3.08.10 から R3.09.50 まで (ただし LHS4800(CAMS for HIS) をインストールしている場合のみ)"
-          ]
-        },
-        {
-          "name": "横河電機株式会社",
-          "productname": "CENTUM VP",
-          "cpe": {
-            "text": "cpe:/a:yokogawa:centum_vp_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(CENTUM VP Small, Basic 含む) R4.01.00 から R6.07.00 まで (ただし LHS4800(CAMS for HIS) をインストールしている場合のみ)",
-            "(CENTUM VP Small, Basic 含む) R5.01.00 から R6.07.00 まで"
-          ]
-        },
-        {
-          "name": "横河電機株式会社",
-          "productname": "Exaopc",
-          "cpe": {
-            "text": "cpe:/a:yokogawa:exaopc",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R3.72.00 から R3.78.00 まで (ただし NTPF100-S6「CENTUM VP 用CAMS for HIS 対応」をインストールしている場合のみ)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.1",
-          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * 認証されていない第三者によって、細工された通信パケットを送信される - CVE-2020-5608 * 認証されていない第三者によって、任意の場所にファイルの作成や上書きをされたり、任意のコマンドを実行されたりする - CVE-2020-5609 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップグレードする] 開発者によると、次の製品およびバージョンを使用している場合は、保守期間が終了しており対策は提供されないため、最新の CENTUM VP へのアップグレードを推奨するとのことです。  * CENTUM CS 3000 (CENTUM CS 3000 Small 含む) R3.08.10 から R3.09.50 まで * CENTUM VP (CENTUM VP Small, Basic 含む) R4.01.00 から R4.03.00 まで  また、次の製品およびバージョンは、本脆弱性の影響を受けないとのことですが、併せてインストールされる CENTUM CS 3000 、CENTUM VP が本脆弱性の影響をうけるため、最新の CENTUM VP へアップグレードする場合は、それぞれの製品も併せてアップグレードすることが推奨されるとのことです。  * B/M9000CS R5.04.01 から R5.05.01 まで * B/M9000 VP R6.01.01 から R8.03.01 まで  [アップデートする] 次の製品およびバージョンに関しては、アップデートが提供されています。修正対応済みの Exaopc R3.78.10 およびそれ以降へアップデートしてください。 * Exaopc R3.72.00 から R3.78.00 まで  [パッチを適用する] 次の製品を使用している場合は、それぞれの製品に対応した最新レビジョンにアップデートしたうえで、各バージョンに対応したパッチを適用してください。  * CENTUM VP (CENTUM VP Small, Basic 含む) R5.01.00 から R5.04.20 まで * CENTUM VP (CENTUM VP Small, Basic 含む) R6.01.00 から R6.07.00 まで  詳しくは、開発者が提供する情報をご確認ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "横河セキュリティ対策情報",
-          "vulinfoid": "YSAR-20-0001: CAMS for HISに複数の脆弱性",
-          "url": "https://www.yokogawa.co.jp/library/resources/white-papers/yokogawa-security-advisory-report-list/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-5608",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5608"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-5609",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5609"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-224-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-224-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97997181",
-          "url": "http://jvn.jp/cert/JVNVU97997181"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-5609",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5609"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-5608",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5608"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-08-03T15:53:25+09:00",
-          "description": "[2020年08月03日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2020-08-12T12:22:48+09:00",
-          "description": "[2020年08月12日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-224-01) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2020-08-14T16:20:32+09:00",
-          "description": "[2020年08月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2020-5608) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2020-5609) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2020-09-07T15:59:19+09:00",
-          "description": "[2020年09月07日]\\n  影響を受けるシステム：内容を更新"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2020-12-03T12:27:56+09:00",
-          "description": "[2020年12月03日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-08-03T15:53:25+09:00",
-    "datelastupdated": "2020-12-03T17:23:48+09:00",
-    "datepublic": "2020-07-31T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-007129",
+	"vulinfodata": {
+		"title": "横河電機製 CAMS for HIS に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "横河電機株式会社が提供する CAMS for HIS には、次の複数の脆弱性が存在します。  * 不適切な認証 (CWE-287) - CVE-2020-5608 * パス・トラバーサル (CWE-22) - CVE-2020-5609"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "横河電機株式会社",
+					"productname": "B/M9000 CS",
+					"cpe": {
+						"text": "cpe:/h:yokogawa:b%2fm9000cs_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						" VP R6.01.01 から R8.03.01 まで",
+						"R5.04.01 から R5.05.01 まで"
+					]
+				},
+				{
+					"name": "横河電機株式会社",
+					"productname": "CENTUM CS 3000 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:yokogawa:centum_cs_3000_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(CENTUM CS 3000 Small 含む) R3.08.10 から R3.09.50 まで (ただし LHS4800(CAMS for HIS) をインストールしている場合のみ)"
+					]
+				},
+				{
+					"name": "横河電機株式会社",
+					"productname": "CENTUM VP",
+					"cpe": {
+						"text": "cpe:/a:yokogawa:centum_vp_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(CENTUM VP Small, Basic 含む) R4.01.00 から R6.07.00 まで (ただし LHS4800(CAMS for HIS) をインストールしている場合のみ)",
+						"(CENTUM VP Small, Basic 含む) R5.01.00 から R6.07.00 まで"
+					]
+				},
+				{
+					"name": "横河電機株式会社",
+					"productname": "Exaopc",
+					"cpe": {
+						"text": "cpe:/a:yokogawa:exaopc",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R3.72.00 から R3.78.00 まで (ただし NTPF100-S6「CENTUM VP 用CAMS for HIS 対応」をインストールしている場合のみ)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.1",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * 認証されていない第三者によって、細工された通信パケットを送信される - CVE-2020-5608 * 認証されていない第三者によって、任意の場所にファイルの作成や上書きをされたり、任意のコマンドを実行されたりする - CVE-2020-5609 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップグレードする] 開発者によると、次の製品およびバージョンを使用している場合は、保守期間が終了しており対策は提供されないため、最新の CENTUM VP へのアップグレードを推奨するとのことです。  * CENTUM CS 3000 (CENTUM CS 3000 Small 含む) R3.08.10 から R3.09.50 まで * CENTUM VP (CENTUM VP Small, Basic 含む) R4.01.00 から R4.03.00 まで  また、次の製品およびバージョンは、本脆弱性の影響を受けないとのことですが、併せてインストールされる CENTUM CS 3000 、CENTUM VP が本脆弱性の影響をうけるため、最新の CENTUM VP へアップグレードする場合は、それぞれの製品も併せてアップグレードすることが推奨されるとのことです。  * B/M9000CS R5.04.01 から R5.05.01 まで * B/M9000 VP R6.01.01 から R8.03.01 まで  [アップデートする] 次の製品およびバージョンに関しては、アップデートが提供されています。修正対応済みの Exaopc R3.78.10 およびそれ以降へアップデートしてください。 * Exaopc R3.72.00 から R3.78.00 まで  [パッチを適用する] 次の製品を使用している場合は、それぞれの製品に対応した最新レビジョンにアップデートしたうえで、各バージョンに対応したパッチを適用してください。  * CENTUM VP (CENTUM VP Small, Basic 含む) R5.01.00 から R5.04.20 まで * CENTUM VP (CENTUM VP Small, Basic 含む) R6.01.00 から R6.07.00 まで  詳しくは、開発者が提供する情報をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "横河セキュリティ対策情報",
+					"vulinfoid": "YSAR-20-0001: CAMS for HISに複数の脆弱性",
+					"url": "https://www.yokogawa.co.jp/library/resources/white-papers/yokogawa-security-advisory-report-list/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-5608",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5608"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-5609",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5609"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-224-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-224-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97997181",
+					"url": "http://jvn.jp/cert/JVNVU97997181"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-5609",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5609"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-5608",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-5608"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-08-03T15:53:25+09:00",
+					"description": "[2020年08月03日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2020-08-12T12:22:48+09:00",
+					"description": "[2020年08月12日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-224-01) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2020-08-14T16:20:32+09:00",
+					"description": "[2020年08月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2020-5608) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2020-5609) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2020-09-07T15:59:19+09:00",
+					"description": "[2020年09月07日]\\n  影響を受けるシステム：内容を更新"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2020-12-03T12:27:56+09:00",
+					"description": "[2020年12月03日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2020-08-03T15:53:25+09:00",
+		"datelastupdated": "2020-12-03T17:23:48+09:00",
+		"datepublic": "2020-07-31T00:00:00+09:00"
+	}
 }

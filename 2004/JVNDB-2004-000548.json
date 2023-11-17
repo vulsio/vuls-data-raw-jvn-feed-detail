@@ -1,134 +1,134 @@
 {
-  "vulinfoid": "JVNDB-2004-000548",
-  "vulinfodata": {
-    "title": "Ethereal の SMB プロトコル解析部におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Ethereal 0.9.0 - 0.10.7 には、以下の複数のセキュリティ上の問題が存在します。   ・DICOM プロトコルの解析部に不備が存在するため、Ethereal がクラッシュする問題 (0.10.4 - 0.10.7) (CAN-2004-1139)   ・RTP プロトコルのタイムスタンプの取り扱いに不備が存在するため、Ethereal がクラッシュし、また過度に大きなサイズの一時ファイルが生成され利用可能なすべてのディスク容量が消費される問題 (0.9.16 - 0.10.7) (CAN-2004-1140)   ・HTTP プロトコルの解析部に不備が存在するため、解放されたメモリへのアクセスが発生し、Ethereal がクラッシュする問題 (0.10.1 - 0.10.7) (CAN-2004-1141)   ・SMB プロトコルの解析部に不備に存在するため、意図的に作成された SMB パケットによって Ethereal がクラッシュし、大量の CPU 資源が消費される問題 (0.9.0 - 0.10.7) (CAN-2004-1142)   これらの問題を利用するリモートの攻撃者は、以下のような手法によって、Ethereal をクラッシュさせ、サービス不能状態に陥らせる、さらには Ethereal の実行権限 (通常 root 権限) で任意のコードを実行する可能性があります。   ・意図的に作成したパケットを標的システムが監視しているネットワークに送り付ける  ・意図的に作成したパケットトレースファイルを読み取らせる"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "ethereal",
-          "url": "http://www.miraclelinux.com/support/update/data/ethereal.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:011",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-011.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:037",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-037.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:011",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-011J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:037",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-037J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-1142",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1142"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-1142",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1142"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA13468",
-          "url": "http://secunia.com/advisories/13468/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11943",
-          "url": "http://www.securityfocus.com/bid/11943"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-12-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000548",
+	"vulinfodata": {
+		"title": "Ethereal の SMB プロトコル解析部におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Ethereal 0.9.0 - 0.10.7 には、以下の複数のセキュリティ上の問題が存在します。   ・DICOM プロトコルの解析部に不備が存在するため、Ethereal がクラッシュする問題 (0.10.4 - 0.10.7) (CAN-2004-1139)   ・RTP プロトコルのタイムスタンプの取り扱いに不備が存在するため、Ethereal がクラッシュし、また過度に大きなサイズの一時ファイルが生成され利用可能なすべてのディスク容量が消費される問題 (0.9.16 - 0.10.7) (CAN-2004-1140)   ・HTTP プロトコルの解析部に不備が存在するため、解放されたメモリへのアクセスが発生し、Ethereal がクラッシュする問題 (0.10.1 - 0.10.7) (CAN-2004-1141)   ・SMB プロトコルの解析部に不備に存在するため、意図的に作成された SMB パケットによって Ethereal がクラッシュし、大量の CPU 資源が消費される問題 (0.9.0 - 0.10.7) (CAN-2004-1142)   これらの問題を利用するリモートの攻撃者は、以下のような手法によって、Ethereal をクラッシュさせ、サービス不能状態に陥らせる、さらには Ethereal の実行権限 (通常 root 権限) で任意のコードを実行する可能性があります。   ・意図的に作成したパケットを標的システムが監視しているネットワークに送り付ける  ・意図的に作成したパケットトレースファイルを読み取らせる"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "ethereal",
+					"url": "http://www.miraclelinux.com/support/update/data/ethereal.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:011",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-011.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:037",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-037.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:011",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-011J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:037",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-037J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-1142",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1142"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-1142",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1142"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA13468",
+					"url": "http://secunia.com/advisories/13468/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11943",
+					"url": "http://www.securityfocus.com/bid/11943"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-12-15T00:00:00+09:00"
+	}
 }

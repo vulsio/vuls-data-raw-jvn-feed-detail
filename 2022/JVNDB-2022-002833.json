@@ -1,116 +1,116 @@
 {
-  "vulinfoid": "JVNDB-2022-002833",
-  "vulinfodata": {
-    "title": "三菱電機製 MELSEC iQ-R シリーズおよび MELIPC シリーズの Ethernetポート におけるリソースの不適切なシャットダウンおよびリリースの脆弱性",
-    "vulinfodescription": {
-      "overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズ および MELIPC シリーズの Ethernet ポートには、リソースの不適切なシャットダウンおよびリリースの脆弱性 (CWE-404 、 CVE-2022-33324) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、 JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "三菱電機",
-          "productname": "MELIPC シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melipc_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "MI5122-VW 全バージョン"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC iQ-R シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R00/01/02CPU ファームウェアバージョン\"32\"およびそれ以前",
-            "R04/08/16/32/120(EN)CPU ファームウェアバージョン\"65\"およびそれ以前",
-            "R08/16/32/120SFCPU ファームウェアバージョン\"29\"およびそれ以前",
-            "R12CCPU-V 全バージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって細工されたパケットを受信すると、当該製品の Ethernet 通信がサービス運用妨害（DoS）状態となる可能性があります。 なお、復旧には当該製品のリセットが必要になります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 次の製品については、開発者からアップデートが提供されています。開発者が提供する情報をもとにアップデートしてください。 開発者によると、次の製品以外については近日中に対応するとのことです。 　* MELSEC iQ-R シリーズ 　　　* R00/01/02CPU ファームウェアバージョン\"33\"およびそれ以降 　　　* R04/08/16/32/120(EN)CPU ファームウェアバージョン\"66\"およびそれ以降 　　　* R08/16/32/120SFCPU ファームウェアバージョン\"30\"およびそれ以降 　　　 [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品をインターネットに接続する場合は、ファイアウォールの設置や仮想プライベートネットワーク (VPN) を使用し、不正なアクセスを制限する 　* 当該製品を LAN 内で使用し、当該製品への接続を最小限に抑え、信頼できるネットワークやホストからのみアクセスできるよう制限する 　* 当該製品の IP フィルタ機能 (*1) を使用し、接続可能な IP アドレスを適切に制限する （*1）IP フィルタ機能については、開発者が提供する次のマニュアルを参照してください。 　* MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編)の 1.13 セキュリティの「IP フィルタ」 　* MELSEC iQ-R C 言語コントローラユニット ユーザーズマニュアル(応用編)の 6.6 セキュリティ機能の「IP フィルタ機能」 　* MELIPC MI5000 シリーズ ユーザーズマニュアル(応用編)の「11.3 IP フィルタ機能」 詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-018.pdf\">開発者が提供する情報</a>をご確認ください。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "三菱電機",
-          "vulinfoid": "MELSEC iQ-R シリーズおよび MELIPC シリーズの Ethernet ポートにおけるサービス拒否 (DoS) の脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-018.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-33324",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-33324"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-22-356-03",
-          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-356-03"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96883262",
-          "url": "https://jvn.jp/vu/JVNVU96883262/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-404",
-          "url": "https://cwe.mitre.org/data/definitions/404.html",
-          "title": "リソースの不適切なシャットダウンおよびリリース"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-12-23T12:21:53+09:00",
-          "description": "[2022年12月23日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-12-26T15:41:05+09:00",
-          "description": "[2022年12月26日]\\n 参考情報：ICS-CERT ADVISORY (ICSA-22-356-03) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2023-07-14T13:50:39+09:00",
-          "description": "[2023年07月14日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-12-23T12:21:53+09:00",
-    "datelastupdated": "2023-07-14T13:57:38+09:00",
-    "datepublic": "2022-12-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-002833",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC iQ-R シリーズおよび MELIPC シリーズの Ethernetポート におけるリソースの不適切なシャットダウンおよびリリースの脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズ および MELIPC シリーズの Ethernet ポートには、リソースの不適切なシャットダウンおよびリリースの脆弱性 (CWE-404 、 CVE-2022-33324) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、 JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELIPC シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melipc_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"MI5122-VW 全バージョン"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC iQ-R シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R00/01/02CPU ファームウェアバージョン\"32\"およびそれ以前",
+						"R04/08/16/32/120(EN)CPU ファームウェアバージョン\"65\"およびそれ以前",
+						"R08/16/32/120SFCPU ファームウェアバージョン\"29\"およびそれ以前",
+						"R12CCPU-V 全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって細工されたパケットを受信すると、当該製品の Ethernet 通信がサービス運用妨害（DoS）状態となる可能性があります。 なお、復旧には当該製品のリセットが必要になります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 次の製品については、開発者からアップデートが提供されています。開発者が提供する情報をもとにアップデートしてください。 開発者によると、次の製品以外については近日中に対応するとのことです。 　* MELSEC iQ-R シリーズ 　　　* R00/01/02CPU ファームウェアバージョン\"33\"およびそれ以降 　　　* R04/08/16/32/120(EN)CPU ファームウェアバージョン\"66\"およびそれ以降 　　　* R08/16/32/120SFCPU ファームウェアバージョン\"30\"およびそれ以降 　　　 [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品をインターネットに接続する場合は、ファイアウォールの設置や仮想プライベートネットワーク (VPN) を使用し、不正なアクセスを制限する 　* 当該製品を LAN 内で使用し、当該製品への接続を最小限に抑え、信頼できるネットワークやホストからのみアクセスできるよう制限する 　* 当該製品の IP フィルタ機能 (*1) を使用し、接続可能な IP アドレスを適切に制限する （*1）IP フィルタ機能については、開発者が提供する次のマニュアルを参照してください。 　* MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編)の 1.13 セキュリティの「IP フィルタ」 　* MELSEC iQ-R C 言語コントローラユニット ユーザーズマニュアル(応用編)の 6.6 セキュリティ機能の「IP フィルタ機能」 　* MELIPC MI5000 シリーズ ユーザーズマニュアル(応用編)の「11.3 IP フィルタ機能」 詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-018.pdf\">開発者が提供する情報</a>をご確認ください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機",
+					"vulinfoid": "MELSEC iQ-R シリーズおよび MELIPC シリーズの Ethernet ポートにおけるサービス拒否 (DoS) の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-018.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-33324",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-33324"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-22-356-03",
+					"url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-356-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96883262",
+					"url": "https://jvn.jp/vu/JVNVU96883262/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-404",
+					"url": "https://cwe.mitre.org/data/definitions/404.html",
+					"title": "リソースの不適切なシャットダウンおよびリリース"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-12-23T12:21:53+09:00",
+					"description": "[2022年12月23日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-12-26T15:41:05+09:00",
+					"description": "[2022年12月26日]\\n 参考情報：ICS-CERT ADVISORY (ICSA-22-356-03) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2023-07-14T13:50:39+09:00",
+					"description": "[2023年07月14日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2022-12-23T12:21:53+09:00",
+		"datelastupdated": "2023-07-14T13:57:38+09:00",
+		"datepublic": "2022-12-22T00:00:00+09:00"
+	}
 }

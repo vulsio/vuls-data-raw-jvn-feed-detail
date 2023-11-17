@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2013-004322",
-  "vulinfodata": {
-    "title": "Linux Kernel の Xen blkback の実装におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux Kernel の Xen blkback の実装の drivers/block/xen-blkback/blkback.c 内の　dispatch_discard_io 関数には、サービス運用妨害 (データロス) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.10.5 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "3.8",
-          "vector": "AV:A/AC:M/Au:S/C:N/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "ゲスト OS ユーザにより、以下の機能をサポートする読み取り専用のディスクへのファイルシステムの書き込み操作を介して、サービス運用妨害 (データロス) 状態にされる可能性があります。  (1) BLKIF_OP_DISCARD (別名 discard または TRIM) 機能 (2) SCSI UNMAP 機能"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ChangeLog",
-          "vulinfoid": "ChangeLog-3.10.5",
-          "url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.10.5"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "xen/blkback: Check device permissions before allowing OP_DISCARD",
-          "url": "https://github.com/torvalds/linux/commit/604c499cbbcc3d5fe5fb8d53306aa0fae1990109"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux kernel source tree",
-          "vulinfoid": "xen/blkback: Check device permissions before allowing OP_DISCARD",
-          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=604c499cbbcc3d5fe5fb8d53306aa0fae1990109"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 971146",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=971146"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu",
-          "vulinfoid": "CVE-2013-2140 in Ubuntu",
-          "url": "http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-2140.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1947-1",
-          "url": "http://www.ubuntu.com/usn/USN-1947-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1946-1",
-          "url": "http://www.ubuntu.com/usn/USN-1946-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1945-1",
-          "url": "http://www.ubuntu.com/usn/USN-1945-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1944-1",
-          "url": "http://www.ubuntu.com/usn/USN-1944-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1943-1",
-          "url": "http://www.ubuntu.com/usn/USN-1943-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1938-1",
-          "url": "http://www.ubuntu.com/usn/USN-1938-1"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-2140",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2140"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-2140",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2140"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年09月27日]\\n  掲載\\n[2013年11月01日]\\n  ベンダ情報：Ubuntu (USN-1938-1) を追加\\n  ベンダ情報：Ubuntu (USN-1943-1) を追加\\n  ベンダ情報：Ubuntu (USN-1944-1) を追加\\n  ベンダ情報：Ubuntu (USN-1945-1) を追加\\n  ベンダ情報：Ubuntu (USN-1946-1) を追加\\n  ベンダ情報：Ubuntu (USN-1947-1) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-09-27T10:58:47+09:00",
-    "datelastupdated": "2013-11-01T18:12:00+09:00",
-    "datepublic": "2013-08-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-004322",
+	"vulinfodata": {
+		"title": "Linux Kernel の Xen blkback の実装におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux Kernel の Xen blkback の実装の drivers/block/xen-blkback/blkback.c 内の　dispatch_discard_io 関数には、サービス運用妨害 (データロス) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.10.5 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "3.8",
+					"vector": "AV:A/AC:M/Au:S/C:N/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "ゲスト OS ユーザにより、以下の機能をサポートする読み取り専用のディスクへのファイルシステムの書き込み操作を介して、サービス運用妨害 (データロス) 状態にされる可能性があります。  (1) BLKIF_OP_DISCARD (別名 discard または TRIM) 機能 (2) SCSI UNMAP 機能"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ChangeLog",
+					"vulinfoid": "ChangeLog-3.10.5",
+					"url": "http://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.10.5"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "xen/blkback: Check device permissions before allowing OP_DISCARD",
+					"url": "https://github.com/torvalds/linux/commit/604c499cbbcc3d5fe5fb8d53306aa0fae1990109"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux kernel source tree",
+					"vulinfoid": "xen/blkback: Check device permissions before allowing OP_DISCARD",
+					"url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=604c499cbbcc3d5fe5fb8d53306aa0fae1990109"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 971146",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=971146"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu",
+					"vulinfoid": "CVE-2013-2140 in Ubuntu",
+					"url": "http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-2140.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1947-1",
+					"url": "http://www.ubuntu.com/usn/USN-1947-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1946-1",
+					"url": "http://www.ubuntu.com/usn/USN-1946-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1945-1",
+					"url": "http://www.ubuntu.com/usn/USN-1945-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1944-1",
+					"url": "http://www.ubuntu.com/usn/USN-1944-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1943-1",
+					"url": "http://www.ubuntu.com/usn/USN-1943-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1938-1",
+					"url": "http://www.ubuntu.com/usn/USN-1938-1"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-2140",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2140"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-2140",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2140"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年09月27日]\\n  掲載\\n[2013年11月01日]\\n  ベンダ情報：Ubuntu (USN-1938-1) を追加\\n  ベンダ情報：Ubuntu (USN-1943-1) を追加\\n  ベンダ情報：Ubuntu (USN-1944-1) を追加\\n  ベンダ情報：Ubuntu (USN-1945-1) を追加\\n  ベンダ情報：Ubuntu (USN-1946-1) を追加\\n  ベンダ情報：Ubuntu (USN-1947-1) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-09-27T10:58:47+09:00",
+		"datelastupdated": "2013-11-01T18:12:00+09:00",
+		"datepublic": "2013-08-04T00:00:00+09:00"
+	}
 }

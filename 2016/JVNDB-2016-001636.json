@@ -1,118 +1,118 @@
 {
-  "vulinfoid": "JVNDB-2016-001636",
-  "vulinfodata": {
-    "title": "ISC DHCP にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC DHCP には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC DHCP サーバは、プロセス間通信や制御を行うために使用する TCP ポートへの同時接続数を適切に制限しません。そのため、攻撃者は大量の TCP 接続を確立することで、DHCP サーバの処理を妨げることが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "ISC DHCP",
-          "cpe": {
-            "text": "cpe:/a:isc:dhcp",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.1.0 から 4.1-ESV-R12-P1 まで",
-            "4.2.0 から 4.2.8 まで",
-            "4.3.0 から 4.3.3-P1 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.1",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響はサーバのバージョンや攻撃されるチャネル、OS の設定などによって異なります。例えば、次のような影響を受ける可能性があります。  　　* INSIST failure が発生してサーバが停止する 　　* サーバが応答不能状態となり、クライアントのリクエストに返答しなくなる 　　* サーバは動作を継続するが、OMAPI クライアントやフェイルオーバー用ピアからの接続を受け付けなくなる 　　* 運用環境で制限がかけられていない場合、大量のソケットをオープンすることで、同一マシン上で動作する他のサービスに影響を及ぼす  なお、想定される影響はこれらに限りません。  本脆弱性の影響を受けるリスクが最も高いのが OMAPI ポートです (OMAPI を有効にしている場合)。フェイルオーバー用ポートについては、ピア以外からの接続要求は遮断されます。(そのため、フェイルオーバー用ポートへの攻撃は難しくなりますが、不可能ではありません。) しかし、OMAPI は接続元を制限する機能を持っていません。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2016年3月に、本脆弱性への攻撃を難しくする対策コードが追加された DHCP 4.1-ESV-R13 および DHCP 4.3.4 がリリースされる予定です。 開発者は、以下の対策の実施を推奨しています。  [通信を制限する] 信頼できるホスト以外からの通信を遮断してください。  [機能を無効化する] OMAPI やフェイルオーバー機能を使用していない場合、これらの機能を無効化することが可能です。詳しくは次の情報を参照してください。  　　* Securing dhcpd against unauthorised OMAPI control connections 　　　https://kb.isc.org/article/AA-01355/56/Securing-dhcpd-against-unauthorised-OMAPI-control-connections.html  　　* What is DHCP Failover? 　　　https://kb.isc.org/article/AA-01356/56/What-is-DHCP-Failover.html  　　* A Basic Guide to Configuring DHCP Failover 　　　https://kb.isc.org/article/AA-00502/31/A-Basic-Guide-to-Configuring-DHCP-Failover.html  [ファイルディスクリプタ数を制限することによってプロセスの同時接続数を制限する] dhcpd を起動するシェルで ulimit を設定することで、プロセスの同時接続数を制限することが可能です。これにより INSIST failure によるサーバの停止を防ぐことが可能です。ただし、これだけではプロセス間通信ポートへの干渉は防げないことに注意してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "CVE-2016-2774: An attacker who is allowed to connect to DHCP inter-server communications and control channels can exhaust server resources",
-          "url": "https://kb.isc.org/article/AA-01354"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "Securing dhcpd against unauthorised OMAPI control connections",
-          "url": "https://kb.isc.org/article/AA-01355/56/Securing-dhcpd-against-unauthorised-OMAPI-control-connections.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "What is DHCP Failover?",
-          "url": "https://kb.isc.org/article/AA-01356/56/What-is-DHCP-Failover.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "A Basic Guide to Configuring DHCP Failover",
-          "url": "https://kb.isc.org/article/AA-00502/31/A-Basic-Guide-to-Configuring-DHCP-Failover.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-2774",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2774"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96567499",
-          "url": "http://jvn.jp/cert/JVNVU96567499"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-2774",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2774"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年03月09日]\\n  掲載\\n[2016年03月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2774) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2016年11月17日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2016) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-03-09T12:14:31+09:00",
-    "datelastupdated": "2016-11-17T16:07:51+09:00",
-    "datepublic": "2016-03-08T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-001636",
+	"vulinfodata": {
+		"title": "ISC DHCP にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC DHCP には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC DHCP サーバは、プロセス間通信や制御を行うために使用する TCP ポートへの同時接続数を適切に制限しません。そのため、攻撃者は大量の TCP 接続を確立することで、DHCP サーバの処理を妨げることが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "ISC DHCP",
+					"cpe": {
+						"text": "cpe:/a:isc:dhcp",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.1.0 から 4.1-ESV-R12-P1 まで",
+						"4.2.0 から 4.2.8 まで",
+						"4.3.0 から 4.3.3-P1 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.1",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響はサーバのバージョンや攻撃されるチャネル、OS の設定などによって異なります。例えば、次のような影響を受ける可能性があります。  　　* INSIST failure が発生してサーバが停止する 　　* サーバが応答不能状態となり、クライアントのリクエストに返答しなくなる 　　* サーバは動作を継続するが、OMAPI クライアントやフェイルオーバー用ピアからの接続を受け付けなくなる 　　* 運用環境で制限がかけられていない場合、大量のソケットをオープンすることで、同一マシン上で動作する他のサービスに影響を及ぼす  なお、想定される影響はこれらに限りません。  本脆弱性の影響を受けるリスクが最も高いのが OMAPI ポートです (OMAPI を有効にしている場合)。フェイルオーバー用ポートについては、ピア以外からの接続要求は遮断されます。(そのため、フェイルオーバー用ポートへの攻撃は難しくなりますが、不可能ではありません。) しかし、OMAPI は接続元を制限する機能を持っていません。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2016年3月に、本脆弱性への攻撃を難しくする対策コードが追加された DHCP 4.1-ESV-R13 および DHCP 4.3.4 がリリースされる予定です。 開発者は、以下の対策の実施を推奨しています。  [通信を制限する] 信頼できるホスト以外からの通信を遮断してください。  [機能を無効化する] OMAPI やフェイルオーバー機能を使用していない場合、これらの機能を無効化することが可能です。詳しくは次の情報を参照してください。  　　* Securing dhcpd against unauthorised OMAPI control connections 　　　https://kb.isc.org/article/AA-01355/56/Securing-dhcpd-against-unauthorised-OMAPI-control-connections.html  　　* What is DHCP Failover? 　　　https://kb.isc.org/article/AA-01356/56/What-is-DHCP-Failover.html  　　* A Basic Guide to Configuring DHCP Failover 　　　https://kb.isc.org/article/AA-00502/31/A-Basic-Guide-to-Configuring-DHCP-Failover.html  [ファイルディスクリプタ数を制限することによってプロセスの同時接続数を制限する] dhcpd を起動するシェルで ulimit を設定することで、プロセスの同時接続数を制限することが可能です。これにより INSIST failure によるサーバの停止を防ぐことが可能です。ただし、これだけではプロセス間通信ポートへの干渉は防げないことに注意してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "CVE-2016-2774: An attacker who is allowed to connect to DHCP inter-server communications and control channels can exhaust server resources",
+					"url": "https://kb.isc.org/article/AA-01354"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "Securing dhcpd against unauthorised OMAPI control connections",
+					"url": "https://kb.isc.org/article/AA-01355/56/Securing-dhcpd-against-unauthorised-OMAPI-control-connections.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "What is DHCP Failover?",
+					"url": "https://kb.isc.org/article/AA-01356/56/What-is-DHCP-Failover.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "A Basic Guide to Configuring DHCP Failover",
+					"url": "https://kb.isc.org/article/AA-00502/31/A-Basic-Guide-to-Configuring-DHCP-Failover.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - July 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2016-3090568.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-2774",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2774"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96567499",
+					"url": "http://jvn.jp/cert/JVNVU96567499"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-2774",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2774"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年03月09日]\\n  掲載\\n[2016年03月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2774) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2016年11月17日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2016) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-03-09T12:14:31+09:00",
+		"datelastupdated": "2016-11-17T16:07:51+09:00",
+		"datepublic": "2016-03-08T00:00:00+09:00"
+	}
 }

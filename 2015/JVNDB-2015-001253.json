@@ -1,171 +1,171 @@
 {
-  "vulinfoid": "JVNDB-2015-001253",
-  "vulinfodata": {
-    "title": "PHP の ext/exif/exif.c 内の exif_process_unicode 関数における任意のコードを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "PHP の ext/exif/exif.c 内の exif_process_unicode 関数には、任意のコードを実行される、またはサービス運用妨害 (未初期化ポインタの解放およびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-824: Access of Uninitialized Pointer (初期化されていないポインタのアクセス) と識別されています。 http://cwe.mitre.org/data/definitions/824.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The PHP Group",
-          "productname": "PHP",
-          "cpe": {
-            "text": "cpe:/a:php:php",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.4.37 未満",
-            "5.5.21 未満の 5.5.x",
-            "5.6.5 未満の 5.6.x"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.6.8 以上 10.11 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、JPEG 画像の巧妙に細工された EXIF データを介して、任意のコードを実行される、またはサービス運用妨害 (未初期化ポインタの解放およびアプリケーションクラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205267",
-          "url": "https://support.apple.com/en-us/HT205267"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205267",
-          "url": "http://support.apple.com/ja-jp/HT205267"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PHP Bugs",
-          "vulinfoid": "Sec Bug #68799",
-          "url": "https://bugs.php.net/bug.php?id=68799"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1185472",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1185472"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "PHP 5 ChangeLog",
-          "url": "http://php.net/ChangeLog-5.php"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "Fix bug #68799: Free called on unitialized pointer (55001de)",
-          "url": "http://git.php.net/?p=php-src.git;a=commit;h=55001de6d8c6ed2aada870a76de1e4b4558737bf"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "Fix bug #68799: Free called on unitialized pointer (2fc178c)",
-          "url": "http://git.php.net/?p=php-src.git;a=commit;h=2fc178cf448d8e1b95d1314e47eeef610729e0df"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "Fix bug #68799: Free called on unitialized pointer (21bc746)",
-          "url": "http://git.php.net/?p=php-src.git;a=commit;h=21bc7464f454fec18a9ec024c738f195602fee2a"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2015-4",
-          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-4j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-0232",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0232"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97220341",
-          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-0232",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0232"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "MGASA-2015-0040",
-          "url": "http://advisories.mageia.org/MGASA-2015-0040.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年01月29日]\\n  掲載\\n[2015年03月25日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-4) を追加\\n[2015年04月27日]\\n  参考情報：関連文書 (MGASA-2015-0040) を追加\\n[2015年07月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2015) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-01-29T15:32:23+09:00",
-    "datelastupdated": "2015-10-06T10:36:01+09:00",
-    "datepublic": "2015-01-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-001253",
+	"vulinfodata": {
+		"title": "PHP の ext/exif/exif.c 内の exif_process_unicode 関数における任意のコードを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "PHP の ext/exif/exif.c 内の exif_process_unicode 関数には、任意のコードを実行される、またはサービス運用妨害 (未初期化ポインタの解放およびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-824: Access of Uninitialized Pointer (初期化されていないポインタのアクセス) と識別されています。 http://cwe.mitre.org/data/definitions/824.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The PHP Group",
+					"productname": "PHP",
+					"cpe": {
+						"text": "cpe:/a:php:php",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.4.37 未満",
+						"5.5.21 未満の 5.5.x",
+						"5.6.5 未満の 5.6.x"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.6.8 以上 10.11 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、JPEG 画像の巧妙に細工された EXIF データを介して、任意のコードを実行される、またはサービス運用妨害 (未初期化ポインタの解放およびアプリケーションクラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205267",
+					"url": "https://support.apple.com/en-us/HT205267"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205267",
+					"url": "http://support.apple.com/ja-jp/HT205267"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - July 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PHP Bugs",
+					"vulinfoid": "Sec Bug #68799",
+					"url": "https://bugs.php.net/bug.php?id=68799"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1185472",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1185472"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "PHP 5 ChangeLog",
+					"url": "http://php.net/ChangeLog-5.php"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "Fix bug #68799: Free called on unitialized pointer (55001de)",
+					"url": "http://git.php.net/?p=php-src.git;a=commit;h=55001de6d8c6ed2aada870a76de1e4b4558737bf"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "Fix bug #68799: Free called on unitialized pointer (2fc178c)",
+					"url": "http://git.php.net/?p=php-src.git;a=commit;h=2fc178cf448d8e1b95d1314e47eeef610729e0df"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "Fix bug #68799: Free called on unitialized pointer (21bc746)",
+					"url": "http://git.php.net/?p=php-src.git;a=commit;h=21bc7464f454fec18a9ec024c738f195602fee2a"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2015-4",
+					"url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-4j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-0232",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0232"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97220341",
+					"url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-0232",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0232"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "MGASA-2015-0040",
+					"url": "http://advisories.mageia.org/MGASA-2015-0040.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年01月29日]\\n  掲載\\n[2015年03月25日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-4) を追加\\n[2015年04月27日]\\n  参考情報：関連文書 (MGASA-2015-0040) を追加\\n[2015年07月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2015) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-01-29T15:32:23+09:00",
+		"datelastupdated": "2015-10-06T10:36:01+09:00",
+		"datepublic": "2015-01-22T00:00:00+09:00"
+	}
 }

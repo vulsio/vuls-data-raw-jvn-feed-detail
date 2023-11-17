@@ -1,148 +1,148 @@
 {
-  "vulinfoid": "JVNDB-2020-001354",
-  "vulinfodata": {
-    "title": "OpenSMTPD に権限昇格と任意コード実行の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSMTPD には、権限昇格や任意のコード実行が可能な脆弱性が存在します。  <a href=\"https://www.opensmtpd.org/\"target=\"blank\">OpenSMTPD</a> は、<a href=\"https://www.openbsd.org/\"target=\"blank\">OpenBSD Project</a> が提供するオープンソースの SMTP サーバです。OpenSMTPD は smtp_mailaddr() 関数により送信者と受信者のメールアドレスを検証します。メールアドレスのローカルパートが無効な文字列で、かつドメイン名の文字列が空白となるような、本来ならば無効なアドレスであった場合、smtp_mailaddr() 関数はこれにデフォルトのドメイン名を付け加えますが、エラーとして扱いません。このため、無効なアドレスであっても関数による検証が行われない状況が生じます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenBSD",
-          "productname": "OpenSMTPD",
-          "cpe": {
-            "text": "cpe:/a:openbsd:opensmtpd",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.4.0 から 6.6.1 までのバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者が smtp_mailaddr() 関数による検証を回避して任意のコードを実行する不正な SMTP メッセージを送信した場合、ローカルの第三者が権限昇格を行ったり、ローカルもしくはリモートの第三者が root 権限で任意のコードを実行したりする可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者はこの問題に対処したパッチ <a href=\"https://github.com/OpenSMTPD/OpenSMTPD/releases/tag/6.6.2p1\"target=\"blank\">OpenSMTPD version 6.6.2p1</a> (portable version) をリリースしています。 開発者が提供する情報をもとに、最新版にアップデートしてください。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "OpenSMTPD 6.6.2p1 portable release",
-          "url": "https://github.com/OpenSMTPD/OpenSMTPD/releases/tag/6.6.2p1"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenBSD",
-          "vulinfoid": "OpenBSD 6.6 Errata",
-          "url": "https://www.openbsd.org/errata66.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSMTPD",
-          "vulinfoid": "OpenSMTPD",
-          "url": "https://www.opensmtpd.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSMTPD",
-          "vulinfoid": "OpenSMTPD Security",
-          "url": "https://www.opensmtpd.org/security.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-7247",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7247"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90495537",
-          "url": "https://jvn.jp/vu/JVNVU90495537/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-7247",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-7247"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#390745",
-          "url": "https://kb.cert.org/vuls/id/390745/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "LPE and RCE in OpenSMTPD (CVE-2020-7247)",
-          "url": "https://www.qualys.com/2020/01/28/cve-2020-7247/lpe-rce-opensmtpd.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "OpenBSD OpenSMTPD Remote Code Execution Vulnerability (CVE-2020-7247)",
-          "url": "https://blog.qualys.com/laws-of-vulnerabilities/2020/01/29/openbsd-opensmtpd-remote-code-execution-vulnerability-cve-2020-7247"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "OpenSMTPD advisory dissected",
-          "url": "https://poolp.org/posts/2020-01-30/opensmtpd-advisory-dissected/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-252",
-          "url": "https://cwe.mitre.org/data/definitions/252.html",
-          "title": "未チェックの戻り値"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-02-04T14:37:56+09:00",
-          "description": "[2020年02月04日]\\n  掲載"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2020-06-01T13:47:00+09:00",
-          "description": "[2020年06月01日]\\n  参考情報：関連文書 (OpenSMTPD advisory dissected) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-02-04T14:37:56+09:00",
-    "datelastupdated": "2023-03-28T16:10:32+09:00",
-    "datepublic": "2020-01-31T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-001354",
+	"vulinfodata": {
+		"title": "OpenSMTPD に権限昇格と任意コード実行の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSMTPD には、権限昇格や任意のコード実行が可能な脆弱性が存在します。  <a href=\"https://www.opensmtpd.org/\"target=\"blank\">OpenSMTPD</a> は、<a href=\"https://www.openbsd.org/\"target=\"blank\">OpenBSD Project</a> が提供するオープンソースの SMTP サーバです。OpenSMTPD は smtp_mailaddr() 関数により送信者と受信者のメールアドレスを検証します。メールアドレスのローカルパートが無効な文字列で、かつドメイン名の文字列が空白となるような、本来ならば無効なアドレスであった場合、smtp_mailaddr() 関数はこれにデフォルトのドメイン名を付け加えますが、エラーとして扱いません。このため、無効なアドレスであっても関数による検証が行われない状況が生じます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenBSD",
+					"productname": "OpenSMTPD",
+					"cpe": {
+						"text": "cpe:/a:openbsd:opensmtpd",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.4.0 から 6.6.1 までのバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者が smtp_mailaddr() 関数による検証を回避して任意のコードを実行する不正な SMTP メッセージを送信した場合、ローカルの第三者が権限昇格を行ったり、ローカルもしくはリモートの第三者が root 権限で任意のコードを実行したりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者はこの問題に対処したパッチ <a href=\"https://github.com/OpenSMTPD/OpenSMTPD/releases/tag/6.6.2p1\"target=\"blank\">OpenSMTPD version 6.6.2p1</a> (portable version) をリリースしています。 開発者が提供する情報をもとに、最新版にアップデートしてください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "OpenSMTPD 6.6.2p1 portable release",
+					"url": "https://github.com/OpenSMTPD/OpenSMTPD/releases/tag/6.6.2p1"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenBSD",
+					"vulinfoid": "OpenBSD 6.6 Errata",
+					"url": "https://www.openbsd.org/errata66.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSMTPD",
+					"vulinfoid": "OpenSMTPD",
+					"url": "https://www.opensmtpd.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSMTPD",
+					"vulinfoid": "OpenSMTPD Security",
+					"url": "https://www.opensmtpd.org/security.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-7247",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7247"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90495537",
+					"url": "https://jvn.jp/vu/JVNVU90495537/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-7247",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-7247"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#390745",
+					"url": "https://kb.cert.org/vuls/id/390745/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "LPE and RCE in OpenSMTPD (CVE-2020-7247)",
+					"url": "https://www.qualys.com/2020/01/28/cve-2020-7247/lpe-rce-opensmtpd.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "OpenBSD OpenSMTPD Remote Code Execution Vulnerability (CVE-2020-7247)",
+					"url": "https://blog.qualys.com/laws-of-vulnerabilities/2020/01/29/openbsd-opensmtpd-remote-code-execution-vulnerability-cve-2020-7247"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "OpenSMTPD advisory dissected",
+					"url": "https://poolp.org/posts/2020-01-30/opensmtpd-advisory-dissected/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-252",
+					"url": "https://cwe.mitre.org/data/definitions/252.html",
+					"title": "未チェックの戻り値"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-02-04T14:37:56+09:00",
+					"description": "[2020年02月04日]\\n  掲載"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2020-06-01T13:47:00+09:00",
+					"description": "[2020年06月01日]\\n  参考情報：関連文書 (OpenSMTPD advisory dissected) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2020-02-04T14:37:56+09:00",
+		"datelastupdated": "2023-03-28T16:10:32+09:00",
+		"datepublic": "2020-01-31T00:00:00+09:00"
+	}
 }

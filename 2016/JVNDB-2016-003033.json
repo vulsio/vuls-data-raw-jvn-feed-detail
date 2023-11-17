@@ -1,181 +1,181 @@
 {
-  "vulinfoid": "JVNDB-2016-003033",
-  "vulinfodata": {
-    "title": "Ansible の lxc_container モジュールの create_script 関数における任意のファイルに書き込まれる脆弱性",
-    "vulinfodescription": {
-      "overview": "Ansible の lxc_container モジュールの create_script 関数には、任意のファイルに書き込まれる、または権限を取得される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Ansible",
-          "productname": "Ansible",
-          "cpe": {
-            "text": "cpe:/a:ansible:ansible",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.9.6-1 未満",
-            "2.0.2.0 未満の 2.x"
-          ]
-        },
-        {
-          "name": "Fedora Project",
-          "productname": "Fedora",
-          "cpe": {
-            "text": "cpe:/o:fedoraproject:fedora",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "22",
-            "23",
-            "24"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルユーザにより、以下へのシンボリックリンク攻撃を介して、任意のファイルに書き込まれる、または権限を取得される可能性があります。  (1) archive_path ディレクトリ内の /opt/.lxc-attach-script (2) archive_path ディレクトリ内のアーカイブされたコンテナ (3) 一時ディレクトリ内の lxc-attach-script.log ファイル (4) 一時ディレクトリ内の lxc-attach-script.err ファイル"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ANSIBLE",
-          "vulinfoid": "Top Page",
-          "url": "https://www.ansible.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-679c4ddd3c",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-May/184175.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-ab154c56dd",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183252.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-65519440f5",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183132.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-28ff51a3f5",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183103.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-cd3cf8e7d0",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183274.html"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "1.9.6 \"Dancing in the Street\" - TBD",
-          "url": "https://github.com/ansible/ansible/blob/v1.9.6-1/CHANGELOG.md#196-dancing-in-the-street---tbd"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "2.0.2 \"Over the Hills and Far Away\"",
-          "url": "https://github.com/ansible/ansible/blob/v2.0.2.0-1/CHANGELOG.md#202-over-the-hills-and-far-away"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "CVE-2016-3096: do not use predictable paths in lxc_container",
-          "url": "https://github.com/ansible/ansible-modules-extras/pull/1941/commits/8c6fe646ee79f5e55361b885b7efed5bec72d4a4"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "do not use a predictable filenames in the LXC plugin #1941",
-          "url": "https://github.com/ansible/ansible-modules-extras/pull/1941"
-        },
-        {
-          "type": "vendor",
-          "name": "Google Groups",
-          "vulinfoid": "Ansible 1.9.6-1 has been released",
-          "url": "https://groups.google.com/forum/#!topic/ansible-announce/tqiZbcWxYig"
-        },
-        {
-          "type": "vendor",
-          "name": "Google Groups",
-          "vulinfoid": "Ansible 2.0.2.0 has been released",
-          "url": "https://groups.google.com/forum/#%21topic/ansible-announce/E80HLZilTU0"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1322925",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1322925"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-3096",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3096"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-3096",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3096"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年06月08日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-06-08T15:41:30+09:00",
-    "datelastupdated": "2016-06-08T15:41:30+09:00",
-    "datepublic": "2016-04-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-003033",
+	"vulinfodata": {
+		"title": "Ansible の lxc_container モジュールの create_script 関数における任意のファイルに書き込まれる脆弱性",
+		"vulinfodescription": {
+			"overview": "Ansible の lxc_container モジュールの create_script 関数には、任意のファイルに書き込まれる、または権限を取得される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Ansible",
+					"productname": "Ansible",
+					"cpe": {
+						"text": "cpe:/a:ansible:ansible",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.9.6-1 未満",
+						"2.0.2.0 未満の 2.x"
+					]
+				},
+				{
+					"name": "Fedora Project",
+					"productname": "Fedora",
+					"cpe": {
+						"text": "cpe:/o:fedoraproject:fedora",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"22",
+						"23",
+						"24"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルユーザにより、以下へのシンボリックリンク攻撃を介して、任意のファイルに書き込まれる、または権限を取得される可能性があります。  (1) archive_path ディレクトリ内の /opt/.lxc-attach-script (2) archive_path ディレクトリ内のアーカイブされたコンテナ (3) 一時ディレクトリ内の lxc-attach-script.log ファイル (4) 一時ディレクトリ内の lxc-attach-script.err ファイル"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ANSIBLE",
+					"vulinfoid": "Top Page",
+					"url": "https://www.ansible.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-679c4ddd3c",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-May/184175.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-ab154c56dd",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183252.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-65519440f5",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183132.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-28ff51a3f5",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183103.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-cd3cf8e7d0",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183274.html"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "1.9.6 \"Dancing in the Street\" - TBD",
+					"url": "https://github.com/ansible/ansible/blob/v1.9.6-1/CHANGELOG.md#196-dancing-in-the-street---tbd"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "2.0.2 \"Over the Hills and Far Away\"",
+					"url": "https://github.com/ansible/ansible/blob/v2.0.2.0-1/CHANGELOG.md#202-over-the-hills-and-far-away"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "CVE-2016-3096: do not use predictable paths in lxc_container",
+					"url": "https://github.com/ansible/ansible-modules-extras/pull/1941/commits/8c6fe646ee79f5e55361b885b7efed5bec72d4a4"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "do not use a predictable filenames in the LXC plugin #1941",
+					"url": "https://github.com/ansible/ansible-modules-extras/pull/1941"
+				},
+				{
+					"type": "vendor",
+					"name": "Google Groups",
+					"vulinfoid": "Ansible 1.9.6-1 has been released",
+					"url": "https://groups.google.com/forum/#!topic/ansible-announce/tqiZbcWxYig"
+				},
+				{
+					"type": "vendor",
+					"name": "Google Groups",
+					"vulinfoid": "Ansible 2.0.2.0 has been released",
+					"url": "https://groups.google.com/forum/#%21topic/ansible-announce/E80HLZilTU0"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1322925",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1322925"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-3096",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3096"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-3096",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-3096"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年06月08日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2016-06-08T15:41:30+09:00",
+		"datelastupdated": "2016-06-08T15:41:30+09:00",
+		"datepublic": "2016-04-15T00:00:00+09:00"
+	}
 }

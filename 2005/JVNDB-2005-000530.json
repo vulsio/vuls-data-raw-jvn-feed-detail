@@ -1,325 +1,325 @@
 {
-  "vulinfoid": "JVNDB-2005-000530",
-  "vulinfodata": {
-    "title": "Mozilla 製品における HTTP リクエストヘッダを改ざんされる脆弱性",
-    "vulinfodescription": {
-      "overview": "複数のウェブブラウザにおいて、XmlHttpRequest オブジェクトの処理に脆弱性が存在します。JavaScript で使用できる XmlHttpRequest オブジェクトは、ウェブページの再読込無しに、サーバと通信を行うための機能を提供します。  通常、JavaScript ではウェブページと同一のドメイン内への通信しか行なえませんが、本脆弱性を悪用することにより、この制限を回避されてしまう可能性があります。  本脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCがベンダおよびCERT/CCとの調整を行いました。 報告者: 産業技術総合研究所 情報セキュリティ研究センター 大岩 寛 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Mozilla Foundation",
-          "productname": "Mozilla Firefox",
-          "cpe": {
-            "text": "cpe:/a:mozilla:firefox",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.6 およびそれ以前"
-          ]
-        },
-        {
-          "name": "Mozilla Foundation",
-          "productname": "Mozilla Suite",
-          "cpe": {
-            "text": "cpe:/a:mozilla:mozilla_suite",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.7.11 およびそれ以前"
-          ]
-        },
-        {
-          "name": "Opera Software ASA",
-          "productname": "Opera",
-          "cpe": {
-            "text": "cpe:/a:opera:opera_browser",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.02 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0 Standard Edition",
-            "2.1 Standard Edition",
-            "3.0 ",
-            "3.0 (x86-64) ",
-            "4.0 ",
-            "4.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10_f "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Desktop",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Multimedia",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_multimedia",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Personal",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_personal",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "ターボリナックス ホーム ",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_home",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 ",
-            "4.0 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux Advanced Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux_advanced_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "ブラウザからサーバやプロキシへの単一のリクエストを、連続する複数のリクエストであるかのように見せかけ、HTTP Request Smuggling 攻撃や HTTP Request Splitting 攻撃に悪用される可能性があります。  この問題を利用するリモートの攻撃者は、意図的に作成した Web ページを Firefox あるいは Mozilla で開くように標的ユーザを誘導することにより、標的システムを踏み台にして別のサーバやプロキシへリクエストを送信し、Web キャッシュ汚染やセッションハイジャックなどの攻撃を行う可能性があります。  また、プロキシを介して Web に接続している場合、XMLHttpRequest の同一生成元制限を回避するのに利用され、例えば、ファイアウォール越しにイントラネットサーバ上のファイルを読み取ることに悪用される可能性があります。  尚、ブラウザのデフォルトの設定ではこの問題の影響を受けないことが Red Hat より報告されています。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "AXSA-2005-80:2",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=211"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "AXSA-2005-79:2",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=190"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa2005-58",
-          "url": "http://www.mozilla.org/security/announce/2005/mfsa2005-58.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2005-58",
-          "url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-58.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Opera knowledge base",
-          "vulinfoid": "810",
-          "url": "http://www.opera.com/support/search/view/810/"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:785",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-785.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:789",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-789.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:791",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-791.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2005-93",
-          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-93.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:785",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-785J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:789",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-789J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:791",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-791J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2005-93",
-          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-93j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-2703",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2703"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2005-1824",
-          "url": "http://www.frsirt.com/english/advisories/2005/1824"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA セキュリティセンター",
-          "vulinfoid": "JVN_31226748",
-          "url": "http://www.ipa.go.jp/security/vuln/documents/2005/JVN_31226748_MultiBrowser.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#31226748",
-          "url": "http://jvn.jp/jp/JVN%2331226748/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-2703",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-2703"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA16911",
-          "url": "http://secunia.com/advisories/16911/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "14923",
-          "url": "http://www.securityfocus.com/bid/14923"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-94",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
-          "title": "コード・インジェクション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-09-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000530",
+	"vulinfodata": {
+		"title": "Mozilla 製品における HTTP リクエストヘッダを改ざんされる脆弱性",
+		"vulinfodescription": {
+			"overview": "複数のウェブブラウザにおいて、XmlHttpRequest オブジェクトの処理に脆弱性が存在します。JavaScript で使用できる XmlHttpRequest オブジェクトは、ウェブページの再読込無しに、サーバと通信を行うための機能を提供します。  通常、JavaScript ではウェブページと同一のドメイン内への通信しか行なえませんが、本脆弱性を悪用することにより、この制限を回避されてしまう可能性があります。  本脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCがベンダおよびCERT/CCとの調整を行いました。 報告者: 産業技術総合研究所 情報セキュリティ研究センター 大岩 寛 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Mozilla Foundation",
+					"productname": "Mozilla Firefox",
+					"cpe": {
+						"text": "cpe:/a:mozilla:firefox",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.6 およびそれ以前"
+					]
+				},
+				{
+					"name": "Mozilla Foundation",
+					"productname": "Mozilla Suite",
+					"cpe": {
+						"text": "cpe:/a:mozilla:mozilla_suite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.7.11 およびそれ以前"
+					]
+				},
+				{
+					"name": "Opera Software ASA",
+					"productname": "Opera",
+					"cpe": {
+						"text": "cpe:/a:opera:opera_browser",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.02 およびそれ以前"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0 Standard Edition",
+						"2.1 Standard Edition",
+						"3.0 ",
+						"3.0 (x86-64) ",
+						"4.0 ",
+						"4.0 (x86-64) "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10_f "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Desktop",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Multimedia",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_multimedia",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Personal",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_personal",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "ターボリナックス ホーム ",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_home",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 ",
+						"4.0 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux Advanced Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux_advanced_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "ブラウザからサーバやプロキシへの単一のリクエストを、連続する複数のリクエストであるかのように見せかけ、HTTP Request Smuggling 攻撃や HTTP Request Splitting 攻撃に悪用される可能性があります。  この問題を利用するリモートの攻撃者は、意図的に作成した Web ページを Firefox あるいは Mozilla で開くように標的ユーザを誘導することにより、標的システムを踏み台にして別のサーバやプロキシへリクエストを送信し、Web キャッシュ汚染やセッションハイジャックなどの攻撃を行う可能性があります。  また、プロキシを介して Web に接続している場合、XMLHttpRequest の同一生成元制限を回避するのに利用され、例えば、ファイアウォール越しにイントラネットサーバ上のファイルを読み取ることに悪用される可能性があります。  尚、ブラウザのデフォルトの設定ではこの問題の影響を受けないことが Red Hat より報告されています。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "AXSA-2005-80:2",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=211"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "AXSA-2005-79:2",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=190"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa2005-58",
+					"url": "http://www.mozilla.org/security/announce/2005/mfsa2005-58.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2005-58",
+					"url": "http://www.mozilla-japan.org/security/announce/2005/mfsa2005-58.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Opera knowledge base",
+					"vulinfoid": "810",
+					"url": "http://www.opera.com/support/search/view/810/"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:785",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-785.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:789",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-789.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:791",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-791.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2005-93",
+					"url": "http://www.turbolinux.com/security/2005/TLSA-2005-93.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:785",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-785J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:789",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-789J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:791",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-791J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2005-93",
+					"url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-93j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-2703",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2703"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2005-1824",
+					"url": "http://www.frsirt.com/english/advisories/2005/1824"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA セキュリティセンター",
+					"vulinfoid": "JVN_31226748",
+					"url": "http://www.ipa.go.jp/security/vuln/documents/2005/JVN_31226748_MultiBrowser.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#31226748",
+					"url": "http://jvn.jp/jp/JVN%2331226748/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-2703",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-2703"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA16911",
+					"url": "http://secunia.com/advisories/16911/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "14923",
+					"url": "http://www.securityfocus.com/bid/14923"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-94",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+					"title": "コード・インジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-09-16T00:00:00+09:00"
+	}
 }

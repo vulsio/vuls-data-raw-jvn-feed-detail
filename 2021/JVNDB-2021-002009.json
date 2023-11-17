@@ -1,125 +1,125 @@
 {
-  "vulinfoid": "JVNDB-2021-002009",
-  "vulinfodata": {
-    "title": "三菱電機製 GOT の MODBUS/TCP スレーブ通信機能における共有リソースへのアクセス同期不備の脆弱性",
-    "vulinfodescription": {
-      "overview": "三菱電機製 GOT2000 シリーズおよび GT SoftGOT2000 の MODBUS/TCP スレーブ通信機能には、次の条件で通信を使用している場合、共有リソースへのアクセス同期不備 (CWE-820) に起因するサービス運用妨害 (DoS) の脆弱性 (CVE-2021-20592) が存在します。  　* GOT2000シリーズで「MODBUS/TCP スレーブ,ゲートウェイ」通信ドライバを使用している場合 　* GT SoftGOT2000 で接続設定の機種に「MODBUS/TCP Slave」を選択して使用している場合  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "三菱電機",
-          "productname": "GOT2000 シリーズ GT23 モデル",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:got2000_series_gt23_model",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "通信ドライババージョン 01.19.000 から 01.39.010 まで"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "GOT2000 シリーズ GT25 モデル",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:got2000_series_gt25_model",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "通信ドライババージョン 01.19.000 から 01.39.010 まで"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "GOT2000 シリーズ GT27 モデル",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:got2000_series_gt27_model",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "通信ドライババージョン 01.19.000 から 01.39.010 まで"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "GT SoftGOT2000",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:gt_softgot2000",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "ソフトウェアバージョン 1.170C から 1.256S まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.9",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって GOT の MODBUS/TCP 通信用ポートに対して接続、通信、切断を高速に繰り返し実行された場合、当該機器の通信機能が停止する可能性があります。  なお、当該製品の通信機能が停止した場合、次の手順で復旧することが可能です。  　* GOT2000 シリーズ 　　* 電源再投入またはリセットスイッチを押下する 　* GT SoftGOT2000 　　* ソフトウェアが強制終了するため再度起動する "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、各製品に対応したアップデートを適用してください。  　* GOT2000シリーズで「MODBUS/TCPスレーブ,ゲートウェイ」通信ドライバを使用している場合 　　* GT27 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　　* GT25 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　　* GT23 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　　 　* GT SoftGOT2000 で接続設定の機種に「MODBUS/TCP Slave」を選択し使用している場合 　　* ソフトウェアバージョン 1.260W およびそれ以降 　　 アップデート手順等の詳細につきましては、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-007.pdf\"target=\"blank\">開発者が提供する情報</a>をご確認ください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* LAN 内で使用し、信頼できないネットワークやホストからアクセスできないようにする 　* 該当製品へアクセス可能なパソコンにウイルス対策ソフトを搭載する  "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "GOTのMODBUS/TCPスレーブ通信機能における サービス拒否(DoS)の脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-007.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20592",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20592"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-208-02",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-208-02"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92414172",
-          "url": "https://jvn.jp/vu/JVNVU92414172/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-820",
-          "url": "https://cwe.mitre.org/data/definitions/820.html",
-          "title": "同期の欠如"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-07-28T13:40:08+09:00",
-          "description": "[2021年07月28日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-07-28T17:20:08+09:00",
-    "datelastupdated": "2021-07-28T17:20:08+09:00",
-    "datepublic": "2021-07-27T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-002009",
+	"vulinfodata": {
+		"title": "三菱電機製 GOT の MODBUS/TCP スレーブ通信機能における共有リソースへのアクセス同期不備の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機製 GOT2000 シリーズおよび GT SoftGOT2000 の MODBUS/TCP スレーブ通信機能には、次の条件で通信を使用している場合、共有リソースへのアクセス同期不備 (CWE-820) に起因するサービス運用妨害 (DoS) の脆弱性 (CVE-2021-20592) が存在します。  　* GOT2000シリーズで「MODBUS/TCP スレーブ,ゲートウェイ」通信ドライバを使用している場合 　* GT SoftGOT2000 で接続設定の機種に「MODBUS/TCP Slave」を選択して使用している場合  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "GOT2000 シリーズ GT23 モデル",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:got2000_series_gt23_model",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"通信ドライババージョン 01.19.000 から 01.39.010 まで"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "GOT2000 シリーズ GT25 モデル",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:got2000_series_gt25_model",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"通信ドライババージョン 01.19.000 から 01.39.010 まで"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "GOT2000 シリーズ GT27 モデル",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:got2000_series_gt27_model",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"通信ドライババージョン 01.19.000 から 01.39.010 まで"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "GT SoftGOT2000",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:gt_softgot2000",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ソフトウェアバージョン 1.170C から 1.256S まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.9",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって GOT の MODBUS/TCP 通信用ポートに対して接続、通信、切断を高速に繰り返し実行された場合、当該機器の通信機能が停止する可能性があります。  なお、当該製品の通信機能が停止した場合、次の手順で復旧することが可能です。  　* GOT2000 シリーズ 　　* 電源再投入またはリセットスイッチを押下する 　* GT SoftGOT2000 　　* ソフトウェアが強制終了するため再度起動する "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、各製品に対応したアップデートを適用してください。  　* GOT2000シリーズで「MODBUS/TCPスレーブ,ゲートウェイ」通信ドライバを使用している場合 　　* GT27 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　　* GT25 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　　* GT23 モデル 通信ドライババージョン 01.40.000 およびそれ以降 　　 　* GT SoftGOT2000 で接続設定の機種に「MODBUS/TCP Slave」を選択し使用している場合 　　* ソフトウェアバージョン 1.260W およびそれ以降 　　 アップデート手順等の詳細につきましては、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-007.pdf\"target=\"blank\">開発者が提供する情報</a>をご確認ください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* LAN 内で使用し、信頼できないネットワークやホストからアクセスできないようにする 　* 該当製品へアクセス可能なパソコンにウイルス対策ソフトを搭載する  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "GOTのMODBUS/TCPスレーブ通信機能における サービス拒否(DoS)の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-007.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20592",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20592"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-208-02",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-208-02"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92414172",
+					"url": "https://jvn.jp/vu/JVNVU92414172/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-820",
+					"url": "https://cwe.mitre.org/data/definitions/820.html",
+					"title": "同期の欠如"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-07-28T13:40:08+09:00",
+					"description": "[2021年07月28日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-07-28T17:20:08+09:00",
+		"datelastupdated": "2021-07-28T17:20:08+09:00",
+		"datepublic": "2021-07-27T00:00:00+09:00"
+	}
 }

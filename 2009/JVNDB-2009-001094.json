@@ -1,169 +1,169 @@
 {
-  "vulinfoid": "JVNDB-2009-001094",
-  "vulinfodata": {
-    "title": "透過型プロキシサーバが HTTP の Host ヘッダに依存して接続を行う問題",
-    "vulinfodescription": {
-      "overview": "HTTP の Host ヘッダの値をもとに接続先の中継を行う透過型プロキシサーバは攻撃者によって悪用される可能性があります。  HTTP の Host ヘッダは RFC 2616 にて規定されており、主にウェブサーバ上にある複数のウェブサイトが一つの IP アドレスの共有を可能にするために使用されます。  透過型プロキシサーバはブラウザの設定に関わらず、ネットワーク接続の中継を行います。透過型プロキシサーバの中には Host ヘッダの値をもとに接続先を決定するものがあります。Flash や Java などのブラウザプラグインでは、ブラウザ上で実行される動的コンテンツによる通信を、そのコンテンツが置いてあったサイトやドメインへの通信のみに制限しています。攻撃者は動的コンテンツを利用し、HTTP Host ヘッダの値を細工することができます。プロキシサーバが接続先を Host ヘッダの値をもとに決定する場合、攻撃者は Host ヘッダを細工することで任意のサイトへの接続が可能となります。  攻撃者はユーザを悪意ある動的コンテンツが存在するサイトへ誘導または信頼できると思われるサイトに悪意ある動的コンテンツを埋め込むことで攻撃を行います。本問題は透過型プロキシサーバのみに影響があります。なお、ブラウザの Same Origin Policy により、攻撃者による認証情報 (cookie など) の再利用は不可能と考えられます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Squid-cache.org",
-          "productname": "Squid",
-          "cpe": {
-            "text": "cpe:/a:squid-cache:squid",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.x から 3.1",
-            "3.2 から 3.2.0.10"
-          ]
-        },
-        {
-          "name": "インターネットイニシアティブ",
-          "productname": "SEIL/B1",
-          "versionnumber": [
-            "1.00 〜 2.20"
-          ]
-        },
-        {
-          "name": "インターネットイニシアティブ",
-          "productname": "SEIL/Plus",
-          "versionnumber": [
-            "1.83 〜 2.00"
-          ]
-        },
-        {
-          "name": "インターネットイニシアティブ",
-          "productname": "SEIL/Turbo",
-          "versionnumber": [
-            "1.83 〜 2.00"
-          ]
-        },
-        {
-          "name": "インターネットイニシアティブ",
-          "productname": "SEIL/X1,X2",
-          "versionnumber": [
-            "1.00 〜 2.20"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.4",
-          "vector": "AV:N/AC:H/Au:N/C:C/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃者はプロキシから接続可能なウェブサイトやリソースへアクセスする可能性があります。これらのサイトにはイントラネット上にある内部リソースも含まれることがあります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] ベンダが本問題に対応するアップデートを提供している場合、それを適用してください。  [ワークアラウンドを実施する] アップデートまでの回避策として、以下のワークアラウンドを実施することで本問題の影響を軽減することができます。  プロキシサーバの管理者向けのワークアラウンド 　　・内部サービスに対して認証機能を使用する。 　　・内部サーバとプロキシサーバ間で直接アクセスできないように制御をする。 　　・CONNECT method で許可するポート番号を必要最小限にする。 (通常は443/tcp) 　　・プロキシサーバからの不要な接続をルータやスイッチのアクセスコントロールリストを使い、拒否する。 (80/tcp と 443/tcp 以外を拒否するなど)  ユーザ向けのワークアラウンド 本問題を利用するには攻撃者は動的コンテンツ (Java, Flash, Silverlight など) をユーザのウェブブラウザ上で実行する必要があります。Mozilla Firefox のユーザは NoScript プラグインなどを利用し、動的コンテンツを実行するサイトを制限することを推奨します。ブラウザの設定については Securing Your Web Browser を参照してください。  プロキシサーバベンダ向けのワークアラウンド 　　・デフォルト設定において、限定された well known ポートへの接続のみを許可する。 　　・Connect method は宛先ポートが 443/tcp の場合にのみ許可する。 (TCP tunnel として設定されている場合は除く) "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "SEIL シリーズ セキュリティ&脆弱性情報",
-          "vulinfoid": "透過型HTTPプロキシサーバにおけるハンドオフ機能の脆弱性",
-          "url": "http://www.seil.jp/seilseries/security/2009/04091698.php"
-        },
-        {
-          "type": "vendor",
-          "name": "Squid Proxy Cache Security Update Advisory",
-          "vulinfoid": "SQUID-2011:1",
-          "url": "http://www.squid-cache.org/Advisories/SQUID-2011_1.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Squid release notes",
-          "vulinfoid": "3.2.0.11",
-          "url": "http://www.squid-cache.org/Versions/v3/3.2/RELEASENOTES.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Squid release notes",
-          "vulinfoid": "3.1.15",
-          "url": "http://www.squid-cache.org/Versions/v3/3.1/RELEASENOTES.html#ss1.1"
-        },
-        {
-          "type": "vendor",
-          "name": "Squid-cache.org",
-          "vulinfoid": "Top Page",
-          "url": "http://www.squid-cache.org/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2009-0801",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0801"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#435052",
-          "url": "http://jvn.jp/cert/JVNVU435052/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2009-0801",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-0801"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA34019",
-          "url": "http://secunia.com/advisories/34019/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "33858",
-          "url": "http://www.securityfocus.com/bid/33858"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#435052",
-          "url": "http://www.kb.cert.org/vuls/id/435052"
-        },
-        {
-          "type": "advisory",
-          "name": "VUPEN Security",
-          "vulinfoid": "VUPEN/ADV-2009-0500",
-          "url": "http://www.vupen.com/english/advisories/2009/0500"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2009年03月25日]\\n  掲載\\n[2009年05月07日]\\n  影響を受けるシステム：インターネットイニシアティブ (透過型HTTPプロキシサーバにおけるハンドオフ機能の脆弱性) の情報を追加\\n  ベンダ情報：インターネットイニシアティブ (透過型HTTPプロキシサーバにおけるハンドオフ機能の脆弱性) を追加\\n[2010年08月24日]\\n  ベンダ情報：Squid-cache.org (3.1.15) を追加\\n[2011年09月14日]\\n  影響を受けるシステム：Squid-cache.org (SQUID-2011:1) の情報を追加\\n  影響を受けるシステム：Squid-cache.org (3.2.0.11) の情報を追加\\n  ベンダ情報：Squid-cache.org (SQUID-2011:1) を追加\\n  ベンダ情報：Squid-cache.org (3.2.0.11) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2009-03-25T15:22:38+09:00",
-    "datelastupdated": "2011-09-14T10:47:29+09:00",
-    "datepublic": "2009-02-24T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2009-001094",
+	"vulinfodata": {
+		"title": "透過型プロキシサーバが HTTP の Host ヘッダに依存して接続を行う問題",
+		"vulinfodescription": {
+			"overview": "HTTP の Host ヘッダの値をもとに接続先の中継を行う透過型プロキシサーバは攻撃者によって悪用される可能性があります。  HTTP の Host ヘッダは RFC 2616 にて規定されており、主にウェブサーバ上にある複数のウェブサイトが一つの IP アドレスの共有を可能にするために使用されます。  透過型プロキシサーバはブラウザの設定に関わらず、ネットワーク接続の中継を行います。透過型プロキシサーバの中には Host ヘッダの値をもとに接続先を決定するものがあります。Flash や Java などのブラウザプラグインでは、ブラウザ上で実行される動的コンテンツによる通信を、そのコンテンツが置いてあったサイトやドメインへの通信のみに制限しています。攻撃者は動的コンテンツを利用し、HTTP Host ヘッダの値を細工することができます。プロキシサーバが接続先を Host ヘッダの値をもとに決定する場合、攻撃者は Host ヘッダを細工することで任意のサイトへの接続が可能となります。  攻撃者はユーザを悪意ある動的コンテンツが存在するサイトへ誘導または信頼できると思われるサイトに悪意ある動的コンテンツを埋め込むことで攻撃を行います。本問題は透過型プロキシサーバのみに影響があります。なお、ブラウザの Same Origin Policy により、攻撃者による認証情報 (cookie など) の再利用は不可能と考えられます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Squid-cache.org",
+					"productname": "Squid",
+					"cpe": {
+						"text": "cpe:/a:squid-cache:squid",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.x から 3.1",
+						"3.2 から 3.2.0.10"
+					]
+				},
+				{
+					"name": "インターネットイニシアティブ",
+					"productname": "SEIL/B1",
+					"versionnumber": [
+						"1.00 〜 2.20"
+					]
+				},
+				{
+					"name": "インターネットイニシアティブ",
+					"productname": "SEIL/Plus",
+					"versionnumber": [
+						"1.83 〜 2.00"
+					]
+				},
+				{
+					"name": "インターネットイニシアティブ",
+					"productname": "SEIL/Turbo",
+					"versionnumber": [
+						"1.83 〜 2.00"
+					]
+				},
+				{
+					"name": "インターネットイニシアティブ",
+					"productname": "SEIL/X1,X2",
+					"versionnumber": [
+						"1.00 〜 2.20"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.4",
+					"vector": "AV:N/AC:H/Au:N/C:C/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃者はプロキシから接続可能なウェブサイトやリソースへアクセスする可能性があります。これらのサイトにはイントラネット上にある内部リソースも含まれることがあります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] ベンダが本問題に対応するアップデートを提供している場合、それを適用してください。  [ワークアラウンドを実施する] アップデートまでの回避策として、以下のワークアラウンドを実施することで本問題の影響を軽減することができます。  プロキシサーバの管理者向けのワークアラウンド 　　・内部サービスに対して認証機能を使用する。 　　・内部サーバとプロキシサーバ間で直接アクセスできないように制御をする。 　　・CONNECT method で許可するポート番号を必要最小限にする。 (通常は443/tcp) 　　・プロキシサーバからの不要な接続をルータやスイッチのアクセスコントロールリストを使い、拒否する。 (80/tcp と 443/tcp 以外を拒否するなど)  ユーザ向けのワークアラウンド 本問題を利用するには攻撃者は動的コンテンツ (Java, Flash, Silverlight など) をユーザのウェブブラウザ上で実行する必要があります。Mozilla Firefox のユーザは NoScript プラグインなどを利用し、動的コンテンツを実行するサイトを制限することを推奨します。ブラウザの設定については Securing Your Web Browser を参照してください。  プロキシサーバベンダ向けのワークアラウンド 　　・デフォルト設定において、限定された well known ポートへの接続のみを許可する。 　　・Connect method は宛先ポートが 443/tcp の場合にのみ許可する。 (TCP tunnel として設定されている場合は除く) "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "SEIL シリーズ セキュリティ&脆弱性情報",
+					"vulinfoid": "透過型HTTPプロキシサーバにおけるハンドオフ機能の脆弱性",
+					"url": "http://www.seil.jp/seilseries/security/2009/04091698.php"
+				},
+				{
+					"type": "vendor",
+					"name": "Squid Proxy Cache Security Update Advisory",
+					"vulinfoid": "SQUID-2011:1",
+					"url": "http://www.squid-cache.org/Advisories/SQUID-2011_1.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Squid release notes",
+					"vulinfoid": "3.2.0.11",
+					"url": "http://www.squid-cache.org/Versions/v3/3.2/RELEASENOTES.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Squid release notes",
+					"vulinfoid": "3.1.15",
+					"url": "http://www.squid-cache.org/Versions/v3/3.1/RELEASENOTES.html#ss1.1"
+				},
+				{
+					"type": "vendor",
+					"name": "Squid-cache.org",
+					"vulinfoid": "Top Page",
+					"url": "http://www.squid-cache.org/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2009-0801",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0801"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#435052",
+					"url": "http://jvn.jp/cert/JVNVU435052/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2009-0801",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-0801"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA34019",
+					"url": "http://secunia.com/advisories/34019/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "33858",
+					"url": "http://www.securityfocus.com/bid/33858"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#435052",
+					"url": "http://www.kb.cert.org/vuls/id/435052"
+				},
+				{
+					"type": "advisory",
+					"name": "VUPEN Security",
+					"vulinfoid": "VUPEN/ADV-2009-0500",
+					"url": "http://www.vupen.com/english/advisories/2009/0500"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2009年03月25日]\\n  掲載\\n[2009年05月07日]\\n  影響を受けるシステム：インターネットイニシアティブ (透過型HTTPプロキシサーバにおけるハンドオフ機能の脆弱性) の情報を追加\\n  ベンダ情報：インターネットイニシアティブ (透過型HTTPプロキシサーバにおけるハンドオフ機能の脆弱性) を追加\\n[2010年08月24日]\\n  ベンダ情報：Squid-cache.org (3.1.15) を追加\\n[2011年09月14日]\\n  影響を受けるシステム：Squid-cache.org (SQUID-2011:1) の情報を追加\\n  影響を受けるシステム：Squid-cache.org (3.2.0.11) の情報を追加\\n  ベンダ情報：Squid-cache.org (SQUID-2011:1) を追加\\n  ベンダ情報：Squid-cache.org (3.2.0.11) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2009-03-25T15:22:38+09:00",
+		"datelastupdated": "2011-09-14T10:47:29+09:00",
+		"datepublic": "2009-02-24T00:00:00+09:00"
+	}
 }

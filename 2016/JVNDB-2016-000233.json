@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2016-000233",
-  "vulinfodata": {
-    "title": "日本年金機構製の複数のインストーラにおける DLL 読み込みに関する脆弱性",
-    "vulinfodescription": {
-      "overview": "日本年金機構が提供する複数の製品のインストーラには、DLL を読み込む際の検索パスに関する処理に不備があり、意図しない DLL を読み込んでしまう脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: NTTコミュニケーションズ 東内 裕二 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "日本年金機構",
-          "productname": "仕様チェックプログラム(社会保険)",
-          "cpe": {
-            "text": "cpe:/a:japan_pension_service:specification_check_program",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver. 9.00 およびそれ以前"
-          ]
-        },
-        {
-          "name": "日本年金機構",
-          "productname": "届書印刷プログラム",
-          "cpe": {
-            "text": "cpe:/a:japan_pension_service:todokesho_print_program",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver. 5.00 およびそれ以前"
-          ]
-        },
-        {
-          "name": "日本年金機構",
-          "productname": "届書作成プログラム",
-          "cpe": {
-            "text": "cpe:/a:japan_pension_service:todokesho_creation_program",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver. 15.00 およびそれ以前"
-          ]
-        },
-        {
-          "name": "日本年金機構",
-          "productname": "媒体データパスワード設定プログラム",
-          "cpe": {
-            "text": "cpe:/a:japan_pension_service:device_data_encryption_program",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver. 1.00 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "次の条件を満たす場合に脆弱性が悪用されます。脆弱性が悪用された場合、インストーラを実行しているプロセスの権限で任意のコードを実行される可能性があります。 ・攻撃者の意図する場所に、細工された DLL ファイルが何らかの方法で配置されている"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[新規インストールやバージョンアップには最新のインストーラを使用する] 新規インストールやバージョンアップの際には、開発者が提供する情報をもとに、最新のインストーラを使用してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "日本年金機構",
-          "vulinfoid": "仕様チェックプログラム（社会保険）",
-          "url": "http://www.nenkin.go.jp/denshibenri/setsumei/20150415.html#cmscheck"
-        },
-        {
-          "type": "vendor",
-          "name": "日本年金機構",
-          "vulinfoid": "届書印刷プログラム",
-          "url": "http://www.nenkin.go.jp/denshibenri/setsumei/20140630.html"
-        },
-        {
-          "type": "vendor",
-          "name": "日本年金機構",
-          "vulinfoid": "媒体データパスワード設定プログラム",
-          "url": "http://www.nenkin.go.jp/denshibenri/setsumei/0104.html"
-        },
-        {
-          "type": "vendor",
-          "name": "日本年金機構",
-          "vulinfoid": "届書作成プログラム",
-          "url": "http://www.nenkin.go.jp/denshibenri/setsumei/20150105-03.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-7818",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7818"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#08868688",
-          "url": "https://jvn.jp/jp/JVN08868688/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-7818",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-7818"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年12月1日]\\n  掲載\\n[2018年01月17日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-7818) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-12-01T12:03:32+09:00",
-    "datelastupdated": "2018-01-17T13:52:55+09:00",
-    "datepublic": "2016-12-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-000233",
+	"vulinfodata": {
+		"title": "日本年金機構製の複数のインストーラにおける DLL 読み込みに関する脆弱性",
+		"vulinfodescription": {
+			"overview": "日本年金機構が提供する複数の製品のインストーラには、DLL を読み込む際の検索パスに関する処理に不備があり、意図しない DLL を読み込んでしまう脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: NTTコミュニケーションズ 東内 裕二 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日本年金機構",
+					"productname": "仕様チェックプログラム(社会保険)",
+					"cpe": {
+						"text": "cpe:/a:japan_pension_service:specification_check_program",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 9.00 およびそれ以前"
+					]
+				},
+				{
+					"name": "日本年金機構",
+					"productname": "届書印刷プログラム",
+					"cpe": {
+						"text": "cpe:/a:japan_pension_service:todokesho_print_program",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 5.00 およびそれ以前"
+					]
+				},
+				{
+					"name": "日本年金機構",
+					"productname": "届書作成プログラム",
+					"cpe": {
+						"text": "cpe:/a:japan_pension_service:todokesho_creation_program",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 15.00 およびそれ以前"
+					]
+				},
+				{
+					"name": "日本年金機構",
+					"productname": "媒体データパスワード設定プログラム",
+					"cpe": {
+						"text": "cpe:/a:japan_pension_service:device_data_encryption_program",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.00 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "次の条件を満たす場合に脆弱性が悪用されます。脆弱性が悪用された場合、インストーラを実行しているプロセスの権限で任意のコードを実行される可能性があります。 ・攻撃者の意図する場所に、細工された DLL ファイルが何らかの方法で配置されている"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[新規インストールやバージョンアップには最新のインストーラを使用する] 新規インストールやバージョンアップの際には、開発者が提供する情報をもとに、最新のインストーラを使用してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "日本年金機構",
+					"vulinfoid": "仕様チェックプログラム（社会保険）",
+					"url": "http://www.nenkin.go.jp/denshibenri/setsumei/20150415.html#cmscheck"
+				},
+				{
+					"type": "vendor",
+					"name": "日本年金機構",
+					"vulinfoid": "届書印刷プログラム",
+					"url": "http://www.nenkin.go.jp/denshibenri/setsumei/20140630.html"
+				},
+				{
+					"type": "vendor",
+					"name": "日本年金機構",
+					"vulinfoid": "媒体データパスワード設定プログラム",
+					"url": "http://www.nenkin.go.jp/denshibenri/setsumei/0104.html"
+				},
+				{
+					"type": "vendor",
+					"name": "日本年金機構",
+					"vulinfoid": "届書作成プログラム",
+					"url": "http://www.nenkin.go.jp/denshibenri/setsumei/20150105-03.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-7818",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7818"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#08868688",
+					"url": "https://jvn.jp/jp/JVN08868688/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-7818",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-7818"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年12月1日]\\n  掲載\\n[2018年01月17日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-7818) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-12-01T12:03:32+09:00",
+		"datelastupdated": "2018-01-17T13:52:55+09:00",
+		"datepublic": "2016-12-01T00:00:00+09:00"
+	}
 }

@@ -1,173 +1,173 @@
 {
-  "vulinfoid": "JVNDB-2020-017191",
-  "vulinfodata": {
-    "title": "binutils における入力確認に関する脆弱性",
-    "vulinfodescription": {
-      "overview": "binutils には、入力確認に関する脆弱性、ヒープベースのバッファオーバーフローの脆弱性、および境界外読み取りに関する脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Fedora Project",
-          "productname": "Fedora",
-          "cpe": {
-            "text": "cpe:/o:fedoraproject:fedora",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "GNU Project",
-          "productname": "GNU Binutils",
-          "cpe": {
-            "text": "cpe:/a:gnu:binutils",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.34 未満"
-          ]
-        },
-        {
-          "name": "NetApp",
-          "productname": "NetApp HCI Compute Node",
-          "cpe": {
-            "text": "cpe:/h:netapp:hci_compute_node",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "NetApp HCI Management Node",
-          "cpe": {
-            "text": "cpe:/a:netapp:hci_management_node",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "NetApp SolidFire",
-          "cpe": {
-            "text": "cpe:/a:netapp:solidfire",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "NetApp",
-          "productname": "ONTAP Select Deploy administration utility",
-          "cpe": {
-            "text": "cpe:/a:netapp:ontap_select_deploy_administration_utility",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.5",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "サービス運用妨害 (DoS) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2020-28c78a6ac3",
-          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4KOK3QWSVOUJWJ54HVGIFWNLWQ5ZY4S6/"
-        },
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fix potential illegal memory access when parsing a corrupt PEF format file.",
-          "url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=f2a3559d54602cecfec6d90f792be4a70ad918ab"
-        },
-        {
-          "type": "vendor",
-          "name": "NetApp Advisory",
-          "vulinfoid": "NTAP-20210212-0007",
-          "url": "https://security.netapp.com/advisory/ntap-20210212-0007/"
-        },
-        {
-          "type": "vendor",
-          "name": "Sourceware Bugzilla",
-          "vulinfoid": "Bug 25307",
-          "url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25307"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-35493",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35493"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-35493",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-35493"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Bug 1911437 (CVE-2020-35493) - CVE-2020-35493 binutils: heap-based buffer overflow in bfd_pef_parse_function_stubs function in bfd/pef.c via crafted PEF file",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1911437"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-122",
-          "url": "https://cwe.mitre.org/data/definitions/122.html",
-          "title": "ヒープベースのバッファオーバーフロー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-125",
-          "url": "https://cwe.mitre.org/data/definitions/125.html",
-          "title": "境界外読み取り"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-06-29T14:11:10+09:00",
-          "description": "[2022年06月29日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-06-29T14:11:10+09:00",
-    "datelastupdated": "2022-06-29T14:11:10+09:00",
-    "datepublic": "2020-01-03T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-017191",
+	"vulinfodata": {
+		"title": "binutils における入力確認に関する脆弱性",
+		"vulinfodescription": {
+			"overview": "binutils には、入力確認に関する脆弱性、ヒープベースのバッファオーバーフローの脆弱性、および境界外読み取りに関する脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Fedora Project",
+					"productname": "Fedora",
+					"cpe": {
+						"text": "cpe:/o:fedoraproject:fedora",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "GNU Project",
+					"productname": "GNU Binutils",
+					"cpe": {
+						"text": "cpe:/a:gnu:binutils",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.34 未満"
+					]
+				},
+				{
+					"name": "NetApp",
+					"productname": "NetApp HCI Compute Node",
+					"cpe": {
+						"text": "cpe:/h:netapp:hci_compute_node",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "NetApp HCI Management Node",
+					"cpe": {
+						"text": "cpe:/a:netapp:hci_management_node",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "NetApp SolidFire",
+					"cpe": {
+						"text": "cpe:/a:netapp:solidfire",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "NetApp",
+					"productname": "ONTAP Select Deploy administration utility",
+					"cpe": {
+						"text": "cpe:/a:netapp:ontap_select_deploy_administration_utility",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.5",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "サービス運用妨害 (DoS) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2020-28c78a6ac3",
+					"url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4KOK3QWSVOUJWJ54HVGIFWNLWQ5ZY4S6/"
+				},
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fix potential illegal memory access when parsing a corrupt PEF format file.",
+					"url": "https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=f2a3559d54602cecfec6d90f792be4a70ad918ab"
+				},
+				{
+					"type": "vendor",
+					"name": "NetApp Advisory",
+					"vulinfoid": "NTAP-20210212-0007",
+					"url": "https://security.netapp.com/advisory/ntap-20210212-0007/"
+				},
+				{
+					"type": "vendor",
+					"name": "Sourceware Bugzilla",
+					"vulinfoid": "Bug 25307",
+					"url": "https://sourceware.org/bugzilla/show_bug.cgi?id=25307"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-35493",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35493"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-35493",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-35493"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Bug 1911437 (CVE-2020-35493) - CVE-2020-35493 binutils: heap-based buffer overflow in bfd_pef_parse_function_stubs function in bfd/pef.c via crafted PEF file",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1911437"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-122",
+					"url": "https://cwe.mitre.org/data/definitions/122.html",
+					"title": "ヒープベースのバッファオーバーフロー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-06-29T14:11:10+09:00",
+					"description": "[2022年06月29日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2022-06-29T14:11:10+09:00",
+		"datelastupdated": "2022-06-29T14:11:10+09:00",
+		"datepublic": "2020-01-03T00:00:00+09:00"
+	}
 }

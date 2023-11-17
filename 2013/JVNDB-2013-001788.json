@@ -1,91 +1,91 @@
 {
-  "vulinfoid": "JVNDB-2013-001788",
-  "vulinfodata": {
-    "title": "GroundWork Monitor Enterprise に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "GroundWork Monitor Enterprise には、複数の脆弱性が存在します。  GroundWork Monitor Enterprise には、認証不備、クロスサイトスクリプティング、OS コマンドインジェクションなど、複数の脆弱性が存在します。  SEC Consult Vulnerability Lab Security Advisory には下記の情報が記載されています。   　　1) 多数のコンポーネントに認証不備：GroundWork のコンポーネントの多くは Referer ヘッダチェックのみに基づいて保護されている。攻撃者は、GroundWork で使われている Apache の設定ファイルで指定されている Referer ヘッダを使用することで、認証無しで管理インターフェイスの一部にアクセスすることができる。Referer ヘッダチェックに加えて JOSSO シングルサインオンシステムも使用して認証を行っているコンポーネントは一部のみである。  　　2) ウェブアプリケーション GroundWork Foundation の管理インターフェイス：  　　2.1) Referer ヘッダのチェック：ウェブアプリケーション GroundWork Foundation は Referer ヘッダのチェックのみによって保護されており、認証されていない攻撃者が管理インターフェイスにアクセスすることができる。攻撃者は書込み権限を持っており、設定を変更して他の脆弱性を攻撃することが可能である。  　　2.2) ファイルの漏洩と改ざん：認証されていない攻撃者は、ユーザ \"nagios\" のアクセス権限に基づき、OSの任意のファイルを読取ることができる。セキュリティ上の保護は、2.1) Referer ヘッダのチェックのみである。  　　2.3) 複数の格納型 XSS：認証されていない攻撃者は、管理インターフェイス内の複数の個所で、細工した JavaScript/HTMLコードを保存させ、GroundWork の管理ユーザを攻撃することが可能である。たとえば、管理者が GroundWork の \"Administration\" / \"Foundation\" メニューをクリックすると、JavaScript が自動的に実行される、など。  　　3) MONARCH コンポーネント：  　　3.1) OS コマンドインジェクション：少なくとも \"user\" アクセス権限を持ち、かつ有効な JOSSO SSO クッキーを持つ攻撃者は、任意のOSコマンドを実行することが可能である。Nagios が平文で保存しているパスワード(つまり、監視対象のさまざまなサービスのパスワード)など、センシティブな設定ファイルにアクセスすることが可能になる。  　　3.2) XML 外部エンティティーインジェクション(XXE)および任意のXMLファイルの上書き：MonarchコンポーネントはXXE攻撃を受ける可能性がある。攻撃者はセンシティブな設定ファイルなどOSの任意のファイルを読取ることが可能である。 　　細工した XML ファイルを \"Profile Importer\" コンポーネントでアップロードし、そのまま閲覧することで、この脆弱性を攻撃することができる。  　　4) Nagios アプリケーションのコンポーネント  　　4.1) センシティブなファイルへのアクセス：低い権限を持つユーザが、1)のRefererヘッダとともに特定のURLを指定するだけで、ログファイルや nagios の設定ファイルなど(例：平文のパスワード)にアクセスすることが可能である。  　　5) Performance コンポーネント  　　5.1) ファイルへの書込みおよびOSコマンドの実行：認証されていない攻撃者はユーザ \"nagios\"の権限に基づき、指定した XML の内容をファイルに書き込むことが可能である。(ファイル名とファイルパスは任意に選択可能) XML の内容の一部は、アプリケーションによって指定されるが、攻撃者のインジェクション攻撃によって書き換えることが可能である。結果として、たとえばSSI(server-side includes) インジェクション攻撃を用いることで、任意の OS コマンドを実行することが可能である。  上記以外にも脆弱性が発見されています。詳しくは、SEC Consult Vulnerability Lab Security Advisory 1 および SEC Consult Vulnerability Lab Security Advisory 2 をご確認ください。   2013 年 5 月 8 日、本件の複数の脆弱性に、以下の CVE 番号が採番されました。  CVE-2013-3499 CVE-2013-3500 CVE-2013-3501 CVE-2013-3502 CVE-2013-3503 CVE-2013-3504 CVE-2013-3505 CVE-2013-3506 CVE-2013-3507 CVE-2013-3508 CVE-2013-3509 CVE-2013-3510 CVE-2013-3511 CVE-2013-3512 CVE-2013-3513"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "GroundWork",
-          "productname": "GroundWork Monitor",
-          "cpe": {
-            "text": "cpe:/a:gwos:groundwork_monitor",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Enterprise 6.7.0"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、管理画面を書き換えられたり、センシティブな情報を取得されたり、アプリケーションの権限で任意の OS コマンドを実行されたりする等の可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[設定を変更する] 開発者が提供する情報 (SA6.7.0-1) をもとに、設定ファイルをアップデートして Apache ウェブサーバを再起動してください。  　　SA6.7.0-1 　　https://kb.groundworkopensource.com/display/SUPPORT/SA6.7.0-1+Some+web+components+allow+bypass+of+role+access+controls   [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　　* アクセスを制限する"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Security Advisories",
-          "vulinfoid": "SA6.7.0-1 Some web components allow bypass of role access controls",
-          "url": "https://kb.groundworkopensource.com/display/SUPPORT/SA6.7.0-1+Some+web+components+allow+bypass+of+role+access+controls"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92716319",
-          "url": "http://jvn.jp/cert/JVNVU92716319"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#345260",
-          "url": "http://www.kb.cert.org/vuls/id/345260"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SEC Consult Vulnerability Lab Security Advisory 1",
-          "url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20130308-0_GroundWork_Monitoring_Multiple_critical_vulnerabilities_wo_poc_v10.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SEC Consult Vulnerability Lab Security Advisory 2",
-          "url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20130308-1_GroundWork_Monitoring_Multiple_high_risk_vulnerabilities_part2_wo_poc_v10.txt"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年03月12日]\\n  掲載\\n[2013年05月10日]\\n  概要：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-03-12T11:14:42+09:00",
-    "datelastupdated": "2013-03-12T11:14:42+09:00",
-    "datepublic": "2013-03-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-001788",
+	"vulinfodata": {
+		"title": "GroundWork Monitor Enterprise に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "GroundWork Monitor Enterprise には、複数の脆弱性が存在します。  GroundWork Monitor Enterprise には、認証不備、クロスサイトスクリプティング、OS コマンドインジェクションなど、複数の脆弱性が存在します。  SEC Consult Vulnerability Lab Security Advisory には下記の情報が記載されています。   　　1) 多数のコンポーネントに認証不備：GroundWork のコンポーネントの多くは Referer ヘッダチェックのみに基づいて保護されている。攻撃者は、GroundWork で使われている Apache の設定ファイルで指定されている Referer ヘッダを使用することで、認証無しで管理インターフェイスの一部にアクセスすることができる。Referer ヘッダチェックに加えて JOSSO シングルサインオンシステムも使用して認証を行っているコンポーネントは一部のみである。  　　2) ウェブアプリケーション GroundWork Foundation の管理インターフェイス：  　　2.1) Referer ヘッダのチェック：ウェブアプリケーション GroundWork Foundation は Referer ヘッダのチェックのみによって保護されており、認証されていない攻撃者が管理インターフェイスにアクセスすることができる。攻撃者は書込み権限を持っており、設定を変更して他の脆弱性を攻撃することが可能である。  　　2.2) ファイルの漏洩と改ざん：認証されていない攻撃者は、ユーザ \"nagios\" のアクセス権限に基づき、OSの任意のファイルを読取ることができる。セキュリティ上の保護は、2.1) Referer ヘッダのチェックのみである。  　　2.3) 複数の格納型 XSS：認証されていない攻撃者は、管理インターフェイス内の複数の個所で、細工した JavaScript/HTMLコードを保存させ、GroundWork の管理ユーザを攻撃することが可能である。たとえば、管理者が GroundWork の \"Administration\" / \"Foundation\" メニューをクリックすると、JavaScript が自動的に実行される、など。  　　3) MONARCH コンポーネント：  　　3.1) OS コマンドインジェクション：少なくとも \"user\" アクセス権限を持ち、かつ有効な JOSSO SSO クッキーを持つ攻撃者は、任意のOSコマンドを実行することが可能である。Nagios が平文で保存しているパスワード(つまり、監視対象のさまざまなサービスのパスワード)など、センシティブな設定ファイルにアクセスすることが可能になる。  　　3.2) XML 外部エンティティーインジェクション(XXE)および任意のXMLファイルの上書き：MonarchコンポーネントはXXE攻撃を受ける可能性がある。攻撃者はセンシティブな設定ファイルなどOSの任意のファイルを読取ることが可能である。 　　細工した XML ファイルを \"Profile Importer\" コンポーネントでアップロードし、そのまま閲覧することで、この脆弱性を攻撃することができる。  　　4) Nagios アプリケーションのコンポーネント  　　4.1) センシティブなファイルへのアクセス：低い権限を持つユーザが、1)のRefererヘッダとともに特定のURLを指定するだけで、ログファイルや nagios の設定ファイルなど(例：平文のパスワード)にアクセスすることが可能である。  　　5) Performance コンポーネント  　　5.1) ファイルへの書込みおよびOSコマンドの実行：認証されていない攻撃者はユーザ \"nagios\"の権限に基づき、指定した XML の内容をファイルに書き込むことが可能である。(ファイル名とファイルパスは任意に選択可能) XML の内容の一部は、アプリケーションによって指定されるが、攻撃者のインジェクション攻撃によって書き換えることが可能である。結果として、たとえばSSI(server-side includes) インジェクション攻撃を用いることで、任意の OS コマンドを実行することが可能である。  上記以外にも脆弱性が発見されています。詳しくは、SEC Consult Vulnerability Lab Security Advisory 1 および SEC Consult Vulnerability Lab Security Advisory 2 をご確認ください。   2013 年 5 月 8 日、本件の複数の脆弱性に、以下の CVE 番号が採番されました。  CVE-2013-3499 CVE-2013-3500 CVE-2013-3501 CVE-2013-3502 CVE-2013-3503 CVE-2013-3504 CVE-2013-3505 CVE-2013-3506 CVE-2013-3507 CVE-2013-3508 CVE-2013-3509 CVE-2013-3510 CVE-2013-3511 CVE-2013-3512 CVE-2013-3513"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "GroundWork",
+					"productname": "GroundWork Monitor",
+					"cpe": {
+						"text": "cpe:/a:gwos:groundwork_monitor",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Enterprise 6.7.0"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、管理画面を書き換えられたり、センシティブな情報を取得されたり、アプリケーションの権限で任意の OS コマンドを実行されたりする等の可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[設定を変更する] 開発者が提供する情報 (SA6.7.0-1) をもとに、設定ファイルをアップデートして Apache ウェブサーバを再起動してください。  　　SA6.7.0-1 　　https://kb.groundworkopensource.com/display/SUPPORT/SA6.7.0-1+Some+web+components+allow+bypass+of+role+access+controls   [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　　* アクセスを制限する"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Security Advisories",
+					"vulinfoid": "SA6.7.0-1 Some web components allow bypass of role access controls",
+					"url": "https://kb.groundworkopensource.com/display/SUPPORT/SA6.7.0-1+Some+web+components+allow+bypass+of+role+access+controls"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92716319",
+					"url": "http://jvn.jp/cert/JVNVU92716319"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#345260",
+					"url": "http://www.kb.cert.org/vuls/id/345260"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SEC Consult Vulnerability Lab Security Advisory 1",
+					"url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20130308-0_GroundWork_Monitoring_Multiple_critical_vulnerabilities_wo_poc_v10.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SEC Consult Vulnerability Lab Security Advisory 2",
+					"url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20130308-1_GroundWork_Monitoring_Multiple_high_risk_vulnerabilities_part2_wo_poc_v10.txt"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年03月12日]\\n  掲載\\n[2013年05月10日]\\n  概要：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2013-03-12T11:14:42+09:00",
+		"datelastupdated": "2013-03-12T11:14:42+09:00",
+		"datepublic": "2013-03-11T00:00:00+09:00"
+	}
 }

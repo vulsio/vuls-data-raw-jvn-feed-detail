@@ -1,179 +1,179 @@
 {
-  "vulinfoid": "JVNDB-2017-002923",
-  "vulinfodata": {
-    "title": "Intel Active Management Technology (AMT) にアクセス制限不備の脆弱性",
-    "vulinfodescription": {
-      "overview": "Intel Active Management Technology (AMT) にはアクセス制限不備の脆弱性が存在します。  不適切なアクセス制御 (CWE-284) - CVE-2017-5689 Intel が提供するファームウェアは、コンピュータシステムのリモート管理機能として、Intel Active Management Technology (AMT)、Intel Small Business Technology (SBT)、Intel Standard Manageability などを提供しています。これらの機能では、複数のポートを使用して管理用コマンドを待ち受けています。Intel の文書によると、AMT に対するウェブインターフェースとしてポート 16992 および 16993 が使われています。また、他のポート 16994 と 16995 あるいは 623 と 664 が使われている場合もあります。  Intel の文書 https://software.intel.com/sites/default/files/article/393789/amt-9-start-here-guide.pdf  ポート 16994 と 16995 https://www.symantec.com/connect/articles/why-must-intel-amt-be-configured-and-what-required  これらのリモート管理機能に対応した Intel Management Engine には、遠隔の (認証されていない) 第三者によってリモート管理機能にアクセスされる脆弱性があります。 Intel はこの脆弱性に対してセキュリティアドバイザリ (INTEL-SA-00075) および軽減のためのガイド (INTEL-SA-00075 Mitigation Guide) を提供しています。  セキュリティアドバイザリ (INTEL-SA-00075) https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00075&languageid=en-fr  軽減のためのガイド (INTEL-SA-00075 Mitigation Guide) https://downloadcenter.intel.com/download/26754  また、OEM 製品においてもこのリモート管理機能が有効になっている可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "インテル",
-          "productname": "Intel manageability ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:intel:manageability_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 6.x, 7.x, 8.x, 9.x, 10.x, 11.0, 11.5 および 11.6 を使用しているハードウェア"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "ESMPRO/ServerManager",
-          "cpe": {
-            "text": "cpe:/a:nec:esmpro_servermanager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.5.5以降"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、システムのリモート管理機能にアクセスされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[ファームウェアをアップデートする] Intel から、本脆弱性の対策版ファームウェアがリリースされています。 セキュリティアドバイザリ INTEL-SA-00075 およびハードウェアベンダが提供する情報をもとに、ファームウェアをアップデートしてください。  セキュリティアドバイザリ INTEL-SA-00075 https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00075&languageid=en-fr  また、Intel は、対策版ファームウェアが提供されていない OEM 製品のユーザ向けに軽減のためのガイドを提供しています。  軽減のためのガイド https://downloadcenter.intel.com/download/26754"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Intel",
-          "vulinfoid": "INTEL-SA-00075 Mitigation Guide",
-          "url": "https://downloadcenter.intel.com/download/26754"
-        },
-        {
-          "type": "vendor",
-          "name": "Intel",
-          "vulinfoid": "INTEL ACTIVE MANAGEMENT TECHNOLOGY (INTEL AMT) Start Here Guide (Intel AMT 9.0)",
-          "url": "https://software.intel.com/sites/default/files/article/393789/amt-9-start-here-guide.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Intel Product Security Center",
-          "vulinfoid": "INTEL-SA-00075",
-          "url": "https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00075&languageid=en-fr"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV17-021",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv17-021.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Symantec Corporation",
-          "vulinfoid": "Why Must Intel AMT Be Configured, and What is Required?",
-          "url": "https://www.symantec.com/connect/articles/why-must-intel-amt-be-configured-and-what-required"
-        },
-        {
-          "type": "vendor",
-          "name": "Tenable Blog",
-          "vulinfoid": "Rediscovering the Intel AMT Vulnerability",
-          "url": "https://www.tenable.com/blog/rediscovering-the-intel-amt-vulnerability"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝",
-          "vulinfoid": "インテル社ファームウエアの脆弱性に関して",
-          "url": "http://dynabook.com/assistpc/info/2017/201705icpu.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "富士通 セキュリティ情報",
-          "vulinfoid": "インテル社のファームウェアに関する脆弱性のお知らせ",
-          "url": "http://www.fmworld.net/biz/common/intel/20170510/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-5689",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5689"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-17-180-01",
-          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-17-180-01A"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92793783",
-          "url": "http://jvn.jp/vu/JVNVU92793783/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-5689",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5689"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#491375",
-          "url": "http://www.kb.cert.org/vuls/id/491375"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "What You Need Know About Intel Amt Vulnerability",
-          "url": "https://www.embedi.com/news/what-you-need-know-about-intel-amt-vulnerability"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-284",
-          "url": "https://cwe.mitre.org/data/definitions/284.html",
-          "title": "不適切なアクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年05月09日]\\n  掲載\\n[2017年05月11日]\\n  ベンダ情報：富士通 (インテル社のファームウェアに関する脆弱性のお知らせ) を追加\\n[2017年05月18日]\\n  ベンダ情報：東芝 (インテル社ファームウエアの脆弱性に関して) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-5689) を追加\\n[2017年09月11日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-17-180-01) を追加\\n[2017年10月03日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-021) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-05-09T11:07:51+09:00",
-    "datelastupdated": "2017-09-11T08:15:38+09:00",
-    "datepublic": "2017-05-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-002923",
+	"vulinfodata": {
+		"title": "Intel Active Management Technology (AMT) にアクセス制限不備の脆弱性",
+		"vulinfodescription": {
+			"overview": "Intel Active Management Technology (AMT) にはアクセス制限不備の脆弱性が存在します。  不適切なアクセス制御 (CWE-284) - CVE-2017-5689 Intel が提供するファームウェアは、コンピュータシステムのリモート管理機能として、Intel Active Management Technology (AMT)、Intel Small Business Technology (SBT)、Intel Standard Manageability などを提供しています。これらの機能では、複数のポートを使用して管理用コマンドを待ち受けています。Intel の文書によると、AMT に対するウェブインターフェースとしてポート 16992 および 16993 が使われています。また、他のポート 16994 と 16995 あるいは 623 と 664 が使われている場合もあります。  Intel の文書 https://software.intel.com/sites/default/files/article/393789/amt-9-start-here-guide.pdf  ポート 16994 と 16995 https://www.symantec.com/connect/articles/why-must-intel-amt-be-configured-and-what-required  これらのリモート管理機能に対応した Intel Management Engine には、遠隔の (認証されていない) 第三者によってリモート管理機能にアクセスされる脆弱性があります。 Intel はこの脆弱性に対してセキュリティアドバイザリ (INTEL-SA-00075) および軽減のためのガイド (INTEL-SA-00075 Mitigation Guide) を提供しています。  セキュリティアドバイザリ (INTEL-SA-00075) https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00075&languageid=en-fr  軽減のためのガイド (INTEL-SA-00075 Mitigation Guide) https://downloadcenter.intel.com/download/26754  また、OEM 製品においてもこのリモート管理機能が有効になっている可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "インテル",
+					"productname": "Intel manageability ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:intel:manageability_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 6.x, 7.x, 8.x, 9.x, 10.x, 11.0, 11.5 および 11.6 を使用しているハードウェア"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "ESMPRO/ServerManager",
+					"cpe": {
+						"text": "cpe:/a:nec:esmpro_servermanager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.5.5以降"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、システムのリモート管理機能にアクセスされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ファームウェアをアップデートする] Intel から、本脆弱性の対策版ファームウェアがリリースされています。 セキュリティアドバイザリ INTEL-SA-00075 およびハードウェアベンダが提供する情報をもとに、ファームウェアをアップデートしてください。  セキュリティアドバイザリ INTEL-SA-00075 https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00075&languageid=en-fr  また、Intel は、対策版ファームウェアが提供されていない OEM 製品のユーザ向けに軽減のためのガイドを提供しています。  軽減のためのガイド https://downloadcenter.intel.com/download/26754"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Intel",
+					"vulinfoid": "INTEL-SA-00075 Mitigation Guide",
+					"url": "https://downloadcenter.intel.com/download/26754"
+				},
+				{
+					"type": "vendor",
+					"name": "Intel",
+					"vulinfoid": "INTEL ACTIVE MANAGEMENT TECHNOLOGY (INTEL AMT) Start Here Guide (Intel AMT 9.0)",
+					"url": "https://software.intel.com/sites/default/files/article/393789/amt-9-start-here-guide.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Intel Product Security Center",
+					"vulinfoid": "INTEL-SA-00075",
+					"url": "https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00075&languageid=en-fr"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV17-021",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv17-021.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Symantec Corporation",
+					"vulinfoid": "Why Must Intel AMT Be Configured, and What is Required?",
+					"url": "https://www.symantec.com/connect/articles/why-must-intel-amt-be-configured-and-what-required"
+				},
+				{
+					"type": "vendor",
+					"name": "Tenable Blog",
+					"vulinfoid": "Rediscovering the Intel AMT Vulnerability",
+					"url": "https://www.tenable.com/blog/rediscovering-the-intel-amt-vulnerability"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝",
+					"vulinfoid": "インテル社ファームウエアの脆弱性に関して",
+					"url": "http://dynabook.com/assistpc/info/2017/201705icpu.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "富士通 セキュリティ情報",
+					"vulinfoid": "インテル社のファームウェアに関する脆弱性のお知らせ",
+					"url": "http://www.fmworld.net/biz/common/intel/20170510/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-5689",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5689"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-17-180-01",
+					"url": "https://ics-cert.us-cert.gov/advisories/ICSA-17-180-01A"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92793783",
+					"url": "http://jvn.jp/vu/JVNVU92793783/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-5689",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5689"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#491375",
+					"url": "http://www.kb.cert.org/vuls/id/491375"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "What You Need Know About Intel Amt Vulnerability",
+					"url": "https://www.embedi.com/news/what-you-need-know-about-intel-amt-vulnerability"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-284",
+					"url": "https://cwe.mitre.org/data/definitions/284.html",
+					"title": "不適切なアクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年05月09日]\\n  掲載\\n[2017年05月11日]\\n  ベンダ情報：富士通 (インテル社のファームウェアに関する脆弱性のお知らせ) を追加\\n[2017年05月18日]\\n  ベンダ情報：東芝 (インテル社ファームウエアの脆弱性に関して) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-5689) を追加\\n[2017年09月11日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-17-180-01) を追加\\n[2017年10月03日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV17-021) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-05-09T11:07:51+09:00",
+		"datelastupdated": "2017-09-11T08:15:38+09:00",
+		"datepublic": "2017-05-02T00:00:00+09:00"
+	}
 }

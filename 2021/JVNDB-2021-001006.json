@@ -1,212 +1,212 @@
 {
-  "vulinfoid": "JVNDB-2021-001006",
-  "vulinfodata": {
-    "title": "複数の SOOIL Developments 製品に脆弱性",
-    "vulinfodescription": {
-      "overview": "Dana Diabecare RS、AnyDana-i、AnyDana-A は、インスリンを制御するための製品、およびモバイルアプリケーションです。 SOOIL Developments 社が提供する複数の製品には、次の脆弱性が存在します。  　* ハードコードされた認証情報の使用 (CWE-798) - CVE-2020-27256 　* 認証情報の不十分な保護 (CWE-522) - CVE-2020-27258 　* 不十分なランダム値の使用 (CWE-330) - CVE-2020-27264 　* クライアントサイド認証の使用 (CWE-603) - CVE-2020-27266 　* サーバサイドのセキュリティをクライアントサイドで適用 (CWE-602) - CVE-2020-27268 　* Capture-replay による認証回避 (CWE-294) - CVE-2020-27269 　* 認証情報の保護しない転送 (CWE-523) - CVE-2020-27270 　* エンティティ認証を伴わない鍵交換 (CWE-322) - CVE-2020-27272 　* スプーフィングによる認証回避 (CWE-290) - CVE-2020-27276"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "SOOIL Developments Co., Ltd",
-          "productname": "AnyDana-A",
-          "cpe": {
-            "text": "cpe:/a:sooil_developments:anydana-a",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.0 より前のすべてのバージョン"
-          ]
-        },
-        {
-          "name": "SOOIL Developments Co., Ltd",
-          "productname": "AnyDana-i",
-          "cpe": {
-            "text": "cpe:/a:sooil_developments:anydana-i",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.0 より前のすべてのバージョン"
-          ]
-        },
-        {
-          "name": "SOOIL Developments Co., Ltd",
-          "productname": "Dana Diabecare RS",
-          "cpe": {
-            "text": "cpe:/a:sooil_developments:dana_diabecare_rs",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.0 より前のすべてのバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.6",
-          "vector": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 装置に物理的にアクセス可能な第三者によって、インスリン治療の設定を変更される - CVE-2020-27256 　* 認証されていない第三者によって、Bluetooth Low Energy を介してポンプのキーパッドロック PIN を窃取される - CVE-2020-27258 　* 認証されていない第三者によって、Bluetooth Low Energy を介してブルートフォース攻撃が行われ、装置間の通信内容を盗聴される - CVE-2020-27264 　* 認証されていない第三者によって、Bluetooth Low Energy を介してユーザ認証を回避される - CVE-2020-27266 　* 認証されていない第三者によって、Bluetooth Low Energy を介してデフォルトPINのチェックを回避される - CVE-2020-27268 　* 認証されていない第三者によって、Bluetooth Low Energy を介してリプレイ攻撃が行われ、情報を窃取されたり改ざんされたりする - CVE-2020-27269 　* 認証されていない第三者によって、Bluetooth Low Energy を介して通信用の暗号化キーを盗聴される - CVE-2020-27270 　* 認証されていない第三者によって、Bluetooth Low Energy を介して通信用のキーを盗聴され、ポンプになりすまされる - CVE-2020-27272 　* 認証されていない第三者によって、Bluetooth Low Energy を介して認証通信を窃取される - CVE-2020-27276"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正したバージョンをリリースしています。  　* Dana Diabecare RS バージョン 3.0 　* AnyDana-i バージョン 3.0 　* AnyDana-A バージョン 3.0  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* Dana RS ポンプを常に機内モードで操作する。 　* モバイルアプリケーションの AnyDana-i または AniDana-A を最新のバージョン 3.0以降にアップデートする。  なお、モバイルアプリケーションのアップデート後でもバージョン 3.0 以前がインストールされた Dana RS インスリンポンプを継続して操作することが可能とのことです。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27258",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27258"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27264",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27264"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27266",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27266"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27268",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27268"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27269",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27269"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27270",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27270"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27272",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27272"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27276",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27276"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27256",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27256"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ALERT",
-          "vulinfoid": "ICSMA-21-012-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsma-21-012-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99322606",
-          "url": "http://jvn.jp/cert/JVNVU99322606"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-294",
-          "url": "https://cwe.mitre.org/data/definitions/294.html",
-          "title": "Capture-replay による認証回避"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-322",
-          "url": "https://cwe.mitre.org/data/definitions/322.html",
-          "title": "エンティティ認証のない鍵交換"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-603",
-          "url": "https://cwe.mitre.org/data/definitions/603.html",
-          "title": "クライアント側認証の使用"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-602",
-          "url": "https://cwe.mitre.org/data/definitions/602.html",
-          "title": "サーバ側のセキュリティのクライアント側での実施"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-290",
-          "url": "https://cwe.mitre.org/data/definitions/290.html",
-          "title": "スプーフィングによる認証回避"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-798",
-          "url": "https://cwe.mitre.org/data/definitions/798.html",
-          "title": "ハードコードされた認証情報の使用"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-522",
-          "url": "https://cwe.mitre.org/data/definitions/522.html",
-          "title": "認証情報の不十分な保護"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-523",
-          "url": "https://cwe.mitre.org/data/definitions/523.html",
-          "title": "認証情報の保護しない転送"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-330",
-          "url": "https://cwe.mitre.org/data/definitions/330.html",
-          "title": "不十分なランダム値の使用"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-01-14T16:11:59+09:00",
-          "description": "[2021年01月14日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-01-14T16:11:59+09:00",
-    "datelastupdated": "2021-01-14T16:11:59+09:00",
-    "datepublic": "2021-01-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001006",
+	"vulinfodata": {
+		"title": "複数の SOOIL Developments 製品に脆弱性",
+		"vulinfodescription": {
+			"overview": "Dana Diabecare RS、AnyDana-i、AnyDana-A は、インスリンを制御するための製品、およびモバイルアプリケーションです。 SOOIL Developments 社が提供する複数の製品には、次の脆弱性が存在します。  　* ハードコードされた認証情報の使用 (CWE-798) - CVE-2020-27256 　* 認証情報の不十分な保護 (CWE-522) - CVE-2020-27258 　* 不十分なランダム値の使用 (CWE-330) - CVE-2020-27264 　* クライアントサイド認証の使用 (CWE-603) - CVE-2020-27266 　* サーバサイドのセキュリティをクライアントサイドで適用 (CWE-602) - CVE-2020-27268 　* Capture-replay による認証回避 (CWE-294) - CVE-2020-27269 　* 認証情報の保護しない転送 (CWE-523) - CVE-2020-27270 　* エンティティ認証を伴わない鍵交換 (CWE-322) - CVE-2020-27272 　* スプーフィングによる認証回避 (CWE-290) - CVE-2020-27276"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "SOOIL Developments Co., Ltd",
+					"productname": "AnyDana-A",
+					"cpe": {
+						"text": "cpe:/a:sooil_developments:anydana-a",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.0 より前のすべてのバージョン"
+					]
+				},
+				{
+					"name": "SOOIL Developments Co., Ltd",
+					"productname": "AnyDana-i",
+					"cpe": {
+						"text": "cpe:/a:sooil_developments:anydana-i",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.0 より前のすべてのバージョン"
+					]
+				},
+				{
+					"name": "SOOIL Developments Co., Ltd",
+					"productname": "Dana Diabecare RS",
+					"cpe": {
+						"text": "cpe:/a:sooil_developments:dana_diabecare_rs",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.0 より前のすべてのバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.6",
+					"vector": "CVSS:3.0/AV:P/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 装置に物理的にアクセス可能な第三者によって、インスリン治療の設定を変更される - CVE-2020-27256 　* 認証されていない第三者によって、Bluetooth Low Energy を介してポンプのキーパッドロック PIN を窃取される - CVE-2020-27258 　* 認証されていない第三者によって、Bluetooth Low Energy を介してブルートフォース攻撃が行われ、装置間の通信内容を盗聴される - CVE-2020-27264 　* 認証されていない第三者によって、Bluetooth Low Energy を介してユーザ認証を回避される - CVE-2020-27266 　* 認証されていない第三者によって、Bluetooth Low Energy を介してデフォルトPINのチェックを回避される - CVE-2020-27268 　* 認証されていない第三者によって、Bluetooth Low Energy を介してリプレイ攻撃が行われ、情報を窃取されたり改ざんされたりする - CVE-2020-27269 　* 認証されていない第三者によって、Bluetooth Low Energy を介して通信用の暗号化キーを盗聴される - CVE-2020-27270 　* 認証されていない第三者によって、Bluetooth Low Energy を介して通信用のキーを盗聴され、ポンプになりすまされる - CVE-2020-27272 　* 認証されていない第三者によって、Bluetooth Low Energy を介して認証通信を窃取される - CVE-2020-27276"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正したバージョンをリリースしています。  　* Dana Diabecare RS バージョン 3.0 　* AnyDana-i バージョン 3.0 　* AnyDana-A バージョン 3.0  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* Dana RS ポンプを常に機内モードで操作する。 　* モバイルアプリケーションの AnyDana-i または AniDana-A を最新のバージョン 3.0以降にアップデートする。  なお、モバイルアプリケーションのアップデート後でもバージョン 3.0 以前がインストールされた Dana RS インスリンポンプを継続して操作することが可能とのことです。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27258",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27258"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27264",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27264"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27266",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27266"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27268",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27268"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27269",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27269"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27270",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27270"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27272",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27272"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27276",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27276"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27256",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27256"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ALERT",
+					"vulinfoid": "ICSMA-21-012-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsma-21-012-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99322606",
+					"url": "http://jvn.jp/cert/JVNVU99322606"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-294",
+					"url": "https://cwe.mitre.org/data/definitions/294.html",
+					"title": "Capture-replay による認証回避"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-322",
+					"url": "https://cwe.mitre.org/data/definitions/322.html",
+					"title": "エンティティ認証のない鍵交換"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-603",
+					"url": "https://cwe.mitre.org/data/definitions/603.html",
+					"title": "クライアント側認証の使用"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-602",
+					"url": "https://cwe.mitre.org/data/definitions/602.html",
+					"title": "サーバ側のセキュリティのクライアント側での実施"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-290",
+					"url": "https://cwe.mitre.org/data/definitions/290.html",
+					"title": "スプーフィングによる認証回避"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-798",
+					"url": "https://cwe.mitre.org/data/definitions/798.html",
+					"title": "ハードコードされた認証情報の使用"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-522",
+					"url": "https://cwe.mitre.org/data/definitions/522.html",
+					"title": "認証情報の不十分な保護"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-523",
+					"url": "https://cwe.mitre.org/data/definitions/523.html",
+					"title": "認証情報の保護しない転送"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-330",
+					"url": "https://cwe.mitre.org/data/definitions/330.html",
+					"title": "不十分なランダム値の使用"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-01-14T16:11:59+09:00",
+					"description": "[2021年01月14日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-01-14T16:11:59+09:00",
+		"datelastupdated": "2021-01-14T16:11:59+09:00",
+		"datepublic": "2021-01-13T00:00:00+09:00"
+	}
 }

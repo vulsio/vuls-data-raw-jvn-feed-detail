@@ -1,201 +1,201 @@
 {
-  "vulinfoid": "JVNDB-2022-002434",
-  "vulinfodata": {
-    "title": "OPENSSL におけるメモリ破損の脆弱性",
-    "vulinfodescription": {
-      "overview": "OPENSSL には、AVX512IFMA 命令をサポートする X86_64 CPU の RSA 実装に不備があり、2048 ビットの秘密鍵を使用した RSA 実装が正しくなくなるため、計算の際にメモリ破損の脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0.4"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "NEC Cyber Security Platform",
-          "cpe": {
-            "text": "cpe:/o:nec:nec_cyber_security_platform",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Linux x86 版 NCSP エージェント 2.0.7.2 から 2.0.7.3",
-            "Linux x86 版 NCSP エージェント 3.0.0.2 から 3.0.0.5"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "SpoolServer/ReportFiling",
-          "cpe": {
-            "text": "cpe:/a:nec:spoolserver_reportfiling",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "UNIVERGE",
-          "cpe": {
-            "text": "cpe:/h:nec:univerge",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "WA シリーズ 8.3.9 から 8.6.11"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WitchyMail",
-          "cpe": {
-            "text": "cpe:/a:nec:witchymail",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃者により、リモートでコードを実行される可能性があります"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "rsa: fix bn_reduce_once_in_place call for rsaz_mod_exp_avx512_x2",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=4d8a88c134df634ba610ff8db1eb8478ac5fd345"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV22-012",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv22-012.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "OpenSSL Security Advisory [5 July 2022]",
-          "url": "https://www.openssl.org/news/secadv/20220705.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-2274",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-2274"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-017-03",
-          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-23-017-03"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA SECURITY ALERTS",
-          "vulinfoid": "ICSA-23-166-11",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-166-11"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96381485",
-          "url": "https://jvn.jp/vu/JVNVU96381485/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90782730 ",
-          "url": "https://jvn.jp/vu/JVNVU90782730/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99464755",
-          "url": "https://jvn.jp/vu/JVNVU99464755/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2022-2274",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-2274"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-787",
-          "url": "https://cwe.mitre.org/data/definitions/787.html",
-          "title": "境界外書き込み"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-09-27T16:15:32+09:00",
-          "description": "[2022年09月27日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-12-13T10:02:11+09:00",
-          "description": "[2022年12月13日]\\n  影響を受けるシステム：ベンダ情報 (NV22-012) の更新に伴い内容を更新"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2023-01-19T15:49:36+09:00",
-          "description": "[2023年01月16日]\\n  参考情報：JVN (JVNVU#90782730) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2023-01-19T15:49:16+09:00",
-          "description": "[2023年01月19日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-017-03) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2023-04-25T17:41:59+09:00",
-          "description": "[2023年04月25日]\\n  影響を受けるシステム：ベンダ情報 (NV22-012) の更新に伴い内容を更新"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2023-06-16T16:25:57+09:00",
-          "description": "[2022年06月16日]\\n  参考情報：JVN (JVNVU#99464755) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-166-11) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-09-27T16:15:32+09:00",
-    "datelastupdated": "2023-06-16T18:10:51+09:00",
-    "datepublic": "2022-06-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-002434",
+	"vulinfodata": {
+		"title": "OPENSSL におけるメモリ破損の脆弱性",
+		"vulinfodescription": {
+			"overview": "OPENSSL には、AVX512IFMA 命令をサポートする X86_64 CPU の RSA 実装に不備があり、2048 ビットの秘密鍵を使用した RSA 実装が正しくなくなるため、計算の際にメモリ破損の脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.4"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "NEC Cyber Security Platform",
+					"cpe": {
+						"text": "cpe:/o:nec:nec_cyber_security_platform",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Linux x86 版 NCSP エージェント 2.0.7.2 から 2.0.7.3",
+						"Linux x86 版 NCSP エージェント 3.0.0.2 から 3.0.0.5"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "SpoolServer/ReportFiling",
+					"cpe": {
+						"text": "cpe:/a:nec:spoolserver_reportfiling",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "UNIVERGE",
+					"cpe": {
+						"text": "cpe:/h:nec:univerge",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"WA シリーズ 8.3.9 から 8.6.11"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WitchyMail",
+					"cpe": {
+						"text": "cpe:/a:nec:witchymail",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃者により、リモートでコードを実行される可能性があります"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "rsa: fix bn_reduce_once_in_place call for rsaz_mod_exp_avx512_x2",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=4d8a88c134df634ba610ff8db1eb8478ac5fd345"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV22-012",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv22-012.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [5 July 2022]",
+					"url": "https://www.openssl.org/news/secadv/20220705.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-2274",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-2274"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-017-03",
+					"url": "https://www.cisa.gov/uscert/ics/advisories/icsa-23-017-03"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA SECURITY ALERTS",
+					"vulinfoid": "ICSA-23-166-11",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-166-11"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96381485",
+					"url": "https://jvn.jp/vu/JVNVU96381485/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90782730 ",
+					"url": "https://jvn.jp/vu/JVNVU90782730/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99464755",
+					"url": "https://jvn.jp/vu/JVNVU99464755/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2022-2274",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2022-2274"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-09-27T16:15:32+09:00",
+					"description": "[2022年09月27日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-12-13T10:02:11+09:00",
+					"description": "[2022年12月13日]\\n  影響を受けるシステム：ベンダ情報 (NV22-012) の更新に伴い内容を更新"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2023-01-19T15:49:36+09:00",
+					"description": "[2023年01月16日]\\n  参考情報：JVN (JVNVU#90782730) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2023-01-19T15:49:16+09:00",
+					"description": "[2023年01月19日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-017-03) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2023-04-25T17:41:59+09:00",
+					"description": "[2023年04月25日]\\n  影響を受けるシステム：ベンダ情報 (NV22-012) の更新に伴い内容を更新"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2023-06-16T16:25:57+09:00",
+					"description": "[2022年06月16日]\\n  参考情報：JVN (JVNVU#99464755) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-166-11) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2022-09-27T16:15:32+09:00",
+		"datelastupdated": "2023-06-16T18:10:51+09:00",
+		"datepublic": "2022-06-23T00:00:00+09:00"
+	}
 }

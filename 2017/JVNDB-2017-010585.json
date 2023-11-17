@@ -1,187 +1,187 @@
 {
-  "vulinfoid": "JVNDB-2017-010585",
-  "vulinfodata": {
-    "title": "IEEE P1735 に脆弱性",
-    "vulinfodescription": {
-      "overview": "IEEE P1735 は、電子回路設計データの暗号化やアクセス管理に関する規格です。IEEE P1735 に対して、複数の攻撃手法が報告されており、電子回路設計データが解読されたり、設計者が意図していない回路を混入される可能性があります。  暗号の問題 (CWE-310)  IEEE P1735 規格では、電子回路設計データの暗号化やアクセス管理手法について規定しています。 IEEE P1735 に対して、パディングオラクル攻撃のようによく知られている手法を応用した攻撃や EDA ツール特有の挙動を使った攻撃など、複数の攻撃手法が報告されています。EDA ツール特有の挙動を使った攻撃手法としては、複数の電子回路設計データを組み合わせてひとつのチップを合成する際に、処理内容に応じて HDL Syntax エラーが発生することを利用し、EDA ツールをオラクルとして電子回路設計データの解読を行うことが可能であると報告されています。 さらに、暗号化された電子回路設計データを細工し、設計者が意図していない回路を追加することも可能であると報告されています。  大規模な回路設計では、異なる所有者が提供する複数の電子回路設計データが使用されます。IEEE P1735 は、暗号化やアクセス制御の仕組みにより各データの内容を保護する手段を規定するものですが、暗号化強度が弱い、セキュリティ上重要となる実装上の選択について何も言及しておらず実装まかせにしている、などの問題があります。  IEEE P1735 に対して報告された脆弱性に対応して、以下の CVE 番号が採番されています。IEEE P1735 に対応している EDA ツールなどの製品がこれらの影響を受ける可能性があります。  　* CVE-2017-13091: improperly specified padding in CBC mode allows use of an EDA tool as a decryption oracle. 　* CVE-2017-13092: improperly specified HDL syntax allows use of an EDA tool as a decryption oracle 　* CVE-2017-13093: modification of encrypted IP cyphertext to insert hardware trojans. 　* CVE-2017-13094: modification of the encryption key and insertion of hardware trojans in any IP. 　* CVE-2017-13095: modification of a license-deny response to a license grant. 　* CVE-2017-13096: modification of Rights Block to get rid of or relax access control. 　* CVE-2017-13097: modification of Rights Block to get rid of or relax license requirement.  本件の詳細については報告者の論文をご参照ください。  報告者の論文 https://eprint.iacr.org/2017/828.pdf"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "（複数のベンダ）",
-          "productname": "（複数の製品）",
-          "cpe": {
-            "text": "cpe:/a:misc:multiple_vendors",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.3",
-          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.7",
-          "vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "暗号化されている電子回路設計データを解読される可能性があります。 また、設計者が意図していない回路を混入される可能性があります。  影響の詳細については報告者の論文をご参照ください。  報告者の論文 https://eprint.iacr.org/2017/828.pdf"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] EDA ソフトウェアの開発者は、報告者の論文で推奨されている対策を実施してください。 EDA ソフトウェアのユーザは、使用しているソフトウェアのアップデートが可能になり次第、アップデートを適用してください。  報告者の論文 https://eprint.iacr.org/2017/828.pdf"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13094",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13094"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13095",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13095"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13096",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13096"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13097",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13097"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13091",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13091"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13092",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13092"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13093",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13093"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93593263",
-          "url": "http://jvn.jp/cert/JVNVU93593263"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13093",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13093"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13094",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13094"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13095",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13095"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13096",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13096"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13097",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13097"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13091",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13091"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13092",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13092"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#739007",
-          "url": "https://www.kb.cert.org/vuls/id/739007"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Standardizing Bad Cryptographic Practice",
-          "url": "https://eprint.iacr.org/2017/828.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "IEEE",
-          "url": "http://ieeexplore.ieee.org/document/7274481/?reload=true"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-310",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
-          "title": "暗号の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年12月20日]\\n  掲載"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2019-07-05T10:35:38+09:00",
-          "description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13091) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13092) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13093) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13094) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13095) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13096) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13097) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-12-20T11:18:58+09:00",
-    "datelastupdated": "2019-07-05T17:09:40+09:00",
-    "datepublic": "2017-11-03T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-010585",
+	"vulinfodata": {
+		"title": "IEEE P1735 に脆弱性",
+		"vulinfodescription": {
+			"overview": "IEEE P1735 は、電子回路設計データの暗号化やアクセス管理に関する規格です。IEEE P1735 に対して、複数の攻撃手法が報告されており、電子回路設計データが解読されたり、設計者が意図していない回路を混入される可能性があります。  暗号の問題 (CWE-310)  IEEE P1735 規格では、電子回路設計データの暗号化やアクセス管理手法について規定しています。 IEEE P1735 に対して、パディングオラクル攻撃のようによく知られている手法を応用した攻撃や EDA ツール特有の挙動を使った攻撃など、複数の攻撃手法が報告されています。EDA ツール特有の挙動を使った攻撃手法としては、複数の電子回路設計データを組み合わせてひとつのチップを合成する際に、処理内容に応じて HDL Syntax エラーが発生することを利用し、EDA ツールをオラクルとして電子回路設計データの解読を行うことが可能であると報告されています。 さらに、暗号化された電子回路設計データを細工し、設計者が意図していない回路を追加することも可能であると報告されています。  大規模な回路設計では、異なる所有者が提供する複数の電子回路設計データが使用されます。IEEE P1735 は、暗号化やアクセス制御の仕組みにより各データの内容を保護する手段を規定するものですが、暗号化強度が弱い、セキュリティ上重要となる実装上の選択について何も言及しておらず実装まかせにしている、などの問題があります。  IEEE P1735 に対して報告された脆弱性に対応して、以下の CVE 番号が採番されています。IEEE P1735 に対応している EDA ツールなどの製品がこれらの影響を受ける可能性があります。  　* CVE-2017-13091: improperly specified padding in CBC mode allows use of an EDA tool as a decryption oracle. 　* CVE-2017-13092: improperly specified HDL syntax allows use of an EDA tool as a decryption oracle 　* CVE-2017-13093: modification of encrypted IP cyphertext to insert hardware trojans. 　* CVE-2017-13094: modification of the encryption key and insertion of hardware trojans in any IP. 　* CVE-2017-13095: modification of a license-deny response to a license grant. 　* CVE-2017-13096: modification of Rights Block to get rid of or relax access control. 　* CVE-2017-13097: modification of Rights Block to get rid of or relax license requirement.  本件の詳細については報告者の論文をご参照ください。  報告者の論文 https://eprint.iacr.org/2017/828.pdf"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.3",
+					"vector": "AV:L/AC:M/Au:N/C:C/I:C/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.7",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "暗号化されている電子回路設計データを解読される可能性があります。 また、設計者が意図していない回路を混入される可能性があります。  影響の詳細については報告者の論文をご参照ください。  報告者の論文 https://eprint.iacr.org/2017/828.pdf"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] EDA ソフトウェアの開発者は、報告者の論文で推奨されている対策を実施してください。 EDA ソフトウェアのユーザは、使用しているソフトウェアのアップデートが可能になり次第、アップデートを適用してください。  報告者の論文 https://eprint.iacr.org/2017/828.pdf"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13094",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13094"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13095",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13095"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13096",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13096"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13097",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13097"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13091",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13091"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13092",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13092"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13093",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13093"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93593263",
+					"url": "http://jvn.jp/cert/JVNVU93593263"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13093",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13093"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13094",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13094"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13095",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13095"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13096",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13096"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13097",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13097"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13091",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13091"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13092",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13092"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#739007",
+					"url": "https://www.kb.cert.org/vuls/id/739007"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Standardizing Bad Cryptographic Practice",
+					"url": "https://eprint.iacr.org/2017/828.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "IEEE",
+					"url": "http://ieeexplore.ieee.org/document/7274481/?reload=true"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-310",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+					"title": "暗号の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年12月20日]\\n  掲載"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2019-07-05T10:35:38+09:00",
+					"description": "[2019年07月05日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13091) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13092) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13093) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13094) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13095) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13096) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13097) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-12-20T11:18:58+09:00",
+		"datelastupdated": "2019-07-05T17:09:40+09:00",
+		"datepublic": "2017-11-03T00:00:00+09:00"
+	}
 }

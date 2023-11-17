@@ -1,221 +1,221 @@
 {
-  "vulinfoid": "JVNDB-2008-001343",
-  "vulinfodata": {
-    "title": "gcc における cld 命令を生成しないことによるメモリ破壊の脆弱性",
-    "vulinfodescription": {
-      "overview": "gcc には x86 システムや i386 システム上において、memcpy() 関数や memmove() 関数のような文字列操作のためのコンパイル処理を行う際、ABI 規約の違反によるダイレクションフラグ (DF) のリセットを妨害されることによって、cld 命令を生成されないため、Linux カーネルによるシグナルハンドリングを行う際に誤ってダイレクションにデータがコピーされるメモリ破壊の脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "GNU Project",
-          "productname": "GNU GCC",
-          "cpe": {
-            "text": "cpe:/a:gnu:gcc",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.3"
-          ]
-        },
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.6.25 未満"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (x86) ",
-            "3 (x86-64) ",
-            "3.0 ",
-            "3.0 (x86-64) ",
-            "4.0 ",
-            "4.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) ",
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 ",
-            "4.0 ",
-            "5.0 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、メモリ破壊を引き起こされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "kernel-2.6.18-8.17AXS3",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=158"
-        },
-        {
-          "type": "vendor",
-          "name": "GCC, the GNU Compiler Collection",
-          "vulinfoid": "Top Page",
-          "url": "http://gcc.gnu.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "ChangeLog-2.6.25",
-          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.25"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "x86: clear DF before calling signal handler",
-          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e40cd10ccff3d9fbffd57b93780bee4b7b9bff51"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "1298",
-          "url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=1298"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "1311",
-          "url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=1311"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2008:0508",
-          "url": "https://rhn.redhat.com/errata/RHSA-2008-0508.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2008:0211",
-          "url": "https://rhn.redhat.com/errata/RHSA-2008-0211.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2008:0233",
-          "url": "https://rhn.redhat.com/errata/RHSA-2008-0233.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2008:0211",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0211J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2008:0233",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0233J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2008:0508",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0508J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2008-1367",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1367"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "41340",
-          "url": "http://xforce.iss.net/xforce/xfdb/41340"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2008-1367",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-1367"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "29084",
-          "url": "http://www.securityfocus.com/bid/29084"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-399",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
-          "title": "リソース管理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2008年05月27日]\\n  掲載\\n[2008年07月07日]\\n  影響を受けるシステム：レッドハット (RHSA-2008:0508) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2008:0508) を追加\\n[2008年08月08日]\\n  影響を受けるシステム：ミラクル・リナックス（1298）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（1298）を追加\\n[2008年09月16日]\\n  影響を受けるシステム：ミラクル・リナックス (1311) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (1311) を追加\\n[2008年10月28日]\\n  影響を受けるシステム：ミラクル・リナックス（kernel-2.6.18-8.17AXS3）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（kernel-2.6.18-8.17AXS3）を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2008-05-27T12:19:25+09:00",
-    "datelastupdated": "2008-10-28T14:02:55+09:00",
-    "datepublic": "2008-03-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2008-001343",
+	"vulinfodata": {
+		"title": "gcc における cld 命令を生成しないことによるメモリ破壊の脆弱性",
+		"vulinfodescription": {
+			"overview": "gcc には x86 システムや i386 システム上において、memcpy() 関数や memmove() 関数のような文字列操作のためのコンパイル処理を行う際、ABI 規約の違反によるダイレクションフラグ (DF) のリセットを妨害されることによって、cld 命令を生成されないため、Linux カーネルによるシグナルハンドリングを行う際に誤ってダイレクションにデータがコピーされるメモリ破壊の脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "GNU Project",
+					"productname": "GNU GCC",
+					"cpe": {
+						"text": "cpe:/a:gnu:gcc",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.3"
+					]
+				},
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6.25 未満"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (x86) ",
+						"3 (x86-64) ",
+						"3.0 ",
+						"3.0 (x86-64) ",
+						"4.0 ",
+						"4.0 (x86-64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) ",
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 ",
+						"4.0 ",
+						"5.0 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、メモリ破壊を引き起こされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "kernel-2.6.18-8.17AXS3",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=158"
+				},
+				{
+					"type": "vendor",
+					"name": "GCC, the GNU Compiler Collection",
+					"vulinfoid": "Top Page",
+					"url": "http://gcc.gnu.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "ChangeLog-2.6.25",
+					"url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.25"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "x86: clear DF before calling signal handler",
+					"url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=e40cd10ccff3d9fbffd57b93780bee4b7b9bff51"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "1298",
+					"url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=1298"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "1311",
+					"url": "http://www.miraclelinux.com/update/linux/list.php?errata_id=1311"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2008:0508",
+					"url": "https://rhn.redhat.com/errata/RHSA-2008-0508.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2008:0211",
+					"url": "https://rhn.redhat.com/errata/RHSA-2008-0211.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2008:0233",
+					"url": "https://rhn.redhat.com/errata/RHSA-2008-0233.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2008:0211",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0211J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2008:0233",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0233J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2008:0508",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2008-0508J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2008-1367",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1367"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "41340",
+					"url": "http://xforce.iss.net/xforce/xfdb/41340"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2008-1367",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2008-1367"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "29084",
+					"url": "http://www.securityfocus.com/bid/29084"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-399",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+					"title": "リソース管理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2008年05月27日]\\n  掲載\\n[2008年07月07日]\\n  影響を受けるシステム：レッドハット (RHSA-2008:0508) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2008:0508) を追加\\n[2008年08月08日]\\n  影響を受けるシステム：ミラクル・リナックス（1298）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（1298）を追加\\n[2008年09月16日]\\n  影響を受けるシステム：ミラクル・リナックス (1311) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (1311) を追加\\n[2008年10月28日]\\n  影響を受けるシステム：ミラクル・リナックス（kernel-2.6.18-8.17AXS3）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（kernel-2.6.18-8.17AXS3）を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2008-05-27T12:19:25+09:00",
+		"datelastupdated": "2008-10-28T14:02:55+09:00",
+		"datepublic": "2008-03-17T00:00:00+09:00"
+	}
 }

@@ -1,153 +1,153 @@
 {
-  "vulinfoid": "JVNDB-2005-000055",
-  "vulinfodata": {
-    "title": "GNU enscript における複数のバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  GNU Enscript は、ASCII テキストを PostScript などのフォーマットに変換するプログラムです。  GNU Enscript 1.6.3 以前には、以下の複数のセキュリティ上の問題が存在します。  1) EPS (Encapsulated PostScript) ファイルのサニタイズ処理に不備が存在し、パイプ処理を経由して任意のコマンドが実行できる問題 (CAN-2004-1184)  2) enscript コマンドの引数に指定するファイル名に対してサニタイズ処理が実施されないため、意図的に作成されたファイル名を指定することで、任意のコマンドを実行できる問題 (CAN-2004-1185)  3)util.c および src/psgen.c において、ファイルからの入力値の妥当性の確認が不適切であるため、バッファオーバーフローが発生する問題 (CAN-2004-1186)  これらの問題を利用するリモートの攻撃者は、意図的に作成したファイルを enscript を利用するプログラムで取り扱うよう標的ユーザを誘導することで、結果的に標的ユーザの権限で任意のコマンドを実行できる、あるいは任意のコードを実行できる可能性があります。  尚、開発版である GNU Enscript 1.6.4 もこれらの問題の影響を受けることが、発見者により報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.4.11",
-            "v10.5 から v10.5.6"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X Server",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.4.11",
-            "v10.5 から v10.5.6"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT3549",
-          "url": "http://support.apple.com/kb/HT3549"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT3549",
-          "url": "http://support.apple.com/kb/HT3549?viewlocale=ja_JP"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:040",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-040.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:039",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-039.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:039",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-039J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:040",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-040J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-1186",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1186"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-1186",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1186"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA13968",
-          "url": "http://secunia.com/advisories/13968/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12329",
-          "url": "http://www.securityfocus.com/bid/12329"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載\\n[2009年06月26日]\\n  影響を受けるシステム：アップル (HT3549) の情報を追加\\n  ベンダ情報：アップル (HT3549) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2009-06-26T13:56:51+09:00",
-    "datepublic": "2005-01-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000055",
+	"vulinfodata": {
+		"title": "GNU enscript における複数のバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  GNU Enscript は、ASCII テキストを PostScript などのフォーマットに変換するプログラムです。  GNU Enscript 1.6.3 以前には、以下の複数のセキュリティ上の問題が存在します。  1) EPS (Encapsulated PostScript) ファイルのサニタイズ処理に不備が存在し、パイプ処理を経由して任意のコマンドが実行できる問題 (CAN-2004-1184)  2) enscript コマンドの引数に指定するファイル名に対してサニタイズ処理が実施されないため、意図的に作成されたファイル名を指定することで、任意のコマンドを実行できる問題 (CAN-2004-1185)  3)util.c および src/psgen.c において、ファイルからの入力値の妥当性の確認が不適切であるため、バッファオーバーフローが発生する問題 (CAN-2004-1186)  これらの問題を利用するリモートの攻撃者は、意図的に作成したファイルを enscript を利用するプログラムで取り扱うよう標的ユーザを誘導することで、結果的に標的ユーザの権限で任意のコマンドを実行できる、あるいは任意のコードを実行できる可能性があります。  尚、開発版である GNU Enscript 1.6.4 もこれらの問題の影響を受けることが、発見者により報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.4.11",
+						"v10.5 から v10.5.6"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X Server",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.4.11",
+						"v10.5 から v10.5.6"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT3549",
+					"url": "http://support.apple.com/kb/HT3549"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT3549",
+					"url": "http://support.apple.com/kb/HT3549?viewlocale=ja_JP"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:040",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-040.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:039",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-039.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:039",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-039J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:040",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-040J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-1186",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1186"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-1186",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-1186"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA13968",
+					"url": "http://secunia.com/advisories/13968/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12329",
+					"url": "http://www.securityfocus.com/bid/12329"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載\\n[2009年06月26日]\\n  影響を受けるシステム：アップル (HT3549) の情報を追加\\n  ベンダ情報：アップル (HT3549) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2009-06-26T13:56:51+09:00",
+		"datepublic": "2005-01-21T00:00:00+09:00"
+	}
 }

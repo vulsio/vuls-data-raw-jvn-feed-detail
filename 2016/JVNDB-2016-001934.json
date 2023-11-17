@@ -1,132 +1,132 @@
 {
-  "vulinfoid": "JVNDB-2016-001934",
-  "vulinfodata": {
-    "title": "Autodesk Backburner にスタックバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "Autodesk が提供する Backburner は、入力されたコマンド長を正しく検証しないため、サービス運用妨害 (DoS) 攻撃を受けたり、任意のコードを実行されたりする可能性があります。  スタックベースのバッファオーバーフロー (CWE-121) - CVE-2016-2344 Autodesk Knowledge Network によれば、Backburner は、Autodesk 製品をサポートする「ネットワークレンダリング管理ソフトウェア」です。Backburner Manager は、デフォルトで TCP ポートおよび UDP ポート 3234 で通信を待ち受けていますが、ユーザは他のポートを使用するよう設定を変更することもできます。また、他のポートでの待ち受けも行っており、ポート 3234 と同様に本脆弱性の影響を受ける可能性があります。Backburner Manager には認証機能が存在せず、入力されたコマンド長も確認していません。攻撃者は、細工したコマンドを Backburner Manager に直接送信することでスタックバッファをオーバーフローさせ、結果としてサービスをクラッシュさせたり、サービスを開始したユーザの権限で任意のコマンドを実行したりすることが可能です。遠隔の第三者が cmdjob コマンドを使用して任意のコマンドを実行できる問題は CVE-2007-4749 で扱われているため、本件の CVSS ではサービス運用妨害 (DoS) のみ評価しています。  CWE-121: Stack-based Buffer Overflow http://cwe.mitre.org/data/definitions/121.html  Autodesk Knowledge Network https://knowledge.autodesk.com/support/3ds-max/troubleshooting/caas/CloudHelp/cloudhelp/2016/ENU/Installation-3DSMax/files/GUID-F6732A30-821C-4547-9FAA-E46BCA13392A-htm.html  CVE-2007-4749 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4749  なお、CVE-2007-4749 に関して Symantec が公開したドキュメントでは、ベンダは脆弱性の影響を懸念するユーザに対し、ワークアラウンドとして \"(使っているシステムから) cmdjob コマンドを削除してください\" と伝えています。しかし、1台のサーバで cmdjob コマンドを削除したとしても、攻撃者が別のシステム上で cmdjob コマンドを実行したり、cmdjob コマンドが生成するものと同じ通信内容を作成して攻撃することが考えられるため、このワークアラウンドは適切ではありません。  Symantec が公開したドキュメント http://www.symantec.com/content/en/us/enterprise/research/SYMSA-2007-008.txt"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "オートデスク株式会社",
-          "productname": "Backburner",
-          "cpe": {
-            "text": "cpe:/a:autodesk:backburner",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2016 version 2016.0.0.2150 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、Backburner 2016 上で任意のコードを実行されたり、Backburner 2016 をサービス運用妨害 (DoS) 状態にされたりする可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2016年3月30日現在、有効な対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* Backburner 2016 の manager.exe サービスへのアクセスを制限する"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Autodesk",
-          "vulinfoid": "Autodesk Knowledge Network - About Autodesk Backburner",
-          "url": "https://knowledge.autodesk.com/support/3ds-max/troubleshooting/caas/CloudHelp/cloudhelp/2016/ENU/Installation-3DSMax/files/GUID-F6732A30-821C-4547-9FAA-E46BCA13392A-htm.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Autodesk",
-          "vulinfoid": "Autodesk Backburner の概要",
-          "url": "https://knowledge.autodesk.com/ja/support/3ds-max/troubleshooting/caas/CloudHelp/cloudhelp/2016/JPN/Installation-3DSMax/files/GUID-F6732A30-821C-4547-9FAA-E46BCA13392A-htm.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Autodesk",
-          "vulinfoid": "Backburner ネットワークポートの環境設定",
-          "url": "https://knowledge.autodesk.com/ja/support/3ds-max/troubleshooting/caas/sfdcarticles/sfdcarticles/JPN/Backburner-Network-Port-Configuration.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-2344",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2344"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90364741",
-          "url": "http://jvn.jp/cert/JVNVU90364741"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-2344",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2344"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#732760",
-          "url": "http://www.kb.cert.org/vuls/id/732760"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SYMSA-2007-008 - Autodesk Backburner 3.0.2 : System Backdoor",
-          "url": "http://www.symantec.com/content/en/us/enterprise/research/SYMSA-2007-008.txt"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年04月06日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-04-06T11:35:37+09:00",
-    "datelastupdated": "2016-04-06T11:35:37+09:00",
-    "datepublic": "2016-03-28T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-001934",
+	"vulinfodata": {
+		"title": "Autodesk Backburner にスタックバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "Autodesk が提供する Backburner は、入力されたコマンド長を正しく検証しないため、サービス運用妨害 (DoS) 攻撃を受けたり、任意のコードを実行されたりする可能性があります。  スタックベースのバッファオーバーフロー (CWE-121) - CVE-2016-2344 Autodesk Knowledge Network によれば、Backburner は、Autodesk 製品をサポートする「ネットワークレンダリング管理ソフトウェア」です。Backburner Manager は、デフォルトで TCP ポートおよび UDP ポート 3234 で通信を待ち受けていますが、ユーザは他のポートを使用するよう設定を変更することもできます。また、他のポートでの待ち受けも行っており、ポート 3234 と同様に本脆弱性の影響を受ける可能性があります。Backburner Manager には認証機能が存在せず、入力されたコマンド長も確認していません。攻撃者は、細工したコマンドを Backburner Manager に直接送信することでスタックバッファをオーバーフローさせ、結果としてサービスをクラッシュさせたり、サービスを開始したユーザの権限で任意のコマンドを実行したりすることが可能です。遠隔の第三者が cmdjob コマンドを使用して任意のコマンドを実行できる問題は CVE-2007-4749 で扱われているため、本件の CVSS ではサービス運用妨害 (DoS) のみ評価しています。  CWE-121: Stack-based Buffer Overflow http://cwe.mitre.org/data/definitions/121.html  Autodesk Knowledge Network https://knowledge.autodesk.com/support/3ds-max/troubleshooting/caas/CloudHelp/cloudhelp/2016/ENU/Installation-3DSMax/files/GUID-F6732A30-821C-4547-9FAA-E46BCA13392A-htm.html  CVE-2007-4749 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4749  なお、CVE-2007-4749 に関して Symantec が公開したドキュメントでは、ベンダは脆弱性の影響を懸念するユーザに対し、ワークアラウンドとして \"(使っているシステムから) cmdjob コマンドを削除してください\" と伝えています。しかし、1台のサーバで cmdjob コマンドを削除したとしても、攻撃者が別のシステム上で cmdjob コマンドを実行したり、cmdjob コマンドが生成するものと同じ通信内容を作成して攻撃することが考えられるため、このワークアラウンドは適切ではありません。  Symantec が公開したドキュメント http://www.symantec.com/content/en/us/enterprise/research/SYMSA-2007-008.txt"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "オートデスク株式会社",
+					"productname": "Backburner",
+					"cpe": {
+						"text": "cpe:/a:autodesk:backburner",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2016 version 2016.0.0.2150 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、Backburner 2016 上で任意のコードを実行されたり、Backburner 2016 をサービス運用妨害 (DoS) 状態にされたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2016年3月30日現在、有効な対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* Backburner 2016 の manager.exe サービスへのアクセスを制限する"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Autodesk",
+					"vulinfoid": "Autodesk Knowledge Network - About Autodesk Backburner",
+					"url": "https://knowledge.autodesk.com/support/3ds-max/troubleshooting/caas/CloudHelp/cloudhelp/2016/ENU/Installation-3DSMax/files/GUID-F6732A30-821C-4547-9FAA-E46BCA13392A-htm.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Autodesk",
+					"vulinfoid": "Autodesk Backburner の概要",
+					"url": "https://knowledge.autodesk.com/ja/support/3ds-max/troubleshooting/caas/CloudHelp/cloudhelp/2016/JPN/Installation-3DSMax/files/GUID-F6732A30-821C-4547-9FAA-E46BCA13392A-htm.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Autodesk",
+					"vulinfoid": "Backburner ネットワークポートの環境設定",
+					"url": "https://knowledge.autodesk.com/ja/support/3ds-max/troubleshooting/caas/sfdcarticles/sfdcarticles/JPN/Backburner-Network-Port-Configuration.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-2344",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2344"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90364741",
+					"url": "http://jvn.jp/cert/JVNVU90364741"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-2344",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2344"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#732760",
+					"url": "http://www.kb.cert.org/vuls/id/732760"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SYMSA-2007-008 - Autodesk Backburner 3.0.2 : System Backdoor",
+					"url": "http://www.symantec.com/content/en/us/enterprise/research/SYMSA-2007-008.txt"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年04月06日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2016-04-06T11:35:37+09:00",
+		"datelastupdated": "2016-04-06T11:35:37+09:00",
+		"datepublic": "2016-03-28T00:00:00+09:00"
+	}
 }

@@ -1,141 +1,141 @@
 {
-  "vulinfoid": "JVNDB-2017-000189",
-  "vulinfodata": {
-    "title": "ソニー製 PaSoRi 関連ソフトウェアの複数のインストーラにおける DLL 読み込みに関する脆弱性",
-    "vulinfodescription": {
-      "overview": "ソニー株式会社が提供する PaSoRi は非接触ICカードリーダー／ライターです。PaSoRi のWindows 向けドライバのインストーラおよび複数のソフトウェアのインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ソニー株式会社",
-          "productname": "NFCネットインストーラー",
-          "cpe": {
-            "text": "cpe:/a:sony:nfc_net_installer",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.1.1.0.0 およびそれ以前"
-          ]
-        },
-        {
-          "name": "ソニー株式会社",
-          "productname": "NFCポートソフトウェア (旧FeliCaポートソフトウェア)",
-          "cpe": {
-            "text": "cpe:/a:sony:nfc_port_software_%28formerly_felica_port_software%29",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 5.3.6.7 およびそれ以前    対象製品: RC-S320、RC-S310/J1C、RC-S310/ED4C",
-            "Version 5.5.0.6 およびそれ以前    対象製品: RC-S310、RC-S320、RC-S330、RC-S370、RC-S380"
-          ]
-        },
-        {
-          "name": "ソニー株式会社",
-          "productname": "PC/SCアクティベーター for Type B",
-          "cpe": {
-            "text": "cpe:/a:sony:pc%2Fsc_activator_for_type_b",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.1.2.1.0 およびそれ以前"
-          ]
-        },
-        {
-          "name": "ソニー株式会社",
-          "productname": "SFCard Viewer 2",
-          "cpe": {
-            "text": "cpe:/a:sony:sfcard_viewer_2",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.2.5.0.0 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 なお、本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザは製品をアップデートする必要はありません。  また、開発者によると NFCネットインストーラーについては 2017年7月25日で提供を終了したとのことです。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Sony",
-          "vulinfoid": "Windows向け非接触ICカードリーダー／ライターPaSoRi（パソリ）をご愛用のお客様へ セキュリティー対策済みの新しいインストーラー提供のお知らせ",
-          "url": "https://www.sony.co.jp/Products/felica/consumer/info/170725.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-2286",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2286"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#16136413",
-          "url": "https://jvn.jp/jp/JVN16136413/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNTA#91240916",
-          "url": "https://jvn.jp/ta/JVNTA91240916/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-2286",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2286"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年07月27日]\\n  掲載\\n[2018年01月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2286) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-07-27T14:03:53+09:00",
-    "datelastupdated": "2018-01-24T14:10:46+09:00",
-    "datepublic": "2017-07-27T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-000189",
+	"vulinfodata": {
+		"title": "ソニー製 PaSoRi 関連ソフトウェアの複数のインストーラにおける DLL 読み込みに関する脆弱性",
+		"vulinfodescription": {
+			"overview": "ソニー株式会社が提供する PaSoRi は非接触ICカードリーダー／ライターです。PaSoRi のWindows 向けドライバのインストーラおよび複数のソフトウェアのインストーラには、DLL を読み込む際の検索パスに問題があり、同一ディレクトリに存在する特定の DLL を読み込んでしまう脆弱性 (CWE-427) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 橘総合研究所 英利 雅美 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ソニー株式会社",
+					"productname": "NFCネットインストーラー",
+					"cpe": {
+						"text": "cpe:/a:sony:nfc_net_installer",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.1.1.0.0 およびそれ以前"
+					]
+				},
+				{
+					"name": "ソニー株式会社",
+					"productname": "NFCポートソフトウェア (旧FeliCaポートソフトウェア)",
+					"cpe": {
+						"text": "cpe:/a:sony:nfc_port_software_%28formerly_felica_port_software%29",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 5.3.6.7 およびそれ以前    対象製品: RC-S320、RC-S310/J1C、RC-S310/ED4C",
+						"Version 5.5.0.6 およびそれ以前    対象製品: RC-S310、RC-S320、RC-S330、RC-S370、RC-S380"
+					]
+				},
+				{
+					"name": "ソニー株式会社",
+					"productname": "PC/SCアクティベーター for Type B",
+					"cpe": {
+						"text": "cpe:/a:sony:pc%2Fsc_activator_for_type_b",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.1.2.1.0 およびそれ以前"
+					]
+				},
+				{
+					"name": "ソニー株式会社",
+					"productname": "SFCard Viewer 2",
+					"cpe": {
+						"text": "cpe:/a:sony:sfcard_viewer_2",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.2.5.0.0 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "インストーラを実行している権限で、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[最新のインストーラを使用する] 開発者が提供する情報をもとに、最新のインストーラを使用してください。 なお、本脆弱性の影響を受けるのはインストーラの起動時のみのため、既存のユーザは製品をアップデートする必要はありません。  また、開発者によると NFCネットインストーラーについては 2017年7月25日で提供を終了したとのことです。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Sony",
+					"vulinfoid": "Windows向け非接触ICカードリーダー／ライターPaSoRi（パソリ）をご愛用のお客様へ セキュリティー対策済みの新しいインストーラー提供のお知らせ",
+					"url": "https://www.sony.co.jp/Products/felica/consumer/info/170725.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-2286",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2286"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#16136413",
+					"url": "https://jvn.jp/jp/JVN16136413/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#91240916",
+					"url": "https://jvn.jp/ta/JVNTA91240916/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-2286",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2286"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年07月27日]\\n  掲載\\n[2018年01月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2286) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-07-27T14:03:53+09:00",
+		"datelastupdated": "2018-01-24T14:10:46+09:00",
+		"datepublic": "2017-07-27T00:00:00+09:00"
+	}
 }

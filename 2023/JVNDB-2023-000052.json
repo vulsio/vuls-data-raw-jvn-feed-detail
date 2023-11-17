@@ -1,136 +1,136 @@
 {
-  "vulinfoid": "JVNDB-2023-000052",
-  "vulinfodata": {
-    "title": "DataSpider Servista におけるハードコードされた暗号鍵の使用の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社 セゾン情報システムズが提供する DataSpider Servista は、データ連携ソフトウェアです。また、ScriptRunner および ScriptRunner for Amazon SQS は、作成したデータ連携の処理を外部から実行するためのインターフェースです。 ScriptRunner および ScriptRunner for Amazon SQS には、すべてのユーザに共通する同一の暗号鍵がハードコードされている脆弱性 (CWE-321) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: スズキ株式会社 佐藤 信弥 氏、株式会社ラック 大熊 陽 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社 セゾン情報システムズ",
-          "productname": "DataSpider Servista",
-          "cpe": {
-            "text": "cpe:/a:misc:saison_information_systems_dataspider_servista",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.4 およびそれ以前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.3",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃対象の DataSpider Servista にアクセス可能な第三者が ScriptRunner または ScriptRunner for Amazon SQS の起動設定ファイルを入手した場合、起動設定ファイルに記載されたユーザの権限で操作を実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[パッチを適用し、起動設定ファイル等の再設定を行う] 対応するパッチモジュールを適用した上で、起動設定ファイルに対して必要な手順を実施してください。詳細は、開発者が提供する情報を確認してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ウイングアーク１ｓｔ株式会社",
-          "vulinfoid": "Dr.Sum Connect 5.6.44 (要ログイン)",
-          "url": "https://cs.wingarc.com/ja/download/000023565"
-        },
-        {
-          "type": "vendor",
-          "name": "ウイングアーク１ｓｔ株式会社",
-          "vulinfoid": "Dr.Sum Connect 5.6 (要ログイン)",
-          "url": "https://cs.wingarc.com/ja/download/000022448"
-        },
-        {
-          "type": "vendor",
-          "name": "ウイングアーク１ｓｔ株式会社",
-          "vulinfoid": "Dr.Sum Connect 5.1 (要ログイン)",
-          "url": "https://cs.wingarc.com/ja/download/000016244"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社 セゾン情報システムズ",
-          "vulinfoid": "HULFT8 Script Option の ScriptRunner に含まれる脆弱性に関するお知らせ",
-          "url": "https://www.hulft.com/application/files/7816/8420/4433/information_20230519_2.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社 セゾン情報システムズ",
-          "vulinfoid": "DataSpider Servista の ScriptRunner、ScriptRunner for Amazon SQS に含まれる脆弱性に関するお知らせ",
-          "url": "https://www.hulft.com/application/files/2116/8430/2830/information_20230519.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社ジャストシステム",
-          "vulinfoid": "Actionista! ETLオプションの ScriptRunner に含まれる脆弱性に関するお知らせ",
-          "url": "https://www.justsystems.com/jp/services/actionista/info/20230519_001/"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社テラスカイ",
-          "vulinfoid": "DCSpider の ScriptRunner、ScriptRunner for Amazon SQS に含まれる脆弱性に関するお知らせ",
-          "url": "https://www.terrasky.co.jp/files/DCSpider_ScriptRunnerVulnerability.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28937",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28937"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#38222042",
-          "url": "https://jvn.jp/jp/JVN38222042/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-05-31T12:03:12+09:00",
-          "description": "[2023年05月31日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-06-13T11:19:42+09:00",
-          "description": "[2023年06月13日]\\n  影響を受けるシステム、ベンダ情報：内容を追記"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-05-31T12:04:20+09:00",
-    "datelastupdated": "2023-06-13T11:24:04+09:00",
-    "datepublic": "2023-05-31T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-000052",
+	"vulinfodata": {
+		"title": "DataSpider Servista におけるハードコードされた暗号鍵の使用の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社 セゾン情報システムズが提供する DataSpider Servista は、データ連携ソフトウェアです。また、ScriptRunner および ScriptRunner for Amazon SQS は、作成したデータ連携の処理を外部から実行するためのインターフェースです。 ScriptRunner および ScriptRunner for Amazon SQS には、すべてのユーザに共通する同一の暗号鍵がハードコードされている脆弱性 (CWE-321) が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: スズキ株式会社 佐藤 信弥 氏、株式会社ラック 大熊 陽 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社 セゾン情報システムズ",
+					"productname": "DataSpider Servista",
+					"cpe": {
+						"text": "cpe:/a:misc:saison_information_systems_dataspider_servista",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.4 およびそれ以前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃対象の DataSpider Servista にアクセス可能な第三者が ScriptRunner または ScriptRunner for Amazon SQS の起動設定ファイルを入手した場合、起動設定ファイルに記載されたユーザの権限で操作を実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[パッチを適用し、起動設定ファイル等の再設定を行う] 対応するパッチモジュールを適用した上で、起動設定ファイルに対して必要な手順を実施してください。詳細は、開発者が提供する情報を確認してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ウイングアーク１ｓｔ株式会社",
+					"vulinfoid": "Dr.Sum Connect 5.6.44 (要ログイン)",
+					"url": "https://cs.wingarc.com/ja/download/000023565"
+				},
+				{
+					"type": "vendor",
+					"name": "ウイングアーク１ｓｔ株式会社",
+					"vulinfoid": "Dr.Sum Connect 5.6 (要ログイン)",
+					"url": "https://cs.wingarc.com/ja/download/000022448"
+				},
+				{
+					"type": "vendor",
+					"name": "ウイングアーク１ｓｔ株式会社",
+					"vulinfoid": "Dr.Sum Connect 5.1 (要ログイン)",
+					"url": "https://cs.wingarc.com/ja/download/000016244"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社 セゾン情報システムズ",
+					"vulinfoid": "HULFT8 Script Option の ScriptRunner に含まれる脆弱性に関するお知らせ",
+					"url": "https://www.hulft.com/application/files/7816/8420/4433/information_20230519_2.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社 セゾン情報システムズ",
+					"vulinfoid": "DataSpider Servista の ScriptRunner、ScriptRunner for Amazon SQS に含まれる脆弱性に関するお知らせ",
+					"url": "https://www.hulft.com/application/files/2116/8430/2830/information_20230519.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社ジャストシステム",
+					"vulinfoid": "Actionista! ETLオプションの ScriptRunner に含まれる脆弱性に関するお知らせ",
+					"url": "https://www.justsystems.com/jp/services/actionista/info/20230519_001/"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社テラスカイ",
+					"vulinfoid": "DCSpider の ScriptRunner、ScriptRunner for Amazon SQS に含まれる脆弱性に関するお知らせ",
+					"url": "https://www.terrasky.co.jp/files/DCSpider_ScriptRunnerVulnerability.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28937",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28937"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#38222042",
+					"url": "https://jvn.jp/jp/JVN38222042/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-05-31T12:03:12+09:00",
+					"description": "[2023年05月31日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-06-13T11:19:42+09:00",
+					"description": "[2023年06月13日]\\n  影響を受けるシステム、ベンダ情報：内容を追記"
+				}
+			]
+		},
+		"datefirstpublished": "2023-05-31T12:04:20+09:00",
+		"datelastupdated": "2023-06-13T11:24:04+09:00",
+		"datepublic": "2023-05-31T00:00:00+09:00"
+	}
 }

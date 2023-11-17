@@ -1,118 +1,118 @@
 {
-  "vulinfoid": "JVNDB-2018-000137",
-  "vulinfodata": {
-    "title": "GROWI におけるクロスサイトスクリプティングの脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社WESEEK が提供する GROWI には、クロスサイトスクリプティング (CWE-79) の脆弱性が存在します。  v3.1.12 においてクロスサイトスクリプティング対策を行った際、マークダウン設定画面においてクロスサイトスクリプティング対策の有効/無効を切り替える設定項目 (「XSSを抑制する」オプション) が追加されましたが、クロスサイトスクリプティング対策が無効な状態でも有効であるかのように表示される問題がありました。開発者によると、本脆弱性は v3.2.4 で修正されたとのことです。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 東京大学教養学部 米内 貴志 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社WESEEK",
-          "productname": "GROWI",
-          "cpe": {
-            "text": "cpe:/a:weseek:growi",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v3.2.3 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4",
-          "vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.4",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "ユーザのウェブブラウザ上で、任意のスクリプトを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "次のいずれかの方法で対策を行ってください。  [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  なお、本脆弱性の修正とは別に、v3.2.5 では「New Page modal」の処理におけるクロスサイトスクリプティングの脆弱性 (CVE-2018-16205) が修正されています。  [ワークアラウンドを実施する] v3.1.12 以降のバージョンを使用していて、何らかの理由でアップデートできない、あるいはアップデートが困難である場合、管理者アカウントでログイン後、次の操作を行うことで、「XSSを抑制する」オプションの設定内容が正しく反映されるようになります。   1. マークダウン設定画面 (/admin/markdown) にアクセス   2. 「XSSを抑制する」オプションを一旦OFFに切り替え、設定を保存   3. 「XSSを抑制する」オプションを再びONに切り替え、「おすすめ設定」を選択して設定を保存"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "WESEEK, Inc.",
-          "vulinfoid": "GROWI 脆弱性対応のお知らせ (XXX) ",
-          "url": "https://weseek.co.jp/security/2018/12/25/growi-prevent-xss2/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-0698",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0698"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-16205",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16205"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#96493183",
-          "url": "https://jvn.jp/jp/JVN96493183/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-0698",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0698"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-16205",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16205"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-12-25T11:17:43+09:00",
-          "description": "[2018年12月26日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-08-27T11:10:44+09:00",
-          "description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0698) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16205) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-12-26T14:06:51+09:00",
-    "datelastupdated": "2019-08-27T15:08:35+09:00",
-    "datepublic": "2018-12-26T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-000137",
+	"vulinfodata": {
+		"title": "GROWI におけるクロスサイトスクリプティングの脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社WESEEK が提供する GROWI には、クロスサイトスクリプティング (CWE-79) の脆弱性が存在します。  v3.1.12 においてクロスサイトスクリプティング対策を行った際、マークダウン設定画面においてクロスサイトスクリプティング対策の有効/無効を切り替える設定項目 (「XSSを抑制する」オプション) が追加されましたが、クロスサイトスクリプティング対策が無効な状態でも有効であるかのように表示される問題がありました。開発者によると、本脆弱性は v3.2.4 で修正されたとのことです。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 東京大学教養学部 米内 貴志 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社WESEEK",
+					"productname": "GROWI",
+					"cpe": {
+						"text": "cpe:/a:weseek:growi",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v3.2.3 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4",
+					"vector": "AV:N/AC:L/Au:S/C:N/I:P/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.4",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "ユーザのウェブブラウザ上で、任意のスクリプトを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "次のいずれかの方法で対策を行ってください。  [アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  なお、本脆弱性の修正とは別に、v3.2.5 では「New Page modal」の処理におけるクロスサイトスクリプティングの脆弱性 (CVE-2018-16205) が修正されています。  [ワークアラウンドを実施する] v3.1.12 以降のバージョンを使用していて、何らかの理由でアップデートできない、あるいはアップデートが困難である場合、管理者アカウントでログイン後、次の操作を行うことで、「XSSを抑制する」オプションの設定内容が正しく反映されるようになります。   1. マークダウン設定画面 (/admin/markdown) にアクセス   2. 「XSSを抑制する」オプションを一旦OFFに切り替え、設定を保存   3. 「XSSを抑制する」オプションを再びONに切り替え、「おすすめ設定」を選択して設定を保存"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "WESEEK, Inc.",
+					"vulinfoid": "GROWI 脆弱性対応のお知らせ (XXX) ",
+					"url": "https://weseek.co.jp/security/2018/12/25/growi-prevent-xss2/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-0698",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0698"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-16205",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16205"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#96493183",
+					"url": "https://jvn.jp/jp/JVN96493183/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-0698",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-0698"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-16205",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16205"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-12-25T11:17:43+09:00",
+					"description": "[2018年12月26日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-08-27T11:10:44+09:00",
+					"description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-0698) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16205) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-12-26T14:06:51+09:00",
+		"datelastupdated": "2019-08-27T15:08:35+09:00",
+		"datepublic": "2018-12-26T00:00:00+09:00"
+	}
 }

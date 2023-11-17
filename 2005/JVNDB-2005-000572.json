@@ -1,128 +1,128 @@
 {
-  "vulinfoid": "JVNDB-2005-000572",
-  "vulinfodata": {
-    "title": "BEA 製品における監査イベントが不正な重大度で記録されてしまう脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  BEA WebLogic Server 7.0 SP6 以前、8.1 SP4 以前には、以下のような複数のセキュリティ問題が存在します。  1) デプロイされたアプリケーションの権限が、デプロイメント記述子の run-as 要素を使用することで Deployer セキュリティロールから Admin セキュリティロールに変更されてしまう問題が存在します。(BEA05-88.00)  ローカルの攻撃者に悪用された場合、本来許可されていない処理を行うアプリーケーションが実行される可能性があります。  2) 高負荷状態において、監査イベントが不正な重大度で記録されてしまう問題が存在します。(BEA05-89.00)  監査機能を有効にしている場合、重要な監査イベントにも関わらずフィルタリングされてしまい、イベントを見落としてしまう可能性があります。  3) 管理サーバにおいて管理ポートが有効である場合においても、通信が保護される t3s プロトコルの代わりに、t3 プロトコルにより weblogic.Deployer コマンドを管理サーバに送信することが可能であるため、第三者に盗聴されてしまう問題が存在します。(BEA05-102.00)  リモートの攻撃者に悪用された場合、管理用のユーザ名やパスワードなど重要な情報が取得されてしまう可能性があります。  4) サーブレットの Relative forwarding の処理が不適切であるため、処理がループしスタックオーバフローが発生する問題が存在します。(BEA05-106.00)  リモートの攻撃者に悪用された場合、WebLogic Server の処理能力が低下しサービス不能状態に陥る可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "BEAシステムズ",
-          "productname": "BEA WebLogic Server",
-          "cpe": {
-            "text": "cpe:/a:bea:weblogic_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.0 SP6 およびそれ以前",
-            "8.1 SP4 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "BEA Security Advisory",
-          "vulinfoid": "BEA06-106.01",
-          "url": "http://dev2dev.bea.com/pub/advisory/164"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA Security Advisory",
-          "vulinfoid": "BEA05-88.00",
-          "url": "http://dev2dev.bea.com/pub/advisory/142"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA Security Advisory",
-          "vulinfoid": "BEA05-89.00",
-          "url": "http://dev2dev.bea.com/pub/advisory/143"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA Security Advisory",
-          "vulinfoid": "BEA05-102.00",
-          "url": "http://dev2dev.bea.com/pub/advisory/156"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA セキュリティアドバイザリ",
-          "vulinfoid": "BEA05-88.00",
-          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-88.00.html"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA セキュリティアドバイザリ",
-          "vulinfoid": "BEA05-89.00",
-          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-89.00.html"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA セキュリティアドバイザリ",
-          "vulinfoid": "BEA05-102.00",
-          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-102.00.html"
-        },
-        {
-          "type": "vendor",
-          "name": "BEA セキュリティアドバイザリ",
-          "vulinfoid": "BEA06-106.01",
-          "url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea06-106.01.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-4753",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4753"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-4753",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-4753"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "15052",
-          "url": "http://www.securityfocus.com/bid/15052"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-10-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000572",
+	"vulinfodata": {
+		"title": "BEA 製品における監査イベントが不正な重大度で記録されてしまう脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  BEA WebLogic Server 7.0 SP6 以前、8.1 SP4 以前には、以下のような複数のセキュリティ問題が存在します。  1) デプロイされたアプリケーションの権限が、デプロイメント記述子の run-as 要素を使用することで Deployer セキュリティロールから Admin セキュリティロールに変更されてしまう問題が存在します。(BEA05-88.00)  ローカルの攻撃者に悪用された場合、本来許可されていない処理を行うアプリーケーションが実行される可能性があります。  2) 高負荷状態において、監査イベントが不正な重大度で記録されてしまう問題が存在します。(BEA05-89.00)  監査機能を有効にしている場合、重要な監査イベントにも関わらずフィルタリングされてしまい、イベントを見落としてしまう可能性があります。  3) 管理サーバにおいて管理ポートが有効である場合においても、通信が保護される t3s プロトコルの代わりに、t3 プロトコルにより weblogic.Deployer コマンドを管理サーバに送信することが可能であるため、第三者に盗聴されてしまう問題が存在します。(BEA05-102.00)  リモートの攻撃者に悪用された場合、管理用のユーザ名やパスワードなど重要な情報が取得されてしまう可能性があります。  4) サーブレットの Relative forwarding の処理が不適切であるため、処理がループしスタックオーバフローが発生する問題が存在します。(BEA05-106.00)  リモートの攻撃者に悪用された場合、WebLogic Server の処理能力が低下しサービス不能状態に陥る可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "BEAシステムズ",
+					"productname": "BEA WebLogic Server",
+					"cpe": {
+						"text": "cpe:/a:bea:weblogic_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.0 SP6 およびそれ以前",
+						"8.1 SP4 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "BEA Security Advisory",
+					"vulinfoid": "BEA06-106.01",
+					"url": "http://dev2dev.bea.com/pub/advisory/164"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA Security Advisory",
+					"vulinfoid": "BEA05-88.00",
+					"url": "http://dev2dev.bea.com/pub/advisory/142"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA Security Advisory",
+					"vulinfoid": "BEA05-89.00",
+					"url": "http://dev2dev.bea.com/pub/advisory/143"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA Security Advisory",
+					"vulinfoid": "BEA05-102.00",
+					"url": "http://dev2dev.bea.com/pub/advisory/156"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA セキュリティアドバイザリ",
+					"vulinfoid": "BEA05-88.00",
+					"url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-88.00.html"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA セキュリティアドバイザリ",
+					"vulinfoid": "BEA05-89.00",
+					"url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-89.00.html"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA セキュリティアドバイザリ",
+					"vulinfoid": "BEA05-102.00",
+					"url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea05-102.00.html"
+				},
+				{
+					"type": "vendor",
+					"name": "BEA セキュリティアドバイザリ",
+					"vulinfoid": "BEA06-106.01",
+					"url": "http://www.beasys.co.jp/dev2dev/resourcelibrary/advisoriesnotifications/bea06-106.01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-4753",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4753"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-4753",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-4753"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "15052",
+					"url": "http://www.securityfocus.com/bid/15052"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-10-10T00:00:00+09:00"
+	}
 }

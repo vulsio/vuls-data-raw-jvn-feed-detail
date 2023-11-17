@@ -1,132 +1,132 @@
 {
-  "vulinfoid": "JVNDB-2022-000082",
-  "vulinfodata": {
-    "title": "日本語プログラミング言語「なでしこ3」における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "クジラ飛行机が提供するなでしこ3 PC版には、次の複数の脆弱性が存在します。 <ul> <li>圧縮・解凍命令実行時の OS コマンドインジェクション (CWE-78) - CVE-2022-41642 <li>nako3edit での想定しないパラメータによるサーバの停止 (CWE-703) - CVE-2022-41777 <li>nako3edit でのファイル保存・実行時の OS コマンドインジェクション (CWE-78) - CVE-2022-42496</ul> この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 辻　知希 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "クジラ飛行机",
-          "productname": "なでしこ3 PC版",
-          "cpe": {
-            "text": "cpe:/a:kujirahand:nadesiko3_pc-version",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v3.3.68 およびそれ以前のバージョン",
-            "v3.3.74 およびそれ以前のバージョンにおける簡易エディタ nako3edit"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul> <li>PC 向けランタイム cnako3 の圧縮・解凍命令を実行時に OS コマンドインジェクションを実行される - CVE-2022-41642 <li>簡易エディタ nako3edit で decodeURIComponent に不正な値を入力され、サーバ機能を停止される - CVE-2022-41777 <li>API キーを窃取された場合、簡易エディタ nako3edit でファイルの保存と実行時に OS コマンドインジェクションを実行される - CVE-2022-42496</ul>"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "cnako3の圧縮解凍の問題 #1325",
-          "url": "https://github.com/kujirahand/nadesiko3/issues/1325"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "nako3editのファイルの扱いの問題 #1347 ",
-          "url": "https://github.com/kujirahand/nadesiko3/issues/1347"
-        },
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "クジラ飛行机からの情報",
-          "url": "https://jvn.jp/jp/JVN56968681/996377/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-41777",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-41777"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-42496",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-42496"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-41642",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-41642"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#56968681",
-          "url": "https://jvn.jp/jp/JVN56968681/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-78",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
-          "title": "OSコマンドインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-10-18T14:57:03+09:00",
-          "description": "[2022年10月20日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-10-28T15:27:23+09:00",
-          "description": "[2022年10月28日]\\n  影響を受けるシステム：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-10-20T14:04:12+09:00",
-    "datelastupdated": "2022-10-28T15:35:07+09:00",
-    "datepublic": "2022-10-20T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-000082",
+	"vulinfodata": {
+		"title": "日本語プログラミング言語「なでしこ3」における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "クジラ飛行机が提供するなでしこ3 PC版には、次の複数の脆弱性が存在します。 <ul> <li>圧縮・解凍命令実行時の OS コマンドインジェクション (CWE-78) - CVE-2022-41642 <li>nako3edit での想定しないパラメータによるサーバの停止 (CWE-703) - CVE-2022-41777 <li>nako3edit でのファイル保存・実行時の OS コマンドインジェクション (CWE-78) - CVE-2022-42496</ul> この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 辻　知希 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "クジラ飛行机",
+					"productname": "なでしこ3 PC版",
+					"cpe": {
+						"text": "cpe:/a:kujirahand:nadesiko3_pc-version",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v3.3.68 およびそれ以前のバージョン",
+						"v3.3.74 およびそれ以前のバージョンにおける簡易エディタ nako3edit"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul> <li>PC 向けランタイム cnako3 の圧縮・解凍命令を実行時に OS コマンドインジェクションを実行される - CVE-2022-41642 <li>簡易エディタ nako3edit で decodeURIComponent に不正な値を入力され、サーバ機能を停止される - CVE-2022-41777 <li>API キーを窃取された場合、簡易エディタ nako3edit でファイルの保存と実行時に OS コマンドインジェクションを実行される - CVE-2022-42496</ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "cnako3の圧縮解凍の問題 #1325",
+					"url": "https://github.com/kujirahand/nadesiko3/issues/1325"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "nako3editのファイルの扱いの問題 #1347 ",
+					"url": "https://github.com/kujirahand/nadesiko3/issues/1347"
+				},
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "クジラ飛行机からの情報",
+					"url": "https://jvn.jp/jp/JVN56968681/996377/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-41777",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-41777"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-42496",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-42496"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-41642",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-41642"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#56968681",
+					"url": "https://jvn.jp/jp/JVN56968681/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-10-18T14:57:03+09:00",
+					"description": "[2022年10月20日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-10-28T15:27:23+09:00",
+					"description": "[2022年10月28日]\\n  影響を受けるシステム：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2022-10-20T14:04:12+09:00",
+		"datelastupdated": "2022-10-28T15:35:07+09:00",
+		"datepublic": "2022-10-20T00:00:00+09:00"
+	}
 }

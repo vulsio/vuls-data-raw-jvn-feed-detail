@@ -1,109 +1,109 @@
 {
-  "vulinfoid": "JVNDB-2003-000209",
-  "vulinfodata": {
-    "title": "Microsoft ISA Server におけるキャッシュ汚染の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft ISA Server 2000 では、着信方向の Web 要求リスナに対して基本認証を選択することが可能であり、この認証用情報は、比較的解読が容易な Base64 方式でエンコードされています。  Microsoft ISA Server 2000 SP2 以前には、以下の条件をすべて満たしている場合、Web 公開ルールにおいて \"SSL 要求\" が設定されていても、認証用情報を外部 HTTP 接続経由で送信してしまうセキュリティ上の不備が存在します。  ・着信方向の Web 要求リスナに対して基本認証が設定されている ・Web 公開ルールが、このルールに対して HTTPS トラフィックのみを許可するために、[SSL 要求] に設定されている ・Web 公開ルールがユーザ認証に設定されている ・最初のクライアント要求が HTTP を使用して送信され、http://server.domain.tld の形式になっている  この問題を利用するリモートの攻撃者により、ユーザの認証用情報が奪取される可能性があります。  尚、着信方向の Web 要求リスナに対して基本認証を設定していない場合には、この問題の影響を受けません。  また、着信方向の Web 要求リスナに対して複数の認証方法を有効に設定されており、クライアント認証が ISA Server を実行しているコンピュータ上で NTLM、あるいはダイジェスト認証を使用して行われる場合、こらの認証用情報も HTTP 経由で送信されますが、NTLM 認証やダイジェスト認証の暗号解除は困難であるため、この問題の影響を受けません。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Internet Security and Acceleration Server",
-          "cpe": {
-            "text": "cpe:/a:microsoft:isa_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2000"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft Knowledge Base",
-          "vulinfoid": "821724",
-          "url": "http://support.microsoft.com/default.aspx?kbid=821724"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Security Bulletin",
-          "vulinfoid": "MS05-034",
-          "url": "http://www.microsoft.com/technet/security/bulletin/MS05-034.mspx"
-        },
-        {
-          "type": "vendor",
-          "name": "マイクロソフト セキュリティ情報",
-          "vulinfoid": "MS05-034",
-          "url": "http://www.microsoft.com/japan/technet/security/bulletin/MS05-034.mspx"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-1215",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1215"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-1215",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1215"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13955",
-          "url": "http://www.securityfocus.com/bid/13955"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10481",
-          "url": "http://www.securityfocus.com/bid/10481"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1014356",
-          "url": "http://securitytracker.com/alerts/2005/Jul/1014356.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-07-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000209",
+	"vulinfodata": {
+		"title": "Microsoft ISA Server におけるキャッシュ汚染の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Microsoft ISA Server 2000 では、着信方向の Web 要求リスナに対して基本認証を選択することが可能であり、この認証用情報は、比較的解読が容易な Base64 方式でエンコードされています。  Microsoft ISA Server 2000 SP2 以前には、以下の条件をすべて満たしている場合、Web 公開ルールにおいて \"SSL 要求\" が設定されていても、認証用情報を外部 HTTP 接続経由で送信してしまうセキュリティ上の不備が存在します。  ・着信方向の Web 要求リスナに対して基本認証が設定されている ・Web 公開ルールが、このルールに対して HTTPS トラフィックのみを許可するために、[SSL 要求] に設定されている ・Web 公開ルールがユーザ認証に設定されている ・最初のクライアント要求が HTTP を使用して送信され、http://server.domain.tld の形式になっている  この問題を利用するリモートの攻撃者により、ユーザの認証用情報が奪取される可能性があります。  尚、着信方向の Web 要求リスナに対して基本認証を設定していない場合には、この問題の影響を受けません。  また、着信方向の Web 要求リスナに対して複数の認証方法を有効に設定されており、クライアント認証が ISA Server を実行しているコンピュータ上で NTLM、あるいはダイジェスト認証を使用して行われる場合、こらの認証用情報も HTTP 経由で送信されますが、NTLM 認証やダイジェスト認証の暗号解除は困難であるため、この問題の影響を受けません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Internet Security and Acceleration Server",
+					"cpe": {
+						"text": "cpe:/a:microsoft:isa_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2000"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft Knowledge Base",
+					"vulinfoid": "821724",
+					"url": "http://support.microsoft.com/default.aspx?kbid=821724"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Security Bulletin",
+					"vulinfoid": "MS05-034",
+					"url": "http://www.microsoft.com/technet/security/bulletin/MS05-034.mspx"
+				},
+				{
+					"type": "vendor",
+					"name": "マイクロソフト セキュリティ情報",
+					"vulinfoid": "MS05-034",
+					"url": "http://www.microsoft.com/japan/technet/security/bulletin/MS05-034.mspx"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-1215",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1215"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-1215",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1215"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13955",
+					"url": "http://www.securityfocus.com/bid/13955"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10481",
+					"url": "http://www.securityfocus.com/bid/10481"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1014356",
+					"url": "http://securitytracker.com/alerts/2005/Jul/1014356.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-07-09T00:00:00+09:00"
+	}
 }

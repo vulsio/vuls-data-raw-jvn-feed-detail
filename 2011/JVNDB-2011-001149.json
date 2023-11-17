@@ -1,139 +1,139 @@
 {
-  "vulinfoid": "JVNDB-2011-001149",
-  "vulinfodata": {
-    "title": "Cisco Tandberg E, EX および C Series における root アカウントのデフォルト認証情報の問題",
-    "vulinfodescription": {
-      "overview": "ソフトウェアのバージョンが TC4.0.0 より前の Cisco Tandberg C Series Endpoints および E/EX Personal Video は、デフォルト設定で root アカウントがパスワード無しの状態で有効になっています。  Cisco Advisory cisco-sa-20110202-tandberg に記載された情報:  This vulnerability affects Tandberg C Series Endpoints and E/EX Personal Video units, including software that is running on the C20, C40, C60, C90, E20, EX60, and EX90 codecs. The software version of the Tandberg unit can be determined by logging into the web-based user interface (UI) or using the “xStatus SystemUnit” command.  Users can determine the Tandberg software version by entering the IP address of the codec in a web browser, authenticating (if the device is configured for authentication), and then selecting the “system info” menu option. The version number is displayed after the “Software Version” label in the System Info box.  Alternatively the software version can be determined from the device's application programmer interface using the “xStatus SystemUnit” command. The software version running on the codec is displayed after the “SystemUnit Software Version” label. The output from “xStatus SystemUnit” will display a result similar to the following:”  xStatus SystemUnit 　*s SystemUnit ProductType: “Cisco TelePresence Codec” *s SystemUnit ProductId: “Cisco TelePresence Codec C90” *s SystemUnit ProductPlatform: “C90” *s SystemUnit Uptime: 597095 *s SystemUnit Software Application: “Endpoint” *s SystemUnit Software Version: “TC4.0” *s SystemUnit Software Name: “s52000” *s SystemUnit Software ReleaseDate: “2010-11-01” *s SystemUnit Software MaxVideoCalls: 3 *s SystemUnit Software MaxAudioCalls: 4 *s SystemUnit Software ReleaseKey: “true” *s SystemUnit Software OptionKeys NaturalPresenter: “true” *s SystemUnit Software OptionKeys MultiSite: “true” *s SystemUnit Software OptionKeys PremiumResolution: “true” *s SystemUnit Hardware Module SerialNumber: “B1AD25A00003” *s SystemUnit Hardware Module Identifier: “0” *s SystemUnit Hardware MainBoard SerialNumber: “PH0497201” *s SystemUnit Hardware MainBoard Identifier: “101401-3 [04]“ *s SystemUnit Hardware VideoBoard SerialNumber: “PH0497874” *s SystemUnit Hardware VideoBoard Identifier: “101560-1 [02]“ *s SystemUnit Hardware AudioBoard SerialNumber: “N/A” *s SystemUnit Hardware AudioBoard Identifier: ”“ *s SystemUnit Hardware BootSoftware: “U-Boot 2009.03-65” *s SystemUnit State System: Initialized *s SystemUnit State MaxNumberOfCalls: 3 *s SystemUnit State MaxNumberOfActiveCalls: 3 *s SystemUnit State NumberOfActiveCalls: 1 *s SystemUnit State NumberOfSuspendedCalls: 0 *s SystemUnit State NumberOfInProgressCalls: 0 *s SystemUnit State Subsystem Application: Initialized *s SystemUnit ContactInfo: “helpdesk@company.com” ** end"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco Tandberg C Series Endpoints",
-          "cpe": {
-            "text": "cpe:/h:cisco:tandberg_endpoint",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco Tandberg E/EX Personal Video units",
-          "cpe": {
-            "text": "cpe:/h:cisco:tandberg_personal_video_unit",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "該当製品にアクセス可能な第三者によって、管理者権限を取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] Cisco が提供する情報をもとに、TC4.0.0 もしくはそれ以降のバージョンにアップデートしてください。  TC4.0.0 もしくはそれ以降のバージョンでは、デフォルトで root アカウントが無効になっています。なお、TC4.0.0 のデフォルト設定では、administrator アカウント (root アカウントとは異なります) のパスワードが設定されていません。administrator アカウントのパスワードを設定する必要があります。  TC4.0.0 より前のバージョンでは、root アカウントを無効にすることができません。root アカウントのパスワードは administrator アカウントのパスワードと同じ情報が設定されます。  詳しくは Cisco の提供する情報をご確認ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "cisco-sa-20110202-tandberg",
-          "url": "http://www.cisco.com/warp/public/707/cisco-sa-20110202-tandberg.shtml"
-        },
-        {
-          "type": "vendor",
-          "name": "Cisco Systems Inc",
-          "vulinfoid": "22314",
-          "url": "http://tools.cisco.com/security/center/viewAlert.x?alertId=22314"
-        },
-        {
-          "type": "vendor",
-          "name": "TANDBERG",
-          "vulinfoid": "TANDBERG Software Downloads",
-          "url": "http://www.tandberg.com/support/video-conferencing-software-download.jsp?t=2"
-        },
-        {
-          "type": "vendor",
-          "name": "シスコ セキュリティアドバイザリ",
-          "vulinfoid": "cisco-sa-20110202-tandberg",
-          "url": "http://www.cisco.com/cisco/web/support/JP/110/1103/1103540_cisco-sa-20110202-tandberg-j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-0354",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0354"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#436854",
-          "url": "http://jvn.jp/cert/JVNVU436854"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2011-0354",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0354"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA43158",
-          "url": "http://secunia.com/advisories/43158"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "46107",
-          "url": "http://www.securityfocus.com/bid/46107"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1025017",
-          "url": "http://securitytracker.com/id?1025017"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#436854",
-          "url": "http://www.kb.cert.org/vuls/id/436854"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-255",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
-          "title": "証明書・パスワードの管理"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2011年03月03日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2011-03-03T16:28:30+09:00",
-    "datelastupdated": "2011-03-03T16:28:30+09:00",
-    "datepublic": "2011-02-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2011-001149",
+	"vulinfodata": {
+		"title": "Cisco Tandberg E, EX および C Series における root アカウントのデフォルト認証情報の問題",
+		"vulinfodescription": {
+			"overview": "ソフトウェアのバージョンが TC4.0.0 より前の Cisco Tandberg C Series Endpoints および E/EX Personal Video は、デフォルト設定で root アカウントがパスワード無しの状態で有効になっています。  Cisco Advisory cisco-sa-20110202-tandberg に記載された情報:  This vulnerability affects Tandberg C Series Endpoints and E/EX Personal Video units, including software that is running on the C20, C40, C60, C90, E20, EX60, and EX90 codecs. The software version of the Tandberg unit can be determined by logging into the web-based user interface (UI) or using the “xStatus SystemUnit” command.  Users can determine the Tandberg software version by entering the IP address of the codec in a web browser, authenticating (if the device is configured for authentication), and then selecting the “system info” menu option. The version number is displayed after the “Software Version” label in the System Info box.  Alternatively the software version can be determined from the device's application programmer interface using the “xStatus SystemUnit” command. The software version running on the codec is displayed after the “SystemUnit Software Version” label. The output from “xStatus SystemUnit” will display a result similar to the following:”  xStatus SystemUnit 　*s SystemUnit ProductType: “Cisco TelePresence Codec” *s SystemUnit ProductId: “Cisco TelePresence Codec C90” *s SystemUnit ProductPlatform: “C90” *s SystemUnit Uptime: 597095 *s SystemUnit Software Application: “Endpoint” *s SystemUnit Software Version: “TC4.0” *s SystemUnit Software Name: “s52000” *s SystemUnit Software ReleaseDate: “2010-11-01” *s SystemUnit Software MaxVideoCalls: 3 *s SystemUnit Software MaxAudioCalls: 4 *s SystemUnit Software ReleaseKey: “true” *s SystemUnit Software OptionKeys NaturalPresenter: “true” *s SystemUnit Software OptionKeys MultiSite: “true” *s SystemUnit Software OptionKeys PremiumResolution: “true” *s SystemUnit Hardware Module SerialNumber: “B1AD25A00003” *s SystemUnit Hardware Module Identifier: “0” *s SystemUnit Hardware MainBoard SerialNumber: “PH0497201” *s SystemUnit Hardware MainBoard Identifier: “101401-3 [04]“ *s SystemUnit Hardware VideoBoard SerialNumber: “PH0497874” *s SystemUnit Hardware VideoBoard Identifier: “101560-1 [02]“ *s SystemUnit Hardware AudioBoard SerialNumber: “N/A” *s SystemUnit Hardware AudioBoard Identifier: ”“ *s SystemUnit Hardware BootSoftware: “U-Boot 2009.03-65” *s SystemUnit State System: Initialized *s SystemUnit State MaxNumberOfCalls: 3 *s SystemUnit State MaxNumberOfActiveCalls: 3 *s SystemUnit State NumberOfActiveCalls: 1 *s SystemUnit State NumberOfSuspendedCalls: 0 *s SystemUnit State NumberOfInProgressCalls: 0 *s SystemUnit State Subsystem Application: Initialized *s SystemUnit ContactInfo: “helpdesk@company.com” ** end"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco Tandberg C Series Endpoints",
+					"cpe": {
+						"text": "cpe:/h:cisco:tandberg_endpoint",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco Tandberg E/EX Personal Video units",
+					"cpe": {
+						"text": "cpe:/h:cisco:tandberg_personal_video_unit",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "該当製品にアクセス可能な第三者によって、管理者権限を取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] Cisco が提供する情報をもとに、TC4.0.0 もしくはそれ以降のバージョンにアップデートしてください。  TC4.0.0 もしくはそれ以降のバージョンでは、デフォルトで root アカウントが無効になっています。なお、TC4.0.0 のデフォルト設定では、administrator アカウント (root アカウントとは異なります) のパスワードが設定されていません。administrator アカウントのパスワードを設定する必要があります。  TC4.0.0 より前のバージョンでは、root アカウントを無効にすることができません。root アカウントのパスワードは administrator アカウントのパスワードと同じ情報が設定されます。  詳しくは Cisco の提供する情報をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "cisco-sa-20110202-tandberg",
+					"url": "http://www.cisco.com/warp/public/707/cisco-sa-20110202-tandberg.shtml"
+				},
+				{
+					"type": "vendor",
+					"name": "Cisco Systems Inc",
+					"vulinfoid": "22314",
+					"url": "http://tools.cisco.com/security/center/viewAlert.x?alertId=22314"
+				},
+				{
+					"type": "vendor",
+					"name": "TANDBERG",
+					"vulinfoid": "TANDBERG Software Downloads",
+					"url": "http://www.tandberg.com/support/video-conferencing-software-download.jsp?t=2"
+				},
+				{
+					"type": "vendor",
+					"name": "シスコ セキュリティアドバイザリ",
+					"vulinfoid": "cisco-sa-20110202-tandberg",
+					"url": "http://www.cisco.com/cisco/web/support/JP/110/1103/1103540_cisco-sa-20110202-tandberg-j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-0354",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0354"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#436854",
+					"url": "http://jvn.jp/cert/JVNVU436854"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2011-0354",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0354"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA43158",
+					"url": "http://secunia.com/advisories/43158"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "46107",
+					"url": "http://www.securityfocus.com/bid/46107"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1025017",
+					"url": "http://securitytracker.com/id?1025017"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#436854",
+					"url": "http://www.kb.cert.org/vuls/id/436854"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-255",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+					"title": "証明書・パスワードの管理"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2011年03月03日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2011-03-03T16:28:30+09:00",
+		"datelastupdated": "2011-03-03T16:28:30+09:00",
+		"datepublic": "2011-02-04T00:00:00+09:00"
+	}
 }

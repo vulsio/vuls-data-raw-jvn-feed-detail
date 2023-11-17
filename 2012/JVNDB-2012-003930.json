@@ -1,248 +1,248 @@
 {
-  "vulinfoid": "JVNDB-2012-003930",
-  "vulinfodata": {
-    "title": "Performance Co-Pilot の libpcp におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Performance Co-Pilot (PCP) の libpcp には、サービス運用妨害 (DoS) 状態となる、および任意のコードを実行される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "SGI",
-          "productname": "Performance Co-Pilot",
-          "cpe": {
-            "text": "cpe:/a:sgi:performance_co-pilot",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.6.5 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、整数オーバーフロー、ヒープベースのバッファオーバーフロー、バッファオーバーリードを誘発する下記の項目を介して、サービス運用妨害 (DoS) 状態にされる、および任意のコードを実行される可能性があります。  (1) p_creds.c の __pmDecodeCreds 関数に対して、実際の要素数より大きな numcred フィールド値をもつ PDU (2) p_pmns.c の __pmDecodeNameList 関数に対する文字バイト数の値 (3) p_pmns.c の __pmDecodeIDList 関数に対する numids 値 (4) p_profile.c の __pmDecodeProfile 関数に対する不特定の要因 p_pmns.c の __pmDecodeNameList 関数に対する (5) status number 値 または (6) string number 値 (7) p_result.c の __pmDecodeResult 関数に対する特定の入力 (8) p_pmns.c の DecodeNameReq 関数に対する namelen フィールド (9) p_fetch.c の __pmDecodeFetch 関数に対する巧妙に細工された PDU_FETCH リクエスト (10) p_instance.c の __pmDecodeInstanceReq 関数の namelen フィールド (11) p_text.c の __pmDecodeText 関数に対する buflen フィールド (12) p_instance.c の __pmDecodeInstance 関数に対する PDU_INSTANCE パケット p_lcontrol.c の __pmDecodeLogControl 関数に対する (13) c_numpmid または (14) v_numval フィールド"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Debian Security Advisory",
-          "vulinfoid": "DSA-2533",
-          "url": "http://www.debian.org/security/2012/dsa-2533"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2012-12076",
-          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-August/085333.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2012-12024",
-          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-August/085324.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2012:1036",
-          "url": "http://lists.opensuse.org/opensuse-updates/2012-08/msg00034.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2012:1081",
-          "url": "http://lists.opensuse.org/opensuse-updates/2012-09/msg00002.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2012:1079",
-          "url": "http://lists.opensuse.org/opensuse-updates/2012-09/msg00000.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841159",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841159"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841112",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841112"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841698",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841698"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 840920",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=840920"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841284",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841284"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 840822",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=840822"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841249",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841249"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841240",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841240"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841183",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841183"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 841180",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=841180"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Resolve buffer overflows in __pmDecodeNameList routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=f0eaefe046b1061797f45b0c20bb2ac371b504a5"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Resolve multiple issues in PCP result PDU decoding routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=49c679c44425915a8d6aa4af5f90b35384843c12"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Fix crash in __pmDecodeCreds handling corrupt PDUs",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=cced6012b4b93bfb640a9678589ced5416743910"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Fix heap buffer overflow in __pmDecodeInstanceReq routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=f190942b552aa80d59bbe718866aa00b8e3fd5cc"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Fix buffer overflow in __pmDecodeNameReq routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=bfb3ab8c6b3d75b1a6580feee76a7d0925a3633c"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Add missing namelen checks in __pmDecodeFetch routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=7eb479b91ef12bf89a15b078af2107c8c4746a4a"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Add missing PDU length checks in __pmDecodeProfile routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=e4faa1f0ba29151340920d975fc7639adf8371d5"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Add field validation to PCP instance PDU decoding",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=babd6c5c527f87ec838c13a1b4eba612af6ea27c"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "Top Page",
-          "url": "http://oss.sgi.com/projects/pcp/"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Add missing check againt PDU size in __pmDecodeIDList routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=b441980d53be1835b25f0cd6bcc0062da82032dd"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / blob - Update changelogs for pcp 3.6.5 release.",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=blob;f=CHANGELOG;h=16c9cbb2f61d909487ea1c3171f4ab33e5648ac5;hb=fe51067ae869a4d59f350ac319b09edcb77ac8e6"
-        },
-        {
-          "type": "vendor",
-          "name": "SGI",
-          "vulinfoid": "pcp / pcp.git / commitdiff - Fix heap overflow in __pmDecodeText routine",
-          "url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=9f4e392c97ce42744ec73f82268ce6c815fdca0e"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2012-3418",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3418"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2012-3418",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3418"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-189",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
-          "title": "数値処理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2012年08月29日]\\n  掲載\\n[2012年09月14日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1081) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1079) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1036) を追加\\n  ベンダ情報：Debian (DSA-2533) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2012-08-29T18:18:33+09:00",
-    "datelastupdated": "2012-09-14T16:25:18+09:00",
-    "datepublic": "2012-08-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2012-003930",
+	"vulinfodata": {
+		"title": "Performance Co-Pilot の libpcp におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Performance Co-Pilot (PCP) の libpcp には、サービス運用妨害 (DoS) 状態となる、および任意のコードを実行される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "SGI",
+					"productname": "Performance Co-Pilot",
+					"cpe": {
+						"text": "cpe:/a:sgi:performance_co-pilot",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.6.5 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、整数オーバーフロー、ヒープベースのバッファオーバーフロー、バッファオーバーリードを誘発する下記の項目を介して、サービス運用妨害 (DoS) 状態にされる、および任意のコードを実行される可能性があります。  (1) p_creds.c の __pmDecodeCreds 関数に対して、実際の要素数より大きな numcred フィールド値をもつ PDU (2) p_pmns.c の __pmDecodeNameList 関数に対する文字バイト数の値 (3) p_pmns.c の __pmDecodeIDList 関数に対する numids 値 (4) p_profile.c の __pmDecodeProfile 関数に対する不特定の要因 p_pmns.c の __pmDecodeNameList 関数に対する (5) status number 値 または (6) string number 値 (7) p_result.c の __pmDecodeResult 関数に対する特定の入力 (8) p_pmns.c の DecodeNameReq 関数に対する namelen フィールド (9) p_fetch.c の __pmDecodeFetch 関数に対する巧妙に細工された PDU_FETCH リクエスト (10) p_instance.c の __pmDecodeInstanceReq 関数の namelen フィールド (11) p_text.c の __pmDecodeText 関数に対する buflen フィールド (12) p_instance.c の __pmDecodeInstance 関数に対する PDU_INSTANCE パケット p_lcontrol.c の __pmDecodeLogControl 関数に対する (13) c_numpmid または (14) v_numval フィールド"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Debian Security Advisory",
+					"vulinfoid": "DSA-2533",
+					"url": "http://www.debian.org/security/2012/dsa-2533"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2012-12076",
+					"url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-August/085333.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2012-12024",
+					"url": "http://lists.fedoraproject.org/pipermail/package-announce/2012-August/085324.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2012:1036",
+					"url": "http://lists.opensuse.org/opensuse-updates/2012-08/msg00034.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2012:1081",
+					"url": "http://lists.opensuse.org/opensuse-updates/2012-09/msg00002.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2012:1079",
+					"url": "http://lists.opensuse.org/opensuse-updates/2012-09/msg00000.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841159",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841159"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841112",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841112"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841698",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841698"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 840920",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=840920"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841284",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841284"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 840822",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=840822"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841249",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841249"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841240",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841240"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841183",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841183"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 841180",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=841180"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Resolve buffer overflows in __pmDecodeNameList routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=f0eaefe046b1061797f45b0c20bb2ac371b504a5"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Resolve multiple issues in PCP result PDU decoding routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=49c679c44425915a8d6aa4af5f90b35384843c12"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Fix crash in __pmDecodeCreds handling corrupt PDUs",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=cced6012b4b93bfb640a9678589ced5416743910"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Fix heap buffer overflow in __pmDecodeInstanceReq routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=f190942b552aa80d59bbe718866aa00b8e3fd5cc"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Fix buffer overflow in __pmDecodeNameReq routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=bfb3ab8c6b3d75b1a6580feee76a7d0925a3633c"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Add missing namelen checks in __pmDecodeFetch routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=7eb479b91ef12bf89a15b078af2107c8c4746a4a"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Add missing PDU length checks in __pmDecodeProfile routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=e4faa1f0ba29151340920d975fc7639adf8371d5"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Add field validation to PCP instance PDU decoding",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=babd6c5c527f87ec838c13a1b4eba612af6ea27c"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "Top Page",
+					"url": "http://oss.sgi.com/projects/pcp/"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Add missing check againt PDU size in __pmDecodeIDList routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commit;h=b441980d53be1835b25f0cd6bcc0062da82032dd"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / blob - Update changelogs for pcp 3.6.5 release.",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=blob;f=CHANGELOG;h=16c9cbb2f61d909487ea1c3171f4ab33e5648ac5;hb=fe51067ae869a4d59f350ac319b09edcb77ac8e6"
+				},
+				{
+					"type": "vendor",
+					"name": "SGI",
+					"vulinfoid": "pcp / pcp.git / commitdiff - Fix heap overflow in __pmDecodeText routine",
+					"url": "http://oss.sgi.com/cgi-bin/gitweb.cgi?p=pcp/pcp.git;a=commitdiff;h=9f4e392c97ce42744ec73f82268ce6c815fdca0e"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2012-3418",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3418"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2012-3418",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-3418"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-189",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+					"title": "数値処理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2012年08月29日]\\n  掲載\\n[2012年09月14日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1081) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1079) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:1036) を追加\\n  ベンダ情報：Debian (DSA-2533) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2012-08-29T18:18:33+09:00",
+		"datelastupdated": "2012-09-14T16:25:18+09:00",
+		"datepublic": "2012-08-16T00:00:00+09:00"
+	}
 }

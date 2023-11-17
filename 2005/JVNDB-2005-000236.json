@@ -1,116 +1,116 @@
 {
-  "vulinfoid": "JVNDB-2005-000236",
-  "vulinfodata": {
-    "title": "Cisco IOS における不正なパケットにより認証を回避される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Cisco IOS には、リモートユーザが IPSec を使用して、CISCO IOS VPN ゲートウェイとの通信をセキュアに実行できるようにするソフトウェアである Easy VPN Server が実装されています。また、IKE (Internet Key Exchange) を拡張した XAUTH (eXtended authentication) が VPN クライアントとの認証に利用されています。  Cisco IOS 12.2/12.3-based Releases に実装される Easy VPN Server には、以下の複数のセキュリティ上の問題が存在します。  1) 特定の Internet Key Exchange (IKE) XAUTH メッセージが UDP ポート 500 に送信されると、不適切なクライアントに対して XAUTH 認証を許可してしまう問題が存在します。(BID 13031)   但し、この問題を利用するためには、攻撃者は IKE フェーズ 1 ネゴシエーションを完了するための共有グループキーを把握している必要があります。  2) 特定の ISAKMP プロファイルの属性が設定されているにも関わらず適切に処理されなかった場合に、VPN のサーバ−クライアント間の通信において、デッドロック状態が発生する問題が存在します。(BID 13033)  通常、デッドロック状態は時間が経つと解消されますが、この間にフェーズ 2 ネゴシエーションが悪意あるクライアントにより開始されると、IPSec SA (Security Association) が確立されてしまう可能性があります。  尚、ISAKMP プロファイルにおいて証明書マップによるマッチングを設定している場合にのみ、この問題の影響を受けます。  これらの問題を利用するリモートの攻撃者は、不正に認証を通過し、ネットワークリソースにアクセスできる可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "シスコシステムズ",
-          "productname": "Cisco IOS",
-          "cpe": {
-            "text": "cpe:/o:cisco:ios",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.2 ",
-            "12.3 "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "cisco-sa-20050406-xauth",
-          "url": "http://www.cisco.com/japanese/warp/public/3/jp/service/tac/707/cisco-sa-20050406-xauth-j.shtml"
-        },
-        {
-          "type": "vendor",
-          "name": "シスコ セキュリティアドバイザリ",
-          "vulinfoid": "cisco-sa-20050406-xauth",
-          "url": "http://www.cisco.com/japanese/warp/public/3/jp/service/tac/707/cisco-sa-20050412-icmp-j.shtml"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-1057",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1057"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2005-0321",
-          "url": "http://www.frsirt.com/english/advisories/2005/0321"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-1057",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1057"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA14853",
-          "url": "http://secunia.com/advisories/14853"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13033",
-          "url": "http://www.securityfocus.com/bid/13033"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13031",
-          "url": "http://www.securityfocus.com/bid/13031"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#236748",
-          "url": "http://www.kb.cert.org/vuls/id/236748"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-04-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000236",
+	"vulinfodata": {
+		"title": "Cisco IOS における不正なパケットにより認証を回避される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Cisco IOS には、リモートユーザが IPSec を使用して、CISCO IOS VPN ゲートウェイとの通信をセキュアに実行できるようにするソフトウェアである Easy VPN Server が実装されています。また、IKE (Internet Key Exchange) を拡張した XAUTH (eXtended authentication) が VPN クライアントとの認証に利用されています。  Cisco IOS 12.2/12.3-based Releases に実装される Easy VPN Server には、以下の複数のセキュリティ上の問題が存在します。  1) 特定の Internet Key Exchange (IKE) XAUTH メッセージが UDP ポート 500 に送信されると、不適切なクライアントに対して XAUTH 認証を許可してしまう問題が存在します。(BID 13031)   但し、この問題を利用するためには、攻撃者は IKE フェーズ 1 ネゴシエーションを完了するための共有グループキーを把握している必要があります。  2) 特定の ISAKMP プロファイルの属性が設定されているにも関わらず適切に処理されなかった場合に、VPN のサーバ−クライアント間の通信において、デッドロック状態が発生する問題が存在します。(BID 13033)  通常、デッドロック状態は時間が経つと解消されますが、この間にフェーズ 2 ネゴシエーションが悪意あるクライアントにより開始されると、IPSec SA (Security Association) が確立されてしまう可能性があります。  尚、ISAKMP プロファイルにおいて証明書マップによるマッチングを設定している場合にのみ、この問題の影響を受けます。  これらの問題を利用するリモートの攻撃者は、不正に認証を通過し、ネットワークリソースにアクセスできる可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シスコシステムズ",
+					"productname": "Cisco IOS",
+					"cpe": {
+						"text": "cpe:/o:cisco:ios",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.2 ",
+						"12.3 "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "cisco-sa-20050406-xauth",
+					"url": "http://www.cisco.com/japanese/warp/public/3/jp/service/tac/707/cisco-sa-20050406-xauth-j.shtml"
+				},
+				{
+					"type": "vendor",
+					"name": "シスコ セキュリティアドバイザリ",
+					"vulinfoid": "cisco-sa-20050406-xauth",
+					"url": "http://www.cisco.com/japanese/warp/public/3/jp/service/tac/707/cisco-sa-20050412-icmp-j.shtml"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-1057",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1057"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2005-0321",
+					"url": "http://www.frsirt.com/english/advisories/2005/0321"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-1057",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1057"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA14853",
+					"url": "http://secunia.com/advisories/14853"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13033",
+					"url": "http://www.securityfocus.com/bid/13033"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13031",
+					"url": "http://www.securityfocus.com/bid/13031"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#236748",
+					"url": "http://www.kb.cert.org/vuls/id/236748"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-04-06T00:00:00+09:00"
+	}
 }

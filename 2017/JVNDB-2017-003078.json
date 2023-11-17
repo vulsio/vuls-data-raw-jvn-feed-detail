@@ -1,444 +1,444 @@
 {
-  "vulinfoid": "JVNDB-2017-003078",
-  "vulinfodata": {
-    "title": "Java で実装された複数の Action Message Format (AMF3) ライブラリに脆弱性",
-    "vulinfodescription": {
-      "overview": "Java で実装された複数の Action Message Format (AMF3) ライブラリに、次の複数の脆弱性が報告されています。  信頼できないデータのデシリアライズ (CWE-502) Java で実装された複数の AMF3 ライブラリのデシリアライズ処理では、AMF3 仕様で推奨されている flash.utils.IExternalizable ではなく java.io.Externalizable が使用されています。そのため、偽装された RMI サーバやコンテンツを細工された正規の RMI サーバから受信したシリアライズデータをデシリアライズすることで、任意のコードを実行される可能性があります。 報告者が本脆弱性の影響を確認している製品およびバージョンと、それぞれに対応する CVE 番号は次のとおりです。   　・Atlassian JIRA 4.2.4 から 6.3.0 より前のバージョンまで - CVE-2017-5983 　・Flamingo amf-serializer by Exadel 2.2.0 - CVE-2017-3201 　・GraniteDS 3.1.1.GA - CVE-2017-3199 　・Pivotal/Spring spring-flex - CVE-2017-3203 　・WebORB for Java by Midnight Coders 5.1.1.0 - CVE-2017-3207  これらのライブラリを使用している製品も本脆弱性の影響を受ける可能性があります。  動的に操作されるコードリソースの不適切な制御 (CWE-913) Java で実装された複数の AMF3 ライブラリのデシリアライズ処理において、パラメータ 0個のコンストラクタが存在する任意のクラスのオブジェクトを生成させることが可能です。そのため、任意の Java Beans オブジェクトの setter メソッドを呼び出される可能性があります。 報告者が本脆弱性の影響を確認している製品およびバージョンと、それぞれに対応する CVE 番号は次のとおりです。   　・Flamingo amf-serializer by Exadel 2.2.0 - CVE-2017-3202 　・Flex BlazeDS 4.6.0.23207 および 4.7.2 - CVE-2017-5641 　・GraniteDS 3.1.1.GA - CVE-2017-3200  これらのライブラリを使用している製品も本脆弱性の影響を受ける可能性があります。  XML 外部実体参照 (XXE) (CWE-611) Java で実装された複数の AMF3 ライブラリのデシリアライズ処理には、XML 外部実体参照 (XXE) に関する脆弱性が存在します。そのため、サーバ上の機微なデータを取得されたり、サービス運用妨害 (DoS) 攻撃やサーバサイドリクエストフォージェリ (SSRF) 攻撃が行われたりする可能性があります。 報告者が本脆弱性の影響を確認している製品およびバージョンと、それぞれに対応する CVE 番号は次のとおりです。   　・Flamingo amf-serializer by Exadel 2.2.0 - CVE-2017-3206 　・Flex BlazeDS4.6.0.23207 - CVE-2015-3269 　・GraniteDS 3.1.1.GA - CVE-2016-2340 (JVNVU#95707407) 　・WebORB for Java by Midnight Coders 5.1.1.0 - CVE-2017-3208  これらのライブラリを使用している製品も本脆弱性の影響を受ける可能性があります。  詳細は、報告者のアドバイザリをご確認ください。  アドバイザリ https://codewhitesec.blogspot.jp/2017/04/amf.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Flex BlazeDS",
-          "cpe": {
-            "text": "cpe:/a:apache:flex_blazeds",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.6.0.23207 および 4.7.2"
-          ]
-        },
-        {
-          "name": "Atlassian",
-          "productname": "JIRA",
-          "cpe": {
-            "text": "cpe:/a:atlassian:jira",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.2.4 から 6.3.0 より前のバージョンまで"
-          ]
-        },
-        {
-          "name": "Exadel",
-          "productname": "Exadel",
-          "cpe": {
-            "text": "cpe:/a:misc:exadel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "flamingo_amf-serializer 2.2.0"
-          ]
-        },
-        {
-          "name": "Granite Data Services",
-          "productname": "Granite Data Services",
-          "cpe": {
-            "text": "cpe:/a:graniteds:granite_data_services",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.1.1.GA"
-          ]
-        },
-        {
-          "name": "Greenplum",
-          "productname": "Spring spring-flex",
-          "cpe": {
-            "text": "cpe:/a:greenplum:spring-flex",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Midnight Coders",
-          "productname": "midnight_coders",
-          "cpe": {
-            "text": "cpe:/a:misc:midnight_coders",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "weborb_for_Java 5.1.1.0"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Automation Director",
-          "cpe": {
-            "text": "cpe:/a:hitachi:automation_director",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Compute Systems Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:compute_systems_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Device Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:device_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Replication Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:replication_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Tiered Storage Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:tiered_storage_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Tuning Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:tuning_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "細工されたシリアライズデータに対してデシリアライズ処理を行うことで、任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "製品ユーザの対策： [アップデートを適用する] 使用している製品に対して提供されているアップデートやパッチを適用してください。また、本脆弱性の影響を受けるのはサポートを終了した古いバージョンのみであると回答している開発者もいます。開発者によるサポートが行われている最新バージョンにアップデートしてください。  製品開発者の対策： [最新の JDK を使用する] 最新の Java Development Kit (JDK) を使用してください。JDK 8 update 121、JDK 7 update 131、JDK 6 update 141 では、デシリアライズ処理にフィルタ機能が実装されています。また、今後リリースされる予定の Java 9 ではさらなる保護の仕組みが提供される予定です。詳細は JEP 290 をご確認ください。  JEP 290 http://openjdk.java.net/jeps/290  [信用できないデータのデシリアライズ処理に注意する] 信頼できない情報元から受け取ったデータのデシリアライズ処理には注意が必要です。Java コーディングスタンダード CERT/Oracle 版の SER12-J と SER13-J をご参照ください。  SER12-J http://www.jpcert.or.jp/java-rules/ser12-j.html  SER13-J http://www.jpcert.or.jp/java-rules/ser13-j.html"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "[FLEX-35290] Deserialization of Untrusted Data via Externalizable.readExternal",
-          "url": "https://issues.apache.org/jira/browse/FLEX-35290"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "Apache Flex BlazeDS 4.7.3 Release Notes",
-          "url": "https://www.apache.org/dist/flex/BlazeDS/4.7.3/RELEASE_NOTES"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "Apache Flex Users - CVE-2015-3269 Apache Flex BlazeDS Insecure Xml Entity Expansion Vulnerability",
-          "url": "http://apache-flex-users.2333346.n4.nabble.com/CVE-2015-3269-Apache-Flex-BlazeDS-Insecure-Xml-Entity-Expansion-Vulnerability-td10976.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Atlassian",
-          "vulinfoid": "JIRA Security Advisory 2017-03-09",
-          "url": "https://confluence.atlassian.com/jira063/jira-security-advisory-2017-03-09-875604401.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Atlassian JIRA",
-          "vulinfoid": "JRASERVER-64077",
-          "url": "https://jira.atlassian.com/browse/JRASERVER-64077"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2017-127",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2017-127/"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2018-104",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2018-104/"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2017-127",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2017-127/"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2018-104",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2018-104/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-3269",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3269"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3201",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3201"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3208",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3208"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3199",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3199"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3203",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3203"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3207",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3207"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3202",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3202"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-5641",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5641"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-5983",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5983"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3200",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3200"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-2340",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2340"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3206",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3206"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT",
-          "vulinfoid": "Java セキュアコーディングスタンダード CERT/Oracle 版 - シリアライズ (SER) ",
-          "url": "https://www.jpcert.or.jp/java-rules/#c13"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95707407",
-          "url": "https://jvn.jp/vu/JVNVU95707407/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97538972",
-          "url": "http://jvn.jp/vu/JVNVU97538972/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3201",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3201"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3208",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3208"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3199",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3199"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3203",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3203"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3207",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3207"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3202",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3202"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-5983",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5983"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-2340",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-2340"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3200",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3200"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3206",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3206"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-5641",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5641"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3269",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3269"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#307983",
-          "url": "https://www.kb.cert.org/vuls/id/307983"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "code white",
-          "url": "http://codewhitesec.blogspot.jp/2017/04/amf.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-611",
-          "url": "https://cwe.mitre.org/data/definitions/611.html",
-          "title": "XML 外部エンティティ参照の不適切な制限"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-502",
-          "url": "https://cwe.mitre.org/data/definitions/502.html",
-          "title": "信頼できないデータのデシリアライゼーション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-913",
-          "url": "https://cwe.mitre.org/data/definitions/913.html",
-          "title": "動的に操作されるコードリソースの不適切な制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年05月12日]\\n  掲載\\n[2017年08月04日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Apache Software Foundation の情報を追加\\n  ・[FLEX-35290] Deserialization of Untrusted Data via Externalizable.readExternal \\n  ・Apache Flex BlazeDS 4.7.3 Release Notes \\n  ・Apache Flex Users - CVE-2015-3269 Apache Flex BlazeDS Insecure Xml Entity Expansion Vulnerability \\n  CWE による脆弱性タイプ一覧：内容を更新\\n  共通脆弱性識別子(CVE)：内容を更新\\n  参考情報：JVN (JVNVU#95707407)を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2340) を追加\\n  参考情報：JPCERT (Java セキュアコーディングスタンダード CERT/Oracle 版 - シリアライズ (SER) ) を追加\\n  参考情報：関連文書 (code white) を追加\\n[2017年10月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2017-127) を追加\\n[2018年02月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2018-104) を追加"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2018-04-11T13:54:37+09:00",
-          "description": "[2018年04月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-5641) を追加"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-08-30T15:29:35+09:00",
-          "description": "[2018年08月30日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3201) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3199) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3203) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3207) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3202) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3200) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3206) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3269) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3208) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-05-12T16:55:11+09:00",
-    "datelastupdated": "2018-08-30T15:34:51+09:00",
-    "datepublic": "2017-03-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-003078",
+	"vulinfodata": {
+		"title": "Java で実装された複数の Action Message Format (AMF3) ライブラリに脆弱性",
+		"vulinfodescription": {
+			"overview": "Java で実装された複数の Action Message Format (AMF3) ライブラリに、次の複数の脆弱性が報告されています。  信頼できないデータのデシリアライズ (CWE-502) Java で実装された複数の AMF3 ライブラリのデシリアライズ処理では、AMF3 仕様で推奨されている flash.utils.IExternalizable ではなく java.io.Externalizable が使用されています。そのため、偽装された RMI サーバやコンテンツを細工された正規の RMI サーバから受信したシリアライズデータをデシリアライズすることで、任意のコードを実行される可能性があります。 報告者が本脆弱性の影響を確認している製品およびバージョンと、それぞれに対応する CVE 番号は次のとおりです。   　・Atlassian JIRA 4.2.4 から 6.3.0 より前のバージョンまで - CVE-2017-5983 　・Flamingo amf-serializer by Exadel 2.2.0 - CVE-2017-3201 　・GraniteDS 3.1.1.GA - CVE-2017-3199 　・Pivotal/Spring spring-flex - CVE-2017-3203 　・WebORB for Java by Midnight Coders 5.1.1.0 - CVE-2017-3207  これらのライブラリを使用している製品も本脆弱性の影響を受ける可能性があります。  動的に操作されるコードリソースの不適切な制御 (CWE-913) Java で実装された複数の AMF3 ライブラリのデシリアライズ処理において、パラメータ 0個のコンストラクタが存在する任意のクラスのオブジェクトを生成させることが可能です。そのため、任意の Java Beans オブジェクトの setter メソッドを呼び出される可能性があります。 報告者が本脆弱性の影響を確認している製品およびバージョンと、それぞれに対応する CVE 番号は次のとおりです。   　・Flamingo amf-serializer by Exadel 2.2.0 - CVE-2017-3202 　・Flex BlazeDS 4.6.0.23207 および 4.7.2 - CVE-2017-5641 　・GraniteDS 3.1.1.GA - CVE-2017-3200  これらのライブラリを使用している製品も本脆弱性の影響を受ける可能性があります。  XML 外部実体参照 (XXE) (CWE-611) Java で実装された複数の AMF3 ライブラリのデシリアライズ処理には、XML 外部実体参照 (XXE) に関する脆弱性が存在します。そのため、サーバ上の機微なデータを取得されたり、サービス運用妨害 (DoS) 攻撃やサーバサイドリクエストフォージェリ (SSRF) 攻撃が行われたりする可能性があります。 報告者が本脆弱性の影響を確認している製品およびバージョンと、それぞれに対応する CVE 番号は次のとおりです。   　・Flamingo amf-serializer by Exadel 2.2.0 - CVE-2017-3206 　・Flex BlazeDS4.6.0.23207 - CVE-2015-3269 　・GraniteDS 3.1.1.GA - CVE-2016-2340 (JVNVU#95707407) 　・WebORB for Java by Midnight Coders 5.1.1.0 - CVE-2017-3208  これらのライブラリを使用している製品も本脆弱性の影響を受ける可能性があります。  詳細は、報告者のアドバイザリをご確認ください。  アドバイザリ https://codewhitesec.blogspot.jp/2017/04/amf.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Flex BlazeDS",
+					"cpe": {
+						"text": "cpe:/a:apache:flex_blazeds",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.6.0.23207 および 4.7.2"
+					]
+				},
+				{
+					"name": "Atlassian",
+					"productname": "JIRA",
+					"cpe": {
+						"text": "cpe:/a:atlassian:jira",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.2.4 から 6.3.0 より前のバージョンまで"
+					]
+				},
+				{
+					"name": "Exadel",
+					"productname": "Exadel",
+					"cpe": {
+						"text": "cpe:/a:misc:exadel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"flamingo_amf-serializer 2.2.0"
+					]
+				},
+				{
+					"name": "Granite Data Services",
+					"productname": "Granite Data Services",
+					"cpe": {
+						"text": "cpe:/a:graniteds:granite_data_services",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.1.1.GA"
+					]
+				},
+				{
+					"name": "Greenplum",
+					"productname": "Spring spring-flex",
+					"cpe": {
+						"text": "cpe:/a:greenplum:spring-flex",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Midnight Coders",
+					"productname": "midnight_coders",
+					"cpe": {
+						"text": "cpe:/a:misc:midnight_coders",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"weborb_for_Java 5.1.1.0"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Automation Director",
+					"cpe": {
+						"text": "cpe:/a:hitachi:automation_director",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Compute Systems Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:compute_systems_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Device Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:device_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Replication Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:replication_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Tiered Storage Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:tiered_storage_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Tuning Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:tuning_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "細工されたシリアライズデータに対してデシリアライズ処理を行うことで、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "製品ユーザの対策： [アップデートを適用する] 使用している製品に対して提供されているアップデートやパッチを適用してください。また、本脆弱性の影響を受けるのはサポートを終了した古いバージョンのみであると回答している開発者もいます。開発者によるサポートが行われている最新バージョンにアップデートしてください。  製品開発者の対策： [最新の JDK を使用する] 最新の Java Development Kit (JDK) を使用してください。JDK 8 update 121、JDK 7 update 131、JDK 6 update 141 では、デシリアライズ処理にフィルタ機能が実装されています。また、今後リリースされる予定の Java 9 ではさらなる保護の仕組みが提供される予定です。詳細は JEP 290 をご確認ください。  JEP 290 http://openjdk.java.net/jeps/290  [信用できないデータのデシリアライズ処理に注意する] 信頼できない情報元から受け取ったデータのデシリアライズ処理には注意が必要です。Java コーディングスタンダード CERT/Oracle 版の SER12-J と SER13-J をご参照ください。  SER12-J http://www.jpcert.or.jp/java-rules/ser12-j.html  SER13-J http://www.jpcert.or.jp/java-rules/ser13-j.html"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "[FLEX-35290] Deserialization of Untrusted Data via Externalizable.readExternal",
+					"url": "https://issues.apache.org/jira/browse/FLEX-35290"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "Apache Flex BlazeDS 4.7.3 Release Notes",
+					"url": "https://www.apache.org/dist/flex/BlazeDS/4.7.3/RELEASE_NOTES"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "Apache Flex Users - CVE-2015-3269 Apache Flex BlazeDS Insecure Xml Entity Expansion Vulnerability",
+					"url": "http://apache-flex-users.2333346.n4.nabble.com/CVE-2015-3269-Apache-Flex-BlazeDS-Insecure-Xml-Entity-Expansion-Vulnerability-td10976.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Atlassian",
+					"vulinfoid": "JIRA Security Advisory 2017-03-09",
+					"url": "https://confluence.atlassian.com/jira063/jira-security-advisory-2017-03-09-875604401.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Atlassian JIRA",
+					"vulinfoid": "JRASERVER-64077",
+					"url": "https://jira.atlassian.com/browse/JRASERVER-64077"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2017-127",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2017-127/"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2018-104",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2018-104/"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2017-127",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2017-127/"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2018-104",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2018-104/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-3269",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3269"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3201",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3201"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3208",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3208"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3199",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3199"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3203",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3203"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3207",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3207"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3202",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3202"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-5641",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5641"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-5983",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5983"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3200",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3200"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-2340",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2340"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3206",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3206"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT",
+					"vulinfoid": "Java セキュアコーディングスタンダード CERT/Oracle 版 - シリアライズ (SER) ",
+					"url": "https://www.jpcert.or.jp/java-rules/#c13"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95707407",
+					"url": "https://jvn.jp/vu/JVNVU95707407/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97538972",
+					"url": "http://jvn.jp/vu/JVNVU97538972/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3201",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3201"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3208",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3208"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3199",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3199"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3203",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3203"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3207",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3207"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3202",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3202"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-5983",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5983"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-2340",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-2340"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3200",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3200"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3206",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3206"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-5641",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-5641"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3269",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3269"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#307983",
+					"url": "https://www.kb.cert.org/vuls/id/307983"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "code white",
+					"url": "http://codewhitesec.blogspot.jp/2017/04/amf.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-611",
+					"url": "https://cwe.mitre.org/data/definitions/611.html",
+					"title": "XML 外部エンティティ参照の不適切な制限"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-502",
+					"url": "https://cwe.mitre.org/data/definitions/502.html",
+					"title": "信頼できないデータのデシリアライゼーション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-913",
+					"url": "https://cwe.mitre.org/data/definitions/913.html",
+					"title": "動的に操作されるコードリソースの不適切な制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年05月12日]\\n  掲載\\n[2017年08月04日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Apache Software Foundation の情報を追加\\n  ・[FLEX-35290] Deserialization of Untrusted Data via Externalizable.readExternal \\n  ・Apache Flex BlazeDS 4.7.3 Release Notes \\n  ・Apache Flex Users - CVE-2015-3269 Apache Flex BlazeDS Insecure Xml Entity Expansion Vulnerability \\n  CWE による脆弱性タイプ一覧：内容を更新\\n  共通脆弱性識別子(CVE)：内容を更新\\n  参考情報：JVN (JVNVU#95707407)を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2340) を追加\\n  参考情報：JPCERT (Java セキュアコーディングスタンダード CERT/Oracle 版 - シリアライズ (SER) ) を追加\\n  参考情報：関連文書 (code white) を追加\\n[2017年10月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2017-127) を追加\\n[2018年02月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2018-104) を追加"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2018-04-11T13:54:37+09:00",
+					"description": "[2018年04月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-5641) を追加"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-08-30T15:29:35+09:00",
+					"description": "[2018年08月30日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3201) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3199) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3203) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3207) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3202) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3200) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3206) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3269) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3208) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-05-12T16:55:11+09:00",
+		"datelastupdated": "2018-08-30T15:34:51+09:00",
+		"datepublic": "2017-03-09T00:00:00+09:00"
+	}
 }

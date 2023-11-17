@@ -1,105 +1,105 @@
 {
-  "vulinfoid": "JVNDB-2013-005998",
-  "vulinfodata": {
-    "title": "OpenLDAP の rwm オーバーレイにおけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenLDAP の rwm オーバーレイは、参照を適切にカウントしないため、サービス運用妨害 (slapd クラッシュ) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenLDAP Foundation",
-          "productname": "OpenLDAP",
-          "cpe": {
-            "text": "cpe:/a:openldap:openldap",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.4.23",
-            "2.4.36 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、検索リクエストの送信直後にバインドを解除されることで、rwm_op_search がセッションコンテキストを使用しているにも関わらず、rwm_conn_destroy がセッションコンテキストを解放してしまうため、サービス運用妨害 (slapd クラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "OpenLDAP Issue Tracking System",
-          "vulinfoid": "slapd crashes on multi core machines if a search request is *immediately* followed by an unbind",
-          "url": "http://www.openldap.org/its/index.cgi/Incoming?id=7723"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1019490",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1019490"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:0126",
-          "url": "http://rhn.redhat.com/errata/RHSA-2014-0126.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:0206",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-0206.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-4449",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4449"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-4449",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4449"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-189",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
-          "title": "数値処理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年02月07日]\\n  掲載\\n[2015年08月10日]\\n  ベンダ情報：レッドハット (RHSA-2014:0206) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-02-07T16:35:57+09:00",
-    "datelastupdated": "2015-08-10T17:26:38+09:00",
-    "datepublic": "2013-11-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-005998",
+	"vulinfodata": {
+		"title": "OpenLDAP の rwm オーバーレイにおけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenLDAP の rwm オーバーレイは、参照を適切にカウントしないため、サービス運用妨害 (slapd クラッシュ) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenLDAP Foundation",
+					"productname": "OpenLDAP",
+					"cpe": {
+						"text": "cpe:/a:openldap:openldap",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.4.23",
+						"2.4.36 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、検索リクエストの送信直後にバインドを解除されることで、rwm_op_search がセッションコンテキストを使用しているにも関わらず、rwm_conn_destroy がセッションコンテキストを解放してしまうため、サービス運用妨害 (slapd クラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenLDAP Issue Tracking System",
+					"vulinfoid": "slapd crashes on multi core machines if a search request is *immediately* followed by an unbind",
+					"url": "http://www.openldap.org/its/index.cgi/Incoming?id=7723"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1019490",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1019490"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:0126",
+					"url": "http://rhn.redhat.com/errata/RHSA-2014-0126.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:0206",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-0206.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-4449",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4449"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-4449",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4449"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-189",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+					"title": "数値処理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年02月07日]\\n  掲載\\n[2015年08月10日]\\n  ベンダ情報：レッドハット (RHSA-2014:0206) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-02-07T16:35:57+09:00",
+		"datelastupdated": "2015-08-10T17:26:38+09:00",
+		"datepublic": "2013-11-04T00:00:00+09:00"
+	}
 }

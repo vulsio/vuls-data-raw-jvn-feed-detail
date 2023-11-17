@@ -1,211 +1,211 @@
 {
-  "vulinfoid": "JVNDB-2021-001967",
-  "vulinfodata": {
-    "title": "Microsoft Windows の印刷スプーラーにリモートコード実行の脆弱性",
-    "vulinfodescription": {
-      "overview": "Microsoft Windows の Print Spooler サービスには、RpcAddPrinterDriverEx() 関数のアクセス制限の不備に起因するリモートコード実行の脆弱性が存在します。  Print Spooler サービスは、印刷において印刷待ちを実現するためのサービスです。RpcAddPrinterDriverEx() 関数は、上記サービスでプリンタドライバのインストールに用いられます。パラメータ DRIVER_CONTAINER オブジェクトとパラメータ dwFileCopyFlags によって、インストールするプリンタドライバとファイルのコピー方法を制御しています。 認証ユーザであれば、RpcAddPrinterDriverEx() 関数を実行可能です。そのため、認証情報を取得した攻撃者は、リモートサーバ上のドライバを指定し、インストールできます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 10",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_10",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 7",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_7",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 8.1",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_8.1",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows RT 8.1",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_rt_8.1",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2008",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2008",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R2"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2012",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2012",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R2"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2016",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2016",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2019",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2019",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "認証された遠隔の第三者によって、SYSTEM 権限で任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] <a href=\"https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34527\" target=\"_blank\">Microsoftが公開している情報</a>をもとに、最新版へアップデートしてください。 またMicrosoftは、アップデート実施後に以下の設定を実施することを推奨しています。 詳しくは、<a href=\"https://support.microsoft.com/ja-jp/topic/kb5005010-restricting-installation-of-new-printer-drivers-after-applying-the-july-6-2021-updates-31b91c02-05bc-4ada-a7ea-183b129578a7\" target=\"_blank\">KB5005010</a> の内容を参照ください。  　* グループポリシーを使用して、<a href=\"https://docs.microsoft.com/ja-jp/windows-hardware/drivers/print/introduction-to-point-and-print\" target=\"_blank\">ポイント アンド プリント</a>を無効にする 　* 非管理者アカウントがプリンタドライバをインストールできないよう制限する  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* Print Spooler サービスを停止し、無効にする 　* グループポリシーを使用して、インバウンドからのリモート印刷を無効にする"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "3.1.4.4.8 RpcAddPrinterDriverEx (Opnum 89)",
-          "url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/b96cc497-59e5-4510-ab04-5484993b259b"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "3.1.4.1.8.3 DRIVER_CONTAINER Parameters",
-          "url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/353ff796-6fb3-41cf-8b35-0022dd53d886"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "Windows Print Spooler の脆弱性情報 (CVE-2021-34527) に対するセキュリティ更新プログラムの定例外での公開",
-          "url": "https://msrc-blog.microsoft.com/2021/07/06/20210707_windowsprintspooleroob/"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft",
-          "vulinfoid": "ポイント アンド プリントの概要",
-          "url": "https://docs.microsoft.com/ja-jp/windows-hardware/drivers/print/introduction-to-point-and-print"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft Knowledge Base",
-          "vulinfoid": "KB5005010: Restricting installation of new printer drivers after applying the July 6, 2021 updates",
-          "url": "https://support.microsoft.com/ja-jp/topic/kb5005010-restricting-installation-of-new-printer-drivers-after-applying-the-july-6-2021-updates-31b91c02-05bc-4ada-a7ea-183b129578a7"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Update Guide",
-          "vulinfoid": "CVE-2021-34527 | Windows Print Spooler Remote Code Execution Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2021-34527"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-34527",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34527"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "Microsoft Windows 製品の Windows Print Spooler の脆弱性対策について(CVE-2021-34527)",
-          "url": "https://www.ipa.go.jp/security/ciadr/vul/20210705-ms.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2021-0029",
-          "url": "https://www.jpcert.or.jp/at/2021/at210029.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96262037",
-          "url": "http://jvn.jp/cert/JVNVU96262037"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-34527",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-34527"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Current Activity",
-          "vulinfoid": "PrintNightmare, Critical Windows Print Spooler Vulnerability",
-          "url": "https://us-cert.cisa.gov/ncas/current-activity/2021/06/30/printnightmare-critical-windows-print-spooler-vulnerability"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#383432",
-          "url": "https://kb.cert.org/vuls/id/383432"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-07-06T11:42:54+09:00",
-          "description": "[2021年07月06日]   掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-07-08T15:17:02+09:00",
-          "description": "[2021年07月08日]\\n  対策：内容を更新\\n  ベンダ情報：マイクロソフト (Windows Print Spooler の脆弱性情報 (CVE-2021-34527) に対するセキュリティ更新プログラムの定例外での公開) を追加\\n  ベンダ情報：マイクロソフト (ポイント アンド プリントの概要) を追加\\n  ベンダ情報：マイクロソフト (KB5005010: Restricting installation of new printer drivers after applying the July 6, 2021 updates) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-07-06T15:07:47+09:00",
-    "datelastupdated": "2021-07-08T17:31:40+09:00",
-    "datepublic": "2021-07-05T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001967",
+	"vulinfodata": {
+		"title": "Microsoft Windows の印刷スプーラーにリモートコード実行の脆弱性",
+		"vulinfodescription": {
+			"overview": "Microsoft Windows の Print Spooler サービスには、RpcAddPrinterDriverEx() 関数のアクセス制限の不備に起因するリモートコード実行の脆弱性が存在します。  Print Spooler サービスは、印刷において印刷待ちを実現するためのサービスです。RpcAddPrinterDriverEx() 関数は、上記サービスでプリンタドライバのインストールに用いられます。パラメータ DRIVER_CONTAINER オブジェクトとパラメータ dwFileCopyFlags によって、インストールするプリンタドライバとファイルのコピー方法を制御しています。 認証ユーザであれば、RpcAddPrinterDriverEx() 関数を実行可能です。そのため、認証情報を取得した攻撃者は、リモートサーバ上のドライバを指定し、インストールできます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 10",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_10",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 7",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_7",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 8.1",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_8.1",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows RT 8.1",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_rt_8.1",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2008",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2008",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R2"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2012",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2012",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R2"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2016",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2016",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2019",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2019",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "認証された遠隔の第三者によって、SYSTEM 権限で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] <a href=\"https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34527\" target=\"_blank\">Microsoftが公開している情報</a>をもとに、最新版へアップデートしてください。 またMicrosoftは、アップデート実施後に以下の設定を実施することを推奨しています。 詳しくは、<a href=\"https://support.microsoft.com/ja-jp/topic/kb5005010-restricting-installation-of-new-printer-drivers-after-applying-the-july-6-2021-updates-31b91c02-05bc-4ada-a7ea-183b129578a7\" target=\"_blank\">KB5005010</a> の内容を参照ください。  　* グループポリシーを使用して、<a href=\"https://docs.microsoft.com/ja-jp/windows-hardware/drivers/print/introduction-to-point-and-print\" target=\"_blank\">ポイント アンド プリント</a>を無効にする 　* 非管理者アカウントがプリンタドライバをインストールできないよう制限する  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* Print Spooler サービスを停止し、無効にする 　* グループポリシーを使用して、インバウンドからのリモート印刷を無効にする"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "3.1.4.4.8 RpcAddPrinterDriverEx (Opnum 89)",
+					"url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/b96cc497-59e5-4510-ab04-5484993b259b"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "3.1.4.1.8.3 DRIVER_CONTAINER Parameters",
+					"url": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-rprn/353ff796-6fb3-41cf-8b35-0022dd53d886"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "Windows Print Spooler の脆弱性情報 (CVE-2021-34527) に対するセキュリティ更新プログラムの定例外での公開",
+					"url": "https://msrc-blog.microsoft.com/2021/07/06/20210707_windowsprintspooleroob/"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "ポイント アンド プリントの概要",
+					"url": "https://docs.microsoft.com/ja-jp/windows-hardware/drivers/print/introduction-to-point-and-print"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Knowledge Base",
+					"vulinfoid": "KB5005010: Restricting installation of new printer drivers after applying the July 6, 2021 updates",
+					"url": "https://support.microsoft.com/ja-jp/topic/kb5005010-restricting-installation-of-new-printer-drivers-after-applying-the-july-6-2021-updates-31b91c02-05bc-4ada-a7ea-183b129578a7"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Update Guide",
+					"vulinfoid": "CVE-2021-34527 | Windows Print Spooler Remote Code Execution Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2021-34527"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-34527",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34527"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "Microsoft Windows 製品の Windows Print Spooler の脆弱性対策について(CVE-2021-34527)",
+					"url": "https://www.ipa.go.jp/security/ciadr/vul/20210705-ms.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2021-0029",
+					"url": "https://www.jpcert.or.jp/at/2021/at210029.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96262037",
+					"url": "http://jvn.jp/cert/JVNVU96262037"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-34527",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-34527"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Current Activity",
+					"vulinfoid": "PrintNightmare, Critical Windows Print Spooler Vulnerability",
+					"url": "https://us-cert.cisa.gov/ncas/current-activity/2021/06/30/printnightmare-critical-windows-print-spooler-vulnerability"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#383432",
+					"url": "https://kb.cert.org/vuls/id/383432"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-07-06T11:42:54+09:00",
+					"description": "[2021年07月06日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-07-08T15:17:02+09:00",
+					"description": "[2021年07月08日]\\n  対策：内容を更新\\n  ベンダ情報：マイクロソフト (Windows Print Spooler の脆弱性情報 (CVE-2021-34527) に対するセキュリティ更新プログラムの定例外での公開) を追加\\n  ベンダ情報：マイクロソフト (ポイント アンド プリントの概要) を追加\\n  ベンダ情報：マイクロソフト (KB5005010: Restricting installation of new printer drivers after applying the July 6, 2021 updates) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2021-07-06T15:07:47+09:00",
+		"datelastupdated": "2021-07-08T17:31:40+09:00",
+		"datepublic": "2021-07-05T00:00:00+09:00"
+	}
 }

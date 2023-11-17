@@ -1,167 +1,167 @@
 {
-  "vulinfoid": "JVNDB-2021-001011",
-  "vulinfodata": {
-    "title": "M&M Software 製 fdtCONTAINER に信頼できないデータのデシリアライズの脆弱性",
-    "vulinfodescription": {
-      "overview": "M&M Software 社 (WAGO Kontakttechnik 社子会社) が提供し、RTIS および PACTware を含む他の製品にも使われている fdtCONTAINER コンポーネントには、信頼できないデータのデシリアライズ (CWE-502) の脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "M&M Software GmbH",
-          "productname": "FDT 1.2.x をベースにした dtmINSPECTOR",
-          "cpe": {
-            "text": "cpe:/a:misc:m%26m_software_dtminspector_based_on_fdt_1.2x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3"
-          ]
-        },
-        {
-          "name": "M&M Software GmbH",
-          "productname": "fdtCONTAINER application",
-          "cpe": {
-            "text": "cpe:/a:misc:m%26m_software_fdtcontainer_application",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 4.5 より前のバージョン",
-            "バージョン 4.5.0 から 4.5.20304.x より前のバージョン",
-            "バージョン 4.6.0 から 4.6.20304.x より前のバージョン"
-          ]
-        },
-        {
-          "name": "M&M Software GmbH",
-          "productname": "fdtCONTAINER component",
-          "cpe": {
-            "text": "cpe:/a:misc:m%26m_software_fdtcontainer_component",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.5 より前のバージョン",
-            "バージョン 3.5.0 から 3.5.20304.x より前のバージョン",
-            "バージョン 3.6.0 から 3.6.20304.x より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者によって、細工されたプロジェクトファイルをユーザが読み込むことで、不正なコードを秘密裏に実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、利用方法に応じて下記のオプションから修正済みバージョンにアップデートしてください。 詳細は開発者へお問い合わせください。  オプション1：確認されている攻撃手法に対処し、既存のプロジェクトファイルと互換性があるが、非推奨のデシリアライゼーション技術を利用している fdtCONTAINER component、fdtCONTAINER application  　* fdtCONTAINER component バージョン 3.5.20304.x から 3.7 より前のバージョン 　* fdtCONTAINER application バージョン 4.6.20304.x から 4.7 より前のバージョン  オプション2：既存のプロジェクトファイルと互換性がないが、推奨される安全なデシリアライゼーション技術を利用している  fdtCONTAINER component、fdtCONTAINER application  　* fdtCONTAINER component バージョン 3.7 およびそれ以降のバージョン 　* fdtCONTAINER application バージョン 4.7 およびそれ以降のバージョン  dtmINSPECTOR  　* 修正済みバージョンを2021年第一四半期に提供予定とのことです。  RTIS  　* 開発者が提供する<a href=\"https://www.emerson.com/documents/automation/emr-rmt20004-rev3-en-7259618.pdf\"target=\"blank\">情報 (PDF) </a>を参照してください。  PEPPERL+FUCHS PACTware  　* <a href=\"https://cert.vde.com/de-de/advisories/vde-2021-001\"target=\"blank\">参考情報</a>を参照してください。  Weidm&#252;ller WI Manager  　* <a href=\"https://cert.vde.com/de-de/advisories/vde-2021-002\"target=\"blank\">参考情報</a>を参照してください。  [ワークアラウンドを実施する] 開発者が提供する情報をもとに、回避策を適用することで本脆弱性の影響を軽減できます。  三菱電機株式会社 MELSOFT FieldDeviceConfigurator  　* 開発者が提供する<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2020-020.pdf\"target=\"blank\">情報 (PDF) </a>を参照してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Emerson Cyber Security Notification",
-          "vulinfoid": "Emerson Cybersecurity Notification Alert EMR.RMT20004-3 (PDF)",
-          "url": "https://www.emerson.com/documents/automation/emr-rmt20004-rev3-en-7259618.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSOFT FieldDeviceConfigurator 製品における任意のコードが実行される脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2020-020.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-12525",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12525"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-021-05",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-021-05"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94008268",
-          "url": "http://jvn.jp/cert/JVNVU94008268"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-12525",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-12525"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "VDE-2020-048 (WAGO/M&M Software: Deserialization of untrusted data in fdtContainer)",
-          "url": "https://cert.vde.com/en-us/advisories/vde-2020-048"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "VDE-2021-001 (PEPPERL+FUCHS: Vulnerability allowing code-excution in PACTware <= 5.0.5.31)",
-          "url": "https://cert.vde.com/en-us/advisories/vde-2021-001"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "VDE-2021-002 (WEIDMUELLER: WI Manager affected by fdtContainer vulnerability)",
-          "url": "https://cert.vde.com/de-de/advisories/vde-2021-002"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-502",
-          "url": "https://cwe.mitre.org/data/definitions/502.html",
-          "title": "信頼できないデータのデシリアライゼーション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-01-25T11:48:33+09:00",
-          "description": "[2021年01月25日]   掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-02-17T11:49:37+09:00",
-          "description": "[2021年02月17日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Emerson Cyber Security Notification (Emerson Cybersecurity Notification Alert EMR.RMT20004-3 (PDF)) を追加\\n  ベンダ情報：三菱電機株式会社 (MELSOFT FieldDeviceConfigurator 製品における任意のコードが実行される脆弱性) を追加\\n  参考情報：関連文書 (VDE-2021-002 (WEIDMUELLER: WI Manager affected by fdtContainer vulnerability)) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2021-06-21T11:22:51+09:00",
-          "description": "[2021年06月21日]\\n  影響を受けるシステム：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-01-25T15:56:47+09:00",
-    "datelastupdated": "2021-06-21T17:28:49+09:00",
-    "datepublic": "2021-01-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001011",
+	"vulinfodata": {
+		"title": "M&M Software 製 fdtCONTAINER に信頼できないデータのデシリアライズの脆弱性",
+		"vulinfodescription": {
+			"overview": "M&M Software 社 (WAGO Kontakttechnik 社子会社) が提供し、RTIS および PACTware を含む他の製品にも使われている fdtCONTAINER コンポーネントには、信頼できないデータのデシリアライズ (CWE-502) の脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "M&M Software GmbH",
+					"productname": "FDT 1.2.x をベースにした dtmINSPECTOR",
+					"cpe": {
+						"text": "cpe:/a:misc:m%26m_software_dtminspector_based_on_fdt_1.2x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3"
+					]
+				},
+				{
+					"name": "M&M Software GmbH",
+					"productname": "fdtCONTAINER application",
+					"cpe": {
+						"text": "cpe:/a:misc:m%26m_software_fdtcontainer_application",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 4.5 より前のバージョン",
+						"バージョン 4.5.0 から 4.5.20304.x より前のバージョン",
+						"バージョン 4.6.0 から 4.6.20304.x より前のバージョン"
+					]
+				},
+				{
+					"name": "M&M Software GmbH",
+					"productname": "fdtCONTAINER component",
+					"cpe": {
+						"text": "cpe:/a:misc:m%26m_software_fdtcontainer_component",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.5 より前のバージョン",
+						"バージョン 3.5.0 から 3.5.20304.x より前のバージョン",
+						"バージョン 3.6.0 から 3.6.20304.x より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者によって、細工されたプロジェクトファイルをユーザが読み込むことで、不正なコードを秘密裏に実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、利用方法に応じて下記のオプションから修正済みバージョンにアップデートしてください。 詳細は開発者へお問い合わせください。  オプション1：確認されている攻撃手法に対処し、既存のプロジェクトファイルと互換性があるが、非推奨のデシリアライゼーション技術を利用している fdtCONTAINER component、fdtCONTAINER application  　* fdtCONTAINER component バージョン 3.5.20304.x から 3.7 より前のバージョン 　* fdtCONTAINER application バージョン 4.6.20304.x から 4.7 より前のバージョン  オプション2：既存のプロジェクトファイルと互換性がないが、推奨される安全なデシリアライゼーション技術を利用している  fdtCONTAINER component、fdtCONTAINER application  　* fdtCONTAINER component バージョン 3.7 およびそれ以降のバージョン 　* fdtCONTAINER application バージョン 4.7 およびそれ以降のバージョン  dtmINSPECTOR  　* 修正済みバージョンを2021年第一四半期に提供予定とのことです。  RTIS  　* 開発者が提供する<a href=\"https://www.emerson.com/documents/automation/emr-rmt20004-rev3-en-7259618.pdf\"target=\"blank\">情報 (PDF) </a>を参照してください。  PEPPERL+FUCHS PACTware  　* <a href=\"https://cert.vde.com/de-de/advisories/vde-2021-001\"target=\"blank\">参考情報</a>を参照してください。  Weidm&#252;ller WI Manager  　* <a href=\"https://cert.vde.com/de-de/advisories/vde-2021-002\"target=\"blank\">参考情報</a>を参照してください。  [ワークアラウンドを実施する] 開発者が提供する情報をもとに、回避策を適用することで本脆弱性の影響を軽減できます。  三菱電機株式会社 MELSOFT FieldDeviceConfigurator  　* 開発者が提供する<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2020-020.pdf\"target=\"blank\">情報 (PDF) </a>を参照してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Emerson Cyber Security Notification",
+					"vulinfoid": "Emerson Cybersecurity Notification Alert EMR.RMT20004-3 (PDF)",
+					"url": "https://www.emerson.com/documents/automation/emr-rmt20004-rev3-en-7259618.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSOFT FieldDeviceConfigurator 製品における任意のコードが実行される脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2020-020.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-12525",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-12525"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-021-05",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-021-05"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94008268",
+					"url": "http://jvn.jp/cert/JVNVU94008268"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-12525",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-12525"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "VDE-2020-048 (WAGO/M&M Software: Deserialization of untrusted data in fdtContainer)",
+					"url": "https://cert.vde.com/en-us/advisories/vde-2020-048"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "VDE-2021-001 (PEPPERL+FUCHS: Vulnerability allowing code-excution in PACTware <= 5.0.5.31)",
+					"url": "https://cert.vde.com/en-us/advisories/vde-2021-001"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "VDE-2021-002 (WEIDMUELLER: WI Manager affected by fdtContainer vulnerability)",
+					"url": "https://cert.vde.com/de-de/advisories/vde-2021-002"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-502",
+					"url": "https://cwe.mitre.org/data/definitions/502.html",
+					"title": "信頼できないデータのデシリアライゼーション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-01-25T11:48:33+09:00",
+					"description": "[2021年01月25日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-02-17T11:49:37+09:00",
+					"description": "[2021年02月17日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Emerson Cyber Security Notification (Emerson Cybersecurity Notification Alert EMR.RMT20004-3 (PDF)) を追加\\n  ベンダ情報：三菱電機株式会社 (MELSOFT FieldDeviceConfigurator 製品における任意のコードが実行される脆弱性) を追加\\n  参考情報：関連文書 (VDE-2021-002 (WEIDMUELLER: WI Manager affected by fdtContainer vulnerability)) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2021-06-21T11:22:51+09:00",
+					"description": "[2021年06月21日]\\n  影響を受けるシステム：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2021-01-25T15:56:47+09:00",
+		"datelastupdated": "2021-06-21T17:28:49+09:00",
+		"datepublic": "2021-01-22T00:00:00+09:00"
+	}
 }

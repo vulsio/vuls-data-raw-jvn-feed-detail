@@ -1,167 +1,167 @@
 {
-  "vulinfoid": "JVNDB-2013-005585",
-  "vulinfodata": {
-    "title": "PHP の ext/openssl/openssl.c 内の asn1_time_to_time_t 関数における任意のコードを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "PHP の ext/openssl/openssl.c 内の asn1_time_to_time_t 関数は、X.509 証明書の (1) notBefore および (2) notAfter タイムスタンプを適切に解析しないため、任意のコードを実行される、またはサービス運用妨害 (メモリ破損) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The PHP Group",
-          "productname": "PHP",
-          "cpe": {
-            "text": "cpe:/a:php:php",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.3.28 未満",
-            "5.4.23 未満の 5.4.x",
-            "5.5.7 未満の 5.5.x"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.7.5",
-            "v10.8.5",
-            "v10.9",
-            "v10.9.1"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X Server",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.7.5"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、openssl_x509_parse 関数によって適切に処理されない巧妙に細工された証明書を介して、任意のコードを実行される、またはサービス運用妨害 (メモリ破損) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2014-02-25-1",
-          "url": "http://lists.apple.com/archives/security-announce/2014/Feb/msg00000.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT6150",
-          "url": "http://support.apple.com/kb/HT6150"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT6150",
-          "url": "http://support.apple.com/kb/HT6150?viewlocale=ja_JP"
-        },
-        {
-          "type": "vendor",
-          "name": "InterWorx",
-          "vulinfoid": "InterWorx Version 5.0.14 Released on Beta Channel!",
-          "url": "http://forums.interworx.com/threads/8000-InterWorx-Version-5-0-14-Released-on-Beta-Channel!"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1036830",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1036830"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "Multiple Buffer Errors vulnerabilities in PHP",
-          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_buffer_errors_vulnerabilities_in1"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "Fix CVE-2013-6420 - memory corruption in openssl_x509_parse",
-          "url": "http://git.php.net/?p=php-src.git;a=commit;h=c1224573c773b6845e83505f717fbf820fc18415"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "PHP 5 ChangeLog",
-          "url": "http://www.php.net/ChangeLog-5.php"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-6420",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6420"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95868425",
-          "url": "http://jvn.jp/vu/JVNVU95868425/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-6420",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6420"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Advisory 01/2013: PHP openssl_x509_parse() Memory Corruption Vulnerability",
-          "url": "https://www.sektioneins.de/advisories/advisory-012013-php-openssl_x509_parse-memory-corruption-vulnerability.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年12月18日]\\n  掲載\\n[2014年02月28日]\\n  影響を受けるシステム：アップル (HT6150) の情報を追加\\n  ベンダ情報：アップル (APPLE-SA-2014-02-25-1) を追加\\n  ベンダ情報：アップル (HT6150) を追加\\n  参考情報：JVN (JVNVU#95868425) を追加\\n[2014年06月02日]\\n  ベンダ情報：オラクル (Multiple Buffer Errors vulnerabilities in PHP) を追加\\n[2015年08月10日]\\n  ベンダ情報：InterWorx (InterWorx Version 5.0.14 Released on Beta Channel!) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-12-18T16:18:16+09:00",
-    "datelastupdated": "2015-08-10T11:54:19+09:00",
-    "datepublic": "2013-12-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-005585",
+	"vulinfodata": {
+		"title": "PHP の ext/openssl/openssl.c 内の asn1_time_to_time_t 関数における任意のコードを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "PHP の ext/openssl/openssl.c 内の asn1_time_to_time_t 関数は、X.509 証明書の (1) notBefore および (2) notAfter タイムスタンプを適切に解析しないため、任意のコードを実行される、またはサービス運用妨害 (メモリ破損) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The PHP Group",
+					"productname": "PHP",
+					"cpe": {
+						"text": "cpe:/a:php:php",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.3.28 未満",
+						"5.4.23 未満の 5.4.x",
+						"5.5.7 未満の 5.5.x"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.7.5",
+						"v10.8.5",
+						"v10.9",
+						"v10.9.1"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X Server",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.7.5"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、openssl_x509_parse 関数によって適切に処理されない巧妙に細工された証明書を介して、任意のコードを実行される、またはサービス運用妨害 (メモリ破損) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2014-02-25-1",
+					"url": "http://lists.apple.com/archives/security-announce/2014/Feb/msg00000.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT6150",
+					"url": "http://support.apple.com/kb/HT6150"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT6150",
+					"url": "http://support.apple.com/kb/HT6150?viewlocale=ja_JP"
+				},
+				{
+					"type": "vendor",
+					"name": "InterWorx",
+					"vulinfoid": "InterWorx Version 5.0.14 Released on Beta Channel!",
+					"url": "http://forums.interworx.com/threads/8000-InterWorx-Version-5-0-14-Released-on-Beta-Channel!"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1036830",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1036830"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "Multiple Buffer Errors vulnerabilities in PHP",
+					"url": "https://blogs.oracle.com/sunsecurity/entry/multiple_buffer_errors_vulnerabilities_in1"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "Fix CVE-2013-6420 - memory corruption in openssl_x509_parse",
+					"url": "http://git.php.net/?p=php-src.git;a=commit;h=c1224573c773b6845e83505f717fbf820fc18415"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "PHP 5 ChangeLog",
+					"url": "http://www.php.net/ChangeLog-5.php"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-6420",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6420"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95868425",
+					"url": "http://jvn.jp/vu/JVNVU95868425/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-6420",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6420"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Advisory 01/2013: PHP openssl_x509_parse() Memory Corruption Vulnerability",
+					"url": "https://www.sektioneins.de/advisories/advisory-012013-php-openssl_x509_parse-memory-corruption-vulnerability.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年12月18日]\\n  掲載\\n[2014年02月28日]\\n  影響を受けるシステム：アップル (HT6150) の情報を追加\\n  ベンダ情報：アップル (APPLE-SA-2014-02-25-1) を追加\\n  ベンダ情報：アップル (HT6150) を追加\\n  参考情報：JVN (JVNVU#95868425) を追加\\n[2014年06月02日]\\n  ベンダ情報：オラクル (Multiple Buffer Errors vulnerabilities in PHP) を追加\\n[2015年08月10日]\\n  ベンダ情報：InterWorx (InterWorx Version 5.0.14 Released on Beta Channel!) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-12-18T16:18:16+09:00",
+		"datelastupdated": "2015-08-10T11:54:19+09:00",
+		"datepublic": "2013-12-11T00:00:00+09:00"
+	}
 }

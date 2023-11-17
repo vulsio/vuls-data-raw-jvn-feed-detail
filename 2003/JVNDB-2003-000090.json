@@ -1,165 +1,165 @@
 {
-  "vulinfoid": "JVNDB-2003-000090",
-  "vulinfodata": {
-    "title": "Kerberos 5 の KDC におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MIT Kerberos では、それぞれのシステムを識別するために Primary、Instance および Realm コンポーネントから構成される Principal を使用します。  MIT Kerberos 5 Release 1.2.7 以前には Principal 名の取り扱いに不備が存在し、以下のいずれかの条件に合致する場合、バッファオーバーフローが発生する問題が存在します。   ・コンポ—ネントが存在していない   ・Principal 名の中に空のコンポーネントが含まれる   ・それぞれのコンピュータに由来するサービスに対する Principal 名に対応するホスト名コンポーネントが定義されていない  この問題を利用することにより、リモートの攻撃者は意図的に作成したリクエストを送りつけることにより、バッファオーバーフローを引き起こし、KDC をサービス不能状態に陥らせることが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2  ",
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  ",
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:051",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-051.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:091",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-091.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "54042",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-54042-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "54042",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-54042-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2003-29",
-          "url": "http://www.turbolinux.com/security/2003/TLSA-2003-29.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:051",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-051J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:091",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-091J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2003-29",
-          "url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-29j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0072",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0072"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0072",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0072"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7185",
-          "url": "http://www.securityfocus.com/bid/7185"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7184",
-          "url": "http://www.securityfocus.com/bid/7184"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-03-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000090",
+	"vulinfodata": {
+		"title": "Kerberos 5 の KDC におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MIT Kerberos では、それぞれのシステムを識別するために Primary、Instance および Realm コンポーネントから構成される Principal を使用します。  MIT Kerberos 5 Release 1.2.7 以前には Principal 名の取り扱いに不備が存在し、以下のいずれかの条件に合致する場合、バッファオーバーフローが発生する問題が存在します。   ・コンポ—ネントが存在していない   ・Principal 名の中に空のコンポーネントが含まれる   ・それぞれのコンピュータに由来するサービスに対する Principal 名に対応するホスト名コンポーネントが定義されていない  この問題を利用することにより、リモートの攻撃者は意図的に作成したリクエストを送りつけることにより、バッファオーバーフローを引き起こし、KDC をサービス不能状態に陥らせることが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2  ",
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  ",
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:051",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-051.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:091",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-091.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "54042",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-54042-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "54042",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-54042-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2003-29",
+					"url": "http://www.turbolinux.com/security/2003/TLSA-2003-29.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:051",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-051J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:091",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-091J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2003-29",
+					"url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-29j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0072",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0072"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0072",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0072"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7185",
+					"url": "http://www.securityfocus.com/bid/7185"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7184",
+					"url": "http://www.securityfocus.com/bid/7184"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-03-19T00:00:00+09:00"
+	}
 }

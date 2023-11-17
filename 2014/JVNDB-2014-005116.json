@@ -1,185 +1,185 @@
 {
-  "vulinfoid": "JVNDB-2014-005116",
-  "vulinfodata": {
-    "title": "PHP の EXIF エクステンションの exif.c 内の exif_ifd_make_value 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "PHP の EXIF エクステンションの exif.c 内の exif_ifd_make_value 関数は、浮動小数点の配列上で誤って動作するため、サービス運用妨害 (ヒープメモリ破損およびアプリケーションクラッシュ) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The PHP Group",
-          "productname": "PHP",
-          "cpe": {
-            "text": "cpe:/a:php:php",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.4.34 未満",
-            "5.5.18 未満の 5.5.x",
-            "5.6.2 未満の 5.6.x"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 から 10.10.2",
-            "10.8.5",
-            "10.9.5"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、exif_thumbnail 関数によって適切に処理されない TIFF サムネイルデータを伴う、巧妙に細工された JPEG イメージを介して、サービス運用妨害 (ヒープメモリ破損およびアプリケーションクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT204659",
-          "url": "https://support.apple.com/en-us/HT204659"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT204659",
-          "url": "https://support.apple.com/ja-jp/HT204659"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle",
-          "vulinfoid": "ELSA-2014-1767",
-          "url": "http://linux.oracle.com/errata/ELSA-2014-1767.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle",
-          "vulinfoid": "ELSA-2014-1768",
-          "url": "http://linux.oracle.com/errata/ELSA-2014-1768.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PHP",
-          "vulinfoid": "PHP 5 ChangeLog Version 5.6.2",
-          "url": "http://php.net/ChangeLog-5.php"
-        },
-        {
-          "type": "vendor",
-          "name": "PHP",
-          "vulinfoid": "Fix bug #68113 (Heap corruption in exif_thumbnail())",
-          "url": "http://git.php.net/?p=php-src.git;a=commit;h=ddb207e7fa2e9adeba021a1303c3781efda5409b"
-        },
-        {
-          "type": "vendor",
-          "name": "PHP Bugs",
-          "vulinfoid": "Sec Bug #68113",
-          "url": "https://bugs.php.net/bug.php?id=68113"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1154502",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1154502"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1768",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1768.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1824",
-          "url": "http://rhn.redhat.com/errata/RHSA-2014-1824.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1765",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1765.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1766",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1766.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:1767",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-1767.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-3670",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3670"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#91828320",
-          "url": "http://jvn.jp/vu/JVNVU91828320/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-3670",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3670"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年10月30日]\\n  掲載\\n[2014年11月28日]\\n  ベンダ情報：オラクル (ELSA-2014-1767) を追加\\n  ベンダ情報：オラクル (ELSA-2014-1768) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1765) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1766) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1767) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1768) を追加\\n[2014年12月08日]\\n  ベンダ情報：レッドハット (RHSA-2014:1824) を追加\\n[2015年04月13日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204659) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004) を追加\\n  参考情報：JVN (JVNVU#91828320) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-10-30T15:29:57+09:00",
-    "datelastupdated": "2015-04-13T17:12:57+09:00",
-    "datepublic": "2014-10-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-005116",
+	"vulinfodata": {
+		"title": "PHP の EXIF エクステンションの exif.c 内の exif_ifd_make_value 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "PHP の EXIF エクステンションの exif.c 内の exif_ifd_make_value 関数は、浮動小数点の配列上で誤って動作するため、サービス運用妨害 (ヒープメモリ破損およびアプリケーションクラッシュ) 状態にされる、または任意のコードを実行される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The PHP Group",
+					"productname": "PHP",
+					"cpe": {
+						"text": "cpe:/a:php:php",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.4.34 未満",
+						"5.5.18 未満の 5.5.x",
+						"5.6.2 未満の 5.6.x"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 から 10.10.2",
+						"10.8.5",
+						"10.9.5"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、exif_thumbnail 関数によって適切に処理されない TIFF サムネイルデータを伴う、巧妙に細工された JPEG イメージを介して、サービス運用妨害 (ヒープメモリ破損およびアプリケーションクラッシュ) 状態にされる、または任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT204659",
+					"url": "https://support.apple.com/en-us/HT204659"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT204659",
+					"url": "https://support.apple.com/ja-jp/HT204659"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle",
+					"vulinfoid": "ELSA-2014-1767",
+					"url": "http://linux.oracle.com/errata/ELSA-2014-1767.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle",
+					"vulinfoid": "ELSA-2014-1768",
+					"url": "http://linux.oracle.com/errata/ELSA-2014-1768.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PHP",
+					"vulinfoid": "PHP 5 ChangeLog Version 5.6.2",
+					"url": "http://php.net/ChangeLog-5.php"
+				},
+				{
+					"type": "vendor",
+					"name": "PHP",
+					"vulinfoid": "Fix bug #68113 (Heap corruption in exif_thumbnail())",
+					"url": "http://git.php.net/?p=php-src.git;a=commit;h=ddb207e7fa2e9adeba021a1303c3781efda5409b"
+				},
+				{
+					"type": "vendor",
+					"name": "PHP Bugs",
+					"vulinfoid": "Sec Bug #68113",
+					"url": "https://bugs.php.net/bug.php?id=68113"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1154502",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1154502"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1768",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1768.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1824",
+					"url": "http://rhn.redhat.com/errata/RHSA-2014-1824.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1765",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1765.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1766",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1766.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:1767",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-1767.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-3670",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3670"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91828320",
+					"url": "http://jvn.jp/vu/JVNVU91828320/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-3670",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3670"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年10月30日]\\n  掲載\\n[2014年11月28日]\\n  ベンダ情報：オラクル (ELSA-2014-1767) を追加\\n  ベンダ情報：オラクル (ELSA-2014-1768) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1765) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1766) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1767) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:1768) を追加\\n[2014年12月08日]\\n  ベンダ情報：レッドハット (RHSA-2014:1824) を追加\\n[2015年04月13日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204659) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-04-08-2 OS X 10.10.3 and Security Update 2015-004) を追加\\n  参考情報：JVN (JVNVU#91828320) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-10-30T15:29:57+09:00",
+		"datelastupdated": "2015-04-13T17:12:57+09:00",
+		"datepublic": "2014-10-16T00:00:00+09:00"
+	}
 }

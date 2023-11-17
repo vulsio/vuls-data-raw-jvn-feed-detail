@@ -1,133 +1,133 @@
 {
-  "vulinfoid": "JVNDB-2020-003173",
-  "vulinfodata": {
-    "title": "B&R Industrial Automation GmbH. が提供する Automation Studio 製品に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Automation Studio は、B&R Industrial Automation GmbH. が提供する産業用シミュレーションソフトウエアです。Automation Studio には以下の複数の脆弱性が存在します。  * 不適切な権限管理 (CWE-269) - CVE-2019-19100 CVSS v3 CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:H  基本値: 7.5  * 暗号化処理の不備 (CWE-325) - CVE-2019-19101 CVSS v3 CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N  基本値: 6.5  * ディレクトリトラバーサル (CWE-22) - CVE-2019-19102 CVSS v3 CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N  基本値: 5.5 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "B&R Industrial Automation",
-          "productname": "Automation Studio",
-          "cpe": {
-            "text": "cpe:/a:br-automation:automation_studio",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * Automation Studio のアップグレードサービスにおける不適切な権限管理により、悪意あるローカルユーザによって権限を昇格され、システムインターフェースを通じて任意のファイルを削除される - CVE-2019-19100 * Automation Studio をアップグレードする際、アップグレードファイルを HTTPS ではなく HTTP 通信によって取得してしまうことがある。また、アップグレードサーバに対して HTTPS 通信を行う際にも、証明書検証処理に不備があるため、認証されていない悪意あるユーザによって中間者攻撃 (man-in-the-middle attack) が行われる可能性がある - CVE-2019-19101 * Automation Studio のアップグレードサービスで使用されるサードパーティ製ライブラリ「SharpZipLib」におけるディレクトリトラバーサルの脆弱性 (CVE-2018-1002208) に起因して、認証されていない悪意あるユーザによってシステム内の特定のディレクトリへの書き込みが行われる - CVE-2019-19102"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 なお、バージョン 4.0.x, 4.1.x, 4.2.x についてはパッチが提供されていません。開発者はバージョン 4.3.x 以上へのアップグレードを推奨しています。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 * Automation Studio のアップグレードサービスの設定を変更し、サービスが動作する権限を制限する (例:  NT AUTHORITY\\LocalService)。また、Automation Studio のインストール操作やインストールされている端末へのアクセスを、信頼できるユーザに限定する * Zip ファイルの取り扱いは、信頼できるユーザに限定する。ファイルを取り扱う場合は、チェックサムを用いて改ざんされていないことを確認する。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "B&R Industrial Automation",
-          "vulinfoid": "Multiple Vulnerabilities in Automation Studio",
-          "url": "https://www.br-automation.com/index.php?eID=dumpFile&t=f&f=2%3A%2FBRP44400000000000000638323&token=e64558b83c594953cce7b6ffcfb1894da14c0ac4"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-19100",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19100"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-19101",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19101"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-19102",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19102"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-093-01",
-          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-093-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96870150",
-          "url": "https://jvn.jp/vu/JVNVU96870150/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-19102",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19102"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-19100",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19100"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-19101",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19101"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-22",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
-          "title": "パス・トラバーサル"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-325",
-          "url": "https://cwe.mitre.org/data/definitions/325.html",
-          "title": "暗号化処理の不備"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-269",
-          "url": "https://cwe.mitre.org/data/definitions/269.html",
-          "title": "不適切な権限管理"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-04-07T12:07:28+09:00",
-          "description": "[2020年04月07日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-04-07T12:07:28+09:00",
-    "datelastupdated": "2020-04-07T12:07:28+09:00",
-    "datepublic": "2020-04-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-003173",
+	"vulinfodata": {
+		"title": "B&R Industrial Automation GmbH. が提供する Automation Studio 製品に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Automation Studio は、B&R Industrial Automation GmbH. が提供する産業用シミュレーションソフトウエアです。Automation Studio には以下の複数の脆弱性が存在します。  * 不適切な権限管理 (CWE-269) - CVE-2019-19100 CVSS v3 CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:H  基本値: 7.5  * 暗号化処理の不備 (CWE-325) - CVE-2019-19101 CVSS v3 CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N  基本値: 6.5  * ディレクトリトラバーサル (CWE-22) - CVE-2019-19102 CVSS v3 CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N  基本値: 5.5 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "B&R Industrial Automation",
+					"productname": "Automation Studio",
+					"cpe": {
+						"text": "cpe:/a:br-automation:automation_studio",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * Automation Studio のアップグレードサービスにおける不適切な権限管理により、悪意あるローカルユーザによって権限を昇格され、システムインターフェースを通じて任意のファイルを削除される - CVE-2019-19100 * Automation Studio をアップグレードする際、アップグレードファイルを HTTPS ではなく HTTP 通信によって取得してしまうことがある。また、アップグレードサーバに対して HTTPS 通信を行う際にも、証明書検証処理に不備があるため、認証されていない悪意あるユーザによって中間者攻撃 (man-in-the-middle attack) が行われる可能性がある - CVE-2019-19101 * Automation Studio のアップグレードサービスで使用されるサードパーティ製ライブラリ「SharpZipLib」におけるディレクトリトラバーサルの脆弱性 (CVE-2018-1002208) に起因して、認証されていない悪意あるユーザによってシステム内の特定のディレクトリへの書き込みが行われる - CVE-2019-19102"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 なお、バージョン 4.0.x, 4.1.x, 4.2.x についてはパッチが提供されていません。開発者はバージョン 4.3.x 以上へのアップグレードを推奨しています。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 * Automation Studio のアップグレードサービスの設定を変更し、サービスが動作する権限を制限する (例:  NT AUTHORITY\\LocalService)。また、Automation Studio のインストール操作やインストールされている端末へのアクセスを、信頼できるユーザに限定する * Zip ファイルの取り扱いは、信頼できるユーザに限定する。ファイルを取り扱う場合は、チェックサムを用いて改ざんされていないことを確認する。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "B&R Industrial Automation",
+					"vulinfoid": "Multiple Vulnerabilities in Automation Studio",
+					"url": "https://www.br-automation.com/index.php?eID=dumpFile&t=f&f=2%3A%2FBRP44400000000000000638323&token=e64558b83c594953cce7b6ffcfb1894da14c0ac4"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-19100",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19100"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-19101",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19101"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-19102",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19102"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-093-01",
+					"url": "https://www.us-cert.gov/ics/advisories/icsa-20-093-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96870150",
+					"url": "https://jvn.jp/vu/JVNVU96870150/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-19102",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19102"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-19100",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19100"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-19101",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-19101"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-325",
+					"url": "https://cwe.mitre.org/data/definitions/325.html",
+					"title": "暗号化処理の不備"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-269",
+					"url": "https://cwe.mitre.org/data/definitions/269.html",
+					"title": "不適切な権限管理"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-04-07T12:07:28+09:00",
+					"description": "[2020年04月07日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2020-04-07T12:07:28+09:00",
+		"datelastupdated": "2020-04-07T12:07:28+09:00",
+		"datepublic": "2020-04-06T00:00:00+09:00"
+	}
 }

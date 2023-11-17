@@ -1,660 +1,660 @@
 {
-  "vulinfoid": "JVNDB-2021-001387",
-  "vulinfodata": {
-    "title": "複数の RTOS やライブラリなどにメモリ割り当て処理における脆弱性 (\"BadAlloc\")",
-    "vulinfodescription": {
-      "overview": "複数の RTOS (Real Time Operating System) 製品やライブラリなどに、メモリ割り当て処理における脆弱性が報告されています。  メモリ割り当て処理においては、リクエストされたメモリサイズに対してシステムによるメモリ管理領域やアラインメント調整で必要とされるサイズを加算して、実際に確保するメモリサイズを計算します。この計算結果がシステム内で正しく表現できる範囲の値より大きくなってしまう場合には桁あふれを起こすため、その計算結果を使って以後の処理を継続すると異常動作につながります。したがってメモリ割り当て処理においては、リクエストされるメモリサイズが一定の範囲に収まっていることや計算処理が正しく行われることを検証する必要があります。 報告者らは、RTOS やライブラリ製品の実装状況を調査し、メモリ割り当て処理のなかで必要な検証を行っていない実装が複数存在することを発見しました。 報告者らは、彼らが発見し開発者と調整した脆弱性を総称して \"BadAlloc\" と呼んでいます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Amazon.com, Inc.",
-          "productname": "Amazon FreeRTOS",
-          "cpe": {
-            "text": "cpe:/a:amazon:freertos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 10.4.1"
-          ]
-        },
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache NuttX",
-          "cpe": {
-            "text": "cpe:/a:apache:nuttx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "OS Version 9.1.0"
-          ]
-        },
-        {
-          "name": "ARM Ltd.",
-          "productname": "CMSIS-RTOS2",
-          "cpe": {
-            "text": "cpe:/o:arm:cmsis-rtos2",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2.1.3 より前のバージョン"
-          ]
-        },
-        {
-          "name": "ARM Ltd.",
-          "productname": "Mbed OS",
-          "cpe": {
-            "text": "cpe:/o:arm:mbed",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 6.3.0"
-          ]
-        },
-        {
-          "name": "ARM Ltd.",
-          "productname": "mbed-uallaoc",
-          "cpe": {
-            "text": "cpe:/o:arm:mbed-uallaoc",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.3.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX CAR Development Platform",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_car_development_platform",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0RR"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Cross Development Kit",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_cross_development_kit",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0.0",
-            "6.1.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Development Kit",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_development_kit",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(Self-hosted) 6.0.0",
-            "(Self-hosted) 6.1.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Momentics",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_momentics",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2.0",
-            "6.2.1",
-            "6.2.1A",
-            "6.2.1b",
-            "6.3.0",
-            "6.3.0SP1",
-            "6.3.0SP2",
-            "6.3.0SP3"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Momentics Development Suite",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_momentics_development_suite",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.3.2"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Neutrino RTOS Certified Plus",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_neutrino_rtos_certified_plus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Neutrino RTOS for Medical Devices",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_neutrino_rtos_for_medical_devices",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0",
-            "1.1"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Neutrino RTOS Safe Kernel",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_neutrino_rtos_safe_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Neutrino Secure Kernel",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_neutrino_secure_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.4.0",
-            "6.5.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX OS for Automotive Safety",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_os_for_automotive_safety",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX OS for Safety",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_os_for_safety",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0",
-            "1.0.1"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX Realtime Platform",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_realtime_platform",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0.0",
-            "6.0.0a",
-            "6.1.0",
-            "6.1.0a"
-          ]
-        },
-        {
-          "name": "BlackBerry",
-          "productname": "QNX SDP",
-          "cpe": {
-            "text": "cpe:/o:blackberry:qnx_sdp",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.4.0",
-            "6.4.1",
-            "6.5.0",
-            "6.5.0SP1"
-          ]
-        },
-        {
-          "name": "Cesanta",
-          "productname": "Mongoose OS",
-          "cpe": {
-            "text": "cpe:/o:cesanta:mongoose_os",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v2.17.0"
-          ]
-        },
-        {
-          "name": "eCosCentric",
-          "productname": "eCosPro RTOS",
-          "cpe": {
-            "text": "cpe:/o:misc:ecoscentric_ecospro_rtos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2.0.1 から 4.5.3 まで"
-          ]
-        },
-        {
-          "name": "Google",
-          "productname": "Cloud IoT Device SDK",
-          "cpe": {
-            "text": "cpe:/o:google:cloud_iot_device_sdk",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.0.2"
-          ]
-        },
-        {
-          "name": "Media Tek",
-          "productname": "LinkIt SDK",
-          "cpe": {
-            "text": "cpe:/o:misc:media_tek_linkit_sdk",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 4.6.1 より前のバージョン"
-          ]
-        },
-        {
-          "name": "newlib project",
-          "productname": "newlib",
-          "cpe": {
-            "text": "cpe:/a:newlib_project:newlib",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 4.0.0 より前のバージョン"
-          ]
-        },
-        {
-          "name": "NXP Semiconductors",
-          "productname": "MCUXpresso SDK",
-          "cpe": {
-            "text": "cpe:/a:nxp:mcuxpresso_software_development_kit",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2.8.2 より前のバージョン"
-          ]
-        },
-        {
-          "name": "NXP Semiconductors",
-          "productname": "MQX",
-          "cpe": {
-            "text": "cpe:/o:nxp:mqx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Versions 5.1 およびそれ以前"
-          ]
-        },
-        {
-          "name": "RIOT project",
-          "productname": "RIOT OS",
-          "cpe": {
-            "text": "cpe:/o:riot_project:riot-os",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2020.01.1"
-          ]
-        },
-        {
-          "name": "Silicon Labs, Inc.",
-          "productname": "Micrium OS",
-          "cpe": {
-            "text": "cpe:/o:silabs:micrium_os",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Versions 5.10.1 およびそれ以前"
-          ]
-        },
-        {
-          "name": "Silicon Labs, Inc.",
-          "productname": "Micrium uC/LIB",
-          "cpe": {
-            "text": "cpe:/o:silabs:micrium_uc_lib",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.38 系および Version 1.39.00"
-          ]
-        },
-        {
-          "name": "Tencent",
-          "productname": "TencentOS-tiny",
-          "cpe": {
-            "text": "cpe:/o:qqplayer:tencentos-tiny",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 3.1.0"
-          ]
-        },
-        {
-          "name": "Texas Instruments Incorporated (TI)",
-          "productname": "CC32XX",
-          "cpe": {
-            "text": "cpe:/o:ti:cc32xx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 4.40.00.07 より前のバージョン"
-          ]
-        },
-        {
-          "name": "Texas Instruments Incorporated (TI)",
-          "productname": "SimpleLink MSP432E4XX",
-          "cpe": {
-            "text": "cpe:/o:ti:simplelink_msp432e4xx",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Texas Instruments Incorporated (TI)",
-          "productname": "SimpleLink-CC13XX",
-          "cpe": {
-            "text": "cpe:/o:ti:simplelink-cc13xx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 4.40.00 より前のバージョン"
-          ]
-        },
-        {
-          "name": "Texas Instruments Incorporated (TI)",
-          "productname": "SimpleLink-CC26XX",
-          "cpe": {
-            "text": "cpe:/o:ti:simplelink-cc26xx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 4.40.00 より前のバージョン"
-          ]
-        },
-        {
-          "name": "Texas Instruments Incorporated (TI)",
-          "productname": "SimpleLink-CC32XX",
-          "cpe": {
-            "text": "cpe:/o:ti:simplelink-cc32xx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 4.10.03 より前のバージョン"
-          ]
-        },
-        {
-          "name": "uClibc-ng project",
-          "productname": "uClibc-ng",
-          "cpe": {
-            "text": "cpe:/a:uclibc-ng_project:uclibc-ng",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.0.36 より前のバージョン"
-          ]
-        },
-        {
-          "name": "Zephyr Project",
-          "productname": "RTOS",
-          "cpe": {
-            "text": "cpe:/o:zephyrproject:zephyr_rtos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.5 より前のバージョン"
-          ]
-        },
-        {
-          "name": "ウインドリバー株式会社",
-          "productname": "VxWorks",
-          "cpe": {
-            "text": "cpe:/o:windriver:vxworks",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.0 より前のバージョン"
-          ]
-        },
-        {
-          "name": "サムスン",
-          "productname": "Tizen RT RTOS",
-          "cpe": {
-            "text": "cpe:/o:samsung:tizen_rt_rtos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 3.0.GBB より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "想定される影響は各製品により異なりますが、次のような影響を受ける可能性があります。  　* デバイスをクラッシュさせられる 　* 任意のコードを実行される  詳細については、個々の製品開発者が提供している情報を確認してください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 本脆弱性の影響を受ける製品を使用している場合、製品開発者が提供する情報をもとに、最新版にアップデートしてください。 以下の製品については、本脆弱性を修正したバージョンがリリースされています。  　* Amazon FreeRTOS 　* Apache Nuttx OS Version 9.1.0 　* ARM Mbed OS 　* BlackBerry QNX SDP 6.6.0 　* BlackBerry QNX Neutrino RTOS for Medical Devices 1.1.1 　* BlackBerry QNX OS for Safety 1.0.2 　* Cesanta Software mongooses 　* eCosCentric eCosPro RTOS Versions 4.5.4 および最新バージョン 　* Google Cloud IoT Device SDK 　* Media Tek LinkIt SDK (ただし、無料版は除く) 　* Micrium OS v5.10.2 および最新バージョン 　* Micrium uC/LIB 1.39.01 　* NXP MCUXpresso SDK 2.9.0 および最新バージョン 　* NXP MQX 5.1 および最新バージョン 　* Redhat newlib 　* RIOT OS 　* Samsung Tizen RT RTOS 　* TencentOS-tiny 　* Texas Instruments CC32XX v4.40.00.07 　* Texas Instruments SimpleLink CC13X0 　* Texas Instruments SimpleLink CC13X2-CC26X2 　* Texas Instruments SimpleLink CC2640R2 　* uClibc-ng 　* Windriver VxWorks　　 　　　* Hitachi Energy RTU500 series CMU (RTOSにWindriver VxWorksを使用) 　* Zephyr Project (旧サポートバージョンにはパッチが提供されています。詳細は製品開発者が提供している情報を確認してください。) "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "BlackBerry Knowledge Base",
-          "vulinfoid": "QNX-2021-001 Vulnerability in the C Runtime Library Impacts BlackBerry QNX Software Development Platform (SDP), QNX OS for Medical, and QNX OS for Safety",
-          "url": "https://support.blackberry.com/kb/articleDetail?articleNumber=000082334"
-        },
-        {
-          "type": "vendor",
-          "name": "eCosCentric",
-          "vulinfoid": "Issue Management System",
-          "url": "https://bugzilla.ecoscentric.com/show_bug.cgi?id=1002437"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Improve heap2 bounds checking #224",
-          "url": "https://github.com/FreeRTOS/FreeRTOS-Kernel/pull/224"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "RIOT-OS / RIOT",
-          "url": "https://github.com/RIOT-OS/RIOT"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "apache / incubator-nuttx",
-          "url": "https://github.com/apache/incubator-nuttx"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Samsung / TizenRT",
-          "url": "https://github.com/Samsung/TizenRT"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Add integer overflow check to the malloc wrappers #14408",
-          "url": "https://github.com/ARMmbed/mbed-os/pull/14408"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "cesanta / mongoose-os",
-          "url": "https://github.com/cesanta/mongoose-os"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "GHSA-94vp-8gc2-rm45: Integer Overflow in memory allocating functions",
-          "url": "https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-94vp-8gc2-rm45"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "GoogleCloudPlatform / iot-device-sdk-embedded-c",
-          "url": "https://github.com/GoogleCloudPlatform/iot-device-sdk-embedded-c/pull/119/files"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Energy",
-          "vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy REB500 Product (PDF)",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000071&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Energy",
-          "vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy Relion 670, 650 series and SAM600-IO Product (PDF)",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000070&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Energy",
-          "vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy RTU500 series",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000065&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Energy",
-          "vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi ABB Power Grids Modular Switchgear Monitoring System (MSM) Product",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK107992A5975&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Energy",
-          "vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy GMS600 Product (PDF)",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000072&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Energy",
-          "vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy PWC600 Product (PDF)",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000073&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "Micrium",
-          "vulinfoid": "μC/LIB Release notes",
-          "url": "https://micrium.atlassian.net/wiki/spaces/libdoc138/pages/175908/C%2BLIB%2BRelease%2Bnotes#id-%C2%B5C%2FLIBReleasenotes-Version1.39.01"
-        },
-        {
-          "type": "vendor",
-          "name": "NXP Semiconductors",
-          "vulinfoid": "MCUXpresso SDK Builder",
-          "url": "https://mcuxpresso.nxp.com/en/welcome"
-        },
-        {
-          "type": "vendor",
-          "name": "QNX",
-          "vulinfoid": "Affected Product List",
-          "url": "https://www.qnx.com/support/knowledgebase.html?id=5015Y000001SX2z"
-        },
-        {
-          "type": "vendor",
-          "name": "Silicon Labs, Inc.",
-          "vulinfoid": "Micriμm OS",
-          "url": "https://www.silabs.com/developers/micrium-os"
-        },
-        {
-          "type": "vendor",
-          "name": "sourceware.org",
-          "vulinfoid": "git://sourceware.org / newlib-cygwin.git / summary",
-          "url": "https://sourceware.org/git/gitweb.cgi?p=newlib-cygwin.git"
-        },
-        {
-          "type": "vendor",
-          "name": "Texas Instruments",
-          "vulinfoid": "Report potential product security vulnerabilities",
-          "url": "https://www.ti.com/technologies/security/report-product-security-vulnerabilities.html"
-        },
-        {
-          "type": "vendor",
-          "name": "uClibc-ng",
-          "vulinfoid": "Welcome to uClibc-ng! - Embedded C library",
-          "url": "https://uclibc-ng.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "三菱電機株式会社 の告知ページ",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-013.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-119-04",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-119-04"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90467655",
-          "url": "http://jvn.jp/cert/JVNVU90467655"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT National Cyber Awareness System Alerts",
-          "vulinfoid": "AA21-229A",
-          "url": "https://us-cert.cisa.gov/ncas/alerts/aa21-229a"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "“BadAlloc” - Memory allocation vulnerabilities could affect wide range of IoT and OT devices in industrial, medical, and enterprise networks",
-          "url": "https://msrc-blog.microsoft.com/2021/04/29/badalloc-memory-allocation-vulnerabilities-could-affect-wide-range-of-iot-and-ot-devices-in-industrial-medical-and-enterprise-networks/"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-05-10T16:33:45+09:00",
-          "description": "[2021年05月10日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-08-19T16:44:08+09:00",
-          "description": "[2021年08月19日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  対策：内容を更新\\n  ベンダ情報：BlackBerry (QNX-2021-001 Vulnerability in the C Runtime Library Impacts BlackBerry QNX Software Development Platform (SDP), QNX OS for Medical, and QNX OS for Safety) を追加\\n  ベンダ情報：BlackBerry (Affected Product List) を追加\\n  参考情報：US-CERT National Cyber Awareness System Alerts (AA21-229A) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2021-09-03T14:36:46+09:00",
-          "description": "[2021年09月03日]\\n  ベンダ情報：三菱電機株式会社 (三菱電機株式会社 の告知ページ) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2021-12-02T15:39:17+09:00",
-          "description": "[2021年12月02日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy RTU500 series) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi ABB Power Grids Modular Switchgear Monitoring System (MSM) Product) を追加\\n  ベンダ情報：Texas Instruments Incorporated (TI) (Report potential product security vulnerabilities) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2022-04-21T14:30:29+09:00",
-          "description": "[2022年04月21日]\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy GMS600 Product (PDF)) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy PWC600 Product (PDF)) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy REB500 Product (PDF)) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy Relion 670, 650 series and SAM600-IO Product (PDF)) を追加\\n\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-05-10T16:33:45+09:00",
-    "datelastupdated": "2021-09-03T14:37:25+09:00",
-    "datepublic": "2021-04-30T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001387",
+	"vulinfodata": {
+		"title": "複数の RTOS やライブラリなどにメモリ割り当て処理における脆弱性 (\"BadAlloc\")",
+		"vulinfodescription": {
+			"overview": "複数の RTOS (Real Time Operating System) 製品やライブラリなどに、メモリ割り当て処理における脆弱性が報告されています。  メモリ割り当て処理においては、リクエストされたメモリサイズに対してシステムによるメモリ管理領域やアラインメント調整で必要とされるサイズを加算して、実際に確保するメモリサイズを計算します。この計算結果がシステム内で正しく表現できる範囲の値より大きくなってしまう場合には桁あふれを起こすため、その計算結果を使って以後の処理を継続すると異常動作につながります。したがってメモリ割り当て処理においては、リクエストされるメモリサイズが一定の範囲に収まっていることや計算処理が正しく行われることを検証する必要があります。 報告者らは、RTOS やライブラリ製品の実装状況を調査し、メモリ割り当て処理のなかで必要な検証を行っていない実装が複数存在することを発見しました。 報告者らは、彼らが発見し開発者と調整した脆弱性を総称して \"BadAlloc\" と呼んでいます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Amazon.com, Inc.",
+					"productname": "Amazon FreeRTOS",
+					"cpe": {
+						"text": "cpe:/a:amazon:freertos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 10.4.1"
+					]
+				},
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache NuttX",
+					"cpe": {
+						"text": "cpe:/a:apache:nuttx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"OS Version 9.1.0"
+					]
+				},
+				{
+					"name": "ARM Ltd.",
+					"productname": "CMSIS-RTOS2",
+					"cpe": {
+						"text": "cpe:/o:arm:cmsis-rtos2",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2.1.3 より前のバージョン"
+					]
+				},
+				{
+					"name": "ARM Ltd.",
+					"productname": "Mbed OS",
+					"cpe": {
+						"text": "cpe:/o:arm:mbed",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 6.3.0"
+					]
+				},
+				{
+					"name": "ARM Ltd.",
+					"productname": "mbed-uallaoc",
+					"cpe": {
+						"text": "cpe:/o:arm:mbed-uallaoc",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.3.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX CAR Development Platform",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_car_development_platform",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0RR"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Cross Development Kit",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_cross_development_kit",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0.0",
+						"6.1.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Development Kit",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_development_kit",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(Self-hosted) 6.0.0",
+						"(Self-hosted) 6.1.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Momentics",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_momentics",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2.0",
+						"6.2.1",
+						"6.2.1A",
+						"6.2.1b",
+						"6.3.0",
+						"6.3.0SP1",
+						"6.3.0SP2",
+						"6.3.0SP3"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Momentics Development Suite",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_momentics_development_suite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.3.2"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Neutrino RTOS Certified Plus",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_neutrino_rtos_certified_plus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Neutrino RTOS for Medical Devices",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_neutrino_rtos_for_medical_devices",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0",
+						"1.1"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Neutrino RTOS Safe Kernel",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_neutrino_rtos_safe_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Neutrino Secure Kernel",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_neutrino_secure_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.4.0",
+						"6.5.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX OS for Automotive Safety",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_os_for_automotive_safety",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX OS for Safety",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_os_for_safety",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0",
+						"1.0.1"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX Realtime Platform",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_realtime_platform",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0.0",
+						"6.0.0a",
+						"6.1.0",
+						"6.1.0a"
+					]
+				},
+				{
+					"name": "BlackBerry",
+					"productname": "QNX SDP",
+					"cpe": {
+						"text": "cpe:/o:blackberry:qnx_sdp",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.4.0",
+						"6.4.1",
+						"6.5.0",
+						"6.5.0SP1"
+					]
+				},
+				{
+					"name": "Cesanta",
+					"productname": "Mongoose OS",
+					"cpe": {
+						"text": "cpe:/o:cesanta:mongoose_os",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v2.17.0"
+					]
+				},
+				{
+					"name": "eCosCentric",
+					"productname": "eCosPro RTOS",
+					"cpe": {
+						"text": "cpe:/o:misc:ecoscentric_ecospro_rtos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2.0.1 から 4.5.3 まで"
+					]
+				},
+				{
+					"name": "Google",
+					"productname": "Cloud IoT Device SDK",
+					"cpe": {
+						"text": "cpe:/o:google:cloud_iot_device_sdk",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.0.2"
+					]
+				},
+				{
+					"name": "Media Tek",
+					"productname": "LinkIt SDK",
+					"cpe": {
+						"text": "cpe:/o:misc:media_tek_linkit_sdk",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 4.6.1 より前のバージョン"
+					]
+				},
+				{
+					"name": "newlib project",
+					"productname": "newlib",
+					"cpe": {
+						"text": "cpe:/a:newlib_project:newlib",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 4.0.0 より前のバージョン"
+					]
+				},
+				{
+					"name": "NXP Semiconductors",
+					"productname": "MCUXpresso SDK",
+					"cpe": {
+						"text": "cpe:/a:nxp:mcuxpresso_software_development_kit",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2.8.2 より前のバージョン"
+					]
+				},
+				{
+					"name": "NXP Semiconductors",
+					"productname": "MQX",
+					"cpe": {
+						"text": "cpe:/o:nxp:mqx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Versions 5.1 およびそれ以前"
+					]
+				},
+				{
+					"name": "RIOT project",
+					"productname": "RIOT OS",
+					"cpe": {
+						"text": "cpe:/o:riot_project:riot-os",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2020.01.1"
+					]
+				},
+				{
+					"name": "Silicon Labs, Inc.",
+					"productname": "Micrium OS",
+					"cpe": {
+						"text": "cpe:/o:silabs:micrium_os",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Versions 5.10.1 およびそれ以前"
+					]
+				},
+				{
+					"name": "Silicon Labs, Inc.",
+					"productname": "Micrium uC/LIB",
+					"cpe": {
+						"text": "cpe:/o:silabs:micrium_uc_lib",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.38 系および Version 1.39.00"
+					]
+				},
+				{
+					"name": "Tencent",
+					"productname": "TencentOS-tiny",
+					"cpe": {
+						"text": "cpe:/o:qqplayer:tencentos-tiny",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 3.1.0"
+					]
+				},
+				{
+					"name": "Texas Instruments Incorporated (TI)",
+					"productname": "CC32XX",
+					"cpe": {
+						"text": "cpe:/o:ti:cc32xx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 4.40.00.07 より前のバージョン"
+					]
+				},
+				{
+					"name": "Texas Instruments Incorporated (TI)",
+					"productname": "SimpleLink MSP432E4XX",
+					"cpe": {
+						"text": "cpe:/o:ti:simplelink_msp432e4xx",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Texas Instruments Incorporated (TI)",
+					"productname": "SimpleLink-CC13XX",
+					"cpe": {
+						"text": "cpe:/o:ti:simplelink-cc13xx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 4.40.00 より前のバージョン"
+					]
+				},
+				{
+					"name": "Texas Instruments Incorporated (TI)",
+					"productname": "SimpleLink-CC26XX",
+					"cpe": {
+						"text": "cpe:/o:ti:simplelink-cc26xx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 4.40.00 より前のバージョン"
+					]
+				},
+				{
+					"name": "Texas Instruments Incorporated (TI)",
+					"productname": "SimpleLink-CC32XX",
+					"cpe": {
+						"text": "cpe:/o:ti:simplelink-cc32xx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 4.10.03 より前のバージョン"
+					]
+				},
+				{
+					"name": "uClibc-ng project",
+					"productname": "uClibc-ng",
+					"cpe": {
+						"text": "cpe:/a:uclibc-ng_project:uclibc-ng",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.0.36 より前のバージョン"
+					]
+				},
+				{
+					"name": "Zephyr Project",
+					"productname": "RTOS",
+					"cpe": {
+						"text": "cpe:/o:zephyrproject:zephyr_rtos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.5 より前のバージョン"
+					]
+				},
+				{
+					"name": "ウインドリバー株式会社",
+					"productname": "VxWorks",
+					"cpe": {
+						"text": "cpe:/o:windriver:vxworks",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.0 より前のバージョン"
+					]
+				},
+				{
+					"name": "サムスン",
+					"productname": "Tizen RT RTOS",
+					"cpe": {
+						"text": "cpe:/o:samsung:tizen_rt_rtos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 3.0.GBB より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "想定される影響は各製品により異なりますが、次のような影響を受ける可能性があります。  　* デバイスをクラッシュさせられる 　* 任意のコードを実行される  詳細については、個々の製品開発者が提供している情報を確認してください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 本脆弱性の影響を受ける製品を使用している場合、製品開発者が提供する情報をもとに、最新版にアップデートしてください。 以下の製品については、本脆弱性を修正したバージョンがリリースされています。  　* Amazon FreeRTOS 　* Apache Nuttx OS Version 9.1.0 　* ARM Mbed OS 　* BlackBerry QNX SDP 6.6.0 　* BlackBerry QNX Neutrino RTOS for Medical Devices 1.1.1 　* BlackBerry QNX OS for Safety 1.0.2 　* Cesanta Software mongooses 　* eCosCentric eCosPro RTOS Versions 4.5.4 および最新バージョン 　* Google Cloud IoT Device SDK 　* Media Tek LinkIt SDK (ただし、無料版は除く) 　* Micrium OS v5.10.2 および最新バージョン 　* Micrium uC/LIB 1.39.01 　* NXP MCUXpresso SDK 2.9.0 および最新バージョン 　* NXP MQX 5.1 および最新バージョン 　* Redhat newlib 　* RIOT OS 　* Samsung Tizen RT RTOS 　* TencentOS-tiny 　* Texas Instruments CC32XX v4.40.00.07 　* Texas Instruments SimpleLink CC13X0 　* Texas Instruments SimpleLink CC13X2-CC26X2 　* Texas Instruments SimpleLink CC2640R2 　* uClibc-ng 　* Windriver VxWorks　　 　　　* Hitachi Energy RTU500 series CMU (RTOSにWindriver VxWorksを使用) 　* Zephyr Project (旧サポートバージョンにはパッチが提供されています。詳細は製品開発者が提供している情報を確認してください。) "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "BlackBerry Knowledge Base",
+					"vulinfoid": "QNX-2021-001 Vulnerability in the C Runtime Library Impacts BlackBerry QNX Software Development Platform (SDP), QNX OS for Medical, and QNX OS for Safety",
+					"url": "https://support.blackberry.com/kb/articleDetail?articleNumber=000082334"
+				},
+				{
+					"type": "vendor",
+					"name": "eCosCentric",
+					"vulinfoid": "Issue Management System",
+					"url": "https://bugzilla.ecoscentric.com/show_bug.cgi?id=1002437"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Improve heap2 bounds checking #224",
+					"url": "https://github.com/FreeRTOS/FreeRTOS-Kernel/pull/224"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "RIOT-OS / RIOT",
+					"url": "https://github.com/RIOT-OS/RIOT"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "apache / incubator-nuttx",
+					"url": "https://github.com/apache/incubator-nuttx"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Samsung / TizenRT",
+					"url": "https://github.com/Samsung/TizenRT"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Add integer overflow check to the malloc wrappers #14408",
+					"url": "https://github.com/ARMmbed/mbed-os/pull/14408"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "cesanta / mongoose-os",
+					"url": "https://github.com/cesanta/mongoose-os"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "GHSA-94vp-8gc2-rm45: Integer Overflow in memory allocating functions",
+					"url": "https://github.com/zephyrproject-rtos/zephyr/security/advisories/GHSA-94vp-8gc2-rm45"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "GoogleCloudPlatform / iot-device-sdk-embedded-c",
+					"url": "https://github.com/GoogleCloudPlatform/iot-device-sdk-embedded-c/pull/119/files"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Energy",
+					"vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy REB500 Product (PDF)",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000071&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Energy",
+					"vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy Relion 670, 650 series and SAM600-IO Product (PDF)",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000070&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Energy",
+					"vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy RTU500 series",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000065&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Energy",
+					"vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi ABB Power Grids Modular Switchgear Monitoring System (MSM) Product",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK107992A5975&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Energy",
+					"vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy GMS600 Product (PDF)",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000072&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Energy",
+					"vulinfoid": "BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy PWC600 Product (PDF)",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000073&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "Micrium",
+					"vulinfoid": "μC/LIB Release notes",
+					"url": "https://micrium.atlassian.net/wiki/spaces/libdoc138/pages/175908/C%2BLIB%2BRelease%2Bnotes#id-%C2%B5C%2FLIBReleasenotes-Version1.39.01"
+				},
+				{
+					"type": "vendor",
+					"name": "NXP Semiconductors",
+					"vulinfoid": "MCUXpresso SDK Builder",
+					"url": "https://mcuxpresso.nxp.com/en/welcome"
+				},
+				{
+					"type": "vendor",
+					"name": "QNX",
+					"vulinfoid": "Affected Product List",
+					"url": "https://www.qnx.com/support/knowledgebase.html?id=5015Y000001SX2z"
+				},
+				{
+					"type": "vendor",
+					"name": "Silicon Labs, Inc.",
+					"vulinfoid": "Micriμm OS",
+					"url": "https://www.silabs.com/developers/micrium-os"
+				},
+				{
+					"type": "vendor",
+					"name": "sourceware.org",
+					"vulinfoid": "git://sourceware.org / newlib-cygwin.git / summary",
+					"url": "https://sourceware.org/git/gitweb.cgi?p=newlib-cygwin.git"
+				},
+				{
+					"type": "vendor",
+					"name": "Texas Instruments",
+					"vulinfoid": "Report potential product security vulnerabilities",
+					"url": "https://www.ti.com/technologies/security/report-product-security-vulnerabilities.html"
+				},
+				{
+					"type": "vendor",
+					"name": "uClibc-ng",
+					"vulinfoid": "Welcome to uClibc-ng! - Embedded C library",
+					"url": "https://uclibc-ng.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "三菱電機株式会社 の告知ページ",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-013.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-119-04",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-119-04"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90467655",
+					"url": "http://jvn.jp/cert/JVNVU90467655"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT National Cyber Awareness System Alerts",
+					"vulinfoid": "AA21-229A",
+					"url": "https://us-cert.cisa.gov/ncas/alerts/aa21-229a"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "“BadAlloc” - Memory allocation vulnerabilities could affect wide range of IoT and OT devices in industrial, medical, and enterprise networks",
+					"url": "https://msrc-blog.microsoft.com/2021/04/29/badalloc-memory-allocation-vulnerabilities-could-affect-wide-range-of-iot-and-ot-devices-in-industrial-medical-and-enterprise-networks/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-05-10T16:33:45+09:00",
+					"description": "[2021年05月10日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-08-19T16:44:08+09:00",
+					"description": "[2021年08月19日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  対策：内容を更新\\n  ベンダ情報：BlackBerry (QNX-2021-001 Vulnerability in the C Runtime Library Impacts BlackBerry QNX Software Development Platform (SDP), QNX OS for Medical, and QNX OS for Safety) を追加\\n  ベンダ情報：BlackBerry (Affected Product List) を追加\\n  参考情報：US-CERT National Cyber Awareness System Alerts (AA21-229A) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2021-09-03T14:36:46+09:00",
+					"description": "[2021年09月03日]\\n  ベンダ情報：三菱電機株式会社 (三菱電機株式会社 の告知ページ) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2021-12-02T15:39:17+09:00",
+					"description": "[2021年12月02日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy RTU500 series) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi ABB Power Grids Modular Switchgear Monitoring System (MSM) Product) を追加\\n  ベンダ情報：Texas Instruments Incorporated (TI) (Report potential product security vulnerabilities) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2022-04-21T14:30:29+09:00",
+					"description": "[2022年04月21日]\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy GMS600 Product (PDF)) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy PWC600 Product (PDF)) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy REB500 Product (PDF)) を追加\\n  ベンダ情報：Hitachi Energy (BadAlloc - Memory Allocation Vulnerabilities in Hitachi Energy Relion 670, 650 series and SAM600-IO Product (PDF)) を追加\\n\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2021-05-10T16:33:45+09:00",
+		"datelastupdated": "2021-09-03T14:37:25+09:00",
+		"datepublic": "2021-04-30T00:00:00+09:00"
+	}
 }

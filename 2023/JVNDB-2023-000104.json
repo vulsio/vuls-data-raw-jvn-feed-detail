@@ -1,145 +1,145 @@
 {
-  "vulinfoid": "JVNDB-2023-000104",
-  "vulinfodata": {
-    "title": "Proself における XML 外部実体参照 (XXE) に関する脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社ノースグリッドが提供するオンラインストレージサーバ Proself には、XML 外部実体参照 (XXE) に関する脆弱性 (CWE-611) が存在します。  開発者によると、本脆弱性を悪用した攻撃が既に確認されています。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Enterprise Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_enterprise_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver5.62 およびそれ以前"
-          ]
-        },
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Gateway Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_gateway_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver1.65 およびそれ以前"
-          ]
-        },
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Mail Sanitize Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_mail_sanitize_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver1.08 およびそれ以前"
-          ]
-        },
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Standard Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_standard_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver5.62 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "細工されたリクエストに含まれる不正な XML データを当該製品が処理することで、サーバ上のアカウント情報を含む任意のファイルを窃取される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] アップデート版を適用するまでの間、暫定対応を実施することで、本脆弱性の影響を回避することができます。 詳細は開発者が提供する情報を確認してください。  [現行製品の利用を停止し、後続製品に乗り換える] 次のバージョンではサポートが終了しており、アップデートはリリースされないため、利用を停止するか Ver.5 以降の後継製品への乗り換えを検討してください。<ul><li>Proself Enterprise/Standard Edition Ver.4 およびそれ以前</li></ul> "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "North Grid Corporation",
-          "vulinfoid": "[至急]Proselfのゼロデイ脆弱性(CVE-2023-45727)による攻撃発生について(更新)",
-          "url": "https://www.proself.jp/information/153/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-45727",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-45727"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "「Proself」における XML 外部実体参照 (XXE) に関する脆弱性について（JVN#95981460）",
-          "url": "https://www.ipa.go.jp/security/security-alert/2023/20231018-jvn.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2023-0022",
-          "url": "https://www.jpcert.or.jp/at/2023/at230022.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#95981460",
-          "url": "https://jvn.jp/jp/JVN95981460/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-10-18T11:39:52+09:00",
-          "description": "[2023年10月18日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-10-18T18:05:40+09:00",
-          "description": "[2023年10月18日]\\n  ベンダ情報、参考情報：内容を追記"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-10-18T15:12:42+09:00",
-    "datelastupdated": "2023-10-18T15:12:42+09:00",
-    "datepublic": "2023-10-18T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-000104",
+	"vulinfodata": {
+		"title": "Proself における XML 外部実体参照 (XXE) に関する脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社ノースグリッドが提供するオンラインストレージサーバ Proself には、XML 外部実体参照 (XXE) に関する脆弱性 (CWE-611) が存在します。  開発者によると、本脆弱性を悪用した攻撃が既に確認されています。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Enterprise Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_enterprise_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver5.62 およびそれ以前"
+					]
+				},
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Gateway Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_gateway_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver1.65 およびそれ以前"
+					]
+				},
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Mail Sanitize Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_mail_sanitize_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver1.08 およびそれ以前"
+					]
+				},
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Standard Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_standard_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver5.62 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "細工されたリクエストに含まれる不正な XML データを当該製品が処理することで、サーバ上のアカウント情報を含む任意のファイルを窃取される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] アップデート版を適用するまでの間、暫定対応を実施することで、本脆弱性の影響を回避することができます。 詳細は開発者が提供する情報を確認してください。  [現行製品の利用を停止し、後続製品に乗り換える] 次のバージョンではサポートが終了しており、アップデートはリリースされないため、利用を停止するか Ver.5 以降の後継製品への乗り換えを検討してください。<ul><li>Proself Enterprise/Standard Edition Ver.4 およびそれ以前</li></ul> "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "North Grid Corporation",
+					"vulinfoid": "[至急]Proselfのゼロデイ脆弱性(CVE-2023-45727)による攻撃発生について(更新)",
+					"url": "https://www.proself.jp/information/153/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-45727",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-45727"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "「Proself」における XML 外部実体参照 (XXE) に関する脆弱性について（JVN#95981460）",
+					"url": "https://www.ipa.go.jp/security/security-alert/2023/20231018-jvn.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2023-0022",
+					"url": "https://www.jpcert.or.jp/at/2023/at230022.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#95981460",
+					"url": "https://jvn.jp/jp/JVN95981460/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-10-18T11:39:52+09:00",
+					"description": "[2023年10月18日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-10-18T18:05:40+09:00",
+					"description": "[2023年10月18日]\\n  ベンダ情報、参考情報：内容を追記"
+				}
+			]
+		},
+		"datefirstpublished": "2023-10-18T15:12:42+09:00",
+		"datelastupdated": "2023-10-18T15:12:42+09:00",
+		"datepublic": "2023-10-18T00:00:00+09:00"
+	}
 }

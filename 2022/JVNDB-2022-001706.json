@@ -1,97 +1,97 @@
 {
-  "vulinfoid": "JVNDB-2022-001706",
-  "vulinfodata": {
-    "title": "Qt 製 Windows アプリケーションにおける権限昇格の脆弱性",
-    "vulinfodescription": {
-      "overview": "The Qt Company が提供する Qt はマルチプラットフォーム向けアプリケーションフレームワークです。Qt で作成されたWindowsアプリケーションでは、 Qt 開発ツールのインストールパスが qt_prfxpath にハードコードされており、当該アプリケーションはこれらのパスから必要なモジュールをロードしようとします。  qt_prfxpath が指しているディレクトリは、例えば Qt の Windows インストーラーの初期設定では C:\\Qt\\ のサブディレクトリとなっており、Windows システムの一般ユーザがこのディレクトリを作成して悪意あるファイルを置き、Qt アプリケーションに読み込ませることが可能となっている場合があります。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The Qt Company",
-          "productname": "Qt",
-          "cpe": {
-            "text": "cpe:/a:qt:qt",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.14より前のバージョン"
-          ]
-        },
-        {
-          "name": "The Qt Company",
-          "productname": "windeployqt",
-          "cpe": {
-            "text": "cpe:/a:qt:qtwebkit_windeployqt",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "commit:c2952ff8df1e18fe0120d8b29901b0b794afccc7 以降を取り込んでいないバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "Qt で作成された Windows アプリケーションが特権を使用して実行される場合、Windows システムの一般ユーザが qt_prfxpath が指しているディレクトリに悪意をもったファイルを用意しておくことで、当該 Qt アプリの権限で任意のコードを実行させる可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "Qt を利用した Windows アプリケーションの開発者は、以下のどちらかを実施してください。  [Qt をアップデートしてアプリケーションを作成し直す] The Qt Company が提供する情報をもとに、Qt 開発環境を最新版へアップデートし、アプリケーションを作成し直してください。 Qt プロジェクトによると、Qt 5.14 以降では本脆弱性の対策が行われているとのことです。  [最新の windeployqt ツールを使ってアプリケーションを作成し直す] Qt 開発環境を最新版に更新できない場合でも、アプリケーションのパッケージ化を行うツール windeployqt の commit:c2952ff8df1e18fe0120d8b29901b0b794afccc7 以降を含む最新版を使用することで、Qt5Core.dll に含まれる qt_prfxpath の値を削除できるとのことです。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Qt",
-          "vulinfoid": "[QTBUG-15234] Qt hard-codes paths in libraries/binaries",
-          "url": "https://bugreports.qt.io/browse/QTBUG-15234"
-        },
-        {
-          "type": "vendor",
-          "name": "Qt",
-          "vulinfoid": "Qt for Windows - Deployment",
-          "url": "https://doc.qt.io/qt-5/windows-deployment.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Qt",
-          "vulinfoid": "windeployqt: Patch qt_prfxpath when deploying Qt5Core",
-          "url": "https://codereview.qt-project.org/gitweb?p=qt%2Fqttools.git&a=commit&h=c2952ff8df1e18fe0120d8b29901b0b794afccc7"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-26873",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-26873"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92669710",
-          "url": "https://jvn.jp/vu/JVNVU92669710/"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#411271",
-          "url": "https://www.kb.cert.org/vuls/id/411271"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-05-10T14:04:44+09:00",
-          "description": "[2022年05月10日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-05-10T14:55:09+09:00",
-    "datelastupdated": "2022-05-10T14:55:09+09:00",
-    "datepublic": "2022-05-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-001706",
+	"vulinfodata": {
+		"title": "Qt 製 Windows アプリケーションにおける権限昇格の脆弱性",
+		"vulinfodescription": {
+			"overview": "The Qt Company が提供する Qt はマルチプラットフォーム向けアプリケーションフレームワークです。Qt で作成されたWindowsアプリケーションでは、 Qt 開発ツールのインストールパスが qt_prfxpath にハードコードされており、当該アプリケーションはこれらのパスから必要なモジュールをロードしようとします。  qt_prfxpath が指しているディレクトリは、例えば Qt の Windows インストーラーの初期設定では C:\\Qt\\ のサブディレクトリとなっており、Windows システムの一般ユーザがこのディレクトリを作成して悪意あるファイルを置き、Qt アプリケーションに読み込ませることが可能となっている場合があります。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The Qt Company",
+					"productname": "Qt",
+					"cpe": {
+						"text": "cpe:/a:qt:qt",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.14より前のバージョン"
+					]
+				},
+				{
+					"name": "The Qt Company",
+					"productname": "windeployqt",
+					"cpe": {
+						"text": "cpe:/a:qt:qtwebkit_windeployqt",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"commit:c2952ff8df1e18fe0120d8b29901b0b794afccc7 以降を取り込んでいないバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "Qt で作成された Windows アプリケーションが特権を使用して実行される場合、Windows システムの一般ユーザが qt_prfxpath が指しているディレクトリに悪意をもったファイルを用意しておくことで、当該 Qt アプリの権限で任意のコードを実行させる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "Qt を利用した Windows アプリケーションの開発者は、以下のどちらかを実施してください。  [Qt をアップデートしてアプリケーションを作成し直す] The Qt Company が提供する情報をもとに、Qt 開発環境を最新版へアップデートし、アプリケーションを作成し直してください。 Qt プロジェクトによると、Qt 5.14 以降では本脆弱性の対策が行われているとのことです。  [最新の windeployqt ツールを使ってアプリケーションを作成し直す] Qt 開発環境を最新版に更新できない場合でも、アプリケーションのパッケージ化を行うツール windeployqt の commit:c2952ff8df1e18fe0120d8b29901b0b794afccc7 以降を含む最新版を使用することで、Qt5Core.dll に含まれる qt_prfxpath の値を削除できるとのことです。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Qt",
+					"vulinfoid": "[QTBUG-15234] Qt hard-codes paths in libraries/binaries",
+					"url": "https://bugreports.qt.io/browse/QTBUG-15234"
+				},
+				{
+					"type": "vendor",
+					"name": "Qt",
+					"vulinfoid": "Qt for Windows - Deployment",
+					"url": "https://doc.qt.io/qt-5/windows-deployment.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Qt",
+					"vulinfoid": "windeployqt: Patch qt_prfxpath when deploying Qt5Core",
+					"url": "https://codereview.qt-project.org/gitweb?p=qt%2Fqttools.git&a=commit&h=c2952ff8df1e18fe0120d8b29901b0b794afccc7"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-26873",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-26873"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92669710",
+					"url": "https://jvn.jp/vu/JVNVU92669710/"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#411271",
+					"url": "https://www.kb.cert.org/vuls/id/411271"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-05-10T14:04:44+09:00",
+					"description": "[2022年05月10日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2022-05-10T14:55:09+09:00",
+		"datelastupdated": "2022-05-10T14:55:09+09:00",
+		"datepublic": "2022-05-09T00:00:00+09:00"
+	}
 }

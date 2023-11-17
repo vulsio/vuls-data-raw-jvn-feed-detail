@@ -1,119 +1,119 @@
 {
-  "vulinfoid": "JVNDB-2015-005660",
-  "vulinfodata": {
-    "title": "仮想マシンモニタ (VMM) のメモリ重複排除機能に脆弱性",
-    "vulinfodescription": {
-      "overview": "** 未確定 ** 本件は、脆弱性として確定していません。  仮想マシンモニタ (VMM) の複数の実装は、メモリ重複排除機能に対する攻撃に対して脆弱です。  USENIX WOOT'15 で発表された論文 \"Cross-VM ASL INtrospection (CAIN)\" では、仮想マシンモニタ (VMM) で動作するひとつの仮想マシン (VM) 上で一般ユーザ権限を持つ攻撃者によって、VMM のメモリ重複排除機能に含まれる脆弱性を攻撃可能であることが報告されています。同一 VMM 内の別の VM で動作している OS 上でランダムに配置されたライブラリや実行ファイルの基底アドレスを特定することが可能となり、結果として ASLR を回避されることに繋がります。  なお、ベンダは、「Cross-VM ASL INtrospection (CAIN) 攻撃を気にするのであれば、重複排除を無効にすればよい」とし、本件が脆弱性ではなく、潜在的に誤解されやすい動作であるとの見解を述べています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.6.32 から 4.x"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "2.1",
-          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "3.3",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "ある VM 上で一般ユーザ権限しか持たない攻撃者によって、別の VM 内で動作するプロセスの基底アドレスを特定される可能性があります。この情報は、当該プロセスで実行されるプログラムの既知の脆弱性に対する Return-Oriented Programming (ROP) エクスプロイトの開発に使用される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[メモリ重複排除機能を無効化する] 本脆弱性に対する攻撃を完全に防ぐ方法として唯一知られているのは、メモリ重複排除機能を無効化することです。  他の回避策の一覧については、論文 CAIN: Silently Breaking ASLR in the Cloud を参照してください。  CAIN: Silently Breaking ASLR in the Cloud https://www.usenix.org/conference/woot15/workshop-program/presentation/barresi"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1252096",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1252096"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-2877",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2877"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97246638",
-          "url": "http://jvn.jp/vu/JVNVU97246638/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-2877",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2015-2877"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#935424",
-          "url": "http://www.kb.cert.org/vuls/id/935424"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "CAIN: Silently Breaking ASLR in the Cloud",
-          "url": "https://www.usenix.org/conference/woot15/workshop-program/presentation/barresi"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年10月30日]\\n  掲載\\n[2017年04月11日]\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Linux Kernel (Linux Kernel Archives) を追加\\n  ベンダ情報：レッドハット (Bug 1252096) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2877) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-10-30T10:05:03+09:00",
-    "datelastupdated": "2017-04-11T14:47:10+09:00",
-    "datepublic": "2015-10-20T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-005660",
+	"vulinfodata": {
+		"title": "仮想マシンモニタ (VMM) のメモリ重複排除機能に脆弱性",
+		"vulinfodescription": {
+			"overview": "** 未確定 ** 本件は、脆弱性として確定していません。  仮想マシンモニタ (VMM) の複数の実装は、メモリ重複排除機能に対する攻撃に対して脆弱です。  USENIX WOOT'15 で発表された論文 \"Cross-VM ASL INtrospection (CAIN)\" では、仮想マシンモニタ (VMM) で動作するひとつの仮想マシン (VM) 上で一般ユーザ権限を持つ攻撃者によって、VMM のメモリ重複排除機能に含まれる脆弱性を攻撃可能であることが報告されています。同一 VMM 内の別の VM で動作している OS 上でランダムに配置されたライブラリや実行ファイルの基底アドレスを特定することが可能となり、結果として ASLR を回避されることに繋がります。  なお、ベンダは、「Cross-VM ASL INtrospection (CAIN) 攻撃を気にするのであれば、重複排除を無効にすればよい」とし、本件が脆弱性ではなく、潜在的に誤解されやすい動作であるとの見解を述べています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6.32 から 4.x"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.1",
+					"vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "3.3",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "ある VM 上で一般ユーザ権限しか持たない攻撃者によって、別の VM 内で動作するプロセスの基底アドレスを特定される可能性があります。この情報は、当該プロセスで実行されるプログラムの既知の脆弱性に対する Return-Oriented Programming (ROP) エクスプロイトの開発に使用される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[メモリ重複排除機能を無効化する] 本脆弱性に対する攻撃を完全に防ぐ方法として唯一知られているのは、メモリ重複排除機能を無効化することです。  他の回避策の一覧については、論文 CAIN: Silently Breaking ASLR in the Cloud を参照してください。  CAIN: Silently Breaking ASLR in the Cloud https://www.usenix.org/conference/woot15/workshop-program/presentation/barresi"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1252096",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1252096"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-2877",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2877"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97246638",
+					"url": "http://jvn.jp/vu/JVNVU97246638/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-2877",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2015-2877"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#935424",
+					"url": "http://www.kb.cert.org/vuls/id/935424"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "CAIN: Silently Breaking ASLR in the Cloud",
+					"url": "https://www.usenix.org/conference/woot15/workshop-program/presentation/barresi"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年10月30日]\\n  掲載\\n[2017年04月11日]\\n  概要：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：Linux Kernel (Linux Kernel Archives) を追加\\n  ベンダ情報：レッドハット (Bug 1252096) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2877) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-10-30T10:05:03+09:00",
+		"datelastupdated": "2017-04-11T14:47:10+09:00",
+		"datepublic": "2015-10-20T00:00:00+09:00"
+	}
 }

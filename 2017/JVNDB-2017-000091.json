@@ -1,120 +1,120 @@
 {
-  "vulinfoid": "JVNDB-2017-000091",
-  "vulinfodata": {
-    "title": "FlashAir のフォトシェア機能に SSID およびパスワード固定の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社東芝が提供する FlashAir は、無線 LAN 接続機能を搭載した SDHC メモリカードです。FlashAir のフォトシェア機能では、FlashAir の初期設定による無線 LAN とは別の設定の、フォトシェア専用の無線 LAN に切り替わり、特定のフォルダ内の写真を他ユーザと共有することができます。 専用アプリからフォトシェアを開始する際には、フォトシェア専用の無線 LAN の設定を行うよう誘導されます。一方、ウェブブラウザからの操作でフォトシェアを開始する際には、フォトシェア専用の無線 LAN 設定を行うことができず、固定された設定の無線 LAN が有効になります。その結果、当該無線 LAN にアクセス可能な第三者により、共有している写真データを閲覧されてしまいます (CWE-284)。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 諌山 貴由 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "東芝",
-          "productname": "FlashAir",
-          "cpe": {
-            "text": "cpe:/a:toshiba:flashair",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "SDHCメモリカード （SD-WD/WCシリーズ＜W-02＞） V2.00.03 およびそれ以前",
-            "SDHCメモリカード （SD-WEシリーズ＜W-03＞） V3.00.01 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "3.3",
-          "vector": "AV:A/AC:L/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "ウェブブラウザからの操作でフォトシェアを開始した場合、無線 LAN に接続可能な第三者によって、フォトシェアで共有しているデータを閲覧されてしまう可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[フォトシェアを開始する際には専用アプリを使用する] フォトシェア機能を使用する際には、意図しない第三者によるアクセスを防ぐため、専用アプリを使用して SSID とパスワードを変更してください。 なお、開発者によると、次のバージョン以降においては、ウェブブラウザからの操作でフォトシェアを開始できないように機能を制限しているとのことです。 ・FlashAir SDHCメモリカード（SD-WEシリーズ＜W-03＞） V3.00.02 ・FlashAir SDHCメモリカード（SD-WD/WCシリーズ＜W-02＞） V2.00.04"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "東芝",
-          "vulinfoid": "FlashAir SDHCメモリカード（SD-WD/WCシリーズ＜W-02＞）",
-          "url": "http://www.toshiba-personalstorage.net/endproduct/flashair/index_j.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝",
-          "vulinfoid": "FlashAir SDHCメモリカード（SD-WEシリーズ＜W-03＞）",
-          "url": "http://www.toshiba-personalstorage.net/product/flashair/index_j.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝",
-          "vulinfoid": "FlashAir のフォトシェア機能におけるパスワードの固定の脆弱性について",
-          "url": "http://www.toshiba-personalstorage.net/news/20170516a.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝",
-          "vulinfoid": "フォトシェア機能の使い方",
-          "url": "http://www.toshiba-personalstorage.net/support/manual/flashair/wewdwc/photoshare.htm"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-2162",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2162"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#81820501",
-          "url": "https://jvn.jp/jp/JVN81820501/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-2162",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2162"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年05月16日]\\n  掲載\\n[2017年12月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2162) を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-05-16T14:04:29+09:00",
-    "datelastupdated": "2017-12-21T19:10:48+09:00",
-    "datepublic": "2017-05-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-000091",
+	"vulinfodata": {
+		"title": "FlashAir のフォトシェア機能に SSID およびパスワード固定の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社東芝が提供する FlashAir は、無線 LAN 接続機能を搭載した SDHC メモリカードです。FlashAir のフォトシェア機能では、FlashAir の初期設定による無線 LAN とは別の設定の、フォトシェア専用の無線 LAN に切り替わり、特定のフォルダ内の写真を他ユーザと共有することができます。 専用アプリからフォトシェアを開始する際には、フォトシェア専用の無線 LAN の設定を行うよう誘導されます。一方、ウェブブラウザからの操作でフォトシェアを開始する際には、フォトシェア専用の無線 LAN 設定を行うことができず、固定された設定の無線 LAN が有効になります。その結果、当該無線 LAN にアクセス可能な第三者により、共有している写真データを閲覧されてしまいます (CWE-284)。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 三井物産セキュアディレクション株式会社 諌山 貴由 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "東芝",
+					"productname": "FlashAir",
+					"cpe": {
+						"text": "cpe:/a:toshiba:flashair",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"SDHCメモリカード （SD-WD/WCシリーズ＜W-02＞） V2.00.03 およびそれ以前",
+						"SDHCメモリカード （SD-WEシリーズ＜W-03＞） V3.00.01 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "3.3",
+					"vector": "AV:A/AC:L/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "ウェブブラウザからの操作でフォトシェアを開始した場合、無線 LAN に接続可能な第三者によって、フォトシェアで共有しているデータを閲覧されてしまう可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[フォトシェアを開始する際には専用アプリを使用する] フォトシェア機能を使用する際には、意図しない第三者によるアクセスを防ぐため、専用アプリを使用して SSID とパスワードを変更してください。 なお、開発者によると、次のバージョン以降においては、ウェブブラウザからの操作でフォトシェアを開始できないように機能を制限しているとのことです。 ・FlashAir SDHCメモリカード（SD-WEシリーズ＜W-03＞） V3.00.02 ・FlashAir SDHCメモリカード（SD-WD/WCシリーズ＜W-02＞） V2.00.04"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "東芝",
+					"vulinfoid": "FlashAir SDHCメモリカード（SD-WD/WCシリーズ＜W-02＞）",
+					"url": "http://www.toshiba-personalstorage.net/endproduct/flashair/index_j.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝",
+					"vulinfoid": "FlashAir SDHCメモリカード（SD-WEシリーズ＜W-03＞）",
+					"url": "http://www.toshiba-personalstorage.net/product/flashair/index_j.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝",
+					"vulinfoid": "FlashAir のフォトシェア機能におけるパスワードの固定の脆弱性について",
+					"url": "http://www.toshiba-personalstorage.net/news/20170516a.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝",
+					"vulinfoid": "フォトシェア機能の使い方",
+					"url": "http://www.toshiba-personalstorage.net/support/manual/flashair/wewdwc/photoshare.htm"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-2162",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2162"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#81820501",
+					"url": "https://jvn.jp/jp/JVN81820501/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-2162",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-2162"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年05月16日]\\n  掲載\\n[2017年12月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-2162) を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2017-05-16T14:04:29+09:00",
+		"datelastupdated": "2017-12-21T19:10:48+09:00",
+		"datepublic": "2017-05-16T00:00:00+09:00"
+	}
 }

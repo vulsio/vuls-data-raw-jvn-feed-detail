@@ -1,212 +1,212 @@
 {
-  "vulinfoid": "JVNDB-2023-000080",
-  "vulinfodata": {
-    "title": "FFRI yarai および FFRI yarai Home and Business Edition における例外条件の不適切な処理の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社ＦＦＲＩセキュリティが提供する FFRI yarai および FFRI yarai Home and Business Edition には、例外条件の不適切な処理 (CWE-703) の脆弱性が存在します。 Windows Defender 連携機能を有効にしている環境において、特定の条件を満たしたファイルを Microsoft Defenderが脅威として検知した場合、当該製品が適切に処理できずにサービス運用妨害 (DoS) 状態となる可能性があります。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Ｓｋｙ株式会社",
-          "productname": "EDR プラスパック",
-          "cpe": {
-            "text": "cpe:/a:skygroup:edr_pluspack",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(同梱する FFRI yarai バージョン 3.4.0 から 3.4.6、3.5.0)"
-          ]
-        },
-        {
-          "name": "Ｓｋｙ株式会社",
-          "productname": "EDR プラスパック Cloud",
-          "cpe": {
-            "text": "cpe:/a:skygroup:edr_pluspack_cloud",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(同梱する FFRI yarai バージョン 3.4.0 から 3.4.6、3.5.0)"
-          ]
-        },
-        {
-          "name": "ソースネクスト",
-          "productname": "二重の安心 Powered by FFRI yarai",
-          "cpe": {
-            "text": "cpe:/a:sourcenext:double_protection_powered_by_ffri_yarai",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 1.4.1"
-          ]
-        },
-        {
-          "name": "株式会社ＦＦＲＩセキュリティ",
-          "productname": "FFRI yarai",
-          "cpe": {
-            "text": "cpe:/a:misc:ffri_security_ffri_yarai",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.4.0 から 3.4.6、3.5.0"
-          ]
-        },
-        {
-          "name": "株式会社ＦＦＲＩセキュリティ",
-          "productname": "FFRI yarai Home and Business Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:ffri_security_ffri_yarai_home_and_business_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 1.4.0"
-          ]
-        },
-        {
-          "name": "株式会社ソリトンシステムズ",
-          "productname": "InfoTrace Mark II",
-          "cpe": {
-            "text": "cpe:/a:soliton:info_trace_mark_II",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "マルウェア防御（Mark II Zerona）バージョン 3.0.1 から 3.2.2"
-          ]
-        },
-        {
-          "name": "株式会社ソリトンシステムズ",
-          "productname": "Zerona",
-          "cpe": {
-            "text": "cpe:/a:soliton:zerona",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.2.32 から 3.2.36"
-          ]
-        },
-        {
-          "name": "株式会社ソリトンシステムズ",
-          "productname": "Zerona PLUS マルウェア対策",
-          "cpe": {
-            "text": "cpe:/a:soliton:zerona_plus_anti-malware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 3.2.32 から 3.2.36"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "ActSecure",
-          "cpe": {
-            "text": "cpe:/a:nec:actsecure",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "χ バージョン 3.4.0 から 3.4.6、3.5.0"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
-        }
-      ],
-      "impactitem": {
-        "description": "当該製品が本来の動作を停止し、監視機能が最大で 15 分間停止するサービス運用妨害 (DoS) 状態が発生する可能性があります。 なお、当該製品がサービス運用妨害 (DoS) 状態となった場合でも Microsoft Defender 自体は無効化されません。  また開発者によると、サービス運用妨害 (DoS) 状態となった場合、次のいずれかの方法で復旧可能とのことです。<ul><li>当該製品が動作する端末を再起動する<li>最大 15 分経過後に自動的に復旧するのを待つ</ul>"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 各製品において、本脆弱性を修正した次のバージョンがリリースされています。  株式会社ＦＦＲＩセキュリティ<ul><li>FFRI yarai バージョン 3.4.7 または 3.5.3<li>FFRI yarai Home and Business Edition バージョン 1.4.2</ul> 株式会社ソリトンシステムズ<ul><li>InfoTrace Mark II マルウェア防御（Mark II Zerona）バージョン 3.2.4</ul> 日本電気株式会社<ul><li>ActSecure χ バージョン 3.5.3</ul> ソースネクスト株式会社<ul><li>二重の安心 Powered by FFRI yarai 1.4.2</ul> Ｓｋｙ株式会社<ul><li>EDRプラスパック (同梱する FFRI yarai バージョン 3.4.7 または 3.5.3)<li>EDRプラスパックCloud (同梱する FFRI yarai バージョン 3.4.7 または 3.5.3)</ul>  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。<ul><li>Windows Defender 連携機能を無効にする</ul>詳しくは、開発者が提供する情報を確認してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "FFRI Security, Inc.",
-          "vulinfoid": "【重要】製品の脆弱性対応",
-          "url": "https://www.ffri.jp/security-info/index.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC",
-          "vulinfoid": "【FFRI】【重要】ActSecureχクライアントにおける例外条件の不適切な処理の脆弱性(要ログイン)",
-          "url": "https://www.support.nec.co.jp/View.aspx?id=3140109240"
-        },
-        {
-          "type": "vendor",
-          "name": "SOURCENEXT CORPORATION",
-          "vulinfoid": "「二重の安心 Powered by FFRI yarai」の脆弱性と修正完了に関するお知らせ",
-          "url": "https://www.sourcenext.com/support/i/2023/230718_01"
-        },
-        {
-          "type": "vendor",
-          "name": "Ｓｋｙ株式会社",
-          "vulinfoid": "『EDRプラスパック』および『EDRプラスパックCloud』に同梱しているFFRI yaraiの脆弱性（CVE-2023-39341）",
-          "url": "https://www.skyseaclientview.net/news/230807_01/"
-        },
-        {
-          "type": "vendor",
-          "name": "株式会社ソリトンシステムズ",
-          "vulinfoid": "【重要】Zerona 特定条件下で(マルウェア防御/マルウェア対策)機能が一時停止する脆弱性について",
-          "url": "https://www.soliton.co.jp/support/zerona_notice_2023.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-39341",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-39341"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#42527152",
-          "url": "https://jvn.jp/jp/JVN42527152/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-08-03T10:29:55+09:00",
-          "description": "[2023年08月07日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-08-31T10:53:19+09:00",
-          "description": "[2023年08月31日]\\n  対策：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-08-07T15:36:27+09:00",
-    "datelastupdated": "2023-08-07T15:36:27+09:00",
-    "datepublic": "2023-08-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-000080",
+	"vulinfodata": {
+		"title": "FFRI yarai および FFRI yarai Home and Business Edition における例外条件の不適切な処理の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社ＦＦＲＩセキュリティが提供する FFRI yarai および FFRI yarai Home and Business Edition には、例外条件の不適切な処理 (CWE-703) の脆弱性が存在します。 Windows Defender 連携機能を有効にしている環境において、特定の条件を満たしたファイルを Microsoft Defenderが脅威として検知した場合、当該製品が適切に処理できずにサービス運用妨害 (DoS) 状態となる可能性があります。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Ｓｋｙ株式会社",
+					"productname": "EDR プラスパック",
+					"cpe": {
+						"text": "cpe:/a:skygroup:edr_pluspack",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(同梱する FFRI yarai バージョン 3.4.0 から 3.4.6、3.5.0)"
+					]
+				},
+				{
+					"name": "Ｓｋｙ株式会社",
+					"productname": "EDR プラスパック Cloud",
+					"cpe": {
+						"text": "cpe:/a:skygroup:edr_pluspack_cloud",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(同梱する FFRI yarai バージョン 3.4.0 から 3.4.6、3.5.0)"
+					]
+				},
+				{
+					"name": "ソースネクスト",
+					"productname": "二重の安心 Powered by FFRI yarai",
+					"cpe": {
+						"text": "cpe:/a:sourcenext:double_protection_powered_by_ffri_yarai",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 1.4.1"
+					]
+				},
+				{
+					"name": "株式会社ＦＦＲＩセキュリティ",
+					"productname": "FFRI yarai",
+					"cpe": {
+						"text": "cpe:/a:misc:ffri_security_ffri_yarai",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.4.0 から 3.4.6、3.5.0"
+					]
+				},
+				{
+					"name": "株式会社ＦＦＲＩセキュリティ",
+					"productname": "FFRI yarai Home and Business Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:ffri_security_ffri_yarai_home_and_business_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 1.4.0"
+					]
+				},
+				{
+					"name": "株式会社ソリトンシステムズ",
+					"productname": "InfoTrace Mark II",
+					"cpe": {
+						"text": "cpe:/a:soliton:info_trace_mark_II",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"マルウェア防御（Mark II Zerona）バージョン 3.0.1 から 3.2.2"
+					]
+				},
+				{
+					"name": "株式会社ソリトンシステムズ",
+					"productname": "Zerona",
+					"cpe": {
+						"text": "cpe:/a:soliton:zerona",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.2.32 から 3.2.36"
+					]
+				},
+				{
+					"name": "株式会社ソリトンシステムズ",
+					"productname": "Zerona PLUS マルウェア対策",
+					"cpe": {
+						"text": "cpe:/a:soliton:zerona_plus_anti-malware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 3.2.32 から 3.2.36"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "ActSecure",
+					"cpe": {
+						"text": "cpe:/a:nec:actsecure",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"χ バージョン 3.4.0 から 3.4.6、3.5.0"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品が本来の動作を停止し、監視機能が最大で 15 分間停止するサービス運用妨害 (DoS) 状態が発生する可能性があります。 なお、当該製品がサービス運用妨害 (DoS) 状態となった場合でも Microsoft Defender 自体は無効化されません。  また開発者によると、サービス運用妨害 (DoS) 状態となった場合、次のいずれかの方法で復旧可能とのことです。<ul><li>当該製品が動作する端末を再起動する<li>最大 15 分経過後に自動的に復旧するのを待つ</ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 各製品において、本脆弱性を修正した次のバージョンがリリースされています。  株式会社ＦＦＲＩセキュリティ<ul><li>FFRI yarai バージョン 3.4.7 または 3.5.3<li>FFRI yarai Home and Business Edition バージョン 1.4.2</ul> 株式会社ソリトンシステムズ<ul><li>InfoTrace Mark II マルウェア防御（Mark II Zerona）バージョン 3.2.4</ul> 日本電気株式会社<ul><li>ActSecure χ バージョン 3.5.3</ul> ソースネクスト株式会社<ul><li>二重の安心 Powered by FFRI yarai 1.4.2</ul> Ｓｋｙ株式会社<ul><li>EDRプラスパック (同梱する FFRI yarai バージョン 3.4.7 または 3.5.3)<li>EDRプラスパックCloud (同梱する FFRI yarai バージョン 3.4.7 または 3.5.3)</ul>  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。<ul><li>Windows Defender 連携機能を無効にする</ul>詳しくは、開発者が提供する情報を確認してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "FFRI Security, Inc.",
+					"vulinfoid": "【重要】製品の脆弱性対応",
+					"url": "https://www.ffri.jp/security-info/index.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC",
+					"vulinfoid": "【FFRI】【重要】ActSecureχクライアントにおける例外条件の不適切な処理の脆弱性(要ログイン)",
+					"url": "https://www.support.nec.co.jp/View.aspx?id=3140109240"
+				},
+				{
+					"type": "vendor",
+					"name": "SOURCENEXT CORPORATION",
+					"vulinfoid": "「二重の安心 Powered by FFRI yarai」の脆弱性と修正完了に関するお知らせ",
+					"url": "https://www.sourcenext.com/support/i/2023/230718_01"
+				},
+				{
+					"type": "vendor",
+					"name": "Ｓｋｙ株式会社",
+					"vulinfoid": "『EDRプラスパック』および『EDRプラスパックCloud』に同梱しているFFRI yaraiの脆弱性（CVE-2023-39341）",
+					"url": "https://www.skyseaclientview.net/news/230807_01/"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社ソリトンシステムズ",
+					"vulinfoid": "【重要】Zerona 特定条件下で(マルウェア防御/マルウェア対策)機能が一時停止する脆弱性について",
+					"url": "https://www.soliton.co.jp/support/zerona_notice_2023.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39341",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39341"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#42527152",
+					"url": "https://jvn.jp/jp/JVN42527152/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-08-03T10:29:55+09:00",
+					"description": "[2023年08月07日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-08-31T10:53:19+09:00",
+					"description": "[2023年08月31日]\\n  対策：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2023-08-07T15:36:27+09:00",
+		"datelastupdated": "2023-08-07T15:36:27+09:00",
+		"datepublic": "2023-08-07T00:00:00+09:00"
+	}
 }

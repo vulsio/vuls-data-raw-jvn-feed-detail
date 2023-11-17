@@ -1,164 +1,164 @@
 {
-  "vulinfoid": "JVNDB-2016-002701",
-  "vulinfodata": {
-    "title": "GNU Libtasn1 の lib/decoding.c の _asn1_extract_der_octet 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "GNU Libtasn1 の lib/decoding.c の _asn1_extract_der_octet 関数は、ASN1_DECODE_FLAG_STRICT_DER フラグなしで使用される場合、サービス運用妨害 (無限再帰) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.04 LTS",
-            "14.04 LTS",
-            "15.10",
-            "16.04 LTS"
-          ]
-        },
-        {
-          "name": "Fedora Project",
-          "productname": "Fedora",
-          "cpe": {
-            "text": "cpe:/o:fedoraproject:fedora",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "22",
-            "23",
-            "24"
-          ]
-        },
-        {
-          "name": "GNU Project",
-          "productname": "GNU Libtasn1",
-          "cpe": {
-            "text": "cpe:/a:gnu:libtasn1",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.8 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.9",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、巧妙に細工された証明書を介して、サービス運用妨害 (無限再帰) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-96bfd9e873",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183221.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-383b8250e6",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/182907.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2016-048ffb6235",
-          "url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/182299.html"
-        },
-        {
-          "type": "vendor",
-          "name": "GNU Project",
-          "vulinfoid": "GNU Libtasn1 4.8 released",
-          "url": "https://lists.gnu.org/archive/html/help-libtasn1/2016-04/msg00009.html"
-        },
-        {
-          "type": "vendor",
-          "name": "GNU Savannah",
-          "vulinfoid": "_asn1_extract_der_octet: properly account the bytes read through indefinite encodings",
-          "url": "http://git.savannah.gnu.org/gitweb/?p=libtasn1.git;a=commit;h=a6e0a0b58f5cdaf4e9beca5bce69c09808cbb625"
-        },
-        {
-          "type": "vendor",
-          "name": "GNU Savannah",
-          "vulinfoid": "_asn1_extract_der_octet: catch invalid input cases early",
-          "url": "http://git.savannah.gnu.org/gitweb/?p=libtasn1.git;a=commit;h=f435825c0f527a8e52e6ffbc3ad0bc60531d537e"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2957-2",
-          "url": "http://www.ubuntu.com/usn/USN-2957-2/"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2957-1",
-          "url": "http://www.ubuntu.com/usn/USN-2957-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-4008",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4008"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-4008",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4008"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-399",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
-          "title": "リソース管理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年05月17日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-05-17T14:52:51+09:00",
-    "datelastupdated": "2016-05-17T14:52:51+09:00",
-    "datepublic": "2016-04-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-002701",
+	"vulinfodata": {
+		"title": "GNU Libtasn1 の lib/decoding.c の _asn1_extract_der_octet 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "GNU Libtasn1 の lib/decoding.c の _asn1_extract_der_octet 関数は、ASN1_DECODE_FLAG_STRICT_DER フラグなしで使用される場合、サービス運用妨害 (無限再帰) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.04 LTS",
+						"14.04 LTS",
+						"15.10",
+						"16.04 LTS"
+					]
+				},
+				{
+					"name": "Fedora Project",
+					"productname": "Fedora",
+					"cpe": {
+						"text": "cpe:/o:fedoraproject:fedora",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"22",
+						"23",
+						"24"
+					]
+				},
+				{
+					"name": "GNU Project",
+					"productname": "GNU Libtasn1",
+					"cpe": {
+						"text": "cpe:/a:gnu:libtasn1",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.8 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.9",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、巧妙に細工された証明書を介して、サービス運用妨害 (無限再帰) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-96bfd9e873",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/183221.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-383b8250e6",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/182907.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2016-048ffb6235",
+					"url": "https://lists.fedoraproject.org/pipermail/package-announce/2016-April/182299.html"
+				},
+				{
+					"type": "vendor",
+					"name": "GNU Project",
+					"vulinfoid": "GNU Libtasn1 4.8 released",
+					"url": "https://lists.gnu.org/archive/html/help-libtasn1/2016-04/msg00009.html"
+				},
+				{
+					"type": "vendor",
+					"name": "GNU Savannah",
+					"vulinfoid": "_asn1_extract_der_octet: properly account the bytes read through indefinite encodings",
+					"url": "http://git.savannah.gnu.org/gitweb/?p=libtasn1.git;a=commit;h=a6e0a0b58f5cdaf4e9beca5bce69c09808cbb625"
+				},
+				{
+					"type": "vendor",
+					"name": "GNU Savannah",
+					"vulinfoid": "_asn1_extract_der_octet: catch invalid input cases early",
+					"url": "http://git.savannah.gnu.org/gitweb/?p=libtasn1.git;a=commit;h=f435825c0f527a8e52e6ffbc3ad0bc60531d537e"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2957-2",
+					"url": "http://www.ubuntu.com/usn/USN-2957-2/"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2957-1",
+					"url": "http://www.ubuntu.com/usn/USN-2957-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-4008",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4008"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-4008",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-4008"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-399",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-399.html",
+					"title": "リソース管理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年05月17日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2016-05-17T14:52:51+09:00",
+		"datelastupdated": "2016-05-17T14:52:51+09:00",
+		"datepublic": "2016-04-11T00:00:00+09:00"
+	}
 }

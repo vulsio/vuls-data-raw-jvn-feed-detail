@@ -1,201 +1,201 @@
 {
-  "vulinfoid": "JVNDB-2018-003717",
-  "vulinfodata": {
-    "title": "STARDOM コントローラに複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "横河電機株式会社が提供する STARDOM コントローラには、複数の脆弱性が存在します。  横河電機株式会社が提供する STARDOM は、中小規模工場向け PLC 計装システムです。STARDOM コントローラには、次の複数の脆弱性が存在します。  　* アカウント ID およびパスワード情報がハードコードされている問題 (CWE-798) - CVE-2018-10592 　* 情報漏えい (CWE-200) - CVE-2018-17900 　* リモート管理機能に対するサービス運用妨害 (DoS) (CWE-119) - CVE-2018-17902 　* メンテナンス機能の認証情報がハードコードされている問題 (CWE-798) - CVE-2018-17896 　* コントローラの HTTP サービスに対するサービス運用妨害 (DoS) (CWE-119) - CVE-2018-17898"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "横河電機株式会社",
-          "productname": "STARDOM FCJ",
-          "cpe": {
-            "text": "cpe:/o:yokogawa:fcj_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R4.02 およびそれ以前",
-            "R4.10 およびそれ以前"
-          ]
-        },
-        {
-          "name": "横河電機株式会社",
-          "productname": "STARDOM FCN-100",
-          "cpe": {
-            "text": "cpe:/o:yokogawa:fcn-100_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R4.02 およびそれ以前",
-            "R4.10 およびそれ以前"
-          ]
-        },
-        {
-          "name": "横河電機株式会社",
-          "productname": "STARDOM FCN-500",
-          "cpe": {
-            "text": "cpe:/o:yokogawa:fcn-500_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R4.02 およびそれ以前",
-            "R4.10 およびそれ以前"
-          ]
-        },
-        {
-          "name": "横河電機株式会社",
-          "productname": "STARDOM FCN-RTU",
-          "cpe": {
-            "text": "cpe:/o:yokogawa:fcn-rtu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R4.02 およびそれ以前",
-            "R4.10 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.3",
-          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.1",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、コントローラにログインされ、任意のコマンドを実行される - CVE-2018-10592 　* 遠隔の第三者によって、コントローラのリモート管理機能へアクセスするための認証情報を取得される - CVE-2018-17900 　* 遠隔の第三者によって、コントローラのリモート管理機能に対するサービス運用妨害 (DoS) 攻撃が行われる - CVE-2018-17902 　* 遠隔の第三者によって、コントローラのメンテナンス機能にログインされ、情報を取得、改ざんされる - CVE-2018-17896 　* 遠隔の第三者によって、コントローラの HTTP サービスに対するサービス運用妨害 (DoS) 攻撃が行われる - CVE-2018-17898"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] - CVE-2018-10592 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を STARDOM FCN/FCJ R4.10 で修正しています。  詳しくは開発者が提供する情報をご覧ください。  [ソフトウエアのアップデート、アクセス制限およびネットワーク構成の再検討] - CVE-2018-17900, CVE-2018-17902, CVE-2018-17896, CVE-2018-17898 当該製品で使用されている FCN/FCJ 基本ソフトウエアを R4.20 以降にアップデートするとともに、当該製品との通信は信頼できる相手のみに制限してください。さらに通信内容を第三者に傍受されないようネットワーク構成を見直してください。詳しくは、製品開発者が提供する情報をご覧ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "横河電機株式会社",
-          "vulinfoid": "YSAR-18-0004 STARDOM コントローラにハードコードパスワードの脆弱性",
-          "url": "https://web-material3.yokogawa.com/19/6712/details/YSAR-18-0004-J.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "横河電機株式会社",
-          "vulinfoid": "YSAR-18-0007: STARDOMコントローラに複数の脆弱性",
-          "url": "https://web-material3.yokogawa.com/YSAR-18-0007-J.jp.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-17896",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17896"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-17898",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17898"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-10592",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10592"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-17900",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17900"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-17902",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17902"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-18-151-03",
-          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-18-151-03"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92639220",
-          "url": "https://jvn.jp/vu/JVNVU92639220/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-10592",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-10592"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-17896",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17896"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-17898",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17898"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-17900",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17900"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-17902",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17902"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-06-04T11:07:57+09:00",
-          "description": "[2018年06月04日]   掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-10-22T16:45:17+09:00",
-          "description": "[2018年10月22日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：横河電機株式会社 (YSAR-18-0007: STARDOMコントローラに複数の脆弱性) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17900) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17902) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17896) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17898) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2019-07-24T16:48:15+09:00",
-          "description": "[2019年07月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-10592) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17900) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17902) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17896) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17898) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-06-04T11:44:48+09:00",
-    "datelastupdated": "2019-07-24T16:48:37+09:00",
-    "datepublic": "2018-06-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-003717",
+	"vulinfodata": {
+		"title": "STARDOM コントローラに複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "横河電機株式会社が提供する STARDOM コントローラには、複数の脆弱性が存在します。  横河電機株式会社が提供する STARDOM は、中小規模工場向け PLC 計装システムです。STARDOM コントローラには、次の複数の脆弱性が存在します。  　* アカウント ID およびパスワード情報がハードコードされている問題 (CWE-798) - CVE-2018-10592 　* 情報漏えい (CWE-200) - CVE-2018-17900 　* リモート管理機能に対するサービス運用妨害 (DoS) (CWE-119) - CVE-2018-17902 　* メンテナンス機能の認証情報がハードコードされている問題 (CWE-798) - CVE-2018-17896 　* コントローラの HTTP サービスに対するサービス運用妨害 (DoS) (CWE-119) - CVE-2018-17898"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "横河電機株式会社",
+					"productname": "STARDOM FCJ",
+					"cpe": {
+						"text": "cpe:/o:yokogawa:fcj_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R4.02 およびそれ以前",
+						"R4.10 およびそれ以前"
+					]
+				},
+				{
+					"name": "横河電機株式会社",
+					"productname": "STARDOM FCN-100",
+					"cpe": {
+						"text": "cpe:/o:yokogawa:fcn-100_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R4.02 およびそれ以前",
+						"R4.10 およびそれ以前"
+					]
+				},
+				{
+					"name": "横河電機株式会社",
+					"productname": "STARDOM FCN-500",
+					"cpe": {
+						"text": "cpe:/o:yokogawa:fcn-500_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R4.02 およびそれ以前",
+						"R4.10 およびそれ以前"
+					]
+				},
+				{
+					"name": "横河電機株式会社",
+					"productname": "STARDOM FCN-RTU",
+					"cpe": {
+						"text": "cpe:/o:yokogawa:fcn-rtu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R4.02 およびそれ以前",
+						"R4.10 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.3",
+					"vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.1",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、コントローラにログインされ、任意のコマンドを実行される - CVE-2018-10592 　* 遠隔の第三者によって、コントローラのリモート管理機能へアクセスするための認証情報を取得される - CVE-2018-17900 　* 遠隔の第三者によって、コントローラのリモート管理機能に対するサービス運用妨害 (DoS) 攻撃が行われる - CVE-2018-17902 　* 遠隔の第三者によって、コントローラのメンテナンス機能にログインされ、情報を取得、改ざんされる - CVE-2018-17896 　* 遠隔の第三者によって、コントローラの HTTP サービスに対するサービス運用妨害 (DoS) 攻撃が行われる - CVE-2018-17898"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] - CVE-2018-10592 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を STARDOM FCN/FCJ R4.10 で修正しています。  詳しくは開発者が提供する情報をご覧ください。  [ソフトウエアのアップデート、アクセス制限およびネットワーク構成の再検討] - CVE-2018-17900, CVE-2018-17902, CVE-2018-17896, CVE-2018-17898 当該製品で使用されている FCN/FCJ 基本ソフトウエアを R4.20 以降にアップデートするとともに、当該製品との通信は信頼できる相手のみに制限してください。さらに通信内容を第三者に傍受されないようネットワーク構成を見直してください。詳しくは、製品開発者が提供する情報をご覧ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "横河電機株式会社",
+					"vulinfoid": "YSAR-18-0004 STARDOM コントローラにハードコードパスワードの脆弱性",
+					"url": "https://web-material3.yokogawa.com/19/6712/details/YSAR-18-0004-J.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "横河電機株式会社",
+					"vulinfoid": "YSAR-18-0007: STARDOMコントローラに複数の脆弱性",
+					"url": "https://web-material3.yokogawa.com/YSAR-18-0007-J.jp.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-17896",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17896"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-17898",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17898"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-10592",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10592"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-17900",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17900"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-17902",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17902"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-18-151-03",
+					"url": "https://ics-cert.us-cert.gov/advisories/ICSA-18-151-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92639220",
+					"url": "https://jvn.jp/vu/JVNVU92639220/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-10592",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-10592"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-17896",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17896"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-17898",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17898"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-17900",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17900"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-17902",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-17902"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-06-04T11:07:57+09:00",
+					"description": "[2018年06月04日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-10-22T16:45:17+09:00",
+					"description": "[2018年10月22日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：横河電機株式会社 (YSAR-18-0007: STARDOMコントローラに複数の脆弱性) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17900) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17902) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17896) を追加\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-17898) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2019-07-24T16:48:15+09:00",
+					"description": "[2019年07月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-10592) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17900) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17902) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17896) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-17898) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-06-04T11:44:48+09:00",
+		"datelastupdated": "2019-07-24T16:48:37+09:00",
+		"datepublic": "2018-06-01T00:00:00+09:00"
+	}
 }

@@ -1,164 +1,164 @@
 {
-  "vulinfoid": "JVNDB-2023-002002",
-  "vulinfodata": {
-    "title": "コンテック製 CONPROSYS HMI System（CHS）における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社コンテックが提供する CONPROSYS HMI System（CHS）には、次の複数の脆弱性が存在します。  　* パスワードの平文保存（CWE-256）- CVE-2023-28713 　* 重要なリソースに対する不適切なパーミッションの割り当て（CWE-732）- CVE-2023-28399 　* 不適切なアクセス制御（CWE-284）- CVE-2023-28657 　* クロスサイトスクリプティング（CWE-79）- CVE-2023-28651 　* サーバサイドリクエストフォージェリ（CWE-918）- CVE-2023-28824 　* SQL インジェクション（CWE-89）- CVE-2023-29154 　* インタラクション頻度の不適切な制限（CWE-799）- CVE-2023-2758  次の脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 CVE-2023-28713、CVE-2023-28399、CVE-2023-28657、CVE-2023-28651、CVE-2023-28824、CVE-2023-29154 報告者: Michael Heinzl 氏  次の脆弱性情報は、下記の方が製品開発者に直接報告し、製品開発者からの調整依頼にもどづきJPCERT/CCが報告者と開発者の調整を行いました。 CVE-2023-2758 報告者: Tenable, Inc."
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社コンテック",
-          "productname": "CONPROSYS HMI System (CHS)",
-          "cpe": {
-            "text": "cpe:/a:contec:conprosys_hmi_system",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.5.3 より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "CVE-2023-28713 データベースのアカウント情報がローカルフォルダのファイルに平文で保存されているため、当該製品がインストールされた PC にログイン可能なユーザーによってその情報を取得され、データベース内の情報の取得や改ざんがされる可能性があります。  CVE-2023-28399 当該製品がインストールされたローカルフォルダに対して明示的にACL（Access Control List）が設定されておらず、当該製品がインストールされたPCのユーザーに対して広範囲な権限が許可されています。その結果、当該製品がインストールされたPCのユーザーによって、システムの破壊や悪意あるプログラムの実行などが行われる可能性があります。  CVE-2023-28657 当該製品がインストールされた PC の一般ユーザーが管理者権限を取得する可能性があります。その結果、当該製品に関する情報の取得や改ざんがされる可能性があります。  CVE-2023-28651 当該製品に管理者権限でアクセスできるユーザーが細工した設定を行った場合、当該製品に管理者権限でアクセスした別のユーザーのウェブブラウザ上で、任意のスクリプトが実行される可能性があります。  CVE-2023-28824 当該製品に管理者権限でアクセスできるユーザーによって、クエリ設定画面で行っている接続先データベースの制限を回避され、意図しないデータベースに接続される可能性があります。  CVE-2023-29154 当該製品に管理者権限でアクセスできるユーザーによって、クエリ設定画面への細工された入力を通じて任意の SQL 文を実行される可能性があります。  CVE-2023-2758 不正な認証の繰り返しを制限する為の処理が適切でないため、遠隔の第三者によって HTTP ヘッダ内に特定の要素を含んだリクエストを繰り返すことで、当該製品にユーザーがログインできない状況にする可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに最新版にアップデートしてください。 開発者は本脆弱性を修正した Ver.3.5.3 をリリースしています。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "株式会社コンテック",
-          "vulinfoid": "CONPROSYS HMI System (CHS)の脆弱性について",
-          "url": "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_chs_230531_jp.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28399",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28399"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28657",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28657"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28651",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28651"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28824",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28824"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-29154",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-29154"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-2758",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-2758"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28713",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28713"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93372935",
-          "url": "https://jvn.jp/vu/JVNVU93372935/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-89",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
-          "title": "SQLインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-799",
-          "url": "https://cwe.mitre.org/data/definitions/799.html",
-          "title": "インタラクション頻度の不適切な制御"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-918",
-          "url": "https://cwe.mitre.org/data/definitions/918.html",
-          "title": "サーバサイドのリクエストフォージェリ"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-732",
-          "url": "https://cwe.mitre.org/data/definitions/732.html",
-          "title": "重要なリソースに対する不適切なパーミッションの割り当て"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-256",
-          "url": "https://cwe.mitre.org/data/definitions/256.html",
-          "title": "認証情報の平文保存"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-284",
-          "url": "https://cwe.mitre.org/data/definitions/284.html",
-          "title": "不適切なアクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-06-01T10:50:35+09:00",
-          "description": "[2023年06月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-06-01T12:35:19+09:00",
-    "datelastupdated": "2023-06-01T12:35:19+09:00",
-    "datepublic": "2023-05-31T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-002002",
+	"vulinfodata": {
+		"title": "コンテック製 CONPROSYS HMI System（CHS）における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社コンテックが提供する CONPROSYS HMI System（CHS）には、次の複数の脆弱性が存在します。  　* パスワードの平文保存（CWE-256）- CVE-2023-28713 　* 重要なリソースに対する不適切なパーミッションの割り当て（CWE-732）- CVE-2023-28399 　* 不適切なアクセス制御（CWE-284）- CVE-2023-28657 　* クロスサイトスクリプティング（CWE-79）- CVE-2023-28651 　* サーバサイドリクエストフォージェリ（CWE-918）- CVE-2023-28824 　* SQL インジェクション（CWE-89）- CVE-2023-29154 　* インタラクション頻度の不適切な制限（CWE-799）- CVE-2023-2758  次の脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 CVE-2023-28713、CVE-2023-28399、CVE-2023-28657、CVE-2023-28651、CVE-2023-28824、CVE-2023-29154 報告者: Michael Heinzl 氏  次の脆弱性情報は、下記の方が製品開発者に直接報告し、製品開発者からの調整依頼にもどづきJPCERT/CCが報告者と開発者の調整を行いました。 CVE-2023-2758 報告者: Tenable, Inc."
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社コンテック",
+					"productname": "CONPROSYS HMI System (CHS)",
+					"cpe": {
+						"text": "cpe:/a:contec:conprosys_hmi_system",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.5.3 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "CVE-2023-28713 データベースのアカウント情報がローカルフォルダのファイルに平文で保存されているため、当該製品がインストールされた PC にログイン可能なユーザーによってその情報を取得され、データベース内の情報の取得や改ざんがされる可能性があります。  CVE-2023-28399 当該製品がインストールされたローカルフォルダに対して明示的にACL（Access Control List）が設定されておらず、当該製品がインストールされたPCのユーザーに対して広範囲な権限が許可されています。その結果、当該製品がインストールされたPCのユーザーによって、システムの破壊や悪意あるプログラムの実行などが行われる可能性があります。  CVE-2023-28657 当該製品がインストールされた PC の一般ユーザーが管理者権限を取得する可能性があります。その結果、当該製品に関する情報の取得や改ざんがされる可能性があります。  CVE-2023-28651 当該製品に管理者権限でアクセスできるユーザーが細工した設定を行った場合、当該製品に管理者権限でアクセスした別のユーザーのウェブブラウザ上で、任意のスクリプトが実行される可能性があります。  CVE-2023-28824 当該製品に管理者権限でアクセスできるユーザーによって、クエリ設定画面で行っている接続先データベースの制限を回避され、意図しないデータベースに接続される可能性があります。  CVE-2023-29154 当該製品に管理者権限でアクセスできるユーザーによって、クエリ設定画面への細工された入力を通じて任意の SQL 文を実行される可能性があります。  CVE-2023-2758 不正な認証の繰り返しを制限する為の処理が適切でないため、遠隔の第三者によって HTTP ヘッダ内に特定の要素を含んだリクエストを繰り返すことで、当該製品にユーザーがログインできない状況にする可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに最新版にアップデートしてください。 開発者は本脆弱性を修正した Ver.3.5.3 をリリースしています。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "株式会社コンテック",
+					"vulinfoid": "CONPROSYS HMI System (CHS)の脆弱性について",
+					"url": "https://www.contec.com/jp/api/downloadlogger?download=/-/media/Contec/jp/support/security-info/contec_security_chs_230531_jp.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28399",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28399"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28657",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28657"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28651",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28651"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28824",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28824"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-29154",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-29154"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-2758",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-2758"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28713",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28713"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93372935",
+					"url": "https://jvn.jp/vu/JVNVU93372935/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-799",
+					"url": "https://cwe.mitre.org/data/definitions/799.html",
+					"title": "インタラクション頻度の不適切な制御"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-918",
+					"url": "https://cwe.mitre.org/data/definitions/918.html",
+					"title": "サーバサイドのリクエストフォージェリ"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-732",
+					"url": "https://cwe.mitre.org/data/definitions/732.html",
+					"title": "重要なリソースに対する不適切なパーミッションの割り当て"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-256",
+					"url": "https://cwe.mitre.org/data/definitions/256.html",
+					"title": "認証情報の平文保存"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-284",
+					"url": "https://cwe.mitre.org/data/definitions/284.html",
+					"title": "不適切なアクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-06-01T10:50:35+09:00",
+					"description": "[2023年06月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-06-01T12:35:19+09:00",
+		"datelastupdated": "2023-06-01T12:35:19+09:00",
+		"datepublic": "2023-05-31T00:00:00+09:00"
+	}
 }

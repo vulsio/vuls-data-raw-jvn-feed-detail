@@ -1,423 +1,423 @@
 {
-  "vulinfoid": "JVNDB-2003-000101",
-  "vulinfodata": {
-    "title": "sendmail の prescan() 関数におけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "sendmail の prescan() 関数において不備が存在し、電子メールアドレスの文字列長のチェックを適切に行わないために、バッファオーバーフローが発生する脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "IBM",
-          "productname": "IBM AIX",
-          "cpe": {
-            "text": "cpe:/o:ibm:aix",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.3 ",
-            "5.1 ",
-            "5.2 "
-          ]
-        },
-        {
-          "name": "Sendmail Consortium",
-          "productname": "sendmail",
-          "cpe": {
-            "text": "cpe:/a:sendmail:sendmail",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.11.6 およびそれ以前",
-            "8.12.8 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ4",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_4",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ550",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_550",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQXTR",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_xtr",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.6 (sparc) ",
-            "2.6 (x86) ",
-            "7.0 (sparc) ",
-            "7.0 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        },
-        {
-          "name": "センドメール社",
-          "productname": "Sendmail Advanced Message Server",
-          "cpe": {
-            "text": "cpe:/a:sendmail:sendmail_advanced_message_server",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "センドメール社",
-          "productname": "Sendmail Switch",
-          "cpe": {
-            "text": "cpe:/a:sendmail:sendmail_switch",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1.x",
-            "2.2.x",
-            "3.0"
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Advanced Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_advanced_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.1  ",
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Workstation",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 ",
-            "10.20 ",
-            "11.00 ",
-            "11.11 ",
-            "11.22 "
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX (VVOS)",
-          "cpe": {
-            "text": "cpe:/o:hp:vvos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.04  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2  ",
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  ",
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者が細工した電子メールを sendmail が処理することで、sendmail の実行権限 (Unix では root 権限、Windows NT/2000 では SYSTEM 権限) で任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX00253",
-          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00958571"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX0304-253",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0304-253.html"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Japan",
-          "vulinfoid": "Top Page",
-          "url": "http://www.ibm.com/jp/"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:120",
-          "url": "http://rhn.redhat.com/errata/RHSA-2003-120.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sendmail.org",
-          "vulinfoid": "sendmail 8.12.9 available",
-          "url": "http://marc.theaimsgroup.com/?l=bugtraq&m=104896621106790&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "52700",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52700-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "52620",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52620-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "52700",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52700-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "52620",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52620-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "550 Sendmail Security Update 0.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "4 Sendmail Security Update 2.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "XTR Sendmail Security Update 1.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2003-24",
-          "url": "http://www.turbolinux.com/security/2003/TLSA-2003-24.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Vulnerability Note VU#897604",
-          "vulinfoid": "Sendmail Inc. Information for VU#897604",
-          "url": "http://www.kb.cert.org/vuls/id/AAMN-5KUUTZ"
-        },
-        {
-          "type": "vendor",
-          "name": "センドメール株式会社",
-          "vulinfoid": "Top Page",
-          "url": "http://www.sendmail.co.jp/"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:120",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-120J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2003-24",
-          "url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-24j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "CERT Advisory",
-          "vulinfoid": "CA-2003-12",
-          "url": "http://www.cert.org/advisories/CA-2003-12.html"
-        },
-        {
-          "type": "advisory",
-          "name": "CIAC Bulletins",
-          "vulinfoid": "N-067",
-          "url": "http://www.ciac.org/ciac/bulletins/n-067.shtml"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0161",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0161"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 緊急対策情報",
-          "vulinfoid": "Sendmail における新たなセキュリティ脆弱性について",
-          "url": "http://www.ipa.go.jp/security/ciadr/20030331sendmail.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT REPORT",
-          "vulinfoid": "JPCERT-WR-2003-1301",
-          "url": "http://www.jpcert.or.jp/wr/2003/wr031301.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT REPORT",
-          "vulinfoid": "JPCERT-WR-2003-1401",
-          "url": "http://www.jpcert.or.jp/wr/2003/wr031401.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT REPORT",
-          "vulinfoid": "JPCERT-WR-2003-1501",
-          "url": "http://www.jpcert.or.jp/wr/2003/wr031501.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2003-0004",
-          "url": "http://www.jpcert.or.jp/at/2003/at030004.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNCA-2003-12",
-          "url": "http://jvn.jp/cert/JVNCA-2003-12"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNCA-2003-07",
-          "url": "http://jvn.jp/cert/JVNCA-2003-07/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0161",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0161"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "7230",
-          "url": "http://www.securityfocus.com/bid/7230"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#897604",
-          "url": "http://www.kb.cert.org/vuls/id/897604"
-        },
-        {
-          "type": "advisory",
-          "name": "X-Force Security Alerts and Advisories",
-          "vulinfoid": "11653",
-          "url": "http://xforce.iss.net/xforce/xfdb/11653"
-        },
-        {
-          "type": "advisory",
-          "name": "X-Force セキュリティアラート＆アドバイザリ",
-          "vulinfoid": "Sendmail のEmail 処理における脆弱点について",
-          "url": "http://www.isskk.co.jp/support/techinfo/general/sendmail033103_xforce.html"
-        },
-        {
-          "type": "advisory",
-          "name": "警察庁 @police",
-          "vulinfoid": "メールサーバソフト（sendmail）の脆弱性(CA-2003-12)について",
-          "url": "http://www.cyberpolice.go.jp/important/20030330_153031.html"
-        },
-        {
-          "type": "advisory",
-          "name": "警察庁 @police",
-          "vulinfoid": "メールサーバソフト（sendmail）の脆弱性(CA-2003-12)の調査結果について ",
-          "url": "http://www.cyberpolice.go.jp/important/20030506_122656.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-03-29T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000101",
+	"vulinfodata": {
+		"title": "sendmail の prescan() 関数におけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "sendmail の prescan() 関数において不備が存在し、電子メールアドレスの文字列長のチェックを適切に行わないために、バッファオーバーフローが発生する脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "IBM",
+					"productname": "IBM AIX",
+					"cpe": {
+						"text": "cpe:/o:ibm:aix",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.3 ",
+						"5.1 ",
+						"5.2 "
+					]
+				},
+				{
+					"name": "Sendmail Consortium",
+					"productname": "sendmail",
+					"cpe": {
+						"text": "cpe:/a:sendmail:sendmail",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.11.6 およびそれ以前",
+						"8.12.8 およびそれ以前"
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ4",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_4",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ550",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_550",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQXTR",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_xtr",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6 (sparc) ",
+						"2.6 (x86) ",
+						"7.0 (sparc) ",
+						"7.0 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				},
+				{
+					"name": "センドメール社",
+					"productname": "Sendmail Advanced Message Server",
+					"cpe": {
+						"text": "cpe:/a:sendmail:sendmail_advanced_message_server",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "センドメール社",
+					"productname": "Sendmail Switch",
+					"cpe": {
+						"text": "cpe:/a:sendmail:sendmail_switch",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1.x",
+						"2.2.x",
+						"3.0"
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Advanced Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_advanced_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.1  ",
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Workstation",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 ",
+						"10.20 ",
+						"11.00 ",
+						"11.11 ",
+						"11.22 "
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX (VVOS)",
+					"cpe": {
+						"text": "cpe:/o:hp:vvos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.04  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2  ",
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  ",
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "第三者が細工した電子メールを sendmail が処理することで、sendmail の実行権限 (Unix では root 権限、Windows NT/2000 では SYSTEM 権限) で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX00253",
+					"url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00958571"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX0304-253",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0304-253.html"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Japan",
+					"vulinfoid": "Top Page",
+					"url": "http://www.ibm.com/jp/"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:120",
+					"url": "http://rhn.redhat.com/errata/RHSA-2003-120.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sendmail.org",
+					"vulinfoid": "sendmail 8.12.9 available",
+					"url": "http://marc.theaimsgroup.com/?l=bugtraq&m=104896621106790&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "52700",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52700-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "52620",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52620-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "52700",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52700-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "52620",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-52620-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "550 Sendmail Security Update 0.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "4 Sendmail Security Update 2.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "XTR Sendmail Security Update 1.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2003-24",
+					"url": "http://www.turbolinux.com/security/2003/TLSA-2003-24.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Vulnerability Note VU#897604",
+					"vulinfoid": "Sendmail Inc. Information for VU#897604",
+					"url": "http://www.kb.cert.org/vuls/id/AAMN-5KUUTZ"
+				},
+				{
+					"type": "vendor",
+					"name": "センドメール株式会社",
+					"vulinfoid": "Top Page",
+					"url": "http://www.sendmail.co.jp/"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:120",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-120J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2003-24",
+					"url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-24j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "CERT Advisory",
+					"vulinfoid": "CA-2003-12",
+					"url": "http://www.cert.org/advisories/CA-2003-12.html"
+				},
+				{
+					"type": "advisory",
+					"name": "CIAC Bulletins",
+					"vulinfoid": "N-067",
+					"url": "http://www.ciac.org/ciac/bulletins/n-067.shtml"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0161",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0161"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 緊急対策情報",
+					"vulinfoid": "Sendmail における新たなセキュリティ脆弱性について",
+					"url": "http://www.ipa.go.jp/security/ciadr/20030331sendmail.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT REPORT",
+					"vulinfoid": "JPCERT-WR-2003-1301",
+					"url": "http://www.jpcert.or.jp/wr/2003/wr031301.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT REPORT",
+					"vulinfoid": "JPCERT-WR-2003-1401",
+					"url": "http://www.jpcert.or.jp/wr/2003/wr031401.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT REPORT",
+					"vulinfoid": "JPCERT-WR-2003-1501",
+					"url": "http://www.jpcert.or.jp/wr/2003/wr031501.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2003-0004",
+					"url": "http://www.jpcert.or.jp/at/2003/at030004.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNCA-2003-12",
+					"url": "http://jvn.jp/cert/JVNCA-2003-12"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNCA-2003-07",
+					"url": "http://jvn.jp/cert/JVNCA-2003-07/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0161",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0161"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "7230",
+					"url": "http://www.securityfocus.com/bid/7230"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#897604",
+					"url": "http://www.kb.cert.org/vuls/id/897604"
+				},
+				{
+					"type": "advisory",
+					"name": "X-Force Security Alerts and Advisories",
+					"vulinfoid": "11653",
+					"url": "http://xforce.iss.net/xforce/xfdb/11653"
+				},
+				{
+					"type": "advisory",
+					"name": "X-Force セキュリティアラート＆アドバイザリ",
+					"vulinfoid": "Sendmail のEmail 処理における脆弱点について",
+					"url": "http://www.isskk.co.jp/support/techinfo/general/sendmail033103_xforce.html"
+				},
+				{
+					"type": "advisory",
+					"name": "警察庁 @police",
+					"vulinfoid": "メールサーバソフト（sendmail）の脆弱性(CA-2003-12)について",
+					"url": "http://www.cyberpolice.go.jp/important/20030330_153031.html"
+				},
+				{
+					"type": "advisory",
+					"name": "警察庁 @police",
+					"vulinfoid": "メールサーバソフト（sendmail）の脆弱性(CA-2003-12)の調査結果について ",
+					"url": "http://www.cyberpolice.go.jp/important/20030506_122656.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-03-29T00:00:00+09:00"
+	}
 }

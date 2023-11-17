@@ -1,119 +1,119 @@
 {
-  "vulinfoid": "JVNDB-2016-004546",
-  "vulinfodata": {
-    "title": "DEXIS Imaging Suite 10 に認証情報がハードコードされている問題",
-    "vulinfodescription": {
-      "overview": "DEXIS が提供する DEXIS Imaging Suite 10 は、歯科向けの X 線画像処理ソフトウェアです。DEXIS Imaging Suite 10 には複数の認証情報がハードコードされているため、管理者または root 権限で患者情報データベースにアクセスされる可能性があります。  認証情報がハードコードされている問題 (CWE-798) - CVE-2016-6532 DEXIS Imaging Suite 10 にはデータベースの複数の認証情報がハードコードされているため、管理者または root 権限で患者情報データベースにアクセスされる可能性があります。  CWE-798: Use of Hard-coded Credentials http://cwe.mitre.org/data/definitions/798.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "DEXIS",
-          "productname": "DEXIS Imaging Suite",
-          "cpe": {
-            "text": "cpe:/a:dexis:imaging_suite",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "dexis_imaging_suite 10"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の攻撃者によって、管理者権限で当該製品の患者情報データベースにアクセスされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[データベースの認証情報を更新する] 開発者はデータベースの認証情報を変更するよう推奨しており、変更方法について次のように述べています。より詳しい情報は DEXIS Customer Support へお問い合わせください。  　　Changing the DEXIS database password  　　This procedure targets installations of DEXIS Imaging Suite (version 10). It will not work for older versions (9 and earlier) or DEXIS 11 and newer. 　　The DEXIS Imaging Suite database installation uses a well-known database instance name and password, allowing others to access your database, which contains sensitive patient information. Ideally, these should be changed to increase the security of your database.  　　During installation  　　During installation of the server, it is recommended that the instance name be changed from the default, “DEXIS_DATA”. Using the default name allows anyone to search for your database with a well-known name. Note that you cannot change the instance name once the database in installed. 　　You are unable to specify a different password during the installation process.  　　After installation  　　After DEXIS is installed, you can change your database password using the following procedure. Note that this procedure will work if you installed a new instance of the database using the supplied installation media. 　　On the installation media, browse to the following directory: “D:\\Common\\Software\\ssmse2005\\x86”, where D: is the drive letter on which the installation media is mounted. 　　Run SQLServer2005_SSMSEE.mis to install SQL Server Management Studio Express on your server. Use the default options in the installation dialogs. 　　Start the SQL Server Management Studio (Start → All Programs → Microsoft SQL Server 2005 → SQL Server Management Studio Express). 　　On the “Connect to Server” dialog, change the Authentication setting to “SQL Server Authentication”. The Login name is “sa”, and the password is in the user manual. 　　It is recommended that you do not use the default (well-known) password, and to use a strong password for your database. There are web-sites which will generate a strong password for you (such as: https://identitysafe.norton.com/password-generator) or will indicate how strong your password is (such as http://www.passwordmeter.com/). 　　On the left side panel, select “Security” → “Logins”. Double-click the “sa” user, and enter a new password on the General page. You will need to enter the same password twice to confirm.  　　Updating DEXIS to use the new password  　　Run DEXIS Imaging Suite (double-click the icon on the desktop). DEXIS will display an error (The following configuration errors were detected). Click “OK”. Click on the setting button ( ). Select the Data panel in preferences. 　　Check the “Edit Advanced settings” option. Click “OK” on the displayed warning dialog. 　　Enter your new password in the dialog. Press the “Verify” button to test the settings. When successful, select “OK” and restart DEXIS. You are now using the new password.  [アップデートする] 開発者によると、DEXIS Eleven ではハードコードされた認証情報は使用していないとのことです。開発者が提供する情報をもとに DEXIS Eleven へアップデートしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "DEXIS",
-          "vulinfoid": "DEXIS Digital Radiography & Dental Imaging",
-          "url": "http://www.dexis.com/system"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-6532",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6532"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#91018225",
-          "url": "http://jvn.jp/vu/JVNVU91018225/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-6532",
-          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6532"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#282991",
-          "url": "http://www.kb.cert.org/vuls/id/282991"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "安全でセキュアなパスワードを作成 - パスワードジェネレータ",
-          "url": "https://identitysafe.norton.com/password-generator"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "The Password Meter",
-          "url": "http://www.passwordmeter.com/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年09月09日]\\n  掲載\\n[2016年10月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6532) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-09-09T11:52:18+09:00",
-    "datelastupdated": "2016-09-09T11:52:18+09:00",
-    "datepublic": "2016-09-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-004546",
+	"vulinfodata": {
+		"title": "DEXIS Imaging Suite 10 に認証情報がハードコードされている問題",
+		"vulinfodescription": {
+			"overview": "DEXIS が提供する DEXIS Imaging Suite 10 は、歯科向けの X 線画像処理ソフトウェアです。DEXIS Imaging Suite 10 には複数の認証情報がハードコードされているため、管理者または root 権限で患者情報データベースにアクセスされる可能性があります。  認証情報がハードコードされている問題 (CWE-798) - CVE-2016-6532 DEXIS Imaging Suite 10 にはデータベースの複数の認証情報がハードコードされているため、管理者または root 権限で患者情報データベースにアクセスされる可能性があります。  CWE-798: Use of Hard-coded Credentials http://cwe.mitre.org/data/definitions/798.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "DEXIS",
+					"productname": "DEXIS Imaging Suite",
+					"cpe": {
+						"text": "cpe:/a:dexis:imaging_suite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"dexis_imaging_suite 10"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の攻撃者によって、管理者権限で当該製品の患者情報データベースにアクセスされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[データベースの認証情報を更新する] 開発者はデータベースの認証情報を変更するよう推奨しており、変更方法について次のように述べています。より詳しい情報は DEXIS Customer Support へお問い合わせください。  　　Changing the DEXIS database password  　　This procedure targets installations of DEXIS Imaging Suite (version 10). It will not work for older versions (9 and earlier) or DEXIS 11 and newer. 　　The DEXIS Imaging Suite database installation uses a well-known database instance name and password, allowing others to access your database, which contains sensitive patient information. Ideally, these should be changed to increase the security of your database.  　　During installation  　　During installation of the server, it is recommended that the instance name be changed from the default, “DEXIS_DATA”. Using the default name allows anyone to search for your database with a well-known name. Note that you cannot change the instance name once the database in installed. 　　You are unable to specify a different password during the installation process.  　　After installation  　　After DEXIS is installed, you can change your database password using the following procedure. Note that this procedure will work if you installed a new instance of the database using the supplied installation media. 　　On the installation media, browse to the following directory: “D:\\Common\\Software\\ssmse2005\\x86”, where D: is the drive letter on which the installation media is mounted. 　　Run SQLServer2005_SSMSEE.mis to install SQL Server Management Studio Express on your server. Use the default options in the installation dialogs. 　　Start the SQL Server Management Studio (Start → All Programs → Microsoft SQL Server 2005 → SQL Server Management Studio Express). 　　On the “Connect to Server” dialog, change the Authentication setting to “SQL Server Authentication”. The Login name is “sa”, and the password is in the user manual. 　　It is recommended that you do not use the default (well-known) password, and to use a strong password for your database. There are web-sites which will generate a strong password for you (such as: https://identitysafe.norton.com/password-generator) or will indicate how strong your password is (such as http://www.passwordmeter.com/). 　　On the left side panel, select “Security” → “Logins”. Double-click the “sa” user, and enter a new password on the General page. You will need to enter the same password twice to confirm.  　　Updating DEXIS to use the new password  　　Run DEXIS Imaging Suite (double-click the icon on the desktop). DEXIS will display an error (The following configuration errors were detected). Click “OK”. Click on the setting button ( ). Select the Data panel in preferences. 　　Check the “Edit Advanced settings” option. Click “OK” on the displayed warning dialog. 　　Enter your new password in the dialog. Press the “Verify” button to test the settings. When successful, select “OK” and restart DEXIS. You are now using the new password.  [アップデートする] 開発者によると、DEXIS Eleven ではハードコードされた認証情報は使用していないとのことです。開発者が提供する情報をもとに DEXIS Eleven へアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "DEXIS",
+					"vulinfoid": "DEXIS Digital Radiography & Dental Imaging",
+					"url": "http://www.dexis.com/system"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-6532",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6532"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91018225",
+					"url": "http://jvn.jp/vu/JVNVU91018225/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-6532",
+					"url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6532"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#282991",
+					"url": "http://www.kb.cert.org/vuls/id/282991"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "安全でセキュアなパスワードを作成 - パスワードジェネレータ",
+					"url": "https://identitysafe.norton.com/password-generator"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "The Password Meter",
+					"url": "http://www.passwordmeter.com/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年09月09日]\\n  掲載\\n[2016年10月07日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6532) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-09-09T11:52:18+09:00",
+		"datelastupdated": "2016-09-09T11:52:18+09:00",
+		"datepublic": "2016-09-07T00:00:00+09:00"
+	}
 }

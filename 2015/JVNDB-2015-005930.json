@@ -1,179 +1,179 @@
 {
-  "vulinfoid": "JVNDB-2015-005930",
-  "vulinfodata": {
-    "title": "Apache Commons Collections ライブラリのデシリアライズ処理に脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache Commons Collections (ACC) ライブラリのデシリアライズ処理には脆弱性があります。Java アプリケーションが ACC ライブラリを直接使用している場合やクラスパス指定でアクセスできる範囲に ACC ライブラリが設置されている場合、任意のコードを実行させられる可能性があります。  Apache Commons Collections (ACC) ライブラリ http://commons.apache.org/proper/commons-collections/  信頼できないデータのデシリアライズ (CWE-502) 2015年1月に開催された AppSec California 2015 において、Gabriel Lawrence 氏と Chris Frohoff 氏は、信頼できないデータをデシリアライズしてしまう脆弱性について講演し、任意のコードを実行可能であることを示しました。シリアライズ機能の使い方が適切でないすべての Java アプリケーションや Java ライブラリが本脆弱性の影響を受けます。  信頼できないデータのデシリアライズ (CWE-502) http://cwe.mitre.org/data/definitions/502.html  Gabriel Lawrence 氏と Chris Frohoff 氏の講演 http://frohoff.github.io/appseccali-marshalling-pickles/  2015年11月に Foxglove Security の Stephen Breen 氏は、この問題が Apache Commons Collections (ACC) ライブラリに存在すること、特に、信頼できないデータのデシリアライズに InvokerTransformer クラスを使用している場合に任意のコードを実行させられる可能性があることを指摘しました。ACC ライブラリを使用するソフトウェアである、WebSphere、Jenkins、WebLogic、OpenNMS なども影響を受けます。  Foxglove Security の Stephen Breen 氏 (What Do WebLogic, WebSphere, JBoss, Jenkins, OpenNMS, and Your Application Have in Common? This Vulnerability.) http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/  Jenkins https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11  WebLogic http://www.oracle.com/technetwork/topics/security/alert-cve-2015-4852-2763333.html?elq_mid=31793&sh=&cmid=WWSU12091612MPP001C179  ACC ライブラリ バージョン 3.2.1、4.0 の両方が本脆弱性の影響を受けます。  バージョン 3.2.1、4.0 https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread  Apache Software Fondation は本脆弱性に関する公式見解をブログに掲載しました。ここには、対策に関するアドバイスや関連情報へのリンクなども掲載されています。また、本脆弱性に関するエントリ (COLLECTIONS-580) がバグ管理システム上に作られています。  公式見解 https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread  本脆弱性に関するエントリ (COLLECTIONS-580) https://issues.apache.org/jira/browse/COLLECTIONS-580  ACC 以外に、Groovy や Spring などについても同様の問題の調査が行われています。Lawrence 氏と Frohoff 氏の発表資料には、Java だけでなく Python や Ruby などで書かれたアプリケーションやライブラリにおいても同様の問題が存在すると記載されています。使用するプログラミング言語やライブラリにかかわらず、ソフトウェアを設計する段階から、データのシリアライズ機能について十分に考慮することが重要です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "日本電気",
-          "productname": "CapsSuite",
-          "cpe": {
-            "text": "cpe:/a:nec:capssuite",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "InfoFrame Relational Store",
-          "cpe": {
-            "text": "cpe:/a:nec:infoframe_relational_store",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "SystemDirector Enterprise",
-          "cpe": {
-            "text": "cpe:/a:nec:systemdirector_enterprise",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "Apache Commons Collections ライブラリを使用している Java アプリケーションや Java ライブラリは、任意の Java コードを実行させられる可能性があります。 また、ACC ライブラリを直接使用していなくても、クラスパス指定でアクセスできる範囲に ACC ライブラリが存在する場合は、任意の Java コードを実行させられる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2015年11月16日現在、本脆弱性の完全な対策は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドの実施を検討してください。  　* ファイアウォールやファイルシステムのアクセス制御を活用する 　たとえば Jenkins などのように、ネットワークからシリアライズされたデータを 　受け取るアプリケーションに対しては、そのアプリケーションが待ち受けている 　ポートに接続可能な範囲を制限することによって、本脆弱性の影響を軽減できる 　可能性があります。  　* アプリケーションの設計を見直す 　Apache Commons Collections ライブラリの対策版リリースの準備が進められて 　います。しかし、現状提案されているパッチはシリアライズ機能をデフォルトで 　無効にするだけのものです。当該ライブラリのシリアライズ機能が必要な場合に 　は、この機能を有効にするコードを追加するとともに、安全にデシリアライズす 　るようアプリケーションの設計を見直す必要があります。  　* Apache Software Fondation の公式見解では次のように述べられています: 　\"However, to be clear: this is not the only known and especially not  　unknown useable gadget. So replacing your installations with a hardened  　version of Apache Commons Collections will not make your application  　resist this vulnerability.\" 　(しかし次のことに注意: 攻撃に使えるクラスは今回指摘されたもの以外にも存在 　するかもしれません。したがって Apache Commons Collections ライブラリを 　対策版に置き換えるだけでは本脆弱性の完全な対策とはならないでしょう。)  　* 信頼できない相手からのデータをデシリアライズしない 　信頼できない相手から受け取ったデータをデシリアライズするのは危険です。 　シリアライズ処理に関するベストプラクティスについては、SEI CERT Oracle  　Coding Standard for Java の SER12-J および SER13-J を参照ください。  　SEI CERT Oracle Coding Standard for Java 　https://www.securecoding.cert.org/confluence/x/N4CjAQ  　SER12-J 　https://www.securecoding.cert.org/confluence/x/ZwBzCg  　SER13-J 　https://www.securecoding.cert.org/confluence/x/pwBzCg"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache",
-          "vulinfoid": "Apache Commons statement to widespread Java object de-serialisation vulnerability",
-          "url": "https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread"
-        },
-        {
-          "type": "vendor",
-          "name": "ASF JIRA",
-          "vulinfoid": "COLLECTIONS-580: Arbitrary remote code execution with InvokerTransformer",
-          "url": "https://issues.apache.org/jira/browse/COLLECTIONS-580"
-        },
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "cisco-sa-20151209-java-deserialization",
-          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "HS16-010",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/HS16-010/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1970575",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21970575"
-        },
-        {
-          "type": "vendor",
-          "name": "Jenkins Security Advisory",
-          "vulinfoid": "Jenkins Security Advisory 2015-11-11",
-          "url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV16-002",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv16-002.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle",
-          "vulinfoid": "Secure Coding Guidelines for Java SE",
-          "url": "http://www.oracle.com/technetwork/java/seccodeguide-139067.html#8"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Security Alert",
-          "vulinfoid": "Oracle Security Alert for CVE-2015-4852",
-          "url": "http://www.oracle.com/technetwork/topics/security/alert-cve-2015-4852-2763333.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "HS16-010",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/HS16-010/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "日立ストレージソリューションセキュリティ情報",
-          "vulinfoid": "日立ディスクアレイシステムにおけるSVP セキュリティホール",
-          "url": "http://www.hitachi.co.jp/products/it/storage-solutions/techsupport/sec_info/sec_acc20160328.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94276522",
-          "url": "http://jvn.jp/vu/JVNVU94276522/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#576313",
-          "url": "http://www.kb.cert.org/vuls/id/576313"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "What Do WebLogic, WebSphere, JBoss, Jenkins, OpenNMS, and Your Application Have in Common? This Vulnerability.",
-          "url": "http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "AppSecCali 2015: Marshalling Pickles - how deserializing objects will ruin your day",
-          "url": "http://frohoff.github.io/appseccali-marshalling-pickles/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年11月17日]\\n  掲載\\n[2015年11月19日]\\n  ベンダ情報：IBM (1970575) を追加\\n[2015年12月22日]\\n  ベンダ情報：シスコシステムズ (cisco-sa-20151209-java-deserialization) を追加\\n[2016年03月15日]\\n  ベンダ情報：日本電気 (NV16-002) を追加\\n[2016年03月29日]\\n  ベンダ情報：日立 (HS16-010) を追加\\n[2016年03月30日]\\n  ベンダ情報：日立 (日立ディスクアレイシステムにおけるSVP セキュリティホール) を追加\\n[2017年11月09日]\\n  影響を受けるシステム：ベンダ情報 (NV16-002) の更新に伴い内容を更新\\n[2018年02月07日]\\n  影響を受けるシステム：ベンダ情報 (NV16-002) の更新に伴い内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-11-17T15:52:42+09:00",
-    "datelastupdated": "2018-02-07T16:11:53+09:00",
-    "datepublic": "2015-11-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-005930",
+	"vulinfodata": {
+		"title": "Apache Commons Collections ライブラリのデシリアライズ処理に脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache Commons Collections (ACC) ライブラリのデシリアライズ処理には脆弱性があります。Java アプリケーションが ACC ライブラリを直接使用している場合やクラスパス指定でアクセスできる範囲に ACC ライブラリが設置されている場合、任意のコードを実行させられる可能性があります。  Apache Commons Collections (ACC) ライブラリ http://commons.apache.org/proper/commons-collections/  信頼できないデータのデシリアライズ (CWE-502) 2015年1月に開催された AppSec California 2015 において、Gabriel Lawrence 氏と Chris Frohoff 氏は、信頼できないデータをデシリアライズしてしまう脆弱性について講演し、任意のコードを実行可能であることを示しました。シリアライズ機能の使い方が適切でないすべての Java アプリケーションや Java ライブラリが本脆弱性の影響を受けます。  信頼できないデータのデシリアライズ (CWE-502) http://cwe.mitre.org/data/definitions/502.html  Gabriel Lawrence 氏と Chris Frohoff 氏の講演 http://frohoff.github.io/appseccali-marshalling-pickles/  2015年11月に Foxglove Security の Stephen Breen 氏は、この問題が Apache Commons Collections (ACC) ライブラリに存在すること、特に、信頼できないデータのデシリアライズに InvokerTransformer クラスを使用している場合に任意のコードを実行させられる可能性があることを指摘しました。ACC ライブラリを使用するソフトウェアである、WebSphere、Jenkins、WebLogic、OpenNMS なども影響を受けます。  Foxglove Security の Stephen Breen 氏 (What Do WebLogic, WebSphere, JBoss, Jenkins, OpenNMS, and Your Application Have in Common? This Vulnerability.) http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/  Jenkins https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11  WebLogic http://www.oracle.com/technetwork/topics/security/alert-cve-2015-4852-2763333.html?elq_mid=31793&sh=&cmid=WWSU12091612MPP001C179  ACC ライブラリ バージョン 3.2.1、4.0 の両方が本脆弱性の影響を受けます。  バージョン 3.2.1、4.0 https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread  Apache Software Fondation は本脆弱性に関する公式見解をブログに掲載しました。ここには、対策に関するアドバイスや関連情報へのリンクなども掲載されています。また、本脆弱性に関するエントリ (COLLECTIONS-580) がバグ管理システム上に作られています。  公式見解 https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread  本脆弱性に関するエントリ (COLLECTIONS-580) https://issues.apache.org/jira/browse/COLLECTIONS-580  ACC 以外に、Groovy や Spring などについても同様の問題の調査が行われています。Lawrence 氏と Frohoff 氏の発表資料には、Java だけでなく Python や Ruby などで書かれたアプリケーションやライブラリにおいても同様の問題が存在すると記載されています。使用するプログラミング言語やライブラリにかかわらず、ソフトウェアを設計する段階から、データのシリアライズ機能について十分に考慮することが重要です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日本電気",
+					"productname": "CapsSuite",
+					"cpe": {
+						"text": "cpe:/a:nec:capssuite",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "InfoFrame Relational Store",
+					"cpe": {
+						"text": "cpe:/a:nec:infoframe_relational_store",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "SystemDirector Enterprise",
+					"cpe": {
+						"text": "cpe:/a:nec:systemdirector_enterprise",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "Apache Commons Collections ライブラリを使用している Java アプリケーションや Java ライブラリは、任意の Java コードを実行させられる可能性があります。 また、ACC ライブラリを直接使用していなくても、クラスパス指定でアクセスできる範囲に ACC ライブラリが存在する場合は、任意の Java コードを実行させられる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2015年11月16日現在、本脆弱性の完全な対策は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドの実施を検討してください。  　* ファイアウォールやファイルシステムのアクセス制御を活用する 　たとえば Jenkins などのように、ネットワークからシリアライズされたデータを 　受け取るアプリケーションに対しては、そのアプリケーションが待ち受けている 　ポートに接続可能な範囲を制限することによって、本脆弱性の影響を軽減できる 　可能性があります。  　* アプリケーションの設計を見直す 　Apache Commons Collections ライブラリの対策版リリースの準備が進められて 　います。しかし、現状提案されているパッチはシリアライズ機能をデフォルトで 　無効にするだけのものです。当該ライブラリのシリアライズ機能が必要な場合に 　は、この機能を有効にするコードを追加するとともに、安全にデシリアライズす 　るようアプリケーションの設計を見直す必要があります。  　* Apache Software Fondation の公式見解では次のように述べられています: 　\"However, to be clear: this is not the only known and especially not  　unknown useable gadget. So replacing your installations with a hardened  　version of Apache Commons Collections will not make your application  　resist this vulnerability.\" 　(しかし次のことに注意: 攻撃に使えるクラスは今回指摘されたもの以外にも存在 　するかもしれません。したがって Apache Commons Collections ライブラリを 　対策版に置き換えるだけでは本脆弱性の完全な対策とはならないでしょう。)  　* 信頼できない相手からのデータをデシリアライズしない 　信頼できない相手から受け取ったデータをデシリアライズするのは危険です。 　シリアライズ処理に関するベストプラクティスについては、SEI CERT Oracle  　Coding Standard for Java の SER12-J および SER13-J を参照ください。  　SEI CERT Oracle Coding Standard for Java 　https://www.securecoding.cert.org/confluence/x/N4CjAQ  　SER12-J 　https://www.securecoding.cert.org/confluence/x/ZwBzCg  　SER13-J 　https://www.securecoding.cert.org/confluence/x/pwBzCg"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache",
+					"vulinfoid": "Apache Commons statement to widespread Java object de-serialisation vulnerability",
+					"url": "https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread"
+				},
+				{
+					"type": "vendor",
+					"name": "ASF JIRA",
+					"vulinfoid": "COLLECTIONS-580: Arbitrary remote code execution with InvokerTransformer",
+					"url": "https://issues.apache.org/jira/browse/COLLECTIONS-580"
+				},
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "cisco-sa-20151209-java-deserialization",
+					"url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "HS16-010",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/HS16-010/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1970575",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21970575"
+				},
+				{
+					"type": "vendor",
+					"name": "Jenkins Security Advisory",
+					"vulinfoid": "Jenkins Security Advisory 2015-11-11",
+					"url": "https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2015-11-11"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV16-002",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv16-002.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle",
+					"vulinfoid": "Secure Coding Guidelines for Java SE",
+					"url": "http://www.oracle.com/technetwork/java/seccodeguide-139067.html#8"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Security Alert",
+					"vulinfoid": "Oracle Security Alert for CVE-2015-4852",
+					"url": "http://www.oracle.com/technetwork/topics/security/alert-cve-2015-4852-2763333.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "HS16-010",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/HS16-010/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "日立ストレージソリューションセキュリティ情報",
+					"vulinfoid": "日立ディスクアレイシステムにおけるSVP セキュリティホール",
+					"url": "http://www.hitachi.co.jp/products/it/storage-solutions/techsupport/sec_info/sec_acc20160328.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94276522",
+					"url": "http://jvn.jp/vu/JVNVU94276522/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#576313",
+					"url": "http://www.kb.cert.org/vuls/id/576313"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "What Do WebLogic, WebSphere, JBoss, Jenkins, OpenNMS, and Your Application Have in Common? This Vulnerability.",
+					"url": "http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "AppSecCali 2015: Marshalling Pickles - how deserializing objects will ruin your day",
+					"url": "http://frohoff.github.io/appseccali-marshalling-pickles/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年11月17日]\\n  掲載\\n[2015年11月19日]\\n  ベンダ情報：IBM (1970575) を追加\\n[2015年12月22日]\\n  ベンダ情報：シスコシステムズ (cisco-sa-20151209-java-deserialization) を追加\\n[2016年03月15日]\\n  ベンダ情報：日本電気 (NV16-002) を追加\\n[2016年03月29日]\\n  ベンダ情報：日立 (HS16-010) を追加\\n[2016年03月30日]\\n  ベンダ情報：日立 (日立ディスクアレイシステムにおけるSVP セキュリティホール) を追加\\n[2017年11月09日]\\n  影響を受けるシステム：ベンダ情報 (NV16-002) の更新に伴い内容を更新\\n[2018年02月07日]\\n  影響を受けるシステム：ベンダ情報 (NV16-002) の更新に伴い内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2015-11-17T15:52:42+09:00",
+		"datelastupdated": "2018-02-07T16:11:53+09:00",
+		"datepublic": "2015-11-13T00:00:00+09:00"
+	}
 }

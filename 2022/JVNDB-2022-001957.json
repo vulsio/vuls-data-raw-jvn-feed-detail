@@ -1,175 +1,175 @@
 {
-  "vulinfoid": "JVNDB-2022-001957",
-  "vulinfodata": {
-    "title": "OpenSSL の c_rehash スクリプトにおけるコマンドインジェクションの脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20220621.txt\"target=\"blank\">OpenSSL Security Advisory [21 June 2022]</a> が公開されました。 OpenSSL には、次の脆弱性が存在します。 深刻度 - 中 （Severity: Moderate） c_rehash スクリプトには、シェルのメタ文字を適切にサニタイズしていない問題に起因するコマンドインジェクション （CWE-77、CVE-2022-2068） の脆弱性が存在します。 OpenSSL の開発者は c_rehash スクリプトを OpenSSL rehash コマンドラインツールに置き換える必要があるとしています。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.2zf より前のバージョン",
-            "1.1.1p より前のバージョン",
-            "3.0.4 より前のバージョン"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "日立アドバンストサーバ HA8000V シリーズ",
-          "cpe": {
-            "text": "cpe:/a:hitachi:advanced_server",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "c_rehash スクリプトは、一部のオペレーティングシステムでは自動的に実行されるため、このようなオペレーティングシステムでは第三者によってスクリプトの実行権限で任意のコマンドを実行される可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性への対策版として次のバージョンをリリースしています。  * OpenSSL 3.0.4 * OpenSSL 1.1.1p * OpenSSL 1.0.2zf （プレミアムサポートを契約したユーザーのみ）  OpenSSL 1.0.2 系はサポートが終了しているため、プレミアムサポートを契約したユーザを除きアップデートは提供されません。 開発者は、OpenSSL 1.0.2 プレミアムサポートを契約したユーザ以外に対しては、OpenSSL 3.0 系もしくは 1.1.1 系へのアップデートを推奨しています。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "OpenSSL Security Advisory [21 June 2022]",
-          "url": "https://www.openssl.org/news/secadv/20220621.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "サーバ・クライアント製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2022-219",
-          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_219.html"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "GT SoftGOT2000 における OpenSSL に起因する悪意のあるコマンドが実行される脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-012.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "脆弱性に関する情報",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-2068",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-2068"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-017-03",
-          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-23-017-03"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-166-11",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-166-11"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-194-01",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-194-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90782730",
-          "url": "https://jvn.jp/vu/JVNVU90782730/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99464755",
-          "url": "https://jvn.jp/vu/JVNVU99464755/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92867820",
-          "url": "http://jvn.jp/vu/JVNVU92867820/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95292697",
-          "url": "http://jvn.jp/vu/JVNVU95292697/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2022-2068",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-2068"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-77",
-          "url": "https://cwe.mitre.org/data/definitions/77.html",
-          "title": "コマンドインジェクション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-06-23T17:34:23+09:00",
-          "description": "[2022年06月23日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-10-04T13:48:49+09:00",
-          "description": "[2022年10月04日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-219) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2022-11-16T13:57:19+09:00",
-          "description": "[2022年11月16日]\\n  ベンダ情報：三菱電機 (GT SoftGOT2000 における OpenSSL に起因する悪意のあるコマンドが実行される脆弱性) を追加\\n  ベンダ情報：三菱電機 (脆弱性に関する情報) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2023-01-19T15:52:41+09:00",
-          "description": "[2023年01月16日]\\n  参考情報：JVN (JVNVU#90782730) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2023-01-19T15:52:59+09:00",
-          "description": "[2023年01月19日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-017-03) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2023-06-16T16:49:46+09:00",
-          "description": "[2022年06月16日]\\n  参考情報：JVN (JVNVU#99464755) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-166-11) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2022-2068)"
-        },
-        {
-          "historyno": "7",
-          "datetime": "2023-07-19T15:20:24+09:00",
-          "description": "[2023年07月18日]\\n  参考情報：JVN (JVNVU#95292697) を追加\\n  参考情報：ICS-CERT ADVISORY (IICSA-23-194-01) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-06-23T17:34:23+09:00",
-    "datelastupdated": "2023-07-19T15:21:04+09:00",
-    "datepublic": "2022-06-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-001957",
+	"vulinfodata": {
+		"title": "OpenSSL の c_rehash スクリプトにおけるコマンドインジェクションの脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20220621.txt\"target=\"blank\">OpenSSL Security Advisory [21 June 2022]</a> が公開されました。 OpenSSL には、次の脆弱性が存在します。 深刻度 - 中 （Severity: Moderate） c_rehash スクリプトには、シェルのメタ文字を適切にサニタイズしていない問題に起因するコマンドインジェクション （CWE-77、CVE-2022-2068） の脆弱性が存在します。 OpenSSL の開発者は c_rehash スクリプトを OpenSSL rehash コマンドラインツールに置き換える必要があるとしています。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.2zf より前のバージョン",
+						"1.1.1p より前のバージョン",
+						"3.0.4 より前のバージョン"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "日立アドバンストサーバ HA8000V シリーズ",
+					"cpe": {
+						"text": "cpe:/a:hitachi:advanced_server",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "c_rehash スクリプトは、一部のオペレーティングシステムでは自動的に実行されるため、このようなオペレーティングシステムでは第三者によってスクリプトの実行権限で任意のコマンドを実行される可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性への対策版として次のバージョンをリリースしています。  * OpenSSL 3.0.4 * OpenSSL 1.1.1p * OpenSSL 1.0.2zf （プレミアムサポートを契約したユーザーのみ）  OpenSSL 1.0.2 系はサポートが終了しているため、プレミアムサポートを契約したユーザを除きアップデートは提供されません。 開発者は、OpenSSL 1.0.2 プレミアムサポートを契約したユーザ以外に対しては、OpenSSL 3.0 系もしくは 1.1.1 系へのアップデートを推奨しています。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "OpenSSL Security Advisory [21 June 2022]",
+					"url": "https://www.openssl.org/news/secadv/20220621.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "サーバ・クライアント製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2022-219",
+					"url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_219.html"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "GT SoftGOT2000 における OpenSSL に起因する悪意のあるコマンドが実行される脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-012.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "脆弱性に関する情報",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-2068",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-2068"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-017-03",
+					"url": "https://www.cisa.gov/uscert/ics/advisories/icsa-23-017-03"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-166-11",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-166-11"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-194-01",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-194-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90782730",
+					"url": "https://jvn.jp/vu/JVNVU90782730/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99464755",
+					"url": "https://jvn.jp/vu/JVNVU99464755/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92867820",
+					"url": "http://jvn.jp/vu/JVNVU92867820/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95292697",
+					"url": "http://jvn.jp/vu/JVNVU95292697/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2022-2068",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2022-2068"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-77",
+					"url": "https://cwe.mitre.org/data/definitions/77.html",
+					"title": "コマンドインジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-06-23T17:34:23+09:00",
+					"description": "[2022年06月23日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-10-04T13:48:49+09:00",
+					"description": "[2022年10月04日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-219) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2022-11-16T13:57:19+09:00",
+					"description": "[2022年11月16日]\\n  ベンダ情報：三菱電機 (GT SoftGOT2000 における OpenSSL に起因する悪意のあるコマンドが実行される脆弱性) を追加\\n  ベンダ情報：三菱電機 (脆弱性に関する情報) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2023-01-19T15:52:41+09:00",
+					"description": "[2023年01月16日]\\n  参考情報：JVN (JVNVU#90782730) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2023-01-19T15:52:59+09:00",
+					"description": "[2023年01月19日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-017-03) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2023-06-16T16:49:46+09:00",
+					"description": "[2022年06月16日]\\n  参考情報：JVN (JVNVU#99464755) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-166-11) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2022-2068)"
+				},
+				{
+					"historyno": "7",
+					"datetime": "2023-07-19T15:20:24+09:00",
+					"description": "[2023年07月18日]\\n  参考情報：JVN (JVNVU#95292697) を追加\\n  参考情報：ICS-CERT ADVISORY (IICSA-23-194-01) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2022-06-23T17:34:23+09:00",
+		"datelastupdated": "2023-07-19T15:21:04+09:00",
+		"datepublic": "2022-06-22T00:00:00+09:00"
+	}
 }

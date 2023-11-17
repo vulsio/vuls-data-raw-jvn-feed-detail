@@ -1,118 +1,118 @@
 {
-  "vulinfoid": "JVNDB-2023-001326",
-  "vulinfodata": {
-    "title": "OpenSSL の X.509 ポリシー制限の検証における過剰なリソース消費の問題",
-    "vulinfodescription": {
-      "overview": "OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20230322.txt\"target=\"blank\">Excessive Resource Usage Verifying X.509 Policy Constraints (CVE-2023-0464)</a> が公開されました。 OpenSSL には、次の脆弱性が存在します。  深刻度 - 低（Severity: Low） OpenSSL のポリシー制限が含まれている X.509 証明書チェーンの検証においてリソースが過剰に消費される問題があります。 ポリシー処理はデフォルトで無効になっており、コマンドラインユーティリティに「-policy」引数を渡すか、「X509_VERIFY_PARAM_set1_policies()」関数を呼び出すことにより有効にできます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.2",
-            "1.1.1",
-            "3.0",
-            "3.1"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "攻撃者によって細工された計算リソースを過剰に消費する証明書チェーンを処理させられることで、サービス運用妨害（DoS）攻撃を受ける可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[修正を適用する] 開発者によると、本脆弱性の深刻度が低であるため、2023 年 3 月 23 日現在、正式リリースは提供されておらず、以下のコミットで修正されているとのことです。  　* commit 2017771e（3.1 ユーザ向け） 　* commit 959c59c7（3.0 ユーザ向け） 　* commit 879f7080（1.1.1 ユーザ向け） 　* commit 2dcd4f1e（1.0.2 プレミアムサポートカスタマ向け） 　 なお、以下のリリース提供後のアップグレードが必要とのことです。  　* OpenSSL 3.1.1（3.1 ユーザ向け） 　* OpenSSL 3.0.9（3.0 ユーザ向け） 　* OpenSSL 1.1.1u（1.1.1 ユーザ向け） 　* OpenSSL 1.0.2zh（1.0.2 プレミアムサポートカスタマ向け）  また、OpenSSL 1.1.1 は 2023 年 9 月 11 日にサポートが終了し、以降のセキュリティ修正は、プレミアムサポートカスタマのみに提供されるとのことです。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fixed in OpenSSL 1.1.1u (git commit)",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=879f7080d7e141f415c79eaa3a8ac4a3dad0348b"
-        },
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fixed in OpenSSL 3.1.1 (git commit)",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2017771e2db3e2b96f89bbe8766c3209f6a99545"
-        },
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fixed in OpenSSL 3.0.9 (git commit)",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=959c59c7a0164117e7f8366466a32bb1f8d77ff1"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Vulnerabilities",
-          "url": "https://www.openssl.org/news/vulnerabilities.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "Excessive Resource Usage Verifying X.509 Policy Constraints (CVE-2023-0464)",
-          "url": "https://www.openssl.org/news/secadv/20230322.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-0464",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-0464"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-166-11",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-166-11"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94632906",
-          "url": "http://jvn.jp/vu/JVNVU94632906/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99464755",
-          "url": "http://jvn.jp/vu/JVNVU99464755/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2023-0464",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0464"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-03-24T13:43:25+09:00",
-          "description": "[2023年03月24日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-06-16T11:38:48+09:00",
-          "description": "[2023年06月16日]\\n  参考情報：JVN (JVNVU#99464755) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-166-11) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-0464) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-03-24T13:43:25+09:00",
-    "datelastupdated": "2023-06-16T14:13:48+09:00",
-    "datepublic": "2023-03-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-001326",
+	"vulinfodata": {
+		"title": "OpenSSL の X.509 ポリシー制限の検証における過剰なリソース消費の問題",
+		"vulinfodescription": {
+			"overview": "OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20230322.txt\"target=\"blank\">Excessive Resource Usage Verifying X.509 Policy Constraints (CVE-2023-0464)</a> が公開されました。 OpenSSL には、次の脆弱性が存在します。  深刻度 - 低（Severity: Low） OpenSSL のポリシー制限が含まれている X.509 証明書チェーンの検証においてリソースが過剰に消費される問題があります。 ポリシー処理はデフォルトで無効になっており、コマンドラインユーティリティに「-policy」引数を渡すか、「X509_VERIFY_PARAM_set1_policies()」関数を呼び出すことにより有効にできます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.2",
+						"1.1.1",
+						"3.0",
+						"3.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "攻撃者によって細工された計算リソースを過剰に消費する証明書チェーンを処理させられることで、サービス運用妨害（DoS）攻撃を受ける可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[修正を適用する] 開発者によると、本脆弱性の深刻度が低であるため、2023 年 3 月 23 日現在、正式リリースは提供されておらず、以下のコミットで修正されているとのことです。  　* commit 2017771e（3.1 ユーザ向け） 　* commit 959c59c7（3.0 ユーザ向け） 　* commit 879f7080（1.1.1 ユーザ向け） 　* commit 2dcd4f1e（1.0.2 プレミアムサポートカスタマ向け） 　 なお、以下のリリース提供後のアップグレードが必要とのことです。  　* OpenSSL 3.1.1（3.1 ユーザ向け） 　* OpenSSL 3.0.9（3.0 ユーザ向け） 　* OpenSSL 1.1.1u（1.1.1 ユーザ向け） 　* OpenSSL 1.0.2zh（1.0.2 プレミアムサポートカスタマ向け）  また、OpenSSL 1.1.1 は 2023 年 9 月 11 日にサポートが終了し、以降のセキュリティ修正は、プレミアムサポートカスタマのみに提供されるとのことです。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fixed in OpenSSL 1.1.1u (git commit)",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=879f7080d7e141f415c79eaa3a8ac4a3dad0348b"
+				},
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fixed in OpenSSL 3.1.1 (git commit)",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=2017771e2db3e2b96f89bbe8766c3209f6a99545"
+				},
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fixed in OpenSSL 3.0.9 (git commit)",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=959c59c7a0164117e7f8366466a32bb1f8d77ff1"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Vulnerabilities",
+					"url": "https://www.openssl.org/news/vulnerabilities.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "Excessive Resource Usage Verifying X.509 Policy Constraints (CVE-2023-0464)",
+					"url": "https://www.openssl.org/news/secadv/20230322.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-0464",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-0464"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-166-11",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-166-11"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94632906",
+					"url": "http://jvn.jp/vu/JVNVU94632906/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99464755",
+					"url": "http://jvn.jp/vu/JVNVU99464755/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-0464",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0464"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-03-24T13:43:25+09:00",
+					"description": "[2023年03月24日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-06-16T11:38:48+09:00",
+					"description": "[2023年06月16日]\\n  参考情報：JVN (JVNVU#99464755) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-166-11) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-0464) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2023-03-24T13:43:25+09:00",
+		"datelastupdated": "2023-06-16T14:13:48+09:00",
+		"datepublic": "2023-03-23T00:00:00+09:00"
+	}
 }

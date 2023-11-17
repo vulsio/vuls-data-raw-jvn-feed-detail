@@ -1,166 +1,166 @@
 {
-  "vulinfoid": "JVNDB-2017-002744",
-  "vulinfodata": {
-    "title": "Portrait Displays SDK を使用して作成されたアプリケーションに任意のコードが実行可能な脆弱性",
-    "vulinfodescription": {
-      "overview": "Portrait Displays SDK を使用して作成されたアプリケーションは、デフォルトの権限設定がセキュアでないため、任意のコードを実行される可能性があります。  不適切なデフォルトパーミッション (CWE-276) - CVE-2017-3210 Portrait Displays SDK を使用して作成されたアプリケーションでは、コンポーネント pdiservice.exe をサービスとして登録し、NT AUTHORITY/SYSTEM ユーザの権限で実行します。この SDK を使用して作成された複数のアプリケーションにおいて、サービス設定の内容を Authenticated Users の権限で変更可能であることが報告されました。したがって、Authenticated Users に属するユーザアカウントによってサービス設定の内容を変更され、SYSTEM 権限で任意のコードを実行される可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Koninklijke Philips N.V.",
-          "productname": "Smart Control Premium",
-          "cpe": {
-            "text": "cpe:/a:philips_electronics:smart_control_premium",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.23",
-            "2.25"
-          ]
-        },
-        {
-          "name": "Portrait Displays, Inc.",
-          "productname": "Portrait Displays SDK",
-          "cpe": {
-            "text": "cpe:/a:misc:portrait_displays_sdk",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.30 から 2.34"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP Display Assistant",
-          "cpe": {
-            "text": "cpe:/a:hp:hp_display_assistant",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP My Display",
-          "cpe": {
-            "text": "cpe:/a:hp:hp_my_display",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0"
-          ]
-        },
-        {
-          "name": "富士通",
-          "productname": "Fujitsu DisplayView Click",
-          "cpe": {
-            "text": "cpe:/a:fujitsu:fujitsu_displayview_click",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0",
-            "6.01",
-            "Suite 5"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "管理者権限を持たない一般ユーザによって、SYSTEM 権限で任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アプリケーションをアップデートする] 各アプリケーション開発者が提供する情報をもとに、アプリケーションを最新版へアップデートしてください。 Portrait Displays SDK の開発者は、影響を受けるアプリケーションに対するパッチを提供しています。 また、本脆弱性の影響を受けることが確認されているアプリケーションは、次のバージョンで修正されています。  　* Fujitsu DisplayView Click 6.3 　* Fujitsu DisplayView Click Suite 5.9 　* HP Display Assistant 2.11 　* HP My Display 2.1 　* Philips Smart Control Premium 2.26  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を回避することが可能です。  　* 次のコマンドを使用して Authenticated Users の Read/Write 権限を削除する  　　sc sdset pdiservice D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA) 　　 (A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "FUJITSU",
-          "vulinfoid": "富士通株式会社 の告知ページ",
-          "url": "http://support.ts.fujitsu.com/content/QuicksearchResult.asp?lng=COM&q=displayView+Click"
-        },
-        {
-          "type": "vendor",
-          "name": "Portrait Displays, Inc.",
-          "vulinfoid": "Security Update!",
-          "url": "http://www.portrait.com/securityupdate.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3210",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3210"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96080594",
-          "url": "http://jvn.jp/vu/JVNVU96080594/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#219739",
-          "url": "http://www.kb.cert.org/vuls/id/219739"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SEC Consult Vulnerability Lab Security Advisory < 20170425-0 >",
-          "url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20170425-0_Portrait_Displays_SDK_Privilege_Escalation_v10.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SEC Consult blog - What unites HP, Philips and Fujitsu? One service and millions of vulnerable devices.",
-          "url": "http://blog.sec-consult.com/2017/04/what-unites-hp-philips-and-fujitsu-one.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-276",
-          "url": "https://cwe.mitre.org/data/definitions/276.html",
-          "title": "不適切なデフォルトパーミッション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年04月27日]\\n  掲載\\n[2017年05月09日]\\n  ベンダ情報：富士通 (富士通株式会社 の告知ページ) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-04-27T12:16:29+09:00",
-    "datelastupdated": "2017-05-09T12:12:47+09:00",
-    "datepublic": "2017-04-25T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-002744",
+	"vulinfodata": {
+		"title": "Portrait Displays SDK を使用して作成されたアプリケーションに任意のコードが実行可能な脆弱性",
+		"vulinfodescription": {
+			"overview": "Portrait Displays SDK を使用して作成されたアプリケーションは、デフォルトの権限設定がセキュアでないため、任意のコードを実行される可能性があります。  不適切なデフォルトパーミッション (CWE-276) - CVE-2017-3210 Portrait Displays SDK を使用して作成されたアプリケーションでは、コンポーネント pdiservice.exe をサービスとして登録し、NT AUTHORITY/SYSTEM ユーザの権限で実行します。この SDK を使用して作成された複数のアプリケーションにおいて、サービス設定の内容を Authenticated Users の権限で変更可能であることが報告されました。したがって、Authenticated Users に属するユーザアカウントによってサービス設定の内容を変更され、SYSTEM 権限で任意のコードを実行される可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Koninklijke Philips N.V.",
+					"productname": "Smart Control Premium",
+					"cpe": {
+						"text": "cpe:/a:philips_electronics:smart_control_premium",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.23",
+						"2.25"
+					]
+				},
+				{
+					"name": "Portrait Displays, Inc.",
+					"productname": "Portrait Displays SDK",
+					"cpe": {
+						"text": "cpe:/a:misc:portrait_displays_sdk",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.30 から 2.34"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP Display Assistant",
+					"cpe": {
+						"text": "cpe:/a:hp:hp_display_assistant",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP My Display",
+					"cpe": {
+						"text": "cpe:/a:hp:hp_my_display",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0"
+					]
+				},
+				{
+					"name": "富士通",
+					"productname": "Fujitsu DisplayView Click",
+					"cpe": {
+						"text": "cpe:/a:fujitsu:fujitsu_displayview_click",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0",
+						"6.01",
+						"Suite 5"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "管理者権限を持たない一般ユーザによって、SYSTEM 権限で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アプリケーションをアップデートする] 各アプリケーション開発者が提供する情報をもとに、アプリケーションを最新版へアップデートしてください。 Portrait Displays SDK の開発者は、影響を受けるアプリケーションに対するパッチを提供しています。 また、本脆弱性の影響を受けることが確認されているアプリケーションは、次のバージョンで修正されています。  　* Fujitsu DisplayView Click 6.3 　* Fujitsu DisplayView Click Suite 5.9 　* HP Display Assistant 2.11 　* HP My Display 2.1 　* Philips Smart Control Premium 2.26  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を回避することが可能です。  　* 次のコマンドを使用して Authenticated Users の Read/Write 権限を削除する  　　sc sdset pdiservice D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA) 　　 (A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "FUJITSU",
+					"vulinfoid": "富士通株式会社 の告知ページ",
+					"url": "http://support.ts.fujitsu.com/content/QuicksearchResult.asp?lng=COM&q=displayView+Click"
+				},
+				{
+					"type": "vendor",
+					"name": "Portrait Displays, Inc.",
+					"vulinfoid": "Security Update!",
+					"url": "http://www.portrait.com/securityupdate.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3210",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3210"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96080594",
+					"url": "http://jvn.jp/vu/JVNVU96080594/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#219739",
+					"url": "http://www.kb.cert.org/vuls/id/219739"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SEC Consult Vulnerability Lab Security Advisory < 20170425-0 >",
+					"url": "https://www.sec-consult.com/fxdata/seccons/prod/temedia/advisories_txt/20170425-0_Portrait_Displays_SDK_Privilege_Escalation_v10.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SEC Consult blog - What unites HP, Philips and Fujitsu? One service and millions of vulnerable devices.",
+					"url": "http://blog.sec-consult.com/2017/04/what-unites-hp-philips-and-fujitsu-one.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-276",
+					"url": "https://cwe.mitre.org/data/definitions/276.html",
+					"title": "不適切なデフォルトパーミッション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年04月27日]\\n  掲載\\n[2017年05月09日]\\n  ベンダ情報：富士通 (富士通株式会社 の告知ページ) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-04-27T12:16:29+09:00",
+		"datelastupdated": "2017-05-09T12:12:47+09:00",
+		"datepublic": "2017-04-25T00:00:00+09:00"
+	}
 }

@@ -1,161 +1,161 @@
 {
-  "vulinfoid": "JVNDB-2015-003046",
-  "vulinfodata": {
-    "title": "PHP の phar_internal.h の phar_set_inode 関数におけるスタックベースのバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "PHP の phar_internal.h の phar_set_inode 関数には、スタックベースのバッファオーバーフローの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The PHP Group",
-          "productname": "PHP",
-          "cpe": {
-            "text": "cpe:/a:php:php",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.4.40 未満",
-            "5.5.24 未満の 5.5.x",
-            "5.6.8 未満の 5.6.x"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 から 10.10.4 (HT205031)",
-            "10.6.8 以上 10.11 未満 (HT205267)",
-            "10.9.5 (HT205031)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、(1) tar、(2) phar、または (3) ZIP アーカイブ内の巧妙に細工された length 値を介して、任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205031",
-          "url": "https://support.apple.com/en-us/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205267",
-          "url": "https://support.apple.com/en-us/HT205267"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205267",
-          "url": "http://support.apple.com/ja-jp/HT205267"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205031",
-          "url": "https://support.apple.com/ja-jp/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "PHP Bugs",
-          "vulinfoid": "Sec Bug #69441",
-          "url": "https://bugs.php.net/bug.php?id=69441"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "PHP 5 ChangeLog",
-          "url": "http://php.net/ChangeLog-5.php"
-        },
-        {
-          "type": "vendor",
-          "name": "The PHP Group",
-          "vulinfoid": "Fix bug #69441 (Buffer Overflow when parsing tar/zip/phar in phar_set_inode)",
-          "url": "http://git.php.net/?p=php-src.git;a=commit;h=f59b67ae50064560d7bfcdb0d6a8ab284179053c"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-3329",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3329"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94440136",
-          "url": "http://jvn.jp/vu/JVNVU94440136/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97220341",
-          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-3329",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3329"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年06月12日]\\n  掲載\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n  ベンダ情報：アップル (HT205031) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#94440136) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-06-12T11:45:23+09:00",
-    "datelastupdated": "2015-10-06T10:36:10+09:00",
-    "datepublic": "2015-04-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-003046",
+	"vulinfodata": {
+		"title": "PHP の phar_internal.h の phar_set_inode 関数におけるスタックベースのバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "PHP の phar_internal.h の phar_set_inode 関数には、スタックベースのバッファオーバーフローの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The PHP Group",
+					"productname": "PHP",
+					"cpe": {
+						"text": "cpe:/a:php:php",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.4.40 未満",
+						"5.5.24 未満の 5.5.x",
+						"5.6.8 未満の 5.6.x"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 から 10.10.4 (HT205031)",
+						"10.6.8 以上 10.11 未満 (HT205267)",
+						"10.9.5 (HT205031)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、(1) tar、(2) phar、または (3) ZIP アーカイブ内の巧妙に細工された length 値を介して、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205031",
+					"url": "https://support.apple.com/en-us/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205267",
+					"url": "https://support.apple.com/en-us/HT205267"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205267",
+					"url": "http://support.apple.com/ja-jp/HT205267"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205031",
+					"url": "https://support.apple.com/ja-jp/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "PHP Bugs",
+					"vulinfoid": "Sec Bug #69441",
+					"url": "https://bugs.php.net/bug.php?id=69441"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "PHP 5 ChangeLog",
+					"url": "http://php.net/ChangeLog-5.php"
+				},
+				{
+					"type": "vendor",
+					"name": "The PHP Group",
+					"vulinfoid": "Fix bug #69441 (Buffer Overflow when parsing tar/zip/phar in phar_set_inode)",
+					"url": "http://git.php.net/?p=php-src.git;a=commit;h=f59b67ae50064560d7bfcdb0d6a8ab284179053c"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-3329",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3329"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94440136",
+					"url": "http://jvn.jp/vu/JVNVU94440136/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97220341",
+					"url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-3329",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-3329"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年06月12日]\\n  掲載\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n  ベンダ情報：アップル (HT205031) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#94440136) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-06-12T11:45:23+09:00",
+		"datelastupdated": "2015-10-06T10:36:10+09:00",
+		"datepublic": "2015-04-16T00:00:00+09:00"
+	}
 }

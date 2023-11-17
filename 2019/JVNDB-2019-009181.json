@@ -1,306 +1,306 @@
 {
-  "vulinfoid": "JVNDB-2019-009181",
-  "vulinfodata": {
-    "title": "OpenSSL における CMS/PKCS7 で転送された暗号鍵を復元される脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL には、CMS/PKCS7 で転送された暗号鍵を復元される、または RSA 公開鍵で暗号化された RSA 暗号化メッセージをすべて復号化される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.2 から 1.0.2s",
-            "1.1.0 から 1.1.0k",
-            "1.1.1 から 1.1.1c"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Automation Director",
-          "cpe": {
-            "text": "cpe:/a:hitachi:automation_director",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(海外版)",
-            "(国内版)"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Compute Systems Manager"
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Device Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:device_manager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Global Link Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:global_link_manager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Infrastructure Analytics Advisor",
-          "cpe": {
-            "text": "cpe:/a:hitachi:infrastructure_analytics_advisor",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(海外販売のみ)"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Ops Center Analyzer",
-          "cpe": {
-            "text": "cpe:/a:hitachi:hitachi_ops_center_analyzer",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(海外販売のみ)"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Ops Center API Configuration Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:hitachi_ops_center_api_configuration_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(海外版)"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Ops Center Automator",
-          "cpe": {
-            "text": "cpe:/a:hitachi:hitachi_ops_center_automator",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(海外版)"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Replication Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:replication_manager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Tiered Storage Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:tiered_storage_manager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Tuning Manager",
-          "cpe": {
-            "text": "cpe:/a:hitachi:tuning_manager",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "3.7",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "復号化の成功または失敗の自動通知を受信できる攻撃者により、Bleichenbacher パディングオラクル攻撃を介して、CMS/PKCS7 で転送された暗号鍵を復元される、または RSA 公開鍵で暗号化された RSA 暗号化メッセージをすべて復号化される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fix a padding oracle in PKCS7_dataDecode and CMS_decrypt_set1_pkey (08229ad)",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=08229ad838c50f644d7e928e2eef147b4308ad64"
-        },
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fix a padding oracle in PKCS7_dataDecode and CMS_decrypt_set1_pkey (631f94d)",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=631f94db0065c78181ca9ba5546ebc8bb3884b97"
-        },
-        {
-          "type": "vendor",
-          "name": "Git",
-          "vulinfoid": "Fix a padding oracle in PKCS7_dataDecode and CMS_decrypt_set1_pkey (e21f8cf)",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e21f8cf78a125cd3c8c0d1a1a6c8bb0b901f893f"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2021-121",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-121/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2023-126",
-          "url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-126/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2019-127",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2019-127/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2020-104",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2020-104/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "ECDSA remote timing attack (CVE-2019-1547)",
-          "url": "https://www.openssl.org/news/secadv/20190910.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-121",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-121/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2023-126",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-126/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2019-127",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2019-127/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2020-104",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2020-104/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-1563",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1563"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-336-06",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-336-06"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94367039",
-          "url": "https://jvn.jp/vu/JVNVU94367039/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90348129",
-          "url": "https://jvn.jp/vu/JVNVU90348129/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-1563",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1563"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-311",
-          "url": "https://cwe.mitre.org/data/definitions/311.html",
-          "title": "重要なデータの暗号化の欠如"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2019-09-13T12:03:05+09:00",
-          "description": "[2019年09月13日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-11-11T11:48:06+09:00",
-          "description": "[2019年11月11日]\\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2019-127) を追加\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2019-127) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2020-02-17T10:57:01+09:00",
-          "description": "[2020年02月17日]\\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2020-104) を追加\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2020-104) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2021-07-15T15:08:46+09:00",
-          "description": "[2021年07月15日]\\n  ベンダ情報：日立 (hitachi-sec-2021-121) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2021-12-08T10:19:59+09:00",
-          "description": "[2021年12月08日]\\n  参考情報：JVN (JVNVU#90348129) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-336-06) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2023-07-20T12:13:26+09:00",
-          "description": "[2023年07月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2023-126) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2019-09-13T12:03:05+09:00",
-    "datelastupdated": "2023-07-20T15:25:44+09:00",
-    "datepublic": "2019-09-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2019-009181",
+	"vulinfodata": {
+		"title": "OpenSSL における CMS/PKCS7 で転送された暗号鍵を復元される脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL には、CMS/PKCS7 で転送された暗号鍵を復元される、または RSA 公開鍵で暗号化された RSA 暗号化メッセージをすべて復号化される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.2 から 1.0.2s",
+						"1.1.0 から 1.1.0k",
+						"1.1.1 から 1.1.1c"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Automation Director",
+					"cpe": {
+						"text": "cpe:/a:hitachi:automation_director",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(海外版)",
+						"(国内版)"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Compute Systems Manager"
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Device Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:device_manager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Global Link Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:global_link_manager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Infrastructure Analytics Advisor",
+					"cpe": {
+						"text": "cpe:/a:hitachi:infrastructure_analytics_advisor",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(海外販売のみ)"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Ops Center Analyzer",
+					"cpe": {
+						"text": "cpe:/a:hitachi:hitachi_ops_center_analyzer",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(海外販売のみ)"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Ops Center API Configuration Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:hitachi_ops_center_api_configuration_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(海外版)"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Ops Center Automator",
+					"cpe": {
+						"text": "cpe:/a:hitachi:hitachi_ops_center_automator",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(海外版)"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Replication Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:replication_manager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Tiered Storage Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:tiered_storage_manager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Tuning Manager",
+					"cpe": {
+						"text": "cpe:/a:hitachi:tuning_manager",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "3.7",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "復号化の成功または失敗の自動通知を受信できる攻撃者により、Bleichenbacher パディングオラクル攻撃を介して、CMS/PKCS7 で転送された暗号鍵を復元される、または RSA 公開鍵で暗号化された RSA 暗号化メッセージをすべて復号化される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fix a padding oracle in PKCS7_dataDecode and CMS_decrypt_set1_pkey (08229ad)",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=08229ad838c50f644d7e928e2eef147b4308ad64"
+				},
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fix a padding oracle in PKCS7_dataDecode and CMS_decrypt_set1_pkey (631f94d)",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=631f94db0065c78181ca9ba5546ebc8bb3884b97"
+				},
+				{
+					"type": "vendor",
+					"name": "Git",
+					"vulinfoid": "Fix a padding oracle in PKCS7_dataDecode and CMS_decrypt_set1_pkey (e21f8cf)",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=e21f8cf78a125cd3c8c0d1a1a6c8bb0b901f893f"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2021-121",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-121/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2023-126",
+					"url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-126/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2019-127",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2019-127/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2020-104",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2020-104/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "ECDSA remote timing attack (CVE-2019-1547)",
+					"url": "https://www.openssl.org/news/secadv/20190910.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-121",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-121/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2023-126",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-126/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2019-127",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2019-127/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2020-104",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2020-104/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-1563",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1563"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-336-06",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-336-06"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94367039",
+					"url": "https://jvn.jp/vu/JVNVU94367039/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90348129",
+					"url": "https://jvn.jp/vu/JVNVU90348129/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-1563",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1563"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-311",
+					"url": "https://cwe.mitre.org/data/definitions/311.html",
+					"title": "重要なデータの暗号化の欠如"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2019-09-13T12:03:05+09:00",
+					"description": "[2019年09月13日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-11-11T11:48:06+09:00",
+					"description": "[2019年11月11日]\\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2019-127) を追加\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2019-127) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2020-02-17T10:57:01+09:00",
+					"description": "[2020年02月17日]\\n  ベンダ情報：ソフトウェア製品セキュリティ情報 (hitachi-sec-2020-104) を追加\\n  ベンダ情報：Hitachi Software Vulnerability Information (hitachi-sec-2020-104) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2021-07-15T15:08:46+09:00",
+					"description": "[2021年07月15日]\\n  ベンダ情報：日立 (hitachi-sec-2021-121) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2021-12-08T10:19:59+09:00",
+					"description": "[2021年12月08日]\\n  参考情報：JVN (JVNVU#90348129) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-336-06) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2023-07-20T12:13:26+09:00",
+					"description": "[2023年07月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2023-126) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2019-09-13T12:03:05+09:00",
+		"datelastupdated": "2023-07-20T15:25:44+09:00",
+		"datepublic": "2019-09-10T00:00:00+09:00"
+	}
 }

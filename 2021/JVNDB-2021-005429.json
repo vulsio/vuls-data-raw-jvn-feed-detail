@@ -1,560 +1,560 @@
 {
-  "vulinfoid": "JVNDB-2021-005429",
-  "vulinfodata": {
-    "title": "Apache Log4j における任意のコードが実行可能な脆弱性",
-    "vulinfodescription": {
-      "overview": "Log4j には JNDI Lookup 機能による外部入力値の検証不備に起因して任意の Java コードを実行可能な脆弱性が存在します。  The Apache Software Foundation が提供する Log4j は、Java ベースのロギングライブラリです。Log4j には、ログに記載された文字列から一部の値を変数として評価する Lookup 機能が実装されています。 その Lookup 機能の内、JNDI Lookup 機能を悪用することにより、ログに含まれる外部の URL もしくは内部パスから Java のクラス情報をデシリアライズして実行してしまう問題（CWE-20, CVE-2021-44228）が発見されました。 これにより、遠隔の攻撃者が細工した文字列を脆弱なシステムのログに記載させ、結果として任意の Java コードをシステムに実行させることが可能です。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache Log4j",
-          "cpe": {
-            "text": "cpe:/a:apache:log4j",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.13.0 から 2.15.0 より前のバージョン",
-            "core 2.0-beta9 から 2.12.1 より前のバージョン"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "ACOS Access Toolkit",
-          "cpe": {
-            "text": "cpe:/a:nec:acos_access_toolkit",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "CONNEXIVE Application Platform",
-          "cpe": {
-            "text": "cpe:/a:nec:connexive_application_platform",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "CONNEXIVE Edge Device Management",
-          "cpe": {
-            "text": "cpe:/a:nec:connexive_edge_device_management",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "CONNEXIVE PF",
-          "cpe": {
-            "text": "cpe:/a:nec:connexive_pf",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "ESMPRO/UPSManager",
-          "cpe": {
-            "text": "cpe:/a:nec:esmpro_upsmanager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "IoT 共通基盤",
-          "cpe": {
-            "text": "cpe:/a:nec:iot_common_base",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "SystemDirector Enterprise",
-          "cpe": {
-            "text": "cpe:/a:nec:systemdirector_enterprise",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "UniversalBackup",
-          "cpe": {
-            "text": "cpe:/a:nec:universalbackup",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebSAM SystemManager G",
-          "cpe": {
-            "text": "cpe:/a:nec:websam_systemmanager_g",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.3",
-          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の攻撃者により細工された文字列を Log4j がログに記録することにより、システム上で任意の Java コードが実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者により、本脆弱性を修正した以下のバージョンが提供されています。 開発者が提供する情報をもとに、最新版にアップデートしてください。 なお、本アップデートでは、Log4j の Lookup 機能が削除されており、JNDI へのアクセスがデフォルトで無効化されています。   　* Java 8のユーザ向け修正版 　　* Log4j 2.17.1  　* Java 7のユーザ向け修正版 　　* Log4j 2.12.4  　* Java 6のユーザ向け修正 　　* Log4j 2.3.2  開発者は当初、本脆弱性に対する修正版として 2.15.0 をリリースしていましたが、特定の構成において任意のコード実行が行われる可能性があることが判明し、Lookup 機能を削除した上で JNDI 機能そのものをデフォルトで無効化した 2.16.0 および 2.12.2 が改めてリリースされました。この問題に対しては CVE-2021-45046 が採番されています。  2021年12月18日、開発者は Log4j 2.0-alpha1 から 2.16.0 までのバージョンにおいて、再帰的（self-referential）なLookup を行う設定下において、サービス運用（DoS）が行われる脆弱性が新たに発見されたとして、バージョン 2.17.0 をリリースしました。この脆弱性に対しては CVE-2021-45105 が採番されています。  2021年12月21日、開発者は一連の脆弱性を修正したバージョンとして、Java 6 ユーザ向けに 2.3.1 を、Java 7 ユーザ向けに 2.12.3 をリリースしました。  2021年12月28日、開発者は Log4j2 2.0-beta7 から 2.17.0（2.3.2 および 2.12.4 を除く）において、攻撃者がログ出力設定を変更できる場合に限り任意のコード実行が行われる可能性があるとして、Log4j 2.17.1、2.12.4、2.3.2 をリリースしました。この修正では、JNDI のデータソースを Java プロトコルに制限する変更が行われました。この脆弱性に対しては CVE-2021-44832 が採番されています。  [ワークアラウンドを実施する] 以下の回避策を適用することにより、本脆弱性の悪用を防ぐことが可能です。  　* JndiLookup クラスをクラスパスから除外する 　　* 例: zip -q -d log4j-core-*.jar org/apache/logging/log4j/core/lookup/JndiLookup.class 　　* この回避策は CVE-2021-45046 に対しても有効です  　* Log4j を実行する Java 仮想マシンを起動する際に log4j2.formatMsgNoLookups を true に設定する（Log4j 2.10 およびそれ以降のバージョンが対象） 　　* 例: -Dlog4j2.formatMsgNoLookups=true 　　* この回避策は CVE-2021-45046 に対して有効ではありません  　* 環境変数 LOG4J_FORMAT_MSG_NO_LOOKUPS を true に設定する（Log4j 2.10 およびそれ以降のバージョンが対象） 　　* この回避策は CVE-2021-45046 に対して有効ではありません  また、本脆弱性の影響を軽減するため、システムから外部への接続を制限するアクセス制御を実施または強化することも有効です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache",
-          "vulinfoid": "Apache Log4j Security Vulnerabilities - Fixed in Log4j 2.15.0",
-          "url": "https://logging.apache.org/log4j/2.x/security.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Incdent Response Team",
-          "vulinfoid": "HIRT-PUB21001：Apache Log4jの脆弱性",
-          "url": "https://www.hitachi.co.jp/hirt/publications/hirt-pub21001/"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2021-145",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-145/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2021-146",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-146/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2021-147",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-147/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2021-315",
-          "url": "https://www.hitachi.co.jp/products/it/storage-solutions/global/sec_info/2021/2021_315.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Intel Product Security Center",
-          "vulinfoid": "INTEL-SA-00646",
-          "url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00646.html"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV22-001",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv22-001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisory",
-          "vulinfoid": "JCI‐PSA‐2022‐01",
-          "url": "https://www.johnsoncontrols.com/-/media/jci/cyber-solutions/product-security-advisories/2022/jci-psa-2022-01.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens",
-          "vulinfoid": "Siemens ProductCERT and Siemens CERT",
-          "url": "https://new.siemens.com/global/en/products/services/cert.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-784507: Apache Log4j Vulnerability (CVE-2021-44832) via JDBC Appender - Impact to Siemens Products",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-479842: Apache Log4j Vulnerabilities - Impact to Siemens Energy Sensformer (Platform, Basic and Advanced)",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-661247: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Products",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-661247.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-714170: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to SPPA-T3000s",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-714170.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-501673: Apache Log4j Denial of Service Vulnerability (CVE-2021-45105) - Impact to Siemens Products",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-501673.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-978692: Apache Log4j Vulnerabilities - Impact to Siemens Energy Omnivise Fleet Management",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-978692.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Siemens Security Advisory",
-          "vulinfoid": "SSA-397453: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Energy TraceAlertServerPLUS",
-          "url": "https://cert-portal.siemens.com/productcert/pdf/ssa-397453.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "SKYSEA Client View",
-          "vulinfoid": "Javaライブラリ「Apache Log4j」の脆弱性について",
-          "url": "https://www.skyseaclientview.net/news/211222_01/"
-        },
-        {
-          "type": "vendor",
-          "name": "Soliton Systems K.K.",
-          "vulinfoid": "【情報】Apache Log4j 脆弱性の影響について",
-          "url": "https://www.soliton.co.jp/support/2021/004618.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Yokogawa Security Advisory Report",
-          "vulinfoid": "YSAR-22-0003: Apache Log4j 脆弱性の影響を受ける横河製品",
-          "url": "https://web-material3.yokogawa.com/19/32348/files/YSAR-22-0003-J.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "サイボウズからのお知らせ",
-          "vulinfoid": "Apache Log4j ライブラリの脆弱性（CVE-2021-44228）のサイボウズ製品への影響について（2021/12/13）",
-          "url": "https://cs.cybozu.co.jp/2021/007558.html"
-        },
-        {
-          "type": "vendor",
-          "name": "サイレックス・テクノロジー株式会社",
-          "vulinfoid": "Apache Log4j脆弱性に対する各製品の影響について",
-          "url": "https://www.silex.jp/backnumber/support/info_220113_Log4jNotapplicable.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-147",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-147/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-146",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-146/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-145",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-145/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-315",
-          "url": "https://www.hitachi.co.jp/products/it/storage-solutions/techsupport/sec_info/sec_2021_315.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-225",
-          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_225.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-226",
-          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_226.html"
-        },
-        {
-          "type": "vendor",
-          "name": "トレンドマイクロ",
-          "vulinfoid": "アラート/アドバイザリ：Apache Log4j の脆弱性（CVE-2021-44228）について",
-          "url": "https://success.trendmicro.com/jp/solution/000289941"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "Apache Log4jにおける複数の脆弱性(Log4shell)の影響について",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-030.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝デジタルソリューションズ",
-          "vulinfoid": "PowerChute Business Edition v10.0 における Apache Log4j の脆弱性対策について (CVE-2021-44228)",
-          "url": "https://www.toshiba-sol.co.jp/pro/magnia/tech/pcbe_apatch_log4j.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝デジタルソリューションズ",
-          "vulinfoid": "ダウンロード モジュール情報",
-          "url": "http://magnia.toshiba-dme.co.jp/download/index.php?action=DispInfo&dl_id=1986%22%20target=%22_blank"
-        },
-        {
-          "type": "vendor",
-          "name": "東芝デジタルソリューションズ",
-          "vulinfoid": "MAGNIA シリーズ",
-          "url": "https://www.toshiba-sol.co.jp/pro/magnia/"
-        },
-        {
-          "type": "vendor",
-          "name": "富士通 セキュリティ情報",
-          "vulinfoid": "Apache Log4jにおける任意のコードが実行可能な脆弱性（CVE-2021-44228）",
-          "url": "https://www.fujitsu.com/jp/products/software/resources/condition/security/vulnerabilities/2021/jvn-96768815.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-44832",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2021-44832"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-45046",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45046"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-45105",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45105"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-44228",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-22-034-01",
-          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-034-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2021-0050",
-          "url": "https://www.jpcert.or.jp/at/2021/at210050.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98748974",
-          "url": "https://jvn.jp/vu/JVNVU98748974/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96768815",
-          "url": "https://jvn.jp/vu/JVNVU96768815/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94360308",
-          "url": "https://jvn.jp/vu/JVNVU94360308/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-45046",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-44832",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44832"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-44228",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-45105",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45105"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#930724",
-          "url": "https://kb.cert.org/vuls/id/930724"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Restrict LDAP access via JNDI #608",
-          "url": "https://github.com/apache/logging-log4j2/pull/608"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Log4Shell: RCE 0-day exploit found in log4j 2, a popular Java logging package",
-          "url": "https://www.lunasec.io/docs/blog/log4j-zero-day/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-12-14T16:37:27+09:00",
-          "description": "[2021年12月14日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-12-16T18:10:13+09:00",
-          "description": "[2021年12月16日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：トレンドマイクロ (アラート/アドバイザリ：Apache Log4j の脆弱性（CVE-2021-44228）について) を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-45046 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-45046) を追加\\n  参考情報：US-CERT Vulnerability Note (VU#930724) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2021-12-17T13:53:42+09:00",
-          "description": "[2021年12月17日]\\n  ベンダ情報：サイボウズ (Apache Log4j ライブラリの脆弱性（CVE-2021-44228）のサイボウズ製品への影響について（2021/12/13）) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2021-12-21T11:54:36+09:00",
-          "description": "[2021年12月21日]\\n  ベンダ情報：シーメンス (Siemens ProductCERT and Siemens CERT) を追加 \\n  ベンダ情報：シーメンス (SSA-661247: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Products)\\n  ベンダ情報：シーメンス (SSA-714170: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to SPPA-T3000s)\\n  ベンダ情報：シーメンス (SSA-501673: Apache Log4j Denial of Service Vulnerability (CVE-2021-45105) - Impact to Siemens Products)\\n  ベンダ情報：日立 (hitachi-sec-2021-147) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-146) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-145) を追加\\n  対策：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-2021-45105 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-45105) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2021-12-22T13:37:12+09:00",
-          "description": "[2021年12月22日]\\n  ベンダ情報：シーメンス (SSA-397453: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Energy TraceAlertServerPLUS) を追加\\n  ベンダ情報：インテル (INTEL-SA-00646) を追加\\n  ベンダ情報：株式会社ソリトンシステムズ (【情報】Apache Log4j 脆弱性の影響について) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2021-12-23T15:28:47+09:00",
-          "description": "[2021年12月23日]\\n  対策：内容を更新\\n  ベンダ情報：シーメンス (SSA-479842: Apache Log4j Vulnerabilities - Impact to Siemens Energy Sensformer (Platform, Basic and Advanced) を追加\\n  ベンダ情報：Ｓｋｙ株式会社 (Javaライブラリ「Apache Log4j」の脆弱性について) を追加"
-        },
-        {
-          "historyno": "7",
-          "datetime": "2021-12-24T16:05:20+09:00",
-          "description": "[2021年12月24日]\\n  CVSS による深刻度：内容を更新"
-        },
-        {
-          "historyno": "8",
-          "datetime": "2021-12-27T11:46:41+09:00",
-          "description": "[2021年12月27日]\\n  対策：内容を更新"
-        },
-        {
-          "historyno": "9",
-          "datetime": "2021-12-28T12:14:43+09:00",
-          "description": "[2021年12月28日]\\n  参考情報：JVN (JVNVU#94360308) を追加"
-        },
-        {
-          "historyno": "10",
-          "datetime": "2022-01-14T11:50:11+09:00",
-          "description": "[2022年01月04日]\\n  ベンダ情報：日立 (hitachi-sec-2021-315) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-225) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-226) を追加"
-        },
-        {
-          "historyno": "11",
-          "datetime": "2022-01-14T11:50:37+09:00",
-          "description": "[2022年01月05日]\\n  対策：内容を更新\\n  ベンダ情報：シーメンス (SSA-784507: Apache Log4j Vulnerability (CVE-2021-44832) via JDBC Appender - Impact to Siemens Products) を追加\\n"
-        },
-        {
-          "historyno": "12",
-          "datetime": "2022-01-14T11:51:13+09:00",
-          "description": "[2022年01月06日]\\n  ベンダ情報：富士通 (Apache Log4jにおける任意のコードが実行可能な脆弱性（CVE-2021-44228）) を追加"
-        },
-        {
-          "historyno": "13",
-          "datetime": "2022-01-14T11:52:15+09:00",
-          "description": "[2022年01月11日]\\n   ベンダ情報：日立 (HIRT-PUB21001：Apache Log4jの脆弱性) を追加"
-        },
-        {
-          "historyno": "14",
-          "datetime": "2022-01-14T11:53:05+09:00",
-          "description": "[2022年01月14日]\\n  ベンダ情報：サイレックス・テクノロジー株式会社 (Apache Log4j脆弱性に対する各製品の影響について) を追加"
-        },
-        {
-          "historyno": "15",
-          "datetime": "2022-01-27T11:00:58+09:00",
-          "description": "[2022年01月27日]\\n  ベンダ情報：日本電気 (NV22-001) を追加\\n"
-        },
-        {
-          "historyno": "16",
-          "datetime": "2022-02-08T13:58:35+09:00",
-          "description": "[2022年02月08日]\\n  ベンダ情報：ジョンソンコントロールズ (JCI‐PSA‐2022‐01) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-034-01) を追加\\n"
-        },
-        {
-          "historyno": "17",
-          "datetime": "2022-02-14T12:19:02+09:00",
-          "description": "[2022年02月14日]\\n  ベンダ情報：シーメンス (SSA-978692: Apache Log4j Vulnerabilities - Impact to Siemens Energy Omnivise Fleet Management) を追加\\n  参考情報：JVN (JVNVU#98748974) を追加"
-        },
-        {
-          "historyno": "18",
-          "datetime": "2022-02-15T13:42:42+09:00",
-          "description": "[2022年02月15日]\\n  ベンダ情報：東芝 (MAGNIA シリーズ) を追加\\n  ベンダ情報：東芝 (PowerChute Business Edition v10.0 における Apache Log4j の脆弱性対策について (CVE-2021-44228)) を追加\\n  ベンダ情報：東芝 (ダウンロード モジュール情報) を追加"
-        },
-        {
-          "historyno": "19",
-          "datetime": "2022-02-21T12:16:54+09:00",
-          "description": "[2022年02月21日]\\n  ベンダ情報：横河電機株式会社 (YSAR-22-0003: Apache Log4j 脆弱性の影響を受ける横河製品) を追加"
-        },
-        {
-          "historyno": "20",
-          "datetime": "2022-03-30T13:39:29+09:00",
-          "description": "[2022年03月30日]\\n   ベンダ情報：三菱電機 (Apache Log4jにおける複数の脆弱性(Log4shell)の影響について) を追加"
-        },
-        {
-          "historyno": "21",
-          "datetime": "2022-08-09T16:44:42+09:00",
-          "description": "[2022年08月09日] \\n  影響を受けるシステム：ベンダ情報 (NV22-001) の更新に伴い内容を更新"
-        },
-        {
-          "historyno": "22",
-          "datetime": "2022-09-26T16:01:37+09:00",
-          "description": "[2022年09月26日]\\n  影響を受けるシステム：ベンダ情報 (NV22-001) の更新に伴い内容を更新\\n"
-        },
-        {
-          "historyno": "23",
-          "datetime": "2022-12-15T10:03:35+09:00",
-          "description": "[2022年12月15日]\\n  影響を受けるシステム：ベンダ情報 (NV22-001) の更新に伴い内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-12-14T16:37:27+09:00",
-    "datelastupdated": "2022-12-15T10:24:36+09:00",
-    "datepublic": "2021-12-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-005429",
+	"vulinfodata": {
+		"title": "Apache Log4j における任意のコードが実行可能な脆弱性",
+		"vulinfodescription": {
+			"overview": "Log4j には JNDI Lookup 機能による外部入力値の検証不備に起因して任意の Java コードを実行可能な脆弱性が存在します。  The Apache Software Foundation が提供する Log4j は、Java ベースのロギングライブラリです。Log4j には、ログに記載された文字列から一部の値を変数として評価する Lookup 機能が実装されています。 その Lookup 機能の内、JNDI Lookup 機能を悪用することにより、ログに含まれる外部の URL もしくは内部パスから Java のクラス情報をデシリアライズして実行してしまう問題（CWE-20, CVE-2021-44228）が発見されました。 これにより、遠隔の攻撃者が細工した文字列を脆弱なシステムのログに記載させ、結果として任意の Java コードをシステムに実行させることが可能です。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache Log4j",
+					"cpe": {
+						"text": "cpe:/a:apache:log4j",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.13.0 から 2.15.0 より前のバージョン",
+						"core 2.0-beta9 から 2.12.1 より前のバージョン"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "ACOS Access Toolkit",
+					"cpe": {
+						"text": "cpe:/a:nec:acos_access_toolkit",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "CONNEXIVE Application Platform",
+					"cpe": {
+						"text": "cpe:/a:nec:connexive_application_platform",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "CONNEXIVE Edge Device Management",
+					"cpe": {
+						"text": "cpe:/a:nec:connexive_edge_device_management",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "CONNEXIVE PF",
+					"cpe": {
+						"text": "cpe:/a:nec:connexive_pf",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "ESMPRO/UPSManager",
+					"cpe": {
+						"text": "cpe:/a:nec:esmpro_upsmanager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "IoT 共通基盤",
+					"cpe": {
+						"text": "cpe:/a:nec:iot_common_base",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "SystemDirector Enterprise",
+					"cpe": {
+						"text": "cpe:/a:nec:systemdirector_enterprise",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "UniversalBackup",
+					"cpe": {
+						"text": "cpe:/a:nec:universalbackup",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebSAM SystemManager G",
+					"cpe": {
+						"text": "cpe:/a:nec:websam_systemmanager_g",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.3",
+					"vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の攻撃者により細工された文字列を Log4j がログに記録することにより、システム上で任意の Java コードが実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者により、本脆弱性を修正した以下のバージョンが提供されています。 開発者が提供する情報をもとに、最新版にアップデートしてください。 なお、本アップデートでは、Log4j の Lookup 機能が削除されており、JNDI へのアクセスがデフォルトで無効化されています。   　* Java 8のユーザ向け修正版 　　* Log4j 2.17.1  　* Java 7のユーザ向け修正版 　　* Log4j 2.12.4  　* Java 6のユーザ向け修正 　　* Log4j 2.3.2  開発者は当初、本脆弱性に対する修正版として 2.15.0 をリリースしていましたが、特定の構成において任意のコード実行が行われる可能性があることが判明し、Lookup 機能を削除した上で JNDI 機能そのものをデフォルトで無効化した 2.16.0 および 2.12.2 が改めてリリースされました。この問題に対しては CVE-2021-45046 が採番されています。  2021年12月18日、開発者は Log4j 2.0-alpha1 から 2.16.0 までのバージョンにおいて、再帰的（self-referential）なLookup を行う設定下において、サービス運用（DoS）が行われる脆弱性が新たに発見されたとして、バージョン 2.17.0 をリリースしました。この脆弱性に対しては CVE-2021-45105 が採番されています。  2021年12月21日、開発者は一連の脆弱性を修正したバージョンとして、Java 6 ユーザ向けに 2.3.1 を、Java 7 ユーザ向けに 2.12.3 をリリースしました。  2021年12月28日、開発者は Log4j2 2.0-beta7 から 2.17.0（2.3.2 および 2.12.4 を除く）において、攻撃者がログ出力設定を変更できる場合に限り任意のコード実行が行われる可能性があるとして、Log4j 2.17.1、2.12.4、2.3.2 をリリースしました。この修正では、JNDI のデータソースを Java プロトコルに制限する変更が行われました。この脆弱性に対しては CVE-2021-44832 が採番されています。  [ワークアラウンドを実施する] 以下の回避策を適用することにより、本脆弱性の悪用を防ぐことが可能です。  　* JndiLookup クラスをクラスパスから除外する 　　* 例: zip -q -d log4j-core-*.jar org/apache/logging/log4j/core/lookup/JndiLookup.class 　　* この回避策は CVE-2021-45046 に対しても有効です  　* Log4j を実行する Java 仮想マシンを起動する際に log4j2.formatMsgNoLookups を true に設定する（Log4j 2.10 およびそれ以降のバージョンが対象） 　　* 例: -Dlog4j2.formatMsgNoLookups=true 　　* この回避策は CVE-2021-45046 に対して有効ではありません  　* 環境変数 LOG4J_FORMAT_MSG_NO_LOOKUPS を true に設定する（Log4j 2.10 およびそれ以降のバージョンが対象） 　　* この回避策は CVE-2021-45046 に対して有効ではありません  また、本脆弱性の影響を軽減するため、システムから外部への接続を制限するアクセス制御を実施または強化することも有効です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache",
+					"vulinfoid": "Apache Log4j Security Vulnerabilities - Fixed in Log4j 2.15.0",
+					"url": "https://logging.apache.org/log4j/2.x/security.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Incdent Response Team",
+					"vulinfoid": "HIRT-PUB21001：Apache Log4jの脆弱性",
+					"url": "https://www.hitachi.co.jp/hirt/publications/hirt-pub21001/"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2021-145",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-145/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2021-146",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-146/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2021-147",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/hitachi-sec-2021-147/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2021-315",
+					"url": "https://www.hitachi.co.jp/products/it/storage-solutions/global/sec_info/2021/2021_315.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Intel Product Security Center",
+					"vulinfoid": "INTEL-SA-00646",
+					"url": "https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00646.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV22-001",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv22-001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisory",
+					"vulinfoid": "JCI‐PSA‐2022‐01",
+					"url": "https://www.johnsoncontrols.com/-/media/jci/cyber-solutions/product-security-advisories/2022/jci-psa-2022-01.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens",
+					"vulinfoid": "Siemens ProductCERT and Siemens CERT",
+					"url": "https://new.siemens.com/global/en/products/services/cert.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-784507: Apache Log4j Vulnerability (CVE-2021-44832) via JDBC Appender - Impact to Siemens Products",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-784507.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-479842: Apache Log4j Vulnerabilities - Impact to Siemens Energy Sensformer (Platform, Basic and Advanced)",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-479842.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-661247: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Products",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-661247.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-714170: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to SPPA-T3000s",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-714170.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-501673: Apache Log4j Denial of Service Vulnerability (CVE-2021-45105) - Impact to Siemens Products",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-501673.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-978692: Apache Log4j Vulnerabilities - Impact to Siemens Energy Omnivise Fleet Management",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-978692.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Siemens Security Advisory",
+					"vulinfoid": "SSA-397453: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Energy TraceAlertServerPLUS",
+					"url": "https://cert-portal.siemens.com/productcert/pdf/ssa-397453.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "SKYSEA Client View",
+					"vulinfoid": "Javaライブラリ「Apache Log4j」の脆弱性について",
+					"url": "https://www.skyseaclientview.net/news/211222_01/"
+				},
+				{
+					"type": "vendor",
+					"name": "Soliton Systems K.K.",
+					"vulinfoid": "【情報】Apache Log4j 脆弱性の影響について",
+					"url": "https://www.soliton.co.jp/support/2021/004618.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Yokogawa Security Advisory Report",
+					"vulinfoid": "YSAR-22-0003: Apache Log4j 脆弱性の影響を受ける横河製品",
+					"url": "https://web-material3.yokogawa.com/19/32348/files/YSAR-22-0003-J.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "サイボウズからのお知らせ",
+					"vulinfoid": "Apache Log4j ライブラリの脆弱性（CVE-2021-44228）のサイボウズ製品への影響について（2021/12/13）",
+					"url": "https://cs.cybozu.co.jp/2021/007558.html"
+				},
+				{
+					"type": "vendor",
+					"name": "サイレックス・テクノロジー株式会社",
+					"vulinfoid": "Apache Log4j脆弱性に対する各製品の影響について",
+					"url": "https://www.silex.jp/backnumber/support/info_220113_Log4jNotapplicable.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-147",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-147/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-146",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-146/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-145",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2021-145/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-315",
+					"url": "https://www.hitachi.co.jp/products/it/storage-solutions/techsupport/sec_info/sec_2021_315.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-225",
+					"url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_225.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-226",
+					"url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_226.html"
+				},
+				{
+					"type": "vendor",
+					"name": "トレンドマイクロ",
+					"vulinfoid": "アラート/アドバイザリ：Apache Log4j の脆弱性（CVE-2021-44228）について",
+					"url": "https://success.trendmicro.com/jp/solution/000289941"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "Apache Log4jにおける複数の脆弱性(Log4shell)の影響について",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-030.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝デジタルソリューションズ",
+					"vulinfoid": "PowerChute Business Edition v10.0 における Apache Log4j の脆弱性対策について (CVE-2021-44228)",
+					"url": "https://www.toshiba-sol.co.jp/pro/magnia/tech/pcbe_apatch_log4j.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝デジタルソリューションズ",
+					"vulinfoid": "ダウンロード モジュール情報",
+					"url": "http://magnia.toshiba-dme.co.jp/download/index.php?action=DispInfo&dl_id=1986%22%20target=%22_blank"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝デジタルソリューションズ",
+					"vulinfoid": "MAGNIA シリーズ",
+					"url": "https://www.toshiba-sol.co.jp/pro/magnia/"
+				},
+				{
+					"type": "vendor",
+					"name": "富士通 セキュリティ情報",
+					"vulinfoid": "Apache Log4jにおける任意のコードが実行可能な脆弱性（CVE-2021-44228）",
+					"url": "https://www.fujitsu.com/jp/products/software/resources/condition/security/vulnerabilities/2021/jvn-96768815.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-44832",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2021-44832"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-45046",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45046"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-45105",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45105"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-44228",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-22-034-01",
+					"url": "https://www.cisa.gov/uscert/ics/advisories/icsa-22-034-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2021-0050",
+					"url": "https://www.jpcert.or.jp/at/2021/at210050.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98748974",
+					"url": "https://jvn.jp/vu/JVNVU98748974/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96768815",
+					"url": "https://jvn.jp/vu/JVNVU96768815/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94360308",
+					"url": "https://jvn.jp/vu/JVNVU94360308/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-45046",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45046"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-44832",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44832"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-44228",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-45105",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-45105"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#930724",
+					"url": "https://kb.cert.org/vuls/id/930724"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Restrict LDAP access via JNDI #608",
+					"url": "https://github.com/apache/logging-log4j2/pull/608"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Log4Shell: RCE 0-day exploit found in log4j 2, a popular Java logging package",
+					"url": "https://www.lunasec.io/docs/blog/log4j-zero-day/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-12-14T16:37:27+09:00",
+					"description": "[2021年12月14日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-12-16T18:10:13+09:00",
+					"description": "[2021年12月16日]\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：トレンドマイクロ (アラート/アドバイザリ：Apache Log4j の脆弱性（CVE-2021-44228）について) を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-45046 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-45046) を追加\\n  参考情報：US-CERT Vulnerability Note (VU#930724) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2021-12-17T13:53:42+09:00",
+					"description": "[2021年12月17日]\\n  ベンダ情報：サイボウズ (Apache Log4j ライブラリの脆弱性（CVE-2021-44228）のサイボウズ製品への影響について（2021/12/13）) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2021-12-21T11:54:36+09:00",
+					"description": "[2021年12月21日]\\n  ベンダ情報：シーメンス (Siemens ProductCERT and Siemens CERT) を追加 \\n  ベンダ情報：シーメンス (SSA-661247: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Products)\\n  ベンダ情報：シーメンス (SSA-714170: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to SPPA-T3000s)\\n  ベンダ情報：シーメンス (SSA-501673: Apache Log4j Denial of Service Vulnerability (CVE-2021-45105) - Impact to Siemens Products)\\n  ベンダ情報：日立 (hitachi-sec-2021-147) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-146) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-145) を追加\\n  対策：内容を更新\\n  共通脆弱性識別子(CVE)：CVE-2021-45105 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-45105) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2021-12-22T13:37:12+09:00",
+					"description": "[2021年12月22日]\\n  ベンダ情報：シーメンス (SSA-397453: Apache Log4j Vulnerabilities (Log4Shell, CVE-2021-44228, CVE-2021-45046) - Impact to Siemens Energy TraceAlertServerPLUS) を追加\\n  ベンダ情報：インテル (INTEL-SA-00646) を追加\\n  ベンダ情報：株式会社ソリトンシステムズ (【情報】Apache Log4j 脆弱性の影響について) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2021-12-23T15:28:47+09:00",
+					"description": "[2021年12月23日]\\n  対策：内容を更新\\n  ベンダ情報：シーメンス (SSA-479842: Apache Log4j Vulnerabilities - Impact to Siemens Energy Sensformer (Platform, Basic and Advanced) を追加\\n  ベンダ情報：Ｓｋｙ株式会社 (Javaライブラリ「Apache Log4j」の脆弱性について) を追加"
+				},
+				{
+					"historyno": "7",
+					"datetime": "2021-12-24T16:05:20+09:00",
+					"description": "[2021年12月24日]\\n  CVSS による深刻度：内容を更新"
+				},
+				{
+					"historyno": "8",
+					"datetime": "2021-12-27T11:46:41+09:00",
+					"description": "[2021年12月27日]\\n  対策：内容を更新"
+				},
+				{
+					"historyno": "9",
+					"datetime": "2021-12-28T12:14:43+09:00",
+					"description": "[2021年12月28日]\\n  参考情報：JVN (JVNVU#94360308) を追加"
+				},
+				{
+					"historyno": "10",
+					"datetime": "2022-01-14T11:50:11+09:00",
+					"description": "[2022年01月04日]\\n  ベンダ情報：日立 (hitachi-sec-2021-315) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-225) を追加\\n  ベンダ情報：日立 (hitachi-sec-2021-226) を追加"
+				},
+				{
+					"historyno": "11",
+					"datetime": "2022-01-14T11:50:37+09:00",
+					"description": "[2022年01月05日]\\n  対策：内容を更新\\n  ベンダ情報：シーメンス (SSA-784507: Apache Log4j Vulnerability (CVE-2021-44832) via JDBC Appender - Impact to Siemens Products) を追加\\n"
+				},
+				{
+					"historyno": "12",
+					"datetime": "2022-01-14T11:51:13+09:00",
+					"description": "[2022年01月06日]\\n  ベンダ情報：富士通 (Apache Log4jにおける任意のコードが実行可能な脆弱性（CVE-2021-44228）) を追加"
+				},
+				{
+					"historyno": "13",
+					"datetime": "2022-01-14T11:52:15+09:00",
+					"description": "[2022年01月11日]\\n   ベンダ情報：日立 (HIRT-PUB21001：Apache Log4jの脆弱性) を追加"
+				},
+				{
+					"historyno": "14",
+					"datetime": "2022-01-14T11:53:05+09:00",
+					"description": "[2022年01月14日]\\n  ベンダ情報：サイレックス・テクノロジー株式会社 (Apache Log4j脆弱性に対する各製品の影響について) を追加"
+				},
+				{
+					"historyno": "15",
+					"datetime": "2022-01-27T11:00:58+09:00",
+					"description": "[2022年01月27日]\\n  ベンダ情報：日本電気 (NV22-001) を追加\\n"
+				},
+				{
+					"historyno": "16",
+					"datetime": "2022-02-08T13:58:35+09:00",
+					"description": "[2022年02月08日]\\n  ベンダ情報：ジョンソンコントロールズ (JCI‐PSA‐2022‐01) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-22-034-01) を追加\\n"
+				},
+				{
+					"historyno": "17",
+					"datetime": "2022-02-14T12:19:02+09:00",
+					"description": "[2022年02月14日]\\n  ベンダ情報：シーメンス (SSA-978692: Apache Log4j Vulnerabilities - Impact to Siemens Energy Omnivise Fleet Management) を追加\\n  参考情報：JVN (JVNVU#98748974) を追加"
+				},
+				{
+					"historyno": "18",
+					"datetime": "2022-02-15T13:42:42+09:00",
+					"description": "[2022年02月15日]\\n  ベンダ情報：東芝 (MAGNIA シリーズ) を追加\\n  ベンダ情報：東芝 (PowerChute Business Edition v10.0 における Apache Log4j の脆弱性対策について (CVE-2021-44228)) を追加\\n  ベンダ情報：東芝 (ダウンロード モジュール情報) を追加"
+				},
+				{
+					"historyno": "19",
+					"datetime": "2022-02-21T12:16:54+09:00",
+					"description": "[2022年02月21日]\\n  ベンダ情報：横河電機株式会社 (YSAR-22-0003: Apache Log4j 脆弱性の影響を受ける横河製品) を追加"
+				},
+				{
+					"historyno": "20",
+					"datetime": "2022-03-30T13:39:29+09:00",
+					"description": "[2022年03月30日]\\n   ベンダ情報：三菱電機 (Apache Log4jにおける複数の脆弱性(Log4shell)の影響について) を追加"
+				},
+				{
+					"historyno": "21",
+					"datetime": "2022-08-09T16:44:42+09:00",
+					"description": "[2022年08月09日] \\n  影響を受けるシステム：ベンダ情報 (NV22-001) の更新に伴い内容を更新"
+				},
+				{
+					"historyno": "22",
+					"datetime": "2022-09-26T16:01:37+09:00",
+					"description": "[2022年09月26日]\\n  影響を受けるシステム：ベンダ情報 (NV22-001) の更新に伴い内容を更新\\n"
+				},
+				{
+					"historyno": "23",
+					"datetime": "2022-12-15T10:03:35+09:00",
+					"description": "[2022年12月15日]\\n  影響を受けるシステム：ベンダ情報 (NV22-001) の更新に伴い内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2021-12-14T16:37:27+09:00",
+		"datelastupdated": "2022-12-15T10:24:36+09:00",
+		"datepublic": "2021-12-13T00:00:00+09:00"
+	}
 }

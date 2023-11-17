@@ -1,132 +1,132 @@
 {
-  "vulinfoid": "JVNDB-2016-005484",
-  "vulinfodata": {
-    "title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC BIND 9 にはサービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND には、細工したオプション情報を含むパケットによって assertion failture (表明違反) が引き起こされる脆弱性が存在します。 ISC では、2013年5月にリリースされたバージョンでこの脆弱性への対応を行っており (#3548)、現在 ISC が提供しているバージョンの BIND は本脆弱性の影響を受けません。 #3548 の修正適用より前の時点のソースコードを取り込んで独自にメンテナンスされている製品では、本脆弱性の修正が行われていない可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.1.0 から 9.8.4-P2 まで",
-            "9.9.0 から 9.9.2-P2 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "細工されたパケットを処理することで、assertion failure (表明違反) によって当該製品が異常終了させられる可能性があります。権威サーバおよびキャッシュサーバのいずれも本脆弱性の影響を受けます。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 2013年5月より前にリリースされたバージョンを取り込んで独自にメンテナンスされている製品は、本脆弱性の影響を受ける可能性があります。 BIND のソースコードと共に配布されている CHANGES ファイルをご確認ください。#3548 の修正が取り込まれている製品は、本脆弱性の影響を受けません。 CHANGES ファイルを確認できない場合は、その製品の提供元にお問い合わせください。  ISC がリリースしている BIND では、本脆弱性は 2013年5月にリリースされたバージョンで修正されています。 現在 ISC がサポートしている次のバージョンには、本脆弱性は存在しません。  　　* BIND 9 version 9.9.9-P3 　　* BIND 9 version 9.10.4-P3 　　* BIND 9 version 9.11.0  なお、BIND 9 Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。また BIND 9 Supported Preview 版は、本脆弱性の影響を受けません。  詳しくは、ISC が提供する情報をご確認ください。  ISC が提供する情報 https://kb.isc.org/article/AA-01433"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ISC, Inc.",
-          "vulinfoid": "3548. [bug] The NSID request code in resolver.c was broken",
-          "url": "https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=commit;h=4adf97c32fcca7d00e5756607fd045f2aab9c3d4"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "CVE-2016-2848: A packet with malformed options can trigger an assertion failure in ISC BIND versions released prior to May 2013 and in packages derived from releases prior to that date.",
-          "url": "https://kb.isc.org/article/AA-01433"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1385450",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1385450"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Customer Portal",
-          "vulinfoid": "CVE-2016-2848",
-          "url": "https://access.redhat.com/security/cve/CVE-2016-2848"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-2848",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2848"
-        },
-        {
-          "type": "advisory",
-          "name": "JPNIC",
-          "vulinfoid": "BIND 9における不正なパケットによるサーバ停止の脆弱性について(2016年10月)",
-          "url": "https://www.nic.ad.jp/ja/topics/2016/20161021-01.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2016-2848）",
-          "url": "https://jprs.jp/tech/security/2016-10-21-bind9-vuln-malformed-options.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95603997",
-          "url": "http://jvn.jp/vu/JVNVU95603997/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-2848",
-          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2848"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年10月21日]\\n  掲載\\n[2016年10月24日]\\n  CVSS による深刻度：内容を更新\\n  ベンダ情報：ISC, Inc. (3548. [bug] The NSID request code in resolver.c was broken) を追加\\n  ベンダ情報：レッドハット (Bug 1385450) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2848) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-10-21T16:45:37+09:00",
-    "datelastupdated": "2016-10-24T18:20:26+09:00",
-    "datepublic": "2016-10-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-005484",
+	"vulinfodata": {
+		"title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC BIND 9 にはサービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND には、細工したオプション情報を含むパケットによって assertion failture (表明違反) が引き起こされる脆弱性が存在します。 ISC では、2013年5月にリリースされたバージョンでこの脆弱性への対応を行っており (#3548)、現在 ISC が提供しているバージョンの BIND は本脆弱性の影響を受けません。 #3548 の修正適用より前の時点のソースコードを取り込んで独自にメンテナンスされている製品では、本脆弱性の修正が行われていない可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.1.0 から 9.8.4-P2 まで",
+						"9.9.0 から 9.9.2-P2 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "細工されたパケットを処理することで、assertion failure (表明違反) によって当該製品が異常終了させられる可能性があります。権威サーバおよびキャッシュサーバのいずれも本脆弱性の影響を受けます。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 2013年5月より前にリリースされたバージョンを取り込んで独自にメンテナンスされている製品は、本脆弱性の影響を受ける可能性があります。 BIND のソースコードと共に配布されている CHANGES ファイルをご確認ください。#3548 の修正が取り込まれている製品は、本脆弱性の影響を受けません。 CHANGES ファイルを確認できない場合は、その製品の提供元にお問い合わせください。  ISC がリリースしている BIND では、本脆弱性は 2013年5月にリリースされたバージョンで修正されています。 現在 ISC がサポートしている次のバージョンには、本脆弱性は存在しません。  　　* BIND 9 version 9.9.9-P3 　　* BIND 9 version 9.10.4-P3 　　* BIND 9 version 9.11.0  なお、BIND 9 Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。また BIND 9 Supported Preview 版は、本脆弱性の影響を受けません。  詳しくは、ISC が提供する情報をご確認ください。  ISC が提供する情報 https://kb.isc.org/article/AA-01433"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ISC, Inc.",
+					"vulinfoid": "3548. [bug] The NSID request code in resolver.c was broken",
+					"url": "https://source.isc.org/cgi-bin/gitweb.cgi?p=bind9.git;a=commit;h=4adf97c32fcca7d00e5756607fd045f2aab9c3d4"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "CVE-2016-2848: A packet with malformed options can trigger an assertion failure in ISC BIND versions released prior to May 2013 and in packages derived from releases prior to that date.",
+					"url": "https://kb.isc.org/article/AA-01433"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1385450",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1385450"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Customer Portal",
+					"vulinfoid": "CVE-2016-2848",
+					"url": "https://access.redhat.com/security/cve/CVE-2016-2848"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-2848",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2848"
+				},
+				{
+					"type": "advisory",
+					"name": "JPNIC",
+					"vulinfoid": "BIND 9における不正なパケットによるサーバ停止の脆弱性について(2016年10月)",
+					"url": "https://www.nic.ad.jp/ja/topics/2016/20161021-01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2016-2848）",
+					"url": "https://jprs.jp/tech/security/2016-10-21-bind9-vuln-malformed-options.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95603997",
+					"url": "http://jvn.jp/vu/JVNVU95603997/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-2848",
+					"url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-2848"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年10月21日]\\n  掲載\\n[2016年10月24日]\\n  CVSS による深刻度：内容を更新\\n  ベンダ情報：ISC, Inc. (3548. [bug] The NSID request code in resolver.c was broken) を追加\\n  ベンダ情報：レッドハット (Bug 1385450) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-2848) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-10-21T16:45:37+09:00",
+		"datelastupdated": "2016-10-24T18:20:26+09:00",
+		"datepublic": "2016-10-21T00:00:00+09:00"
+	}
 }

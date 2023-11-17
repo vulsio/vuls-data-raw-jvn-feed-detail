@@ -1,243 +1,243 @@
 {
-  "vulinfoid": "JVNDB-2005-000201",
-  "vulinfodata": {
-    "title": "Linux Kernel の ext2_make_empty 関数における機密情報漏洩の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel 2.4.29 以前、2.6.11.5 以前には、以下の複数のセキュリティ上の問題が存在します。  ・ext2 ファイルシステムにおいてディレクトリを新規に作成する際の初期化処理に不備が存在し、カーネルメモリリークが発生するため、システム情報が漏洩する問題 (CAN-2005-0400)  ・ELF ライブラリをロードする load_elf_library 関数 (fs/binfmt_elf.c) にセキュリティ上の不備が存在するため、Linux Kernel がサービス不能状態に陥る問題 (CAN-2005-0749)  ・bluetooth ソケット作成の処理において protocol パラメータの負の値に対するチェックに不備が存在し、不正なメモリアドレスを参照させることにより root 権限が奪取される問題 (CAN-2005-0750)   これらの問題を利用するローカルの攻撃者により、標的システムがサービス不能状態に陥る、あるいは root 権限が奪取される可能性があります。  尚、CAN-2005-0400 の問題については root 権限でのみ情報が漏洩するため、この問題の影響度は低いことが Red Hat より報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 ",
-            "3.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "2.1",
-          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "kernel",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=290"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0190",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0190.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:284",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-284.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:663",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:283",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-283.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:551",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-551.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:293",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-293.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:529",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-529.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:366",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-366.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0191",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0191.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0190",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:284",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-284J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:663",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-663J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:283",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-283J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:551",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-551J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:293",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-293J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0191",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0191J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:529",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-529J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:366",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-366J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-0400",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0400"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-0400",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0400"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA14713",
-          "url": "http://secunia.com/advisories/14713/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12935",
-          "url": "http://www.securityfocus.com/bid/12935"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12932",
-          "url": "http://www.securityfocus.com/bid/12932"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12911",
-          "url": "http://www.securityfocus.com/bid/12911"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1013567",
-          "url": "http://securitytracker.com/alerts/2005/Mar/1013567.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#685461",
-          "url": "http://www.kb.cert.org/vuls/id/685461"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-03-28T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000201",
+	"vulinfodata": {
+		"title": "Linux Kernel の ext2_make_empty 関数における機密情報漏洩の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel 2.4.29 以前、2.6.11.5 以前には、以下の複数のセキュリティ上の問題が存在します。  ・ext2 ファイルシステムにおいてディレクトリを新規に作成する際の初期化処理に不備が存在し、カーネルメモリリークが発生するため、システム情報が漏洩する問題 (CAN-2005-0400)  ・ELF ライブラリをロードする load_elf_library 関数 (fs/binfmt_elf.c) にセキュリティ上の不備が存在するため、Linux Kernel がサービス不能状態に陥る問題 (CAN-2005-0749)  ・bluetooth ソケット作成の処理において protocol パラメータの負の値に対するチェックに不備が存在し、不正なメモリアドレスを参照させることにより root 権限が奪取される問題 (CAN-2005-0750)   これらの問題を利用するローカルの攻撃者により、標的システムがサービス不能状態に陥る、あるいは root 権限が奪取される可能性があります。  尚、CAN-2005-0400 の問題については root 権限でのみ情報が漏洩するため、この問題の影響度は低いことが Red Hat より報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 ",
+						"3.0 (x86-64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.1",
+					"vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "kernel",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=290"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0190",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0190.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:284",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-284.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:663",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:283",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-283.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:551",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-551.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:293",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-293.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:529",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-529.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:366",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-366.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0191",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0191.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0190",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:284",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-284J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:663",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-663J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:283",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-283J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:551",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-551J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:293",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-293J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0191",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0191J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:529",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-529J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:366",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-366J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-0400",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0400"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-0400",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0400"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA14713",
+					"url": "http://secunia.com/advisories/14713/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12935",
+					"url": "http://www.securityfocus.com/bid/12935"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12932",
+					"url": "http://www.securityfocus.com/bid/12932"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12911",
+					"url": "http://www.securityfocus.com/bid/12911"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1013567",
+					"url": "http://securitytracker.com/alerts/2005/Mar/1013567.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#685461",
+					"url": "http://www.kb.cert.org/vuls/id/685461"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-03-28T00:00:00+09:00"
+	}
 }

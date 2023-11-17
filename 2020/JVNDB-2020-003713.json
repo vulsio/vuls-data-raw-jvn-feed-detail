@@ -1,148 +1,148 @@
 {
-  "vulinfoid": "JVNDB-2020-003713",
-  "vulinfodata": {
-    "title": "OpenSSL における NULL ポインタ参照の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL には、NULL ポインタ参照の脆弱性 (CWE-476) が存在します。  OpenSSL Project より、OpenSSL Security Advisory [21 April 2020] が公開されました。 深刻度 - 高 (Severity: HIGH)  SSL_check_chain 関数におけるセグメンテーション違反 - CVE-2020-1967  TLS 1.3 の signature_algorithms_cert 拡張を処理する際に NULL ポインタ参照が発生するため、ハンドシェイク後の通信において SSL_check_chain() 関数が実行される際に、サーバまたはクライアントアプリケーションがクラッシュする可能性があります。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1.1d",
-            "1.1.1e",
-            "1.1.1f"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "日立アドバンストサーバ HA8000 シリーズ",
-          "cpe": {
-            "text": "cpe:/a:hitachi:advanced_server_ha8000_series",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者により細工されたメッセージを受信することによって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 本脆弱性の修正を含む次のバージョンが提供されています。開発者が提供する情報をもとに、最新版へアップデートしてください。  　　* OpenSSL 1.1.1g  なお、OpenSSL 1.0.2 および OpenSSL 1.1.0 は本脆弱性の影響を受けませんが、サポートが終了しているため今後アップデートを受けることができません。そのため開発者は、OpenSSL 1.0.2 のプレミアムサポートを契約したユーザを除き、OpenSSL 1.1.1 へアップグレードすることを推奨しています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Fix NULL dereference in SSL_check_chain() for TLS 1.3",
-          "url": "https://github.com/openssl/openssl/commit/eb563247aef3e83dda7679c43f9649270462e5b1"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV22-002",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv22-002.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Vulnerabilities",
-          "url": "https://www.openssl.org/news/vulnerabilities.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Major changes between OpenSSL 1.1.1f and OpenSSL 1.1.1g [21 Apr 2020]",
-          "url": "https://www.openssl.org/news/openssl-1.1.1-notes.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "OpenSSL Security Advisory [21 April 2020] -- Segmentation fault in SSL_check_chain (CVE-2020-1967)",
-          "url": "https://www.openssl.org/news/secadv/20200421.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "サーバ・クライアント製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2022-223",
-          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_223.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-1967",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2020-0018",
-          "url": "https://www.jpcert.or.jp/at/2020/at200018.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97087254",
-          "url": "https://jvn.jp/vu/JVNVU97087254/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-1967",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1967"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-476",
-          "url": "http://cwe.mitre.org/data/definitions/476.html",
-          "title": "NULL ポインタデリファレンス"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-04-23T12:00:10+09:00",
-          "description": "[2020年04月23日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-11-28T14:52:31+09:00",
-          "description": "[2022年11月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-223) を追加\\n  参考情報：NVD (CVE-2020-1967) を追加\\n"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2023-03-29T12:05:11+09:00",
-          "description": "[2023年03月29日]\\n  ベンダ情報：日本電気 (NV22-002) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-04-23T12:00:10+09:00",
-    "datelastupdated": "2020-04-23T12:00:10+09:00",
-    "datepublic": "2020-04-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-003713",
+	"vulinfodata": {
+		"title": "OpenSSL における NULL ポインタ参照の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL には、NULL ポインタ参照の脆弱性 (CWE-476) が存在します。  OpenSSL Project より、OpenSSL Security Advisory [21 April 2020] が公開されました。 深刻度 - 高 (Severity: HIGH)  SSL_check_chain 関数におけるセグメンテーション違反 - CVE-2020-1967  TLS 1.3 の signature_algorithms_cert 拡張を処理する際に NULL ポインタ参照が発生するため、ハンドシェイク後の通信において SSL_check_chain() 関数が実行される際に、サーバまたはクライアントアプリケーションがクラッシュする可能性があります。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1.1d",
+						"1.1.1e",
+						"1.1.1f"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "日立アドバンストサーバ HA8000 シリーズ",
+					"cpe": {
+						"text": "cpe:/a:hitachi:advanced_server_ha8000_series",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者により細工されたメッセージを受信することによって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 本脆弱性の修正を含む次のバージョンが提供されています。開発者が提供する情報をもとに、最新版へアップデートしてください。  　　* OpenSSL 1.1.1g  なお、OpenSSL 1.0.2 および OpenSSL 1.1.0 は本脆弱性の影響を受けませんが、サポートが終了しているため今後アップデートを受けることができません。そのため開発者は、OpenSSL 1.0.2 のプレミアムサポートを契約したユーザを除き、OpenSSL 1.1.1 へアップグレードすることを推奨しています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Fix NULL dereference in SSL_check_chain() for TLS 1.3",
+					"url": "https://github.com/openssl/openssl/commit/eb563247aef3e83dda7679c43f9649270462e5b1"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV22-002",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv22-002.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Vulnerabilities",
+					"url": "https://www.openssl.org/news/vulnerabilities.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Major changes between OpenSSL 1.1.1f and OpenSSL 1.1.1g [21 Apr 2020]",
+					"url": "https://www.openssl.org/news/openssl-1.1.1-notes.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "OpenSSL Security Advisory [21 April 2020] -- Segmentation fault in SSL_check_chain (CVE-2020-1967)",
+					"url": "https://www.openssl.org/news/secadv/20200421.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "サーバ・クライアント製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2022-223",
+					"url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2022_223.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-1967",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2020-0018",
+					"url": "https://www.jpcert.or.jp/at/2020/at200018.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97087254",
+					"url": "https://jvn.jp/vu/JVNVU97087254/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-1967",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-1967"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-476",
+					"url": "http://cwe.mitre.org/data/definitions/476.html",
+					"title": "NULL ポインタデリファレンス"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-04-23T12:00:10+09:00",
+					"description": "[2020年04月23日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-11-28T14:52:31+09:00",
+					"description": "[2022年11月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日立 (hitachi-sec-2022-223) を追加\\n  参考情報：NVD (CVE-2020-1967) を追加\\n"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2023-03-29T12:05:11+09:00",
+					"description": "[2023年03月29日]\\n  ベンダ情報：日本電気 (NV22-002) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2020-04-23T12:00:10+09:00",
+		"datelastupdated": "2020-04-23T12:00:10+09:00",
+		"datepublic": "2020-04-22T00:00:00+09:00"
+	}
 }

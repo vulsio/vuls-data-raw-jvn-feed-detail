@@ -1,174 +1,174 @@
 {
-  "vulinfoid": "JVNDB-2007-000472",
-  "vulinfodata": {
-    "title": "GNOME Evolution Data Server における負の配列インデックスによるメモリアクセスの脆弱性",
-    "vulinfodescription": {
-      "overview": "GNOME Evolution Data Server のメーラーコンポーネントである Camel(camel-imap-folder.c) には、IMAP サーバからのメッセージ処理に不備があり、SEQUENCE 変数を介して負の配列インデックスを使用してしまい、不正なメモリ参照が行われる問題があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "GNOME Project",
-          "productname": "Evolution Data Server",
-          "cpe": {
-            "text": "cpe:/a:gnome:evolution_data_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.11.4 未満のバージョン"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) ",
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 ",
-            "4.0 ",
-            "5.0 (client) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者が細工した IMAP サーバに Evolution を使用して接続し、Evolution Data Server がメッセージを処理することで、任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Evolution",
-          "vulinfoid": "Top Page",
-          "url": "http://www.gnome.org/projects/evolution/"
-        },
-        {
-          "type": "vendor",
-          "name": "GNOME Bugzilla",
-          "vulinfoid": "447414",
-          "url": "http://bugzilla.gnome.org/show_bug.cgi?id=447414"
-        },
-        {
-          "type": "vendor",
-          "name": "mail.gnome.org Archives",
-          "vulinfoid": "Evolution-Data-Server 1.11.4 released",
-          "url": "http://mail.gnome.org/archives/evolution-hackers/2007-June/msg00064.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0509",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0509.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0510",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0510.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0509",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0509J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0510",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0510J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2007-3257",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3257"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2007-2282",
-          "url": "http://www.frsirt.com/english/advisories/2007/2282"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2007-3257",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-3257"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA25766",
-          "url": "http://secunia.com/advisories/25766/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "24567",
-          "url": "http://www.securityfocus.com/bid/24567"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年06月29日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-06-29T15:14:59+09:00",
-    "datelastupdated": "2007-06-29T15:14:59+09:00",
-    "datepublic": "2007-06-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2007-000472",
+	"vulinfodata": {
+		"title": "GNOME Evolution Data Server における負の配列インデックスによるメモリアクセスの脆弱性",
+		"vulinfodescription": {
+			"overview": "GNOME Evolution Data Server のメーラーコンポーネントである Camel(camel-imap-folder.c) には、IMAP サーバからのメッセージ処理に不備があり、SEQUENCE 変数を介して負の配列インデックスを使用してしまい、不正なメモリ参照が行われる問題があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "GNOME Project",
+					"productname": "Evolution Data Server",
+					"cpe": {
+						"text": "cpe:/a:gnome:evolution_data_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.11.4 未満のバージョン"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) ",
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 ",
+						"4.0 ",
+						"5.0 (client) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者が細工した IMAP サーバに Evolution を使用して接続し、Evolution Data Server がメッセージを処理することで、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Evolution",
+					"vulinfoid": "Top Page",
+					"url": "http://www.gnome.org/projects/evolution/"
+				},
+				{
+					"type": "vendor",
+					"name": "GNOME Bugzilla",
+					"vulinfoid": "447414",
+					"url": "http://bugzilla.gnome.org/show_bug.cgi?id=447414"
+				},
+				{
+					"type": "vendor",
+					"name": "mail.gnome.org Archives",
+					"vulinfoid": "Evolution-Data-Server 1.11.4 released",
+					"url": "http://mail.gnome.org/archives/evolution-hackers/2007-June/msg00064.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0509",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0509.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0510",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0510.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0509",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0509J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0510",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0510J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2007-3257",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3257"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2007-2282",
+					"url": "http://www.frsirt.com/english/advisories/2007/2282"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2007-3257",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-3257"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA25766",
+					"url": "http://secunia.com/advisories/25766/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "24567",
+					"url": "http://www.securityfocus.com/bid/24567"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年06月29日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-06-29T15:14:59+09:00",
+		"datelastupdated": "2007-06-29T15:14:59+09:00",
+		"datepublic": "2007-06-19T00:00:00+09:00"
+	}
 }

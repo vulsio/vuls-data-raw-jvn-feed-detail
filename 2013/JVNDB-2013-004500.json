@@ -1,162 +1,162 @@
 {
-  "vulinfoid": "JVNDB-2013-004500",
-  "vulinfodata": {
-    "title": "PolicyKit における PolicyKit 制限を回避される脆弱性",
-    "vulinfodescription": {
-      "overview": "PolicyKit (別名 polkit) には、pkcheck 認証の (1) polkit_unix_process_new API 関数、(2) dbus API、または (3) --process (unix-process) オプションに関する処理に不備があるため、競合状態により、PolicyKit 制限を回避され、権限を取得される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.04 LTS",
-            "12.04 LTS",
-            "12.10",
-            "13.04"
-          ]
-        },
-        {
-          "name": "Novell",
-          "productname": "openSUSE",
-          "cpe": {
-            "text": "cpe:/o:novell:opensuse",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.2",
-            "12.3"
-          ]
-        },
-        {
-          "name": "polkit project",
-          "productname": "polkit",
-          "cpe": {
-            "text": "cpe:/a:polkit_project:polkit",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルユーザにより、認証チェックが実行される前に setuid または pkexec プロセスを開始されることで、PolicyKit 制限を回避され、権限を取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1528",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00005.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1620",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-11/msg00000.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1617",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00062.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:1527",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00004.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1002375",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1002375"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1460",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1460.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1270",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1270.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1953-1",
-          "url": "http://www.ubuntu.com/usn/USN-1953-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-4288",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4288"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-4288",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4288"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-362",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
-          "title": "競合状態"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年10月07日]\\n  掲載\\n[2013年10月28日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Novell (openSUSE-SU-2013:1527) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1528) を追加\\n[2013年11月11日]\\n  ベンダ情報：レッドハット (RHSA-2013:1460) を追加\\n[2013年12月26日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:1620) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1617) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-10-07T19:35:56+09:00",
-    "datelastupdated": "2013-12-26T17:51:01+09:00",
-    "datepublic": "2013-09-18T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-004500",
+	"vulinfodata": {
+		"title": "PolicyKit における PolicyKit 制限を回避される脆弱性",
+		"vulinfodescription": {
+			"overview": "PolicyKit (別名 polkit) には、pkcheck 認証の (1) polkit_unix_process_new API 関数、(2) dbus API、または (3) --process (unix-process) オプションに関する処理に不備があるため、競合状態により、PolicyKit 制限を回避され、権限を取得される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.04 LTS",
+						"12.04 LTS",
+						"12.10",
+						"13.04"
+					]
+				},
+				{
+					"name": "Novell",
+					"productname": "openSUSE",
+					"cpe": {
+						"text": "cpe:/o:novell:opensuse",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.2",
+						"12.3"
+					]
+				},
+				{
+					"name": "polkit project",
+					"productname": "polkit",
+					"cpe": {
+						"text": "cpe:/a:polkit_project:polkit",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルユーザにより、認証チェックが実行される前に setuid または pkexec プロセスを開始されることで、PolicyKit 制限を回避され、権限を取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1528",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00005.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1620",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-11/msg00000.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1617",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00062.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:1527",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-10/msg00004.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1002375",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1002375"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1460",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1460.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1270",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1270.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1953-1",
+					"url": "http://www.ubuntu.com/usn/USN-1953-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-4288",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-4288"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-4288",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-4288"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-362",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+					"title": "競合状態"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年10月07日]\\n  掲載\\n[2013年10月28日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：Novell (openSUSE-SU-2013:1527) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1528) を追加\\n[2013年11月11日]\\n  ベンダ情報：レッドハット (RHSA-2013:1460) を追加\\n[2013年12月26日]\\n  ベンダ情報：Novell (openSUSE-SU-2013:1620) を追加\\n  ベンダ情報：Novell (openSUSE-SU-2013:1617) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-10-07T19:35:56+09:00",
+		"datelastupdated": "2013-12-26T17:51:01+09:00",
+		"datepublic": "2013-09-18T00:00:00+09:00"
+	}
 }

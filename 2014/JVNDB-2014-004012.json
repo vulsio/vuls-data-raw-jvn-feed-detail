@@ -1,104 +1,104 @@
 {
-  "vulinfoid": "JVNDB-2014-004012",
-  "vulinfodata": {
-    "title": "Linux Kernel の virt/kvm/iommu.c 内の kvm_iommu_map_pages 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux Kernel の virt/kvm/iommu.c 内の kvm_iommu_map_pages 関数は、マッピングの失敗を処理している間、ページ数を誤って計算するため、(1) サービス運用妨害 (ホスト OS のメモリ破損) 状態にされるなど、不特定の影響を受ける脆弱性、または (2) サービス運用妨害 (ホスト OS のメモリ消費) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.16.1 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:A/AC:H/Au:S/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "ゲスト OS ユーザにより、(1) 過度に大きな gfn 値を誘発されることで、サービス運用妨害 (ホスト OS のメモリ破損) 状態にされるなど、不特定の影響を受ける可能性、または (2) ページの恒久的なピン留めにつながる過度に小さな gfn 値を誘発されることで、サービス運用妨害 (ホスト OS のメモリ消費) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "kvm: iommu: fix the third parameter of kvm_iommu_put_pages (CVE-2014-3601)",
-          "url": "https://github.com/torvalds/linux/commit/350b8bdd689cd2ab2c67c8a86a0be86cfa0751a7"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux kernel source tree",
-          "vulinfoid": "kvm: iommu: fix the third parameter of kvm_iommu_put_pages (CVE-2014-3601)",
-          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=350b8bdd689cd2ab2c67c8a86a0be86cfa0751a7"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1131951",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1131951"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-3601",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3601"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-3601",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3601"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-189",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
-          "title": "数値処理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年09月03日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-09-03T15:12:31+09:00",
-    "datelastupdated": "2014-09-03T15:12:31+09:00",
-    "datepublic": "2014-08-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-004012",
+	"vulinfodata": {
+		"title": "Linux Kernel の virt/kvm/iommu.c 内の kvm_iommu_map_pages 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux Kernel の virt/kvm/iommu.c 内の kvm_iommu_map_pages 関数は、マッピングの失敗を処理している間、ページ数を誤って計算するため、(1) サービス運用妨害 (ホスト OS のメモリ破損) 状態にされるなど、不特定の影響を受ける脆弱性、または (2) サービス運用妨害 (ホスト OS のメモリ消費) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.16.1 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:A/AC:H/Au:S/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "ゲスト OS ユーザにより、(1) 過度に大きな gfn 値を誘発されることで、サービス運用妨害 (ホスト OS のメモリ破損) 状態にされるなど、不特定の影響を受ける可能性、または (2) ページの恒久的なピン留めにつながる過度に小さな gfn 値を誘発されることで、サービス運用妨害 (ホスト OS のメモリ消費) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "kvm: iommu: fix the third parameter of kvm_iommu_put_pages (CVE-2014-3601)",
+					"url": "https://github.com/torvalds/linux/commit/350b8bdd689cd2ab2c67c8a86a0be86cfa0751a7"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux kernel source tree",
+					"vulinfoid": "kvm: iommu: fix the third parameter of kvm_iommu_put_pages (CVE-2014-3601)",
+					"url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=350b8bdd689cd2ab2c67c8a86a0be86cfa0751a7"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1131951",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1131951"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-3601",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3601"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-3601",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3601"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-189",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+					"title": "数値処理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年09月03日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2014-09-03T15:12:31+09:00",
+		"datelastupdated": "2014-09-03T15:12:31+09:00",
+		"datepublic": "2014-08-19T00:00:00+09:00"
+	}
 }

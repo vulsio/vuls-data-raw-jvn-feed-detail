@@ -1,131 +1,131 @@
 {
-  "vulinfoid": "JVNDB-2018-006630",
-  "vulinfodata": {
-    "title": "Linux の IP 実装におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux カーネルの IP 実装には、サービス運用妨害 (DoS) の脆弱性が存在します。  リソース枯渇の脆弱性 (CWE-400) - CVE-2018-5391 Linux カーネルの IP フラグメント再構築を行う実装には、特別に細工されたパケット列の処理によって高負荷状態になる問題が報告されています。結果としてサービス運用妨害 (DoS) 攻撃を受ける可能性が存在します。  IP フラグメントの再構築処理に対しては、何年にもわたって様々な脆弱性が発見・修正されていますが、本脆弱性 (CVE-2018-5391) は、Linux カーネル内に実装されている IP フラグメントキューのサイズが大きくなったことで、現実的な攻撃が可能になったものです。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[パッチを適用する] 開発者が提供する情報をもとに、対応するパッチを適用してください。  [ワークアラウンドを実施する] パッチを適用できない場合、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  *カーネルパラメータ net.ipv4.ipfrag_high_thresh および net.ipv4.ipfrag_low_thresh の値を、それぞれ 256kB および 192kB もしくはそれ以下に変更する (IPv4 の場合) "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "株式会社インターネットイニシアティブからの情報",
-          "url": "https://jvn.jp/vu/JVNVU93630542/317632/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-5391",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5391"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-105-05",
-          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-105-05"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93630542",
-          "url": "https://jvn.jp/vu/JVNVU93630542/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95499848",
-          "url": "https://jvn.jp/vu/JVNVU95499848/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-5391",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5391"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#641765",
-          "url": "https://www.kb.cert.org/vuls/id/641765"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-400",
-          "url": "https://cwe.mitre.org/data/definitions/400.html",
-          "title": "リソースの枯渇"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-08-28T15:34:32+09:00",
-          "description": "[2018年08月28日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-07-26T11:39:21+09:00",
-          "description": "[2019年07月26日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5391) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2020-04-20T11:55:42+09:00",
-          "description": "[2020年04月20日]\\n  参考情報：JVN (JVNVU#95499848) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2020-04-20T16:31:06+09:00",
-          "description": "[2020年04月21日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-105-05) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-08-28T16:01:22+09:00",
-    "datelastupdated": "2020-04-21T10:32:29+09:00",
-    "datepublic": "2018-08-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-006630",
+	"vulinfodata": {
+		"title": "Linux の IP 実装におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux カーネルの IP 実装には、サービス運用妨害 (DoS) の脆弱性が存在します。  リソース枯渇の脆弱性 (CWE-400) - CVE-2018-5391 Linux カーネルの IP フラグメント再構築を行う実装には、特別に細工されたパケット列の処理によって高負荷状態になる問題が報告されています。結果としてサービス運用妨害 (DoS) 攻撃を受ける可能性が存在します。  IP フラグメントの再構築処理に対しては、何年にもわたって様々な脆弱性が発見・修正されていますが、本脆弱性 (CVE-2018-5391) は、Linux カーネル内に実装されている IP フラグメントキューのサイズが大きくなったことで、現実的な攻撃が可能になったものです。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[パッチを適用する] 開発者が提供する情報をもとに、対応するパッチを適用してください。  [ワークアラウンドを実施する] パッチを適用できない場合、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  *カーネルパラメータ net.ipv4.ipfrag_high_thresh および net.ipv4.ipfrag_low_thresh の値を、それぞれ 256kB および 192kB もしくはそれ以下に変更する (IPv4 の場合) "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "株式会社インターネットイニシアティブからの情報",
+					"url": "https://jvn.jp/vu/JVNVU93630542/317632/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-5391",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5391"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-105-05",
+					"url": "https://www.us-cert.gov/ics/advisories/icsa-20-105-05"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93630542",
+					"url": "https://jvn.jp/vu/JVNVU93630542/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95499848",
+					"url": "https://jvn.jp/vu/JVNVU95499848/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-5391",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5391"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#641765",
+					"url": "https://www.kb.cert.org/vuls/id/641765"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-400",
+					"url": "https://cwe.mitre.org/data/definitions/400.html",
+					"title": "リソースの枯渇"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-08-28T15:34:32+09:00",
+					"description": "[2018年08月28日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-07-26T11:39:21+09:00",
+					"description": "[2019年07月26日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5391) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2020-04-20T11:55:42+09:00",
+					"description": "[2020年04月20日]\\n  参考情報：JVN (JVNVU#95499848) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2020-04-20T16:31:06+09:00",
+					"description": "[2020年04月21日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-105-05) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-08-28T16:01:22+09:00",
+		"datelastupdated": "2020-04-21T10:32:29+09:00",
+		"datepublic": "2018-08-15T00:00:00+09:00"
+	}
 }

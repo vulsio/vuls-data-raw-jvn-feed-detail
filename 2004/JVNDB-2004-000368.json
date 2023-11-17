@@ -1,206 +1,206 @@
 {
-  "vulinfoid": "JVNDB-2004-000368",
-  "vulinfodata": {
-    "title": "imlib の BMP イメージハンドラにおけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  多くの Linux ディストリビューションに同梱されている imlib/imlib2 ライブラリは、画像の読み込みと描画を行うプログラムで利用されています。  Imlib 1.9.14 以前、imlib2 1.1.1 以前には、RLE (ランレングスエンコード) でエンコードされた BMP ファイルを表示またはデコードした場合にバッファオーバーフローが発生する問題が存在します。  この問題を利用するリモートの攻撃者は、意図的に作成した BMP ファイルを問題を抱える imlib/imlib2 ライブラリを使用するアプリケーションで開かせることにより、結果としてそのアプリケーションをサービス不能状態に陥らせる、あるいは標的ユーザの権限で任意のコードを実行する可能性があります。  尚、画像編集ユーティリティである ImageMagick にも同様の問題が存在することが報告されており、本パッケージを同梱している Red Hat および MIRACLE LINUX からは、この問題を修正する RPM パッケージがリリースされています。 しかし、Red Hat より当初リリースされた ImageMagick の修正 RPM パッケージ (アドバイザリ RHSA-2004:480-05) では、この問題の修正が不完全であることが報告されており、2004 年 12 月 8 日にリリースされた、新たな RPM パッケージを適用することが推奨されています。 MIRACLE LINUX V2.0/V2.1/V3.0 用の修正 RPM に関しても同様に修正が不完全であったために RPM が再リリースされています。  また、他の Linux ディストリビューションについても imlib/imlib2 と同様に ImageMagick 5.5.7-27 以前および 6.0.5 以前の全バージョンが影響を受ける可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 ",
-            "3.0 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "ImageMagick",
-          "url": "http://www.miraclelinux.com/support/update/data/ImageMagick.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "imlib",
-          "url": "http://www.miraclelinux.com/support/update/data/imlib.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:494",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-494.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:480",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-480.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:465",
-          "url": "http://rhn.redhat.com/errata/RHSA-2004-465.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:636",
-          "url": "https://rhn.redhat.com/errata/RHSA-2004-636.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2004-27",
-          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-27.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2004-30",
-          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-30.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:636",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-636J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:494",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-494J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:480",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-480J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:465",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-465J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2004-30",
-          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-30j.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2004-27",
-          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-27j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0817",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0817"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0817",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0817"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA12479",
-          "url": "http://secunia.com/advisories/12479/"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA12429",
-          "url": "http://secunia.com/advisories/12429/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "11084",
-          "url": "http://www.securityfocus.com/bid/11084"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-09-08T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000368",
+	"vulinfodata": {
+		"title": "imlib の BMP イメージハンドラにおけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  多くの Linux ディストリビューションに同梱されている imlib/imlib2 ライブラリは、画像の読み込みと描画を行うプログラムで利用されています。  Imlib 1.9.14 以前、imlib2 1.1.1 以前には、RLE (ランレングスエンコード) でエンコードされた BMP ファイルを表示またはデコードした場合にバッファオーバーフローが発生する問題が存在します。  この問題を利用するリモートの攻撃者は、意図的に作成した BMP ファイルを問題を抱える imlib/imlib2 ライブラリを使用するアプリケーションで開かせることにより、結果としてそのアプリケーションをサービス不能状態に陥らせる、あるいは標的ユーザの権限で任意のコードを実行する可能性があります。  尚、画像編集ユーティリティである ImageMagick にも同様の問題が存在することが報告されており、本パッケージを同梱している Red Hat および MIRACLE LINUX からは、この問題を修正する RPM パッケージがリリースされています。 しかし、Red Hat より当初リリースされた ImageMagick の修正 RPM パッケージ (アドバイザリ RHSA-2004:480-05) では、この問題の修正が不完全であることが報告されており、2004 年 12 月 8 日にリリースされた、新たな RPM パッケージを適用することが推奨されています。 MIRACLE LINUX V2.0/V2.1/V3.0 用の修正 RPM に関しても同様に修正が不完全であったために RPM が再リリースされています。  また、他の Linux ディストリビューションについても imlib/imlib2 と同様に ImageMagick 5.5.7-27 以前および 6.0.5 以前の全バージョンが影響を受ける可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 ",
+						"3.0 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "ImageMagick",
+					"url": "http://www.miraclelinux.com/support/update/data/ImageMagick.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "imlib",
+					"url": "http://www.miraclelinux.com/support/update/data/imlib.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:494",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-494.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:480",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-480.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:465",
+					"url": "http://rhn.redhat.com/errata/RHSA-2004-465.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:636",
+					"url": "https://rhn.redhat.com/errata/RHSA-2004-636.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2004-27",
+					"url": "http://www.turbolinux.com/security/2004/TLSA-2004-27.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2004-30",
+					"url": "http://www.turbolinux.com/security/2004/TLSA-2004-30.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:636",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-636J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:494",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-494J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:480",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-480J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:465",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-465J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2004-30",
+					"url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-30j.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2004-27",
+					"url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-27j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0817",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0817"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0817",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0817"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA12479",
+					"url": "http://secunia.com/advisories/12479/"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA12429",
+					"url": "http://secunia.com/advisories/12429/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "11084",
+					"url": "http://www.securityfocus.com/bid/11084"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-09-08T00:00:00+09:00"
+	}
 }

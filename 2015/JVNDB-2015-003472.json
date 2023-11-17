@@ -1,144 +1,144 @@
 {
-  "vulinfoid": "JVNDB-2015-003472",
-  "vulinfodata": {
-    "title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC BIND 9 には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND 9 には、DNSSEC 検証を有効にした再帰的名前解決処理が、特定の条件下において異常終了する脆弱性が存在します。  ISC のアドバイザリには次のように記載されています。  CVE-2015-4620: Specially Constructed Zone Data Can Cause a Resolver to Crash when Validating https://kb.isc.org/article/AA-01267  A very uncommon combination of zone data has been found that triggers a bug in BIND, with the result that named will exit with a \"REQUIRE\" failure in name.c when validating the data returned in answer to a recursive query.  This means that a recursive resolver that is performing DNSSEC validation can be deliberately stopped by an attacker who can cause the resolver to perform a query against a maliciously-constructed zone.  なお、National Vulnerability Database (NVD) では、CWE-17 として公開されています。  CWE-17: Code http://cwe.mitre.org/data/definitions/17.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.10.0 から 9.10.2-P1 まで",
-            "9.7.1 から 9.7.7 まで",
-            "9.8.0 から 9.8.8 まで",
-            "9.9.0 から 9.9.7 まで"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "Express5800",
-          "cpe": {
-            "text": "cpe:/h:nec:express5800",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "/SG シリーズ InterSecVM/SG v1.2,v3.0,v3.1,v4.0",
-            "/SG シリーズ SG3600LM/LG/LJ v6.1,v6.2,v7.0,v7.1,v8.0",
-            "/SG シリーズ UNIVERGE SG3000LG/LJ"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "DNSSEC 検証を有効にしたキャッシュ DNS サーバを運用している場合、遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性の対策として次のバージョンがリリースされています。  * BIND 9.9.7-P1 * BIND 9.10.2-P2"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX03379",
-          "url": "http://marc.info/?l=bugtraq&amp;m=143740940810833&amp;w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "CVE-2015-4620: Specially Constructed Zone Data Can Cause a Resolver to Crash when Validating",
-          "url": "https://kb.isc.org/article/AA-01267"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV16-009",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv16-009.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:1443",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-1443.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:1471",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-1471.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-4620",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4620"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（2015年7月8日公開）",
-          "url": "http://jprs.jp/tech/security/2015-07-08-bind9-vuln-dnssec-validation.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "DNS ソフトウェアアップデート情報",
-          "url": "http://jprs.jp/tech/index.html#dns-software-update-info"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93531657",
-          "url": "http://jvn.jp/vu/JVNVU93531657/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-4620",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4620"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年07月10日]\\n  掲載\\n[2015年09月03日]\\n  ベンダ情報：レッドハット (RHSA-2015:1471) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:1443) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03379) を追加\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV16-009) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-07-10T12:09:27+09:00",
-    "datelastupdated": "2016-06-23T13:35:24+09:00",
-    "datepublic": "2015-07-08T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-003472",
+	"vulinfodata": {
+		"title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC BIND 9 には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND 9 には、DNSSEC 検証を有効にした再帰的名前解決処理が、特定の条件下において異常終了する脆弱性が存在します。  ISC のアドバイザリには次のように記載されています。  CVE-2015-4620: Specially Constructed Zone Data Can Cause a Resolver to Crash when Validating https://kb.isc.org/article/AA-01267  A very uncommon combination of zone data has been found that triggers a bug in BIND, with the result that named will exit with a \"REQUIRE\" failure in name.c when validating the data returned in answer to a recursive query.  This means that a recursive resolver that is performing DNSSEC validation can be deliberately stopped by an attacker who can cause the resolver to perform a query against a maliciously-constructed zone.  なお、National Vulnerability Database (NVD) では、CWE-17 として公開されています。  CWE-17: Code http://cwe.mitre.org/data/definitions/17.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.10.0 から 9.10.2-P1 まで",
+						"9.7.1 から 9.7.7 まで",
+						"9.8.0 から 9.8.8 まで",
+						"9.9.0 から 9.9.7 まで"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "Express5800",
+					"cpe": {
+						"text": "cpe:/h:nec:express5800",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"/SG シリーズ InterSecVM/SG v1.2,v3.0,v3.1,v4.0",
+						"/SG シリーズ SG3600LM/LG/LJ v6.1,v6.2,v7.0,v7.1,v8.0",
+						"/SG シリーズ UNIVERGE SG3000LG/LJ"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "DNSSEC 検証を有効にしたキャッシュ DNS サーバを運用している場合、遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性の対策として次のバージョンがリリースされています。  * BIND 9.9.7-P1 * BIND 9.10.2-P2"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX03379",
+					"url": "http://marc.info/?l=bugtraq&amp;m=143740940810833&amp;w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "CVE-2015-4620: Specially Constructed Zone Data Can Cause a Resolver to Crash when Validating",
+					"url": "https://kb.isc.org/article/AA-01267"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV16-009",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv16-009.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:1443",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-1443.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:1471",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-1471.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-4620",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-4620"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（2015年7月8日公開）",
+					"url": "http://jprs.jp/tech/security/2015-07-08-bind9-vuln-dnssec-validation.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "DNS ソフトウェアアップデート情報",
+					"url": "http://jprs.jp/tech/index.html#dns-software-update-info"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93531657",
+					"url": "http://jvn.jp/vu/JVNVU93531657/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-4620",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-4620"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年07月10日]\\n  掲載\\n[2015年09月03日]\\n  ベンダ情報：レッドハット (RHSA-2015:1471) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:1443) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBUX03379) を追加\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV16-009) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-07-10T12:09:27+09:00",
+		"datelastupdated": "2016-06-23T13:35:24+09:00",
+		"datepublic": "2015-07-08T00:00:00+09:00"
+	}
 }

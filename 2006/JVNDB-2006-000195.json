@@ -1,340 +1,340 @@
 {
-  "vulinfoid": "JVNDB-2006-000195",
-  "vulinfodata": {
-    "title": "Mozilla 製品の Object.watch() 関数における任意のコードを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Mozilla Firefox には、以下の複数の問題が存在します。  1) 連続した特定の HTML タグの処理に不備が存在し、メモリ領域が破壊される問題が存在します。(CVE-2006-0749)  リモートの攻撃者に悪用された場合、Firefox を実行するユーザの権限で任意のコードが実行される可能性があります。  2) 特権を持つ組み込み XBL バインディングの編集スコープには、Web コンテンツからの保護が不完全である不備が存在し、valueOf.call() および valueOf.apply() メソッドや、DOM document.body プロトタイプチェインを用いてアクセス可能である問題が存在します。(CVE-2006-1733)  リモートの攻撃者に悪用された場合、特権で任意のスクリプトが実行される可能性があります。  3) Object.watch() メソッドを使用して内部関数オブジェクトである clone parent に不適切にアクセスすることが可能である問題が存在します。(CVE-2006-1734)  リモートの攻撃者に悪用された場合、特権で任意のスクリプトが実行される可能性があります。  4) XBL.method.eval メソッドを使用して、誤って特権が付与された JavaScript 関数を作成することが可能である問題が存在します。(CVE-2006-1735)  リモートの攻撃者に悪用された場合、特権で任意のスクリプトが実行される可能性があります。  5) 以下の複数の不備によりメモリ領域を破壊される問題が存在します。(CVE-2006-1739/CVE-2006-1737/CVE-2006-1738/CVE-2006-1790)  ・不正な CSS border-rendering プロパティの処理 ・JavaScript の過度に長い正規表現の処理による整数オーバフロー ・display プロパティの不正な -moz-grid および -moz-grid-group の処理 ・不正な InstallTrigger.install() メソッドの処理  リモートの攻撃者に悪用された場合、Firefox がクラッシュする、あるいは Firefox を実行するユーザの権限で任意のコードが実行される可能性があります。  6) JavaScript エンジンの一時変数の処理ルーチンがガベージコレクションから適切に保護されていないため、一時変数の生存期間中にガベージコレクションが発生した場合に、メモリ領域が破壊される問題が存在します。(CVE-2006-1742)  リモートの攻撃者に悪用された場合、Firefox を実行するユーザの権限で任意のコードが実行される可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Mozilla Foundation",
-          "productname": "Mozilla Firefox",
-          "cpe": {
-            "text": "cpe:/a:mozilla:firefox",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.7 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0 ",
-            "2.1 ",
-            "4.0 ",
-            "4.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 (sparc) ",
-            "10 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.00 ",
-            "11.11 ",
-            "11.23 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX02122",
-          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00679472"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX02122",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX02122.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "AXSA-2006-62:1",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=352"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "seamonkey (V2.x)",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=984"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa2006-16",
-          "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-16.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa2006-11",
-          "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-11.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa2006-15",
-          "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-15.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa2006-10",
-          "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-10.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa2006-18",
-          "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-18.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation Security Advisory",
-          "vulinfoid": "mfsa006-14",
-          "url": "http://www.mozilla.org/security/announce/2006/mfsa2006-14.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2006-16",
-          "url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-16.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2006-11",
-          "url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-11.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2006-15",
-          "url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-15.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2006-10",
-          "url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-10.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2006-18",
-          "url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-18.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mozilla Foundation セキュリティアドバイザリ",
-          "vulinfoid": "mfsa2006-14",
-          "url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-14.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0330",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0330.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0328",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0328.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0329",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0329.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "102550",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102550-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "102612",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102612-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "102550",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102550-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "102612",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102612-3"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0330",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0330J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0328",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0328J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0329",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0329J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2006-1734",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1734"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2006-1356",
-          "url": "http://www.frsirt.com/english/advisories/2006/1356"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNTA06-107A",
-          "url": "http://jvn.jp/cert/JVNTA06-107A/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN Status Tracking Notes",
-          "vulinfoid": "TRTA06-107A",
-          "url": "http://jvn.jp/tr/TRTA06-107A/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2006-1734",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1734"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA19631",
-          "url": "http://secunia.com/advisories/19631/"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Cyber Security Alerts",
-          "vulinfoid": "SA06-107A",
-          "url": "http://www.us-cert.gov/cas/alerts/SA06-107A.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Technical Cyber Security Alert",
-          "vulinfoid": "TA06-107A",
-          "url": "http://www.us-cert.gov/cas/techalerts/TA06-107A.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#842094",
-          "url": "http://www.kb.cert.org/vuls/id/842094"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-DesignError",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "設計上の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2006-04-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2006-000195",
+	"vulinfodata": {
+		"title": "Mozilla 製品の Object.watch() 関数における任意のコードを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Mozilla Firefox には、以下の複数の問題が存在します。  1) 連続した特定の HTML タグの処理に不備が存在し、メモリ領域が破壊される問題が存在します。(CVE-2006-0749)  リモートの攻撃者に悪用された場合、Firefox を実行するユーザの権限で任意のコードが実行される可能性があります。  2) 特権を持つ組み込み XBL バインディングの編集スコープには、Web コンテンツからの保護が不完全である不備が存在し、valueOf.call() および valueOf.apply() メソッドや、DOM document.body プロトタイプチェインを用いてアクセス可能である問題が存在します。(CVE-2006-1733)  リモートの攻撃者に悪用された場合、特権で任意のスクリプトが実行される可能性があります。  3) Object.watch() メソッドを使用して内部関数オブジェクトである clone parent に不適切にアクセスすることが可能である問題が存在します。(CVE-2006-1734)  リモートの攻撃者に悪用された場合、特権で任意のスクリプトが実行される可能性があります。  4) XBL.method.eval メソッドを使用して、誤って特権が付与された JavaScript 関数を作成することが可能である問題が存在します。(CVE-2006-1735)  リモートの攻撃者に悪用された場合、特権で任意のスクリプトが実行される可能性があります。  5) 以下の複数の不備によりメモリ領域を破壊される問題が存在します。(CVE-2006-1739/CVE-2006-1737/CVE-2006-1738/CVE-2006-1790)  ・不正な CSS border-rendering プロパティの処理 ・JavaScript の過度に長い正規表現の処理による整数オーバフロー ・display プロパティの不正な -moz-grid および -moz-grid-group の処理 ・不正な InstallTrigger.install() メソッドの処理  リモートの攻撃者に悪用された場合、Firefox がクラッシュする、あるいは Firefox を実行するユーザの権限で任意のコードが実行される可能性があります。  6) JavaScript エンジンの一時変数の処理ルーチンがガベージコレクションから適切に保護されていないため、一時変数の生存期間中にガベージコレクションが発生した場合に、メモリ領域が破壊される問題が存在します。(CVE-2006-1742)  リモートの攻撃者に悪用された場合、Firefox を実行するユーザの権限で任意のコードが実行される可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Mozilla Foundation",
+					"productname": "Mozilla Firefox",
+					"cpe": {
+						"text": "cpe:/a:mozilla:firefox",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.7 およびそれ以前"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0 ",
+						"2.1 ",
+						"4.0 ",
+						"4.0 (x86-64) "
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 (sparc) ",
+						"10 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.00 ",
+						"11.11 ",
+						"11.23 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX02122",
+					"url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=c00679472"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX02122",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX02122.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "AXSA-2006-62:1",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=352"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "seamonkey (V2.x)",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=984"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa2006-16",
+					"url": "http://www.mozilla.org/security/announce/2006/mfsa2006-16.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa2006-11",
+					"url": "http://www.mozilla.org/security/announce/2006/mfsa2006-11.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa2006-15",
+					"url": "http://www.mozilla.org/security/announce/2006/mfsa2006-15.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa2006-10",
+					"url": "http://www.mozilla.org/security/announce/2006/mfsa2006-10.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa2006-18",
+					"url": "http://www.mozilla.org/security/announce/2006/mfsa2006-18.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation Security Advisory",
+					"vulinfoid": "mfsa006-14",
+					"url": "http://www.mozilla.org/security/announce/2006/mfsa2006-14.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2006-16",
+					"url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-16.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2006-11",
+					"url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-11.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2006-15",
+					"url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-15.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2006-10",
+					"url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-10.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2006-18",
+					"url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-18.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mozilla Foundation セキュリティアドバイザリ",
+					"vulinfoid": "mfsa2006-14",
+					"url": "http://www.mozilla-japan.org/security/announce/2006/mfsa2006-14.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0330",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0330.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0328",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0328.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0329",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0329.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "102550",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102550-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "102612",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102612-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "102550",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102550-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "102612",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102612-3"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0330",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0330J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0328",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0328J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0329",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0329J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2006-1734",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1734"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2006-1356",
+					"url": "http://www.frsirt.com/english/advisories/2006/1356"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA06-107A",
+					"url": "http://jvn.jp/cert/JVNTA06-107A/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN Status Tracking Notes",
+					"vulinfoid": "TRTA06-107A",
+					"url": "http://jvn.jp/tr/TRTA06-107A/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2006-1734",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1734"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA19631",
+					"url": "http://secunia.com/advisories/19631/"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Cyber Security Alerts",
+					"vulinfoid": "SA06-107A",
+					"url": "http://www.us-cert.gov/cas/alerts/SA06-107A.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA06-107A",
+					"url": "http://www.us-cert.gov/cas/techalerts/TA06-107A.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#842094",
+					"url": "http://www.kb.cert.org/vuls/id/842094"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-DesignError",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "設計上の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2006-04-11T00:00:00+09:00"
+	}
 }

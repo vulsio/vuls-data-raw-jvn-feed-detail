@@ -1,130 +1,130 @@
 {
-  "vulinfoid": "JVNDB-2005-000288",
-  "vulinfodata": {
-    "title": "FreeRADIUS の sql_escape_func() 関数におけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  FreeRADIUS は、RADIUS プロトコルを実装したオープンソースのインターネット認証サーバです。  FreeRADIUS 1.0.2 以前の SQL モジュール (rlm_sql.c) に実装されている特定の関数において、以下の複数のセキュリティ上の問題が存在します。  1) radius_xlat() 関数においてユーザが入力した値が適切にサニタイズされない問題が存在します。(CAN-2005-1454)  この問題を利用するローカルの攻撃者は、意図的なリクエストを送信することで group_membership_query、simul_count_query または  simul_verify_query において SQL インジェクションを実行し、バックエンドデータベースのデータを追加、変更、または削除する可能性があります。  尚、group_membership_query に関しては radiusd.conf の authorize セクションにおける任意のモジュールで SQL-Group 属性が設定されている場合、simul_count_query および simul_verify_query はユーザ名に引用符 (') が含まれるユーザが存在する場合にそれぞれ悪用可能であることが freeradius.org より報告されています。  2) sql_escape_func() 関数においてユーザが入力した値の長さの妥当性が適切にチェックされないために、バッファオーバーフローが発生する問題が存在します。(CAN-2005-1455)  この問題を利用するリモートの攻撃者は、意図的に作成した要求を FreeRADIUS サーバに送りつけることで、FreeRADIUS サーバをクラッシュさせ、結果としてサービス不能状態に陥らせる可能性があります。  ただし、攻撃者が認証情報を必要とするかは FreeRADIUS サーバの設定に依存します。また、この問題により任意のコードを実行することは極めて困難であることが freeradius.org より報告されています。  尚、FreeRADIUS サーバにおいて SQL モジュールを使用していない場合には、これらの問題の影響を受けません。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (as) ",
-            "3 (es) ",
-            "4 (as) ",
-            "4 (es) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "156941",
-          "url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=156941"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:524",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-524.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:524",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-524J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-1455",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1455"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "20450",
-          "url": "http://xforce.iss.net/xforce/xfdb/20450"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "20449",
-          "url": "http://xforce.iss.net/xforce/xfdb/20449"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-1455",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1455"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA15361",
-          "url": "http://secunia.com/advisories/15361/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13541",
-          "url": "http://www.securityfocus.com/bid/13541"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13540",
-          "url": "http://www.securityfocus.com/bid/13540"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1013909",
-          "url": "http://www.securitytracker.com/alerts/2005/May/1013909.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-05-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000288",
+	"vulinfodata": {
+		"title": "FreeRADIUS の sql_escape_func() 関数におけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  FreeRADIUS は、RADIUS プロトコルを実装したオープンソースのインターネット認証サーバです。  FreeRADIUS 1.0.2 以前の SQL モジュール (rlm_sql.c) に実装されている特定の関数において、以下の複数のセキュリティ上の問題が存在します。  1) radius_xlat() 関数においてユーザが入力した値が適切にサニタイズされない問題が存在します。(CAN-2005-1454)  この問題を利用するローカルの攻撃者は、意図的なリクエストを送信することで group_membership_query、simul_count_query または  simul_verify_query において SQL インジェクションを実行し、バックエンドデータベースのデータを追加、変更、または削除する可能性があります。  尚、group_membership_query に関しては radiusd.conf の authorize セクションにおける任意のモジュールで SQL-Group 属性が設定されている場合、simul_count_query および simul_verify_query はユーザ名に引用符 (') が含まれるユーザが存在する場合にそれぞれ悪用可能であることが freeradius.org より報告されています。  2) sql_escape_func() 関数においてユーザが入力した値の長さの妥当性が適切にチェックされないために、バッファオーバーフローが発生する問題が存在します。(CAN-2005-1455)  この問題を利用するリモートの攻撃者は、意図的に作成した要求を FreeRADIUS サーバに送りつけることで、FreeRADIUS サーバをクラッシュさせ、結果としてサービス不能状態に陥らせる可能性があります。  ただし、攻撃者が認証情報を必要とするかは FreeRADIUS サーバの設定に依存します。また、この問題により任意のコードを実行することは極めて困難であることが freeradius.org より報告されています。  尚、FreeRADIUS サーバにおいて SQL モジュールを使用していない場合には、これらの問題の影響を受けません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (as) ",
+						"3 (es) ",
+						"4 (as) ",
+						"4 (es) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "156941",
+					"url": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=156941"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:524",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-524.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:524",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-524J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-1455",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1455"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "20450",
+					"url": "http://xforce.iss.net/xforce/xfdb/20450"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "20449",
+					"url": "http://xforce.iss.net/xforce/xfdb/20449"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-1455",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1455"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA15361",
+					"url": "http://secunia.com/advisories/15361/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13541",
+					"url": "http://www.securityfocus.com/bid/13541"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13540",
+					"url": "http://www.securityfocus.com/bid/13540"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1013909",
+					"url": "http://www.securitytracker.com/alerts/2005/May/1013909.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-05-01T00:00:00+09:00"
+	}
 }

@@ -1,104 +1,104 @@
 {
-  "vulinfoid": "JVNDB-2021-001557",
-  "vulinfodata": {
-    "title": "Pulse Secure 製 Pulse Connect Secure にバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "Pulse Secure 社が提供する Pulse Connect Secure には、バッファオーバーフローの脆弱性が存在します。  Pulse Secure 社が提供する VPN 製品 Pulse Connect Secure には、Windows ファイル共有 (SMB) にアクセスする機能が実装されています。この機能は、Samba 4.5.10 のコードを使って実装されています。 Pulse Connect Secure の Windows File Access ポリシーが任意のサーバへのアクセスを許可する設定になっている場合に、Windows ファイル共有へのアクセスで長いサーバ名を与えると、バッファオーバーフローが発生する可能性があります。(CWE-119, CVE-2021-22908)"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "パルスセキュア",
-          "productname": "Pulse Connect Secure",
-          "cpe": {
-            "text": "cpe:/a:pulsesecure:pulse_connect_secure",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.0R 系バージョン",
-            "9.1R11.5 より前の 9.1R 系バージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.5",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "当該製品に認証されたユーザが長いサーバ名を含む SMB 操作を実行することで、当該製品上で root 権限で任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 2021年5月26日時点で脆弱性を修正したバージョンはリリースされていません。  なお、開発者は脆弱性を修正した次のバージョンのリリースを予定しています。  　* Pulse Connect Secure 9.1R11.5  [ワークアラウンドを実施する] 以下のワークアラウンドを適用することで、本脆弱性の影響を軽減することが可能です。  　* 開発者が提供する以下の XML をインポートする 　　　* Workaround-2105.xml  本ワークアラウンドを適用することにより、Windows ファイル共有ブラウザの機能が無効になるとのことです。  　* Windows ファイルアクセスポリシーにて、任意の SMB サーバ名への接続を拒否するように設定する  当該製品について、本脆弱性の影響の有無、およびワークアラウンドが設定されているかを確認するスクリプトが CERT/CC により<a href=\"https://github.com/CERTCC/PoC-Exploits/tree/master/cve-2021-22908\" target=\"_blank\">公開</a>されています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Security Advisories",
-          "vulinfoid": "SA44800 - 2021-05: Out-of-Cycle Advisory: Pulse Connect Secure Buffer Overflow Vulnerability",
-          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44800"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-22908",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22908"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98263390",
-          "url": "http://jvn.jp/cert/JVNVU98263390"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#667933",
-          "url": "https://www.kb.cert.org/vuls/id/667933"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "cve-2021-22908",
-          "url": "https://github.com/CERTCC/PoC-Exploits/tree/master/cve-2021-22908"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-05-27T14:52:32+09:00",
-          "description": "[2021年05月27日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-05-28T11:21:55+09:00",
-          "description": "[2021年05月28日]\\n   対策：内容を更新\\n   参考情報：関連文書 (cve-2021-22908) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-05-27T14:52:32+09:00",
-    "datelastupdated": "2021-05-28T16:59:12+09:00",
-    "datepublic": "2021-05-26T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001557",
+	"vulinfodata": {
+		"title": "Pulse Secure 製 Pulse Connect Secure にバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "Pulse Secure 社が提供する Pulse Connect Secure には、バッファオーバーフローの脆弱性が存在します。  Pulse Secure 社が提供する VPN 製品 Pulse Connect Secure には、Windows ファイル共有 (SMB) にアクセスする機能が実装されています。この機能は、Samba 4.5.10 のコードを使って実装されています。 Pulse Connect Secure の Windows File Access ポリシーが任意のサーバへのアクセスを許可する設定になっている場合に、Windows ファイル共有へのアクセスで長いサーバ名を与えると、バッファオーバーフローが発生する可能性があります。(CWE-119, CVE-2021-22908)"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "パルスセキュア",
+					"productname": "Pulse Connect Secure",
+					"cpe": {
+						"text": "cpe:/a:pulsesecure:pulse_connect_secure",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.0R 系バージョン",
+						"9.1R11.5 より前の 9.1R 系バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.5",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品に認証されたユーザが長いサーバ名を含む SMB 操作を実行することで、当該製品上で root 権限で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 2021年5月26日時点で脆弱性を修正したバージョンはリリースされていません。  なお、開発者は脆弱性を修正した次のバージョンのリリースを予定しています。  　* Pulse Connect Secure 9.1R11.5  [ワークアラウンドを実施する] 以下のワークアラウンドを適用することで、本脆弱性の影響を軽減することが可能です。  　* 開発者が提供する以下の XML をインポートする 　　　* Workaround-2105.xml  本ワークアラウンドを適用することにより、Windows ファイル共有ブラウザの機能が無効になるとのことです。  　* Windows ファイルアクセスポリシーにて、任意の SMB サーバ名への接続を拒否するように設定する  当該製品について、本脆弱性の影響の有無、およびワークアラウンドが設定されているかを確認するスクリプトが CERT/CC により<a href=\"https://github.com/CERTCC/PoC-Exploits/tree/master/cve-2021-22908\" target=\"_blank\">公開</a>されています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Security Advisories",
+					"vulinfoid": "SA44800 - 2021-05: Out-of-Cycle Advisory: Pulse Connect Secure Buffer Overflow Vulnerability",
+					"url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA44800"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-22908",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-22908"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98263390",
+					"url": "http://jvn.jp/cert/JVNVU98263390"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#667933",
+					"url": "https://www.kb.cert.org/vuls/id/667933"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "cve-2021-22908",
+					"url": "https://github.com/CERTCC/PoC-Exploits/tree/master/cve-2021-22908"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-05-27T14:52:32+09:00",
+					"description": "[2021年05月27日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-05-28T11:21:55+09:00",
+					"description": "[2021年05月28日]\\n   対策：内容を更新\\n   参考情報：関連文書 (cve-2021-22908) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2021-05-27T14:52:32+09:00",
+		"datelastupdated": "2021-05-28T16:59:12+09:00",
+		"datepublic": "2021-05-26T00:00:00+09:00"
+	}
 }

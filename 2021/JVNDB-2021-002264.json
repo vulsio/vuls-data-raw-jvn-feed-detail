@@ -1,279 +1,279 @@
 {
-  "vulinfoid": "JVNDB-2021-002264",
-  "vulinfodata": {
-    "title": "三菱電機製 MELSEC iQ-R シリーズ CPU ユニットにおける複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズ CPU ユニットには、次の複数の脆弱性が存在します。  *情報漏えい (CWE-200) - CVE-2021-20594 *不十分な認証情報の保護 (CWE-522) - CVE-2021-20597 *アカウントロックアウト機構の過度な制限 (CWE-645) - CVE-2021-20598 *重要な情報の平文での送信の脆弱性 (CWE-319) - CVE-2021-20599  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "三菱電機",
-          "productname": "R08 PSFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r08psfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R08 SFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r08sfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R120 PSFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r120psfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R120 SFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r120sfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R16 PSFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r16psfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R16 SFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r16sfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R32 PSFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r32psfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "R32 SFCPU ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:mitsubishielectric:r32sfcpu_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
-            "全バージョン (CVE-2021-20598)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.1",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって CPU ユニット内に格納される正規ユーザ名が窃取される - CVE-2021-20594  　　開発者によると、CPU ユニットへのログインにはパスワードも必要なため、ユーザ名を窃取されただけでは CPU ユニットへのログインはできないとのことです。 　* 正規ユーザによる CPU ユニットへのユーザ情報登録時もしくはパスワード変更時に、遠隔の第三者によってその通信が傍受され認証情報を窃取される。その結果、窃取した認証情報を使い CPU ユニットに不正にログインされる - CVE-2021-20597 　* 遠隔の第三者によって正規ユーザの誤ったパスワードを連続して入力されると、アカウントロック機能によって、正規ユーザが当該製品にログインできなくなる - CVE-2021-20598 　* 遠隔の第三者が正規ユーザのパスワード以外の認証情報を取得しそれを使用することで、CPU ユニットへ不正にログインする - CVE-2021-20599"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 次の脆弱性および製品については、次のアップデートが提供されています。  CVE-2021-20594、CVE-2021-20597、CVE-2021-20599 　* MELSEC iQ-R シリーズ安全 CPU R08/16/32/120SFCPU ファームウェアバージョン”27”およびそれ以降  アップデート&#12101;法等の詳細については、開発者が提供する情報を参照の上、製品を購&#12042;した開発者の&#12096;社または代理店にお問合せください。  [ワークアラウンドを実施する] MELSEC iQ-R シリーズ SIL2 プロセス CPU R08/16/32/120PSFCPU および CVE-2021-20598 の脆弱性の影響を受ける製品については、アップデートが提供されるまでの間、次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能を使用し、接続可能な IP アドレスを適切に制限する      IP フィルタ機能に関する詳細は、開発者が提供する「MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) セキュリティの「IP フィルタ」」を参照してください。 　* ユーザ情報の登録やパスワード変更をする際は、USB 経由で実施する。ネットワーク経由で既にユーザ登録やパスワード変更を行った場合は、改めて USB 経由でパスワードを再変更する      この回避策は、CVE-2021-20597 の脆弱性に対してのみ有効なものです。  詳しくは開発者が提供する情報をご確認ください。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSEC iQ-R シリーズ CPU ユニットにおける情報漏えいの脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-008.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSEC iQ-R シリーズ CPU ユニットにおける不正ログインの脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-009.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSEC iQ-R シリーズにおけるサービス拒否 (DoS) の脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-010.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSEC iQ-R シリーズ安全 CPU/SIL2 プロセス CPU ユニットにおける認証回避の脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-011.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20597",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20597"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20598",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20598"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20599",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20599"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20594",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20594"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-287-03",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-287-03"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-250-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-250-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98578731",
-          "url": "http://jvn.jp/cert/JVNVU98578731"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-20594",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20594"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-20597",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20597"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-20598",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20598"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-20599",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20599"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-645",
-          "url": "https://cwe.mitre.org/data/definitions/645.html",
-          "title": "過度に制限されたアカウントロックアウトメカニズム"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-319",
-          "url": "https://cwe.mitre.org/data/definitions/319.html",
-          "title": "重要な情報の平文での送信"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-522",
-          "url": "https://cwe.mitre.org/data/definitions/522.html",
-          "title": "認証情報の不十分な保護"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-08-06T14:18:38+09:00",
-          "description": "[2021年08月06日]   掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-10-13T18:04:13+09:00",
-          "description": "[2021年10月13日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：三菱電機株式会社 (MELSEC iQ-R シリーズ安全CPU/SIL2 プロセスCPU ユニットにおける認証回避の脆弱性) を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-20599 を追加\\n  CWE による脆弱性タイプ一覧：CWE-639 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20594) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20597) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20598) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20599) を追加\\n"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2021-10-18T11:58:07+09:00",
-          "description": "[2021年10月18日]\\n  参考情報：ICS Advisory (ICSA-21-250-01) を追加\\n  参考情報：ICS Advisory (ICSA-21-287-03) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2022-10-14T14:08:29+09:00",
-          "description": "[2022年10月14日]\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-08-06T14:53:59+09:00",
-    "datelastupdated": "2021-10-18T15:29:08+09:00",
-    "datepublic": "2021-08-05T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-002264",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC iQ-R シリーズ CPU ユニットにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズ CPU ユニットには、次の複数の脆弱性が存在します。  *情報漏えい (CWE-200) - CVE-2021-20594 *不十分な認証情報の保護 (CWE-522) - CVE-2021-20597 *アカウントロックアウト機構の過度な制限 (CWE-645) - CVE-2021-20598 *重要な情報の平文での送信の脆弱性 (CWE-319) - CVE-2021-20599  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "R08 PSFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r08psfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R08 SFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r08sfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R120 PSFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r120psfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R120 SFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r120sfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R16 PSFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r16psfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R16 SFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r16sfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R32 PSFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r32psfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"全バージョン (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "R32 SFCPU ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:r32sfcpu_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン \"26\" およびそれ以前 (CVE-2021-20594、CVE-2021-20597、CVE-2021-20599)",
+						"全バージョン (CVE-2021-20598)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.1",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって CPU ユニット内に格納される正規ユーザ名が窃取される - CVE-2021-20594  　　開発者によると、CPU ユニットへのログインにはパスワードも必要なため、ユーザ名を窃取されただけでは CPU ユニットへのログインはできないとのことです。 　* 正規ユーザによる CPU ユニットへのユーザ情報登録時もしくはパスワード変更時に、遠隔の第三者によってその通信が傍受され認証情報を窃取される。その結果、窃取した認証情報を使い CPU ユニットに不正にログインされる - CVE-2021-20597 　* 遠隔の第三者によって正規ユーザの誤ったパスワードを連続して入力されると、アカウントロック機能によって、正規ユーザが当該製品にログインできなくなる - CVE-2021-20598 　* 遠隔の第三者が正規ユーザのパスワード以外の認証情報を取得しそれを使用することで、CPU ユニットへ不正にログインする - CVE-2021-20599"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 次の脆弱性および製品については、次のアップデートが提供されています。  CVE-2021-20594、CVE-2021-20597、CVE-2021-20599 　* MELSEC iQ-R シリーズ安全 CPU R08/16/32/120SFCPU ファームウェアバージョン”27”およびそれ以降  アップデート&#12101;法等の詳細については、開発者が提供する情報を参照の上、製品を購&#12042;した開発者の&#12096;社または代理店にお問合せください。  [ワークアラウンドを実施する] MELSEC iQ-R シリーズ SIL2 プロセス CPU R08/16/32/120PSFCPU および CVE-2021-20598 の脆弱性の影響を受ける製品については、アップデートが提供されるまでの間、次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能を使用し、接続可能な IP アドレスを適切に制限する      IP フィルタ機能に関する詳細は、開発者が提供する「MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) セキュリティの「IP フィルタ」」を参照してください。 　* ユーザ情報の登録やパスワード変更をする際は、USB 経由で実施する。ネットワーク経由で既にユーザ登録やパスワード変更を行った場合は、改めて USB 経由でパスワードを再変更する      この回避策は、CVE-2021-20597 の脆弱性に対してのみ有効なものです。  詳しくは開発者が提供する情報をご確認ください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSEC iQ-R シリーズ CPU ユニットにおける情報漏えいの脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-008.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSEC iQ-R シリーズ CPU ユニットにおける不正ログインの脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-009.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSEC iQ-R シリーズにおけるサービス拒否 (DoS) の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-010.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSEC iQ-R シリーズ安全 CPU/SIL2 プロセス CPU ユニットにおける認証回避の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-011.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20597",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20597"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20598",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20598"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20599",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20599"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20594",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20594"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-287-03",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-287-03"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-250-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-250-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98578731",
+					"url": "http://jvn.jp/cert/JVNVU98578731"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-20594",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20594"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-20597",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20597"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-20598",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20598"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-20599",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-20599"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-645",
+					"url": "https://cwe.mitre.org/data/definitions/645.html",
+					"title": "過度に制限されたアカウントロックアウトメカニズム"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-319",
+					"url": "https://cwe.mitre.org/data/definitions/319.html",
+					"title": "重要な情報の平文での送信"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-522",
+					"url": "https://cwe.mitre.org/data/definitions/522.html",
+					"title": "認証情報の不十分な保護"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-08-06T14:18:38+09:00",
+					"description": "[2021年08月06日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-10-13T18:04:13+09:00",
+					"description": "[2021年10月13日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：三菱電機株式会社 (MELSEC iQ-R シリーズ安全CPU/SIL2 プロセスCPU ユニットにおける認証回避の脆弱性) を追加\\n  共通脆弱性識別子(CVE)：CVE-2021-20599 を追加\\n  CWE による脆弱性タイプ一覧：CWE-639 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20594) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20597) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20598) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2021-20599) を追加\\n"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2021-10-18T11:58:07+09:00",
+					"description": "[2021年10月18日]\\n  参考情報：ICS Advisory (ICSA-21-250-01) を追加\\n  参考情報：ICS Advisory (ICSA-21-287-03) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2022-10-14T14:08:29+09:00",
+					"description": "[2022年10月14日]\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2021-08-06T14:53:59+09:00",
+		"datelastupdated": "2021-10-18T15:29:08+09:00",
+		"datepublic": "2021-08-05T00:00:00+09:00"
+	}
 }

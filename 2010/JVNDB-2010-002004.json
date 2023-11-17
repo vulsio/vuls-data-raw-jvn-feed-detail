@@ -1,158 +1,158 @@
 {
-  "vulinfoid": "JVNDB-2010-002004",
-  "vulinfodata": {
-    "title": "Linux kernel の mext_check_arguments 関数におけるファイルを上書きされる脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux kernel の fs/ext4/move_extent.c 内にある mext_check_arguments 関数には、MOVE_EXT ioctl コールの処理に不備があるため、append-only ファイルを上書きされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.6.35 未満"
-          ]
-        },
-        {
-          "name": "VMware",
-          "productname": "VMware ESX",
-          "cpe": {
-            "text": "cpe:/a:vmware:esx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0.3",
-            "3.5",
-            "4.0",
-            "4.1"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (x86) ",
-            "3 (x86-64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "1.9",
-          "vector": "AV:L/AC:M/Au:N/C:N/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルユーザにより、MOVE_EXT ioctl コールを介して、append-only ファイルを上書きされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "kernel-2.6.18-194.6.AXS3",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1264"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "ChangeLog-2.6.35",
-          "url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.35"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2010:0610",
-          "url": "https://rhn.redhat.com/errata/RHSA-2010-0610.html"
-        },
-        {
-          "type": "vendor",
-          "name": "VMware Security Advisories",
-          "vulinfoid": "VMSA-2011-0003",
-          "url": "http://www.vmware.com/security/advisories/VMSA-2011-0003.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2010-2066",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2066"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2010-2066",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2066"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "41466",
-          "url": "http://www.securityfocus.com/bid/41466"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2010年09月14日]\\n  掲載\\n[2010年10月13日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-194.6.AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (kernel-2.6.18-194.6.AXS3) を追加\\n[2011年03月03日]\\n  影響を受けるシステム：VMware (VMSA-2011-0003) の情報を追加\\n  ベンダ情報：VMware (VMSA-2011-0003) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2010-09-14T16:19:51+09:00",
-    "datelastupdated": "2011-03-03T13:26:57+09:00",
-    "datepublic": "2010-06-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2010-002004",
+	"vulinfodata": {
+		"title": "Linux kernel の mext_check_arguments 関数におけるファイルを上書きされる脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux kernel の fs/ext4/move_extent.c 内にある mext_check_arguments 関数には、MOVE_EXT ioctl コールの処理に不備があるため、append-only ファイルを上書きされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6.35 未満"
+					]
+				},
+				{
+					"name": "VMware",
+					"productname": "VMware ESX",
+					"cpe": {
+						"text": "cpe:/a:vmware:esx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.3",
+						"3.5",
+						"4.0",
+						"4.1"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (x86) ",
+						"3 (x86-64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "1.9",
+					"vector": "AV:L/AC:M/Au:N/C:N/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルユーザにより、MOVE_EXT ioctl コールを介して、append-only ファイルを上書きされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "kernel-2.6.18-194.6.AXS3",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1264"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "ChangeLog-2.6.35",
+					"url": "http://www.kernel.org/pub/linux/kernel/v2.6/ChangeLog-2.6.35"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2010:0610",
+					"url": "https://rhn.redhat.com/errata/RHSA-2010-0610.html"
+				},
+				{
+					"type": "vendor",
+					"name": "VMware Security Advisories",
+					"vulinfoid": "VMSA-2011-0003",
+					"url": "http://www.vmware.com/security/advisories/VMSA-2011-0003.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2010-2066",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2066"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2010-2066",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2066"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "41466",
+					"url": "http://www.securityfocus.com/bid/41466"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2010年09月14日]\\n  掲載\\n[2010年10月13日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-194.6.AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (kernel-2.6.18-194.6.AXS3) を追加\\n[2011年03月03日]\\n  影響を受けるシステム：VMware (VMSA-2011-0003) の情報を追加\\n  ベンダ情報：VMware (VMSA-2011-0003) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2010-09-14T16:19:51+09:00",
+		"datelastupdated": "2011-03-03T13:26:57+09:00",
+		"datepublic": "2010-06-02T00:00:00+09:00"
+	}
 }

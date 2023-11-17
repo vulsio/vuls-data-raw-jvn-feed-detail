@@ -1,115 +1,115 @@
 {
-  "vulinfoid": "JVNDB-2021-000002",
-  "vulinfodata": {
-    "title": "IPMI over LAN による RMCP 接続を行う日本電気製の複数製品に認証不備の脆弱性",
-    "vulinfodescription": {
-      "overview": "遠隔からハードウェアの状態を監視・管理するための Intelligent Platform　Management Interface (IPMI) 規格の v1.5 では、BMC に LAN 経由でアクセスするための Remote Management Control Protocol (RMCP) が規定されています。日本電気株式会社が提供する、IPMI over LAN による RMCP 接続を行う一部の製品では、BMC ファームウェアの実装に不備があり、LAN 経由で RMCP を使用して BMC にアクセスする際、不正にセッションを確立することが可能な認証不備の脆弱性 (CWE-287) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "日本電気",
-          "productname": "Express5800",
-          "cpe": {
-            "text": "cpe:/h:nec:express5800",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "/GT110j",
-            "/T110j",
-            "/T110j (2nd-Gen)",
-            "/T110j-S",
-            "/T110j-S (2nd-Gen)"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "iStorage",
-          "cpe": {
-            "text": "cpe:/h:nec:istorage",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "NS100Ti"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.3",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって当該製品にログインされることで、BMC の設定情報を窃取および変更される、機器の監視情報を窃取される、機器を再起動されたり電源を切られたりする等が行われる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[当該製品で IPMI over LAN を使用しない] 当該製品での IPMI over LAN を使用を停止してください。IPMI 2.0 にはパスワードハッシュを取得される既知の脆弱性 (CVE-2013-4786) も存在します。そのため、本脆弱性の影響を回避するためには IPMI over LAN を無効化することが必要です。 開発者によると、当該製品では IPMI over LAN がデフォルトで有効ですが、BMC 専用 LAN ポートに LAN ケーブルを接続しなければ、IPMI over LAN は機能しないとのことです。  [ワークアラウンドを実施する] 当該製品で IPMI over LAN を使用する必要がある場合は、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 ・本脆弱性を修正した BMC ファームウェア Rev1.10 以降を適用した上で、ファイアウォールなどで保護された安全なイントラネット内のみで製品を使用し、BMC をインターネットに接続しない"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "日本電気株式会社からの情報",
-          "url": "https://jvn.jp/jp/JVN38752718/6443/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-5633",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5633"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#38752718",
-          "url": "https://jvn.jp/jp/JVN38752718/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-287",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
-          "title": "不適切な認証"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-12-22T10:21:16+09:00",
-          "description": "[2021年01月04日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-01-07T17:58:17+09:00",
-          "description": "[2021年01月07日]\\n   [影響を受けるシステム]に製品を追記"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-01-04T15:38:25+09:00",
-    "datelastupdated": "2021-01-07T18:20:21+09:00",
-    "datepublic": "2021-01-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-000002",
+	"vulinfodata": {
+		"title": "IPMI over LAN による RMCP 接続を行う日本電気製の複数製品に認証不備の脆弱性",
+		"vulinfodescription": {
+			"overview": "遠隔からハードウェアの状態を監視・管理するための Intelligent Platform　Management Interface (IPMI) 規格の v1.5 では、BMC に LAN 経由でアクセスするための Remote Management Control Protocol (RMCP) が規定されています。日本電気株式会社が提供する、IPMI over LAN による RMCP 接続を行う一部の製品では、BMC ファームウェアの実装に不備があり、LAN 経由で RMCP を使用して BMC にアクセスする際、不正にセッションを確立することが可能な認証不備の脆弱性 (CWE-287) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日本電気",
+					"productname": "Express5800",
+					"cpe": {
+						"text": "cpe:/h:nec:express5800",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"/GT110j",
+						"/T110j",
+						"/T110j (2nd-Gen)",
+						"/T110j-S",
+						"/T110j-S (2nd-Gen)"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "iStorage",
+					"cpe": {
+						"text": "cpe:/h:nec:istorage",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"NS100Ti"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって当該製品にログインされることで、BMC の設定情報を窃取および変更される、機器の監視情報を窃取される、機器を再起動されたり電源を切られたりする等が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[当該製品で IPMI over LAN を使用しない] 当該製品での IPMI over LAN を使用を停止してください。IPMI 2.0 にはパスワードハッシュを取得される既知の脆弱性 (CVE-2013-4786) も存在します。そのため、本脆弱性の影響を回避するためには IPMI over LAN を無効化することが必要です。 開発者によると、当該製品では IPMI over LAN がデフォルトで有効ですが、BMC 専用 LAN ポートに LAN ケーブルを接続しなければ、IPMI over LAN は機能しないとのことです。  [ワークアラウンドを実施する] 当該製品で IPMI over LAN を使用する必要がある場合は、次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 ・本脆弱性を修正した BMC ファームウェア Rev1.10 以降を適用した上で、ファイアウォールなどで保護された安全なイントラネット内のみで製品を使用し、BMC をインターネットに接続しない"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "日本電気株式会社からの情報",
+					"url": "https://jvn.jp/jp/JVN38752718/6443/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-5633",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-5633"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#38752718",
+					"url": "https://jvn.jp/jp/JVN38752718/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-287",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+					"title": "不適切な認証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-12-22T10:21:16+09:00",
+					"description": "[2021年01月04日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-01-07T17:58:17+09:00",
+					"description": "[2021年01月07日]\\n   [影響を受けるシステム]に製品を追記"
+				}
+			]
+		},
+		"datefirstpublished": "2021-01-04T15:38:25+09:00",
+		"datelastupdated": "2021-01-07T18:20:21+09:00",
+		"datepublic": "2021-01-04T00:00:00+09:00"
+	}
 }

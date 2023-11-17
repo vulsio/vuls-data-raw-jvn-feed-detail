@@ -1,569 +1,569 @@
 {
-  "vulinfoid": "JVNDB-2016-001554",
-  "vulinfodata": {
-    "title": "SSLv2 の暗号通信を解読可能な脆弱性 (DROWN 攻撃)",
-    "vulinfodescription": {
-      "overview": "SSLv2 は、十分な回数のハンドシェイクの情報を収集できる場合、暗号通信を解読される可能性があります。これは \"DROWN 攻撃\" という名称で報じられています。  研究者によれば、DROWN 攻撃は、Bleichenbacher のパディングオラクル攻撃の新たな手法です。攻撃者は SSLv2 をサポートしている脆弱なサーバから暗号化された通信内容を解読することが可能です。TLS 通信であっても、SSLv2 のサーバから取得されたものと同一の秘密鍵を使用していた場合、攻撃者は通信内容を解読することが可能です。  本脆弱性の影響を直接受けるのは SSLv2 のみですが、研究者のウェブサイトによると、多くのサーバが SSLv2 と TLS で共通のサーバ証明書を使用しているとのことです。なお、この攻撃では、1,000回程度の SSL ハンドシェイクの情報を取得しておく必要があります。  研究者のウェブサイト https://drownattack.com/  研究者は DROWN 攻撃の確認ツールと、更なる詳細を掲載した FAQ を公開しています。  確認ツール https://drownattack.com/#check  FAQ https://drownattack.com/#question-answer "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.1s 未満",
-            "1.0.2g 未満の 1.0.2"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:oracle:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.6.29 およびそれ以前",
-            "5.7.11 およびそれ以前"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Communications Session Border Controller",
-          "cpe": {
-            "text": "cpe:/a:oracle:communications_session_border_controller",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.2.0",
-            "7.3.0"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "XCP",
-          "cpe": {
-            "text": "cpe:/a:oracle:xcp",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2320 未満 (Fujitsu M10-1/M10-4/M10-4S サーバ)"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "HPE BladeSystem",
-          "cpe": {
-            "text": "cpe:/o:hp:bladesystem",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "c-Class Virtual Connect (VC) ファームウェア 4.30 から VC 4.45"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "HPE Insight Controlサーバー配備",
-          "cpe": {
-            "text": "cpe:/a:hp:insight_control_server_deployment",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "すべてのバージョン"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "HPE Oneview",
-          "cpe": {
-            "text": "cpe:/a:hp:oneview",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for VMware vCenter 7.8.1 以前のリリース"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "HPE Virtual Connect",
-          "cpe": {
-            "text": "cpe:/h:hp:virtual_connect",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Flex-10 10Gb Enet Module",
-            "Flex-10/10D Module for c-Class BladeSystem",
-            "FlexFabric 10Gb/24-port Module for c-Class BladeSystem",
-            "FlexFabric-20/40 F8 Module for c-Class BladeSystem"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Application Server Enterprise",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_application_server_enterprise",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 6"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Application Server Standard",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_application_server_standard",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 6"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Application Server Version 5",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_application_server_version_5",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Developer Light Version 6",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_developer_light_version_6",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Developer Professional Version 6",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_developer_professional_version_6",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Developer Standard Version 6",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_developer_standard_version_6",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Developer Version 5",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_developer_version_5",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "Cosminexus Primary Server",
-          "cpe": {
-            "text": "cpe:/a:hitachi:cosminexus_primary_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Base Version 6",
-            "Version 6"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "Hitachi Web Server",
-          "cpe": {
-            "text": "cpe:/a:hitachi:hitachi_web_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "- Security Enhancement"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Application Server",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_application_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Express",
-            "Standard-R"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Application Server Enterprise",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_application_server_enterprise",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Application Server Smart Edition",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_application_server_smart_edition",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Application Server Standard",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_application_server_standard",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Developer",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_developer",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "01",
-            "Professional",
-            "Professional for Plug-in"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Developer Light",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_developer_light",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Developer Standard",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_developer_standard",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Primary Server",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_primary_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Base"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Service Architect",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_service_architect",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日立",
-          "productname": "uCosminexus Service Platform",
-          "cpe": {
-            "text": "cpe:/a:hitachi:ucosminexus_service_platform",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "- Messaging"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.9",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の攻撃者に、SSLv2 をサポートしているサーバの暗号通信を解読される可能性があります。SSLv2 をサポートしており、TLS 通信で SSLv2 と同一の証明書を使用している場合、TLS の暗号通信であっても、同様の影響を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[SSLv2 を無効化する] サーバの管理者は、サーバの SSLv2 サポートを無効化してください。研究者は、様々なサーバ製品で SSLv2 を無効化する方法について更なる情報を公開しています。  更なる情報 https://drownattack.com/#check  サーバが SSLv2 をサポートしているか否かは、次のコマンドで確認することが可能です。 openssl s_client -connect [ホスト名]:443 -ssl2  サーバ証明書の情報が表示された場合、SSLv2 がサポートされています。  なお、SSLv2 は 2011年から非推奨となっています (RFC 6176)。  RFC 6176 http://tools.ietf.org/html/rfc6176  [共通の SSL 証明書を使用しない] TLS 通信自体は、本脆弱性の影響を受けません。SSLv2 のサポートが必要な場合、証明書や鍵の作成に使用する key material は SSLv2 と TLS で別のものを使用してください。  [通信内容を監視し、ファイアウォールのルールを設定する] ファイアウォールの設定で、SSLv2 通信をブロックすることを推奨します。この攻撃では 1,000回程度の SSL ハンドシェイク情報の取得が必要であることから、管理者は、接続試行が繰り返し行われていないか、通信ログを監視しておくことが推奨されます。ただし、このハンドシェイクの情報は中間者攻撃 (man-in-the-middle attack) やその他の攻撃によって取得されることがあるため、攻撃者が直接接続を試行するとは限りません。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "HS16-015",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/HS16-015/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBNS03661",
-          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05307589"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBGN03587",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05141441"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBHF03579",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05143554"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03607",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05157667"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03573",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05096953"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBGN03569",
-          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03575",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05086877"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03601",
-          "url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05150800"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBNS03571",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05073516"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBNS03625",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05176765"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "OpenSSL Security Advisory [1st March 2016]",
-          "url": "https://www.openssl.org/news/secadv/20160301.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Linux Bulletin - January 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - January 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Customer Portal",
-          "vulinfoid": "DROWN - Cross-protocol attack on TLS using SSLv2 (CVE-2016-0800)",
-          "url": "https://access.redhat.com/security/vulnerabilities/drown"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2016:1519",
-          "url": "http://rhn.redhat.com/errata/RHSA-2016-1519.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisories",
-          "vulinfoid": "SA40168",
-          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40168"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "July 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "April 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2016-8",
-          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-8j.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "HS16-015",
-          "url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/HS16-015/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-0800",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0800"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-16-103-03",
-          "url": "https://ics-cert.us-cert.gov/advisories/ICSA-16-103-03"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2016-0010",
-          "url": "http://www.jpcert.or.jp/at/2016/at160010.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90617353",
-          "url": "http://jvn.jp/vu/JVNVU90617353/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-0800",
-          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0800"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#583776",
-          "url": "http://www.kb.cert.org/vuls/id/583776"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "The DROWN Attack",
-          "url": "https://drownattack.com/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "RFC 6176 - Prohibiting Secure Sockets Layer (SSL) Version 2.0",
-          "url": "http://tools.ietf.org/html/rfc6176"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "LibreSSL not affected by DROWN attack",
-          "url": "http://undeadly.org/cgi?action=article&sid=20160301141941"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-310",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
-          "title": "暗号の問題"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年03月03日]\\n  掲載\\n[2016年03月15日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：レッドハット (DROWN - Cross-protocol attack on TLS using SSLv2 (CVE-2016-0800)) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-0800) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2016年03月17日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-8) を追加\\n[2016年05月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  CVSS による深刻度：内容を更新\\n  ベンダ情報：日立 (HS16-015) を追加\\n  ベンダ情報：パルスセキュア (SA40168) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-16-103-03) を追加\\n[2016年06月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03607) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03601) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03569) を追加\\n[2016年07月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加\\n[2016年08月05日]\\n  ベンダ情報：レッドハット (RHSA-2016:1519) を追加\\n[2016年10月26日]\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03587) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBHF03579) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03573) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03575) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03571) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03625) を追加\\n[2016年11月14日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03661) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-03-03T14:19:15+09:00",
-    "datelastupdated": "2016-11-14T17:56:20+09:00",
-    "datepublic": "2016-03-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-001554",
+	"vulinfodata": {
+		"title": "SSLv2 の暗号通信を解読可能な脆弱性 (DROWN 攻撃)",
+		"vulinfodescription": {
+			"overview": "SSLv2 は、十分な回数のハンドシェイクの情報を収集できる場合、暗号通信を解読される可能性があります。これは \"DROWN 攻撃\" という名称で報じられています。  研究者によれば、DROWN 攻撃は、Bleichenbacher のパディングオラクル攻撃の新たな手法です。攻撃者は SSLv2 をサポートしている脆弱なサーバから暗号化された通信内容を解読することが可能です。TLS 通信であっても、SSLv2 のサーバから取得されたものと同一の秘密鍵を使用していた場合、攻撃者は通信内容を解読することが可能です。  本脆弱性の影響を直接受けるのは SSLv2 のみですが、研究者のウェブサイトによると、多くのサーバが SSLv2 と TLS で共通のサーバ証明書を使用しているとのことです。なお、この攻撃では、1,000回程度の SSL ハンドシェイクの情報を取得しておく必要があります。  研究者のウェブサイト https://drownattack.com/  研究者は DROWN 攻撃の確認ツールと、更なる詳細を掲載した FAQ を公開しています。  確認ツール https://drownattack.com/#check  FAQ https://drownattack.com/#question-answer "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.1s 未満",
+						"1.0.2g 未満の 1.0.2"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:oracle:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.6.29 およびそれ以前",
+						"5.7.11 およびそれ以前"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Communications Session Border Controller",
+					"cpe": {
+						"text": "cpe:/a:oracle:communications_session_border_controller",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.2.0",
+						"7.3.0"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "XCP",
+					"cpe": {
+						"text": "cpe:/a:oracle:xcp",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2320 未満 (Fujitsu M10-1/M10-4/M10-4S サーバ)"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "HPE BladeSystem",
+					"cpe": {
+						"text": "cpe:/o:hp:bladesystem",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"c-Class Virtual Connect (VC) ファームウェア 4.30 から VC 4.45"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "HPE Insight Controlサーバー配備",
+					"cpe": {
+						"text": "cpe:/a:hp:insight_control_server_deployment",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"すべてのバージョン"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "HPE Oneview",
+					"cpe": {
+						"text": "cpe:/a:hp:oneview",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for VMware vCenter 7.8.1 以前のリリース"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "HPE Virtual Connect",
+					"cpe": {
+						"text": "cpe:/h:hp:virtual_connect",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Flex-10 10Gb Enet Module",
+						"Flex-10/10D Module for c-Class BladeSystem",
+						"FlexFabric 10Gb/24-port Module for c-Class BladeSystem",
+						"FlexFabric-20/40 F8 Module for c-Class BladeSystem"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Application Server Enterprise",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_application_server_enterprise",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 6"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Application Server Standard",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_application_server_standard",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 6"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Application Server Version 5",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_application_server_version_5",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Developer Light Version 6",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_developer_light_version_6",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Developer Professional Version 6",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_developer_professional_version_6",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Developer Standard Version 6",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_developer_standard_version_6",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Developer Version 5",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_developer_version_5",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "Cosminexus Primary Server",
+					"cpe": {
+						"text": "cpe:/a:hitachi:cosminexus_primary_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Base Version 6",
+						"Version 6"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "Hitachi Web Server",
+					"cpe": {
+						"text": "cpe:/a:hitachi:hitachi_web_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"- Security Enhancement"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Application Server",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_application_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Express",
+						"Standard-R"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Application Server Enterprise",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_application_server_enterprise",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Application Server Smart Edition",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_application_server_smart_edition",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Application Server Standard",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_application_server_standard",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Developer",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_developer",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"01",
+						"Professional",
+						"Professional for Plug-in"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Developer Light",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_developer_light",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Developer Standard",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_developer_standard",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Primary Server",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_primary_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Base"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Service Architect",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_service_architect",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日立",
+					"productname": "uCosminexus Service Platform",
+					"cpe": {
+						"text": "cpe:/a:hitachi:ucosminexus_service_platform",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"- Messaging"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.9",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の攻撃者に、SSLv2 をサポートしているサーバの暗号通信を解読される可能性があります。SSLv2 をサポートしており、TLS 通信で SSLv2 と同一の証明書を使用している場合、TLS の暗号通信であっても、同様の影響を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[SSLv2 を無効化する] サーバの管理者は、サーバの SSLv2 サポートを無効化してください。研究者は、様々なサーバ製品で SSLv2 を無効化する方法について更なる情報を公開しています。  更なる情報 https://drownattack.com/#check  サーバが SSLv2 をサポートしているか否かは、次のコマンドで確認することが可能です。 openssl s_client -connect [ホスト名]:443 -ssl2  サーバ証明書の情報が表示された場合、SSLv2 がサポートされています。  なお、SSLv2 は 2011年から非推奨となっています (RFC 6176)。  RFC 6176 http://tools.ietf.org/html/rfc6176  [共通の SSL 証明書を使用しない] TLS 通信自体は、本脆弱性の影響を受けません。SSLv2 のサポートが必要な場合、証明書や鍵の作成に使用する key material は SSLv2 と TLS で別のものを使用してください。  [通信内容を監視し、ファイアウォールのルールを設定する] ファイアウォールの設定で、SSLv2 通信をブロックすることを推奨します。この攻撃では 1,000回程度の SSL ハンドシェイク情報の取得が必要であることから、管理者は、接続試行が繰り返し行われていないか、通信ログを監視しておくことが推奨されます。ただし、このハンドシェイクの情報は中間者攻撃 (man-in-the-middle attack) やその他の攻撃によって取得されることがあるため、攻撃者が直接接続を試行するとは限りません。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "HS16-015",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/global/security/info/vuls/HS16-015/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBNS03661",
+					"url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05307589"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBGN03587",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05141441"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBHF03579",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05143554"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03607",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05157667"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03573",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05096953"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBGN03569",
+					"url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05068681"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03575",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05086877"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03601",
+					"url": "https://h20566.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c05150800"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBNS03571",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05073516"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBNS03625",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05176765"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "OpenSSL Security Advisory [1st March 2016]",
+					"url": "https://www.openssl.org/news/secadv/20160301.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Linux Bulletin - January 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - January 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Customer Portal",
+					"vulinfoid": "DROWN - Cross-protocol attack on TLS using SSLv2 (CVE-2016-0800)",
+					"url": "https://access.redhat.com/security/vulnerabilities/drown"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2016:1519",
+					"url": "http://rhn.redhat.com/errata/RHSA-2016-1519.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisories",
+					"vulinfoid": "SA40168",
+					"url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40168"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "July 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "April 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2016-8",
+					"url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-8j.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "HS16-015",
+					"url": "http://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/HS16-015/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-0800",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0800"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-16-103-03",
+					"url": "https://ics-cert.us-cert.gov/advisories/ICSA-16-103-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2016-0010",
+					"url": "http://www.jpcert.or.jp/at/2016/at160010.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90617353",
+					"url": "http://jvn.jp/vu/JVNVU90617353/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-0800",
+					"url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0800"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#583776",
+					"url": "http://www.kb.cert.org/vuls/id/583776"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "The DROWN Attack",
+					"url": "https://drownattack.com/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "RFC 6176 - Prohibiting Secure Sockets Layer (SSL) Version 2.0",
+					"url": "http://tools.ietf.org/html/rfc6176"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "LibreSSL not affected by DROWN attack",
+					"url": "http://undeadly.org/cgi?action=article&sid=20160301141941"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-310",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+					"title": "暗号の問題"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年03月03日]\\n  掲載\\n[2016年03月15日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：レッドハット (DROWN - Cross-protocol attack on TLS using SSLv2 (CVE-2016-0800)) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-0800) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n[2016年03月17日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-8) を追加\\n[2016年05月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  CVSS による深刻度：内容を更新\\n  ベンダ情報：日立 (HS16-015) を追加\\n  ベンダ情報：パルスセキュア (SA40168) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-16-103-03) を追加\\n[2016年06月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03607) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03601) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03569) を追加\\n[2016年07月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加\\n[2016年08月05日]\\n  ベンダ情報：レッドハット (RHSA-2016:1519) を追加\\n[2016年10月26日]\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03587) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBHF03579) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03573) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03575) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03571) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03625) を追加\\n[2016年11月14日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBNS03661) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-03-03T14:19:15+09:00",
+		"datelastupdated": "2016-11-14T17:56:20+09:00",
+		"datepublic": "2016-03-01T00:00:00+09:00"
+	}
 }

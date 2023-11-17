@@ -1,366 +1,366 @@
 {
-  "vulinfoid": "JVNDB-2007-000682",
-  "vulinfodata": {
-    "title": "tcpdump の 802.11 プリンタコードにおけるひとつずれによるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "tcpdump には 802.11 プリンタコード (print-802_11.c) の parse_elements() 関数に、一つずれ (off-by-one) によるヒープオーバーフローの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The Tcpdump Group",
-          "productname": "tcpdump",
-          "cpe": {
-            "text": "cpe:/a:tcpdump:tcpdump",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.9.5 およびそれ以前"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.4.11"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X Server",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.4.11"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (x86) ",
-            "3 (x86-64) ",
-            "4.0 ",
-            "4.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10_f "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Appliance Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0 (hosting) ",
-            "1.0 (workgroup) ",
-            "2.0  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Desktop",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux FUJI",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_fuji",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Multimedia",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_multimedia",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Personal",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_personal",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10  ",
-            "10 (x64) ",
-            "8  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "ターボリナックス ホーム ",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_home",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) ",
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0 ",
-            "5.0 (client) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者によって巧妙に細工された 802.11 フレームにより、サービス運用妨害 (DoS) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "Security Update 2007-009",
-          "url": "http://docs.info.apple.com/article.html?artnum=307179-en"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "Security Update 2007-009",
-          "url": "http://docs.info.apple.com/article.html?artnum=307179-ja"
-        },
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "tcpdump-3.9.4-11",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=65"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "tcpdump (V4.0)",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1182"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0368",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0368.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0387",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0387.html"
-        },
-        {
-          "type": "vendor",
-          "name": "tcpdump-changes",
-          "vulinfoid": "3.9.6 tcpdump release",
-          "url": "http://www.tcpdump.org/tcpdump-changes.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2007-46",
-          "url": "http://www.turbolinux.com/security/2007/TLSA-2007-46.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0368",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0368J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0387",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0387J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2007-46",
-          "url": "http://www.turbolinux.co.jp/security/2007/TLSA-2007-46j.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "富士通 公開脆弱性情報",
-          "vulinfoid": "TA07-352A",
-          "url": "http://software.fujitsu.com/jp/security/vulnerabilities/ta07-352a.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2007-1218",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1218"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2007-0793",
-          "url": "http://www.frsirt.com/english/advisories/2007/0793"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "32749",
-          "url": "http://xforce.iss.net/xforce/xfdb/32749"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNTA07-352A",
-          "url": "http://jvn.jp/cert/JVNTA07-352A/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN Status Tracking Notes",
-          "vulinfoid": "TRTA07-352A",
-          "url": "http://jvn.jp/tr/TRTA07-352A/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2007-1218",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-1218"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA24318",
-          "url": "http://secunia.com/advisories/24318"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "22772",
-          "url": "http://www.securityfocus.com/bid/22772"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1017717",
-          "url": "http://www.securitytracker.com/id?1017717"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Cyber Security Alerts",
-          "vulinfoid": "SA07-352A",
-          "url": "http://www.us-cert.gov/cas/alerts/SA07-352A.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Technical Cyber Security Alert",
-          "vulinfoid": "TA07-352A",
-          "url": "http://www.us-cert.gov/cas/techalerts/TA07-352A.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-189",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
-          "title": "数値処理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年09月20日]\\n  掲載\\n[2007年11月30日]\\n  影響を受けるシステム：ミラクルリナックス (tcpdump (V4.0)) の情報追加。\\n  ベンダ情報: ミラクルリナックス (tcpdump (V4.0)) 追加。\\n  影響を受けるシステム：レッドハットの情報追加。\\n  ベンダ情報: レッドハットの情報追加。\\n  ・RHSA-2007:0368\\n  ・RHSA-2007:0387\\n[2007年12月21日]\\n  影響を受けるシステム：アップル (Security Update 2007-009) の情報追加。\\n  影響を受けるシステム：ミラクルリナックス (tcpdump-3.9.4-11) の情報追加。\\n  ベンダ情報：アップル (Security Update 2007-009) 追加。\\n  ベンダ情報：ミラクルリナックス (tcpdump-3.9.4-11) 追加。"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-09-20T14:12:04+09:00",
-    "datelastupdated": "2007-12-21T14:04:39+09:00",
-    "datepublic": "2007-03-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2007-000682",
+	"vulinfodata": {
+		"title": "tcpdump の 802.11 プリンタコードにおけるひとつずれによるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "tcpdump には 802.11 プリンタコード (print-802_11.c) の parse_elements() 関数に、一つずれ (off-by-one) によるヒープオーバーフローの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The Tcpdump Group",
+					"productname": "tcpdump",
+					"cpe": {
+						"text": "cpe:/a:tcpdump:tcpdump",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.9.5 およびそれ以前"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.4.11"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X Server",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.4.11"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (x86) ",
+						"3 (x86-64) ",
+						"4.0 ",
+						"4.0 (x86-64) "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10_f "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Appliance Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0 (hosting) ",
+						"1.0 (workgroup) ",
+						"2.0  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Desktop",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux FUJI",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_fuji",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Multimedia",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_multimedia",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Personal",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_personal",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10  ",
+						"10 (x64) ",
+						"8  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "ターボリナックス ホーム ",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_home",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) ",
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0 ",
+						"5.0 (client) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "第三者によって巧妙に細工された 802.11 フレームにより、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "Security Update 2007-009",
+					"url": "http://docs.info.apple.com/article.html?artnum=307179-en"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "Security Update 2007-009",
+					"url": "http://docs.info.apple.com/article.html?artnum=307179-ja"
+				},
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "tcpdump-3.9.4-11",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=65"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "tcpdump (V4.0)",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1182"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0368",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0368.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0387",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0387.html"
+				},
+				{
+					"type": "vendor",
+					"name": "tcpdump-changes",
+					"vulinfoid": "3.9.6 tcpdump release",
+					"url": "http://www.tcpdump.org/tcpdump-changes.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2007-46",
+					"url": "http://www.turbolinux.com/security/2007/TLSA-2007-46.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0368",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0368J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0387",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0387J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2007-46",
+					"url": "http://www.turbolinux.co.jp/security/2007/TLSA-2007-46j.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "富士通 公開脆弱性情報",
+					"vulinfoid": "TA07-352A",
+					"url": "http://software.fujitsu.com/jp/security/vulnerabilities/ta07-352a.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2007-1218",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1218"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2007-0793",
+					"url": "http://www.frsirt.com/english/advisories/2007/0793"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "32749",
+					"url": "http://xforce.iss.net/xforce/xfdb/32749"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA07-352A",
+					"url": "http://jvn.jp/cert/JVNTA07-352A/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN Status Tracking Notes",
+					"vulinfoid": "TRTA07-352A",
+					"url": "http://jvn.jp/tr/TRTA07-352A/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2007-1218",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-1218"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA24318",
+					"url": "http://secunia.com/advisories/24318"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "22772",
+					"url": "http://www.securityfocus.com/bid/22772"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1017717",
+					"url": "http://www.securitytracker.com/id?1017717"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Cyber Security Alerts",
+					"vulinfoid": "SA07-352A",
+					"url": "http://www.us-cert.gov/cas/alerts/SA07-352A.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA07-352A",
+					"url": "http://www.us-cert.gov/cas/techalerts/TA07-352A.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-189",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+					"title": "数値処理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年09月20日]\\n  掲載\\n[2007年11月30日]\\n  影響を受けるシステム：ミラクルリナックス (tcpdump (V4.0)) の情報追加。\\n  ベンダ情報: ミラクルリナックス (tcpdump (V4.0)) 追加。\\n  影響を受けるシステム：レッドハットの情報追加。\\n  ベンダ情報: レッドハットの情報追加。\\n  ・RHSA-2007:0368\\n  ・RHSA-2007:0387\\n[2007年12月21日]\\n  影響を受けるシステム：アップル (Security Update 2007-009) の情報追加。\\n  影響を受けるシステム：ミラクルリナックス (tcpdump-3.9.4-11) の情報追加。\\n  ベンダ情報：アップル (Security Update 2007-009) 追加。\\n  ベンダ情報：ミラクルリナックス (tcpdump-3.9.4-11) 追加。"
+				}
+			]
+		},
+		"datefirstpublished": "2007-09-20T14:12:04+09:00",
+		"datelastupdated": "2007-12-21T14:04:39+09:00",
+		"datepublic": "2007-03-02T00:00:00+09:00"
+	}
 }

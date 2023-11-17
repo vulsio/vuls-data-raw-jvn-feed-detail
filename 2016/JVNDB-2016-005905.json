@@ -1,255 +1,255 @@
 {
-  "vulinfoid": "JVNDB-2016-005905",
-  "vulinfodata": {
-    "title": "Ragentek 製のコードを使用した Android 端末の OTA アップデートに中間者攻撃が可能な脆弱性",
-    "vulinfodescription": {
-      "overview": "Ragentek 製の Android ソフトウェアにおける Over-The-Air (OTA) アップデートは、暗号化せずに通信が行われるため、遠隔の攻撃者が root 権限で任意のコードを実行することが可能です。  完全性未確認のコードのダウンロード (CWE-494) - CVE-2016-6564 Ragentek 製のコードを使用した Android 端末には、Over-The-Air (OTA) アップデート機能を持つプログラムが存在します。また、このプログラムの実行を隠す複数の方法が使用されおり、この挙動はもはや rootkit であるといえます。  CWE-494: Download of Code Without Integrity Check http://cwe.mitre.org/data/definitions/494.html  Rootkit https://en.wikipedia.org/wiki/Rootkit   /system/bin/debugs に存在するこのプログラムは root 権限で動作し、暗号化されたチャネルでの通信を行いません。 このプログラムは、HTTP 経由で次の 3つのホストと通信を行います。  　oyag[.]lhzbdvm[.]com 　oyag[.]prugskh[.]net 　oyag[.]prugskh[.]com   このプログラムから送信されたリクエストに対するサーバのレスポンスは、root 権限で任意のコマンドを実行したり、アプリケーションをインストールしたり、設定情報を更新したりする機能を備えています。  当該プログラムから送信されるリクエストの例：  　POST /pagt/agent?data={\"name\":\"c_regist\",\"details\":{...}} HTTP/1. 1 　Host: 114.80.68.223 　Connection: Close  サーバからのレスポンスの例：  　HTTP/1.1 200 OK 　{\"code\": \"01\", \"name\": \"push_commands\", \"details\": {\"server_id\": \"1\" , 　\"title\": \"Test Command\", \"comments\": \"Test\", \"commands\": \"touch /tmp/test\"}}"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Beeline",
-          "productname": "Beeline Pro 2",
-          "cpe": {
-            "text": "cpe:/o:beeline:pro_2_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "BLU Products",
-          "productname": "BLU Studio 6.0 HD",
-          "cpe": {
-            "text": "cpe:/o:bluproducts:studio_6.0_hd_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "BLU Products",
-          "productname": "BLU Studio C HD",
-          "cpe": {
-            "text": "cpe:/o:bluproducts:studio_c_hd_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "BLU Products",
-          "productname": "BLU Studio G",
-          "cpe": {
-            "text": "cpe:/o:bluproducts:studio_g_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "BLU Products",
-          "productname": "BLU Studio G Plus",
-          "cpe": {
-            "text": "cpe:/o:bluproducts:studio_g_plus_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "BLU Products",
-          "productname": "BLU Studio X",
-          "cpe": {
-            "text": "cpe:/o:bluproducts:studio_x_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "BLU Products",
-          "productname": "BLU Studio X Plus",
-          "cpe": {
-            "text": "cpe:/o:bluproducts:studio_x_plus_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "IKU Mobile",
-          "productname": "IKU Colorful K45i",
-          "cpe": {
-            "text": "cpe:/o:iku-mobile:colorful_k45i_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Infinix Mobile",
-          "productname": "Infinix Hot 2 X510",
-          "cpe": {
-            "text": "cpe:/o:infinixmobility:hot_2_x510_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Infinix Mobile",
-          "productname": "Infinix Hot X507",
-          "cpe": {
-            "text": "cpe:/o:infinixmobility:hot_x507_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Infinix Mobile",
-          "productname": "Infinix Zero 2 X509",
-          "cpe": {
-            "text": "cpe:/o:infinixmobility:zero_2_x509_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Infinix Mobile",
-          "productname": "Infinix Zero X506",
-          "cpe": {
-            "text": "cpe:/o:infinixmobility:zero_x506_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "LEAGOO Global Co., Limited",
-          "productname": "LEAGOO Alfa 6",
-          "cpe": {
-            "text": "cpe:/o:leagoo:alfa_6_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "LEAGOO Global Co., Limited",
-          "productname": "LEAGOO Lead 2S",
-          "cpe": {
-            "text": "cpe:/o:leagoo:lead_2s_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "LEAGOO Global Co., Limited",
-          "productname": "LEAGOO Lead 3i",
-          "cpe": {
-            "text": "cpe:/o:leagoo:lead_3i_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "LEAGOO Global Co., Limited",
-          "productname": "LEAGOO Lead 5",
-          "cpe": {
-            "text": "cpe:/o:leagoo:lead_5_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "LEAGOO Global Co., Limited",
-          "productname": "LEAGOO Lead 6",
-          "cpe": {
-            "text": "cpe:/o:leagoo:lead_6_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Shenzhen DOOGEE Hengtong Technology Co., Ltd",
-          "productname": "DOOGEE Voyager 2 DG310",
-          "cpe": {
-            "text": "cpe:/o:doogee:voyager_2_dg310i_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "XOLO",
-          "productname": "XOLO Cube 5.0",
-          "cpe": {
-            "text": "cpe:/o:xolo:cube_5.0_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "（複数のベンダ）",
-          "productname": "（複数の製品）",
-          "cpe": {
-            "text": "cpe:/a:misc:multiple_vendors",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.3",
-          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.1",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "中間者 (man-in-the-middle) 攻撃によって、root 権限で任意のコマンドを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 報告者によれば、BLU シリーズには本脆弱性の修正アップデートが提供されているとのことです。詳細は、CERT/CC Vulnerability Note VU#624539 の Vendor Information をご確認ください。  VU#624539 の Vendor Information http://www.kb.cert.org/vuls/id/624539#vendors  それ以外の端末は、開発者や配布元が提供するアップデートをご確認ください。   [ワークアラウンドを実施する] 対策アップデートを適用するまでの間、本脆弱性の影響を回避するため、次のワークアラウンドを実施してください。  　・ 信頼できないネットワークや Wi-Fi アクセスポイントに接続しない"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-6564",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6564"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98782459",
-          "url": "http://jvn.jp/vu/JVNVU98782459/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-6564",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6564"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#624539",
-          "url": "http://www.kb.cert.org/vuls/id/624539"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年11月21日]\\n  掲載"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2019-07-24T15:10:37+09:00",
-          "description": "[2019年07月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6564) を追加\\n  影響を受けるシステム：内容の更新"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-11-21T11:48:07+09:00",
-    "datelastupdated": "2019-07-24T15:06:21+09:00",
-    "datepublic": "2016-11-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-005905",
+	"vulinfodata": {
+		"title": "Ragentek 製のコードを使用した Android 端末の OTA アップデートに中間者攻撃が可能な脆弱性",
+		"vulinfodescription": {
+			"overview": "Ragentek 製の Android ソフトウェアにおける Over-The-Air (OTA) アップデートは、暗号化せずに通信が行われるため、遠隔の攻撃者が root 権限で任意のコードを実行することが可能です。  完全性未確認のコードのダウンロード (CWE-494) - CVE-2016-6564 Ragentek 製のコードを使用した Android 端末には、Over-The-Air (OTA) アップデート機能を持つプログラムが存在します。また、このプログラムの実行を隠す複数の方法が使用されおり、この挙動はもはや rootkit であるといえます。  CWE-494: Download of Code Without Integrity Check http://cwe.mitre.org/data/definitions/494.html  Rootkit https://en.wikipedia.org/wiki/Rootkit   /system/bin/debugs に存在するこのプログラムは root 権限で動作し、暗号化されたチャネルでの通信を行いません。 このプログラムは、HTTP 経由で次の 3つのホストと通信を行います。  　oyag[.]lhzbdvm[.]com 　oyag[.]prugskh[.]net 　oyag[.]prugskh[.]com   このプログラムから送信されたリクエストに対するサーバのレスポンスは、root 権限で任意のコマンドを実行したり、アプリケーションをインストールしたり、設定情報を更新したりする機能を備えています。  当該プログラムから送信されるリクエストの例：  　POST /pagt/agent?data={\"name\":\"c_regist\",\"details\":{...}} HTTP/1. 1 　Host: 114.80.68.223 　Connection: Close  サーバからのレスポンスの例：  　HTTP/1.1 200 OK 　{\"code\": \"01\", \"name\": \"push_commands\", \"details\": {\"server_id\": \"1\" , 　\"title\": \"Test Command\", \"comments\": \"Test\", \"commands\": \"touch /tmp/test\"}}"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Beeline",
+					"productname": "Beeline Pro 2",
+					"cpe": {
+						"text": "cpe:/o:beeline:pro_2_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "BLU Products",
+					"productname": "BLU Studio 6.0 HD",
+					"cpe": {
+						"text": "cpe:/o:bluproducts:studio_6.0_hd_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "BLU Products",
+					"productname": "BLU Studio C HD",
+					"cpe": {
+						"text": "cpe:/o:bluproducts:studio_c_hd_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "BLU Products",
+					"productname": "BLU Studio G",
+					"cpe": {
+						"text": "cpe:/o:bluproducts:studio_g_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "BLU Products",
+					"productname": "BLU Studio G Plus",
+					"cpe": {
+						"text": "cpe:/o:bluproducts:studio_g_plus_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "BLU Products",
+					"productname": "BLU Studio X",
+					"cpe": {
+						"text": "cpe:/o:bluproducts:studio_x_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "BLU Products",
+					"productname": "BLU Studio X Plus",
+					"cpe": {
+						"text": "cpe:/o:bluproducts:studio_x_plus_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "IKU Mobile",
+					"productname": "IKU Colorful K45i",
+					"cpe": {
+						"text": "cpe:/o:iku-mobile:colorful_k45i_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Infinix Mobile",
+					"productname": "Infinix Hot 2 X510",
+					"cpe": {
+						"text": "cpe:/o:infinixmobility:hot_2_x510_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Infinix Mobile",
+					"productname": "Infinix Hot X507",
+					"cpe": {
+						"text": "cpe:/o:infinixmobility:hot_x507_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Infinix Mobile",
+					"productname": "Infinix Zero 2 X509",
+					"cpe": {
+						"text": "cpe:/o:infinixmobility:zero_2_x509_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Infinix Mobile",
+					"productname": "Infinix Zero X506",
+					"cpe": {
+						"text": "cpe:/o:infinixmobility:zero_x506_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "LEAGOO Global Co., Limited",
+					"productname": "LEAGOO Alfa 6",
+					"cpe": {
+						"text": "cpe:/o:leagoo:alfa_6_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "LEAGOO Global Co., Limited",
+					"productname": "LEAGOO Lead 2S",
+					"cpe": {
+						"text": "cpe:/o:leagoo:lead_2s_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "LEAGOO Global Co., Limited",
+					"productname": "LEAGOO Lead 3i",
+					"cpe": {
+						"text": "cpe:/o:leagoo:lead_3i_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "LEAGOO Global Co., Limited",
+					"productname": "LEAGOO Lead 5",
+					"cpe": {
+						"text": "cpe:/o:leagoo:lead_5_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "LEAGOO Global Co., Limited",
+					"productname": "LEAGOO Lead 6",
+					"cpe": {
+						"text": "cpe:/o:leagoo:lead_6_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Shenzhen DOOGEE Hengtong Technology Co., Ltd",
+					"productname": "DOOGEE Voyager 2 DG310",
+					"cpe": {
+						"text": "cpe:/o:doogee:voyager_2_dg310i_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "XOLO",
+					"productname": "XOLO Cube 5.0",
+					"cpe": {
+						"text": "cpe:/o:xolo:cube_5.0_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.3",
+					"vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.1",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "中間者 (man-in-the-middle) 攻撃によって、root 権限で任意のコマンドを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 報告者によれば、BLU シリーズには本脆弱性の修正アップデートが提供されているとのことです。詳細は、CERT/CC Vulnerability Note VU#624539 の Vendor Information をご確認ください。  VU#624539 の Vendor Information http://www.kb.cert.org/vuls/id/624539#vendors  それ以外の端末は、開発者や配布元が提供するアップデートをご確認ください。   [ワークアラウンドを実施する] 対策アップデートを適用するまでの間、本脆弱性の影響を回避するため、次のワークアラウンドを実施してください。  　・ 信頼できないネットワークや Wi-Fi アクセスポイントに接続しない"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-6564",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6564"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98782459",
+					"url": "http://jvn.jp/vu/JVNVU98782459/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-6564",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6564"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#624539",
+					"url": "http://www.kb.cert.org/vuls/id/624539"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年11月21日]\\n  掲載"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2019-07-24T15:10:37+09:00",
+					"description": "[2019年07月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6564) を追加\\n  影響を受けるシステム：内容の更新"
+				}
+			]
+		},
+		"datefirstpublished": "2016-11-21T11:48:07+09:00",
+		"datelastupdated": "2019-07-24T15:06:21+09:00",
+		"datepublic": "2016-11-17T00:00:00+09:00"
+	}
 }

@@ -1,170 +1,170 @@
 {
-  "vulinfoid": "JVNDB-2015-003942",
-  "vulinfodata": {
-    "title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC BIND 9 には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND 9 には、TKEY クエリの処理に起因するサービス運用妨害 (DoS) の脆弱性が存在します。  ISC のアドバイザリには次のように記載されています。  ISC アドバイザリ https://kb.isc.org/article/AA-01272/  　\"An error in the handling of TKEY queries can be exploited by an attacker for use as a denial-of-service vector, as a constructed packet can use the defect to trigger a REQUIRE assertion failure, causing BIND to exit.\"  また、問題となる処理は、パケット処理のなかで境界チェックが行われる前に実行されているため、ACL や設定によって本脆弱性への攻撃を防ぐことはできません。  なお、本脆弱性を使用した攻撃コードが公開されており、攻撃も確認されています。  また、National Vulnerability Database (NVD) では、CWE-19 として公開されています。  CWE-19: Data Handling http://cwe.mitre.org/data/definitions/19.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.1.0 から 9.8.x まで",
-            "9.10.0 から 9.10.2-P2 まで",
-            "9.9.0 から 9.9.7-P1 まで"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10.5 およびそれ以降"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "Express5800",
-          "cpe": {
-            "text": "cpe:/h:nec:express5800",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "/SG 全バージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の攻撃者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  ISC からは、本脆弱性の対策として次のバージョンがリリースされています。 　* BIND 9.9.7-P2 　* BIND 9.10.2-P3"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-08-13-4 OS X Server v4.1.5",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00003.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205032",
-          "url": "https://support.apple.com/en-us/HT205032"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205032",
-          "url": "https://support.apple.com/ja-jp/HT205032"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "CVE-2015-5477: An error in handling TKEY queries can cause named to exit with a REQUIRE assertion failure",
-          "url": "https://kb.isc.org/article/AA-01272/"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV16-008",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv16-008.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - July 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2015-16",
-          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-16j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-5477",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5477"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "DNS サーバ BIND の脆弱性対策について(CVE-2015-5477)",
-          "url": "https://www.ipa.go.jp/security/ciadr/vul/20150731-bind.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2015-0027",
-          "url": "http://www.jpcert.or.jp/at/2015/at150027.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（2015年7月29日公開）",
-          "url": "http://jprs.jp/tech/security/2015-07-29-bind9-vuln-tkey.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#91955066",
-          "url": "http://jvn.jp/vu/JVNVU91955066/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-5477",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5477"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年07月30日]\\n  掲載\\n[2015年07月31日]\\n  概要：内容を更新\\n  参考情報：IPA 重要なセキュリティ情報 (DNS サーバ BIND の脆弱性対策について(CVE-2015-5477)) を追加\\n[2015年08月07日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2015) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-4 OS X Server v4.1.5) を追加\\n  ベンダ情報：アップル (HT205032) を追加\\n[2015年09月07日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-16) を追加\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV16-008) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-07-30T10:47:48+09:00",
-    "datelastupdated": "2016-06-23T14:49:46+09:00",
-    "datepublic": "2015-07-29T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-003942",
+	"vulinfodata": {
+		"title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC BIND 9 には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND 9 には、TKEY クエリの処理に起因するサービス運用妨害 (DoS) の脆弱性が存在します。  ISC のアドバイザリには次のように記載されています。  ISC アドバイザリ https://kb.isc.org/article/AA-01272/  　\"An error in the handling of TKEY queries can be exploited by an attacker for use as a denial-of-service vector, as a constructed packet can use the defect to trigger a REQUIRE assertion failure, causing BIND to exit.\"  また、問題となる処理は、パケット処理のなかで境界チェックが行われる前に実行されているため、ACL や設定によって本脆弱性への攻撃を防ぐことはできません。  なお、本脆弱性を使用した攻撃コードが公開されており、攻撃も確認されています。  また、National Vulnerability Database (NVD) では、CWE-19 として公開されています。  CWE-19: Data Handling http://cwe.mitre.org/data/definitions/19.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.1.0 から 9.8.x まで",
+						"9.10.0 から 9.10.2-P2 まで",
+						"9.9.0 から 9.9.7-P1 まで"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10.5 およびそれ以降"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "Express5800",
+					"cpe": {
+						"text": "cpe:/h:nec:express5800",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"/SG 全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の攻撃者によって、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  ISC からは、本脆弱性の対策として次のバージョンがリリースされています。 　* BIND 9.9.7-P2 　* BIND 9.10.2-P3"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-08-13-4 OS X Server v4.1.5",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00003.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205032",
+					"url": "https://support.apple.com/en-us/HT205032"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205032",
+					"url": "https://support.apple.com/ja-jp/HT205032"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "CVE-2015-5477: An error in handling TKEY queries can cause named to exit with a REQUIRE assertion failure",
+					"url": "https://kb.isc.org/article/AA-01272/"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV16-008",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv16-008.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - July 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjul2015-2511963.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2015-16",
+					"url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-16j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-5477",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5477"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "DNS サーバ BIND の脆弱性対策について(CVE-2015-5477)",
+					"url": "https://www.ipa.go.jp/security/ciadr/vul/20150731-bind.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2015-0027",
+					"url": "http://www.jpcert.or.jp/at/2015/at150027.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（2015年7月29日公開）",
+					"url": "http://jprs.jp/tech/security/2015-07-29-bind9-vuln-tkey.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91955066",
+					"url": "http://jvn.jp/vu/JVNVU91955066/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-5477",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5477"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年07月30日]\\n  掲載\\n[2015年07月31日]\\n  概要：内容を更新\\n  参考情報：IPA 重要なセキュリティ情報 (DNS サーバ BIND の脆弱性対策について(CVE-2015-5477)) を追加\\n[2015年08月07日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - July 2015) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-4 OS X Server v4.1.5) を追加\\n  ベンダ情報：アップル (HT205032) を追加\\n[2015年09月07日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-16) を追加\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV16-008) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-07-30T10:47:48+09:00",
+		"datelastupdated": "2016-06-23T14:49:46+09:00",
+		"datepublic": "2015-07-29T00:00:00+09:00"
+	}
 }

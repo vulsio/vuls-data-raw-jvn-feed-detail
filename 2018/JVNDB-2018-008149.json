@@ -1,139 +1,139 @@
 {
-  "vulinfoid": "JVNDB-2018-008149",
-  "vulinfodata": {
-    "title": "Auto-Maskin DCU 210E、RP 210E および Marine Pro Observer App に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Auto-Maskin RP リモートパネルと DCU コントロールユニットは船舶のエンジンの監視および制御を行う製品です。これらの製品には認証や暗号化に関する複数の脆弱性が存在し、攻撃者によって製品にアクセスされ、船舶のエンジン操作を乗っ取られる可能性があります。  認証情報がハードコードされている問題 (CWE-798) - CVE-2018-5399 DCU 210E のファームウエアには Dropbear SSH server が含まれていますが、このことはドキュメントに記載されていません。また、SSH 接続のためのユーザ名とパスワードがハードコードされており、そのパスワードは容易に推測可能なものです。  接続元の妥当性検証の不備 (CWE-346) - CVE-2018-5400 当該製品はドキュメントに記載されていない独自のプロトコルを使用して他の機器との Modbus 通信を行っていますが、機器間の接続の妥当性を検証していません。  機微な情報がクリアテキストで送信される問題 (CWE-319) - CVE-2018-5401 当該製品は暗号化されていない Modbus 通信を使用して制御情報を送信しています。  機微な情報がクリアテキストで送信される問題 (CWE-319) - CVE-2018-5402 当該製品に含まれるウェブサーバは暗号化されていないプレーンテキストを使用して管理者 PIN コードを送信しています。  これらの脆弱性は Brian Satira 氏および Brian Olson 氏により報告されました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Auto-Maskin",
-          "productname": "DCU 210E ファームウェア",
-          "cpe": {
-            "text": "cpe:/a:auto-maskin:dcu_210e_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Auto-Maskin",
-          "productname": "Marine Pro Observer",
-          "cpe": {
-            "text": "cpe:/a:auto-maskin:marine_pro_observer",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Auto-Maskin",
-          "productname": "RP 210E ファームウェア",
-          "cpe": {
-            "text": "cpe:/a:auto-maskin:rp_210e_firmware",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "攻撃者によって本脆弱性を利用され、機器の構成や設定情報、センサーの動作状況などの情報を取得される可能性があります。 また、任意の Modbus (制御) 情報を送信される可能性もあります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2018年10月9日現在、対策方法は不明です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-5399",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5399"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-5400",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5400"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-5401",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5401"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-5402",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5402"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-051-04",
-          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-051-04"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99039923",
-          "url": "https://jvn.jp/vu/JVNVU99039923/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-5400",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5400"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-5401",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5401"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-5402",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5402"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-5399",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5399"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#176301",
-          "url": "https://www.kb.cert.org/vuls/id/176301"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-10-10T12:37:10+09:00",
-          "description": "[2018年10月10日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-08-28T09:44:35+09:00",
-          "description": "[2019年08月28日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5399) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5400) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5401) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5402) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2020-02-21T16:04:54+09:00",
-          "description": "[2020年02月21日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-051-04) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-10-10T12:37:10+09:00",
-    "datelastupdated": "2020-02-21T16:42:58+09:00",
-    "datepublic": "2018-10-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-008149",
+	"vulinfodata": {
+		"title": "Auto-Maskin DCU 210E、RP 210E および Marine Pro Observer App に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Auto-Maskin RP リモートパネルと DCU コントロールユニットは船舶のエンジンの監視および制御を行う製品です。これらの製品には認証や暗号化に関する複数の脆弱性が存在し、攻撃者によって製品にアクセスされ、船舶のエンジン操作を乗っ取られる可能性があります。  認証情報がハードコードされている問題 (CWE-798) - CVE-2018-5399 DCU 210E のファームウエアには Dropbear SSH server が含まれていますが、このことはドキュメントに記載されていません。また、SSH 接続のためのユーザ名とパスワードがハードコードされており、そのパスワードは容易に推測可能なものです。  接続元の妥当性検証の不備 (CWE-346) - CVE-2018-5400 当該製品はドキュメントに記載されていない独自のプロトコルを使用して他の機器との Modbus 通信を行っていますが、機器間の接続の妥当性を検証していません。  機微な情報がクリアテキストで送信される問題 (CWE-319) - CVE-2018-5401 当該製品は暗号化されていない Modbus 通信を使用して制御情報を送信しています。  機微な情報がクリアテキストで送信される問題 (CWE-319) - CVE-2018-5402 当該製品に含まれるウェブサーバは暗号化されていないプレーンテキストを使用して管理者 PIN コードを送信しています。  これらの脆弱性は Brian Satira 氏および Brian Olson 氏により報告されました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Auto-Maskin",
+					"productname": "DCU 210E ファームウェア",
+					"cpe": {
+						"text": "cpe:/a:auto-maskin:dcu_210e_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Auto-Maskin",
+					"productname": "Marine Pro Observer",
+					"cpe": {
+						"text": "cpe:/a:auto-maskin:marine_pro_observer",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Auto-Maskin",
+					"productname": "RP 210E ファームウェア",
+					"cpe": {
+						"text": "cpe:/a:auto-maskin:rp_210e_firmware",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "攻撃者によって本脆弱性を利用され、機器の構成や設定情報、センサーの動作状況などの情報を取得される可能性があります。 また、任意の Modbus (制御) 情報を送信される可能性もあります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2018年10月9日現在、対策方法は不明です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-5399",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5399"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-5400",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5400"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-5401",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5401"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-5402",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5402"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-051-04",
+					"url": "https://www.us-cert.gov/ics/advisories/icsa-20-051-04"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99039923",
+					"url": "https://jvn.jp/vu/JVNVU99039923/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-5400",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5400"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-5401",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5401"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-5402",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5402"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-5399",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5399"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#176301",
+					"url": "https://www.kb.cert.org/vuls/id/176301"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-10-10T12:37:10+09:00",
+					"description": "[2018年10月10日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-08-28T09:44:35+09:00",
+					"description": "[2019年08月28日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5399) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5400) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5401) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5402) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2020-02-21T16:04:54+09:00",
+					"description": "[2020年02月21日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-051-04) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-10-10T12:37:10+09:00",
+		"datelastupdated": "2020-02-21T16:42:58+09:00",
+		"datepublic": "2018-10-06T00:00:00+09:00"
+	}
 }

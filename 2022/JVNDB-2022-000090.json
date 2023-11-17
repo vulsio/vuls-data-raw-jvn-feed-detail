@@ -1,155 +1,155 @@
 {
-  "vulinfoid": "JVNDB-2022-000090",
-  "vulinfodata": {
-    "title": "Movable Type における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "シックス・アパート株式会社が提供する Movable Type には、次の複数の脆弱性が存在します。 <ul>  <li>入力値に対する不適切な構文検証 (CWE-1286) - CVE-2022-45113  <li>クロスサイトスクリプティング (CWE-79) - CVE-2022-45122  <li>コードインジェクション (CWE-97) - CVE-2022-43660</ul> CVE-2022-45113、CVE-2022-45122 これらの脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ブロードバンドセキュリティ 志賀 拓馬 氏  CVE-2022-43660 この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "シックス・アパート株式会社",
-          "productname": "Movable Type",
-          "cpe": {
-            "text": "cpe:/a:sixapart:movabletype",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.8.7 およびそれ以前 (Movable Type 6系)(CVE-2022-45113、CVE-2022-45122)",
-            "7 r.5301 およびそれ以前 (Movable Type 7系)(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
-          ]
-        },
-        {
-          "name": "シックス・アパート株式会社",
-          "productname": "Movable Type Advanced",
-          "cpe": {
-            "text": "cpe:/a:sixapart:movabletype_advanced",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.8.7 およびそれ以前 (Movable Type Advanced 6系)(CVE-2022-45113、CVE-2022-45122)",
-            "7 r.5301 およびそれ以前 (Movable Type Advanced 7系)(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
-          ]
-        },
-        {
-          "name": "シックス・アパート株式会社",
-          "productname": "Movable Type Premium",
-          "cpe": {
-            "text": "cpe:/a:sixapart:movabletype_premium",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.53 およびそれ以前(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
-          ]
-        },
-        {
-          "name": "シックス・アパート株式会社",
-          "productname": "Movable Type Premium Advanced",
-          "cpe": {
-            "text": "cpe:/a:sixapart:movabletype_premium_advanced",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.53 およびそれ以前(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.6",
-          "vector": "AV:N/AC:H/Au:S/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul>  <li>細工された URL にアクセスすることで、当該製品のパスワードリセット画面の特定箇所に不正な URL へのリンクを設定される - CVE-2022-45113  <li>当該製品の管理画面にサインイン後、細工された URL にアクセスすることで、Web ブラウザ上で任意のスクリプトを実行される - CVE-2022-45122  <li>当該製品のコンテンツフィールドの編集権限を持つユーザによって任意の Perl スクリプトを実行されたり、Perl スクリプトを介して任意の OS コマンドを実行されたりする - CVE-2022-43660</ul> "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 <ul>  <li>Movable Type 7 r.5401 (Movable Type 7系)  <li>Movable Type Advanced 7 r.5401 (Movable Type Advanced 7系)  <li>Movable Type 6.8.8 (Movable Type 6系)  <li>Movable Type Advanced 6.8.8 (Movable Type Advanced 6系)  <li>Movable Type Premium 1.54  <li>Movable Type Premium Advancedn 1.54</ul>"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "シックス・アパート株式会社からの情報",
-          "url": "https://jvn.jp/jp/JVN37014768/370331/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MOVABLETYPE NEWS",
-          "vulinfoid": "[重要] Movable Type 7 r.5401 / Movable Type 6.8.8 / Movable Type Premium 1.54 の提供開始（セキュリティアップデート）と Movable Type 8 についてのお知らせ",
-          "url": "https://www.sixapart.jp/movabletype/news/2022/11/16-1100.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-43660",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-43660"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-45113",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-45113"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-45122",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-45122"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#37014768",
-          "url": "https://jvn.jp/jp/JVN37014768/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-11-11T10:57:57+09:00",
-          "description": "[2022年11月16日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-11-16T14:07:19+09:00",
-    "datelastupdated": "2022-11-16T14:07:19+09:00",
-    "datepublic": "2022-11-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-000090",
+	"vulinfodata": {
+		"title": "Movable Type における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "シックス・アパート株式会社が提供する Movable Type には、次の複数の脆弱性が存在します。 <ul>  <li>入力値に対する不適切な構文検証 (CWE-1286) - CVE-2022-45113  <li>クロスサイトスクリプティング (CWE-79) - CVE-2022-45122  <li>コードインジェクション (CWE-97) - CVE-2022-43660</ul> CVE-2022-45113、CVE-2022-45122 これらの脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ブロードバンドセキュリティ 志賀 拓馬 氏  CVE-2022-43660 この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シックス・アパート株式会社",
+					"productname": "Movable Type",
+					"cpe": {
+						"text": "cpe:/a:sixapart:movabletype",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.8.7 およびそれ以前 (Movable Type 6系)(CVE-2022-45113、CVE-2022-45122)",
+						"7 r.5301 およびそれ以前 (Movable Type 7系)(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
+					]
+				},
+				{
+					"name": "シックス・アパート株式会社",
+					"productname": "Movable Type Advanced",
+					"cpe": {
+						"text": "cpe:/a:sixapart:movabletype_advanced",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.8.7 およびそれ以前 (Movable Type Advanced 6系)(CVE-2022-45113、CVE-2022-45122)",
+						"7 r.5301 およびそれ以前 (Movable Type Advanced 7系)(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
+					]
+				},
+				{
+					"name": "シックス・アパート株式会社",
+					"productname": "Movable Type Premium",
+					"cpe": {
+						"text": "cpe:/a:sixapart:movabletype_premium",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.53 およびそれ以前(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
+					]
+				},
+				{
+					"name": "シックス・アパート株式会社",
+					"productname": "Movable Type Premium Advanced",
+					"cpe": {
+						"text": "cpe:/a:sixapart:movabletype_premium_advanced",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.53 およびそれ以前(CVE-2022-45113、CVE-2022-45122、CVE-2022-43660)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.6",
+					"vector": "AV:N/AC:H/Au:S/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul>  <li>細工された URL にアクセスすることで、当該製品のパスワードリセット画面の特定箇所に不正な URL へのリンクを設定される - CVE-2022-45113  <li>当該製品の管理画面にサインイン後、細工された URL にアクセスすることで、Web ブラウザ上で任意のスクリプトを実行される - CVE-2022-45122  <li>当該製品のコンテンツフィールドの編集権限を持つユーザによって任意の Perl スクリプトを実行されたり、Perl スクリプトを介して任意の OS コマンドを実行されたりする - CVE-2022-43660</ul> "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。 <ul>  <li>Movable Type 7 r.5401 (Movable Type 7系)  <li>Movable Type Advanced 7 r.5401 (Movable Type Advanced 7系)  <li>Movable Type 6.8.8 (Movable Type 6系)  <li>Movable Type Advanced 6.8.8 (Movable Type Advanced 6系)  <li>Movable Type Premium 1.54  <li>Movable Type Premium Advancedn 1.54</ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "シックス・アパート株式会社からの情報",
+					"url": "https://jvn.jp/jp/JVN37014768/370331/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MOVABLETYPE NEWS",
+					"vulinfoid": "[重要] Movable Type 7 r.5401 / Movable Type 6.8.8 / Movable Type Premium 1.54 の提供開始（セキュリティアップデート）と Movable Type 8 についてのお知らせ",
+					"url": "https://www.sixapart.jp/movabletype/news/2022/11/16-1100.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-43660",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-43660"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-45113",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-45113"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-45122",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-45122"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#37014768",
+					"url": "https://jvn.jp/jp/JVN37014768/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-11-11T10:57:57+09:00",
+					"description": "[2022年11月16日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2022-11-16T14:07:19+09:00",
+		"datelastupdated": "2022-11-16T14:07:19+09:00",
+		"datepublic": "2022-11-16T00:00:00+09:00"
+	}
 }

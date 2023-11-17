@@ -1,679 +1,679 @@
 {
-  "vulinfoid": "JVNDB-2015-001881",
-  "vulinfodata": {
-    "title": "OpenSSL の crypto/asn1/a_type.c の ASN1_TYPE_cmp 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL の crypto/asn1/a_type.c の ASN1_TYPE_cmp 関数は、ブール (ブーリアン) 型の比較を適切に実行しないため、サービス運用妨害 (不正な読み取り操作およびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "0.9.8 以上 0.9.8zf 未満",
-            "1.0.0 以上 1.0.0r 未満",
-            "1.0.1 以上 1.0.1m 未満",
-            "1.0.2 以上 1.0.2a 未満"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 から 10.10.3 (HT204942)",
-            "10.6.8 以降 10.11 未満 (HT205267)"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "iOS",
-          "cpe": {
-            "text": "cpe:/o:apple:iphone_os",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9 未満 (iPad 2 以降)",
-            "9 未満 (iPhone 4s 以降)",
-            "9 未満 (iPod touch 第 5 世代以降)"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:oracle:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.6.25 およびそれ以前",
-            "Enterprise Monitor 2.3.20 およびそれ以前",
-            "Enterprise Monitor 3.0.22 およびそれ以前"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Communications Applications",
-          "cpe": {
-            "text": "cpe:/a:oracle:communications_applications",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Enterprise Session Border Controller Ecz7.3m1p4 およびそれ以前"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Communications Policy Management",
-          "cpe": {
-            "text": "cpe:/a:oracle:communications_policy_management",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.4.1",
-            "12.1.1 およびそれ以前",
-            "9.7.3",
-            "9.9.1"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Enterprise Manager",
-          "cpe": {
-            "text": "cpe:/a:oracle:enterprise_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ops Center 12.1.4 未満",
-            "Ops Center 12.2.0",
-            "Ops Center 12.2.1",
-            "Ops Center 12.3.0"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Fusion Middleware",
-          "cpe": {
-            "text": "cpe:/a:oracle:fusion_middleware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Business Intelligence Enterprise Edition 11.1.1.7",
-            "の Oracle Business Intelligence Enterprise Edition 11.1.1.9",
-            "の Oracle Endeca Server 7.3.0.0",
-            "の Oracle Endeca Server 7.4.0.0",
-            "の Oracle Endeca Server 7.5.1.1",
-            "の Oracle Endeca Server 7.6.1.0.0",
-            "の Oracle Exalogic Infrastructure 2.0.6.2",
-            "の Oracle Tuxedo Tuxedo 12.1.1.0"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle PeopleSoft Products",
-          "cpe": {
-            "text": "cpe:/a:oracle:peoplesoft_products",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の PeopleSoft Enterprise PeopleTools 8.53",
-            "の PeopleSoft Enterprise PeopleTools 8.54"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Secure Backup",
-          "cpe": {
-            "text": "cpe:/a:oracle:secure_backup",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.4.0.4.0 未満"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Virtualization",
-          "cpe": {
-            "text": "cpe:/a:oracle:virtualization_secure_global_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Secure Global Desktop 4.63",
-            "の Oracle Secure Global Desktop 4.71",
-            "の Oracle Secure Global Desktop 5.1",
-            "の Oracle Secure Global Desktop 5.2"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP IceWall MCRP",
-          "cpe": {
-            "text": "cpe:/a:hp:icewall_mcrp",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1",
-            "2.1 SP1",
-            "2.1 SP2",
-            "3.0"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP IceWall SSO",
-          "cpe": {
-            "text": "cpe:/a:hp:icewall_sso",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Agent 8.0",
-            "Agent 8.0 2007 Update Release 2",
-            "Dfw 10.0",
-            "Dfw 8.0",
-            "Dfw 8.0 R1",
-            "Dfw 8.0 R2",
-            "Dfw 8.0 R3"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "CSVIEW",
-          "cpe": {
-            "text": "cpe:/a:nec:csview",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "/Webアンケート"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "EnterpriseDirectoryServer",
-          "cpe": {
-            "text": "cpe:/a:nec:enterprise_directoryserver",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver6.0 から Ver8.0"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "EnterpriseIdentityManager",
-          "cpe": {
-            "text": "cpe:/a:nec:enterpriseidentitymanager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver2.0 から 8.0"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "Express5800",
-          "cpe": {
-            "text": "cpe:/h:nec:express5800",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "/SG シリーズ InterSecVM/SG v1.2,v3.0,v3.1,v4.0",
-            "/SG シリーズ SG3600LM/LG/LJ v6.1,v6.2,v7.0,v7.1,v8.0",
-            "/SG シリーズ UNIVERGE SG3000LG/LJ",
-            "/SIGMABLADE EMカード(N8405-019/019A/043)用ファームウェア Rev.14.02 以前"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "iStorage",
-          "cpe": {
-            "text": "cpe:/h:nec:istorage",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "HSシリーズ 全バージョン",
-            "NV7400/NV5400/NV3400シリーズ",
-            "NV7500/NV5500/NV3500シリーズ"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "IX2000シリーズ",
-          "cpe": {
-            "text": "cpe:/h:nec:ix2000",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.8.7.22以降の全バージョン"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "IX3000シリーズ",
-          "cpe": {
-            "text": "cpe:/h:nec:ix3000",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.8.7.22以降の全バージョン"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "SecureWare/PKIアプリケーション開発キット",
-          "cpe": {
-            "text": "cpe:/a:nec:secureware_pki_application_development_kit",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver3.0",
-            "Ver3.01",
-            "Ver3.02",
-            "Ver3.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "SystemDirector Enterprise",
-          "cpe": {
-            "text": "cpe:/a:nec:systemdirector_enterprise",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for Java (全モデル) V5.1 から V7.2"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "UNIVERGE",
-          "cpe": {
-            "text": "cpe:/h:nec:univerge",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3C CMM 全バージョン",
-            "3C UCM V8.5.4以前"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Enterprise Edition V4.2 から V6.5",
-            "Standard Edition V4.2 から V6.5",
-            "Standard-J Edition V4.1 から V6.5",
-            "UDDI Registry V1.1 から V7.1",
-            "Web Edition V4.1 から V6.5"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Application Server",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_application_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Enterprise Edition V7.1",
-            "Enterprise V8.2 から V9.2",
-            "Express V8.2 から V9.2",
-            "Foundation V8.2 から V8.5",
-            "Standard Edition V7.1",
-            "Standard V8.2 から V9.2",
-            "Standard-J Edition V7.1 から V8.1",
-            "Web Edition V7.1 から V8.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Enterprise Service Bus",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_enterprise_service_bus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V6.4 から V9.2"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Portal",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_portal",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V8.2 から V9.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX SIP Application Server",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_sip_application_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Standard Edition V7.1 から V8.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebSAM",
-          "cpe": {
-            "text": "cpe:/a:nec:websam",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Application Navigator Agent Ver3.3 から Ver4.1",
-            "Application Navigator Manager Ver3.2.2 から Ver4.1",
-            "Application Navigator Probe Option Ver3.1.0.x から Ver4.1.0.x",
-            "JobCenter R14.1"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、証明書の検証機能を使用するエンドポイントの巧妙に細工された X.509 証明書を介して、サービス運用妨害 (不正な読み取り操作およびアプリケーションクラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-09-16-1 iOS 9",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Jun/msg00002.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205212",
-          "url": "https://support.apple.com/en-us/HT205212"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT204942",
-          "url": "http://support.apple.com/en-us/HT204942"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205267",
-          "url": "https://support.apple.com/en-us/HT205267"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205267",
-          "url": "https://support.apple.com/ja-jp/HT205267"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT204942",
-          "url": "http://support.apple.com/ja-jp/HT204942"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205212",
-          "url": "https://support.apple.com/ja-jp/HT205212"
-        },
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "cisco-sa-20150320-openssl",
-          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150320-openssl"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBGN03306 SSRT102007",
-          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04626468"
-        },
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "アライドテレシス株式会社からの情報",
-          "url": "http://jvn.jp/vu/JVNVU95877131/522154/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV15-015",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv15-015.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Fix ASN1_TYPE_cmp",
-          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=c3c7fb07dc975dc3c9de0eddb7d8fd79fc9c67c1"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "Segmentation fault in ASN1_TYPE_cmp (CVE-2015-0286)",
-          "url": "https://www.openssl.org/news/secadv_20150319.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015verbose-2367954.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016verbose-2881725.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2016verbose-2367956.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - January 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1202366",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1202366"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Customer Portal",
-          "vulinfoid": "OpenSSL Updates of 19 March 2015",
-          "url": "https://access.redhat.com/articles/1384453"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0715",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0715.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0716",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0716.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0752",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0752.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisories",
-          "vulinfoid": "SA92",
-          "url": "https://bto.bluecoat.com/security-advisory/sa92"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "January 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/january_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "July 2015 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "October 2015 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/october_2015_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "October 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/october_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "サポート＆技術情報",
-          "vulinfoid": "OpenSSLに複数の脆弱性 (19 Mar 2015)",
-          "url": "http://www.seil.jp/support/security/a01545.html"
-        },
-        {
-          "type": "vendor",
-          "name": "シスコ セキュリティアドバイザリ",
-          "vulinfoid": "cisco-sa-20150320-openssl",
-          "url": "http://www.cisco.com/cisco/web/support/JP/112/1128/1128874_cisco-sa-20150320-openssl-j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-0286",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0286"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99970459",
-          "url": "http://jvn.jp/vu/JVNVU99970459/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95877131",
-          "url": "http://jvn.jp/vu/JVNVU95877131/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97220341",
-          "url": "http://jvn.jp/vu/JVNVU97220341/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-0286",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0286"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年03月23日]\\n  掲載\\n[2015年04月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0715) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0716) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0752) を追加\\n[2015年04月14日]\\n  ベンダ情報：インターネットイニシアティブ (OpenSSLに複数の脆弱性 (19 Mar 2015)) を追加\\n[2015年04月15日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2015) を追加\\n[2015年04月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBGN03306 SSRT102007) を追加\\n[2015年04月28日]\\n  ベンダ情報：レッドハット (OpenSSL Updates of 19 March 2015) を追加\\n[2015年04月30日]\\n  ベンダ情報：シスコシステムズ (cisco-sa-20150320-openssl) を追加\\n[2015年06月16日]\\n  ベンダ情報：アライドテレシス (アライドテレシス株式会社からの情報) を追加\\n[2015年07月07日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204942) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205212) を追加\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-1 iOS 9) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加\\n[2015年10月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2015 Critical Patch Update Released) を追加\\n[2015年10月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n[2015年10月28日]\\n  ベンダ情報：日本電気 (NV15-015) を追加\\n[2015年11月12日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2015年11月25日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2015年12月07日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2015年12月22日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年01月15日]\\n  ベンダ情報：ブルーコートシステムズ (SA92) を追加\\n[2016年01月27日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年01月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2016 Critical Patch Update Released) を追加\\n[2016年02月01日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年03月04日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年08月01日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年08月24日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年09月30日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月09日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2016 Critical Patch Update Released) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-03-23T12:30:06+09:00",
-    "datelastupdated": "2016-11-22T15:56:46+09:00",
-    "datepublic": "2015-03-19T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-001881",
+	"vulinfodata": {
+		"title": "OpenSSL の crypto/asn1/a_type.c の ASN1_TYPE_cmp 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL の crypto/asn1/a_type.c の ASN1_TYPE_cmp 関数は、ブール (ブーリアン) 型の比較を適切に実行しないため、サービス運用妨害 (不正な読み取り操作およびアプリケーションクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-17: Code (コード) と識別されています。 http://cwe.mitre.org/data/definitions/17.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"0.9.8 以上 0.9.8zf 未満",
+						"1.0.0 以上 1.0.0r 未満",
+						"1.0.1 以上 1.0.1m 未満",
+						"1.0.2 以上 1.0.2a 未満"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 から 10.10.3 (HT204942)",
+						"10.6.8 以降 10.11 未満 (HT205267)"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "iOS",
+					"cpe": {
+						"text": "cpe:/o:apple:iphone_os",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9 未満 (iPad 2 以降)",
+						"9 未満 (iPhone 4s 以降)",
+						"9 未満 (iPod touch 第 5 世代以降)"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:oracle:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.6.25 およびそれ以前",
+						"Enterprise Monitor 2.3.20 およびそれ以前",
+						"Enterprise Monitor 3.0.22 およびそれ以前"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Communications Applications",
+					"cpe": {
+						"text": "cpe:/a:oracle:communications_applications",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Enterprise Session Border Controller Ecz7.3m1p4 およびそれ以前"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Communications Policy Management",
+					"cpe": {
+						"text": "cpe:/a:oracle:communications_policy_management",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.4.1",
+						"12.1.1 およびそれ以前",
+						"9.7.3",
+						"9.9.1"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Enterprise Manager",
+					"cpe": {
+						"text": "cpe:/a:oracle:enterprise_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ops Center 12.1.4 未満",
+						"Ops Center 12.2.0",
+						"Ops Center 12.2.1",
+						"Ops Center 12.3.0"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Fusion Middleware",
+					"cpe": {
+						"text": "cpe:/a:oracle:fusion_middleware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Business Intelligence Enterprise Edition 11.1.1.7",
+						"の Oracle Business Intelligence Enterprise Edition 11.1.1.9",
+						"の Oracle Endeca Server 7.3.0.0",
+						"の Oracle Endeca Server 7.4.0.0",
+						"の Oracle Endeca Server 7.5.1.1",
+						"の Oracle Endeca Server 7.6.1.0.0",
+						"の Oracle Exalogic Infrastructure 2.0.6.2",
+						"の Oracle Tuxedo Tuxedo 12.1.1.0"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle PeopleSoft Products",
+					"cpe": {
+						"text": "cpe:/a:oracle:peoplesoft_products",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の PeopleSoft Enterprise PeopleTools 8.53",
+						"の PeopleSoft Enterprise PeopleTools 8.54"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Secure Backup",
+					"cpe": {
+						"text": "cpe:/a:oracle:secure_backup",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.4.0.4.0 未満"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Virtualization",
+					"cpe": {
+						"text": "cpe:/a:oracle:virtualization_secure_global_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Secure Global Desktop 4.63",
+						"の Oracle Secure Global Desktop 4.71",
+						"の Oracle Secure Global Desktop 5.1",
+						"の Oracle Secure Global Desktop 5.2"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP IceWall MCRP",
+					"cpe": {
+						"text": "cpe:/a:hp:icewall_mcrp",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1",
+						"2.1 SP1",
+						"2.1 SP2",
+						"3.0"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP IceWall SSO",
+					"cpe": {
+						"text": "cpe:/a:hp:icewall_sso",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Agent 8.0",
+						"Agent 8.0 2007 Update Release 2",
+						"Dfw 10.0",
+						"Dfw 8.0",
+						"Dfw 8.0 R1",
+						"Dfw 8.0 R2",
+						"Dfw 8.0 R3"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "CSVIEW",
+					"cpe": {
+						"text": "cpe:/a:nec:csview",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"/Webアンケート"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "EnterpriseDirectoryServer",
+					"cpe": {
+						"text": "cpe:/a:nec:enterprise_directoryserver",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver6.0 から Ver8.0"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "EnterpriseIdentityManager",
+					"cpe": {
+						"text": "cpe:/a:nec:enterpriseidentitymanager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver2.0 から 8.0"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "Express5800",
+					"cpe": {
+						"text": "cpe:/h:nec:express5800",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"/SG シリーズ InterSecVM/SG v1.2,v3.0,v3.1,v4.0",
+						"/SG シリーズ SG3600LM/LG/LJ v6.1,v6.2,v7.0,v7.1,v8.0",
+						"/SG シリーズ UNIVERGE SG3000LG/LJ",
+						"/SIGMABLADE EMカード(N8405-019/019A/043)用ファームウェア Rev.14.02 以前"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "iStorage",
+					"cpe": {
+						"text": "cpe:/h:nec:istorage",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"HSシリーズ 全バージョン",
+						"NV7400/NV5400/NV3400シリーズ",
+						"NV7500/NV5500/NV3500シリーズ"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "IX2000シリーズ",
+					"cpe": {
+						"text": "cpe:/h:nec:ix2000",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.8.7.22以降の全バージョン"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "IX3000シリーズ",
+					"cpe": {
+						"text": "cpe:/h:nec:ix3000",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.8.7.22以降の全バージョン"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "SecureWare/PKIアプリケーション開発キット",
+					"cpe": {
+						"text": "cpe:/a:nec:secureware_pki_application_development_kit",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver3.0",
+						"Ver3.01",
+						"Ver3.02",
+						"Ver3.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "SystemDirector Enterprise",
+					"cpe": {
+						"text": "cpe:/a:nec:systemdirector_enterprise",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for Java (全モデル) V5.1 から V7.2"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "UNIVERGE",
+					"cpe": {
+						"text": "cpe:/h:nec:univerge",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3C CMM 全バージョン",
+						"3C UCM V8.5.4以前"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Enterprise Edition V4.2 から V6.5",
+						"Standard Edition V4.2 から V6.5",
+						"Standard-J Edition V4.1 から V6.5",
+						"UDDI Registry V1.1 から V7.1",
+						"Web Edition V4.1 から V6.5"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Application Server",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_application_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Enterprise Edition V7.1",
+						"Enterprise V8.2 から V9.2",
+						"Express V8.2 から V9.2",
+						"Foundation V8.2 から V8.5",
+						"Standard Edition V7.1",
+						"Standard V8.2 から V9.2",
+						"Standard-J Edition V7.1 から V8.1",
+						"Web Edition V7.1 から V8.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Enterprise Service Bus",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_enterprise_service_bus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V6.4 から V9.2"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Portal",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_portal",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V8.2 から V9.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX SIP Application Server",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_sip_application_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Standard Edition V7.1 から V8.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebSAM",
+					"cpe": {
+						"text": "cpe:/a:nec:websam",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Application Navigator Agent Ver3.3 から Ver4.1",
+						"Application Navigator Manager Ver3.2.2 から Ver4.1",
+						"Application Navigator Probe Option Ver3.1.0.x から Ver4.1.0.x",
+						"JobCenter R14.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、証明書の検証機能を使用するエンドポイントの巧妙に細工された X.509 証明書を介して、サービス運用妨害 (不正な読み取り操作およびアプリケーションクラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-09-16-1 iOS 9",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-09-30-3 OS X El Capitan 10.11",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00008.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Jun/msg00002.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205212",
+					"url": "https://support.apple.com/en-us/HT205212"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT204942",
+					"url": "http://support.apple.com/en-us/HT204942"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205267",
+					"url": "https://support.apple.com/en-us/HT205267"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205267",
+					"url": "https://support.apple.com/ja-jp/HT205267"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT204942",
+					"url": "http://support.apple.com/ja-jp/HT204942"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205212",
+					"url": "https://support.apple.com/ja-jp/HT205212"
+				},
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "cisco-sa-20150320-openssl",
+					"url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150320-openssl"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBGN03306 SSRT102007",
+					"url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04626468"
+				},
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "アライドテレシス株式会社からの情報",
+					"url": "http://jvn.jp/vu/JVNVU95877131/522154/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV15-015",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv15-015.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Fix ASN1_TYPE_cmp",
+					"url": "https://git.openssl.org/?p=openssl.git;a=commit;h=c3c7fb07dc975dc3c9de0eddb7d8fd79fc9c67c1"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "Segmentation fault in ASN1_TYPE_cmp (CVE-2015-0286)",
+					"url": "https://www.openssl.org/news/secadv_20150319.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - October 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015verbose-2367954.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016verbose-2881725.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - January 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujan2016-2367955.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujan2016verbose-2367956.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - January 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1202366",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1202366"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Customer Portal",
+					"vulinfoid": "OpenSSL Updates of 19 March 2015",
+					"url": "https://access.redhat.com/articles/1384453"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0715",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0715.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0716",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0716.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0752",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0752.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisories",
+					"vulinfoid": "SA92",
+					"url": "https://bto.bluecoat.com/security-advisory/sa92"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "January 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/january_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "July 2015 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "October 2015 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/october_2015_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "October 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/october_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "サポート＆技術情報",
+					"vulinfoid": "OpenSSLに複数の脆弱性 (19 Mar 2015)",
+					"url": "http://www.seil.jp/support/security/a01545.html"
+				},
+				{
+					"type": "vendor",
+					"name": "シスコ セキュリティアドバイザリ",
+					"vulinfoid": "cisco-sa-20150320-openssl",
+					"url": "http://www.cisco.com/cisco/web/support/JP/112/1128/1128874_cisco-sa-20150320-openssl-j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-0286",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0286"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99970459",
+					"url": "http://jvn.jp/vu/JVNVU99970459/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95877131",
+					"url": "http://jvn.jp/vu/JVNVU95877131/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97220341",
+					"url": "http://jvn.jp/vu/JVNVU97220341/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-0286",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0286"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年03月23日]\\n  掲載\\n[2015年04月08日]\\n  ベンダ情報：レッドハット (RHSA-2015:0715) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0716) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0752) を追加\\n[2015年04月14日]\\n  ベンダ情報：インターネットイニシアティブ (OpenSSLに複数の脆弱性 (19 Mar 2015)) を追加\\n[2015年04月15日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2015) を追加\\n[2015年04月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBGN03306 SSRT102007) を追加\\n[2015年04月28日]\\n  ベンダ情報：レッドハット (OpenSSL Updates of 19 March 2015) を追加\\n[2015年04月30日]\\n  ベンダ情報：シスコシステムズ (cisco-sa-20150320-openssl) を追加\\n[2015年06月16日]\\n  ベンダ情報：アライドテレシス (アライドテレシス株式会社からの情報) を追加\\n[2015年07月07日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204942) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-06-30-2 OS X Yosemite v10.10.4 and Security Update 2015-005) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加\\n[2015年10月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205212) を追加\\n  ベンダ情報：アップル (HT205267) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-1 iOS 9) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-09-30-3 OS X El Capitan 10.11) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n  参考情報：JVN (JVNVU#97220341) を追加\\n[2015年10月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2015 Critical Patch Update Released) を追加\\n[2015年10月23日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n[2015年10月28日]\\n  ベンダ情報：日本電気 (NV15-015) を追加\\n[2015年11月12日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2015年11月25日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2015年12月07日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2015年12月22日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年01月15日]\\n  ベンダ情報：ブルーコートシステムズ (SA92) を追加\\n[2016年01月27日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年01月28日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2016 Critical Patch Update Released) を追加\\n[2016年02月01日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年03月04日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年06月23日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年08月01日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年08月24日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年09月30日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月09日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2016 Critical Patch Update Released) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-03-23T12:30:06+09:00",
+		"datelastupdated": "2016-11-22T15:56:46+09:00",
+		"datepublic": "2015-03-19T00:00:00+09:00"
+	}
 }

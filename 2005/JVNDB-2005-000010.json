@@ -1,117 +1,117 @@
 {
-  "vulinfoid": "JVNDB-2005-000010",
-  "vulinfodata": {
-    "title": "Exim の spa_base64_to_bits() 関数におけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Exim は、より拡張性に富んだ機能を有し、特定のホスト/ネットワーク/送信者からの迷惑メールをブロックする機能などをもつ、メール転送エージェント (MTA) です。また、Exim では SPA (Secure Password Authentication) 認証がサポートされています。  Exim 4.43 以前には、以下のバッファオーバフローを生じる複数の問題が存在します。  1) host_aton() 関数および dns_build_reverse() 関数において、取り扱う文字列長に対する妥当性の確認が不適切であるため、バッファオーバーフローが生じる問題 (CAN-2005-0021) が存在します。  この問題を利用するローカルの攻撃者は、意図的に作成した過度に長いコマンドラインオプションを Exim に引き渡すことにより、結果として Exim の実行権限で任意のコードを実行することが可能です。  2) SPA (Secure Password Authentication) 認証メカニズムの一部であり、Base64 エンコードされた文字列のデコード処理を行う spa_base64_to_bits() 関数において、取り扱う値の妥当性の確認が不適切であるため、SPA 認証が有効に設定されている場合にバッファオーバーフローが発生する問題 (CAN-2005-0022) が存在します。  この問題を利用するリモートの攻撃者は、意図的に作成した SPA 認証情報を送信することにより、Exim の実行権限で任意のコードを実行することが可能です。  尚、Exim には setuid root ビットが付与されていますが、これらの問題が存在する処理は権限が落とされた状態で動作するため、root 権限でのコード実行とはならないことが発見者より報告されています。  また、Red Hat Enterprise Linux 4 に同梱される Exim のデフォルト設定では SPA 認証は無効に設定されているため、明示的に有効にしている場合にのみ CAN-2005-0022 の問題の影響を受けます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.6",
-          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:025",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-025.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:025",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-025J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-0022",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0022"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-0022",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0022"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA13713",
-          "url": "http://secunia.com/advisories/13713/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12268",
-          "url": "http://www.securityfocus.com/bid/12268"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12188",
-          "url": "http://www.securityfocus.com/bid/12188"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12185",
-          "url": "http://www.securityfocus.com/bid/12185"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#132992",
-          "url": "http://www.kb.cert.org/vuls/id/132992"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-01-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000010",
+	"vulinfodata": {
+		"title": "Exim の spa_base64_to_bits() 関数におけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Exim は、より拡張性に富んだ機能を有し、特定のホスト/ネットワーク/送信者からの迷惑メールをブロックする機能などをもつ、メール転送エージェント (MTA) です。また、Exim では SPA (Secure Password Authentication) 認証がサポートされています。  Exim 4.43 以前には、以下のバッファオーバフローを生じる複数の問題が存在します。  1) host_aton() 関数および dns_build_reverse() 関数において、取り扱う文字列長に対する妥当性の確認が不適切であるため、バッファオーバーフローが生じる問題 (CAN-2005-0021) が存在します。  この問題を利用するローカルの攻撃者は、意図的に作成した過度に長いコマンドラインオプションを Exim に引き渡すことにより、結果として Exim の実行権限で任意のコードを実行することが可能です。  2) SPA (Secure Password Authentication) 認証メカニズムの一部であり、Base64 エンコードされた文字列のデコード処理を行う spa_base64_to_bits() 関数において、取り扱う値の妥当性の確認が不適切であるため、SPA 認証が有効に設定されている場合にバッファオーバーフローが発生する問題 (CAN-2005-0022) が存在します。  この問題を利用するリモートの攻撃者は、意図的に作成した SPA 認証情報を送信することにより、Exim の実行権限で任意のコードを実行することが可能です。  尚、Exim には setuid root ビットが付与されていますが、これらの問題が存在する処理は権限が落とされた状態で動作するため、root 権限でのコード実行とはならないことが発見者より報告されています。  また、Red Hat Enterprise Linux 4 に同梱される Exim のデフォルト設定では SPA 認証は無効に設定されているため、明示的に有効にしている場合にのみ CAN-2005-0022 の問題の影響を受けます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.6",
+					"vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:025",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-025.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:025",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-025J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-0022",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0022"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-0022",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0022"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA13713",
+					"url": "http://secunia.com/advisories/13713/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12268",
+					"url": "http://www.securityfocus.com/bid/12268"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12188",
+					"url": "http://www.securityfocus.com/bid/12188"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12185",
+					"url": "http://www.securityfocus.com/bid/12185"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#132992",
+					"url": "http://www.kb.cert.org/vuls/id/132992"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-01-07T00:00:00+09:00"
+	}
 }

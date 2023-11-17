@@ -1,101 +1,101 @@
 {
-  "vulinfoid": "JVNDB-2016-008716",
-  "vulinfodata": {
-    "title": "McAfee VirusScan Enterprise for Windows にメモリ破損の脆弱性",
-    "vulinfodescription": {
-      "overview": "McAfee VirusScan Enterprise for Windows に同梱されている COM オブジェクト scriptproxy には、メモリ破損の脆弱性が存在します。  初期化されていないポインタのアクセス (CWE-824) 報告者によると、Internet Explorer から HTML ドキュメント内の CLSID に基づいて McAfee VirusScan Enterprise for Windows に同梱されている COM オブジェクト scriptproxy を含む DLL を読み込もうとすると、アクセス違反によって DLL がクラッシュします。結果としてサービス運用妨害 (DoS) 状態が引き起こされる可能性があります。  CWE-824: Access of Uninitialized Pointer https://cwe.mitre.org/data/definitions/824.html  McAfee の親会社である Intel Security は、CERT/CC に対して次のように述べています：  　　\"Intel Security takes any claim of this kind very seriously. We have requested and are awaiting the information we require to conduct our assessment. We look forward to receiving this information. 　　(Intel Security はこのような報告をすべて真摯に受け止めています。現在は、評価に必要な情報の提供を依頼し、回答を待っている状況です。)\"  CERT/CC では、Windows 7 の Internet Explorer 11 上の McAfee VirusScan Enterprise for Windows 8.8 patch 7 で本脆弱性が再現することを独自に確認しており、2016年6月に McAfee へ報告しています。その他のバージョンの Internet Explorer が影響を受けるかは不明です。CERT/CC は、引き続き Intel Security および McAfee と調整を進めています。  本脆弱性は CERT/CC Vulnerability Note VU#245327 の一部として公開されていましたが、対象製品に関する混乱を防ぐため、独立した Vulnerability Notes として分離されました。  CERT/CC Vulnerability Note VU#245327 http://www.kb.cert.org/vuls/id/245327  JPCERT/CCからの補足情報 本アドバイザリは、2016年12月14日から「McAfee VirusScan Enterprise for Windows における NULL ポインタ参照の脆弱性」として公表していましたが、CERT/CC Vulnerability Notes VU#535111 の更新にあわせ、「McAfee VirusScan Enterprise for Windows にメモリ破損の脆弱性」として内容を刷新しています。  CERT/CC Vulnerability Note VU#535111 http://www.kb.cert.org/vuls/id/535111"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マカフィー",
-          "productname": "McAfee VirusScan Enterprise",
-          "cpe": {
-            "text": "cpe:/a:mcafee:virusscan_enterprise",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for Windows 8.7i から 8.8 patch 7"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.4",
-          "vector": "AV:N/AC:H/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.3",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "細工された HTML ドキュメントを閲覧することで、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2016年12月20日現在、対策方法は不明です。  [ワークアラウンドを実施する] 本脆弱性の影響を軽減するため、次のワークアラウンドを実施してください。  　　*次の CLSID に対する kill bit を設定することで McAfee の ActiveX コントロールを無効にする 　　 　　　{7DB2D5A0-7241-4E79-B68D-6309F01C5231} 　　 　　*次のテキストを .REG ファイルとして保存して実行することでも、kill bit を設定することが可能です。 　　 　　　Windows Registry Editor Version 5.00 　　　 　　　[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\ActiveX Compatibility\\{7DB2D5A0-7241-4E79-B68D-6309F01C5231}] 　　　\"Compatibility Flags\"=dword:00000400 　　　[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Internet Explorer\\ActiveX Compatibility\\{7DB2D5A0-7241-4E79-B68D-6309F01C5231}] 　　　\"Compatibility Flags\"=dword:00000400  ActiveX コントロールを無効にする https://support.microsoft.com/ja-jp/kb/240797"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft Support",
-          "vulinfoid": "Internet Explorer 上で実行している ActiveX コントロールを停止する方法",
-          "url": "https://support.microsoft.com/ja-jp/kb/240797"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98579581",
-          "url": "http://jvn.jp/vu/JVNVU98579581/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#535111",
-          "url": "http://www.kb.cert.org/vuls/id/535111"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#245327",
-          "url": "http://www.kb.cert.org/vuls/id/245327"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-824",
-          "url": "https://cwe.mitre.org/data/definitions/824.html",
-          "title": "初期化されていないポインタのアクセス"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年08月02日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-08-02T14:06:55+09:00",
-    "datelastupdated": "2017-08-02T14:06:55+09:00",
-    "datepublic": "2016-12-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-008716",
+	"vulinfodata": {
+		"title": "McAfee VirusScan Enterprise for Windows にメモリ破損の脆弱性",
+		"vulinfodescription": {
+			"overview": "McAfee VirusScan Enterprise for Windows に同梱されている COM オブジェクト scriptproxy には、メモリ破損の脆弱性が存在します。  初期化されていないポインタのアクセス (CWE-824) 報告者によると、Internet Explorer から HTML ドキュメント内の CLSID に基づいて McAfee VirusScan Enterprise for Windows に同梱されている COM オブジェクト scriptproxy を含む DLL を読み込もうとすると、アクセス違反によって DLL がクラッシュします。結果としてサービス運用妨害 (DoS) 状態が引き起こされる可能性があります。  CWE-824: Access of Uninitialized Pointer https://cwe.mitre.org/data/definitions/824.html  McAfee の親会社である Intel Security は、CERT/CC に対して次のように述べています：  　　\"Intel Security takes any claim of this kind very seriously. We have requested and are awaiting the information we require to conduct our assessment. We look forward to receiving this information. 　　(Intel Security はこのような報告をすべて真摯に受け止めています。現在は、評価に必要な情報の提供を依頼し、回答を待っている状況です。)\"  CERT/CC では、Windows 7 の Internet Explorer 11 上の McAfee VirusScan Enterprise for Windows 8.8 patch 7 で本脆弱性が再現することを独自に確認しており、2016年6月に McAfee へ報告しています。その他のバージョンの Internet Explorer が影響を受けるかは不明です。CERT/CC は、引き続き Intel Security および McAfee と調整を進めています。  本脆弱性は CERT/CC Vulnerability Note VU#245327 の一部として公開されていましたが、対象製品に関する混乱を防ぐため、独立した Vulnerability Notes として分離されました。  CERT/CC Vulnerability Note VU#245327 http://www.kb.cert.org/vuls/id/245327  JPCERT/CCからの補足情報 本アドバイザリは、2016年12月14日から「McAfee VirusScan Enterprise for Windows における NULL ポインタ参照の脆弱性」として公表していましたが、CERT/CC Vulnerability Notes VU#535111 の更新にあわせ、「McAfee VirusScan Enterprise for Windows にメモリ破損の脆弱性」として内容を刷新しています。  CERT/CC Vulnerability Note VU#535111 http://www.kb.cert.org/vuls/id/535111"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マカフィー",
+					"productname": "McAfee VirusScan Enterprise",
+					"cpe": {
+						"text": "cpe:/a:mcafee:virusscan_enterprise",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for Windows 8.7i から 8.8 patch 7"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.4",
+					"vector": "AV:N/AC:H/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "細工された HTML ドキュメントを閲覧することで、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2016年12月20日現在、対策方法は不明です。  [ワークアラウンドを実施する] 本脆弱性の影響を軽減するため、次のワークアラウンドを実施してください。  　　*次の CLSID に対する kill bit を設定することで McAfee の ActiveX コントロールを無効にする 　　 　　　{7DB2D5A0-7241-4E79-B68D-6309F01C5231} 　　 　　*次のテキストを .REG ファイルとして保存して実行することでも、kill bit を設定することが可能です。 　　 　　　Windows Registry Editor Version 5.00 　　　 　　　[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Internet Explorer\\ActiveX Compatibility\\{7DB2D5A0-7241-4E79-B68D-6309F01C5231}] 　　　\"Compatibility Flags\"=dword:00000400 　　　[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Internet Explorer\\ActiveX Compatibility\\{7DB2D5A0-7241-4E79-B68D-6309F01C5231}] 　　　\"Compatibility Flags\"=dword:00000400  ActiveX コントロールを無効にする https://support.microsoft.com/ja-jp/kb/240797"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft Support",
+					"vulinfoid": "Internet Explorer 上で実行している ActiveX コントロールを停止する方法",
+					"url": "https://support.microsoft.com/ja-jp/kb/240797"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98579581",
+					"url": "http://jvn.jp/vu/JVNVU98579581/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#535111",
+					"url": "http://www.kb.cert.org/vuls/id/535111"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#245327",
+					"url": "http://www.kb.cert.org/vuls/id/245327"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-824",
+					"url": "https://cwe.mitre.org/data/definitions/824.html",
+					"title": "初期化されていないポインタのアクセス"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年08月02日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2017-08-02T14:06:55+09:00",
+		"datelastupdated": "2017-08-02T14:06:55+09:00",
+		"datepublic": "2016-12-13T00:00:00+09:00"
+	}
 }

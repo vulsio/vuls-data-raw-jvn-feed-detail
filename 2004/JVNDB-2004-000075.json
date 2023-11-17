@@ -1,186 +1,186 @@
 {
-  "vulinfoid": "JVNDB-2004-000075",
-  "vulinfodata": {
-    "title": "Mozilla における cookie のアクセス制御を回避される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Web ブラウザで利用される Cookie には、発行したサーバ上の特定の範囲内のみで使用できるよう Path 情報が含まれており、例え同一ホスト上であっても範囲外のディレクトリからはアクセスできないようになっています。  複数のベンダの Web ブラウザには、Cookie の取り扱いに不備が存在します。リクエスト URL を解釈する際に、Cookie の Path 情報とその URL の Path 情報が比較される時、'/%2E%2E/' 等のエンコードされた文字列を含む URL を適切に取り扱わない為、本来保護されたディレクトリの範囲外のコンテンツに対して Cookie を送信してしまう問題が存在します。  この問題を利用するリモートの攻撃者は、意図的に作成した Web ページに誘導することにより、Cookie を奪取できる可能性があります。    2004 年 3 月 11 日現在、以下の Web ブラウザに問題があることが発見者により報告されています。ただし、Internet Explorer/Mozilla に関しては、本問題の影響を受けるバージョンは不明です。  KDE 3.1.3 以前の Konqueror Microsoft Internet Explorer Mozilla  尚、Mozilla に関しては、この問題を解消する Mozilla 1.4.2 がリリースされる予定です。  Red Hat Enterprise Linux 2.1/Red Hat Linux 9 においては、KDE Konqueror に関する問題を修正する RPM がベンダよりリリースされていましたが、Mozilla に関する問題も影響を受ける可能性があるため、新たに Mozilla を修正する RPM がリリースされています。 Red Hat Enterprise Linux 3 においては、Mozilla に関する問題のみ影響を受けます。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.00 ",
-            "11.11 ",
-            "11.22 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX01036",
-          "url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01036"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX01036",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01036.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:075",
-          "url": "https://rhn.redhat.com/errata/RHSA-2004-075.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:074",
-          "url": "https://rhn.redhat.com/errata/RHSA-2004-074.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:110",
-          "url": "https://rhn.redhat.com/errata/RHSA-2004-110.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:112",
-          "url": "https://rhn.redhat.com/errata/RHSA-2004-112.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:112",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-112J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:075",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-075J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:074",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-074J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:110",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-110J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0594",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0594"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0594",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0594"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA11095",
-          "url": "http://secunia.com/advisories/11095/"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA9680",
-          "url": "http://secunia.com/advisories/9680/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "9323",
-          "url": "http://www.securityfocus.com/bid/9323"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "9841",
-          "url": "http://www.securityfocus.com/bid/9841"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-03-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000075",
+	"vulinfodata": {
+		"title": "Mozilla における cookie のアクセス制御を回避される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Web ブラウザで利用される Cookie には、発行したサーバ上の特定の範囲内のみで使用できるよう Path 情報が含まれており、例え同一ホスト上であっても範囲外のディレクトリからはアクセスできないようになっています。  複数のベンダの Web ブラウザには、Cookie の取り扱いに不備が存在します。リクエスト URL を解釈する際に、Cookie の Path 情報とその URL の Path 情報が比較される時、'/%2E%2E/' 等のエンコードされた文字列を含む URL を適切に取り扱わない為、本来保護されたディレクトリの範囲外のコンテンツに対して Cookie を送信してしまう問題が存在します。  この問題を利用するリモートの攻撃者は、意図的に作成した Web ページに誘導することにより、Cookie を奪取できる可能性があります。    2004 年 3 月 11 日現在、以下の Web ブラウザに問題があることが発見者により報告されています。ただし、Internet Explorer/Mozilla に関しては、本問題の影響を受けるバージョンは不明です。  KDE 3.1.3 以前の Konqueror Microsoft Internet Explorer Mozilla  尚、Mozilla に関しては、この問題を解消する Mozilla 1.4.2 がリリースされる予定です。  Red Hat Enterprise Linux 2.1/Red Hat Linux 9 においては、KDE Konqueror に関する問題を修正する RPM がベンダよりリリースされていましたが、Mozilla に関する問題も影響を受ける可能性があるため、新たに Mozilla を修正する RPM がリリースされています。 Red Hat Enterprise Linux 3 においては、Mozilla に関する問題のみ影響を受けます。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.00 ",
+						"11.11 ",
+						"11.22 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX01036",
+					"url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX01036"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX01036",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX01036.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:075",
+					"url": "https://rhn.redhat.com/errata/RHSA-2004-075.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:074",
+					"url": "https://rhn.redhat.com/errata/RHSA-2004-074.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:110",
+					"url": "https://rhn.redhat.com/errata/RHSA-2004-110.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:112",
+					"url": "https://rhn.redhat.com/errata/RHSA-2004-112.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:112",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-112J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:075",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-075J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:074",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-074J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:110",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-110J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0594",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0594"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0594",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0594"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA11095",
+					"url": "http://secunia.com/advisories/11095/"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA9680",
+					"url": "http://secunia.com/advisories/9680/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "9323",
+					"url": "http://www.securityfocus.com/bid/9323"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "9841",
+					"url": "http://www.securityfocus.com/bid/9841"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-03-10T00:00:00+09:00"
+	}
 }

@@ -1,159 +1,159 @@
 {
-  "vulinfoid": "JVNDB-2023-000078",
-  "vulinfodata": {
-    "title": "Proself における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社ノースグリッドが提供するオンラインストレージサーバ Proself には、次の複数の脆弱性が存在します。  <ul><li>認証不備 (CWE-287) - CVE-2023-39415 <li>OS コマンドインジェクション (CWE-78) - CVE-2023-39416</li></ul> 開発者によると、本脆弱性を悪用した攻撃が既に確認されているとのことです。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Enterprise Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_enterprise_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver5.61 およびそれ以前"
-          ]
-        },
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Gateway Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_gateway_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver1.62 およびそれ以前"
-          ]
-        },
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Mail Sanitize Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_mail_sanitize_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver1.07 およびそれ以前"
-          ]
-        },
-        {
-          "name": "株式会社ノースグリッド",
-          "productname": "Proself Standard Edition",
-          "cpe": {
-            "text": "cpe:/a:misc:north_grid_proself_standard_edition",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver5.61 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.5",
-          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul><li>認証情報を持たない遠隔の第三者によって、当該製品の管理画面にログインされ、任意の操作を実行される - CVE-2023-39415</li> <li>当該製品に管理者権限でログイン可能な攻撃者によって、任意の OS コマンドを実行される - CVE-2023-39416</li></ul>"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 対策版を適用するまでの間、以下の回避策を適用することで、本脆弱性の影響を軽減することができます。 <ul><li>Proselfインストールフォルダ/webapps/proself/WEB-INF/xml/process/external/admin 配下の次の2ファイルを削除する <ul><li>downloadhistory.xml</li><li>setclustermyid.xml</li></ul></li></ul>"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "North Grid Corporation",
-          "vulinfoid": "[至急]Proselfのゼロディ脆弱性による攻撃発生について(更新)",
-          "url": "https://www.proself.jp/information/149/"
-        },
-        {
-          "type": "vendor",
-          "name": "North Grid Corporation",
-          "vulinfoid": "Proselfのゼロディ脆弱性への対応バージョンに関する補足 ",
-          "url": "https://www.proself.jp/information/150/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-39415",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-39415"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-39416",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-39416"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "Proself の脆弱性対策について",
-          "url": "https://www.ipa.go.jp/security/security-alert/2023/alert20230803.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "Proselfの認証バイパスおよびリモートコード実行の脆弱性に関する注意喚起",
-          "url": "https://www.jpcert.or.jp/at/2023/at230014.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#19661362",
-          "url": "https://jvn.jp/jp/JVN19661362/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-78",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
-          "title": "OSコマンドインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-287",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
-          "title": "不適切な認証"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-08-17T16:43:24+09:00",
-          "description": "[2023年08月18日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-08-18T11:05:50+09:00",
-    "datelastupdated": "2023-08-18T11:05:50+09:00",
-    "datepublic": "2023-08-18T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-000078",
+	"vulinfodata": {
+		"title": "Proself における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社ノースグリッドが提供するオンラインストレージサーバ Proself には、次の複数の脆弱性が存在します。  <ul><li>認証不備 (CWE-287) - CVE-2023-39415 <li>OS コマンドインジェクション (CWE-78) - CVE-2023-39416</li></ul> 開発者によると、本脆弱性を悪用した攻撃が既に確認されているとのことです。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Enterprise Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_enterprise_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver5.61 およびそれ以前"
+					]
+				},
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Gateway Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_gateway_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver1.62 およびそれ以前"
+					]
+				},
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Mail Sanitize Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_mail_sanitize_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver1.07 およびそれ以前"
+					]
+				},
+				{
+					"name": "株式会社ノースグリッド",
+					"productname": "Proself Standard Edition",
+					"cpe": {
+						"text": "cpe:/a:misc:north_grid_proself_standard_edition",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver5.61 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.5",
+					"vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul><li>認証情報を持たない遠隔の第三者によって、当該製品の管理画面にログインされ、任意の操作を実行される - CVE-2023-39415</li> <li>当該製品に管理者権限でログイン可能な攻撃者によって、任意の OS コマンドを実行される - CVE-2023-39416</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 対策版を適用するまでの間、以下の回避策を適用することで、本脆弱性の影響を軽減することができます。 <ul><li>Proselfインストールフォルダ/webapps/proself/WEB-INF/xml/process/external/admin 配下の次の2ファイルを削除する <ul><li>downloadhistory.xml</li><li>setclustermyid.xml</li></ul></li></ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "North Grid Corporation",
+					"vulinfoid": "[至急]Proselfのゼロディ脆弱性による攻撃発生について(更新)",
+					"url": "https://www.proself.jp/information/149/"
+				},
+				{
+					"type": "vendor",
+					"name": "North Grid Corporation",
+					"vulinfoid": "Proselfのゼロディ脆弱性への対応バージョンに関する補足 ",
+					"url": "https://www.proself.jp/information/150/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39415",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39415"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39416",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39416"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "Proself の脆弱性対策について",
+					"url": "https://www.ipa.go.jp/security/security-alert/2023/alert20230803.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "Proselfの認証バイパスおよびリモートコード実行の脆弱性に関する注意喚起",
+					"url": "https://www.jpcert.or.jp/at/2023/at230014.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#19661362",
+					"url": "https://jvn.jp/jp/JVN19661362/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-287",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+					"title": "不適切な認証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-08-17T16:43:24+09:00",
+					"description": "[2023年08月18日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-08-18T11:05:50+09:00",
+		"datelastupdated": "2023-08-18T11:05:50+09:00",
+		"datepublic": "2023-08-18T00:00:00+09:00"
+	}
 }

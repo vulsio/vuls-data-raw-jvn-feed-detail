@@ -1,118 +1,118 @@
 {
-  "vulinfoid": "JVNDB-2021-001430",
-  "vulinfodata": {
-    "title": "Rockwell Automation 製 Connected Components Workbench に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Rockwell Automation 社が提供する Connected Components Workbench には、次の複数の脆弱性が存在します。  　* 信頼できないデータのデシリアライゼーション (CWE-502) - CVE-2021-27475 　* パス・トラバーサル (CWE-22) - CVE-2021-27471 　* 不適切な入力確認 (CWE-20) - CVE-2021-27473"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Rockwell Automation",
-          "productname": "Connected Components Workbench",
-          "cpe": {
-            "text": "cpe:/a:rockwellautomation:connected_components_workbench",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v12.00.00 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.6",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* ローカルのユーザが、第三者の作成した不正なシリアライズオブジェクトを該当製品で開くと、リモートからコード実行される - CVE-2021-27475 　* ローカルのユーザが、第三者の作成した不正なファイルを該当製品で開くと、該当製品の権限で、既存ファイルを上書きされたり新規ファイルを作成されたりする - CVE-2021-27471 　* 悪意を持ったユーザが作成した不正な .ccwarc アーカイブファイルを該当製品で開くことで、製品の権限を取得される - CVE-2021-27473"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] Rockwell Automation 社が提供する情報をもとに、以下のバージョンにアップデートしてください。  　* Connected Components Workbench v13.00.00 またはそれ以降  [ワークアラウンドを実施する] アップデートできない場合、Rockwell Automation 社は以下の回避策の実施を推奨しています。  　* 不正コードによる影響の軽減のため、Connected Components Workbench を管理者権限ではなくユーザ権限で実行する 　* Connected Components Workbench で信頼されない .ccwarc アーカイブファイルを開かない 　* Microsoft AppLocker のような製品を利用し、利用アプリケーションをホワイトリスト化することでリスクを軽減する 　* 最小のユーザ権限付与の原則を確認し、データベースのような共有資源にアクセスするユーザやサービスアカウントは必要最低限の権限にする"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Rockwell Automation",
-          "vulinfoid": "industrial security advisory from Rockwell Automation (要ログイン)",
-          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1131435"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27475",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27475"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27471",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27471"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27473",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27473"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-133-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-133-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95873084",
-          "url": "http://jvn.jp/cert/JVNVU95873084"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-22",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
-          "title": "パス・トラバーサル"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-502",
-          "url": "https://cwe.mitre.org/data/definitions/502.html",
-          "title": "信頼できないデータのデシリアライゼーション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-05-17T17:36:51+09:00",
-          "description": "[2021年05月17日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-05-17T17:36:51+09:00",
-    "datelastupdated": "2021-05-17T17:36:51+09:00",
-    "datepublic": "2021-05-14T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001430",
+	"vulinfodata": {
+		"title": "Rockwell Automation 製 Connected Components Workbench に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Rockwell Automation 社が提供する Connected Components Workbench には、次の複数の脆弱性が存在します。  　* 信頼できないデータのデシリアライゼーション (CWE-502) - CVE-2021-27475 　* パス・トラバーサル (CWE-22) - CVE-2021-27471 　* 不適切な入力確認 (CWE-20) - CVE-2021-27473"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Rockwell Automation",
+					"productname": "Connected Components Workbench",
+					"cpe": {
+						"text": "cpe:/a:rockwellautomation:connected_components_workbench",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v12.00.00 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.6",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* ローカルのユーザが、第三者の作成した不正なシリアライズオブジェクトを該当製品で開くと、リモートからコード実行される - CVE-2021-27475 　* ローカルのユーザが、第三者の作成した不正なファイルを該当製品で開くと、該当製品の権限で、既存ファイルを上書きされたり新規ファイルを作成されたりする - CVE-2021-27471 　* 悪意を持ったユーザが作成した不正な .ccwarc アーカイブファイルを該当製品で開くことで、製品の権限を取得される - CVE-2021-27473"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] Rockwell Automation 社が提供する情報をもとに、以下のバージョンにアップデートしてください。  　* Connected Components Workbench v13.00.00 またはそれ以降  [ワークアラウンドを実施する] アップデートできない場合、Rockwell Automation 社は以下の回避策の実施を推奨しています。  　* 不正コードによる影響の軽減のため、Connected Components Workbench を管理者権限ではなくユーザ権限で実行する 　* Connected Components Workbench で信頼されない .ccwarc アーカイブファイルを開かない 　* Microsoft AppLocker のような製品を利用し、利用アプリケーションをホワイトリスト化することでリスクを軽減する 　* 最小のユーザ権限付与の原則を確認し、データベースのような共有資源にアクセスするユーザやサービスアカウントは必要最低限の権限にする"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Rockwell Automation",
+					"vulinfoid": "industrial security advisory from Rockwell Automation (要ログイン)",
+					"url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1131435"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27475",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27475"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27471",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27471"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27473",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27473"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-133-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-133-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95873084",
+					"url": "http://jvn.jp/cert/JVNVU95873084"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-502",
+					"url": "https://cwe.mitre.org/data/definitions/502.html",
+					"title": "信頼できないデータのデシリアライゼーション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-05-17T17:36:51+09:00",
+					"description": "[2021年05月17日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-05-17T17:36:51+09:00",
+		"datelastupdated": "2021-05-17T17:36:51+09:00",
+		"datepublic": "2021-05-14T00:00:00+09:00"
+	}
 }

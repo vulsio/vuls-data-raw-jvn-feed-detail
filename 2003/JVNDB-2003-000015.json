@@ -1,166 +1,166 @@
 {
-  "vulinfoid": "JVNDB-2003-000015",
-  "vulinfodata": {
-    "title": "MIT Kerberos 5 の chk_trans.c におけるアカウントを偽装される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  KDC Server である krb5kdc(1M) や kerberos を使用しているアプリケーションには、以下のような複数の問題が存在します。全ての問題は MIT Kerberos5 Release 1.2.5 以降で解消することが可能です。  1.NULL ポインタによる参照読み出しの問題 (CAN-2003-0058) MIT Kerberos Key Distribution Center (KDC) には、NULL ポインタ参照読み出しによりクラッシュしてしまうという問題が存在します。この問題は、クライアント認証の一つである TGS-REQ 方式の過程で発生すると考えられています。TGS-REQ 方式は、kerberos 認証の初回のリクエストでは使用されません。      従って、リモートから任意のユーザがこの問題を利用した攻撃を行える可能性は低いと考えられています。  しかしながら、この問題により、ローカルの攻撃者 (realm 内のユーザ) は KDC Server である krb5kdc(1M) をクラッシュさせることにより、krb5kdc(1M) 及び kerberos を使用しているアプリケーションをサービス不能状態に陥らせることが可能です。  2.realm 認証の問題 (CAN-2003-0059) MIT Kerberos 5 release 1.2.2 以前には、realm 認証 (realm authentication) の実装に不備が存在します。そのため、特定の状況下においてローカルの攻撃者 (realm 内のユーザ) は、他の realm と共有する鍵を使用して他の realm 内に存在するアカウントに偽装することが可能です。結果として、特定の realm 内のユーザは、他の realm へのアクセスが可能です。この問題に限り、バージョン 1.2.3 で既に解消されています。  尚、この問題は、攻撃者が偽装するアカウント名が重要な制御リスト (Critical ACL) 上に存在する場合に様々な手法を利用して実行される可能性があります。  また、この問題は Kerberos 5 をサポートする Microsoft 製品においても影響を受けることが報告されています。現時点では詳細は公開されていませんが、影響を受ける製品のパッチが公開予定です。  3.フォーマットストリングの問題 (CAN-2003-0060) KDC の古いバージョンでは、ログ採取のルーチンにおいて '%n' のような printf() 系列の出力関数で書式指定子が利用されており、このような関数には、フォーマットストリングの問題が存在します。この問題を利用することで、リモートの攻撃者は krb5kdc(1M) のクラッシュを引き起こし、結果としてサービス不能状態に陥らせることが可能です。  尚、この問題を抱えるいくつかの関数は、認証処理以前で使用されているため、不特定多数のリモートユーザがこの問題を利用することが可能です。  また、このようなタイプの問題は、特定の状況下において、任意のコードを実行できる可能性もあるため、攻撃者は KDC で管理されるシステムへのアクセスできる可能性も考えられます。  4.ASN.1 decoder データサイズ上の境界チェックの問題 (CAN-2002-0036) MIT Kerberos 5 に含まれている Abstract Syntax Notation One (ASN.1) decoder には、データサイズの境界チェックが適切に行われていません。そのため、記憶領域の割り当てが消極的に行われているような特定のシステムでは、データを受け取ることで krb5kdc(1M) 及び kerberos を使用しているアプリケーションがクラッシュしてしまいます。  結果として、リモートの攻撃者は意図的に作成されたパケットを送信することで、krb5kdc(1M) 及び kerberos を使用しているアプリケーションをサービス不能状態に陥らせることが可能です。  現時点では詳細は公開されていませんが、これらの問題により、多くのベンダから提供されている kerberos を使用している製品が影響を受ける可能性があると報告されています。  ただし、Solaris 9 x86 版及び Red Hat Linux 8.0、さらには SEAM 1.0 がインストールされていない Solaris 2.6 及び 7 では、これら全ての問題の影響は受けません。  また、Sun Microsystems より公開されているパッチ適用により、1. の問題 (NULL ポインタによる参照読み出しの問題: CAN-2003-0058) を解消することが可能です。その他の問題が解消されるかどうかは、現時点では未詳です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.6 (sparc) ",
-            "2.6 (x86) ",
-            "7.0 (sparc) ",
-            "7.0 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2  ",
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2003:051",
-          "url": "https://rhn.redhat.com/errata/RHSA-2003-051.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "50142",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-50142-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": "50142",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-50142-3"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2003:051",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-051J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2003-0059",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0059"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2003-0059",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0059"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6712",
-          "url": "http://www.securityfocus.com/bid/6712"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6683",
-          "url": "http://www.securityfocus.com/bid/6683"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6714",
-          "url": "http://www.securityfocus.com/bid/6714"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6713",
-          "url": "http://www.securityfocus.com/bid/6713"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#787523",
-          "url": "http://www.kb.cert.org/vuls/id/787523"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#684563",
-          "url": "http://www.kb.cert.org/vuls/id/684563"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#587579",
-          "url": "http://www.kb.cert.org/vuls/id/587579"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#661243",
-          "url": "http://www.kb.cert.org/vuls/id/661243"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2003-01-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2003-000015",
+	"vulinfodata": {
+		"title": "MIT Kerberos 5 の chk_trans.c におけるアカウントを偽装される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  KDC Server である krb5kdc(1M) や kerberos を使用しているアプリケーションには、以下のような複数の問題が存在します。全ての問題は MIT Kerberos5 Release 1.2.5 以降で解消することが可能です。  1.NULL ポインタによる参照読み出しの問題 (CAN-2003-0058) MIT Kerberos Key Distribution Center (KDC) には、NULL ポインタ参照読み出しによりクラッシュしてしまうという問題が存在します。この問題は、クライアント認証の一つである TGS-REQ 方式の過程で発生すると考えられています。TGS-REQ 方式は、kerberos 認証の初回のリクエストでは使用されません。      従って、リモートから任意のユーザがこの問題を利用した攻撃を行える可能性は低いと考えられています。  しかしながら、この問題により、ローカルの攻撃者 (realm 内のユーザ) は KDC Server である krb5kdc(1M) をクラッシュさせることにより、krb5kdc(1M) 及び kerberos を使用しているアプリケーションをサービス不能状態に陥らせることが可能です。  2.realm 認証の問題 (CAN-2003-0059) MIT Kerberos 5 release 1.2.2 以前には、realm 認証 (realm authentication) の実装に不備が存在します。そのため、特定の状況下においてローカルの攻撃者 (realm 内のユーザ) は、他の realm と共有する鍵を使用して他の realm 内に存在するアカウントに偽装することが可能です。結果として、特定の realm 内のユーザは、他の realm へのアクセスが可能です。この問題に限り、バージョン 1.2.3 で既に解消されています。  尚、この問題は、攻撃者が偽装するアカウント名が重要な制御リスト (Critical ACL) 上に存在する場合に様々な手法を利用して実行される可能性があります。  また、この問題は Kerberos 5 をサポートする Microsoft 製品においても影響を受けることが報告されています。現時点では詳細は公開されていませんが、影響を受ける製品のパッチが公開予定です。  3.フォーマットストリングの問題 (CAN-2003-0060) KDC の古いバージョンでは、ログ採取のルーチンにおいて '%n' のような printf() 系列の出力関数で書式指定子が利用されており、このような関数には、フォーマットストリングの問題が存在します。この問題を利用することで、リモートの攻撃者は krb5kdc(1M) のクラッシュを引き起こし、結果としてサービス不能状態に陥らせることが可能です。  尚、この問題を抱えるいくつかの関数は、認証処理以前で使用されているため、不特定多数のリモートユーザがこの問題を利用することが可能です。  また、このようなタイプの問題は、特定の状況下において、任意のコードを実行できる可能性もあるため、攻撃者は KDC で管理されるシステムへのアクセスできる可能性も考えられます。  4.ASN.1 decoder データサイズ上の境界チェックの問題 (CAN-2002-0036) MIT Kerberos 5 に含まれている Abstract Syntax Notation One (ASN.1) decoder には、データサイズの境界チェックが適切に行われていません。そのため、記憶領域の割り当てが消極的に行われているような特定のシステムでは、データを受け取ることで krb5kdc(1M) 及び kerberos を使用しているアプリケーションがクラッシュしてしまいます。  結果として、リモートの攻撃者は意図的に作成されたパケットを送信することで、krb5kdc(1M) 及び kerberos を使用しているアプリケーションをサービス不能状態に陥らせることが可能です。  現時点では詳細は公開されていませんが、これらの問題により、多くのベンダから提供されている kerberos を使用している製品が影響を受ける可能性があると報告されています。  ただし、Solaris 9 x86 版及び Red Hat Linux 8.0、さらには SEAM 1.0 がインストールされていない Solaris 2.6 及び 7 では、これら全ての問題の影響は受けません。  また、Sun Microsystems より公開されているパッチ適用により、1. の問題 (NULL ポインタによる参照読み出しの問題: CAN-2003-0058) を解消することが可能です。その他の問題が解消されるかどうかは、現時点では未詳です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6 (sparc) ",
+						"2.6 (x86) ",
+						"7.0 (sparc) ",
+						"7.0 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2  ",
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2003:051",
+					"url": "https://rhn.redhat.com/errata/RHSA-2003-051.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "50142",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-50142-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": "50142",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-50142-3"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2003:051",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2003-051J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2003-0059",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0059"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2003-0059",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2003-0059"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6712",
+					"url": "http://www.securityfocus.com/bid/6712"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6683",
+					"url": "http://www.securityfocus.com/bid/6683"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6714",
+					"url": "http://www.securityfocus.com/bid/6714"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6713",
+					"url": "http://www.securityfocus.com/bid/6713"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#787523",
+					"url": "http://www.kb.cert.org/vuls/id/787523"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#684563",
+					"url": "http://www.kb.cert.org/vuls/id/684563"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#587579",
+					"url": "http://www.kb.cert.org/vuls/id/587579"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#661243",
+					"url": "http://www.kb.cert.org/vuls/id/661243"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2003-01-23T00:00:00+09:00"
+	}
 }

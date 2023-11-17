@@ -1,143 +1,143 @@
 {
-  "vulinfoid": "JVNDB-2006-000117",
-  "vulinfodata": {
-    "title": "MySQL の suid ルーチンにおける不正に権限を取得される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL には、以下の複数のセキュリティ上の問題が存在します。  1) Linux あるいは他のプラットフォームにおいて、ファイル名の大文字と小文字を区別するファイルシステムを使用している場合、データベース作成権限のないユーザに、大文字と小文字が異なるデータベースの作成を許可してしまう問題が存在します。(Bug#17647)  このため、例えば \"sample\" という名前のデータベースが存在する場合、ローカルの攻撃者により \"sAmple\" という名前のデータベースが作成される可能性があります。  2) ストアドルーチン (ストアドプロシージャ/ファンクション) におけるユーザ権限の処理に不備が存在するため、ストアドルーチンを呼び出したユーザ権限ではなくストアドルーチンの DEFINER (定義者) であるユーザ権限で実行されてしまう問題が存在します。(Bug#18630)  GRANT EXECUTE ステートメントにより他のユーザにストアドプロシージャの実行を許可している場合、本来とは異なるユーザ権限でデータ操作言語 (DML) ステートメントやクエリが実行される可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "MySQL AB",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:mysql:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.1.20 およびそれ以前",
-            "5.0.24 およびそれ以前"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0 (client) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.5",
-          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MySQL Documentation",
-          "vulinfoid": "news-5-0-25",
-          "url": "http://dev.mysql.com/doc/refman/5.0/en/news-5-0-25.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL Documentation",
-          "vulinfoid": "news-4-1-21",
-          "url": "http://dev.mysql.com/doc/refman/4.1/en/news-4-1-21.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2008:0364",
-          "url": "https://rhn.redhat.com/errata/RHSA-2008-0364.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2006-4227",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4227"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2006-3306",
-          "url": "http://www.frsirt.com/english/advisories/2006/3306"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2006-4227",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-4227"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA21506",
-          "url": "http://secunia.com/advisories/21506/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "19559",
-          "url": "http://www.securityfocus.com/bid/19559"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2008年06月06日]\\n  影響を受けるシステム：レッドハット（RHSA-2008:0364）を追加\\n  ベンダ情報：レッドハット（RHSA-2008:0364）を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2008-06-06T15:33:48+09:00",
-    "datepublic": "2006-02-22T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2006-000117",
+	"vulinfodata": {
+		"title": "MySQL の suid ルーチンにおける不正に権限を取得される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL には、以下の複数のセキュリティ上の問題が存在します。  1) Linux あるいは他のプラットフォームにおいて、ファイル名の大文字と小文字を区別するファイルシステムを使用している場合、データベース作成権限のないユーザに、大文字と小文字が異なるデータベースの作成を許可してしまう問題が存在します。(Bug#17647)  このため、例えば \"sample\" という名前のデータベースが存在する場合、ローカルの攻撃者により \"sAmple\" という名前のデータベースが作成される可能性があります。  2) ストアドルーチン (ストアドプロシージャ/ファンクション) におけるユーザ権限の処理に不備が存在するため、ストアドルーチンを呼び出したユーザ権限ではなくストアドルーチンの DEFINER (定義者) であるユーザ権限で実行されてしまう問題が存在します。(Bug#18630)  GRANT EXECUTE ステートメントにより他のユーザにストアドプロシージャの実行を許可している場合、本来とは異なるユーザ権限でデータ操作言語 (DML) ステートメントやクエリが実行される可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "MySQL AB",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:mysql:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.1.20 およびそれ以前",
+						"5.0.24 およびそれ以前"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0 (client) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.5",
+					"vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MySQL Documentation",
+					"vulinfoid": "news-5-0-25",
+					"url": "http://dev.mysql.com/doc/refman/5.0/en/news-5-0-25.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL Documentation",
+					"vulinfoid": "news-4-1-21",
+					"url": "http://dev.mysql.com/doc/refman/4.1/en/news-4-1-21.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2008:0364",
+					"url": "https://rhn.redhat.com/errata/RHSA-2008-0364.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2006-4227",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4227"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2006-3306",
+					"url": "http://www.frsirt.com/english/advisories/2006/3306"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2006-4227",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-4227"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA21506",
+					"url": "http://secunia.com/advisories/21506/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "19559",
+					"url": "http://www.securityfocus.com/bid/19559"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2008年06月06日]\\n  影響を受けるシステム：レッドハット（RHSA-2008:0364）を追加\\n  ベンダ情報：レッドハット（RHSA-2008:0364）を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2008-06-06T15:33:48+09:00",
+		"datepublic": "2006-02-22T00:00:00+09:00"
+	}
 }

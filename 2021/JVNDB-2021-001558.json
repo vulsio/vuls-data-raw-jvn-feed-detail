@@ -1,96 +1,96 @@
 {
-  "vulinfoid": "JVNDB-2021-001558",
-  "vulinfodata": {
-    "title": "三菱電機製 MELSEC iQ-R シリーズの MELSOFT 交信ポートにおけるリソース枯渇の脆弱性",
-    "vulinfodescription": {
-      "overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズ CPU ユニットの MELSOFT 交信ポート (TCP/IP) には、セッション管理の不備に起因したリソースの枯渇の脆弱性 (CWE-400、CVE-2021-20591) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC iQ-R シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R00/01/02CPU 全バージョン",
-            "R04/08/16/32/120 (EN) CPU 全バージョン",
-            "R08/16/32/120PCPU 全バージョン",
-            "R08/16/32/120PSFCPU 全バージョン",
-            "R08/16/32/120SFCPU 全バージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.3",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者が MELSOFT 交信ポート (TCP/IP) に接続したままの状態とすることで、MELSOFT 交信ポート (TCP/IP) のリソースが枯渇し当該ポートへの接続が処理されず、サービス運用妨害 (DoS) 状態となる可能性があります。それにより、正規のユーザが MELSOFT 交信ポート (TCP/IP) に接続できなくなります。  開発者によると、複数の MELSOFT 交信ポート (TCP/IP ポート) をオープンしている場合、他ポートへの影響はなく、また、シーケンス制御への影響はないとのことです。  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-003.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を回避できるとのことです。  　* MELSOFT 交信ポート (TCP/IP) の 5007 ポートの機能が不要な場合は、コネクション強制無効化機能を使用し当該ポートを強制的に無効化する (MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) 付3 バッファメモリを参照)  また、開発者は本脆弱性の影響を軽減するために、次の回避策のいずれかまたは組み合わせを適用することを推奨しています。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能を使用し、接続可能な IP アドレスを適切に制限する 　* MELSOFT 交信ポート (UDP/IP) を使用する  次の方法で、サービス運用妨害 (DoS) 状態となり接続できなくなった正規のユーザが MELSOFT 交信ポート (TCP/IP) に接続できるようになるとのことです。  　* サービス運用妨害 (DoS) 状態になった場合には、コネクション強制無効化機能を使用し当該ポートを強制的に無効化した後、再度有効化する (MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) 付3 バッファメモリを参照)  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-003.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSOFT交信ポート(TCP/IP)におけるサービス拒否(DoS)の脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-003.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20591",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20591"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-147-05",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-147-05"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98060539",
-          "url": "http://jvn.jp/cert/JVNVU98060539"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-400",
-          "url": "https://cwe.mitre.org/data/definitions/400.html",
-          "title": "リソースの枯渇"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-05-28T16:45:41+09:00",
-          "description": "[2021年05月28日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-05-28T16:45:41+09:00",
-    "datelastupdated": "2021-05-28T16:45:41+09:00",
-    "datepublic": "2021-05-27T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001558",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC iQ-R シリーズの MELSOFT 交信ポートにおけるリソース枯渇の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC iQ-R シリーズ CPU ユニットの MELSOFT 交信ポート (TCP/IP) には、セッション管理の不備に起因したリソースの枯渇の脆弱性 (CWE-400、CVE-2021-20591) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC iQ-R シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R00/01/02CPU 全バージョン",
+						"R04/08/16/32/120 (EN) CPU 全バージョン",
+						"R08/16/32/120PCPU 全バージョン",
+						"R08/16/32/120PSFCPU 全バージョン",
+						"R08/16/32/120SFCPU 全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者が MELSOFT 交信ポート (TCP/IP) に接続したままの状態とすることで、MELSOFT 交信ポート (TCP/IP) のリソースが枯渇し当該ポートへの接続が処理されず、サービス運用妨害 (DoS) 状態となる可能性があります。それにより、正規のユーザが MELSOFT 交信ポート (TCP/IP) に接続できなくなります。  開発者によると、複数の MELSOFT 交信ポート (TCP/IP ポート) をオープンしている場合、他ポートへの影響はなく、また、シーケンス制御への影響はないとのことです。  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-003.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を回避できるとのことです。  　* MELSOFT 交信ポート (TCP/IP) の 5007 ポートの機能が不要な場合は、コネクション強制無効化機能を使用し当該ポートを強制的に無効化する (MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) 付3 バッファメモリを参照)  また、開発者は本脆弱性の影響を軽減するために、次の回避策のいずれかまたは組み合わせを適用することを推奨しています。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能を使用し、接続可能な IP アドレスを適切に制限する 　* MELSOFT 交信ポート (UDP/IP) を使用する  次の方法で、サービス運用妨害 (DoS) 状態となり接続できなくなった正規のユーザが MELSOFT 交信ポート (TCP/IP) に接続できるようになるとのことです。  　* サービス運用妨害 (DoS) 状態になった場合には、コネクション強制無効化機能を使用し当該ポートを強制的に無効化した後、再度有効化する (MELSEC iQ-R Ethernet ユーザーズマニュアル(応用編) 付3 バッファメモリを参照)  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-003.pdf\" target=\"_blank\">開発者が提供する情報</a>をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSOFT交信ポート(TCP/IP)におけるサービス拒否(DoS)の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2021-003.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20591",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20591"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-147-05",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-147-05"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98060539",
+					"url": "http://jvn.jp/cert/JVNVU98060539"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-400",
+					"url": "https://cwe.mitre.org/data/definitions/400.html",
+					"title": "リソースの枯渇"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-05-28T16:45:41+09:00",
+					"description": "[2021年05月28日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-05-28T16:45:41+09:00",
+		"datelastupdated": "2021-05-28T16:45:41+09:00",
+		"datepublic": "2021-05-27T00:00:00+09:00"
+	}
 }

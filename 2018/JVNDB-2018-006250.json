@@ -1,192 +1,192 @@
 {
-  "vulinfoid": "JVNDB-2018-006250",
-  "vulinfodata": {
-    "title": "複数の TCP 実装にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "複数の TCP 実装に、サービス運用妨害 (DoS) の脆弱性が存在します。  リソース枯渇の脆弱性 (CWE-400) - CVE-2018-5390 Linux カーネルに対し、tcp_collapse_ofo_queue() や tcp_prune_ofo_queue() 関数による処理がパケット毎に行われるよう細工したパケットを送りつけることで、サービス運用妨害 (DoS) 攻撃が可能であることが報告されています。  リソース枯渇の脆弱性 (CWE-400) - CVE-2018-6922 FreeBSD の TCP 実装では、分割された状態で受信した TCP セグメントを再構築する際に非効率なアルゴリズムが使用されてます。  なお双方の脆弱性に対し、攻撃者は TCP セッション中に細工したパケットを送ることで攻撃を行います。DoS 状態を維持するためには細工したパケットを処理させ続ける必要があるため、送信元 IP アドレスを偽装した攻撃を行うことはできません。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "FreeBSD",
-          "productname": "FreeBSD",
-          "cpe": {
-            "text": "cpe:/o:freebsd:freebsd",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10",
-            "10.4",
-            "11",
-            "11.1",
-            "11.2"
-          ]
-        },
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.1",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[パッチを適用する] 開発者が提供する情報をもとに、対応するパッチを適用してください。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "David Miller's networking tree",
-          "vulinfoid": "kernel/git/davem/net.git - Merge branch 'tcp-robust-ooo'",
-          "url": "https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=1a4f14bab1868b443f0dd3c55b689a478f82e72e"
-        },
-        {
-          "type": "vendor",
-          "name": "FreeBSD Security Advisory",
-          "vulinfoid": "FreeBSD-SA-18:08.tcp: Resource exhaustion in TCP reassembly",
-          "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:08.tcp.asc"
-        },
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "株式会社インターネットイニシアティブからの情報",
-          "url": "http://jvn.jp/vu/JVNVU91510483/317632/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Mailing List Archives (spinics.net)",
-          "vulinfoid": "Linux Netdev mailing list: [PATCH net 0/5] tcp: more robust ooo handling",
-          "url": "https://www.spinics.net/lists/netdev/msg514742.html"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV18-019",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv18-019.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-5390",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5390"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-6922",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6922"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-105-05",
-          "url": "https://www.us-cert.gov/ics/advisories/icsa-20-105-05"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95499848",
-          "url": "https://jvn.jp/vu/JVNVU95499848/"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#91510483",
-          "url": "http://jvn.jp/vu/JVNVU91510483/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-5390",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5390"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-6922",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-6922"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#962459",
-          "url": "https://www.kb.cert.org/vuls/id/962459"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-400",
-          "url": "https://cwe.mitre.org/data/definitions/400.html",
-          "title": "リソースの枯渇"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-08-14T10:37:30+09:00",
-          "description": "[2018年08月14日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-08-28T15:26:29+09:00",
-          "description": "[2018年08月28日]\\n  ベンダ情報：インターネットイニシアティブ (株式会社インターネットイニシアティブからの情報) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2018-12-04T11:16:19+09:00",
-          "description": "[2018年12月04日]\\n  ベンダ情報：日本電気 (NV18-019) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2019-07-24T16:55:31+09:00",
-          "description": "[2019年07月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5390) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-6922) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2020-04-20T11:56:37+09:00",
-          "description": "[2020年04月20日]\\n  参考情報：JVN (JVNVU#95499848) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2020-05-13T14:29:18+09:00",
-          "description": "[2020年05月13日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-105-05) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-08-14T10:37:30+09:00",
-    "datelastupdated": "2020-05-13T16:05:54+09:00",
-    "datepublic": "2018-08-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-006250",
+	"vulinfodata": {
+		"title": "複数の TCP 実装にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "複数の TCP 実装に、サービス運用妨害 (DoS) の脆弱性が存在します。  リソース枯渇の脆弱性 (CWE-400) - CVE-2018-5390 Linux カーネルに対し、tcp_collapse_ofo_queue() や tcp_prune_ofo_queue() 関数による処理がパケット毎に行われるよう細工したパケットを送りつけることで、サービス運用妨害 (DoS) 攻撃が可能であることが報告されています。  リソース枯渇の脆弱性 (CWE-400) - CVE-2018-6922 FreeBSD の TCP 実装では、分割された状態で受信した TCP セグメントを再構築する際に非効率なアルゴリズムが使用されてます。  なお双方の脆弱性に対し、攻撃者は TCP セッション中に細工したパケットを送ることで攻撃を行います。DoS 状態を維持するためには細工したパケットを処理させ続ける必要があるため、送信元 IP アドレスを偽装した攻撃を行うことはできません。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "FreeBSD",
+					"productname": "FreeBSD",
+					"cpe": {
+						"text": "cpe:/o:freebsd:freebsd",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10",
+						"10.4",
+						"11",
+						"11.1",
+						"11.2"
+					]
+				},
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.1",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[パッチを適用する] 開発者が提供する情報をもとに、対応するパッチを適用してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "David Miller's networking tree",
+					"vulinfoid": "kernel/git/davem/net.git - Merge branch 'tcp-robust-ooo'",
+					"url": "https://git.kernel.org/pub/scm/linux/kernel/git/davem/net.git/commit/?id=1a4f14bab1868b443f0dd3c55b689a478f82e72e"
+				},
+				{
+					"type": "vendor",
+					"name": "FreeBSD Security Advisory",
+					"vulinfoid": "FreeBSD-SA-18:08.tcp: Resource exhaustion in TCP reassembly",
+					"url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-18:08.tcp.asc"
+				},
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "株式会社インターネットイニシアティブからの情報",
+					"url": "http://jvn.jp/vu/JVNVU91510483/317632/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Mailing List Archives (spinics.net)",
+					"vulinfoid": "Linux Netdev mailing list: [PATCH net 0/5] tcp: more robust ooo handling",
+					"url": "https://www.spinics.net/lists/netdev/msg514742.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV18-019",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv18-019.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-5390",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-5390"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-6922",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-6922"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-105-05",
+					"url": "https://www.us-cert.gov/ics/advisories/icsa-20-105-05"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95499848",
+					"url": "https://jvn.jp/vu/JVNVU95499848/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91510483",
+					"url": "http://jvn.jp/vu/JVNVU91510483/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-5390",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-5390"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-6922",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-6922"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#962459",
+					"url": "https://www.kb.cert.org/vuls/id/962459"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-400",
+					"url": "https://cwe.mitre.org/data/definitions/400.html",
+					"title": "リソースの枯渇"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-08-14T10:37:30+09:00",
+					"description": "[2018年08月14日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-08-28T15:26:29+09:00",
+					"description": "[2018年08月28日]\\n  ベンダ情報：インターネットイニシアティブ (株式会社インターネットイニシアティブからの情報) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2018-12-04T11:16:19+09:00",
+					"description": "[2018年12月04日]\\n  ベンダ情報：日本電気 (NV18-019) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2019-07-24T16:55:31+09:00",
+					"description": "[2019年07月24日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-5390) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-6922) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2020-04-20T11:56:37+09:00",
+					"description": "[2020年04月20日]\\n  参考情報：JVN (JVNVU#95499848) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2020-05-13T14:29:18+09:00",
+					"description": "[2020年05月13日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-20-105-05) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-08-14T10:37:30+09:00",
+		"datelastupdated": "2020-05-13T16:05:54+09:00",
+		"datepublic": "2018-08-06T00:00:00+09:00"
+	}
 }

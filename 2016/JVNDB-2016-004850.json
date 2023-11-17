@@ -1,245 +1,245 @@
 {
-  "vulinfoid": "JVNDB-2016-004850",
-  "vulinfodata": {
-    "title": "libarchive のサンドボックスコードにおける任意のファイルに書き込まれる脆弱性",
-    "vulinfodescription": {
-      "overview": "libarchive のサンドボックスコードは、0 以外のデータサイズのハードリンクアーカイブのエントリを誤って処理するため、任意のファイルに書き込まれる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "libarchive",
-          "productname": "libarchive",
-          "cpe": {
-            "text": "cpe:/a:libarchive:libarchive",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.2.0 およびそれ以前"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Linux",
-          "cpe": {
-            "text": "cpe:/o:oracle:linux",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)",
-            "(v. 7)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux HPC Node",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)",
-            "(v. 7)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux HPC Node EUS",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 7.2)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)",
-            "(v. 7)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server AUS",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 7.2)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server EUS",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 7.2)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)",
-            "(v. 7)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat OpenShift",
-          "cpe": {
-            "text": "cpe:/a:redhat:openshift",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Enterprise 3.1 x86_64",
-            "Enterprise 3.2 x86_64"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、巧妙に細工されたアーカイブファイルを介して、任意のファイルに書き込まれる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Hard links with data can evade sandboxing restrictions #746",
-          "url": "https://github.com/libarchive/libarchive/issues/746"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Fixes for Issue #745 and Issue #746 from Doran Moppert.",
-          "url": "https://github.com/libarchive/libarchive/commit/dfd6b54ce33960e420fb206d8872fb759b577ad9"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Linux Bulletin - July 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1362601",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1362601"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2016:1844",
-          "url": "http://rhn.redhat.com/errata/RHSA-2016-1844.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2016:1852",
-          "url": "https://access.redhat.com/errata/RHSA-2016:1852"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2016:1853",
-          "url": "https://access.redhat.com/errata/RHSA-2016:1853"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2016:1850",
-          "url": "http://rhn.redhat.com/errata/RHSA-2016-1850.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-5418",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5418"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-5418",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5418"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年09月27日]\\n  掲載\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-09-27T11:51:02+09:00",
-    "datelastupdated": "2016-11-17T16:51:22+09:00",
-    "datepublic": "2016-09-12T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-004850",
+	"vulinfodata": {
+		"title": "libarchive のサンドボックスコードにおける任意のファイルに書き込まれる脆弱性",
+		"vulinfodescription": {
+			"overview": "libarchive のサンドボックスコードは、0 以外のデータサイズのハードリンクアーカイブのエントリを誤って処理するため、任意のファイルに書き込まれる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-19: Data Handling (データ処理) と識別されています。 http://cwe.mitre.org/data/definitions/19.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "libarchive",
+					"productname": "libarchive",
+					"cpe": {
+						"text": "cpe:/a:libarchive:libarchive",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.2.0 およびそれ以前"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Linux",
+					"cpe": {
+						"text": "cpe:/o:oracle:linux",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)",
+						"(v. 7)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux HPC Node",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)",
+						"(v. 7)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux HPC Node EUS",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_hpc_node_eus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 7.2)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)",
+						"(v. 7)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server AUS",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server_aus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 7.2)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server EUS",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server_eus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 7.2)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)",
+						"(v. 7)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat OpenShift",
+					"cpe": {
+						"text": "cpe:/a:redhat:openshift",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Enterprise 3.1 x86_64",
+						"Enterprise 3.2 x86_64"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、巧妙に細工されたアーカイブファイルを介して、任意のファイルに書き込まれる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Hard links with data can evade sandboxing restrictions #746",
+					"url": "https://github.com/libarchive/libarchive/issues/746"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Fixes for Issue #745 and Issue #746 from Doran Moppert.",
+					"url": "https://github.com/libarchive/libarchive/commit/dfd6b54ce33960e420fb206d8872fb759b577ad9"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Linux Bulletin - July 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjul2016-3090544.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1362601",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1362601"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2016:1844",
+					"url": "http://rhn.redhat.com/errata/RHSA-2016-1844.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2016:1852",
+					"url": "https://access.redhat.com/errata/RHSA-2016:1852"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2016:1853",
+					"url": "https://access.redhat.com/errata/RHSA-2016:1853"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2016:1850",
+					"url": "http://rhn.redhat.com/errata/RHSA-2016-1850.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-5418",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5418"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-5418",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-5418"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年09月27日]\\n  掲載\\n[2016年11月17日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - July 2016) を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2016-09-27T11:51:02+09:00",
+		"datelastupdated": "2016-11-17T16:51:22+09:00",
+		"datepublic": "2016-09-12T00:00:00+09:00"
+	}
 }

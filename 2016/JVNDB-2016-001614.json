@@ -1,239 +1,239 @@
 {
-  "vulinfoid": "JVNDB-2016-001614",
-  "vulinfodata": {
-    "title": "OpenSSL における整数オーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL には、crypto/bn/bn.h および crypto/bn/bn_print.c に関する処理に不備があるため、整数オーバーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-190: Integer Overflow or Wraparound (整数オーバーフローまたはラップアラウンド)、および CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/190.html http://cwe.mitre.org/data/definitions/476.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.1s 未満の 1.0.1",
-            "1.0.2g 未満の 1.0.2"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:oracle:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.6.29 およびそれ以前",
-            "5.7.11 およびそれ以前"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "IceWall Federation Agent",
-          "cpe": {
-            "text": "cpe:/a:hp:icewall_federation_agent",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 (RHEL 5/6/7)"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "IceWall MCRP",
-          "cpe": {
-            "text": "cpe:/a:hp:icewall_mcrp",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 (RHEL 5/6/7 または HP-UX 11i v3)"
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "IceWall SSO",
-          "cpe": {
-            "text": "cpe:/a:hp:icewall_sso",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Agent Option 10.0 (RHEL 5/6/7 または HP-UX 11i v3)",
-            "certd 10.0 (RHEL 5/6/7 または HP-UX 11i v3)",
-            "Dfw 10.0 (RHEL 5/6/7 または HP-UX 11i v3)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、(1) BN_dec2bn または (2) BN_hex2bn 関数により誤って処理される過度に長い数字列を介して、サービス運用妨害 (ヒープメモリ破損またはNULL ポインタデリファレンス) 状態にされるなど、不特定の影響を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBGN03563",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05052990"
-        },
-        {
-          "type": "vendor",
-          "name": "McAfee Security Bulletin",
-          "vulinfoid": "SB10156",
-          "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10156"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL",
-          "vulinfoid": "OpenSSL 1.0.2 Series Release Notes",
-          "url": "https://www.openssl.org/news/openssl-1.0.2-notes.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL",
-          "vulinfoid": "OpenSSL 1.0.1 Series Release Notes",
-          "url": "https://www.openssl.org/news/openssl-1.0.1-notes.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Project",
-          "vulinfoid": "Fix BN_hex2bn/BN_dec2bn NULL ptr/heap corruption",
-          "url": "https://git.openssl.org/?p=openssl.git;a=commit;h=c175308407858afff3fc8c2e5e085d94d12edc7d"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "BN_hex2bn/BN_dec2bn NULL pointer deref/heap corruption (CVE-2016-0797)",
-          "url": "https://openssl.org/news/secadv/20160301.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - January 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Linux Bulletin - January 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisories",
-          "vulinfoid": "SA40168",
-          "url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40168"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "April 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2016-8",
-          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-8j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-0797",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0797"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-0797",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0797"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年03月08日]\\n  掲載\\n[2016年03月17日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-8) を追加\\n[2016年05月31日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n  ベンダ情報：パルスセキュア (SA40168) を追加\\n[2016年08月26日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：マカフィー (SB10156) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03563) を追加\\n[2016年11月14日]\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-03-08T16:26:26+09:00",
-    "datelastupdated": "2016-11-14T17:56:21+09:00",
-    "datepublic": "2016-03-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-001614",
+	"vulinfodata": {
+		"title": "OpenSSL における整数オーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL には、crypto/bn/bn.h および crypto/bn/bn_print.c に関する処理に不備があるため、整数オーバーフローの脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-190: Integer Overflow or Wraparound (整数オーバーフローまたはラップアラウンド)、および CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/190.html http://cwe.mitre.org/data/definitions/476.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.1s 未満の 1.0.1",
+						"1.0.2g 未満の 1.0.2"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:oracle:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.6.29 およびそれ以前",
+						"5.7.11 およびそれ以前"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "IceWall Federation Agent",
+					"cpe": {
+						"text": "cpe:/a:hp:icewall_federation_agent",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 (RHEL 5/6/7)"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "IceWall MCRP",
+					"cpe": {
+						"text": "cpe:/a:hp:icewall_mcrp",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 (RHEL 5/6/7 または HP-UX 11i v3)"
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "IceWall SSO",
+					"cpe": {
+						"text": "cpe:/a:hp:icewall_sso",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Agent Option 10.0 (RHEL 5/6/7 または HP-UX 11i v3)",
+						"certd 10.0 (RHEL 5/6/7 または HP-UX 11i v3)",
+						"Dfw 10.0 (RHEL 5/6/7 または HP-UX 11i v3)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、(1) BN_dec2bn または (2) BN_hex2bn 関数により誤って処理される過度に長い数字列を介して、サービス運用妨害 (ヒープメモリ破損またはNULL ポインタデリファレンス) 状態にされるなど、不特定の影響を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBGN03563",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05052990"
+				},
+				{
+					"type": "vendor",
+					"name": "McAfee Security Bulletin",
+					"vulinfoid": "SB10156",
+					"url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10156"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL",
+					"vulinfoid": "OpenSSL 1.0.2 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-1.0.2-notes.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL",
+					"vulinfoid": "OpenSSL 1.0.1 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-1.0.1-notes.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Fix BN_hex2bn/BN_dec2bn NULL ptr/heap corruption",
+					"url": "https://git.openssl.org/?p=openssl.git;a=commit;h=c175308407858afff3fc8c2e5e085d94d12edc7d"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "BN_hex2bn/BN_dec2bn NULL pointer deref/heap corruption (CVE-2016-0797)",
+					"url": "https://openssl.org/news/secadv/20160301.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016verbose-2881709.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - April 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpuapr2016v3-2985753.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuapr2016-2881694.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - January 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2016-2867206.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle VM Server for x86 Bulletin - July 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/ovmbulletinjul2016-3090546.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Linux Bulletin - January 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/linuxbulletinjan2016-2867209.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - April 2016",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinapr2016-2952098.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisories",
+					"vulinfoid": "SA40168",
+					"url": "https://kb.pulsesecure.net/articles/Pulse_Security_Advisories/SA40168"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "April 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/april_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2016-8",
+					"url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-8j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-0797",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0797"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-0797",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-0797"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年03月08日]\\n  掲載\\n[2016年03月17日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-8) を追加\\n[2016年05月31日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update CVSS V2 Risk Matrices - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2016 Critical Patch Update Released) を追加\\n  ベンダ情報：パルスセキュア (SA40168) を追加\\n[2016年08月26日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：マカフィー (SB10156) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBGN03563) を追加\\n[2016年11月14日]\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - April 2016) を追加\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle Linux Bulletin - January 2016) を追加\\n  ベンダ情報：オラクル (Oracle VM Server for x86 Bulletin - July 2016) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-03-08T16:26:26+09:00",
+		"datelastupdated": "2016-11-14T17:56:21+09:00",
+		"datepublic": "2016-03-01T00:00:00+09:00"
+	}
 }

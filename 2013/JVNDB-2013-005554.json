@@ -1,190 +1,190 @@
 {
-  "vulinfoid": "JVNDB-2013-005554",
-  "vulinfodata": {
-    "title": "Linux Kernel の KVM サブシステムの arch/x86/kvm/lapic.c におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux Kernel の KVM サブシステムの arch/x86/kvm/lapic.c 内の apic_get_tmcct 関数には、サービス運用妨害 (ゼロ除算エラーおよびホスト OS クラッシュ) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.12.5 およびそれ以前"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux HPC Node",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Resilient Storage",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_resilient_storage",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "EUS 6.5.z"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6",
-            "EUS 6.5.z"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.7",
-          "vector": "AV:A/AC:M/Au:N/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "ゲスト OS ユーザにより、巧妙に細工された TMICT 値の変更を介して、サービス運用妨害 (ゼロ除算エラーおよびホスト OS クラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ChangeLog",
-          "vulinfoid": "ChangeLog-3.2.54",
-          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.2.54"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "KVM: x86: Fix potential divide by 0 in lapic (CVE-2013-6367)",
-          "url": "https://github.com/torvalds/linux/commit/b963a22e6d1a266a67e9eecc88134713fd54775c"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux kernel source tree",
-          "vulinfoid": "KVM: x86: Fix potential divide by 0 in lapic (CVE-2013-6367)",
-          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b963a22e6d1a266a67e9eecc88134713fd54775c"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1032207",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1032207"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1801",
-          "url": "https://rhn.redhat.com/errata/RHSA-2013-1801.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1802",
-          "url": "https://rhn.redhat.com/errata/RHSA-2013-1802.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:0163",
-          "url": "http://rhn.redhat.com/errata/RHSA-2014-0163.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:0284",
-          "url": "https://rhn.redhat.com/errata/RHSA-2014-0284.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-6367",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6367"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-6367",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6367"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-189",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
-          "title": "数値処理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年12月17日]\\n  掲載\\n[2014年04月07日]\\n  ベンダ情報：kernel.org (ChangeLog-3.2.54) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1802) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0163) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0284) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-12-17T19:08:07+09:00",
-    "datelastupdated": "2014-04-07T17:54:44+09:00",
-    "datepublic": "2013-12-12T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-005554",
+	"vulinfodata": {
+		"title": "Linux Kernel の KVM サブシステムの arch/x86/kvm/lapic.c におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux Kernel の KVM サブシステムの arch/x86/kvm/lapic.c 内の apic_get_tmcct 関数には、サービス運用妨害 (ゼロ除算エラーおよびホスト OS クラッシュ) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.12.5 およびそれ以前"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux HPC Node",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Resilient Storage",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_resilient_storage",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"EUS 6.5.z"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6",
+						"EUS 6.5.z"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.7",
+					"vector": "AV:A/AC:M/Au:N/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "ゲスト OS ユーザにより、巧妙に細工された TMICT 値の変更を介して、サービス運用妨害 (ゼロ除算エラーおよびホスト OS クラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ChangeLog",
+					"vulinfoid": "ChangeLog-3.2.54",
+					"url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.2.54"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "KVM: x86: Fix potential divide by 0 in lapic (CVE-2013-6367)",
+					"url": "https://github.com/torvalds/linux/commit/b963a22e6d1a266a67e9eecc88134713fd54775c"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux kernel source tree",
+					"vulinfoid": "KVM: x86: Fix potential divide by 0 in lapic (CVE-2013-6367)",
+					"url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=b963a22e6d1a266a67e9eecc88134713fd54775c"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1032207",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1032207"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1801",
+					"url": "https://rhn.redhat.com/errata/RHSA-2013-1801.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1802",
+					"url": "https://rhn.redhat.com/errata/RHSA-2013-1802.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:0163",
+					"url": "http://rhn.redhat.com/errata/RHSA-2014-0163.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:0284",
+					"url": "https://rhn.redhat.com/errata/RHSA-2014-0284.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-6367",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6367"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-6367",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6367"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-189",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+					"title": "数値処理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年12月17日]\\n  掲載\\n[2014年04月07日]\\n  ベンダ情報：kernel.org (ChangeLog-3.2.54) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1802) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0163) を追加\\n  ベンダ情報：レッドハット (RHSA-2014:0284) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-12-17T19:08:07+09:00",
+		"datelastupdated": "2014-04-07T17:54:44+09:00",
+		"datepublic": "2013-12-12T00:00:00+09:00"
+	}
 }

@@ -1,200 +1,200 @@
 {
-  "vulinfoid": "JVNDB-2015-001673",
-  "vulinfodata": {
-    "title": "Apache HTTP Server の mod_lua モジュールにおけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache HTTP Server の mod_lua モジュールの lua_request.c 内の lua_websocket_read 関数には、サービス運用妨害 (子プロセスのクラッシュ) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:apache:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.4.12 まで"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 から 10.10.4",
-            "10.9.5"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "macOS Server (旧 OS X Server)",
-          "cpe": {
-            "text": "cpe:/o:apple:os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Enterprise Manager Ops Center",
-          "cpe": {
-            "text": "cpe:/a:oracle:enterprise_manager_ops_center",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.1.4",
-            "12.2.2",
-            "12.3.2"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、Lua スクリプトが wsupgrade 関数を呼び出した後に巧妙に細工された WebSocket Ping フレームを送信されることで、サービス運用妨害 (子プロセスのクラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205031",
-          "url": "http://support.apple.com/en-us/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205219",
-          "url": "https://support.apple.com/en-us/HT205219"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205031",
-          "url": "http://support.apple.com/ja-jp/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205219",
-          "url": "http://support.apple.com/ja-jp/HT205219"
-        },
-        {
-          "type": "vendor",
-          "name": "Changes with Apache",
-          "vulinfoid": "Apache 2.4.13",
-          "url": "http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/CHANGES"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "*) SECURITY: CVE-2015-0228 (cve.mitre.org)",
-          "url": "https://github.com/apache/httpd/commit/643f0fcf3b8ab09a68f0ecd2aa37aafeda3e63ef"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "July 2016 Critical Patch Update Released",
-          "url": "http://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-0228",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0228"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99970459",
-          "url": "http://jvn.jp/vu/JVNVU99970459/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-0228",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0228"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "MGASA-2015-0099",
-          "url": "http://advisories.mageia.org/MGASA-2015-0099.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年03月10日]\\n  掲載\\n[2015年04月09日]\\n  参考情報：関連文書 (MGASA-2015-0099) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n[2015年11月06日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加\\n[2016年07月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-03-10T14:56:48+09:00",
-    "datelastupdated": "2016-07-27T16:25:25+09:00",
-    "datepublic": "2015-02-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-001673",
+	"vulinfodata": {
+		"title": "Apache HTTP Server の mod_lua モジュールにおけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache HTTP Server の mod_lua モジュールの lua_request.c 内の lua_websocket_read 関数には、サービス運用妨害 (子プロセスのクラッシュ) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:apache:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.4.12 まで"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 から 10.10.4",
+						"10.9.5"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "macOS Server (旧 OS X Server)",
+					"cpe": {
+						"text": "cpe:/o:apple:os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Enterprise Manager Ops Center",
+					"cpe": {
+						"text": "cpe:/a:oracle:enterprise_manager_ops_center",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.1.4",
+						"12.2.2",
+						"12.3.2"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、Lua スクリプトが wsupgrade 関数を呼び出した後に巧妙に細工された WebSocket Ping フレームを送信されることで、サービス運用妨害 (子プロセスのクラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205031",
+					"url": "http://support.apple.com/en-us/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205219",
+					"url": "https://support.apple.com/en-us/HT205219"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205031",
+					"url": "http://support.apple.com/ja-jp/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205219",
+					"url": "http://support.apple.com/ja-jp/HT205219"
+				},
+				{
+					"type": "vendor",
+					"name": "Changes with Apache",
+					"vulinfoid": "Apache 2.4.13",
+					"url": "http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/CHANGES"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "*) SECURITY: CVE-2015-0228 (cve.mitre.org)",
+					"url": "https://github.com/apache/httpd/commit/643f0fcf3b8ab09a68f0ecd2aa37aafeda3e63ef"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "July 2016 Critical Patch Update Released",
+					"url": "http://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-0228",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0228"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99970459",
+					"url": "http://jvn.jp/vu/JVNVU99970459/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-0228",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0228"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "MGASA-2015-0099",
+					"url": "http://advisories.mageia.org/MGASA-2015-0099.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年03月10日]\\n  掲載\\n[2015年04月09日]\\n  参考情報：関連文書 (MGASA-2015-0099) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n[2015年11月06日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加\\n[2016年07月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-03-10T14:56:48+09:00",
+		"datelastupdated": "2016-07-27T16:25:25+09:00",
+		"datepublic": "2015-02-04T00:00:00+09:00"
+	}
 }

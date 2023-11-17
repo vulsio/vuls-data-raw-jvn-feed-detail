@@ -1,314 +1,314 @@
 {
-  "vulinfoid": "JVNDB-2013-002859",
-  "vulinfodata": {
-    "title": "Apache Tomcat のフォーム認証機能におけるセッションにリクエストを挿入される脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache Tomcat のフォーム認証機能の java/org/apache/catalina/authenticator/FormAuthenticator.java は、認証要求とセッション間の関係を適切に処理しないため、セッションにリクエストを挿入される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache Tomcat",
-          "cpe": {
-            "text": "cpe:/a:apache:tomcat",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0.21 から 6.0.36",
-            "7.0.33 未満の 7.x"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Communications Policy Management",
-          "cpe": {
-            "text": "cpe:/a:oracle:communications_policy_management",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.4.1",
-            "12.1.1 およびそれ以前",
-            "9.7.3",
-            "9.9.1"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Supply Chain Products Suite",
-          "cpe": {
-            "text": "cpe:/a:oracle:supply_chain_products_suite",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Transportation Management 6.0",
-            "の Oracle Transportation Management 6.1",
-            "の Oracle Transportation Management 6.2",
-            "の Oracle Transportation Management 6.3",
-            "の Oracle Transportation Management 6.3.1",
-            "の Oracle Transportation Management 6.3.2"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Virtualization",
-          "cpe": {
-            "text": "cpe:/a:oracle:virtualization_secure_global_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Secure Global Desktop 4.63 with December 2013 PSU 未満",
-            "の Oracle Secure Global Desktop 4.71"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Application Server",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_application_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Enterprise V8.4 から V8.5",
-            "Express V8.4 から V8.5",
-            "Foundation V8.4 から V8.5",
-            "Standard V8.4 から V8.5"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Developer",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_developer",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V8.4"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Enterprise Service Bus",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_enterprise_service_bus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V8.4 から V8.5"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Portal",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_portal",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V8.4"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebSAM Storage",
-          "cpe": {
-            "text": "cpe:/a:nec:websam_storage",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "VASA Provider V1.1.001",
-            "VMware vSphere Web Client Plug-in V1.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebSAM Storage VMware vCenter Plug-in",
-          "cpe": {
-            "text": "cpe:/a:nec:websam_storage_vmware_vcenter_plug-in",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "V1.1.001",
-            "V1.2.001"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、変則的なセッション固定攻撃 (session fixation attack) によって、ログインフォームの終了中にリクエストを送信されることで、セッションにリクエストを挿入される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Tomcat",
-          "vulinfoid": "security-6",
-          "url": "http://tomcat.apache.org/security-6.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Tomcat",
-          "vulinfoid": "security-7",
-          "url": "http://tomcat.apache.org/security-7.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache-SVN",
-          "vulinfoid": "Diff of /tomcat/tc7.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java",
-          "url": "http://svn.apache.org/viewvc/tomcat/tc7.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java?r1=1408044&r2=1408043&pathrev=1408044"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache-SVN",
-          "vulinfoid": "Diff of /tomcat/tc6.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java",
-          "url": "http://svn.apache.org/viewvc/tomcat/tc6.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java?r1=1417891&r2=1417890&pathrev=1417891"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache-SVN",
-          "vulinfoid": "Revision 1417891",
-          "url": "http://svn.apache.org/viewvc?view=revision&revision=1417891"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache-SVN",
-          "vulinfoid": "Revision 1408044",
-          "url": "http://svn.apache.org/viewvc?view=revision&revision=1408044"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV14-004",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv14-004.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - January 2014",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - January 2014 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2014verbose-1972951.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016verbose-2881725.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1437",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1437.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:0964",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-0964.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:0839",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-0839.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:0834",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-0834.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:0833",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-0833.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "January 2014 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/january_2014_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "Multiple vulnerabilities in Tomcat",
-          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_tomcat"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "October 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/october_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1841-1",
-          "url": "http://www.ubuntu.com/usn/USN-1841-1"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-2067",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2067"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-2067",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2067"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-287",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
-          "title": "不適切な認証"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年06月04日]\\n  掲載\\n[2013年06月21日]\\n  ベンダ情報：Ubuntu (USN-1841-1) を追加\\n[2013年07月05日]\\n  ベンダ情報：レッドハット (RHSA-2013:0964) を追加\\n[2013年10月24日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Tomcat) を追加\\n[2013年11月12日]\\n  ベンダ情報：レッドハット (RHSA-2013:0839) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:0834) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:0833) を追加\\n[2013年11月21日]\\n  ベンダ情報：レッドハット (RHSA-2013:1437) を追加\\n[2014年01月20日]\\n  影響を受けるシステム：オラクル (Oracle Critical Patch Update Advisory - January 2014) の情報を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2014) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2014 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2014 Critical Patch Update Released) を追加\\n[2014年05月09日]\\n  影響を受けるシステム：日本電気 (NV14-004) の情報を追加\\n  ベンダ情報：日本電気 (NV14-004) を追加\\n[2016年08月02日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2016 Critical Patch Update Released) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-06-04T13:51:55+09:00",
-    "datelastupdated": "2016-11-22T16:00:23+09:00",
-    "datepublic": "2013-05-03T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-002859",
+	"vulinfodata": {
+		"title": "Apache Tomcat のフォーム認証機能におけるセッションにリクエストを挿入される脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache Tomcat のフォーム認証機能の java/org/apache/catalina/authenticator/FormAuthenticator.java は、認証要求とセッション間の関係を適切に処理しないため、セッションにリクエストを挿入される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache Tomcat",
+					"cpe": {
+						"text": "cpe:/a:apache:tomcat",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0.21 から 6.0.36",
+						"7.0.33 未満の 7.x"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Communications Policy Management",
+					"cpe": {
+						"text": "cpe:/a:oracle:communications_policy_management",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.4.1",
+						"12.1.1 およびそれ以前",
+						"9.7.3",
+						"9.9.1"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Supply Chain Products Suite",
+					"cpe": {
+						"text": "cpe:/a:oracle:supply_chain_products_suite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Transportation Management 6.0",
+						"の Oracle Transportation Management 6.1",
+						"の Oracle Transportation Management 6.2",
+						"の Oracle Transportation Management 6.3",
+						"の Oracle Transportation Management 6.3.1",
+						"の Oracle Transportation Management 6.3.2"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Virtualization",
+					"cpe": {
+						"text": "cpe:/a:oracle:virtualization_secure_global_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Secure Global Desktop 4.63 with December 2013 PSU 未満",
+						"の Oracle Secure Global Desktop 4.71"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Application Server",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_application_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Enterprise V8.4 から V8.5",
+						"Express V8.4 から V8.5",
+						"Foundation V8.4 から V8.5",
+						"Standard V8.4 から V8.5"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Developer",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_developer",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V8.4"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Enterprise Service Bus",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_enterprise_service_bus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V8.4 から V8.5"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Portal",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_portal",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V8.4"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebSAM Storage",
+					"cpe": {
+						"text": "cpe:/a:nec:websam_storage",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"VASA Provider V1.1.001",
+						"VMware vSphere Web Client Plug-in V1.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebSAM Storage VMware vCenter Plug-in",
+					"cpe": {
+						"text": "cpe:/a:nec:websam_storage_vmware_vcenter_plug-in",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"V1.1.001",
+						"V1.2.001"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、変則的なセッション固定攻撃 (session fixation attack) によって、ログインフォームの終了中にリクエストを送信されることで、セッションにリクエストを挿入される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Tomcat",
+					"vulinfoid": "security-6",
+					"url": "http://tomcat.apache.org/security-6.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Tomcat",
+					"vulinfoid": "security-7",
+					"url": "http://tomcat.apache.org/security-7.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache-SVN",
+					"vulinfoid": "Diff of /tomcat/tc7.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java",
+					"url": "http://svn.apache.org/viewvc/tomcat/tc7.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java?r1=1408044&r2=1408043&pathrev=1408044"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache-SVN",
+					"vulinfoid": "Diff of /tomcat/tc6.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java",
+					"url": "http://svn.apache.org/viewvc/tomcat/tc6.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java?r1=1417891&r2=1417890&pathrev=1417891"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache-SVN",
+					"vulinfoid": "Revision 1417891",
+					"url": "http://svn.apache.org/viewvc?view=revision&revision=1417891"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache-SVN",
+					"vulinfoid": "Revision 1408044",
+					"url": "http://svn.apache.org/viewvc?view=revision&revision=1408044"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV14-004",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv14-004.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - January 2014",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - January 2014 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujan2014verbose-1972951.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - October 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016-2881722.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2016verbose-2881725.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1437",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1437.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:0964",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-0964.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:0839",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-0839.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:0834",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-0834.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:0833",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-0833.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "January 2014 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/january_2014_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "Multiple vulnerabilities in Tomcat",
+					"url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_tomcat"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "October 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/october_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1841-1",
+					"url": "http://www.ubuntu.com/usn/USN-1841-1"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-2067",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2067"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-2067",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2067"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-287",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+					"title": "不適切な認証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年06月04日]\\n  掲載\\n[2013年06月21日]\\n  ベンダ情報：Ubuntu (USN-1841-1) を追加\\n[2013年07月05日]\\n  ベンダ情報：レッドハット (RHSA-2013:0964) を追加\\n[2013年10月24日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in Tomcat) を追加\\n[2013年11月12日]\\n  ベンダ情報：レッドハット (RHSA-2013:0839) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:0834) を追加\\n  ベンダ情報：レッドハット (RHSA-2013:0833) を追加\\n[2013年11月21日]\\n  ベンダ情報：レッドハット (RHSA-2013:1437) を追加\\n[2014年01月20日]\\n  影響を受けるシステム：オラクル (Oracle Critical Patch Update Advisory - January 2014) の情報を追加\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - January 2014) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - January 2014 Risk Matrices) を追加\\n  ベンダ情報：オラクル (January 2014 Critical Patch Update Released) を追加\\n[2014年05月09日]\\n  影響を受けるシステム：日本電気 (NV14-004) の情報を追加\\n  ベンダ情報：日本電気 (NV14-004) を追加\\n[2016年08月02日]\\n  影響を受けるシステム：ベンダ情報の更新に伴い内容を更新\\n[2016年11月22日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2016 Critical Patch Update Released) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-06-04T13:51:55+09:00",
+		"datelastupdated": "2016-11-22T16:00:23+09:00",
+		"datepublic": "2013-05-03T00:00:00+09:00"
+	}
 }

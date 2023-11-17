@@ -1,174 +1,174 @@
 {
-  "vulinfoid": "JVNDB-2019-001210",
-  "vulinfodata": {
-    "title": "Microsoft Exchange 2013 およびそれ以降における NTLM 中継攻撃が可能な脆弱性",
-    "vulinfodescription": {
-      "overview": "Microsoft Exchange 2013 およびそれ以降では、HTTP を介した NTLM 認証で Sign フラグおよび Seal フラグを設定しておらず、NTLM 認証中継攻撃によって Exchange サーバの管理者権限を取得される可能性があります。  Microsoft Exchange は <a href=\"https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/dd877045(v%3Dexchg.140)\"target=\"blank\">Exchange Web Services (EWS)</a> と呼ばれる API をサポートしており、そのなかの <a href=\"https://docs.microsoft.com/pt-br/dotnet/api/microsoft.exchange.webservices.data.pushsubscription?view=exchange-ews-api\"target=\"blank\">PushSubscriptionRequest</a> を使うと Exchange サーバを任意の web サイトに接続させることが可能です。PushSubscriptionRequest で登録された web サイトへの接続では NTLM 認証が行われます。  Exchange 2013 およびそれ以降では、HTTP を介した NTLM 認証で NTLM <a href=\"https://msdn.microsoft.com/en-us/library/cc236707.aspx\"target=\"blank\">Sign</a> フラグおよび <a href=\"https://msdn.microsoft.com/en-us/library/cc236707.aspx\"target=\"blank\">Seal</a> フラグが設定されていません。署名が行われていないため NTLM 認証データを中継することによる攻撃が可能です。  Microsoft Exchange は、初期設定において Active Directory ドメイン内のオブジェクトに対し大きな権限を持っています。また、Exchange Windows Permissions グループにはオブジェクトへの WriteDacl 権限が許可されています。このことから、本脆弱性を悪用して Exchange サーバの権限を取得されることで、さらに Domain Admin 権限を取得される可能性があります。 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Exchange",
-          "cpe": {
-            "text": "cpe:/a:microsoft:exchange",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2013 およびそれ以降"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.3",
-          "vector": "AV:A/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.8",
-          "vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "Exchange のメールボックスアカウントを持ち、Exchange サーバおよび Windows ドメインコントローラと通信できるユーザにより、ドメインの管理者権限を取得される可能性があります。 また、Exchange メールボックスアカウントのパスワードを知らなくても、Exchange サーバと同じセグメントに接続していれば NTLM 認証データを中継する攻撃は可能であると報告されています。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] Microsoft から<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0686\">アップデート</a>が公開されています。本アップデートによって、Exchange サーバが PushSubscriptionRequest 呼び出しにより web サイトに接続する際、NTLM 認証を行わないようになります。  本脆弱性への修正を含む Exchange のバージョンは次のとおりです。      Exchange Server 2010 Service Pack 3 Update Rollup 26     Exchange Server 2013 Cumulative Update 22     Exchange Server 2016 Cumulative Update 12     Exchange Server 2019 Cumulative Update 1  本アップデートには <a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0724\">CVE-2019-0724 の修正</a>も含まれており、Exchange サーバにインストール時に付与された複数の不要な特権が削除されます。  また、次のワークアラウンドを検討してください。  [EWS サブスクリプション機能を無効にする] EWS サブスクリプション機能が不要な場合は、Exchange 管理シェルで次のコマンドを実行することで、PushSubscriptionRequest API 呼び出しをブロックできます。 \"New-ThrottlingPolicy -Name NoEWSSubscription -ThrottlingPolicyScope Organization -EwsMaxSubscriptions 0 Restart-WebAppPool -Name MSExchangeServicesAppPool\"  [Exchange がドメイン内のオブジェクトに対して持つ権限を削除する] Active Directory ドメイン内の脆弱なアクセス制御エントリのチェックや、Exchange が Active Directory ドメイン内のオブジェクトへの書き込みを行う権限の削除を行う powershell スクリプト <a href=\"https://github.com/gdedrouas/Exchange-AD-Privesc/blob/master/DomainObject/Fix-DomainObjectDACL.ps1\"target=\"blank\">Fix-DomainObjectDACL.ps1</a> が公開されています。 ただし、これは CERT/CC が作成したものではなく、Microsoft のサポートもないことに注意してください。 このワークアラウンドを実施する場合は、あらかじめ十分なテストを行い、正しく機能することを確認してください。  [追加のワークアラウンドを検討する] 本脆弱性に関するブログ「<a href=\"https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/\"target=\"blank\">Abusing Exchange: One API call away from Domain Admin</a>」には、本脆弱性や同様の脆弱性からの保護に役立つ可能性のある、いくつかのワークアラウンドが含まれています。 "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Microsoft Security Advisory",
-          "vulinfoid": "ADV190007 | Guidance for \"PrivExchange\" Elevation of Privilege Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/adv190007"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Update Guide",
-          "vulinfoid": "CVE-2019-0686 | Microsoft Exchange Server Elevation of Privilege Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0686"
-        },
-        {
-          "type": "vendor",
-          "name": "セキュリティ更新プログラムガイド",
-          "vulinfoid": "CVE-2019-0686 | Microsoft Exchange Server の特権の昇格の脆弱性",
-          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2019-0686"
-        },
-        {
-          "type": "vendor",
-          "name": "マイクロソフト セキュリティ アドバイザリ",
-          "vulinfoid": "ADV190007 | \"PrivExchange\" の特権の昇格の脆弱性に関するガイダンス",
-          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/adv190007"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-0686",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0686"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97449410",
-          "url": "https://jvn.jp/vu/JVNVU97449410/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-0686",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-0686"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#465632",
-          "url": "https://www.kb.cert.org/vuls/id/465632/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "PushSubscription Class",
-          "url": "https://docs.microsoft.com/en-us/dotnet/api/microsoft.exchange.webservices.data.pushsubscription?view=exchange-ews-api+"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Exchange Web Services (EWS) in Exchange 2010",
-          "url": "https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/dd877045(v%3Dexchg.140)"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "3.4.2 Message Integrity",
-          "url": "https://msdn.microsoft.com/en-us/library/cc236702.aspx"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "3.4.3 Message Confidentiality",
-          "url": "https://msdn.microsoft.com/en-us/library/cc236707.aspx"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Abusing Exchange: One API call away from Domain Admin",
-          "url": "https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "An Insincere Form of Flattery: Impersonating Users on Microsoft Exchange",
-          "url": "https://www.thezdi.com/blog/2018/12/19/an-insincere-form-of-flattery-impersonating-users-on-microsoft-exchange"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2019-01-30T11:13:16+09:00",
-          "description": "[2019年01月30日]\\n  掲載"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2019-02-05T12:01:29+09:00",
-          "description": "[2019年02月05日]\\n  概要：内容を更新\\n  対策：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2019-0686) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2019-02-07T14:41:55+09:00",
-          "description": "[2019年02月07日]\\n  ベンダ情報：Microsoft Security Advisory (ADV190007 | Guidance for \"PrivExchange\" Elevation of Privilege Vulnerability) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2019-02-22T10:12:13+09:00",
-          "description": "[2019年02月22日]\\n  対策：内容を更新\\n  ベンダ情報：Microsoft Security Advisory (ADV190007 | \"PrivExchange\" の特権の昇格の脆弱性に関するガイダンス) を追加\\n  ベンダ情報：Security Update Guide (CVE-2019-0686 | Microsoft Exchange Server Elevation of Privilege Vulnerability) を追加\\n  ベンダ情報：セキュリティ更新プログラムガイド (CVE-2019-0686 | Microsoft Exchange Server の特権の昇格の脆弱性) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2019-09-27T10:32:44+09:00",
-          "description": "[2019年09月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-0686) を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2019-01-30T11:13:16+09:00",
-    "datelastupdated": "2019-09-27T10:33:17+09:00",
-    "datepublic": "2019-01-28T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2019-001210",
+	"vulinfodata": {
+		"title": "Microsoft Exchange 2013 およびそれ以降における NTLM 中継攻撃が可能な脆弱性",
+		"vulinfodescription": {
+			"overview": "Microsoft Exchange 2013 およびそれ以降では、HTTP を介した NTLM 認証で Sign フラグおよび Seal フラグを設定しておらず、NTLM 認証中継攻撃によって Exchange サーバの管理者権限を取得される可能性があります。  Microsoft Exchange は <a href=\"https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/dd877045(v%3Dexchg.140)\"target=\"blank\">Exchange Web Services (EWS)</a> と呼ばれる API をサポートしており、そのなかの <a href=\"https://docs.microsoft.com/pt-br/dotnet/api/microsoft.exchange.webservices.data.pushsubscription?view=exchange-ews-api\"target=\"blank\">PushSubscriptionRequest</a> を使うと Exchange サーバを任意の web サイトに接続させることが可能です。PushSubscriptionRequest で登録された web サイトへの接続では NTLM 認証が行われます。  Exchange 2013 およびそれ以降では、HTTP を介した NTLM 認証で NTLM <a href=\"https://msdn.microsoft.com/en-us/library/cc236707.aspx\"target=\"blank\">Sign</a> フラグおよび <a href=\"https://msdn.microsoft.com/en-us/library/cc236707.aspx\"target=\"blank\">Seal</a> フラグが設定されていません。署名が行われていないため NTLM 認証データを中継することによる攻撃が可能です。  Microsoft Exchange は、初期設定において Active Directory ドメイン内のオブジェクトに対し大きな権限を持っています。また、Exchange Windows Permissions グループにはオブジェクトへの WriteDacl 権限が許可されています。このことから、本脆弱性を悪用して Exchange サーバの権限を取得されることで、さらに Domain Admin 権限を取得される可能性があります。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Exchange",
+					"cpe": {
+						"text": "cpe:/a:microsoft:exchange",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2013 およびそれ以降"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.3",
+					"vector": "AV:A/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "Exchange のメールボックスアカウントを持ち、Exchange サーバおよび Windows ドメインコントローラと通信できるユーザにより、ドメインの管理者権限を取得される可能性があります。 また、Exchange メールボックスアカウントのパスワードを知らなくても、Exchange サーバと同じセグメントに接続していれば NTLM 認証データを中継する攻撃は可能であると報告されています。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] Microsoft から<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0686\">アップデート</a>が公開されています。本アップデートによって、Exchange サーバが PushSubscriptionRequest 呼び出しにより web サイトに接続する際、NTLM 認証を行わないようになります。  本脆弱性への修正を含む Exchange のバージョンは次のとおりです。      Exchange Server 2010 Service Pack 3 Update Rollup 26     Exchange Server 2013 Cumulative Update 22     Exchange Server 2016 Cumulative Update 12     Exchange Server 2019 Cumulative Update 1  本アップデートには <a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0724\">CVE-2019-0724 の修正</a>も含まれており、Exchange サーバにインストール時に付与された複数の不要な特権が削除されます。  また、次のワークアラウンドを検討してください。  [EWS サブスクリプション機能を無効にする] EWS サブスクリプション機能が不要な場合は、Exchange 管理シェルで次のコマンドを実行することで、PushSubscriptionRequest API 呼び出しをブロックできます。 \"New-ThrottlingPolicy -Name NoEWSSubscription -ThrottlingPolicyScope Organization -EwsMaxSubscriptions 0 Restart-WebAppPool -Name MSExchangeServicesAppPool\"  [Exchange がドメイン内のオブジェクトに対して持つ権限を削除する] Active Directory ドメイン内の脆弱なアクセス制御エントリのチェックや、Exchange が Active Directory ドメイン内のオブジェクトへの書き込みを行う権限の削除を行う powershell スクリプト <a href=\"https://github.com/gdedrouas/Exchange-AD-Privesc/blob/master/DomainObject/Fix-DomainObjectDACL.ps1\"target=\"blank\">Fix-DomainObjectDACL.ps1</a> が公開されています。 ただし、これは CERT/CC が作成したものではなく、Microsoft のサポートもないことに注意してください。 このワークアラウンドを実施する場合は、あらかじめ十分なテストを行い、正しく機能することを確認してください。  [追加のワークアラウンドを検討する] 本脆弱性に関するブログ「<a href=\"https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/\"target=\"blank\">Abusing Exchange: One API call away from Domain Admin</a>」には、本脆弱性や同様の脆弱性からの保護に役立つ可能性のある、いくつかのワークアラウンドが含まれています。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft Security Advisory",
+					"vulinfoid": "ADV190007 | Guidance for \"PrivExchange\" Elevation of Privilege Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/adv190007"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Update Guide",
+					"vulinfoid": "CVE-2019-0686 | Microsoft Exchange Server Elevation of Privilege Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0686"
+				},
+				{
+					"type": "vendor",
+					"name": "セキュリティ更新プログラムガイド",
+					"vulinfoid": "CVE-2019-0686 | Microsoft Exchange Server の特権の昇格の脆弱性",
+					"url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2019-0686"
+				},
+				{
+					"type": "vendor",
+					"name": "マイクロソフト セキュリティ アドバイザリ",
+					"vulinfoid": "ADV190007 | \"PrivExchange\" の特権の昇格の脆弱性に関するガイダンス",
+					"url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/adv190007"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-0686",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0686"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97449410",
+					"url": "https://jvn.jp/vu/JVNVU97449410/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-0686",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-0686"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#465632",
+					"url": "https://www.kb.cert.org/vuls/id/465632/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "PushSubscription Class",
+					"url": "https://docs.microsoft.com/en-us/dotnet/api/microsoft.exchange.webservices.data.pushsubscription?view=exchange-ews-api+"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Exchange Web Services (EWS) in Exchange 2010",
+					"url": "https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/dd877045(v%3Dexchg.140)"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "3.4.2 Message Integrity",
+					"url": "https://msdn.microsoft.com/en-us/library/cc236702.aspx"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "3.4.3 Message Confidentiality",
+					"url": "https://msdn.microsoft.com/en-us/library/cc236707.aspx"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Abusing Exchange: One API call away from Domain Admin",
+					"url": "https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "An Insincere Form of Flattery: Impersonating Users on Microsoft Exchange",
+					"url": "https://www.thezdi.com/blog/2018/12/19/an-insincere-form-of-flattery-impersonating-users-on-microsoft-exchange"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2019-01-30T11:13:16+09:00",
+					"description": "[2019年01月30日]\\n  掲載"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2019-02-05T12:01:29+09:00",
+					"description": "[2019年02月05日]\\n  概要：内容を更新\\n  対策：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2019-0686) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2019-02-07T14:41:55+09:00",
+					"description": "[2019年02月07日]\\n  ベンダ情報：Microsoft Security Advisory (ADV190007 | Guidance for \"PrivExchange\" Elevation of Privilege Vulnerability) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2019-02-22T10:12:13+09:00",
+					"description": "[2019年02月22日]\\n  対策：内容を更新\\n  ベンダ情報：Microsoft Security Advisory (ADV190007 | \"PrivExchange\" の特権の昇格の脆弱性に関するガイダンス) を追加\\n  ベンダ情報：Security Update Guide (CVE-2019-0686 | Microsoft Exchange Server Elevation of Privilege Vulnerability) を追加\\n  ベンダ情報：セキュリティ更新プログラムガイド (CVE-2019-0686 | Microsoft Exchange Server の特権の昇格の脆弱性) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2019-09-27T10:32:44+09:00",
+					"description": "[2019年09月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-0686) を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2019-01-30T11:13:16+09:00",
+		"datelastupdated": "2019-09-27T10:33:17+09:00",
+		"datepublic": "2019-01-28T00:00:00+09:00"
+	}
 }

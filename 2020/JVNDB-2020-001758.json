@@ -1,185 +1,185 @@
 {
-  "vulinfoid": "JVNDB-2020-001758",
-  "vulinfodata": {
-    "title": "複数の ZyXEL 製品に含まれる weblogin.cgi にコマンドインジェクションの脆弱性",
-    "vulinfodescription": {
-      "overview": "複数の ZyXEL 製品に含まれる weblogin.cgi には、任意のコマンドが実行可能な脆弱性が存在します。  OS コマンドインジェクション (CWE-78) - CVE-2020-9054  ZyXEL が提供している複数の製品では、CGI 実行ファイル weblogin.cgi を使用して認証が行われます。この weblogin.cgi では、渡された username パラメータの無害化処理が適切に行われません。username パラメータに特定の文字が含まれる場合、ZyXEL 機器で動作している web サーバの権限でコマンドインジェクションが可能になります。web サーバは root ユーザとして動作しませんが、ZyXEL 機器には setuid ユーティリティがあり、これを悪用すると root 権限で任意のコマンドを実行できます。  本脆弱性について、ZyXEL 製 NAS 製品を対象としたエクスプロイトコードがインターネット上で公開されています。CERT/CC は、影響を受ける ZyXEL 製の NAS 機器の電源を切ることができる概念実証Webサイト (PoC exploit)を提供しています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ZyXEL",
-          "productname": "ATP100 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:atp100_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "ATP200 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:atp200_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "ATP500 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:atp500_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "ATP800 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:atp800_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "NAS 326 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:nas326_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "NAS 520 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:nas520_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "NAS 540 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:nas540_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "NAS 542 ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:nas542_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "USG20-VPN ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:usg20-vpn_firmware",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ZyXEL",
-          "productname": "USG20W-VPN ファームウェア",
-          "cpe": {
-            "text": "cpe:/o:zyxel:usg20w-vpn_firmware",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "認証されていない遠隔の第三者が、本脆弱性のある ZyXEL 機器に特別に細工した HTTP POST または GET リクエストを送ることで、機器上で任意のコードを実行する可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 次の製品について、開発者はこの脆弱性に対処したファームウエアを提供しています。 開発者が提供する情報をもとに、最新版にアップデートしてください。 なお、当該製品のファームウェアは FTP でダウンロードされ、アップデートファイルの改ざん検知は電子署名ではなくチェックサムの検証により行われることに注意してください。  * NAS326、NAS520、NAS540、NAS542、ATP100、ATP200、ATP500、ATP800、USG20-VPN、USG20W-VPN、USG40、USG40W、USG60、USG60W、USG110、USG210、USG310、USG1100、USG1900、USG2200、VPN50、VPN100、VPN300、VPN1000、ZyWALL110、ZyWALL310 および ZyWALL1100   [ワークアラウンドを実施する] 次の製品についてはサポートが終了しており、修正プログラムが提供されません。  * NSA210、NSA220、NSA220+、NSA221、NSA310、NSA310S、NSA320、NSA320S、NSA325 および NSA325v2  次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * 当該機器の web インターフェースへのアクセス (80/tcp または 443/tcp) をファイアウォールなどでブロックする * 当該機器へのアクセスを制限する。特に、当該機器をインターネットに直接接続しないようにする"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ZyXEL",
-          "vulinfoid": "Zyxel security advisory for the remote code execution vulnerability of NAS products",
-          "url": "https://www.zyxel.com/support/remote-code-execution-vulnerability-of-NAS-products.shtml"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-9054",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9054"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97748968",
-          "url": "http://jvn.jp/cert/JVNVU97748968"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-9054",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-9054"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#498544",
-          "url": "https://www.kb.cert.org/vuls/id/498544/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Zyxel Fixes 0day in Network Storage Devices",
-          "url": "https://krebsonsecurity.com/2020/02/zyxel-fixes-0day-in-network-storage-devices/"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-02-26T12:13:49+09:00",
-          "description": "[2020年02月26日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2020-03-02T11:22:02+09:00",
-          "description": "[2020年03月02日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2020-04-21T12:16:51+09:00",
-          "description": "[2020年04月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2020-9054) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-02-26T12:13:49+09:00",
-    "datelastupdated": "2020-04-21T12:18:28+09:00",
-    "datepublic": "2020-02-24T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-001758",
+	"vulinfodata": {
+		"title": "複数の ZyXEL 製品に含まれる weblogin.cgi にコマンドインジェクションの脆弱性",
+		"vulinfodescription": {
+			"overview": "複数の ZyXEL 製品に含まれる weblogin.cgi には、任意のコマンドが実行可能な脆弱性が存在します。  OS コマンドインジェクション (CWE-78) - CVE-2020-9054  ZyXEL が提供している複数の製品では、CGI 実行ファイル weblogin.cgi を使用して認証が行われます。この weblogin.cgi では、渡された username パラメータの無害化処理が適切に行われません。username パラメータに特定の文字が含まれる場合、ZyXEL 機器で動作している web サーバの権限でコマンドインジェクションが可能になります。web サーバは root ユーザとして動作しませんが、ZyXEL 機器には setuid ユーティリティがあり、これを悪用すると root 権限で任意のコマンドを実行できます。  本脆弱性について、ZyXEL 製 NAS 製品を対象としたエクスプロイトコードがインターネット上で公開されています。CERT/CC は、影響を受ける ZyXEL 製の NAS 機器の電源を切ることができる概念実証Webサイト (PoC exploit)を提供しています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ZyXEL",
+					"productname": "ATP100 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:atp100_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "ATP200 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:atp200_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "ATP500 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:atp500_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "ATP800 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:atp800_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "NAS 326 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:nas326_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "NAS 520 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:nas520_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "NAS 540 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:nas540_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "NAS 542 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:nas542_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "USG20-VPN ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:usg20-vpn_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ZyXEL",
+					"productname": "USG20W-VPN ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:zyxel:usg20w-vpn_firmware",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "認証されていない遠隔の第三者が、本脆弱性のある ZyXEL 機器に特別に細工した HTTP POST または GET リクエストを送ることで、機器上で任意のコードを実行する可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 次の製品について、開発者はこの脆弱性に対処したファームウエアを提供しています。 開発者が提供する情報をもとに、最新版にアップデートしてください。 なお、当該製品のファームウェアは FTP でダウンロードされ、アップデートファイルの改ざん検知は電子署名ではなくチェックサムの検証により行われることに注意してください。  * NAS326、NAS520、NAS540、NAS542、ATP100、ATP200、ATP500、ATP800、USG20-VPN、USG20W-VPN、USG40、USG40W、USG60、USG60W、USG110、USG210、USG310、USG1100、USG1900、USG2200、VPN50、VPN100、VPN300、VPN1000、ZyWALL110、ZyWALL310 および ZyWALL1100   [ワークアラウンドを実施する] 次の製品についてはサポートが終了しており、修正プログラムが提供されません。  * NSA210、NSA220、NSA220+、NSA221、NSA310、NSA310S、NSA320、NSA320S、NSA325 および NSA325v2  次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * 当該機器の web インターフェースへのアクセス (80/tcp または 443/tcp) をファイアウォールなどでブロックする * 当該機器へのアクセスを制限する。特に、当該機器をインターネットに直接接続しないようにする"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ZyXEL",
+					"vulinfoid": "Zyxel security advisory for the remote code execution vulnerability of NAS products",
+					"url": "https://www.zyxel.com/support/remote-code-execution-vulnerability-of-NAS-products.shtml"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-9054",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9054"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97748968",
+					"url": "http://jvn.jp/cert/JVNVU97748968"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-9054",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-9054"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#498544",
+					"url": "https://www.kb.cert.org/vuls/id/498544/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Zyxel Fixes 0day in Network Storage Devices",
+					"url": "https://krebsonsecurity.com/2020/02/zyxel-fixes-0day-in-network-storage-devices/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-02-26T12:13:49+09:00",
+					"description": "[2020年02月26日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2020-03-02T11:22:02+09:00",
+					"description": "[2020年03月02日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2020-04-21T12:16:51+09:00",
+					"description": "[2020年04月21日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2020-9054) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2020-02-26T12:13:49+09:00",
+		"datelastupdated": "2020-04-21T12:18:28+09:00",
+		"datepublic": "2020-02-24T00:00:00+09:00"
+	}
 }

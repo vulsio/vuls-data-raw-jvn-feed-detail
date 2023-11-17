@@ -1,148 +1,148 @@
 {
-  "vulinfoid": "JVNDB-2015-005978",
-  "vulinfodata": {
-    "title": "libxml2 におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "libxml2 は、無効な入力の構文解析を適切に停止しないため、サービス運用妨害 (out-of-bounds read および libxml2 のクラッシュ) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.04 LTS",
-            "14.04 LTS",
-            "15.04",
-            "15.10"
-          ]
-        },
-        {
-          "name": "xmlsoft.org",
-          "productname": "libxml2",
-          "cpe": {
-            "text": "cpe:/a:xmlsoft:libxml2",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.9.2"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃者により、parser.c の (1) xmlParseEntityDecl または (2) xmlParseConditionalSections 関数への巧妙に細工された XML データを介して、サービス運用妨害 (out-of-bounds read および libxml2 のクラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GNOME Bugzilla",
-          "vulinfoid": "Bug 744980",
-          "url": "https://bugzilla.gnome.org/show_bug.cgi?id=744980"
-        },
-        {
-          "type": "vendor",
-          "name": "GNOME GIT REPOSITORY",
-          "vulinfoid": "Cleanup conditional section error handling",
-          "url": "https://git.gnome.org/browse/libxml2/commit/?id=9b8512337d14c8ddf662fcb98b0135f225a1c489"
-        },
-        {
-          "type": "vendor",
-          "name": "GNOME GIT REPOSITORY",
-          "vulinfoid": "Stop parsing on entities boundaries errors",
-          "url": "https://git.gnome.org/browse/libxml2/commit/?id=a7dfab7411cbf545f359dd3157e5df1eb0e7ce31"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:2550",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-2550.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:2549",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-2549.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2016-3",
-          "url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-3j.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2812-1",
-          "url": "http://www.ubuntu.com/usn/USN-2812-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "xmlsoft.org",
-          "vulinfoid": "Top Page",
-          "url": "http://xmlsoft.org/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "xmlsoft.org news",
-          "vulinfoid": "v2.9.3: Nov 20 2015",
-          "url": "http://xmlsoft.org/news.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-7941",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7941"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-7941",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7941"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年11月20日]\\n  掲載\\n[2015年12月22日]\\n  ベンダ情報：xmlsoft.org (v2.9.3: Nov 20 2015) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:2550) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:2549) を追加\\n[2016年02月02日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-3) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-11-20T14:37:23+09:00",
-    "datelastupdated": "2016-02-02T16:21:18+09:00",
-    "datepublic": "2015-02-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-005978",
+	"vulinfodata": {
+		"title": "libxml2 におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "libxml2 は、無効な入力の構文解析を適切に停止しないため、サービス運用妨害 (out-of-bounds read および libxml2 のクラッシュ) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.04 LTS",
+						"14.04 LTS",
+						"15.04",
+						"15.10"
+					]
+				},
+				{
+					"name": "xmlsoft.org",
+					"productname": "libxml2",
+					"cpe": {
+						"text": "cpe:/a:xmlsoft:libxml2",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.9.2"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃者により、parser.c の (1) xmlParseEntityDecl または (2) xmlParseConditionalSections 関数への巧妙に細工された XML データを介して、サービス運用妨害 (out-of-bounds read および libxml2 のクラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GNOME Bugzilla",
+					"vulinfoid": "Bug 744980",
+					"url": "https://bugzilla.gnome.org/show_bug.cgi?id=744980"
+				},
+				{
+					"type": "vendor",
+					"name": "GNOME GIT REPOSITORY",
+					"vulinfoid": "Cleanup conditional section error handling",
+					"url": "https://git.gnome.org/browse/libxml2/commit/?id=9b8512337d14c8ddf662fcb98b0135f225a1c489"
+				},
+				{
+					"type": "vendor",
+					"name": "GNOME GIT REPOSITORY",
+					"vulinfoid": "Stop parsing on entities boundaries errors",
+					"url": "https://git.gnome.org/browse/libxml2/commit/?id=a7dfab7411cbf545f359dd3157e5df1eb0e7ce31"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:2550",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-2550.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:2549",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-2549.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2016-3",
+					"url": "http://www.turbolinux.co.jp/security/2016/TLSA-2016-3j.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2812-1",
+					"url": "http://www.ubuntu.com/usn/USN-2812-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "xmlsoft.org",
+					"vulinfoid": "Top Page",
+					"url": "http://xmlsoft.org/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "xmlsoft.org news",
+					"vulinfoid": "v2.9.3: Nov 20 2015",
+					"url": "http://xmlsoft.org/news.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-7941",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7941"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-7941",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-7941"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年11月20日]\\n  掲載\\n[2015年12月22日]\\n  ベンダ情報：xmlsoft.org (v2.9.3: Nov 20 2015) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:2550) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:2549) を追加\\n[2016年02月02日]\\n  ベンダ情報：ターボリナックス (TLSA-2016-3) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-11-20T14:37:23+09:00",
+		"datelastupdated": "2016-02-02T16:21:18+09:00",
+		"datepublic": "2015-02-23T00:00:00+09:00"
+	}
 }

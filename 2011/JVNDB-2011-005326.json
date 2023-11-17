@@ -1,92 +1,92 @@
 {
-  "vulinfoid": "JVNDB-2011-005326",
-  "vulinfodata": {
-    "title": "EGI UDM で使用される LCG Disk Pool Manager における SQL インジェクションの脆弱性",
-    "vulinfodescription": {
-      "overview": "EGI UDM で使用される LCG Disk Pool Manager (DPM) には、SQL インジェクションの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "LCG project",
-          "productname": "Disk Pool Manager",
-          "cpe": {
-            "text": "cpe:/a:disk_pool_manager_project:disk_pool_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.8.6 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、下記の変数を介して、任意の SQL コマンドを実行される可能性があります。  (1) dpm_get_pending_req_by_token 関数の r_token 変数 (2) dpm_get_cpr_by_fullid 関数の r_token 変数 (3) dpm_get_cpr_by_surl 関数の r_token 変数 (4) dpm_get_cpr_by_surls 関数の r_token 変数 (5) dpm_get_gfr_by_fullid 関数の r_token 変数 (6) dpm_get_gfr_by_surl 関数の r_token 変数 (7) dpm_get_pfr_by_fullid 関数の r_token 変数 (8) dpm_get_pfr_by_surl 関数の r_token 変数 (9) dpm_get_req_by_token 関数の r_token 変数 (10) dpm_insert_cpr_entry 関数の r_token 変数 (11) dpm_insert_gfr_entry 関数の r_token 変数 (12) dpm_insert_pending_entry 関数の r_token 変数 (13) dpm_insert_pfr_entry 関数の r_token 変数 (14) dpm_insert_xferreq_entry 関数の r_token 変数 (15) dpm_list_cpr_entry 関数の r_token 変数 (16) dpm_list_gfr_entry 関数の r_token 変数 (17) dpm_list_pfr_entry 関数の r_token 変数 (18) dpm_get_cpr_by_surl 関数の surl 変数 (19) dpm_get_cpr_by_surls 関数の to_surl 変数 (20) dpm_get_pending_reqs_by_u_desc 関数の u_token 変数 (21) dpm_get_reqs_by_u_desc 関数の u_token 変数 (22) dpm_get_spcmd_by_u_desc 関数の u_token 変数 (23) dpm_insert_pending_entry 関数の u_token 変数 (24) dpm_insert_spcmd_entry 関数の u_token 変数 (25) dpm_insert_xferreq_entry 関数 の u_token 変数 (26) dpm_get_spcmd_by_token 関数の s_token 変数 (27) dpm_insert_cpr_entry 関数の s_token 変数 (28) dpm_insert_gfr_entry 関数の s_token 変数 (29) dpm_insert_pfr_entry 関数の s_token 変数 (30) dpm_insert_spcmd_entry 関数の s_token 変数 (31) dpm_update_cpr_entry 関数の s_token 変数 (32) dpm_update_gfr_entry 関数の s_token 変数 (33) dpm_update_pfr_entry 関数の s_token 変数  または、リモートの管理者により、下記の変数を介して、任意の SQL コマンドを実行される可能性があります。  (34) dpm_get_pool_entry 関数の poolname 変数 (35) dpm_insert_fs_entry 関数の poolname 変数 (36) dpm_insert_pool_entry 関数の poolname 変数 (37) dpm_insert_spcmd_entry 関数の poolname 変数 (38) dpm_list_fs_entry 関数の poolname 変数 (39) dpm_update_spcmd_entry 関数の poolname 変数"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "SVG wiki",
-          "vulinfoid": "Advisory-SVG-2012-2683",
-          "url": "https://wiki.egi.eu/wiki/SVG:Advisory-SVG-2012-2683"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-4970",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4970"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2011-4970",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4970"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Multiple SQL Injection vulnerabilities in Disk Pool Manager (DPM)",
-          "url": "http://www.openwall.com/lists/oss-security/2013/03/10/1"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-89",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
-          "title": "SQLインジェクション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年05月15日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-05-15T16:34:12+09:00",
-    "datelastupdated": "2014-05-15T16:34:12+09:00",
-    "datepublic": "2011-08-03T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2011-005326",
+	"vulinfodata": {
+		"title": "EGI UDM で使用される LCG Disk Pool Manager における SQL インジェクションの脆弱性",
+		"vulinfodescription": {
+			"overview": "EGI UDM で使用される LCG Disk Pool Manager (DPM) には、SQL インジェクションの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "LCG project",
+					"productname": "Disk Pool Manager",
+					"cpe": {
+						"text": "cpe:/a:disk_pool_manager_project:disk_pool_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.8.6 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、下記の変数を介して、任意の SQL コマンドを実行される可能性があります。  (1) dpm_get_pending_req_by_token 関数の r_token 変数 (2) dpm_get_cpr_by_fullid 関数の r_token 変数 (3) dpm_get_cpr_by_surl 関数の r_token 変数 (4) dpm_get_cpr_by_surls 関数の r_token 変数 (5) dpm_get_gfr_by_fullid 関数の r_token 変数 (6) dpm_get_gfr_by_surl 関数の r_token 変数 (7) dpm_get_pfr_by_fullid 関数の r_token 変数 (8) dpm_get_pfr_by_surl 関数の r_token 変数 (9) dpm_get_req_by_token 関数の r_token 変数 (10) dpm_insert_cpr_entry 関数の r_token 変数 (11) dpm_insert_gfr_entry 関数の r_token 変数 (12) dpm_insert_pending_entry 関数の r_token 変数 (13) dpm_insert_pfr_entry 関数の r_token 変数 (14) dpm_insert_xferreq_entry 関数の r_token 変数 (15) dpm_list_cpr_entry 関数の r_token 変数 (16) dpm_list_gfr_entry 関数の r_token 変数 (17) dpm_list_pfr_entry 関数の r_token 変数 (18) dpm_get_cpr_by_surl 関数の surl 変数 (19) dpm_get_cpr_by_surls 関数の to_surl 変数 (20) dpm_get_pending_reqs_by_u_desc 関数の u_token 変数 (21) dpm_get_reqs_by_u_desc 関数の u_token 変数 (22) dpm_get_spcmd_by_u_desc 関数の u_token 変数 (23) dpm_insert_pending_entry 関数の u_token 変数 (24) dpm_insert_spcmd_entry 関数の u_token 変数 (25) dpm_insert_xferreq_entry 関数 の u_token 変数 (26) dpm_get_spcmd_by_token 関数の s_token 変数 (27) dpm_insert_cpr_entry 関数の s_token 変数 (28) dpm_insert_gfr_entry 関数の s_token 変数 (29) dpm_insert_pfr_entry 関数の s_token 変数 (30) dpm_insert_spcmd_entry 関数の s_token 変数 (31) dpm_update_cpr_entry 関数の s_token 変数 (32) dpm_update_gfr_entry 関数の s_token 変数 (33) dpm_update_pfr_entry 関数の s_token 変数  または、リモートの管理者により、下記の変数を介して、任意の SQL コマンドを実行される可能性があります。  (34) dpm_get_pool_entry 関数の poolname 変数 (35) dpm_insert_fs_entry 関数の poolname 変数 (36) dpm_insert_pool_entry 関数の poolname 変数 (37) dpm_insert_spcmd_entry 関数の poolname 変数 (38) dpm_list_fs_entry 関数の poolname 変数 (39) dpm_update_spcmd_entry 関数の poolname 変数"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "SVG wiki",
+					"vulinfoid": "Advisory-SVG-2012-2683",
+					"url": "https://wiki.egi.eu/wiki/SVG:Advisory-SVG-2012-2683"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-4970",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4970"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2011-4970",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-4970"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Multiple SQL Injection vulnerabilities in Disk Pool Manager (DPM)",
+					"url": "http://www.openwall.com/lists/oss-security/2013/03/10/1"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年05月15日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2014-05-15T16:34:12+09:00",
+		"datelastupdated": "2014-05-15T16:34:12+09:00",
+		"datepublic": "2011-08-03T00:00:00+09:00"
+	}
 }

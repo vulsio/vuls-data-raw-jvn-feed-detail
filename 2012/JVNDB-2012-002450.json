@@ -1,140 +1,140 @@
 {
-  "vulinfoid": "JVNDB-2012-002450",
-  "vulinfodata": {
-    "title": "Linux Kernel のブロックデバイスの I/O 実装におけるサービス運用妨害 (I/O 不安定) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Linux Kernel のブロックデバイスの I/O 実装は、CLONE_IO 機能を適切に処理しないため、サービス運用妨害 (I/O 不安定) 状態となる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.6.33 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.9",
-          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルユーザにより、I/O コンテキストを共有する複数のプロセスを開始されることで、サービス運用妨害 (I/O 不安定) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ChangeLog",
-          "vulinfoid": "ChangeLog-2.6.33",
-          "url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.33"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "block: Fix io_context leak after failure of clone with CLONE_IO",
-          "url": "https://github.com/torvalds/linux/commit/b69f2292063d2caf37ca9aec7d63ded203701bf3"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "block: Fix io_context leak after clone with CLONE_IO",
-          "url": "https://github.com/torvalds/linux/commit/61cc74fbb87af6aa551a06a370590c9bc07e29d9"
-        },
-        {
-          "type": "vendor",
-          "name": "kernel.org",
-          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit /b69f229",
-          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b69f2292063d2caf37ca9aec7d63ded203701bf3"
-        },
-        {
-          "type": "vendor",
-          "name": "kernel.org",
-          "vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit /61cc74f",
-          "url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=61cc74fbb87af6aa551a06a370590c9bc07e29d9"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 796829",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=796829"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2012:0481",
-          "url": "https://rhn.redhat.com/errata/RHSA-2012-0481.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1410-1",
-          "url": "http://www.ubuntu.com/usn/USN-1410-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1408-1",
-          "url": "http://www.ubuntu.com/usn/USN-1408-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2012-0879",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0879"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2012-0879",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0879"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2012年05月18日]\\n  掲載\\n[2012年11月09日]\\n  ベンダ情報：Ubuntu (USN-1410-1) を追加\\n  ベンダ情報：Ubuntu (USN-1408-1) を追加\\n  ベンダ情報：レッドハット (Bug 796829) を追加\\n  ベンダ情報：kernel.org (block: Fix io_context leak after failure of clone with CLONE_IO) を追加\\n  ベンダ情報：kernel.org (block: Fix io_context leak after clone with CLONE_IO) を追加\\n  ベンダ情報：kernel.org (linux/kernel/git/torvalds/linux-2.6.git / commit /b69f229) を追加\\n  ベンダ情報：kernel.org (linux/kernel/git/torvalds/linux-2.6.git / commit /61cc74f) を追加\\n  ベンダ情報：kernel.org (ChangeLog-2.6.33) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2012-05-18T15:31:35+09:00",
-    "datelastupdated": "2012-11-09T18:21:59+09:00",
-    "datepublic": "2012-05-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2012-002450",
+	"vulinfodata": {
+		"title": "Linux Kernel のブロックデバイスの I/O 実装におけるサービス運用妨害 (I/O 不安定) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Linux Kernel のブロックデバイスの I/O 実装は、CLONE_IO 機能を適切に処理しないため、サービス運用妨害 (I/O 不安定) 状態となる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6.33 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.9",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルユーザにより、I/O コンテキストを共有する複数のプロセスを開始されることで、サービス運用妨害 (I/O 不安定) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ChangeLog",
+					"vulinfoid": "ChangeLog-2.6.33",
+					"url": "http://ftp.osuosl.org/pub/linux/kernel/v2.6/ChangeLog-2.6.33"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "block: Fix io_context leak after failure of clone with CLONE_IO",
+					"url": "https://github.com/torvalds/linux/commit/b69f2292063d2caf37ca9aec7d63ded203701bf3"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "block: Fix io_context leak after clone with CLONE_IO",
+					"url": "https://github.com/torvalds/linux/commit/61cc74fbb87af6aa551a06a370590c9bc07e29d9"
+				},
+				{
+					"type": "vendor",
+					"name": "kernel.org",
+					"vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit /b69f229",
+					"url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=b69f2292063d2caf37ca9aec7d63ded203701bf3"
+				},
+				{
+					"type": "vendor",
+					"name": "kernel.org",
+					"vulinfoid": "linux/kernel/git/torvalds/linux-2.6.git / commit /61cc74f",
+					"url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commit;h=61cc74fbb87af6aa551a06a370590c9bc07e29d9"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 796829",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=796829"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2012:0481",
+					"url": "https://rhn.redhat.com/errata/RHSA-2012-0481.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1410-1",
+					"url": "http://www.ubuntu.com/usn/USN-1410-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1408-1",
+					"url": "http://www.ubuntu.com/usn/USN-1408-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2012-0879",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0879"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2012-0879",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0879"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2012年05月18日]\\n  掲載\\n[2012年11月09日]\\n  ベンダ情報：Ubuntu (USN-1410-1) を追加\\n  ベンダ情報：Ubuntu (USN-1408-1) を追加\\n  ベンダ情報：レッドハット (Bug 796829) を追加\\n  ベンダ情報：kernel.org (block: Fix io_context leak after failure of clone with CLONE_IO) を追加\\n  ベンダ情報：kernel.org (block: Fix io_context leak after clone with CLONE_IO) を追加\\n  ベンダ情報：kernel.org (linux/kernel/git/torvalds/linux-2.6.git / commit /b69f229) を追加\\n  ベンダ情報：kernel.org (linux/kernel/git/torvalds/linux-2.6.git / commit /61cc74f) を追加\\n  ベンダ情報：kernel.org (ChangeLog-2.6.33) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2012-05-18T15:31:35+09:00",
+		"datelastupdated": "2012-11-09T18:21:59+09:00",
+		"datepublic": "2012-05-17T00:00:00+09:00"
+	}
 }

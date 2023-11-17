@@ -1,124 +1,124 @@
 {
-  "vulinfoid": "JVNDB-2017-001407",
-  "vulinfodata": {
-    "title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC BIND において DNS64 と RPZ の両方を設定している場合、特定の条件のもとで INSIST assertion failure もしくは NULL ポインタ参照が発生し、named が異常終了する可能性があります。  ISC BIND には、DNS64 と RPZ の両方の設定を有効にしてクエリ応答の書き換え処理を行っている場合、特定の条件のもとで INSIST assertion failure もしくは NULL ポインタ参照が発生し、named が異常終了する可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.10.0 から 9.10.4-P5 まで",
-            "9.10.5b1",
-            "9.11.0 から 9.11.0-P2 まで",
-            "9.11.1b1",
-            "9.8.8",
-            "9.9.10b1",
-            "9.9.3 から 9.9.9-P5 まで",
-            "9.9.3-S1 から 9.9.9-S7 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃 (named の停止) が行われる可能性があります。本脆弱性は DNS64 と RPZ の両方の設定を有効にしているサーバのみ影響を受けます。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　　* BIND 9.9.9-P6 　　* BIND 9.10.4-P6 　　* BIND 9.11.0-P3 　　* BIND 9.9.9-S8  BIND 9 Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* 設定から DNS64 もしくは RPZ を削除する 　　* ポリシーゾーンのコンテンツを適切に制限する"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "CVE-2017-3135: Combination of DNS64 and RPZ Can Lead to Crash",
-          "url": "https://kb.isc.org/article/AA-01453"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3135",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3135"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2017-0007",
-          "url": "https://www.jpcert.or.jp/at/2017/at170007.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPNIC",
-          "vulinfoid": "BIND 9における脆弱性について(2017年2月)",
-          "url": "https://www.nic.ad.jp/ja/topics/2017/20170209-01.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2017-3135）",
-          "url": "https://jprs.jp/tech/security/2017-02-09-bind9-vuln-dns64-rpz.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93384765",
-          "url": "http://jvn.jp/vu/JVNVU93384765/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3135",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3135"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年02月13日]\\n  掲載\\n[2017年02月15日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：JPNIC (BIND 9における脆弱性について(2017年2月)) を追加"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2019-08-27T15:17:55+09:00",
-          "description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3135) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-02-13T18:09:06+09:00",
-    "datelastupdated": "2017-02-15T12:19:38+09:00",
-    "datepublic": "2017-02-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-001407",
+	"vulinfodata": {
+		"title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC BIND において DNS64 と RPZ の両方を設定している場合、特定の条件のもとで INSIST assertion failure もしくは NULL ポインタ参照が発生し、named が異常終了する可能性があります。  ISC BIND には、DNS64 と RPZ の両方の設定を有効にしてクエリ応答の書き換え処理を行っている場合、特定の条件のもとで INSIST assertion failure もしくは NULL ポインタ参照が発生し、named が異常終了する可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.10.0 から 9.10.4-P5 まで",
+						"9.10.5b1",
+						"9.11.0 から 9.11.0-P2 まで",
+						"9.11.1b1",
+						"9.8.8",
+						"9.9.10b1",
+						"9.9.3 から 9.9.9-P5 まで",
+						"9.9.3-S1 から 9.9.9-S7 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃 (named の停止) が行われる可能性があります。本脆弱性は DNS64 と RPZ の両方の設定を有効にしているサーバのみ影響を受けます。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　　* BIND 9.9.9-P6 　　* BIND 9.10.4-P6 　　* BIND 9.11.0-P3 　　* BIND 9.9.9-S8  BIND 9 Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* 設定から DNS64 もしくは RPZ を削除する 　　* ポリシーゾーンのコンテンツを適切に制限する"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "CVE-2017-3135: Combination of DNS64 and RPZ Can Lead to Crash",
+					"url": "https://kb.isc.org/article/AA-01453"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3135",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3135"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2017-0007",
+					"url": "https://www.jpcert.or.jp/at/2017/at170007.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPNIC",
+					"vulinfoid": "BIND 9における脆弱性について(2017年2月)",
+					"url": "https://www.nic.ad.jp/ja/topics/2017/20170209-01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2017-3135）",
+					"url": "https://jprs.jp/tech/security/2017-02-09-bind9-vuln-dns64-rpz.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93384765",
+					"url": "http://jvn.jp/vu/JVNVU93384765/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3135",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3135"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年02月13日]\\n  掲載\\n[2017年02月15日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：JPNIC (BIND 9における脆弱性について(2017年2月)) を追加"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2019-08-27T15:17:55+09:00",
+					"description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3135) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-02-13T18:09:06+09:00",
+		"datelastupdated": "2017-02-15T12:19:38+09:00",
+		"datepublic": "2017-02-09T00:00:00+09:00"
+	}
 }

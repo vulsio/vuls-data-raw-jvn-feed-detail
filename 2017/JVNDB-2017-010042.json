@@ -1,129 +1,129 @@
 {
-  "vulinfoid": "JVNDB-2017-010042",
-  "vulinfodata": {
-    "title": "Apple macOS High Sierra に無効化されているアカウントに対する認証回避の問題",
-    "vulinfodescription": {
-      "overview": "Apple macOS High Sierra には、\"root\" アカウントをはじめとする、無効化されているアカウントに対する認証回避の問題があります。認証されたユーザがルート権限を取得することが可能です。  Apple macOS High Sierra には、無効化されているアカウントに対する認証処理に問題があります。初期設定においてはユーザ名 \"root\" のアカウントが無効化された状態で存在します。macOS では、管理者権限を必要とする操作を行った場合に管理者権限を持ったアカウントの認証情報の入力を求められますが、ユーザ名 \"root\" および空のパスワードを入力した場合、1回目の入力ではログインに失敗しているように見えますが、実際には、\"root\" アカウントが有効化され、パスワードなしでログインできる状態に変更されます。次いで2回目に同じ認証情報を入力すると \"root\" アカウントでの操作が可能になります。ローカルにログインしているユーザまたは SSH ログインしているユーザによって一度この操作が行われると、\"root\" アカウントによる認証が有効になることに注意が必要です。  なお、この脆弱性を確認するだけのつもりでも、いちどこの操作を行うと当該アカウントが有効になるので注意が必要です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.13.1"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "当該システムにログインしたユーザが、パスワードなしに \"root\" 権限を取得する可能性があります。\"root\" アカウントが有効化されていると、OS が提供する \"Screen Sharing\" や \"Remote Management\" などのリモート管理機能の認証に使われる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに最新版へアップデートしてください。  開発者が提供する情報 https://support.apple.com/en-us/HT208315  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* 管理者権限でターミナルを開いてコマンド sudo passwd -u root を実行し、強いパスワードを設定する  GUI の操作でパスワードを設定する方法については、開発者の提供する情報を参照してください。  開発者の提供する情報 https://support.apple.com/ja-jp/HT204012  なお、上記ワークアラウンドを実施して \"root\" アカウントにパスワードを設定しても、\"root\" アカウントを無効化すると脆弱な状態にもどってしまうことに注意が必要です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT208315",
-          "url": "https://support.apple.com/en-us/HT208315"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple サポート",
-          "vulinfoid": "Mac でルートユーザを有効にする方法やルートパスワードを変更する方法",
-          "url": "https://support.apple.com/ja-jp/HT204012"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT208315",
-          "url": "https://support.apple.com/ja-jp/HT208315"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-13872",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13872"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2017-0045",
-          "url": "https://www.jpcert.or.jp/at/2017/at170045.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#113765",
-          "url": "http://jvn.jp/cert/JVNVU113765"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-13872",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13872"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#113765",
-          "url": "https://www.kb.cert.org/vuls/id/113765"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Objective-See's blog - Why <blank> Gets You Root",
-          "url": "https://objective-see.com/blog/blog_0x24.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年12月01日]\\n  掲載"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2018-03-14T12:04:40+09:00",
-          "description": "[2018年03月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13872) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-12-01T12:20:35+09:00",
-    "datelastupdated": "2018-03-14T14:15:42+09:00",
-    "datepublic": "2017-11-29T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-010042",
+	"vulinfodata": {
+		"title": "Apple macOS High Sierra に無効化されているアカウントに対する認証回避の問題",
+		"vulinfodescription": {
+			"overview": "Apple macOS High Sierra には、\"root\" アカウントをはじめとする、無効化されているアカウントに対する認証回避の問題があります。認証されたユーザがルート権限を取得することが可能です。  Apple macOS High Sierra には、無効化されているアカウントに対する認証処理に問題があります。初期設定においてはユーザ名 \"root\" のアカウントが無効化された状態で存在します。macOS では、管理者権限を必要とする操作を行った場合に管理者権限を持ったアカウントの認証情報の入力を求められますが、ユーザ名 \"root\" および空のパスワードを入力した場合、1回目の入力ではログインに失敗しているように見えますが、実際には、\"root\" アカウントが有効化され、パスワードなしでログインできる状態に変更されます。次いで2回目に同じ認証情報を入力すると \"root\" アカウントでの操作が可能になります。ローカルにログインしているユーザまたは SSH ログインしているユーザによって一度この操作が行われると、\"root\" アカウントによる認証が有効になることに注意が必要です。  なお、この脆弱性を確認するだけのつもりでも、いちどこの操作を行うと当該アカウントが有効になるので注意が必要です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.13.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該システムにログインしたユーザが、パスワードなしに \"root\" 権限を取得する可能性があります。\"root\" アカウントが有効化されていると、OS が提供する \"Screen Sharing\" や \"Remote Management\" などのリモート管理機能の認証に使われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに最新版へアップデートしてください。  開発者が提供する情報 https://support.apple.com/en-us/HT208315  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* 管理者権限でターミナルを開いてコマンド sudo passwd -u root を実行し、強いパスワードを設定する  GUI の操作でパスワードを設定する方法については、開発者の提供する情報を参照してください。  開発者の提供する情報 https://support.apple.com/ja-jp/HT204012  なお、上記ワークアラウンドを実施して \"root\" アカウントにパスワードを設定しても、\"root\" アカウントを無効化すると脆弱な状態にもどってしまうことに注意が必要です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT208315",
+					"url": "https://support.apple.com/en-us/HT208315"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple サポート",
+					"vulinfoid": "Mac でルートユーザを有効にする方法やルートパスワードを変更する方法",
+					"url": "https://support.apple.com/ja-jp/HT204012"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT208315",
+					"url": "https://support.apple.com/ja-jp/HT208315"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-13872",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-13872"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2017-0045",
+					"url": "https://www.jpcert.or.jp/at/2017/at170045.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#113765",
+					"url": "http://jvn.jp/cert/JVNVU113765"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-13872",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-13872"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#113765",
+					"url": "https://www.kb.cert.org/vuls/id/113765"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Objective-See's blog - Why <blank> Gets You Root",
+					"url": "https://objective-see.com/blog/blog_0x24.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年12月01日]\\n  掲載"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2018-03-14T12:04:40+09:00",
+					"description": "[2018年03月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-13872) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-12-01T12:20:35+09:00",
+		"datelastupdated": "2018-03-14T14:15:42+09:00",
+		"datepublic": "2017-11-29T00:00:00+09:00"
+	}
 }

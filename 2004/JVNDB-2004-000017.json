@@ -1,153 +1,153 @@
 {
-  "vulinfoid": "JVNDB-2004-000017",
-  "vulinfodata": {
-    "title": "tcpdump の print-radius.c におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  tcpdump はネットワークのトラフィックを監視する、コマンドラインツールです。 Tcpdump はネットワークに存在するセキュリティプロトコルに対して、Security Association (SA) を確立するための ISAKMP (Internet Security Association and Key Management Protocol) をサポートしています。  Tcpdump には、ISAKMP パケットの解析部に以下の問題が存在します。  ・tcpdump 3.8.1 未満において、特定の ISAKMP パケットを解析した際に、無限ループ状態に陥る問題 (CAN-2003-0989)  ・tcpdump 3.8.1 以前において、print-isakmp.c 内の rawprint() 関数で loc/len 変数のチェックに不備が存在し、バッファオーバーフローを生じる問題 (CAN-2004-0057)  この問題を利用するリモートの攻撃者は、意図的に作成した ISAKMP パケットを標的システムに送りつけることにより、結果として tcpdump をサービス不能状態に陥らせることが可能です。さらには、pcap 権限で任意のコードを実行できる可能性も示唆されています。  また、tcpdump 3.8.1 以前においては RADIUS パケットの解析部に関しても以下の問題が報告されており、上記の問題と同様に tcpdump がサービス不能状態に陥る可能性があります。  ・print-radius.c 内の print_attr_string() 関数において、length/data 変数のチェックに不備が存在し、セグメンテーションフォルトを生じる問題 (CAN-2004-0055)"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2004-3",
-          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-3.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "ミラクル・リナックス株式会社",
-          "vulinfoid": "Top Page",
-          "url": "http://www.miraclelinux.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット株式会社",
-          "vulinfoid": "Top Page",
-          "url": "http://www.jp.redhat.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2004-3",
-          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-3j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0055",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0055"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0055",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0055"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "9423",
-          "url": "http://www.securityfocus.com/bid/9423"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "9507",
-          "url": "http://www.securityfocus.com/bid/9507"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#955526",
-          "url": "http://www.kb.cert.org/vuls/id/955526"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#174086",
-          "url": "http://www.kb.cert.org/vuls/id/174086"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#738518",
-          "url": "http://www.kb.cert.org/vuls/id/738518"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-01-14T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000017",
+	"vulinfodata": {
+		"title": "tcpdump の print-radius.c におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  tcpdump はネットワークのトラフィックを監視する、コマンドラインツールです。 Tcpdump はネットワークに存在するセキュリティプロトコルに対して、Security Association (SA) を確立するための ISAKMP (Internet Security Association and Key Management Protocol) をサポートしています。  Tcpdump には、ISAKMP パケットの解析部に以下の問題が存在します。  ・tcpdump 3.8.1 未満において、特定の ISAKMP パケットを解析した際に、無限ループ状態に陥る問題 (CAN-2003-0989)  ・tcpdump 3.8.1 以前において、print-isakmp.c 内の rawprint() 関数で loc/len 変数のチェックに不備が存在し、バッファオーバーフローを生じる問題 (CAN-2004-0057)  この問題を利用するリモートの攻撃者は、意図的に作成した ISAKMP パケットを標的システムに送りつけることにより、結果として tcpdump をサービス不能状態に陥らせることが可能です。さらには、pcap 権限で任意のコードを実行できる可能性も示唆されています。  また、tcpdump 3.8.1 以前においては RADIUS パケットの解析部に関しても以下の問題が報告されており、上記の問題と同様に tcpdump がサービス不能状態に陥る可能性があります。  ・print-radius.c 内の print_attr_string() 関数において、length/data 変数のチェックに不備が存在し、セグメンテーションフォルトを生じる問題 (CAN-2004-0055)"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2004-3",
+					"url": "http://www.turbolinux.com/security/2004/TLSA-2004-3.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "ミラクル・リナックス株式会社",
+					"vulinfoid": "Top Page",
+					"url": "http://www.miraclelinux.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット株式会社",
+					"vulinfoid": "Top Page",
+					"url": "http://www.jp.redhat.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2004-3",
+					"url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-3j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0055",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0055"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0055",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0055"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "9423",
+					"url": "http://www.securityfocus.com/bid/9423"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "9507",
+					"url": "http://www.securityfocus.com/bid/9507"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#955526",
+					"url": "http://www.kb.cert.org/vuls/id/955526"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#174086",
+					"url": "http://www.kb.cert.org/vuls/id/174086"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#738518",
+					"url": "http://www.kb.cert.org/vuls/id/738518"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-01-14T00:00:00+09:00"
+	}
 }

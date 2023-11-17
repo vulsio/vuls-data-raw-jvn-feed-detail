@@ -1,88 +1,88 @@
 {
-  "vulinfoid": "JVNDB-2018-003031",
-  "vulinfodata": {
-    "title": "Intel ハードウェアアーキテクチャのデバッグ例外を適切に処理していない問題",
-    "vulinfodescription": {
-      "overview": "いくつかのオペレーティングシステムやハイパーバイザーでは、Intel ハードウェアアーキテクチャにおけるデバッグ例外の発生を想定していない、あるいは適切な処理を行っていない問題が存在します。  例外的な状況に対する不適切なチェックまたは処理 (CWE-703) - CVE-2018-8897 Intel Software Developer Manual (SDM) Vol. 3A section 6.8.3 によれば、MOV SS 命令および POP SS 命令は、次の命令の命令境界まで、NMIs を含む割り込み、データブレークポイント、およびシングルステップトラップ例外を禁止します (MOV SS 命令や POP SS 命令自体によりアクセスされるメモリ上のデータブレークポイントが禁止されます)。 SDM Vol 3A section 2.3 によれば、デバッグ例外は EFLAGS レジスタの IF フラグ (Interrupt Enable Flag) では禁止されません。  MOV SS 命令および POP SS 命令の後に置かれている命令が、SYSCALL、SYSENTER、INT 3 などのように、3より高い特権レベル (CPL, Current Privilege Level) の OS 処理に制御を移すものだった場合、デバッグ例外が配送されるのは、3 より高い特権レベルに制御が移った後になります。  そのため特定の状況では、特定の Intel x86-64 アーキテクチャ向け命令を使用した後に、リングレベル 3 で実行されている OS コンポーネントから 、より高位のリングレベル (多くの OS ではリングレベル0) のデータを指すデバッグ例外が使用可能になります。  これにより、攻撃者はオペレーティングシステムの API を使用して、機微なメモリ情報にアクセスしたり、高い特権レベルのオペレーティングシステム機能を操作する可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "（複数のベンダ）",
-          "productname": "（複数の製品）",
-          "cpe": {
-            "text": "cpe:/a:misc:multiple_vendors",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "認証された攻撃者によって、メモリ上の機微なデータを取得されたり、より高い特権レベルのオペレーティングシステム機能を操作される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 使用しているオペレーティングシステムやソフトウェアの開発者が提供する情報をもとに、最新版にアップデートしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Intel",
-          "vulinfoid": "Intel 64 and IA-32 Architectures Software Developer Manuals",
-          "url": "https://software.intel.com/en-us/articles/intel-sdm"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV18-013",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv18-013.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-8897",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8897"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98401336",
-          "url": "http://jvn.jp/vu/JVNVU98401336/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-8897",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8897"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#631579",
-          "url": "https://www.kb.cert.org/vuls/id/631579"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-05-10T12:09:53+09:00",
-          "description": "[2018年05月10日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-07-31T11:37:43+09:00",
-          "description": "[2018年07月31日]\\n  ベンダ情報：日本電気 (NV18-013) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-8897) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-05-10T15:13:42+09:00",
-    "datelastupdated": "2018-07-31T12:32:06+09:00",
-    "datepublic": "2018-05-08T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-003031",
+	"vulinfodata": {
+		"title": "Intel ハードウェアアーキテクチャのデバッグ例外を適切に処理していない問題",
+		"vulinfodescription": {
+			"overview": "いくつかのオペレーティングシステムやハイパーバイザーでは、Intel ハードウェアアーキテクチャにおけるデバッグ例外の発生を想定していない、あるいは適切な処理を行っていない問題が存在します。  例外的な状況に対する不適切なチェックまたは処理 (CWE-703) - CVE-2018-8897 Intel Software Developer Manual (SDM) Vol. 3A section 6.8.3 によれば、MOV SS 命令および POP SS 命令は、次の命令の命令境界まで、NMIs を含む割り込み、データブレークポイント、およびシングルステップトラップ例外を禁止します (MOV SS 命令や POP SS 命令自体によりアクセスされるメモリ上のデータブレークポイントが禁止されます)。 SDM Vol 3A section 2.3 によれば、デバッグ例外は EFLAGS レジスタの IF フラグ (Interrupt Enable Flag) では禁止されません。  MOV SS 命令および POP SS 命令の後に置かれている命令が、SYSCALL、SYSENTER、INT 3 などのように、3より高い特権レベル (CPL, Current Privilege Level) の OS 処理に制御を移すものだった場合、デバッグ例外が配送されるのは、3 より高い特権レベルに制御が移った後になります。  そのため特定の状況では、特定の Intel x86-64 アーキテクチャ向け命令を使用した後に、リングレベル 3 で実行されている OS コンポーネントから 、より高位のリングレベル (多くの OS ではリングレベル0) のデータを指すデバッグ例外が使用可能になります。  これにより、攻撃者はオペレーティングシステムの API を使用して、機微なメモリ情報にアクセスしたり、高い特権レベルのオペレーティングシステム機能を操作する可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "認証された攻撃者によって、メモリ上の機微なデータを取得されたり、より高い特権レベルのオペレーティングシステム機能を操作される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 使用しているオペレーティングシステムやソフトウェアの開発者が提供する情報をもとに、最新版にアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Intel",
+					"vulinfoid": "Intel 64 and IA-32 Architectures Software Developer Manuals",
+					"url": "https://software.intel.com/en-us/articles/intel-sdm"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV18-013",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv18-013.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-8897",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8897"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98401336",
+					"url": "http://jvn.jp/vu/JVNVU98401336/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-8897",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8897"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#631579",
+					"url": "https://www.kb.cert.org/vuls/id/631579"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-05-10T12:09:53+09:00",
+					"description": "[2018年05月10日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-07-31T11:37:43+09:00",
+					"description": "[2018年07月31日]\\n  ベンダ情報：日本電気 (NV18-013) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-8897) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-05-10T15:13:42+09:00",
+		"datelastupdated": "2018-07-31T12:32:06+09:00",
+		"datepublic": "2018-05-08T00:00:00+09:00"
+	}
 }

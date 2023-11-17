@@ -1,290 +1,290 @@
 {
-  "vulinfoid": "JVNDB-2016-007716",
-  "vulinfodata": {
-    "title": "McAfee Virus Scan Enterprise for Linux に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "McAfee Virus Scan Enterprise for Linux には、次の複数の脆弱性が存在します。  情報漏えい (CWE-200) - CVE-2016-8016 当該製品のウェブインターフェースでは、複数のページでパラメータ tplt を使用しています。当該製品のユーザ権限をもつ遠隔の攻撃者がパラメータ tplt の値を細工してアクセスすることで、(本来アクセスを許可されておらず存在有無の確認もできないはずの) ファイルの存在有無をエラーメッセージから判断することが可能です。  特殊要素の不適切なサニタイジング (CWE-75) - CVE-2016-8017 当該製品のユーザ権限を持つ遠隔の攻撃者は、入力中にテキスト要素 \"__REPLACE_THIS__\" や、\"[%\" および \"%]\" などを含めることで、ログデータにこれらのテキスト要素を記録させることが可能です。これらのテキスト要素は、ログ読み込み処理などを行うシステムプロセスでは特別な意味を持つ文字列として扱われており、細工したテキスト要素をログに記録させることで、コマンドとして実行させることが可能です。 本脆弱性を使用することで、遠隔の攻撃者は nails ユーザとしてウェブサーバからファイルを取得することが可能です。  クロスサイトリクエストフォージェリ (CWE-352) - CVE-2016-8018 当該製品のウェブインターフェースは CSRF 対策トークンを使用していないため、クロスサイトリクエストフォージェリに対して脆弱です。  クロスサイトスクリプティング (CWE-79) - CVE-2016-8019 当該製品のウェブインターフェースでは、複数のページでパラメータ tplt を使用しています。NailsConfig.html または MonitorHost.html を指す URL でパラメータ tplt が使用されている場合、ブラウザに返されるレスポンス中のパラメータ info:7 および info:5 にはユーザ入力がそのまま含まれ、適切な検証処理が行われません。遠隔の第三者は info:7 または info:5 の値を改ざんすることで、ユーザのウェブブラウザ上で任意のスクリプトを実行することが可能です。  コードインジェクション (CWE-94) - CVE-2016-8020 システムスキャンフォームの最終ページで使用されている変数 nailsd.profile.ODS_9.scannerPath には、システムがスキャンを実行する際に使用するコマンドを指すパスが含まれています。当該製品のユーザ権限を持つ遠隔の攻撃者は細工した HTTP リクエストでこの値を改ざんすることで、任意のコマンドを root 権限で実行することが可能です。  デジタル署名の不適切な検証 (CWE-347) - CVE-2016-8021 当該製品のウェブインターフェースはファイルのデジタル署名を適切に検証していません。遠隔の攻撃者は、詐称したアップデートサーバにアクセスさせることで、当該製品上で任意のコードを実行することが可能です。  なりすましによる認証回避 (CWE-290) - CVE-2016-8022 当該製品のウェブインターフェースは、ユーザの IP アドレスを含んだ認証用 Cookie を使用しています。遠隔の攻撃者は Cookie に含まれる IP アドレスを改ざんすることで、ユーザになりすますことが可能です。  不変と想定されるデータの改ざんによる認証回避 (CWE-302) - CVE-2016-8023 当該製品のウェブインターフェースは、サーバの起動時刻をパラメータ DATE として含む認証用 Cookie を使用しています。遠隔の攻撃者はパラメータ DATE に記録されているサーバの起動時刻を総当たり (brute force) で割り出し、認証を回避することが可能です。  HTTP レスポンス分割 (CWE-113) - CVE-2016-8024 遠隔の攻撃者はシステムログの CSV 出力を得るための HTTP GET リクエストを改ざんして URL エンコードされた改行文字を含めることで、HTTP レスポンスに任意のヘッダを挿入することが可能です。  SQL インジェクション (CWE-89) - CVE-2016-8025 ウェブインターフェースの CSV ログ出力機能では、HTTP リクエスト中に SQL コマンドが URL エンコードされています。遠隔の攻撃者は任意の SQL コマンドを URL エンコードして HTTP リクエストに挿入することで、バックエンドの SQLite データベース上で任意の SQL コマンドを実行することが可能です。このデータベースには設定内容や過去にスキャンを行ったファイルの情報のみが保存されており、認証情報は含まれていません。  これらに関する詳しい情報は、開発者が提供する情報および研究者のブログ投稿をご確認ください。  開発者が提供する情報 https://kc.mcafee.com/corporate/index?page=content&id=SB10181  研究者のブログ投稿 https://nation.state.actor/mcafee.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マカフィー",
-          "productname": "McAfee VirusScan Enterprise",
-          "cpe": {
-            "text": "cpe:/a:mcafee:virusscan_enterprise",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for Linux version 2.0.3 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9",
-          "vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、システム上の一部のファイルやログ情報を取得されたり、ユーザのウェブブラウザ上で任意のスクリプトを実行されたり、当該製品上で任意のコードを実行されたりする可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[Endpoint Security にアップグレードする] McAfee は、これらの脆弱性を修正した Endpoint Security を提供しています。Endpoint Security version 10.2 およびそれ以降を使用してください。Endpoint Security へのアップグレードは無料です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "McAfee Security Bulletin",
-          "vulinfoid": "Intel Security - Security Bulletin: VirusScan Enterprise for Linux/LinuxShield update fixes multiple vulnerabilities",
-          "url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10181"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8019",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8019"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8020",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8020"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8021",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8021"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8022",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8022"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8023",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8023"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8016",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8016"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8024",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8024"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8017",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8017"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8025",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8025"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-8018",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8018"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90572729",
-          "url": "http://jvn.jp/vu/JVNVU90572729/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8024",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8024"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8016",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8016"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8025",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8025"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8017",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8017"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8018",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8018"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8019",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8019"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8020",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8020"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8021",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8021"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8022",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8022"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-8023",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8023"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#245327",
-          "url": "http://www.kb.cert.org/vuls/id/245327"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#535111",
-          "url": "https://www.kb.cert.org/vuls/id/535111"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "McAfee Virus Scan for Linux",
-          "url": "https://nation.state.actor/mcafee.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-113",
-          "url": "https://cwe.mitre.org/data/definitions/113.html",
-          "title": "HTTP レスポンスの分割"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-89",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
-          "title": "SQLインジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-352",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
-          "title": "クロスサイトリクエストフォージェリ"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-94",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
-          "title": "コード・インジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-290",
-          "url": "https://cwe.mitre.org/data/definitions/290.html",
-          "title": "スプーフィングによる認証回避"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-347",
-          "url": "https://cwe.mitre.org/data/definitions/347.html",
-          "title": "デジタル署名の不適切な検証"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-75",
-          "url": "https://cwe.mitre.org/data/definitions/75.html",
-          "title": "特殊要素の不適切なサニタイジング"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-302",
-          "url": "https://cwe.mitre.org/data/definitions/302.html",
-          "title": "認証回避の脆弱性"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年03月14日]\\n  掲載\\n[2017年04月04日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8016) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8017) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8018) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8019) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8020) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8021) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8022) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8023) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8024) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8025) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-03-14T13:57:10+09:00",
-    "datelastupdated": "2017-04-04T15:18:52+09:00",
-    "datepublic": "2016-12-12T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-007716",
+	"vulinfodata": {
+		"title": "McAfee Virus Scan Enterprise for Linux に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "McAfee Virus Scan Enterprise for Linux には、次の複数の脆弱性が存在します。  情報漏えい (CWE-200) - CVE-2016-8016 当該製品のウェブインターフェースでは、複数のページでパラメータ tplt を使用しています。当該製品のユーザ権限をもつ遠隔の攻撃者がパラメータ tplt の値を細工してアクセスすることで、(本来アクセスを許可されておらず存在有無の確認もできないはずの) ファイルの存在有無をエラーメッセージから判断することが可能です。  特殊要素の不適切なサニタイジング (CWE-75) - CVE-2016-8017 当該製品のユーザ権限を持つ遠隔の攻撃者は、入力中にテキスト要素 \"__REPLACE_THIS__\" や、\"[%\" および \"%]\" などを含めることで、ログデータにこれらのテキスト要素を記録させることが可能です。これらのテキスト要素は、ログ読み込み処理などを行うシステムプロセスでは特別な意味を持つ文字列として扱われており、細工したテキスト要素をログに記録させることで、コマンドとして実行させることが可能です。 本脆弱性を使用することで、遠隔の攻撃者は nails ユーザとしてウェブサーバからファイルを取得することが可能です。  クロスサイトリクエストフォージェリ (CWE-352) - CVE-2016-8018 当該製品のウェブインターフェースは CSRF 対策トークンを使用していないため、クロスサイトリクエストフォージェリに対して脆弱です。  クロスサイトスクリプティング (CWE-79) - CVE-2016-8019 当該製品のウェブインターフェースでは、複数のページでパラメータ tplt を使用しています。NailsConfig.html または MonitorHost.html を指す URL でパラメータ tplt が使用されている場合、ブラウザに返されるレスポンス中のパラメータ info:7 および info:5 にはユーザ入力がそのまま含まれ、適切な検証処理が行われません。遠隔の第三者は info:7 または info:5 の値を改ざんすることで、ユーザのウェブブラウザ上で任意のスクリプトを実行することが可能です。  コードインジェクション (CWE-94) - CVE-2016-8020 システムスキャンフォームの最終ページで使用されている変数 nailsd.profile.ODS_9.scannerPath には、システムがスキャンを実行する際に使用するコマンドを指すパスが含まれています。当該製品のユーザ権限を持つ遠隔の攻撃者は細工した HTTP リクエストでこの値を改ざんすることで、任意のコマンドを root 権限で実行することが可能です。  デジタル署名の不適切な検証 (CWE-347) - CVE-2016-8021 当該製品のウェブインターフェースはファイルのデジタル署名を適切に検証していません。遠隔の攻撃者は、詐称したアップデートサーバにアクセスさせることで、当該製品上で任意のコードを実行することが可能です。  なりすましによる認証回避 (CWE-290) - CVE-2016-8022 当該製品のウェブインターフェースは、ユーザの IP アドレスを含んだ認証用 Cookie を使用しています。遠隔の攻撃者は Cookie に含まれる IP アドレスを改ざんすることで、ユーザになりすますことが可能です。  不変と想定されるデータの改ざんによる認証回避 (CWE-302) - CVE-2016-8023 当該製品のウェブインターフェースは、サーバの起動時刻をパラメータ DATE として含む認証用 Cookie を使用しています。遠隔の攻撃者はパラメータ DATE に記録されているサーバの起動時刻を総当たり (brute force) で割り出し、認証を回避することが可能です。  HTTP レスポンス分割 (CWE-113) - CVE-2016-8024 遠隔の攻撃者はシステムログの CSV 出力を得るための HTTP GET リクエストを改ざんして URL エンコードされた改行文字を含めることで、HTTP レスポンスに任意のヘッダを挿入することが可能です。  SQL インジェクション (CWE-89) - CVE-2016-8025 ウェブインターフェースの CSV ログ出力機能では、HTTP リクエスト中に SQL コマンドが URL エンコードされています。遠隔の攻撃者は任意の SQL コマンドを URL エンコードして HTTP リクエストに挿入することで、バックエンドの SQLite データベース上で任意の SQL コマンドを実行することが可能です。このデータベースには設定内容や過去にスキャンを行ったファイルの情報のみが保存されており、認証情報は含まれていません。  これらに関する詳しい情報は、開発者が提供する情報および研究者のブログ投稿をご確認ください。  開発者が提供する情報 https://kc.mcafee.com/corporate/index?page=content&id=SB10181  研究者のブログ投稿 https://nation.state.actor/mcafee.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マカフィー",
+					"productname": "McAfee VirusScan Enterprise",
+					"cpe": {
+						"text": "cpe:/a:mcafee:virusscan_enterprise",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for Linux version 2.0.3 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9",
+					"vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、システム上の一部のファイルやログ情報を取得されたり、ユーザのウェブブラウザ上で任意のスクリプトを実行されたり、当該製品上で任意のコードを実行されたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[Endpoint Security にアップグレードする] McAfee は、これらの脆弱性を修正した Endpoint Security を提供しています。Endpoint Security version 10.2 およびそれ以降を使用してください。Endpoint Security へのアップグレードは無料です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "McAfee Security Bulletin",
+					"vulinfoid": "Intel Security - Security Bulletin: VirusScan Enterprise for Linux/LinuxShield update fixes multiple vulnerabilities",
+					"url": "https://kc.mcafee.com/corporate/index?page=content&id=SB10181"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8019",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8019"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8020",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8020"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8021",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8021"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8022",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8022"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8023",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8023"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8016",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8016"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8024",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8024"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8017",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8017"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8025",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8025"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-8018",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8018"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90572729",
+					"url": "http://jvn.jp/vu/JVNVU90572729/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8024",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8024"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8016",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8016"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8025",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8025"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8017",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8017"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8018",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8018"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8019",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8019"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8020",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8020"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8021",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8021"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8022",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8022"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-8023",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-8023"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#245327",
+					"url": "http://www.kb.cert.org/vuls/id/245327"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#535111",
+					"url": "https://www.kb.cert.org/vuls/id/535111"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "McAfee Virus Scan for Linux",
+					"url": "https://nation.state.actor/mcafee.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-113",
+					"url": "https://cwe.mitre.org/data/definitions/113.html",
+					"title": "HTTP レスポンスの分割"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-352",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+					"title": "クロスサイトリクエストフォージェリ"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-94",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+					"title": "コード・インジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-290",
+					"url": "https://cwe.mitre.org/data/definitions/290.html",
+					"title": "スプーフィングによる認証回避"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-347",
+					"url": "https://cwe.mitre.org/data/definitions/347.html",
+					"title": "デジタル署名の不適切な検証"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-75",
+					"url": "https://cwe.mitre.org/data/definitions/75.html",
+					"title": "特殊要素の不適切なサニタイジング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-302",
+					"url": "https://cwe.mitre.org/data/definitions/302.html",
+					"title": "認証回避の脆弱性"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年03月14日]\\n  掲載\\n[2017年04月04日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8016) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8017) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8018) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8019) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8020) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8021) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8022) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8023) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8024) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-8025) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-03-14T13:57:10+09:00",
+		"datelastupdated": "2017-04-04T15:18:52+09:00",
+		"datepublic": "2016-12-12T00:00:00+09:00"
+	}
 }

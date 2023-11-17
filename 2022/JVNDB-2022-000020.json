@@ -1,158 +1,158 @@
 {
-  "vulinfoid": "JVNDB-2022-000020",
-  "vulinfodata": {
-    "title": "pfSense における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "pfSenseには、次の複数の脆弱性が存在します。 ・クロスサイトスクリプティング (CWE-79) - CVE-2021-20729 ・アクセス制限不備 (CWE-284) - CVE-2022-26019 ・不適切な入力確認 (CWE-20) - CVE-2022-24299  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が　IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社イエラエセキュリティ 渡部 裕 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Electric Sheep Fencing",
-          "productname": "pfSense CE",
-          "cpe": {
-            "text": "cpe:/a:electric_sheep_fencing:pfsense_pfsense_ce",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software バージョン 2.5.2 およびそれ以前 (CVE-2021-20729)",
-            "Software バージョン 2.6.0 より前 (CVE-2022-26019, CVE-2022-24299)"
-          ]
-        },
-        {
-          "name": "Electric Sheep Fencing",
-          "productname": "pfSense Plus",
-          "cpe": {
-            "text": "cpe:/a:electric_sheep_fencing:pfsense_pfsense_plus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Software バージョン 21.05 およびそれ以前 (CVE-2021-20729)",
-            "Software バージョン 22.01 より前 (CVE-2022-26019, CVE-2022-24299)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9",
-          "vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・悪意のある URL を通じて captive ポータルログインページへアクセスさせられたユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2021-20729 ・NTP GPS 設定の変更権限を持つユーザによって、ファイルシステム上の既存ファイルを書き換えられ、結果として任意のコマンドを実行される - CVE-2022-26019 ・OpenVPN クライアントまたはサーバの設定の変更権限を持つユーザによって、任意のコマンドを実行される - CVE-2022-24299"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "pfSense",
-          "vulinfoid": "pfSense-SA-21_02.captiveportal - XSS vulnerability in the WebGUI",
-          "url": "https://docs.netgate.com/downloads/pfSense-SA-21_02.captiveportal.asc"
-        },
-        {
-          "type": "vendor",
-          "name": "pfSense",
-          "vulinfoid": "pfSense-SA-22_01.webgui - File overwrite vulnerability in the WebGUI",
-          "url": "https://docs.netgate.com/downloads/pfSense-SA-22_01.webgui.asc"
-        },
-        {
-          "type": "vendor",
-          "name": "pfSense",
-          "vulinfoid": "pfSense-SA-22_03.webgui - Multiple vulnerabilities in the WebGUI",
-          "url": "https://docs.netgate.com/downloads/pfSense-SA-22_03.webgui.asc"
-        },
-        {
-          "type": "vendor",
-          "name": "pfSense",
-          "vulinfoid": "pfSense Open Source Firewall",
-          "url": "https://www.pfsense.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "pfSense",
-          "vulinfoid": "Releases",
-          "url": "https://docs.netgate.com/pfsense/en/latest/releases/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-20729",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2021-20729"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-26019",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-26019"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2022-24299",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2022-24299"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#87751554",
-          "url": "https://jvn.jp/jp/JVN87751554/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-79",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
-          "title": "クロスサイトスクリプティング"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-03-09T10:25:31+09:00",
-          "description": "[2022年03月15日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-03-15T12:07:14+09:00",
-    "datelastupdated": "2022-03-15T12:07:14+09:00",
-    "datepublic": "2022-03-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2022-000020",
+	"vulinfodata": {
+		"title": "pfSense における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "pfSenseには、次の複数の脆弱性が存在します。 ・クロスサイトスクリプティング (CWE-79) - CVE-2021-20729 ・アクセス制限不備 (CWE-284) - CVE-2022-26019 ・不適切な入力確認 (CWE-20) - CVE-2022-24299  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が　IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社イエラエセキュリティ 渡部 裕 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Electric Sheep Fencing",
+					"productname": "pfSense CE",
+					"cpe": {
+						"text": "cpe:/a:electric_sheep_fencing:pfsense_pfsense_ce",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software バージョン 2.5.2 およびそれ以前 (CVE-2021-20729)",
+						"Software バージョン 2.6.0 より前 (CVE-2022-26019, CVE-2022-24299)"
+					]
+				},
+				{
+					"name": "Electric Sheep Fencing",
+					"productname": "pfSense Plus",
+					"cpe": {
+						"text": "cpe:/a:electric_sheep_fencing:pfsense_pfsense_plus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Software バージョン 21.05 およびそれ以前 (CVE-2021-20729)",
+						"Software バージョン 22.01 より前 (CVE-2022-26019, CVE-2022-24299)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9",
+					"vector": "AV:N/AC:L/Au:S/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・悪意のある URL を通じて captive ポータルログインページへアクセスさせられたユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2021-20729 ・NTP GPS 設定の変更権限を持つユーザによって、ファイルシステム上の既存ファイルを書き換えられ、結果として任意のコマンドを実行される - CVE-2022-26019 ・OpenVPN クライアントまたはサーバの設定の変更権限を持つユーザによって、任意のコマンドを実行される - CVE-2022-24299"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "pfSense",
+					"vulinfoid": "pfSense-SA-21_02.captiveportal - XSS vulnerability in the WebGUI",
+					"url": "https://docs.netgate.com/downloads/pfSense-SA-21_02.captiveportal.asc"
+				},
+				{
+					"type": "vendor",
+					"name": "pfSense",
+					"vulinfoid": "pfSense-SA-22_01.webgui - File overwrite vulnerability in the WebGUI",
+					"url": "https://docs.netgate.com/downloads/pfSense-SA-22_01.webgui.asc"
+				},
+				{
+					"type": "vendor",
+					"name": "pfSense",
+					"vulinfoid": "pfSense-SA-22_03.webgui - Multiple vulnerabilities in the WebGUI",
+					"url": "https://docs.netgate.com/downloads/pfSense-SA-22_03.webgui.asc"
+				},
+				{
+					"type": "vendor",
+					"name": "pfSense",
+					"vulinfoid": "pfSense Open Source Firewall",
+					"url": "https://www.pfsense.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "pfSense",
+					"vulinfoid": "Releases",
+					"url": "https://docs.netgate.com/pfsense/en/latest/releases/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-20729",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2021-20729"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-26019",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-26019"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2022-24299",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2022-24299"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#87751554",
+					"url": "https://jvn.jp/jp/JVN87751554/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-03-09T10:25:31+09:00",
+					"description": "[2022年03月15日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2022-03-15T12:07:14+09:00",
+		"datelastupdated": "2022-03-15T12:07:14+09:00",
+		"datepublic": "2022-03-15T00:00:00+09:00"
+	}
 }

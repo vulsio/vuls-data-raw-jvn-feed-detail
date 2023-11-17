@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2014-003864",
-  "vulinfodata": {
-    "title": "Apache Subversion の Serf RA レイヤにおけるサーバになりすまされる脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache Subversion の Serf RA レイヤは、X.509 証明書の Common Name (CN) または subjectAltName フィールドのワイルドカードを適切に処理しないため、サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-297: Improper Validation of Certificate with Host Mismatch (ホストの不一致による証明書の不適切な検証) と識別されています。 http://cwe.mitre.org/data/definitions/297.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache Subversion",
-          "cpe": {
-            "text": "cpe:/a:apache:subversion",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.7.18 未満の 1.4.0 から 1.7.x",
-            "1.8.10 未満の 1.8.x"
-          ]
-        },
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.04 LTS",
-            "14.04 LTS"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Xcode",
-          "cpe": {
-            "text": "cpe:/a:apple:xcode",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2 未満 (OS X Mavericks v10.9.4 以降)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4",
-          "vector": "AV:N/AC:H/Au:N/C:P/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "中間者攻撃により、巧妙に細工された証明書を介して、サーバになりすまされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "CVE-2014-3522-advisory",
-          "url": "https://subversion.apache.org/security/CVE-2014-3522-advisory.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-03-09-4 Xcode 6.2",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Mar/msg00003.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT204427",
-          "url": "https://support.apple.com/en-us/HT204427"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT204427",
-          "url": "http://support.apple.com/ja-jp/HT204427"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2316-1",
-          "url": "http://www.ubuntu.com/usn/USN-2316-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-3522",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3522"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90171154",
-          "url": "http://jvn.jp/vu/JVNVU90171154/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-3522",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3522"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "apache-subversion-cve20143528-info-disc (95090)",
-          "url": "http://xforce.iss.net/xforce/xfdb/95090"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年08月21日]\\n  掲載\\n[2015年03月13日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204427) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-03-09-4 Xcode 6.2) を追加\\n  参考情報：JVN (JVNVU#90171154) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-08-21T16:29:22+09:00",
-    "datelastupdated": "2015-10-30T16:46:31+09:00",
-    "datepublic": "2014-08-14T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-003864",
+	"vulinfodata": {
+		"title": "Apache Subversion の Serf RA レイヤにおけるサーバになりすまされる脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache Subversion の Serf RA レイヤは、X.509 証明書の Common Name (CN) または subjectAltName フィールドのワイルドカードを適切に処理しないため、サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-297: Improper Validation of Certificate with Host Mismatch (ホストの不一致による証明書の不適切な検証) と識別されています。 http://cwe.mitre.org/data/definitions/297.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache Subversion",
+					"cpe": {
+						"text": "cpe:/a:apache:subversion",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.7.18 未満の 1.4.0 から 1.7.x",
+						"1.8.10 未満の 1.8.x"
+					]
+				},
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.04 LTS",
+						"14.04 LTS"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Xcode",
+					"cpe": {
+						"text": "cpe:/a:apple:xcode",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2 未満 (OS X Mavericks v10.9.4 以降)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4",
+					"vector": "AV:N/AC:H/Au:N/C:P/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "中間者攻撃により、巧妙に細工された証明書を介して、サーバになりすまされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "CVE-2014-3522-advisory",
+					"url": "https://subversion.apache.org/security/CVE-2014-3522-advisory.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-03-09-4 Xcode 6.2",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Mar/msg00003.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT204427",
+					"url": "https://support.apple.com/en-us/HT204427"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT204427",
+					"url": "http://support.apple.com/ja-jp/HT204427"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2316-1",
+					"url": "http://www.ubuntu.com/usn/USN-2316-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-3522",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3522"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90171154",
+					"url": "http://jvn.jp/vu/JVNVU90171154/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-3522",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3522"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "apache-subversion-cve20143528-info-disc (95090)",
+					"url": "http://xforce.iss.net/xforce/xfdb/95090"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年08月21日]\\n  掲載\\n[2015年03月13日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT204427) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-03-09-4 Xcode 6.2) を追加\\n  参考情報：JVN (JVNVU#90171154) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-08-21T16:29:22+09:00",
+		"datelastupdated": "2015-10-30T16:46:31+09:00",
+		"datepublic": "2014-08-14T00:00:00+09:00"
+	}
 }

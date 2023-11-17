@@ -1,182 +1,182 @@
 {
-  "vulinfoid": "JVNDB-2007-000213",
-  "vulinfodata": {
-    "title": "MySQL における単一列副問い合わせによるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "MySQL には、information_schema 上のテーブルに対して ORDER BY により単一列 (single-row) 指定のソートを行う副問い合わせ (subselect) が実行された場合に、filesort() 関数において Null ポインタデリファレンスが発生する脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "MySQL AB",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:mysql:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0.26 およびそれ以前"
-          ]
-        },
-        {
-          "name": "MySQL AB",
-          "productname": "MySQL Community Server",
-          "cpe": {
-            "text": "cpe:/a:mysql:mysql_community_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0.37 未満のバージョン"
-          ]
-        },
-        {
-          "name": "MySQL AB",
-          "productname": "MySQL Enterprise Server",
-          "cpe": {
-            "text": "cpe:/a:mysql:mysql_enterprise_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0.36 未満のバージョン"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (x86) ",
-            "3 (x86-64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0 (client) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.9",
-          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "mysqld がクラッシュしサービス運用妨害 (DoS) 状態となる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "mysql-5.0.45-7.1AX",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=135"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL Documentation",
-          "vulinfoid": "Release Notes for MySQL Community Server 5.0.37",
-          "url": "http://dev.mysql.com/doc/refman/5.0/en/releasenotes-cs-5-0-37.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL Documentation",
-          "vulinfoid": "Release Notes for MySQL Enterprise 5.0.36",
-          "url": "http://dev.mysql.com/doc/refman/5.0/en/releasenotes-es-5-0-36.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2008:0364",
-          "url": "https://rhn.redhat.com/errata/RHSA-2008-0364.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2007-1420",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1420"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2007-0908",
-          "url": "http://www.frsirt.com/english/advisories/2007/0908"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2007-1420",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-1420"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA24483",
-          "url": "http://secunia.com/advisories/24483/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "22900",
-          "url": "http://www.securityfocus.com/bid/22900"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月24日]\\n  掲載\\n[2008年06月06日]\\n  影響を受けるシステム：レッドハット（RHSA-2008:0364）の情報を追加\\n  ベンダ情報：レッドハット（RHSA-2008:0364）を追加\\n[2008年08月13日]\\n  影響を受けるシステム：ミラクル・リナックス（mysql-5.0.45-7.1AX）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（mysql-5.0.45-7.1AX）を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-24T17:38:22+09:00",
-    "datelastupdated": "2008-08-13T11:18:47+09:00",
-    "datepublic": "2007-03-12T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2007-000213",
+	"vulinfodata": {
+		"title": "MySQL における単一列副問い合わせによるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "MySQL には、information_schema 上のテーブルに対して ORDER BY により単一列 (single-row) 指定のソートを行う副問い合わせ (subselect) が実行された場合に、filesort() 関数において Null ポインタデリファレンスが発生する脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "MySQL AB",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:mysql:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0.26 およびそれ以前"
+					]
+				},
+				{
+					"name": "MySQL AB",
+					"productname": "MySQL Community Server",
+					"cpe": {
+						"text": "cpe:/a:mysql:mysql_community_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0.37 未満のバージョン"
+					]
+				},
+				{
+					"name": "MySQL AB",
+					"productname": "MySQL Enterprise Server",
+					"cpe": {
+						"text": "cpe:/a:mysql:mysql_enterprise_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0.36 未満のバージョン"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (x86) ",
+						"3 (x86-64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0 (client) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.9",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "mysqld がクラッシュしサービス運用妨害 (DoS) 状態となる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "mysql-5.0.45-7.1AX",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=135"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL Documentation",
+					"vulinfoid": "Release Notes for MySQL Community Server 5.0.37",
+					"url": "http://dev.mysql.com/doc/refman/5.0/en/releasenotes-cs-5-0-37.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL Documentation",
+					"vulinfoid": "Release Notes for MySQL Enterprise 5.0.36",
+					"url": "http://dev.mysql.com/doc/refman/5.0/en/releasenotes-es-5-0-36.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2008:0364",
+					"url": "https://rhn.redhat.com/errata/RHSA-2008-0364.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2007-1420",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1420"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2007-0908",
+					"url": "http://www.frsirt.com/english/advisories/2007/0908"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2007-1420",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-1420"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA24483",
+					"url": "http://secunia.com/advisories/24483/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "22900",
+					"url": "http://www.securityfocus.com/bid/22900"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月24日]\\n  掲載\\n[2008年06月06日]\\n  影響を受けるシステム：レッドハット（RHSA-2008:0364）の情報を追加\\n  ベンダ情報：レッドハット（RHSA-2008:0364）を追加\\n[2008年08月13日]\\n  影響を受けるシステム：ミラクル・リナックス（mysql-5.0.45-7.1AX）の情報を追加\\n  ベンダ情報：ミラクル・リナックス（mysql-5.0.45-7.1AX）を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-24T17:38:22+09:00",
+		"datelastupdated": "2008-08-13T11:18:47+09:00",
+		"datepublic": "2007-03-12T00:00:00+09:00"
+	}
 }

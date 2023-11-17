@@ -1,158 +1,158 @@
 {
-  "vulinfoid": "JVNDB-2018-001003",
-  "vulinfodata": {
-    "title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "BIND 9 には、リモートからのサービス運用妨害（DoS）が可能となる、実装上の不備に起因する脆弱性があります。  BIND 9 には反復検索におけるクリーンアップ処理の順序に誤りがあります。結果として、解放済みメモリ使用 (use-after-free) による assertion failure が発生し、named が異常終了する可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.0.0 から 9.8.x まで",
-            "9.10.0 から 9.10.6 まで",
-            "9.10.5-S1 から 9.10.6-S1 まで",
-            "9.11.0 から 9.11.2 まで",
-            "9.12.0a1 から 9.12.0rc1 まで",
-            "9.9.0 から 9.9.11 まで",
-            "9.9.3-S1 から 9.9.11-S1 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃 (named の停止) が行われる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　　* BIND 9 version 9.9.11-P1 　　* BIND 9 version 9.10.6-P1 　　* BIND 9 version 9.11.2-P1 　　* BIND 9 version 9.12.0rc2 　　* BIND 9 version 9.9.11-S2 　　* BIND 9 version 9.10.6-S2   BIND Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* DNSSEC の検証を無効にする"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "AXSA:2018-2521:01",
-          "url": "https://tsn.miraclelinux.com/ja/node/8964"
-        },
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "AXSA:2018-2550:01",
-          "url": "https://tsn.miraclelinux.com/ja/node/8993"
-        },
-        {
-          "type": "vendor",
-          "name": "Knowledge Base",
-          "vulinfoid": "CVE-2017-3145: Improper fetch cleanup sequencing in the resolver can cause named to crash",
-          "url": "https://kb.isc.org/article/AA-01542"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV18-005",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv18-005.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3145",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3145"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "DNS サーバ BIND の脆弱性対策について(CVE-2017-3145)",
-          "url": "https://www.ipa.go.jp/security/ciadr/vul/20180118-bind.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2018-0005",
-          "url": "https://www.jpcert.or.jp/at/2018/at180005.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPNIC",
-          "vulinfoid": "BIND 9における動作停止となる脆弱性について(2018年1月)",
-          "url": "https://www.nic.ad.jp/ja/topics/2018/20180117-01.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2017-3145）",
-          "url": "https://jprs.jp/tech/security/2018-01-17-bind9-vuln-improperly-sequencing-cleanup.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94160143",
-          "url": "http://jvn.jp/vu/JVNVU94160143/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3145",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3145"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Current Activity",
-          "vulinfoid": "ISC Releases Security Advisories for DHCP, BIND",
-          "url": "https://www.us-cert.gov/ncas/current-activity/2018/01/16/ISC-Releases-Security-Advisories-DHCP-BIND"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-03-07T14:55:59+09:00",
-          "description": "[2018年01月18日]\\n  掲載\\n[2018年01月30日]\\n  ベンダ情報：サイバートラスト株式会社 (AXSA:2018-2521:01) を追加\\n  ベンダ情報：サイバートラスト株式会社 (AXSA:2018-2550:01) を追加"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-03-27T14:47:32+09:00",
-          "description": "[2018年03月27日]\\n  ベンダ情報：日本電気 (NV18-005) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2019-08-27T15:26:05+09:00",
-          "description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3145) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-01-18T11:47:52+09:00",
-    "datelastupdated": "2019-08-27T17:12:34+09:00",
-    "datepublic": "2018-01-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-001003",
+	"vulinfodata": {
+		"title": "ISC BIND 9 にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "BIND 9 には、リモートからのサービス運用妨害（DoS）が可能となる、実装上の不備に起因する脆弱性があります。  BIND 9 には反復検索におけるクリーンアップ処理の順序に誤りがあります。結果として、解放済みメモリ使用 (use-after-free) による assertion failure が発生し、named が異常終了する可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.0.0 から 9.8.x まで",
+						"9.10.0 から 9.10.6 まで",
+						"9.10.5-S1 から 9.10.6-S1 まで",
+						"9.11.0 から 9.11.2 まで",
+						"9.12.0a1 から 9.12.0rc1 まで",
+						"9.9.0 から 9.9.11 まで",
+						"9.9.3-S1 から 9.9.11-S1 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、サービス運用妨害 (DoS) 攻撃 (named の停止) が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　　* BIND 9 version 9.9.11-P1 　　* BIND 9 version 9.10.6-P1 　　* BIND 9 version 9.11.2-P1 　　* BIND 9 version 9.12.0rc2 　　* BIND 9 version 9.9.11-S2 　　* BIND 9 version 9.10.6-S2   BIND Supported Preview 版は ISC サポートの対象である特定顧客にのみ提供されているものです。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　　* DNSSEC の検証を無効にする"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "AXSA:2018-2521:01",
+					"url": "https://tsn.miraclelinux.com/ja/node/8964"
+				},
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "AXSA:2018-2550:01",
+					"url": "https://tsn.miraclelinux.com/ja/node/8993"
+				},
+				{
+					"type": "vendor",
+					"name": "Knowledge Base",
+					"vulinfoid": "CVE-2017-3145: Improper fetch cleanup sequencing in the resolver can cause named to crash",
+					"url": "https://kb.isc.org/article/AA-01542"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV18-005",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv18-005.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3145",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3145"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "DNS サーバ BIND の脆弱性対策について(CVE-2017-3145)",
+					"url": "https://www.ipa.go.jp/security/ciadr/vul/20180118-bind.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2018-0005",
+					"url": "https://www.jpcert.or.jp/at/2018/at180005.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPNIC",
+					"vulinfoid": "BIND 9における動作停止となる脆弱性について(2018年1月)",
+					"url": "https://www.nic.ad.jp/ja/topics/2018/20180117-01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "（緊急）BIND 9.xの脆弱性（DNSサービスの停止）について（CVE-2017-3145）",
+					"url": "https://jprs.jp/tech/security/2018-01-17-bind9-vuln-improperly-sequencing-cleanup.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94160143",
+					"url": "http://jvn.jp/vu/JVNVU94160143/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3145",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3145"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Current Activity",
+					"vulinfoid": "ISC Releases Security Advisories for DHCP, BIND",
+					"url": "https://www.us-cert.gov/ncas/current-activity/2018/01/16/ISC-Releases-Security-Advisories-DHCP-BIND"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-03-07T14:55:59+09:00",
+					"description": "[2018年01月18日]\\n  掲載\\n[2018年01月30日]\\n  ベンダ情報：サイバートラスト株式会社 (AXSA:2018-2521:01) を追加\\n  ベンダ情報：サイバートラスト株式会社 (AXSA:2018-2550:01) を追加"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-03-27T14:47:32+09:00",
+					"description": "[2018年03月27日]\\n  ベンダ情報：日本電気 (NV18-005) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2019-08-27T15:26:05+09:00",
+					"description": "[2019年08月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3145) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2018-01-18T11:47:52+09:00",
+		"datelastupdated": "2019-08-27T17:12:34+09:00",
+		"datepublic": "2018-01-17T00:00:00+09:00"
+	}
 }

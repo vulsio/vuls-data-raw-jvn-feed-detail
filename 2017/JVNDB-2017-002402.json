@@ -1,237 +1,237 @@
 {
-  "vulinfoid": "JVNDB-2017-002402",
-  "vulinfodata": {
-    "title": "Microsoft OLE URL Moniker における遠隔の HTA データに対する不適切な処理",
-    "vulinfodescription": {
-      "overview": "Microsoft OLE は、不適切な方法で URL Moniker を使用して遠隔のデータを処理します。遠隔データは提示された MIME type に関連付けられたアプリケーションを使って処理されますが、MIME type のなかには任意コード実行につながる危険なものが含まれています。たとえば、MIME type application/hta には mshta.exe が関連付けられており、細工された HTA コンテンツを処理することで任意のコードが実行される可能性があります。  Microsoft URL Moniker https://msdn.microsoft.com/en-us/library/ms775149.aspx  すでに次のような手法での攻撃活動が報告されています。  　* Microsoft Word の DOC 形式に偽装された RTF (リッチテキスト) 形式の文書ファイルによって攻撃が開始される 　* この文書ファイルを開くと、リモートサーバに接続して HTA ファイルを取得し、HTA ファイルに含まれる VBScript がクライアント上で実行される  本脆弱性を使用した攻撃は、Microsoft Word 以外の Windows コンポーネントを標的として行われる可能性があります。なお、Microsoft Office の保護ビューが、ユーザ操作なしで攻撃が実行されることを防ぐのに役立つことも報告されています。  Microsoft Office の保護ビュー https://support.office.com/ja-jp/article/%E4%BF%9D%E8%AD%B7%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A8%E3%81%AF-d6f09ac7-e6b9-4495-8e43-2bbcdbcb6653"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Office",
-          "cpe": {
-            "text": "cpe:/a:microsoft:office",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2007 SP3",
-            "2010 SP2 (32-bit editions)",
-            "2010 SP2 (64-bit editions)",
-            "2013 SP1 (32-bit editions)",
-            "2013 SP1 (64-bit editions)",
-            "2016 (32-bit edition)",
-            "2016 (64-bit edition)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 7",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_7",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for 32-bit Systems SP1",
-            "for x64-based Systems SP1"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2008",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2008",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for 32-bit Systems SP2",
-            "for 32-bit Systems SP2 (Server Core installation)",
-            "for Itanium-Based Systems SP2",
-            "for x64-based Systems SP2",
-            "for x64-based Systems SP2 (Server Core installation)",
-            "R2 for Itanium-Based Systems SP1",
-            "R2 for x64-based Systems SP1",
-            "R2 for x64-based Systems SP1 (Server Core installation)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2012",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2012",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(Server Core installation)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Vista",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_vista",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "SP2",
-            "x64 Edition SP2"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.3",
-          "vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "細工された文書ファイルをユーザが開くことで、遠隔の第三者によって任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 2017年4月11日、Microsoft から、本脆弱性に対するセキュリティアップデートが公開されました。 Microsoft が提供する情報をもとに、アップデートを適用してください。  なお、セキュリティアップデートの適用後であっても、保護ビューが有効でなければ、リンクされた OLE コンテンツが MIME type にしたがって取得され保存されるところまでは、ユーザへの確認なしで行われます。セキュリティアップデートは、このようにして保存された HTA コンテンツが実行されることを防ぐものです。  [application/hta 形式のファイルの処理を無効化する] 現在確認されている攻撃手法は、application/hta 形式のデータに対する処理を無効化することで防ぐことができると考えられます。次のようなレジストリ値を設定することで、application/hta 形式のデータをプレーンテキストとして処理するよう変更することが可能です。  　Windows Registry Editor Version 5.00  　[HKEY_CLASSES_ROOT\\PROTOCOLS\\Filter\\application/hta] 　\"CLSID\"=\"{5e941d80-bf96-11cd-b579-08002b30bfeb}\"  [Microsoft Word で RTF ファイルをブロックする] 報告されている攻撃活動は、RTF ドキュメントファイルを使用したものです。 Microsoft Office Trust Center のファイル制限機能によって RTF ファイルを開かないようブロックすることが可能です。 また、たとえば Word 2016 では次のようにレジストリを設定することで RTF ファイルのブロックが可能です。  　Windows Registry Editor Version 5.00  　[HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\16.0\\Word\\Security\\FileBlock] 　\"OpenInProtectedView\"=dword:00000000 　\"RtfFiles\"=dword:00000002  レジストリの設定内容は、Office 製品のバージョンによって異なります。  Microsoft Office Trust Center のファイル制限機能 https://support.office.com/ja-jp/article/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%88%B6%E9%99%90%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AF-10d0e0ab-fecf-4605-befd-1e6563e7686d"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "McAfee",
-          "vulinfoid": "Critical Office Zero-Day Attacks Detected in the Wild",
-          "url": "https://securingtomorrow.mcafee.com/mcafee-labs/critical-office-zero-day-attacks-detected-wild/"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft サポート",
-          "vulinfoid": "ファイル制限機能とは",
-          "url": "https://support.office.com/ja-jp/article/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%88%B6%E9%99%90%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AF-10d0e0ab-fecf-4605-befd-1e6563e7686d"
-        },
-        {
-          "type": "vendor",
-          "name": "Microsoft サポート",
-          "vulinfoid": "保護ビューとは",
-          "url": "https://support.office.com/ja-jp/article/%E4%BF%9D%E8%AD%B7%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A8%E3%81%AF-d6f09ac7-e6b9-4495-8e43-2bbcdbcb6653"
-        },
-        {
-          "type": "vendor",
-          "name": "MSDN",
-          "vulinfoid": "About URL Monikers",
-          "url": "https://msdn.microsoft.com/en-us/library/ms775149.aspx"
-        },
-        {
-          "type": "vendor",
-          "name": "Security TechCenter",
-          "vulinfoid": "CVE-2017-0199 | Microsoft Office/WordPad Remote Code Execution Vulnerability w/Windows API",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0199"
-        },
-        {
-          "type": "vendor",
-          "name": "セキュリティテックセンター",
-          "vulinfoid": "CVE-2017-0199 | Microsoft Office/ワードパッドWindows APIの w/リモート コード実行の脆弱性",
-          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2017-0199"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-0199",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0199"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSMA-18-058-02",
-          "url": "https://www.us-cert.gov/ics/advisories/ICSMA-18-058-02"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "Microsoft 製品の脆弱性対策について(2017年4月)",
-          "url": "https://www.ipa.go.jp/security/ciadr/vul/20170412-ms.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2017-0015",
-          "url": "http://www.jpcert.or.jp/at/2017/at170015.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98665451",
-          "url": "http://jvn.jp/vu/JVNVU98665451/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-0199",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-0199"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#921560",
-          "url": "https://www.kb.cert.org/vuls/id/921560"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Acknowledgement of Attacks Leveraging Microsoft Zero-Day",
-          "url": "https://www.fireeye.com/blog/threat-research/2017/04/acknowledgement_ofa.html"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Analysis of a CVE-2017-0199 Malicious RTF Document Analysis of a CVE-2017-0199 Malicious RTF Document",
-          "url": "https://blog.nviso.be/2017/04/12/analysis-of-a-cve-2017-0199-malicious-rtf-document/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Exploiting CVE-2017-0199: HTA Handler Vulnerability",
-          "url": "https://www.mdsec.co.uk/2017/04/exploiting-cve-2017-0199-hta-handler-vulnerability/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-284",
-          "url": "https://cwe.mitre.org/data/definitions/284.html",
-          "title": "不適切なアクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年04月13日]\\n  掲載\\n[2017年04月14日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：マイクロソフト (保護ビューとは) を追加\\n  ベンダ情報：マイクロソフト (ファイル制限機能とは) を追加\\n  ベンダ情報：マイクロソフト (About URL Monikers) を追加\\n[2017年04月19日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  参考情報：関連文書 (Exploiting CVE-2017-0199: HTA Handler Vulnerability) を追加\\n  参考情報：関連文書 (Analysis of a CVE-2017-0199 Malicious RTF Document) を追加\\n[2017年04月24日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：マイクロソフト (CVE-2017-0199 | Microsoft Office/ワードパッドWindows APIの w/リモート コード実行の脆弱性) を追加\\n  参考情報：IPA 重要なセキュリティ情報 (Microsoft 製品の脆弱性対策について(2017年4月)) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-0199) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2019-07-10T15:47:34+09:00",
-          "description": "[2019年07月10日]\\n  参考情報：ICS-CERT ADVISORY (ICSMA-18-058-02) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-04-13T11:55:32+09:00",
-    "datelastupdated": "2019-07-10T15:48:28+09:00",
-    "datepublic": "2017-04-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-002402",
+	"vulinfodata": {
+		"title": "Microsoft OLE URL Moniker における遠隔の HTA データに対する不適切な処理",
+		"vulinfodescription": {
+			"overview": "Microsoft OLE は、不適切な方法で URL Moniker を使用して遠隔のデータを処理します。遠隔データは提示された MIME type に関連付けられたアプリケーションを使って処理されますが、MIME type のなかには任意コード実行につながる危険なものが含まれています。たとえば、MIME type application/hta には mshta.exe が関連付けられており、細工された HTA コンテンツを処理することで任意のコードが実行される可能性があります。  Microsoft URL Moniker https://msdn.microsoft.com/en-us/library/ms775149.aspx  すでに次のような手法での攻撃活動が報告されています。  　* Microsoft Word の DOC 形式に偽装された RTF (リッチテキスト) 形式の文書ファイルによって攻撃が開始される 　* この文書ファイルを開くと、リモートサーバに接続して HTA ファイルを取得し、HTA ファイルに含まれる VBScript がクライアント上で実行される  本脆弱性を使用した攻撃は、Microsoft Word 以外の Windows コンポーネントを標的として行われる可能性があります。なお、Microsoft Office の保護ビューが、ユーザ操作なしで攻撃が実行されることを防ぐのに役立つことも報告されています。  Microsoft Office の保護ビュー https://support.office.com/ja-jp/article/%E4%BF%9D%E8%AD%B7%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A8%E3%81%AF-d6f09ac7-e6b9-4495-8e43-2bbcdbcb6653"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Office",
+					"cpe": {
+						"text": "cpe:/a:microsoft:office",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2007 SP3",
+						"2010 SP2 (32-bit editions)",
+						"2010 SP2 (64-bit editions)",
+						"2013 SP1 (32-bit editions)",
+						"2013 SP1 (64-bit editions)",
+						"2016 (32-bit edition)",
+						"2016 (64-bit edition)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 7",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_7",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for 32-bit Systems SP1",
+						"for x64-based Systems SP1"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2008",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2008",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for 32-bit Systems SP2",
+						"for 32-bit Systems SP2 (Server Core installation)",
+						"for Itanium-Based Systems SP2",
+						"for x64-based Systems SP2",
+						"for x64-based Systems SP2 (Server Core installation)",
+						"R2 for Itanium-Based Systems SP1",
+						"R2 for x64-based Systems SP1",
+						"R2 for x64-based Systems SP1 (Server Core installation)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2012",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2012",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(Server Core installation)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Vista",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_vista",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"SP2",
+						"x64 Edition SP2"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.3",
+					"vector": "AV:N/AC:M/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "細工された文書ファイルをユーザが開くことで、遠隔の第三者によって任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 2017年4月11日、Microsoft から、本脆弱性に対するセキュリティアップデートが公開されました。 Microsoft が提供する情報をもとに、アップデートを適用してください。  なお、セキュリティアップデートの適用後であっても、保護ビューが有効でなければ、リンクされた OLE コンテンツが MIME type にしたがって取得され保存されるところまでは、ユーザへの確認なしで行われます。セキュリティアップデートは、このようにして保存された HTA コンテンツが実行されることを防ぐものです。  [application/hta 形式のファイルの処理を無効化する] 現在確認されている攻撃手法は、application/hta 形式のデータに対する処理を無効化することで防ぐことができると考えられます。次のようなレジストリ値を設定することで、application/hta 形式のデータをプレーンテキストとして処理するよう変更することが可能です。  　Windows Registry Editor Version 5.00  　[HKEY_CLASSES_ROOT\\PROTOCOLS\\Filter\\application/hta] 　\"CLSID\"=\"{5e941d80-bf96-11cd-b579-08002b30bfeb}\"  [Microsoft Word で RTF ファイルをブロックする] 報告されている攻撃活動は、RTF ドキュメントファイルを使用したものです。 Microsoft Office Trust Center のファイル制限機能によって RTF ファイルを開かないようブロックすることが可能です。 また、たとえば Word 2016 では次のようにレジストリを設定することで RTF ファイルのブロックが可能です。  　Windows Registry Editor Version 5.00  　[HKEY_CURRENT_USER\\Software\\Microsoft\\Office\\16.0\\Word\\Security\\FileBlock] 　\"OpenInProtectedView\"=dword:00000000 　\"RtfFiles\"=dword:00000002  レジストリの設定内容は、Office 製品のバージョンによって異なります。  Microsoft Office Trust Center のファイル制限機能 https://support.office.com/ja-jp/article/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%88%B6%E9%99%90%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AF-10d0e0ab-fecf-4605-befd-1e6563e7686d"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "McAfee",
+					"vulinfoid": "Critical Office Zero-Day Attacks Detected in the Wild",
+					"url": "https://securingtomorrow.mcafee.com/mcafee-labs/critical-office-zero-day-attacks-detected-wild/"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft サポート",
+					"vulinfoid": "ファイル制限機能とは",
+					"url": "https://support.office.com/ja-jp/article/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%88%B6%E9%99%90%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AF-10d0e0ab-fecf-4605-befd-1e6563e7686d"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft サポート",
+					"vulinfoid": "保護ビューとは",
+					"url": "https://support.office.com/ja-jp/article/%E4%BF%9D%E8%AD%B7%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A8%E3%81%AF-d6f09ac7-e6b9-4495-8e43-2bbcdbcb6653"
+				},
+				{
+					"type": "vendor",
+					"name": "MSDN",
+					"vulinfoid": "About URL Monikers",
+					"url": "https://msdn.microsoft.com/en-us/library/ms775149.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Security TechCenter",
+					"vulinfoid": "CVE-2017-0199 | Microsoft Office/WordPad Remote Code Execution Vulnerability w/Windows API",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0199"
+				},
+				{
+					"type": "vendor",
+					"name": "セキュリティテックセンター",
+					"vulinfoid": "CVE-2017-0199 | Microsoft Office/ワードパッドWindows APIの w/リモート コード実行の脆弱性",
+					"url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2017-0199"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-0199",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0199"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSMA-18-058-02",
+					"url": "https://www.us-cert.gov/ics/advisories/ICSMA-18-058-02"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "Microsoft 製品の脆弱性対策について(2017年4月)",
+					"url": "https://www.ipa.go.jp/security/ciadr/vul/20170412-ms.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2017-0015",
+					"url": "http://www.jpcert.or.jp/at/2017/at170015.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98665451",
+					"url": "http://jvn.jp/vu/JVNVU98665451/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-0199",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-0199"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#921560",
+					"url": "https://www.kb.cert.org/vuls/id/921560"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Acknowledgement of Attacks Leveraging Microsoft Zero-Day",
+					"url": "https://www.fireeye.com/blog/threat-research/2017/04/acknowledgement_ofa.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Analysis of a CVE-2017-0199 Malicious RTF Document Analysis of a CVE-2017-0199 Malicious RTF Document",
+					"url": "https://blog.nviso.be/2017/04/12/analysis-of-a-cve-2017-0199-malicious-rtf-document/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Exploiting CVE-2017-0199: HTA Handler Vulnerability",
+					"url": "https://www.mdsec.co.uk/2017/04/exploiting-cve-2017-0199-hta-handler-vulnerability/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-284",
+					"url": "https://cwe.mitre.org/data/definitions/284.html",
+					"title": "不適切なアクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年04月13日]\\n  掲載\\n[2017年04月14日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：マイクロソフト (保護ビューとは) を追加\\n  ベンダ情報：マイクロソフト (ファイル制限機能とは) を追加\\n  ベンダ情報：マイクロソフト (About URL Monikers) を追加\\n[2017年04月19日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  参考情報：関連文書 (Exploiting CVE-2017-0199: HTA Handler Vulnerability) を追加\\n  参考情報：関連文書 (Analysis of a CVE-2017-0199 Malicious RTF Document) を追加\\n[2017年04月24日]\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：マイクロソフト (CVE-2017-0199 | Microsoft Office/ワードパッドWindows APIの w/リモート コード実行の脆弱性) を追加\\n  参考情報：IPA 重要なセキュリティ情報 (Microsoft 製品の脆弱性対策について(2017年4月)) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-0199) を追加\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2019-07-10T15:47:34+09:00",
+					"description": "[2019年07月10日]\\n  参考情報：ICS-CERT ADVISORY (ICSMA-18-058-02) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-04-13T11:55:32+09:00",
+		"datelastupdated": "2019-07-10T15:48:28+09:00",
+		"datepublic": "2017-04-10T00:00:00+09:00"
+	}
 }

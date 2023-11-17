@@ -1,105 +1,105 @@
 {
-  "vulinfoid": "JVNDB-2015-002841",
-  "vulinfodata": {
-    "title": "Synology の OS X 向け Cloud Station Client ユーティリティに一般ユーザによるシステムファイルの所有者変更が可能になる問題",
-    "vulinfodescription": {
-      "overview": "Synology が提供する OS X 向け Cloud Station Client ユーティリティには、一般ユーザがシステムファイルの所有者を変更できる問題が存在します。  不適切なデフォルトパーミッション (CWE-276) - CVE-2015-2851 Synology が提供する OS X 向け Cloud Station Client ユーティリティには、ファイルの所有者を変更するための client_chown という実行ファイルが含まれています。このファイルは setuid root された実行ファイルとしてインストールされるため、一般ユーザが任意のシステムファイルの所有者を変更することが可能です。  CWE-276 http://cwe.mitre.org/data/definitions/276.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Synology Inc.",
-          "productname": "Cloud Station",
-          "cpe": {
-            "text": "cpe:/a:synology:cloud_station",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "sync client 1.1-2291 以降、3.2-3475 より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "OS X の一般ユーザが任意のシステムファイルの所有者を変更する可能性があります。結果として、root 権限を取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  本脆弱性はバージョン 3.2-3475 で修正されています。CERT/CC Vulnerability Note VU#551972 Synology Information for VU#551972 には、開発者の見解として次のように記載されています。  We have removed client_chown in the latest build (3.2-3475) as precaution, even though the impact is concluded to be very low. The client_chown tool was originally designed to ease the upgrade process of the Cloud Station client, and was included starting from build 2291. To achieve this purpose, client_chown was able to change the ownership of certain system files that belong to Cloud Station client.  Synology Information for VU#551972 http://www.kb.cert.org/vuls/id/BLUU-9VBU45"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Synology",
-          "vulinfoid": "Download Center",
-          "url": "https://www.synology.com/en-us/support/download/DX1215"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-2851",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2851"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98783868",
-          "url": "http://jvn.jp/vu/JVNVU98783868/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-2851",
-          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2851"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#551972",
-          "url": "http://www.kb.cert.org/vuls/id/551972"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年05月29日]\\n  掲載\\n[2015年06月03日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2851) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-05-29T16:59:05+09:00",
-    "datelastupdated": "2015-06-03T18:04:13+09:00",
-    "datepublic": "2015-05-26T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-002841",
+	"vulinfodata": {
+		"title": "Synology の OS X 向け Cloud Station Client ユーティリティに一般ユーザによるシステムファイルの所有者変更が可能になる問題",
+		"vulinfodescription": {
+			"overview": "Synology が提供する OS X 向け Cloud Station Client ユーティリティには、一般ユーザがシステムファイルの所有者を変更できる問題が存在します。  不適切なデフォルトパーミッション (CWE-276) - CVE-2015-2851 Synology が提供する OS X 向け Cloud Station Client ユーティリティには、ファイルの所有者を変更するための client_chown という実行ファイルが含まれています。このファイルは setuid root された実行ファイルとしてインストールされるため、一般ユーザが任意のシステムファイルの所有者を変更することが可能です。  CWE-276 http://cwe.mitre.org/data/definitions/276.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Synology Inc.",
+					"productname": "Cloud Station",
+					"cpe": {
+						"text": "cpe:/a:synology:cloud_station",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"sync client 1.1-2291 以降、3.2-3475 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "OS X の一般ユーザが任意のシステムファイルの所有者を変更する可能性があります。結果として、root 権限を取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  本脆弱性はバージョン 3.2-3475 で修正されています。CERT/CC Vulnerability Note VU#551972 Synology Information for VU#551972 には、開発者の見解として次のように記載されています。  We have removed client_chown in the latest build (3.2-3475) as precaution, even though the impact is concluded to be very low. The client_chown tool was originally designed to ease the upgrade process of the Cloud Station client, and was included starting from build 2291. To achieve this purpose, client_chown was able to change the ownership of certain system files that belong to Cloud Station client.  Synology Information for VU#551972 http://www.kb.cert.org/vuls/id/BLUU-9VBU45"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Synology",
+					"vulinfoid": "Download Center",
+					"url": "https://www.synology.com/en-us/support/download/DX1215"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-2851",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2851"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98783868",
+					"url": "http://jvn.jp/vu/JVNVU98783868/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-2851",
+					"url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2851"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#551972",
+					"url": "http://www.kb.cert.org/vuls/id/551972"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年05月29日]\\n  掲載\\n[2015年06月03日]\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2851) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-05-29T16:59:05+09:00",
+		"datelastupdated": "2015-06-03T18:04:13+09:00",
+		"datepublic": "2015-05-26T00:00:00+09:00"
+	}
 }

@@ -1,282 +1,282 @@
 {
-  "vulinfoid": "JVNDB-2011-001687",
-  "vulinfodata": {
-    "title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC BIND には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND には、RRSIG リソースレコードセットの処理に起因する、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC から、以下の脆弱性情報が公開されています。  \"DNS systems use negative caching to improve DNS response time. This will keep a DNS resolver from repeatedly looking up domains that do not exist. Any NXDOMAIN or NODATA/NOERROR response will be put into the negative cache.  The authority data will be cached along with the negative cache information. These authoritative “Start of Authority” (SOA) and NSEC/NSEC3 records prove the nonexistence of the requested name/type. In DNSSEC, all of these records are signed; this adds one additional RRSIG record, per DNSSEC key, for each record returned in the authority section of the response.  In this vulnerability, very large RRSIG RRsets included in a negative response can trigger an assertion failure that will crash named (BIND 9 DNS) due to an off-by-one error in a buffer size check.  The nature of this vulnerability would allow remote exploit. An attacker can set up a DNSSEC signed authoritative DNS server with large RRSIG RRsets to act as the trigger. The attacker would then find ways to query an organization’s caching resolvers for non-existent names in the domain served by the bad server, getting a response that would “trigger” the vulnerability. The attacker would require access to an organization’s caching resolvers; access to the resolvers can be direct (open resolvers), through malware (using a BOTNET to query negative caches), or through driving DNS resolution (a SPAM run that has a domain in the E-mail that will cause the client to perform a lookup).\""
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.4-R5b1 より前のバージョン",
-            "9.5.3rc1 より前のバージョン",
-            "9.6-R5b より前のバージョン",
-            "9.7.4b1 より前のバージョン",
-            "9.8.1b1 より前のバージョン"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Solaris",
-          "cpe": {
-            "text": "cpe:/o:oracle:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 ",
-            "11 Express",
-            "9 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Appliance Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0  (延長メンテナンス)",
-            "3.0  ",
-            "3.0  x64 Edition"
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Client",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_client",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2008 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10  (延長メンテナンス)",
-            "10 (x64) (延長メンテナンス)",
-            "11  ",
-            "11 (x64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "versionnumber": [
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux EUS",
-          "versionnumber": [
-            "5.6.z (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux HPC Node",
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Long Life",
-          "versionnumber": [
-            "(v. 5.6 server)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server",
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server EUS",
-          "versionnumber": [
-            "6.1.z  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Workstation",
-          "versionnumber": [
-            "6 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者からのサービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] この問題は、使用している OS のベンダや配布元が提供する修正済みのバージョンに更新することで解決します。 ISC は以下の対策済みバージョンを提供しています。  　　9.4-ESV-R4-P1 　　9.6-ESV-R4-P1 　　9.7.3-P1 　　9.8.0-P2  詳細については、ベンダや配布元が提供する情報を参照してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ISC BIND",
-          "vulinfoid": "BIND software version status",
-          "url": "http://www.isc.org/software/bind/versions"
-        },
-        {
-          "type": "vendor",
-          "name": "ISC BIND",
-          "vulinfoid": "RELEASE-NOTES-BIND-9.8.1",
-          "url": "http://ftp.isc.org/isc/bind9/9.8.1b3/RELEASE-NOTES-BIND-9.8.1.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ISC BIND",
-          "vulinfoid": "CVE-2011-1910",
-          "url": "https://www.isc.org/software/bind/advisories/cve-2011-1910"
-        },
-        {
-          "type": "vendor",
-          "name": "ISC BIND",
-          "vulinfoid": "All Downloads | Internet Systems Consortium",
-          "url": "http://www.isc.org/downloads/all"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2011:0845",
-          "url": "https://rhn.redhat.com/errata/RHSA-2011-0845.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "cve_2011_1910_denial_of",
-          "url": "http://blogs.oracle.com/sunsecurity/entry/cve_2011_1910_denial_of"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2011-15",
-          "url": "http://www.turbolinux.co.jp/security/2011/TLSA-2011-15j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-1910",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1910"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2011-0014",
-          "url": "http://www.jpcert.or.jp/at/2011/at110014.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "(緊急) BIND 9.xのネガティブキャッシュ機能の実装上のバグによるnamedのサービス停止について",
-          "url": "http://jprs.jp/tech/security/2011-05-27-bind9-vuln-large-rrsig-and-ncache.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#795694",
-          "url": "http://jvn.jp/cert/JVNVU795694"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2011-1910",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1910"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA44719",
-          "url": "http://secunia.com/advisories/44719"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "48007",
-          "url": "http://www.securityfocus.com/bid/48007"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1025572",
-          "url": "http://www.securitytracker.com/id/1025572"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#795694",
-          "url": "http://www.kb.cert.org/vuls/id/795694"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-189",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
-          "title": "数値処理の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2011年06月20日]\\n  影響を受けるシステム：ISC, Inc. (CVE-2011-1910) の情報を更新\\n[2011年07月27日]\\n  影響を受けるシステム：オラクル (cve_2011_1910_denial_of) の情報を追加\\n  ベンダ情報：ISC, Inc. (RELEASE-NOTES-BIND-9.8.1) を追加\\n  ベンダ情報：オラクル (cve_2011_1910_denial_of) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2011-06-08T11:57:35+09:00",
-    "datelastupdated": "2011-07-27T09:43:07+09:00",
-    "datepublic": "2011-05-30T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2011-001687",
+	"vulinfodata": {
+		"title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC BIND には、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC BIND には、RRSIG リソースレコードセットの処理に起因する、サービス運用妨害 (DoS) の脆弱性が存在します。  ISC から、以下の脆弱性情報が公開されています。  \"DNS systems use negative caching to improve DNS response time. This will keep a DNS resolver from repeatedly looking up domains that do not exist. Any NXDOMAIN or NODATA/NOERROR response will be put into the negative cache.  The authority data will be cached along with the negative cache information. These authoritative “Start of Authority” (SOA) and NSEC/NSEC3 records prove the nonexistence of the requested name/type. In DNSSEC, all of these records are signed; this adds one additional RRSIG record, per DNSSEC key, for each record returned in the authority section of the response.  In this vulnerability, very large RRSIG RRsets included in a negative response can trigger an assertion failure that will crash named (BIND 9 DNS) due to an off-by-one error in a buffer size check.  The nature of this vulnerability would allow remote exploit. An attacker can set up a DNSSEC signed authoritative DNS server with large RRSIG RRsets to act as the trigger. The attacker would then find ways to query an organization’s caching resolvers for non-existent names in the domain served by the bad server, getting a response that would “trigger” the vulnerability. The attacker would require access to an organization’s caching resolvers; access to the resolvers can be direct (open resolvers), through malware (using a BOTNET to query negative caches), or through driving DNS resolution (a SPAM run that has a domain in the E-mail that will cause the client to perform a lookup).\""
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.4-R5b1 より前のバージョン",
+						"9.5.3rc1 より前のバージョン",
+						"9.6-R5b より前のバージョン",
+						"9.7.4b1 より前のバージョン",
+						"9.8.1b1 より前のバージョン"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Solaris",
+					"cpe": {
+						"text": "cpe:/o:oracle:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 ",
+						"11 Express",
+						"9 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Appliance Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0  (延長メンテナンス)",
+						"3.0  ",
+						"3.0  x64 Edition"
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Client",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_client",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2008 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10  (延長メンテナンス)",
+						"10 (x64) (延長メンテナンス)",
+						"11  ",
+						"11 (x64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"versionnumber": [
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux EUS",
+					"versionnumber": [
+						"5.6.z (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux HPC Node",
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Long Life",
+					"versionnumber": [
+						"(v. 5.6 server)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server",
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server EUS",
+					"versionnumber": [
+						"6.1.z  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Workstation",
+					"versionnumber": [
+						"6 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者からのサービス運用妨害 (DoS) 攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] この問題は、使用している OS のベンダや配布元が提供する修正済みのバージョンに更新することで解決します。 ISC は以下の対策済みバージョンを提供しています。  　　9.4-ESV-R4-P1 　　9.6-ESV-R4-P1 　　9.7.3-P1 　　9.8.0-P2  詳細については、ベンダや配布元が提供する情報を参照してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ISC BIND",
+					"vulinfoid": "BIND software version status",
+					"url": "http://www.isc.org/software/bind/versions"
+				},
+				{
+					"type": "vendor",
+					"name": "ISC BIND",
+					"vulinfoid": "RELEASE-NOTES-BIND-9.8.1",
+					"url": "http://ftp.isc.org/isc/bind9/9.8.1b3/RELEASE-NOTES-BIND-9.8.1.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ISC BIND",
+					"vulinfoid": "CVE-2011-1910",
+					"url": "https://www.isc.org/software/bind/advisories/cve-2011-1910"
+				},
+				{
+					"type": "vendor",
+					"name": "ISC BIND",
+					"vulinfoid": "All Downloads | Internet Systems Consortium",
+					"url": "http://www.isc.org/downloads/all"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2011:0845",
+					"url": "https://rhn.redhat.com/errata/RHSA-2011-0845.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "cve_2011_1910_denial_of",
+					"url": "http://blogs.oracle.com/sunsecurity/entry/cve_2011_1910_denial_of"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2011-15",
+					"url": "http://www.turbolinux.co.jp/security/2011/TLSA-2011-15j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-1910",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1910"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2011-0014",
+					"url": "http://www.jpcert.or.jp/at/2011/at110014.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "(緊急) BIND 9.xのネガティブキャッシュ機能の実装上のバグによるnamedのサービス停止について",
+					"url": "http://jprs.jp/tech/security/2011-05-27-bind9-vuln-large-rrsig-and-ncache.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#795694",
+					"url": "http://jvn.jp/cert/JVNVU795694"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2011-1910",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-1910"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA44719",
+					"url": "http://secunia.com/advisories/44719"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "48007",
+					"url": "http://www.securityfocus.com/bid/48007"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1025572",
+					"url": "http://www.securitytracker.com/id/1025572"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#795694",
+					"url": "http://www.kb.cert.org/vuls/id/795694"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-189",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-189.html",
+					"title": "数値処理の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2011年06月20日]\\n  影響を受けるシステム：ISC, Inc. (CVE-2011-1910) の情報を更新\\n[2011年07月27日]\\n  影響を受けるシステム：オラクル (cve_2011_1910_denial_of) の情報を追加\\n  ベンダ情報：ISC, Inc. (RELEASE-NOTES-BIND-9.8.1) を追加\\n  ベンダ情報：オラクル (cve_2011_1910_denial_of) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2011-06-08T11:57:35+09:00",
+		"datelastupdated": "2011-07-27T09:43:07+09:00",
+		"datepublic": "2011-05-30T00:00:00+09:00"
+	}
 }

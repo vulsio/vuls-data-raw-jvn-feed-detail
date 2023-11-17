@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2016-005560",
-  "vulinfodata": {
-    "title": "Synology 製の複数の NAS サーバに機器共通の認証情報が設定されている問題",
-    "vulinfodescription": {
-      "overview": "Synology 製の複数の NAS サーバには、機器共通の認証情報が設定されています。  証明書やパスワードの管理 (CWE-255) - CVE-2016-6554 Synology 製の NAS サーバ である DS107、DS116 および DS213 の初期設定では、認証情報として \"guest:(パスワードなし)\" および \"admin:(パスワードなし)\" が設定されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Synology Inc.",
-          "productname": "Disk Station DS107 firmware",
-          "cpe": {
-            "text": "cpe:/o:synology:ds107_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.1-1639 およびそれ以前"
-          ]
-        },
-        {
-          "name": "Synology Inc.",
-          "productname": "DiskStation DS116 firmware",
-          "cpe": {
-            "text": "cpe:/o:synology:ds116_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.2-5644-1 未満"
-          ]
-        },
-        {
-          "name": "Synology Inc.",
-          "productname": "DiskStation DS213 firmware",
-          "cpe": {
-            "text": "cpe:/o:synology:ds213_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.2-5644-1 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.9",
-          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.4",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、管理者権限で機器にアクセスされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。 DS116 および DS213 では firmware version 5.2-5644-1 で、初期設定で存在する管理者アカウント \"admin\" を有効にする場合にはパスワードの設定を要求するように変更されています。  [ワークアラウンドを実施する] DS107 およびアカウント \"guest\" に対しては、次のワークアラウンドを実施してください。  　* 初期設定で存在しているアカウントを無効にする 　　これら対象製品全てにおいて最新のファームウェアではアカウント \"guest\" を無効に設定することが可能です。 　　DS116 および DS213 向けの最新のファームウェアではアカウント \"admin\" も無効に設定することが可能です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Synology",
-          "vulinfoid": "DS107 Release Notes",
-          "url": "https://www.synology.com/en-global/releaseNote/DS107"
-        },
-        {
-          "type": "vendor",
-          "name": "Synology",
-          "vulinfoid": "DS116 Release Notes",
-          "url": "https://www.synology.com/en-global/releaseNote/DS116"
-        },
-        {
-          "type": "vendor",
-          "name": "Synology",
-          "vulinfoid": "DS213 Release Notes",
-          "url": "https://www.synology.com/en-global/releaseNote/DS213"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-6554",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6554"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93774715",
-          "url": "http://jvn.jp/vu/JVNVU93774715/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-6554",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6554"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#404187",
-          "url": "http://www.kb.cert.org/vuls/id/404187"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "SSHowDowN: Exploitation of IoT devices for Launching Mass-Scale Attack Campaigns",
-          "url": "https://www.akamai.com/us/en/multimedia/documents/state-of-the-internet/sshowdown-exploitation-of-iot-devices-for-launching-mass-scale-attack-campaigns.pdf"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-255",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
-          "title": "証明書・パスワードの管理"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年10月24日]\\n  掲載"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2019-07-11T17:18:45+09:00",
-          "description": "[2019年07月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6554) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-10-24T16:58:34+09:00",
-    "datelastupdated": "2016-10-24T16:58:34+09:00",
-    "datepublic": "2016-10-20T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-005560",
+	"vulinfodata": {
+		"title": "Synology 製の複数の NAS サーバに機器共通の認証情報が設定されている問題",
+		"vulinfodescription": {
+			"overview": "Synology 製の複数の NAS サーバには、機器共通の認証情報が設定されています。  証明書やパスワードの管理 (CWE-255) - CVE-2016-6554 Synology 製の NAS サーバ である DS107、DS116 および DS213 の初期設定では、認証情報として \"guest:(パスワードなし)\" および \"admin:(パスワードなし)\" が設定されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Synology Inc.",
+					"productname": "Disk Station DS107 firmware",
+					"cpe": {
+						"text": "cpe:/o:synology:ds107_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.1-1639 およびそれ以前"
+					]
+				},
+				{
+					"name": "Synology Inc.",
+					"productname": "DiskStation DS116 firmware",
+					"cpe": {
+						"text": "cpe:/o:synology:ds116_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.2-5644-1 未満"
+					]
+				},
+				{
+					"name": "Synology Inc.",
+					"productname": "DiskStation DS213 firmware",
+					"cpe": {
+						"text": "cpe:/o:synology:ds213_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.2-5644-1 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.9",
+					"vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.4",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、管理者権限で機器にアクセスされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。 DS116 および DS213 では firmware version 5.2-5644-1 で、初期設定で存在する管理者アカウント \"admin\" を有効にする場合にはパスワードの設定を要求するように変更されています。  [ワークアラウンドを実施する] DS107 およびアカウント \"guest\" に対しては、次のワークアラウンドを実施してください。  　* 初期設定で存在しているアカウントを無効にする 　　これら対象製品全てにおいて最新のファームウェアではアカウント \"guest\" を無効に設定することが可能です。 　　DS116 および DS213 向けの最新のファームウェアではアカウント \"admin\" も無効に設定することが可能です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Synology",
+					"vulinfoid": "DS107 Release Notes",
+					"url": "https://www.synology.com/en-global/releaseNote/DS107"
+				},
+				{
+					"type": "vendor",
+					"name": "Synology",
+					"vulinfoid": "DS116 Release Notes",
+					"url": "https://www.synology.com/en-global/releaseNote/DS116"
+				},
+				{
+					"type": "vendor",
+					"name": "Synology",
+					"vulinfoid": "DS213 Release Notes",
+					"url": "https://www.synology.com/en-global/releaseNote/DS213"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-6554",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6554"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93774715",
+					"url": "http://jvn.jp/vu/JVNVU93774715/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-6554",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2016-6554"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#404187",
+					"url": "http://www.kb.cert.org/vuls/id/404187"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "SSHowDowN: Exploitation of IoT devices for Launching Mass-Scale Attack Campaigns",
+					"url": "https://www.akamai.com/us/en/multimedia/documents/state-of-the-internet/sshowdown-exploitation-of-iot-devices-for-launching-mass-scale-attack-campaigns.pdf"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-255",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+					"title": "証明書・パスワードの管理"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年10月24日]\\n  掲載"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2019-07-11T17:18:45+09:00",
+					"description": "[2019年07月11日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2016-6554) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2016-10-24T16:58:34+09:00",
+		"datelastupdated": "2016-10-24T16:58:34+09:00",
+		"datepublic": "2016-10-20T00:00:00+09:00"
+	}
 }

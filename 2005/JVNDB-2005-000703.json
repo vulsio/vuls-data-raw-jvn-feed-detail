@@ -1,141 +1,141 @@
 {
-  "vulinfoid": "JVNDB-2005-000703",
-  "vulinfodata": {
-    "title": "Linux Kernel の フローラベルの処理におけるメモリ領域を破壊される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には以下の複数のセキュリティ上の問題が存在します。  ・64 bit 用 Kernel では、32 bit 互換 の routing_ioctl() 関数において、sockfd_put() 関数で Null ポインタデリファレンスが発生する問題 (CVE-2005-3044)  ・x86-64 用 Kernel では、32 bit 互換の tiocgdev() 関数において、fput() 関数に関連する処理が不適切である問題 (CVE-2005-3044)  ・ip6_flowlabel.c において、IPv6 の基本ヘッダに含まれる識別子のひとつであるフローラベルの処理に不備が存在し、不正なソケットオプションが指定された場合に不適切なメモリ領域が解放され、メモリ領域が破壊される問題 (CVE-2005-3806)  ローカルの攻撃者に悪用された場合、Linux Kernel をクラッシュさせられ、システムがサービス不能状態に陥る可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.6",
-          "vector": "AV:L/AC:L/Au:N/C:N/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0190",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0190.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0191",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0191.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0101",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0101.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0140",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0140.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0140",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0140J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0190",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0191",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0191J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0101",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0101J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-3806",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3806"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-3806",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-3806"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "15729",
-          "url": "http://www.securityfocus.com/bid/15729"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "14902",
-          "url": "http://www.securityfocus.com/bid/14902"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-11-25T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000703",
+	"vulinfodata": {
+		"title": "Linux Kernel の フローラベルの処理におけるメモリ領域を破壊される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には以下の複数のセキュリティ上の問題が存在します。  ・64 bit 用 Kernel では、32 bit 互換 の routing_ioctl() 関数において、sockfd_put() 関数で Null ポインタデリファレンスが発生する問題 (CVE-2005-3044)  ・x86-64 用 Kernel では、32 bit 互換の tiocgdev() 関数において、fput() 関数に関連する処理が不適切である問題 (CVE-2005-3044)  ・ip6_flowlabel.c において、IPv6 の基本ヘッダに含まれる識別子のひとつであるフローラベルの処理に不備が存在し、不正なソケットオプションが指定された場合に不適切なメモリ領域が解放され、メモリ領域が破壊される問題 (CVE-2005-3806)  ローカルの攻撃者に悪用された場合、Linux Kernel をクラッシュさせられ、システムがサービス不能状態に陥る可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.6",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0190",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0190.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0191",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0191.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0101",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0101.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0140",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0140.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0140",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0140J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0190",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0191",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0191J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0101",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0101J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-3806",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3806"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-3806",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-3806"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "15729",
+					"url": "http://www.securityfocus.com/bid/15729"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "14902",
+					"url": "http://www.securityfocus.com/bid/14902"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-11-25T00:00:00+09:00"
+	}
 }

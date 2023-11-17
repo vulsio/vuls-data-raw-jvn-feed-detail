@@ -1,165 +1,165 @@
 {
-  "vulinfoid": "JVNDB-2010-002654",
-  "vulinfodata": {
-    "title": "Exim における権限昇格の脆弱性",
-    "vulinfodescription": {
-      "overview": "Exim には、設定ファイルの処理に起因する権限昇格の脆弱性が存在します。  Exim は、Cambridge 大学で開発された Unix システム向けのメール転送エージェントです。 Exim を設定オプション ALT_CONFIG_ROOT_ONLY を指定しないでビルドすると、ユーザは任意の設定ファイルを使用することが可能になります。結果として、指定された設定ファイル内に存在する ${run…} はすべて root 権限で実行されます。  なお、本脆弱性を使用した攻撃活動が確認されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Exim Development",
-          "productname": "Exim",
-          "cpe": {
-            "text": "cpe:/a:exim:exim",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) ",
-            "4.8 (as) ",
-            "4.8 (es) ",
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0 ",
-            "5.0 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.9",
-          "vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "Exim を実行できる一般ユーザによって、root 権限で任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2010年12月14日現在、対策方法はありません。  [ワークアラウンドを実施する] 対策版が公開されるまでの間、以下の回避策を適用することで本脆弱性の影響を軽減することが可能です。  ・ 設定オプション ALT_CONFIG_ROOT_ONLY を指定してビルドする"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Exim",
-          "vulinfoid": "1044",
-          "url": "http://bugs.exim.org/show_bug.cgi?id=1044"
-        },
-        {
-          "type": "vendor",
-          "name": "Exim",
-          "vulinfoid": "Remote root vulnerability in Exim",
-          "url": "http://lists.exim.org/lurker/message/20101210.164935.385e04d0.en.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Exim",
-          "vulinfoid": "Exim security issue in historical release",
-          "url": "http://lists.exim.org/lurker/message/20101213.140800.7c3bae4b.en.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Exim",
-          "vulinfoid": "ChangeLog-4.73",
-          "url": "http://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.73"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2011:0153",
-          "url": "https://rhn.redhat.com/errata/RHSA-2011-0153.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2010-4345",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4345"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#758489",
-          "url": "http://jvn.jp/cert/JVNVU758489"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2010-4345",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4345"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "45341",
-          "url": "http://www.securityfocus.com/bid/45341"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1024859",
-          "url": "http://www.securitytracker.com/id?1024859"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#758489",
-          "url": "http://www.kb.cert.org/vuls/id/758489"
-        },
-        {
-          "type": "advisory",
-          "name": "VUPEN Security",
-          "vulinfoid": "VUPEN/ADV-2010-3171",
-          "url": "http://www.vupen.com/english/advisories/2010/3171"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2011年01月19日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2011-01-19T15:41:22+09:00",
-    "datelastupdated": "2011-01-19T15:41:22+09:00",
-    "datepublic": "2010-12-14T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2010-002654",
+	"vulinfodata": {
+		"title": "Exim における権限昇格の脆弱性",
+		"vulinfodescription": {
+			"overview": "Exim には、設定ファイルの処理に起因する権限昇格の脆弱性が存在します。  Exim は、Cambridge 大学で開発された Unix システム向けのメール転送エージェントです。 Exim を設定オプション ALT_CONFIG_ROOT_ONLY を指定しないでビルドすると、ユーザは任意の設定ファイルを使用することが可能になります。結果として、指定された設定ファイル内に存在する ${run…} はすべて root 権限で実行されます。  なお、本脆弱性を使用した攻撃活動が確認されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Exim Development",
+					"productname": "Exim",
+					"cpe": {
+						"text": "cpe:/a:exim:exim",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) ",
+						"4.8 (as) ",
+						"4.8 (es) ",
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0 ",
+						"5.0 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.9",
+					"vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "Exim を実行できる一般ユーザによって、root 権限で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2010年12月14日現在、対策方法はありません。  [ワークアラウンドを実施する] 対策版が公開されるまでの間、以下の回避策を適用することで本脆弱性の影響を軽減することが可能です。  ・ 設定オプション ALT_CONFIG_ROOT_ONLY を指定してビルドする"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Exim",
+					"vulinfoid": "1044",
+					"url": "http://bugs.exim.org/show_bug.cgi?id=1044"
+				},
+				{
+					"type": "vendor",
+					"name": "Exim",
+					"vulinfoid": "Remote root vulnerability in Exim",
+					"url": "http://lists.exim.org/lurker/message/20101210.164935.385e04d0.en.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Exim",
+					"vulinfoid": "Exim security issue in historical release",
+					"url": "http://lists.exim.org/lurker/message/20101213.140800.7c3bae4b.en.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Exim",
+					"vulinfoid": "ChangeLog-4.73",
+					"url": "http://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.73"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2011:0153",
+					"url": "https://rhn.redhat.com/errata/RHSA-2011-0153.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2010-4345",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4345"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#758489",
+					"url": "http://jvn.jp/cert/JVNVU758489"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2010-4345",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4345"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "45341",
+					"url": "http://www.securityfocus.com/bid/45341"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1024859",
+					"url": "http://www.securitytracker.com/id?1024859"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#758489",
+					"url": "http://www.kb.cert.org/vuls/id/758489"
+				},
+				{
+					"type": "advisory",
+					"name": "VUPEN Security",
+					"vulinfoid": "VUPEN/ADV-2010-3171",
+					"url": "http://www.vupen.com/english/advisories/2010/3171"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2011年01月19日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2011-01-19T15:41:22+09:00",
+		"datelastupdated": "2011-01-19T15:41:22+09:00",
+		"datepublic": "2010-12-14T00:00:00+09:00"
+	}
 }

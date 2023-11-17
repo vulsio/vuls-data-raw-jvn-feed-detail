@@ -1,110 +1,110 @@
 {
-  "vulinfoid": "JVNDB-2019-012004",
-  "vulinfodata": {
-    "title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "ISC (Internet Systems Consortium) が提供する BIND には、TCP クライアントの同時接続数の制限を迂回され、システムリソースが過度に消費されてしまう脆弱性が存在します。  BIND には、named に対して同時に接続可能な TCP クライアントの数を制限する機能があります。2019年 4月に公開された CVE-2018-5743 への対応として、TCP クライアントからの同時接続数を計算する方法が変更されました。  一方で BIND では、一つの TCP 接続で多数の DNS クエリを並列に処理することができる機能が TCP-pipelining として提供されており、デフォルトで有効に設定されています。 TCP-pipelining が有効な状態においては、一つの TCP クライアントから複数の DNS クエリが発行されると、UDP 接続時や TCP-pipelining が無効な状態における TCP 接続時と同様のシステムリソースが、受け取ったクエリ毎に消費されます。多数のクエリを含む TCP 接続がクローズされた場合、それぞれのクエリに割り当てられたリソースの開放処理が同時に発生し、サーバが一時的あるいは断続的に応答不能な状態に陥る可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9 Supported Preview Edition の BIND 9.11.5-S6 から 9.11.12-S1 まで",
-            "9.11.6-P1 から 9.11.12 まで",
-            "9.12.4-P1 から 9.12.4-P2 まで",
-            "9.14.1 から 9.14.7 まで",
-            "9.15 development branch の BIND 9.15.0 から 9.15.5 まで"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "リモートの攻撃者が上記のような状況を発生させることにより、システムリソースが過度に消費され、サービスが一時的あるいは断続的に停止させられる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * TCP-pipelining を無効に設定し、 BIND を再起動する  keep-response-order { any; };  なお、接続中の TCP クライアントで有効化された設定を破棄するために、設定の 'reload' や 'reconfig' ではなく BIND の再起動が必要になります。  [アップデートする] 開発者が提供する情報をもとに、使用している BIND バージョンに対応したパッチを適用してください。  * BIND 9.11.13 * BIND 9.14.8 * BIND 9.15.6 * BIND 9.11.13-S1 (BIND Supported Preview Edition)  ISC によると、このパッチによりサーバ側のメモリリーク問題が修正されます。 パッチ適用後も、TCP-pipelining により膨大なクエリが発生した場合に、一部の応答がドロップされる可能性があります。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ISC, Inc.",
-          "vulinfoid": "CVE-2019-6477: TCP-pipelined queries can bypass tcp-clients limit",
-          "url": "https://kb.isc.org/docs/cve-2019-6477"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-6477",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6477"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "JPCERT-AT-2019-0043",
-          "url": "https://www.jpcert.or.jp/at/2019/at190043.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "（緊急）BIND 9.xの脆弱性（システムリソースの過度な消費）について（CVE-2019-6477）",
-          "url": "https://jprs.jp/tech/security/2019-11-21-bind9-vuln-tcp-pipelining.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98706074",
-          "url": "http://jvn.jp/cert/JVNVU98706074"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-6477",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6477"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2019-11-22T14:03:13+09:00",
-          "description": "[2019年11月22日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2019-11-22T14:03:13+09:00",
-    "datelastupdated": "2019-11-22T14:03:13+09:00",
-    "datepublic": "2019-11-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2019-012004",
+	"vulinfodata": {
+		"title": "ISC BIND にサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "ISC (Internet Systems Consortium) が提供する BIND には、TCP クライアントの同時接続数の制限を迂回され、システムリソースが過度に消費されてしまう脆弱性が存在します。  BIND には、named に対して同時に接続可能な TCP クライアントの数を制限する機能があります。2019年 4月に公開された CVE-2018-5743 への対応として、TCP クライアントからの同時接続数を計算する方法が変更されました。  一方で BIND では、一つの TCP 接続で多数の DNS クエリを並列に処理することができる機能が TCP-pipelining として提供されており、デフォルトで有効に設定されています。 TCP-pipelining が有効な状態においては、一つの TCP クライアントから複数の DNS クエリが発行されると、UDP 接続時や TCP-pipelining が無効な状態における TCP 接続時と同様のシステムリソースが、受け取ったクエリ毎に消費されます。多数のクエリを含む TCP 接続がクローズされた場合、それぞれのクエリに割り当てられたリソースの開放処理が同時に発生し、サーバが一時的あるいは断続的に応答不能な状態に陥る可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9 Supported Preview Edition の BIND 9.11.5-S6 から 9.11.12-S1 まで",
+						"9.11.6-P1 から 9.11.12 まで",
+						"9.12.4-P1 から 9.12.4-P2 まで",
+						"9.14.1 から 9.14.7 まで",
+						"9.15 development branch の BIND 9.15.0 から 9.15.5 まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "リモートの攻撃者が上記のような状況を発生させることにより、システムリソースが過度に消費され、サービスが一時的あるいは断続的に停止させられる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * TCP-pipelining を無効に設定し、 BIND を再起動する  keep-response-order { any; };  なお、接続中の TCP クライアントで有効化された設定を破棄するために、設定の 'reload' や 'reconfig' ではなく BIND の再起動が必要になります。  [アップデートする] 開発者が提供する情報をもとに、使用している BIND バージョンに対応したパッチを適用してください。  * BIND 9.11.13 * BIND 9.14.8 * BIND 9.15.6 * BIND 9.11.13-S1 (BIND Supported Preview Edition)  ISC によると、このパッチによりサーバ側のメモリリーク問題が修正されます。 パッチ適用後も、TCP-pipelining により膨大なクエリが発生した場合に、一部の応答がドロップされる可能性があります。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ISC, Inc.",
+					"vulinfoid": "CVE-2019-6477: TCP-pipelined queries can bypass tcp-clients limit",
+					"url": "https://kb.isc.org/docs/cve-2019-6477"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-6477",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-6477"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "JPCERT-AT-2019-0043",
+					"url": "https://www.jpcert.or.jp/at/2019/at190043.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "（緊急）BIND 9.xの脆弱性（システムリソースの過度な消費）について（CVE-2019-6477）",
+					"url": "https://jprs.jp/tech/security/2019-11-21-bind9-vuln-tcp-pipelining.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98706074",
+					"url": "http://jvn.jp/cert/JVNVU98706074"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-6477",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-6477"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2019-11-22T14:03:13+09:00",
+					"description": "[2019年11月22日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2019-11-22T14:03:13+09:00",
+		"datelastupdated": "2019-11-22T14:03:13+09:00",
+		"datepublic": "2019-11-21T00:00:00+09:00"
+	}
 }

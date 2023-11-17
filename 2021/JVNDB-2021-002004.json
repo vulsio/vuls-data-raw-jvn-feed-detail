@@ -1,129 +1,129 @@
 {
-  "vulinfoid": "JVNDB-2021-002004",
-  "vulinfodata": {
-    "title": "Ypsomed 製 mylife に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Ypsomed 社が提供する mylife Cloud および、モバイルアプリケーションである mylife App には、複数の脆弱性が存在します。   Ypsomed 社が提供する mylife Cloud、mylife App には、次の複数の脆弱性が存在します。  　* 認証情報の不十分な保護 (CWE-522) - CVE-2021-27491 　* 認証情報の不十分な保護 (CWE-522) - CVE-2021-27495 　* CBC モードで使用する初期化ベクトルがランダム値ではない問題 (CWE-329) - CVE-2021-27499 　* ハードコードされた認証情報を使用している問題 (CWE-798) - CVE-2021-27503"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Ypsomed AG",
-          "productname": "Ypsomed mylife App",
-          "cpe": {
-            "text": "cpe:/a:misc:vpsomed_ypsomed_mylife_app",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.7.5 より前のすべてのバージョン"
-          ]
-        },
-        {
-          "name": "Ypsomed AG",
-          "productname": "Ypsomed mylife Cloud",
-          "cpe": {
-            "text": "cpe:/a:misc:vpsomed_ypsomed_mylife_cloud",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.7.2 より前のすべてのバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.3",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、登録プロセス中に、ハッシュ化されたパスワード情報を窃取される - CVE-2021-27491 　* 製品にログインする際、HTTPS から HTTP のエンドポイントにリダイレクトした場合においても入力したユーザパスワードが保持されるため、遠隔の第三者によりパスワード情報を窃取される - CVE-2021-27495 　* アプリとクラウドサービスとの間で行われる通信の暗号化に用いる初期化ベクトル (IV) がランダム値でないため、中間者攻撃を行っている遠隔の第三者によってメッセージが窃取されたり改ざんされたりする - CVE-2021-27499 　* アプリとクラウドサービスとの間で通信を行う際に、ハードコードされた認証情報を用いて暗号化を行うため、中間者攻撃を行っている遠隔の第三者によってメッセージが窃取されたり改ざんされたりする - CVE-2021-27503"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] Ypsomed 社が提供する情報をもとに、mylife App を最新版へアップデートしてください。Ypsomed は対応版として下記をリリースしています。  　* mylife App version 1.7.5  また、Ypsomed は mylife Cloud の該当バージョンについても対応済みとしています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27491",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27491"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27495",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27495"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27499",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27499"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-27503",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27503"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSMA-21-196-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsma-21-196-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92529180",
-          "url": "http://jvn.jp/cert/JVNVU92529180"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-329",
-          "url": "https://cwe.mitre.org/data/definitions/329.html",
-          "title": "CBC モードにおけるランダムな初期化ベクトルの不使用"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-798",
-          "url": "https://cwe.mitre.org/data/definitions/798.html",
-          "title": "ハードコードされた認証情報の使用"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-522",
-          "url": "https://cwe.mitre.org/data/definitions/522.html",
-          "title": "認証情報の不十分な保護"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-07-19T14:39:33+09:00",
-          "description": "[2021年07月19日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-07-19T16:16:39+09:00",
-    "datelastupdated": "2021-07-19T16:16:39+09:00",
-    "datepublic": "2021-07-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-002004",
+	"vulinfodata": {
+		"title": "Ypsomed 製 mylife に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Ypsomed 社が提供する mylife Cloud および、モバイルアプリケーションである mylife App には、複数の脆弱性が存在します。   Ypsomed 社が提供する mylife Cloud、mylife App には、次の複数の脆弱性が存在します。  　* 認証情報の不十分な保護 (CWE-522) - CVE-2021-27491 　* 認証情報の不十分な保護 (CWE-522) - CVE-2021-27495 　* CBC モードで使用する初期化ベクトルがランダム値ではない問題 (CWE-329) - CVE-2021-27499 　* ハードコードされた認証情報を使用している問題 (CWE-798) - CVE-2021-27503"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Ypsomed AG",
+					"productname": "Ypsomed mylife App",
+					"cpe": {
+						"text": "cpe:/a:misc:vpsomed_ypsomed_mylife_app",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.7.5 より前のすべてのバージョン"
+					]
+				},
+				{
+					"name": "Ypsomed AG",
+					"productname": "Ypsomed mylife Cloud",
+					"cpe": {
+						"text": "cpe:/a:misc:vpsomed_ypsomed_mylife_cloud",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.7.2 より前のすべてのバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、登録プロセス中に、ハッシュ化されたパスワード情報を窃取される - CVE-2021-27491 　* 製品にログインする際、HTTPS から HTTP のエンドポイントにリダイレクトした場合においても入力したユーザパスワードが保持されるため、遠隔の第三者によりパスワード情報を窃取される - CVE-2021-27495 　* アプリとクラウドサービスとの間で行われる通信の暗号化に用いる初期化ベクトル (IV) がランダム値でないため、中間者攻撃を行っている遠隔の第三者によってメッセージが窃取されたり改ざんされたりする - CVE-2021-27499 　* アプリとクラウドサービスとの間で通信を行う際に、ハードコードされた認証情報を用いて暗号化を行うため、中間者攻撃を行っている遠隔の第三者によってメッセージが窃取されたり改ざんされたりする - CVE-2021-27503"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] Ypsomed 社が提供する情報をもとに、mylife App を最新版へアップデートしてください。Ypsomed は対応版として下記をリリースしています。  　* mylife App version 1.7.5  また、Ypsomed は mylife Cloud の該当バージョンについても対応済みとしています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27491",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27491"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27495",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27495"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27499",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27499"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-27503",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27503"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSMA-21-196-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsma-21-196-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92529180",
+					"url": "http://jvn.jp/cert/JVNVU92529180"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-329",
+					"url": "https://cwe.mitre.org/data/definitions/329.html",
+					"title": "CBC モードにおけるランダムな初期化ベクトルの不使用"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-798",
+					"url": "https://cwe.mitre.org/data/definitions/798.html",
+					"title": "ハードコードされた認証情報の使用"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-522",
+					"url": "https://cwe.mitre.org/data/definitions/522.html",
+					"title": "認証情報の不十分な保護"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-07-19T14:39:33+09:00",
+					"description": "[2021年07月19日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-07-19T16:16:39+09:00",
+		"datelastupdated": "2021-07-19T16:16:39+09:00",
+		"datepublic": "2021-07-16T00:00:00+09:00"
+	}
 }

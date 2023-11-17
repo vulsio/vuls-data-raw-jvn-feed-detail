@@ -1,109 +1,109 @@
 {
-  "vulinfoid": "JVNDB-2011-005345",
-  "vulinfodata": {
-    "title": "Glibc および eglibc における整数符号エラーの脆弱性",
-    "vulinfodescription": {
-      "overview": "Glibc および eglibc には、Supplemental Streaming SIMD Extensions 3 (SSSE3) の最適化を使用する場合、整数符号エラーの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "GNU Project",
-          "productname": "Embedded GLIBC",
-          "cpe": {
-            "text": "cpe:/a:gnu:eglibc",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.13 未満"
-          ]
-        },
-        {
-          "name": "GNU Project",
-          "productname": "GNU C Library",
-          "cpe": {
-            "text": "cpe:/a:gnu:glibc",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.13 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃者により、sysdeps/i386/i686/multiarch/ の以下のパラメータを介して、out-of-bounds read を誘発されることで、任意のコードを実行される可能性があります。  (1) memcpy-ssse3-rep.S の負の length パラメータ (2) memcpy-ssse3.S の負の length パラメータ (3) memset-sse2.S の負の length パラメータ"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "EGLIBC",
-          "vulinfoid": "View of /trunk/libc/ChangeLog",
-          "url": "http://www.eglibc.org/cgi-bin/viewvc.cgi/trunk/libc/ChangeLog?view=markup&pathrev=10032"
-        },
-        {
-          "type": "vendor",
-          "name": "sourceware.org",
-          "vulinfoid": "Fix issues in x86 memcpy-ssse3.S",
-          "url": "https://sourceware.org/git/?p=glibc.git;a=commit;h=a0ac24d98ace90d1ccba6a2f3e7d55600f2fdb6e"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2011-2702",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2702"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2011-2702",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2702"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "CVE id request: (e)glibc",
-          "url": "http://seclists.org/oss-sec/2011/q3/123"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-94",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
-          "title": "コード・インジェクション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年10月30日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-10-30T16:16:37+09:00",
-    "datelastupdated": "2014-10-30T16:16:37+09:00",
-    "datepublic": "2011-07-18T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2011-005345",
+	"vulinfodata": {
+		"title": "Glibc および eglibc における整数符号エラーの脆弱性",
+		"vulinfodescription": {
+			"overview": "Glibc および eglibc には、Supplemental Streaming SIMD Extensions 3 (SSSE3) の最適化を使用する場合、整数符号エラーの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "GNU Project",
+					"productname": "Embedded GLIBC",
+					"cpe": {
+						"text": "cpe:/a:gnu:eglibc",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.13 未満"
+					]
+				},
+				{
+					"name": "GNU Project",
+					"productname": "GNU C Library",
+					"cpe": {
+						"text": "cpe:/a:gnu:glibc",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.13 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃者により、sysdeps/i386/i686/multiarch/ の以下のパラメータを介して、out-of-bounds read を誘発されることで、任意のコードを実行される可能性があります。  (1) memcpy-ssse3-rep.S の負の length パラメータ (2) memcpy-ssse3.S の負の length パラメータ (3) memset-sse2.S の負の length パラメータ"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "EGLIBC",
+					"vulinfoid": "View of /trunk/libc/ChangeLog",
+					"url": "http://www.eglibc.org/cgi-bin/viewvc.cgi/trunk/libc/ChangeLog?view=markup&pathrev=10032"
+				},
+				{
+					"type": "vendor",
+					"name": "sourceware.org",
+					"vulinfoid": "Fix issues in x86 memcpy-ssse3.S",
+					"url": "https://sourceware.org/git/?p=glibc.git;a=commit;h=a0ac24d98ace90d1ccba6a2f3e7d55600f2fdb6e"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2011-2702",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2702"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2011-2702",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2702"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "CVE id request: (e)glibc",
+					"url": "http://seclists.org/oss-sec/2011/q3/123"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-94",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+					"title": "コード・インジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年10月30日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2014-10-30T16:16:37+09:00",
+		"datelastupdated": "2014-10-30T16:16:37+09:00",
+		"datepublic": "2011-07-18T00:00:00+09:00"
+	}
 }

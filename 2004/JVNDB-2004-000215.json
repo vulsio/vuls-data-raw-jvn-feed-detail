@@ -1,134 +1,134 @@
 {
-  "vulinfoid": "JVNDB-2004-000215",
-  "vulinfodata": {
-    "title": "Webmin におけるアクセスコントロールを回避される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Webmin は Webベース の Unix のシステム管理ツールです。また、Usermin は Unix システムの全てのユーザが簡単にメールの受信をしたり、SSH やメールの転送のための設定を Web ブラウザで行うことが可能な環境設定ユーティリティであり、Linux や Unix などのオペレーティングシステムで利用されています。  Webmin 1.140 以前、Usermin 1.070 以前には、以下のセキュリティ問題が存在します。  ・Web メール機能におけるクロスサイトスクリプティングの問題 (Usermin) Web インタフェースを通じてメールの送受信を行うモジュールには、受信した HTML メールに含まれるスクリプトが完全に除去されないため、クロスサイトスクリプティングの問題が存在します。 この問題を利用するリモートの攻撃者は、Cookie 情報を奪取し、結果としてシステムの不正操作が可能です。  ・モジュールの設定を表示してしまう問題 (Webmin) Web インタフェースを通じて設定変更を可能にするモジュールに不備が存在するため、本来アクセス権限を持たない攻撃者は、すべてのモジュールの設定内容を閲覧することが可能です。  ・アカウントロックアウト機能を迂回可能な問題 (Webmin/Usermin) Webmin/Usermin に実装されているアカウントロックアウト機能に不備があり、不正なユーザ名またはパスワードを受け取るとそのままパースしてしまう問題が存在します。 この問題を利用するリモートの攻撃者はアカウントロックアウト機能を迂回し、ID およびパスワードの推測を継続的に行うことや、正規ユーザのログインを妨害することが可能です。  尚、MIRACLE LINUX および Turbolinux に同梱されている Webmin/Usermin パッケージもこれらの問題の影響を受ける可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7  ",
-            "8  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2005-20",
-          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-20.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "ミラクル・リナックス株式会社",
-          "vulinfoid": "Top Page",
-          "url": "http://www.miraclelinux.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2005-20",
-          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-20j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0582",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0582"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0582",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0582"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA11794",
-          "url": "http://secunia.com/advisories/11794/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10523",
-          "url": "http://www.securityfocus.com/bid/10523"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10522",
-          "url": "http://www.securityfocus.com/bid/10522"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10521",
-          "url": "http://www.securityfocus.com/bid/10521"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10474",
-          "url": "http://www.securityfocus.com/bid/10474"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2004-06-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000215",
+	"vulinfodata": {
+		"title": "Webmin におけるアクセスコントロールを回避される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Webmin は Webベース の Unix のシステム管理ツールです。また、Usermin は Unix システムの全てのユーザが簡単にメールの受信をしたり、SSH やメールの転送のための設定を Web ブラウザで行うことが可能な環境設定ユーティリティであり、Linux や Unix などのオペレーティングシステムで利用されています。  Webmin 1.140 以前、Usermin 1.070 以前には、以下のセキュリティ問題が存在します。  ・Web メール機能におけるクロスサイトスクリプティングの問題 (Usermin) Web インタフェースを通じてメールの送受信を行うモジュールには、受信した HTML メールに含まれるスクリプトが完全に除去されないため、クロスサイトスクリプティングの問題が存在します。 この問題を利用するリモートの攻撃者は、Cookie 情報を奪取し、結果としてシステムの不正操作が可能です。  ・モジュールの設定を表示してしまう問題 (Webmin) Web インタフェースを通じて設定変更を可能にするモジュールに不備が存在するため、本来アクセス権限を持たない攻撃者は、すべてのモジュールの設定内容を閲覧することが可能です。  ・アカウントロックアウト機能を迂回可能な問題 (Webmin/Usermin) Webmin/Usermin に実装されているアカウントロックアウト機能に不備があり、不正なユーザ名またはパスワードを受け取るとそのままパースしてしまう問題が存在します。 この問題を利用するリモートの攻撃者はアカウントロックアウト機能を迂回し、ID およびパスワードの推測を継続的に行うことや、正規ユーザのログインを妨害することが可能です。  尚、MIRACLE LINUX および Turbolinux に同梱されている Webmin/Usermin パッケージもこれらの問題の影響を受ける可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7  ",
+						"8  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2005-20",
+					"url": "http://www.turbolinux.com/security/2005/TLSA-2005-20.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "ミラクル・リナックス株式会社",
+					"vulinfoid": "Top Page",
+					"url": "http://www.miraclelinux.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2005-20",
+					"url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-20j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0582",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0582"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0582",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0582"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA11794",
+					"url": "http://secunia.com/advisories/11794/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10523",
+					"url": "http://www.securityfocus.com/bid/10523"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10522",
+					"url": "http://www.securityfocus.com/bid/10522"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10521",
+					"url": "http://www.securityfocus.com/bid/10521"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10474",
+					"url": "http://www.securityfocus.com/bid/10474"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2004-06-07T00:00:00+09:00"
+	}
 }

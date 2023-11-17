@@ -1,114 +1,114 @@
 {
-  "vulinfoid": "JVNDB-2023-000023",
-  "vulinfodata": {
-    "title": "PostgreSQL 拡張モジュール pg_ivm における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "IVM Development Group が提供する pg_ivm は、PostgreSQL にマテリアライズド・ビューの増分ビューメンテナンス機能を提供する拡張モジュールです。pg_ivm には、次の複数の脆弱性が存在します。 ・情報漏えい (CWE-200) - CVE-2023-22847 pg_ivm により作成された IMMV (Incrementally Maintainable Materialized View) と呼ばれるマテリアライズド・ビューに、本来マテリアライズド・ビューの所有者にはアクセスが許可されていない行レベルセキュリティ (Row-Level Security) が設定された行が反映されてしまうことがある。 ・関数検索パスの制御不備 (CWE-427) - CVE-2023-23554 マテリアライズド・ビューの更新処理時に実行される関数の search path 処理に問題があり、異なるスキーマで定義されている同名の関数が、マテリアライズド・ビュー所有者の権限で実行されることがある。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "IVM Development Group",
-          "productname": "pg_ivm",
-          "cpe": {
-            "text": "cpe:/a:misc:ivm_development_group_pg_ivm",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.5.1 より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.5",
-          "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.4",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・行レベルセキュリティで保護されているテーブル内の情報が、本来アクセス権限のないユーザに漏えいする - CVE-2023-22847 ・攻撃者が用意した任意の関数がマテリアライズド・ビュー所有者の権限で実行される - CVE-2023-23554"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は pg_ivm 1.5.1 で修正されています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "sraoss/pg_ivm: IVM (Incremental View Maintenance) implementation as a PostgreSQL extension",
-          "url": "https://github.com/sraoss/pg_ivm"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "pg_ivm 1.5.1 (2023-03-02)",
-          "url": "https://github.com/sraoss/pg_ivm/releases/tag/v1.5.1"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22847",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22847"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-23554",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-23554"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#19872280",
-          "url": "https://jvn.jp/jp/JVN19872280/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-200",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-          "title": "情報漏えい"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-03-02T13:24:08+09:00",
-          "description": "[2023年03月06日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-03-06T12:04:18+09:00",
-    "datelastupdated": "2023-03-06T12:04:18+09:00",
-    "datepublic": "2023-03-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-000023",
+	"vulinfodata": {
+		"title": "PostgreSQL 拡張モジュール pg_ivm における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "IVM Development Group が提供する pg_ivm は、PostgreSQL にマテリアライズド・ビューの増分ビューメンテナンス機能を提供する拡張モジュールです。pg_ivm には、次の複数の脆弱性が存在します。 ・情報漏えい (CWE-200) - CVE-2023-22847 pg_ivm により作成された IMMV (Incrementally Maintainable Materialized View) と呼ばれるマテリアライズド・ビューに、本来マテリアライズド・ビューの所有者にはアクセスが許可されていない行レベルセキュリティ (Row-Level Security) が設定された行が反映されてしまうことがある。 ・関数検索パスの制御不備 (CWE-427) - CVE-2023-23554 マテリアライズド・ビューの更新処理時に実行される関数の search path 処理に問題があり、異なるスキーマで定義されている同名の関数が、マテリアライズド・ビュー所有者の権限で実行されることがある。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "IVM Development Group",
+					"productname": "pg_ivm",
+					"cpe": {
+						"text": "cpe:/a:misc:ivm_development_group_pg_ivm",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.5.1 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.5",
+					"vector": "AV:N/AC:L/Au:S/C:P/I:P/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.4",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 ・行レベルセキュリティで保護されているテーブル内の情報が、本来アクセス権限のないユーザに漏えいする - CVE-2023-22847 ・攻撃者が用意した任意の関数がマテリアライズド・ビュー所有者の権限で実行される - CVE-2023-23554"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は pg_ivm 1.5.1 で修正されています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "sraoss/pg_ivm: IVM (Incremental View Maintenance) implementation as a PostgreSQL extension",
+					"url": "https://github.com/sraoss/pg_ivm"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "pg_ivm 1.5.1 (2023-03-02)",
+					"url": "https://github.com/sraoss/pg_ivm/releases/tag/v1.5.1"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22847",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22847"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-23554",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-23554"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#19872280",
+					"url": "https://jvn.jp/jp/JVN19872280/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-03-02T13:24:08+09:00",
+					"description": "[2023年03月06日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-03-06T12:04:18+09:00",
+		"datelastupdated": "2023-03-06T12:04:18+09:00",
+		"datepublic": "2023-03-06T00:00:00+09:00"
+	}
 }

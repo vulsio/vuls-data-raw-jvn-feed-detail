@@ -1,167 +1,167 @@
 {
-  "vulinfoid": "JVNDB-2015-007057",
-  "vulinfodata": {
-    "title": "Xen の PCI バックエンドドライバにおける WARN メッセージの連続ストリームを生成される脆弱性",
-    "vulinfodescription": {
-      "overview": "Xen の PCI バックエンドドライバは、x86 システム上で稼動し、かつドライバドメインとして Linux を使用する場合、WARN メッセージの連続ストリームを生成され、サービス運用妨害 (ディスクの消費) 状態にされる脆弱性が存在します。  本脆弱性は、\"Linux pciback missing sanity checks\" と呼ばれています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.04 LTS"
-          ]
-        },
-        {
-          "name": "Debian",
-          "productname": "Debian GNU/Linux",
-          "cpe": {
-            "text": "cpe:/o:debian:debian_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0"
-          ]
-        },
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.1.x から 4.3.x"
-          ]
-        },
-        {
-          "name": "Xen プロジェクト",
-          "productname": "Xen",
-          "cpe": {
-            "text": "cpe:/o:xen:xen",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "1.7",
-          "vector": "AV:L/AC:L/Au:S/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.4",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルのゲスト管理者により、パススルーされた MSI または MSI-X 対応の物理 PCI デバイスへのアクセス権を持つシステム、および XEN_PCI_OP_enable_msi オペレーションを利用されることで、WARN メッセージの連続ストリームを生成され、サービス運用妨害 (ディスクの消費) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "https://www.kernel.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Bug Tracker",
-          "vulinfoid": "CVE-2015-8552",
-          "url": "https://security-tracker.debian.org/tracker/CVE-2015-8552"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2846-1",
-          "url": "http://www.ubuntu.com/usn/usn-2846-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2848-1",
-          "url": "http://www.ubuntu.com/usn/usn-2848-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2850-1",
-          "url": "http://www.ubuntu.com/usn/usn-2850-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-2851-1",
-          "url": "http://www.ubuntu.com/usn/usn-2851-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "Xen Security Advisory",
-          "vulinfoid": "XSA-157",
-          "url": "http://xenbits.xen.org/xsa/advisory-157.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-8552",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8552"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-8552",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8552"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Xen MSI Call Processing Bugs Let Local Users on the Guest System Deny Service on the Target Host System",
-          "url": "http://www.securitytracker.com/id/1034480"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年04月20日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-04-20T11:46:13+09:00",
-    "datelastupdated": "2016-04-20T11:46:13+09:00",
-    "datepublic": "2015-12-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-007057",
+	"vulinfodata": {
+		"title": "Xen の PCI バックエンドドライバにおける WARN メッセージの連続ストリームを生成される脆弱性",
+		"vulinfodescription": {
+			"overview": "Xen の PCI バックエンドドライバは、x86 システム上で稼動し、かつドライバドメインとして Linux を使用する場合、WARN メッセージの連続ストリームを生成され、サービス運用妨害 (ディスクの消費) 状態にされる脆弱性が存在します。  本脆弱性は、\"Linux pciback missing sanity checks\" と呼ばれています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.04 LTS"
+					]
+				},
+				{
+					"name": "Debian",
+					"productname": "Debian GNU/Linux",
+					"cpe": {
+						"text": "cpe:/o:debian:debian_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0"
+					]
+				},
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.1.x から 4.3.x"
+					]
+				},
+				{
+					"name": "Xen プロジェクト",
+					"productname": "Xen",
+					"cpe": {
+						"text": "cpe:/o:xen:xen",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "1.7",
+					"vector": "AV:L/AC:L/Au:S/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.4",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルのゲスト管理者により、パススルーされた MSI または MSI-X 対応の物理 PCI デバイスへのアクセス権を持つシステム、および XEN_PCI_OP_enable_msi オペレーションを利用されることで、WARN メッセージの連続ストリームを生成され、サービス運用妨害 (ディスクの消費) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "https://www.kernel.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Bug Tracker",
+					"vulinfoid": "CVE-2015-8552",
+					"url": "https://security-tracker.debian.org/tracker/CVE-2015-8552"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2846-1",
+					"url": "http://www.ubuntu.com/usn/usn-2846-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2848-1",
+					"url": "http://www.ubuntu.com/usn/usn-2848-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2850-1",
+					"url": "http://www.ubuntu.com/usn/usn-2850-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-2851-1",
+					"url": "http://www.ubuntu.com/usn/usn-2851-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "Xen Security Advisory",
+					"vulinfoid": "XSA-157",
+					"url": "http://xenbits.xen.org/xsa/advisory-157.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-8552",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8552"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-8552",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8552"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Xen MSI Call Processing Bugs Let Local Users on the Guest System Deny Service on the Target Host System",
+					"url": "http://www.securitytracker.com/id/1034480"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年04月20日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2016-04-20T11:46:13+09:00",
+		"datelastupdated": "2016-04-20T11:46:13+09:00",
+		"datepublic": "2015-12-17T00:00:00+09:00"
+	}
 }

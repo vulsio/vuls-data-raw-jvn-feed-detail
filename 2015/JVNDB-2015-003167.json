@@ -1,118 +1,118 @@
 {
-  "vulinfoid": "JVNDB-2015-003167",
-  "vulinfodata": {
-    "title": "Retrospect Backup Client が弱いパスワードハッシュを使用する問題",
-    "vulinfodescription": {
-      "overview": "Retrospect Backup Client はネットワーク経由でバックアップを行うためのソフトウェアです。このソフトウェアは、パスワードをハッシュ化された形式で保存しますが、ハッシュの衝突が起こりやすい弱い形式を使用しています。そのため攻撃者は、ハッシュ値の衝突を悪用し、攻撃対象であるクライアントのバックアップファイルにアクセスすることが可能です。  強度が不十分なパスワードハッシュの使用 (CWE-916) - 2015-2864 Retrospect Backup Client には、パスワードハッシュの生成アルゴリズムに問題があります。ハッシュの生成時にパスワードを完全に使用ないため、高い確率で他のパスワードと衝突する弱いハッシュ値を生成します。Retrospect Backup Client が動作するマシンにネットワーク経由でアクセスできる攻撃者は、最大でも 128回の試行でハッシュ値の衝突を起こすパスワードを生成することができます。この問題を発見したセキュリティ研究者 Josep Pi Rodriguez と Pedro Guillen Nunez による攻撃のデモンストレーションが YouTube に公開されています。  CWE-916: Use of Password Hash With Insufficient Computational Effort https://cwe.mitre.org/data/definitions/916.html  攻撃のデモンストレーション https://www.youtube.com/watch?v=MB8AL5u7JCA  パスワード認証を使用するクライアントのみが脆弱性の影響を受けます。公開鍵認証を使用しているクライアントは影響を受けません。開発者は、公開鍵認証を使用することを推奨しています。脆弱性の詳細や公開鍵認証の設定方法については、開発者のアドバイザリを参照してください。  アドバイザリ http://www.retrospect.com/support/kb/cve_2015_2864"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Retrospect, Inc.",
-          "productname": "Retrospect",
-          "cpe": {
-            "text": "cpe:/a:retrospect:retrospect",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.0.2 (Windows)",
-            "12.0.2 (Macintosh)"
-          ]
-        },
-        {
-          "name": "Retrospect, Inc.",
-          "productname": "Retrospect Client",
-          "cpe": {
-            "text": "cpe:/a:retrospect:retrospect_client",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.0.2 (Windows/Linux)",
-            "12.0.2 (Macintosh)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "Retrospect Backup clients にアクセス可能な第三者によって、正しいパスワードと同一のハッシュ値となる文字列を総当たり攻撃によって推測される可能性があります。その結果、ユーザのバックアップデータにアクセスされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] パスワード認証メカニズムの使用を継続するユーザに向けて、本脆弱性を修正するアップデートがリリースされています。  Windows 版ユーザは Retrospect Backup Client 10.0.2.119 およびそれ以降のバージョンを使用してください。 Macintosh 版ユーザは Retrospect Backup Client 12.0.2.116 およびそれ以降のバージョン使用してください。 Linux 版ユーザは Retrospect Backup Client 10.0.2.104 およびそれ以降のバージョンを使用してください。  また、次のワークアラウンドの実施も推奨されています。  [公開鍵認証の使用に切り替える] 公開鍵認証を使用する場合、本脆弱性の影響を受けません。開発者はアドバイザリで、パスワード認証より公開鍵認証を使うよう呼びかけています。  アドバイザリ http://www.retrospect.com/support/kb/cve_2015_2864"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Retrospect, Inc.",
-          "vulinfoid": "CERT Vulnerability CVE-2015-2864",
-          "url": "http://www.retrospect.com/support/kb/cve_2015_2864"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-2864",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2864"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99598689",
-          "url": "http://jvn.jp/cert/JVNVU99598689"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-2864",
-          "url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2864"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#101500",
-          "url": "https://www.kb.cert.org/vuls/id/101500"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-255",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
-          "title": "証明書・パスワードの管理"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年06月18日]\\n  掲載\\n[2015年10月05日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2864) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-06-18T16:31:26+09:00",
-    "datelastupdated": "2015-10-05T18:06:16+09:00",
-    "datepublic": "2015-06-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-003167",
+	"vulinfodata": {
+		"title": "Retrospect Backup Client が弱いパスワードハッシュを使用する問題",
+		"vulinfodescription": {
+			"overview": "Retrospect Backup Client はネットワーク経由でバックアップを行うためのソフトウェアです。このソフトウェアは、パスワードをハッシュ化された形式で保存しますが、ハッシュの衝突が起こりやすい弱い形式を使用しています。そのため攻撃者は、ハッシュ値の衝突を悪用し、攻撃対象であるクライアントのバックアップファイルにアクセスすることが可能です。  強度が不十分なパスワードハッシュの使用 (CWE-916) - 2015-2864 Retrospect Backup Client には、パスワードハッシュの生成アルゴリズムに問題があります。ハッシュの生成時にパスワードを完全に使用ないため、高い確率で他のパスワードと衝突する弱いハッシュ値を生成します。Retrospect Backup Client が動作するマシンにネットワーク経由でアクセスできる攻撃者は、最大でも 128回の試行でハッシュ値の衝突を起こすパスワードを生成することができます。この問題を発見したセキュリティ研究者 Josep Pi Rodriguez と Pedro Guillen Nunez による攻撃のデモンストレーションが YouTube に公開されています。  CWE-916: Use of Password Hash With Insufficient Computational Effort https://cwe.mitre.org/data/definitions/916.html  攻撃のデモンストレーション https://www.youtube.com/watch?v=MB8AL5u7JCA  パスワード認証を使用するクライアントのみが脆弱性の影響を受けます。公開鍵認証を使用しているクライアントは影響を受けません。開発者は、公開鍵認証を使用することを推奨しています。脆弱性の詳細や公開鍵認証の設定方法については、開発者のアドバイザリを参照してください。  アドバイザリ http://www.retrospect.com/support/kb/cve_2015_2864"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Retrospect, Inc.",
+					"productname": "Retrospect",
+					"cpe": {
+						"text": "cpe:/a:retrospect:retrospect",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.0.2 (Windows)",
+						"12.0.2 (Macintosh)"
+					]
+				},
+				{
+					"name": "Retrospect, Inc.",
+					"productname": "Retrospect Client",
+					"cpe": {
+						"text": "cpe:/a:retrospect:retrospect_client",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.0.2 (Windows/Linux)",
+						"12.0.2 (Macintosh)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "Retrospect Backup clients にアクセス可能な第三者によって、正しいパスワードと同一のハッシュ値となる文字列を総当たり攻撃によって推測される可能性があります。その結果、ユーザのバックアップデータにアクセスされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] パスワード認証メカニズムの使用を継続するユーザに向けて、本脆弱性を修正するアップデートがリリースされています。  Windows 版ユーザは Retrospect Backup Client 10.0.2.119 およびそれ以降のバージョンを使用してください。 Macintosh 版ユーザは Retrospect Backup Client 12.0.2.116 およびそれ以降のバージョン使用してください。 Linux 版ユーザは Retrospect Backup Client 10.0.2.104 およびそれ以降のバージョンを使用してください。  また、次のワークアラウンドの実施も推奨されています。  [公開鍵認証の使用に切り替える] 公開鍵認証を使用する場合、本脆弱性の影響を受けません。開発者はアドバイザリで、パスワード認証より公開鍵認証を使うよう呼びかけています。  アドバイザリ http://www.retrospect.com/support/kb/cve_2015_2864"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Retrospect, Inc.",
+					"vulinfoid": "CERT Vulnerability CVE-2015-2864",
+					"url": "http://www.retrospect.com/support/kb/cve_2015_2864"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-2864",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2864"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99598689",
+					"url": "http://jvn.jp/cert/JVNVU99598689"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-2864",
+					"url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2864"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#101500",
+					"url": "https://www.kb.cert.org/vuls/id/101500"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-255",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+					"title": "証明書・パスワードの管理"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年06月18日]\\n  掲載\\n[2015年10月05日]\\n  影響を受けるシステム：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2015-2864) を追加\\n  CVSS による深刻度：内容を更新\\n  CWE による脆弱性タイプ一覧：CWE-ID を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2015-06-18T16:31:26+09:00",
+		"datelastupdated": "2015-10-05T18:06:16+09:00",
+		"datepublic": "2015-06-15T00:00:00+09:00"
+	}
 }

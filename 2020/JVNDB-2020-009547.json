@@ -1,151 +1,151 @@
 {
-  "vulinfoid": "JVNDB-2020-009547",
-  "vulinfodata": {
-    "title": "Schneider Electric 製 PLC Simulator for EcoStruxure Control Expert に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "PLC Simulator for EcoStruxure Control Expert および PLC Simulator for Unity Pro には、次の複数の脆弱性が存在します。  　* バッファーオーバーフロー (CWE-120) - CVE-2020-7559 　* プログラムの例外的な状態における不適切なチェック (CWE-754) - CVE-2020-7538 　* 不正な認証 (CWE-863) - CVE-2020-28211 　* 過度な認証試行の不適切な制限 (CWE-307) - CVE-2020-28212 　* ダウンロードしたコードの完全性検証不備 (CWE-494) - CVE-2020-28213"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Schneider Electric",
-          "productname": "PLC Simulator",
-          "cpe": {
-            "text": "cpe:/a:schneider_electric:plc_simulator",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for EcoStruxure Control Expert 全てのバージョン",
-            "for Unity Pro (旧称：EcoStruxure Control Expert) 全てのバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、Modbus を介して細工されたリクエストを送信された場合、EcoStruxure Control Expert の PLC Simulator がクラッシュさせられる - CVE-2020-7559、CVE-2020-7538 　* ローカルの第三者によって、デバッガを使用しメモリを上書きされた場合、認証を回避される - CVE-2020-28211 　* 遠隔の第三者によって、Modbus を介した総当たり攻撃により、許可されていないコマンドが実行される - CVE-2020-28212 　* 遠隔の第三者によって、Modbus を介して細工されたリクエストを送信された場合、許可されていないコマンドが実行される - CVE-2020-28213"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、対策版にアップデートしてください。 今回の脆弱性に対処したバージョンがリリースされています。 　* EcoStruxure Control Expert software 15.0  なお、修正プログラムを適用後、以下の手順で本脆弱性の影響を緩和する必要があります。 　* PLC Simulator のオプションダイアログボックスで、リスニング IP アドレスを 127.0.0.1 (localhost) に設定して、リモートネットワーク接続を防止する  　※デフォルトのリスニング IP アドレスは 0.0.0.0 であり、デフォルトの設定では PLC が本脆弱性にさらされます。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* ネットワークのセグメンテーションを設定し、ファイアウォールを使用して 502/TCP ポートへのすべての許可されていない通信をブロックする 　* PLC Simulator for EcoStruxure Control Expert を実行しているエンジニアリングワークステーションを、Schneider Electric 社の Cybersecurity Best Practices ガイドに従ってセキュリティ対策を行う"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Schneider Electric",
-          "vulinfoid": "EcoStruxure Control Expert",
-          "url": "https://www.se.com/ww/en/product-range-download/548-ecostruxure%E2%84%A2-control-expert/?parent-subcategory-id=3950&filter=business-1-industrial-automation-and-control&selected-node-id=12365959203#/software-firmware-tab"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Notification",
-          "vulinfoid": "Security Notification - PLC Simulator on EcoStruxure&#8482; Control Expert",
-          "url": "https://www.se.com/ww/en/download/document/SEVD-2020-315-07/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-7559",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7559"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-7538",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7538"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-28211",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28211"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-28212",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28212"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-28213",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28213"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-315-03",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-315-03"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92857198",
-          "url": "https://jvn.jp/vu/JVNVU92857198/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-494",
-          "url": "https://cwe.mitre.org/data/definitions/494.html",
-          "title": "ダウンロードしたコードの完全性検証不備"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-307",
-          "url": "https://cwe.mitre.org/data/definitions/307.html",
-          "title": "過度な認証試行の不適切な制限"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-120",
-          "url": "https://cwe.mitre.org/data/definitions/120.html",
-          "title": "古典的バッファオーバーフロー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-863",
-          "url": "https://cwe.mitre.org/data/definitions/863.html",
-          "title": "不正な認証"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-754",
-          "url": "https://cwe.mitre.org/data/definitions/754.html",
-          "title": "例外的な状態における不適切なチェック"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-11-12T14:53:41+09:00",
-          "description": "[2020年11月12日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-11-12T15:49:50+09:00",
-    "datelastupdated": "2020-11-12T15:49:50+09:00",
-    "datepublic": "2020-11-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-009547",
+	"vulinfodata": {
+		"title": "Schneider Electric 製 PLC Simulator for EcoStruxure Control Expert に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "PLC Simulator for EcoStruxure Control Expert および PLC Simulator for Unity Pro には、次の複数の脆弱性が存在します。  　* バッファーオーバーフロー (CWE-120) - CVE-2020-7559 　* プログラムの例外的な状態における不適切なチェック (CWE-754) - CVE-2020-7538 　* 不正な認証 (CWE-863) - CVE-2020-28211 　* 過度な認証試行の不適切な制限 (CWE-307) - CVE-2020-28212 　* ダウンロードしたコードの完全性検証不備 (CWE-494) - CVE-2020-28213"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Schneider Electric",
+					"productname": "PLC Simulator",
+					"cpe": {
+						"text": "cpe:/a:schneider_electric:plc_simulator",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for EcoStruxure Control Expert 全てのバージョン",
+						"for Unity Pro (旧称：EcoStruxure Control Expert) 全てのバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、Modbus を介して細工されたリクエストを送信された場合、EcoStruxure Control Expert の PLC Simulator がクラッシュさせられる - CVE-2020-7559、CVE-2020-7538 　* ローカルの第三者によって、デバッガを使用しメモリを上書きされた場合、認証を回避される - CVE-2020-28211 　* 遠隔の第三者によって、Modbus を介した総当たり攻撃により、許可されていないコマンドが実行される - CVE-2020-28212 　* 遠隔の第三者によって、Modbus を介して細工されたリクエストを送信された場合、許可されていないコマンドが実行される - CVE-2020-28213"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、対策版にアップデートしてください。 今回の脆弱性に対処したバージョンがリリースされています。 　* EcoStruxure Control Expert software 15.0  なお、修正プログラムを適用後、以下の手順で本脆弱性の影響を緩和する必要があります。 　* PLC Simulator のオプションダイアログボックスで、リスニング IP アドレスを 127.0.0.1 (localhost) に設定して、リモートネットワーク接続を防止する  　※デフォルトのリスニング IP アドレスは 0.0.0.0 であり、デフォルトの設定では PLC が本脆弱性にさらされます。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* ネットワークのセグメンテーションを設定し、ファイアウォールを使用して 502/TCP ポートへのすべての許可されていない通信をブロックする 　* PLC Simulator for EcoStruxure Control Expert を実行しているエンジニアリングワークステーションを、Schneider Electric 社の Cybersecurity Best Practices ガイドに従ってセキュリティ対策を行う"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Schneider Electric",
+					"vulinfoid": "EcoStruxure Control Expert",
+					"url": "https://www.se.com/ww/en/product-range-download/548-ecostruxure%E2%84%A2-control-expert/?parent-subcategory-id=3950&filter=business-1-industrial-automation-and-control&selected-node-id=12365959203#/software-firmware-tab"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Notification",
+					"vulinfoid": "Security Notification - PLC Simulator on EcoStruxure&#8482; Control Expert",
+					"url": "https://www.se.com/ww/en/download/document/SEVD-2020-315-07/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-7559",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7559"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-7538",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-7538"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-28211",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28211"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-28212",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28212"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-28213",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28213"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-315-03",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-315-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92857198",
+					"url": "https://jvn.jp/vu/JVNVU92857198/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-494",
+					"url": "https://cwe.mitre.org/data/definitions/494.html",
+					"title": "ダウンロードしたコードの完全性検証不備"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-307",
+					"url": "https://cwe.mitre.org/data/definitions/307.html",
+					"title": "過度な認証試行の不適切な制限"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-120",
+					"url": "https://cwe.mitre.org/data/definitions/120.html",
+					"title": "古典的バッファオーバーフロー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-863",
+					"url": "https://cwe.mitre.org/data/definitions/863.html",
+					"title": "不正な認証"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-754",
+					"url": "https://cwe.mitre.org/data/definitions/754.html",
+					"title": "例外的な状態における不適切なチェック"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-11-12T14:53:41+09:00",
+					"description": "[2020年11月12日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2020-11-12T15:49:50+09:00",
+		"datelastupdated": "2020-11-12T15:49:50+09:00",
+		"datepublic": "2020-11-11T00:00:00+09:00"
+	}
 }

@@ -1,181 +1,181 @@
 {
-  "vulinfoid": "JVNDB-2013-005901",
-  "vulinfodata": {
-    "title": "Augeas の transform.c の transform_save 関数におけるファイルを変更される脆弱性",
-    "vulinfodescription": {
-      "overview": "Augeas の transform.c の transform_save 関数は、パーミッション値を適切に計算しないため、umask が \"7\" を含む場合、誰でも書き込み可能な権限 (world-writable permission) を新しいファイルに付与することで、ファイルを変更される脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Hercules Team",
-          "productname": "Augeas",
-          "cpe": {
-            "text": "cpe:/a:augeas:augeas",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.0 から 1.1.0"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux HPC Node",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_hpc_node",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server AUS",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server_aus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6.5)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Server EUS",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_server_eus",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6.5.z)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 6)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Virtualization",
-          "cpe": {
-            "text": "cpe:/a:redhat:enterprise_virtualization",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.6",
-          "vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルユーザにより、ファイルを変更される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Fix umask handling when creating new files by domcleal",
-          "url": "https://github.com/hercules-team/augeas/pull/58"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "Fix umask handling when creating new files / f5b4fc0c",
-          "url": "https://github.com/hercules-team/augeas/commit/f5b4fc0c"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1034261",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1034261"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2014:0044",
-          "url": "http://rhn.redhat.com/errata/RHSA-2014-0044.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-6412",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6412"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-6412",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6412"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年01月27日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-01-27T12:14:46+09:00",
-    "datelastupdated": "2014-01-27T12:14:46+09:00",
-    "datepublic": "2013-12-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-005901",
+	"vulinfodata": {
+		"title": "Augeas の transform.c の transform_save 関数におけるファイルを変更される脆弱性",
+		"vulinfodescription": {
+			"overview": "Augeas の transform.c の transform_save 関数は、パーミッション値を適切に計算しないため、umask が \"7\" を含む場合、誰でも書き込み可能な権限 (world-writable permission) を新しいファイルに付与することで、ファイルを変更される脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Hercules Team",
+					"productname": "Augeas",
+					"cpe": {
+						"text": "cpe:/a:augeas:augeas",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.0 から 1.1.0"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux HPC Node",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_hpc_node",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server AUS",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server_aus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6.5)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Server EUS",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_server_eus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6.5.z)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 6)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Virtualization",
+					"cpe": {
+						"text": "cpe:/a:redhat:enterprise_virtualization",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.6",
+					"vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルユーザにより、ファイルを変更される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Fix umask handling when creating new files by domcleal",
+					"url": "https://github.com/hercules-team/augeas/pull/58"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Fix umask handling when creating new files / f5b4fc0c",
+					"url": "https://github.com/hercules-team/augeas/commit/f5b4fc0c"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1034261",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1034261"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2014:0044",
+					"url": "http://rhn.redhat.com/errata/RHSA-2014-0044.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-6412",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-6412"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-6412",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-6412"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年01月27日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2014-01-27T12:14:46+09:00",
+		"datelastupdated": "2014-01-27T12:14:46+09:00",
+		"datepublic": "2013-12-02T00:00:00+09:00"
+	}
 }

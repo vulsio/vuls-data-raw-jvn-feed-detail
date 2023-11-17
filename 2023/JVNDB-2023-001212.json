@@ -1,147 +1,147 @@
 {
-  "vulinfoid": "JVNDB-2023-001212",
-  "vulinfodata": {
-    "title": "ジェイテクトエレクトロニクス製 Screen Creator Advance 2 における複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "株式会社ジェイテクトエレクトロニクスが提供する Screen Creator Advance 2 には、次の複数の脆弱性が存在します。  　* 境界外書き込み（CWE-787）- CVE-2023-22345 　* 境界外読み込み（CWE-125）- CVE-2023-22346、CVE-2023-22347、CVE-2023-22349、CVE-2023-22350、CVE-2023-22353 　* 解放済みメモリの使用（Use-after-free）（CWE-416）- CVE-2023-22360 　 この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: Michael Heinzl 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "株式会社ジェイテクトエレクトロニクス",
-          "productname": "Screen Creator Advance 2",
-          "cpe": {
-            "text": "cpe:/a:misc:koyoelectronicsindustries_screen_creator_advance_2",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Ver.0.1.1.4 Build01 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "細工されたScreen Creator Advance 2 のプロジェクトファイルをユーザが開いた際、次のような影響を受けて、情報が漏えいしたり、任意のコードが実行されたりする可能性があります。  CVE-2023-22345 仕様外の状態を示すエラーを検出した場合、一部のエラーハンドリング処理が存在せずそのまま後続の処理に進み、境界外のメモリに書き込みが発生します。  CVE-2023-22346 テンプレート情報を処理する中でデータの終端を確認できず境界外のメモリの読み込みが発生します。  CVE-2023-22347 ファイル内の構造をまとめた管理情報を処理する中でデータの終端を確認できず境界外のメモリの読み込みが発生します。  CVE-2023-22349 画面管理情報を処理する中でデータの終端を確認できず、境界外のメモリの読み込みが発生します。  CVE-2023-22350 部品管理情報を処理する中でデータの終端を確認できず、境界外のメモリの読み込みが発生します。  CVE-2023-22353 コントロール管理情報を処理する中でデータの終端を確認できず、境界外のメモリの読み込みが発生します。  CVE-2023-22360 エラーを検出したにもかかわらず、一部のハンドリング処理が存在せず、後続の処理で解放済みメモリへのアクセスが発生します。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] <a href=\"https://www.electronics.jtekt.co.jp/jp/topics/2023020313454/\"target=\"blank\">開発者が提供する情報</a>をもとに、Screen Creator Advance 2をアップデートしてください。 開発者は、次のバージョンにおいて本脆弱性の対策を行っています。  　* Screen Creator Advance 2 Ver.0.1.1.4 Build01A およびそれ以降 　 アップデートは開発者が提供する次のダウンロードサイトから入手できます。 　* <a href=\"https://www.electronics.jtekt.co.jp/jp/download/hmi/\"target=\"blank\">HMIの資料を探す - ダウンロード｜株式会社ジェイテクトエレクトロニクス(旧 光洋電子工業）</a> 　* <a href=\"https://www.electronics.jtekt.co.jp/en/download/hmi/\"target=\"blank\">HMI - Download｜JTEKT ELECTRONICS CORPORATION</a>  "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ジェイテクトエレクトロニクス",
-          "vulinfoid": "株式会社ジェイテクトエレクトロニクス の告知ページ",
-          "url": "https://www.electronics.jtekt.co.jp/jp/topics/2023020313454/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22346",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22346"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22347",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22347"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22349",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22349"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22350",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22350"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22353",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22353"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22360",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22360"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-22345",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-22345"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-096-02",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-096-02"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98917488",
-          "url": "https://jvn.jp/vu/JVNVU98917488/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-416",
-          "url": "https://cwe.mitre.org/data/definitions/416.html",
-          "title": "解放済みメモリの使用"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-787",
-          "url": "https://cwe.mitre.org/data/definitions/787.html",
-          "title": "境界外書き込み"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-125",
-          "url": "https://cwe.mitre.org/data/definitions/125.html",
-          "title": "境界外読み取り"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-02-08T11:22:28+09:00",
-          "description": "[2023年02月08日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-04-10T11:57:53+09:00",
-          "description": "[2023年04月10日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-096-02) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-02-08T11:22:28+09:00",
-    "datelastupdated": "2023-04-10T15:31:30+09:00",
-    "datepublic": "2023-02-03T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-001212",
+	"vulinfodata": {
+		"title": "ジェイテクトエレクトロニクス製 Screen Creator Advance 2 における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社ジェイテクトエレクトロニクスが提供する Screen Creator Advance 2 には、次の複数の脆弱性が存在します。  　* 境界外書き込み（CWE-787）- CVE-2023-22345 　* 境界外読み込み（CWE-125）- CVE-2023-22346、CVE-2023-22347、CVE-2023-22349、CVE-2023-22350、CVE-2023-22353 　* 解放済みメモリの使用（Use-after-free）（CWE-416）- CVE-2023-22360 　 この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: Michael Heinzl 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社ジェイテクトエレクトロニクス",
+					"productname": "Screen Creator Advance 2",
+					"cpe": {
+						"text": "cpe:/a:misc:koyoelectronicsindustries_screen_creator_advance_2",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.0.1.1.4 Build01 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "細工されたScreen Creator Advance 2 のプロジェクトファイルをユーザが開いた際、次のような影響を受けて、情報が漏えいしたり、任意のコードが実行されたりする可能性があります。  CVE-2023-22345 仕様外の状態を示すエラーを検出した場合、一部のエラーハンドリング処理が存在せずそのまま後続の処理に進み、境界外のメモリに書き込みが発生します。  CVE-2023-22346 テンプレート情報を処理する中でデータの終端を確認できず境界外のメモリの読み込みが発生します。  CVE-2023-22347 ファイル内の構造をまとめた管理情報を処理する中でデータの終端を確認できず境界外のメモリの読み込みが発生します。  CVE-2023-22349 画面管理情報を処理する中でデータの終端を確認できず、境界外のメモリの読み込みが発生します。  CVE-2023-22350 部品管理情報を処理する中でデータの終端を確認できず、境界外のメモリの読み込みが発生します。  CVE-2023-22353 コントロール管理情報を処理する中でデータの終端を確認できず、境界外のメモリの読み込みが発生します。  CVE-2023-22360 エラーを検出したにもかかわらず、一部のハンドリング処理が存在せず、後続の処理で解放済みメモリへのアクセスが発生します。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] <a href=\"https://www.electronics.jtekt.co.jp/jp/topics/2023020313454/\"target=\"blank\">開発者が提供する情報</a>をもとに、Screen Creator Advance 2をアップデートしてください。 開発者は、次のバージョンにおいて本脆弱性の対策を行っています。  　* Screen Creator Advance 2 Ver.0.1.1.4 Build01A およびそれ以降 　 アップデートは開発者が提供する次のダウンロードサイトから入手できます。 　* <a href=\"https://www.electronics.jtekt.co.jp/jp/download/hmi/\"target=\"blank\">HMIの資料を探す - ダウンロード｜株式会社ジェイテクトエレクトロニクス(旧 光洋電子工業）</a> 　* <a href=\"https://www.electronics.jtekt.co.jp/en/download/hmi/\"target=\"blank\">HMI - Download｜JTEKT ELECTRONICS CORPORATION</a>  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ジェイテクトエレクトロニクス",
+					"vulinfoid": "株式会社ジェイテクトエレクトロニクス の告知ページ",
+					"url": "https://www.electronics.jtekt.co.jp/jp/topics/2023020313454/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22346",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22346"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22347",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22347"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22349",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22349"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22350",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22350"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22353",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22353"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22360",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22360"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-22345",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-22345"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-096-02",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-096-02"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98917488",
+					"url": "https://jvn.jp/vu/JVNVU98917488/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-416",
+					"url": "https://cwe.mitre.org/data/definitions/416.html",
+					"title": "解放済みメモリの使用"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-02-08T11:22:28+09:00",
+					"description": "[2023年02月08日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-04-10T11:57:53+09:00",
+					"description": "[2023年04月10日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-096-02) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2023-02-08T11:22:28+09:00",
+		"datelastupdated": "2023-04-10T15:31:30+09:00",
+		"datepublic": "2023-02-03T00:00:00+09:00"
+	}
 }

@@ -1,267 +1,267 @@
 {
-  "vulinfoid": "JVNDB-2023-001220",
-  "vulinfodata": {
-    "title": "Apache Tomcat の Apache Commons FileUpload におけるサービス運用妨害（DoS）の脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache Commons FileUpload 1.5 より前のバージョンでは1リクエストでアップロード可能なファイル数を制限していないため、サービス運用妨害（DoS）の脆弱性（CVE-2023-24998、CVE-2023-28709）が存在します。 Apache Tomcatのファイルアップロード機能には Apache Commons FileUpload パッケージのコピーが採用されており、同様にファイル数制限がないため、本脆弱性の影響を受ける可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache Tomcat",
-          "cpe": {
-            "text": "cpe:/a:apache:tomcat",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.1.0-M1 から 10.1.4 までのバージョン (CVE-2023-24998)",
-            "10.1.5 から 10.1.7 までのバージョン (CVE-2023-28709)",
-            "11.0.0-M1 (CVE-2023-24998)",
-            "11.0.0-M2 から 11.0.0-M4 までのバージョン (CVE-2023-28709)",
-            "8.5.0 から 8.5.84 までのバージョン (CVE-2023-24998)",
-            "8.5.85 から 8.5.87 までのバージョン (CVE-2023-28709)",
-            "9.0.0-M1 から 9.0.70 までのバージョン (CVE-2023-24998)",
-            "9.0.71 から 9.0.73 までのバージョン (CVE-2023-28709)"
-          ]
-        },
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Commons FileUpload",
-          "cpe": {
-            "text": "cpe:/a:apache:commons_fileupload",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.5 未満"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "CONNEXIVE PF",
-          "cpe": {
-            "text": "cpe:/a:nec:connexive_pf",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "ESMPRO/ServerManager",
-          "cpe": {
-            "text": "cpe:/a:nec:esmpro_servermanager",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "NEC Advanced Analytics Platform Modeler",
-          "cpe": {
-            "text": "cpe:/a:nec:nec_advanced_analytics_platform_modeler",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "NEC Information Assessment System",
-          "cpe": {
-            "text": "cpe:/a:nec:nec_information_assessment_system",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "NeoFace Monitor",
-          "cpe": {
-            "text": "cpe:/a:nec:neoface_monitor",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebOTX Application Server",
-          "cpe": {
-            "text": "cpe:/a:nec:webotx_application_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Express 10.1 から 11.1",
-            "Standard 10.1 から 11.1",
-            "Standard Extended Option 11.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "WebSAM IT Process Management",
-          "cpe": {
-            "text": "cpe:/a:nec:websam_it_process_management",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "第三者によって、悪意のあるアップロードが行われ、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は次のバージョンで修正されているとのことです。  　* Apache Tomcat 11.0.0-M5 およびそれ以降のバージョン 　* Apache Tomcat 10.1.8 およびそれ以降のバージョン 　* Apache Tomcat Apache Tomcat 9.0.74 およびそれ以降のバージョン 　* Apache Tomcat 8.5.88 およびそれ以降のバージョン  【2023/4/6 追記】 Apache Commons FileUpload 1.5 およびそれ以降のバージョンにおいては、1リクエストでアップロード可能なファイル数を設定可能とするオプションが追加されました。ただし、当該設定はデフォルトでは無効であり、利用者側で明示的に設定を追加する必要があります。 なお、Apache Tomcat においては当該設定にデフォルトで特定の値が指定されています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Commons",
-          "vulinfoid": "Fixed in Apache Commons FileUpload 1.5",
-          "url": "https://commons.apache.org/proper/commons-fileupload/security-reports.html#Fixed_in_Apache_Commons_FileUpload_1.5"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Tomcat",
-          "vulinfoid": "Fixed in Apache Tomcat 10.1.8",
-          "url": "https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.8"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Tomcat",
-          "vulinfoid": "Fixed in Apache Tomcat 9.0.74",
-          "url": "https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.74"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Tomcat",
-          "vulinfoid": "Fixed in Apache Tomcat 8.5.88",
-          "url": "https://tomcat.apache.org/security-8.html#Fixed_in_Apache_Tomcat_8.5.88"
-        },
-        {
-          "type": "vendor",
-          "name": "Apache Tomcat",
-          "vulinfoid": "Fixed in Apache Tomcat 11.0.0-M5",
-          "url": "https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.0-M5"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2023-141",
-          "url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-141/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2023-121",
-          "url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-121/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Hitachi Software Vulnerability Information",
-          "vulinfoid": "hitachi-sec-2023-127",
-          "url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-127/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV23-005",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv23-005.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Pony Mail",
-          "vulinfoid": "[SECURITY] CVE-2023-24998 Apache Commons FileUpload - DoS with excessive parts",
-          "url": "https://lists.apache.org/thread/4xl4l09mhwg4vgsk7dxqogcjrobrrdoy"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2023-141",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-141/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2023-121",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-121/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "ソフトウェア製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2023-127",
-          "url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-127/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-24998",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-24998"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-28709",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-28709"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#91253151",
-          "url": "http://jvn.jp/vu/JVNVU91253151/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2023-24998",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-24998"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2023-28709",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28709"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-02-22T12:02:23+09:00",
-          "description": "[2023年02月22日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-04-25T16:03:47+09:00",
-          "description": "[2023年04月25日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV23-005) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2023-05-25T16:52:23+09:00",
-          "description": "[2023年05月25日]\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：内容を変更\\n  共通脆弱性識別子(CVE)：CVE-2023-28709 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-28709) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2023-06-14T11:20:40+09:00",
-          "description": "[2023年06月14日]\\n  ベンダ情報：日立(hitachi-sec-2023-121) を追加"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2023-07-20T11:27:45+09:00",
-          "description": "[2023年07月20日]\\n  ベンダ情報：日立 (hitachi-sec-2023-127) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2023-09-05T16:31:36+09:00",
-          "description": "[2023年09月05日]\\n  影響を受けるシステム：ベンダ情報 (NV23-005) の更新に伴い内容を更新"
-        },
-        {
-          "historyno": "7",
-          "datetime": "2023-10-04T13:33:49+09:00",
-          "description": "[2023年10月04日]\\n  ベンダ情報：日立 (hitachi-sec-2023-141) を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-02-22T12:02:23+09:00",
-    "datelastupdated": "2023-10-04T14:51:10+09:00",
-    "datepublic": "2023-02-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-001220",
+	"vulinfodata": {
+		"title": "Apache Tomcat の Apache Commons FileUpload におけるサービス運用妨害（DoS）の脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache Commons FileUpload 1.5 より前のバージョンでは1リクエストでアップロード可能なファイル数を制限していないため、サービス運用妨害（DoS）の脆弱性（CVE-2023-24998、CVE-2023-28709）が存在します。 Apache Tomcatのファイルアップロード機能には Apache Commons FileUpload パッケージのコピーが採用されており、同様にファイル数制限がないため、本脆弱性の影響を受ける可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache Tomcat",
+					"cpe": {
+						"text": "cpe:/a:apache:tomcat",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.1.0-M1 から 10.1.4 までのバージョン (CVE-2023-24998)",
+						"10.1.5 から 10.1.7 までのバージョン (CVE-2023-28709)",
+						"11.0.0-M1 (CVE-2023-24998)",
+						"11.0.0-M2 から 11.0.0-M4 までのバージョン (CVE-2023-28709)",
+						"8.5.0 から 8.5.84 までのバージョン (CVE-2023-24998)",
+						"8.5.85 から 8.5.87 までのバージョン (CVE-2023-28709)",
+						"9.0.0-M1 から 9.0.70 までのバージョン (CVE-2023-24998)",
+						"9.0.71 から 9.0.73 までのバージョン (CVE-2023-28709)"
+					]
+				},
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Commons FileUpload",
+					"cpe": {
+						"text": "cpe:/a:apache:commons_fileupload",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.5 未満"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "CONNEXIVE PF",
+					"cpe": {
+						"text": "cpe:/a:nec:connexive_pf",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "ESMPRO/ServerManager",
+					"cpe": {
+						"text": "cpe:/a:nec:esmpro_servermanager",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "NEC Advanced Analytics Platform Modeler",
+					"cpe": {
+						"text": "cpe:/a:nec:nec_advanced_analytics_platform_modeler",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "NEC Information Assessment System",
+					"cpe": {
+						"text": "cpe:/a:nec:nec_information_assessment_system",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "NeoFace Monitor",
+					"cpe": {
+						"text": "cpe:/a:nec:neoface_monitor",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebOTX Application Server",
+					"cpe": {
+						"text": "cpe:/a:nec:webotx_application_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Express 10.1 から 11.1",
+						"Standard 10.1 から 11.1",
+						"Standard Extended Option 11.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "WebSAM IT Process Management",
+					"cpe": {
+						"text": "cpe:/a:nec:websam_it_process_management",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "第三者によって、悪意のあるアップロードが行われ、サービス運用妨害 (DoS) 攻撃を受ける可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は次のバージョンで修正されているとのことです。  　* Apache Tomcat 11.0.0-M5 およびそれ以降のバージョン 　* Apache Tomcat 10.1.8 およびそれ以降のバージョン 　* Apache Tomcat Apache Tomcat 9.0.74 およびそれ以降のバージョン 　* Apache Tomcat 8.5.88 およびそれ以降のバージョン  【2023/4/6 追記】 Apache Commons FileUpload 1.5 およびそれ以降のバージョンにおいては、1リクエストでアップロード可能なファイル数を設定可能とするオプションが追加されました。ただし、当該設定はデフォルトでは無効であり、利用者側で明示的に設定を追加する必要があります。 なお、Apache Tomcat においては当該設定にデフォルトで特定の値が指定されています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Commons",
+					"vulinfoid": "Fixed in Apache Commons FileUpload 1.5",
+					"url": "https://commons.apache.org/proper/commons-fileupload/security-reports.html#Fixed_in_Apache_Commons_FileUpload_1.5"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Tomcat",
+					"vulinfoid": "Fixed in Apache Tomcat 10.1.8",
+					"url": "https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.8"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Tomcat",
+					"vulinfoid": "Fixed in Apache Tomcat 9.0.74",
+					"url": "https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.74"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Tomcat",
+					"vulinfoid": "Fixed in Apache Tomcat 8.5.88",
+					"url": "https://tomcat.apache.org/security-8.html#Fixed_in_Apache_Tomcat_8.5.88"
+				},
+				{
+					"type": "vendor",
+					"name": "Apache Tomcat",
+					"vulinfoid": "Fixed in Apache Tomcat 11.0.0-M5",
+					"url": "https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.0-M5"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2023-141",
+					"url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-141/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2023-121",
+					"url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-121/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Hitachi Software Vulnerability Information",
+					"vulinfoid": "hitachi-sec-2023-127",
+					"url": "https://www.hitachi.com/products/it/software/security/info/vuls/hitachi-sec-2023-127/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV23-005",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv23-005.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Pony Mail",
+					"vulinfoid": "[SECURITY] CVE-2023-24998 Apache Commons FileUpload - DoS with excessive parts",
+					"url": "https://lists.apache.org/thread/4xl4l09mhwg4vgsk7dxqogcjrobrrdoy"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2023-141",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-141/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2023-121",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-121/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "ソフトウェア製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2023-127",
+					"url": "https://www.hitachi.co.jp/Prod/comp/soft1/security/info/vuls/hitachi-sec-2023-127/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-24998",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-24998"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-28709",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-28709"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91253151",
+					"url": "http://jvn.jp/vu/JVNVU91253151/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-24998",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-24998"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-28709",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-28709"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-02-22T12:02:23+09:00",
+					"description": "[2023年02月22日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-04-25T16:03:47+09:00",
+					"description": "[2023年04月25日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV23-005) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2023-05-25T16:52:23+09:00",
+					"description": "[2023年05月25日]\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：内容を変更\\n  共通脆弱性識別子(CVE)：CVE-2023-28709 を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-28709) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2023-06-14T11:20:40+09:00",
+					"description": "[2023年06月14日]\\n  ベンダ情報：日立(hitachi-sec-2023-121) を追加"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2023-07-20T11:27:45+09:00",
+					"description": "[2023年07月20日]\\n  ベンダ情報：日立 (hitachi-sec-2023-127) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2023-09-05T16:31:36+09:00",
+					"description": "[2023年09月05日]\\n  影響を受けるシステム：ベンダ情報 (NV23-005) の更新に伴い内容を更新"
+				},
+				{
+					"historyno": "7",
+					"datetime": "2023-10-04T13:33:49+09:00",
+					"description": "[2023年10月04日]\\n  ベンダ情報：日立 (hitachi-sec-2023-141) を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2023-02-22T12:02:23+09:00",
+		"datelastupdated": "2023-10-04T14:51:10+09:00",
+		"datepublic": "2023-02-21T00:00:00+09:00"
+	}
 }

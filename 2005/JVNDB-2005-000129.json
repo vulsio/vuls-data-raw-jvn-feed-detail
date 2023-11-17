@@ -1,147 +1,147 @@
 {
-  "vulinfoid": "JVNDB-2005-000129",
-  "vulinfodata": {
-    "title": "Gaim の HTML コードを解釈する関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Gaim は、AOL Instant Messenger (AIM) や ICQ など各種メッセンジャーと互換性を持ち、IRC クライアントとしても動作する IM (Instant  Messenger) クライアントです。AOL や ICQ におけるクライアントとサーバ間の通信では、基本的な通信単位である SNAC パケットが利用されています。  Gaim 1.1.2 以前には、特定のパケットおよび HTML コードを受け取ることで Gaim がサービス不能状態に陥る以下複数の問題が存在します。  ・AIM や ICQ ユーザから送信された特定の無効な SNAC パケットを解釈すると Gaim が無限ループに陥りフリーズする問題 (CAN-2005-0472)  ・HTML コードを解釈する関数において不正なメモリアクセスが発生し、Gaim がクラッシュする問題 (CAN-2005-0473)  これらの問題を利用するリモートの攻撃者は、意図的に作成した SNAC パケットや HTML コードを送りつけて Gaim に解釈させることにより、結果として Gaim をサービス不能状態に陥らせることが可能です。  尚、Red Hat Enterprise Linux 2.1 同梱の Gaim については CAN-2005-0472 の問題のみ影響を受けることが Red Hat より報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:432",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-432.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:215",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-215.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:215",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-215J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:432",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-432J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-0473",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0473"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "19380",
-          "url": "http://xforce.iss.net/xforce/xfdb/19380"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "19381",
-          "url": "http://xforce.iss.net/xforce/xfdb/19381"
-        },
-        {
-          "type": "advisory",
-          "name": "K-OTik Security Advisory",
-          "vulinfoid": "KOTIK/ADV-2005-0181",
-          "url": "http://www.k-otik.com/english/advisories/2005/0181"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-0473",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0473"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA14322",
-          "url": "http://secunia.com/advisories/14322/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12589",
-          "url": "http://www.securityfocus.com/bid/12589"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1013235",
-          "url": "http://securitytracker.com/alerts/2005/Feb/1013235.html"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1013234",
-          "url": "http://securitytracker.com/alerts/2005/Feb/1013234.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-02-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000129",
+	"vulinfodata": {
+		"title": "Gaim の HTML コードを解釈する関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Gaim は、AOL Instant Messenger (AIM) や ICQ など各種メッセンジャーと互換性を持ち、IRC クライアントとしても動作する IM (Instant  Messenger) クライアントです。AOL や ICQ におけるクライアントとサーバ間の通信では、基本的な通信単位である SNAC パケットが利用されています。  Gaim 1.1.2 以前には、特定のパケットおよび HTML コードを受け取ることで Gaim がサービス不能状態に陥る以下複数の問題が存在します。  ・AIM や ICQ ユーザから送信された特定の無効な SNAC パケットを解釈すると Gaim が無限ループに陥りフリーズする問題 (CAN-2005-0472)  ・HTML コードを解釈する関数において不正なメモリアクセスが発生し、Gaim がクラッシュする問題 (CAN-2005-0473)  これらの問題を利用するリモートの攻撃者は、意図的に作成した SNAC パケットや HTML コードを送りつけて Gaim に解釈させることにより、結果として Gaim をサービス不能状態に陥らせることが可能です。  尚、Red Hat Enterprise Linux 2.1 同梱の Gaim については CAN-2005-0472 の問題のみ影響を受けることが Red Hat より報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:432",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-432.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:215",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-215.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:215",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-215J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:432",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-432J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-0473",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0473"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "19380",
+					"url": "http://xforce.iss.net/xforce/xfdb/19380"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "19381",
+					"url": "http://xforce.iss.net/xforce/xfdb/19381"
+				},
+				{
+					"type": "advisory",
+					"name": "K-OTik Security Advisory",
+					"vulinfoid": "KOTIK/ADV-2005-0181",
+					"url": "http://www.k-otik.com/english/advisories/2005/0181"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-0473",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0473"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA14322",
+					"url": "http://secunia.com/advisories/14322/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12589",
+					"url": "http://www.securityfocus.com/bid/12589"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1013235",
+					"url": "http://securitytracker.com/alerts/2005/Feb/1013235.html"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1013234",
+					"url": "http://securitytracker.com/alerts/2005/Feb/1013234.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-02-17T00:00:00+09:00"
+	}
 }

@@ -1,170 +1,170 @@
 {
-  "vulinfoid": "JVNDB-2011-001003",
-  "vulinfodata": {
-    "title": "Xen の do_block_io_op 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Xen の drivers/xen/blkback/blkback.c および drivers/xen/blktap/blktap.c 内にある do_block_io_op 関数には、サービス運用妨害 (DoS) 状態となる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "VMware",
-          "productname": "VMware ESX",
-          "cpe": {
-            "text": "cpe:/a:vmware:esx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0.3",
-            "3.5",
-            "4.0",
-            "4.1"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (x86) ",
-            "3 (x86-64) "
-          ]
-        },
-        {
-          "name": "シトリックス・システムズ",
-          "productname": "Xen",
-          "cpe": {
-            "text": "cpe:/a:citrix:xen",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.4.0 未満"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.5",
-          "vector": "AV:A/AC:L/Au:S/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "ゲスト OS ユーザにより、blkback または blktap back-end ドライバへの大量インデックス生成要求を介して、サービス運用妨害 (DoS) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "kernel-2.6.18-194.10.AXS3",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1360"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2011:0004",
-          "url": "https://rhn.redhat.com/errata/RHSA-2011-0004.html"
-        },
-        {
-          "type": "vendor",
-          "name": "VMware Security Advisories",
-          "vulinfoid": "VMSA-2011-0012",
-          "url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2011-0012.html"
-        },
-        {
-          "type": "vendor",
-          "name": "XenSource",
-          "vulinfoid": "changeset: blkback/blktap",
-          "url": "http://xenbits.xensource.com/linux-2.6.18-xen.hg?rev/7070d34f251c"
-        },
-        {
-          "type": "vendor",
-          "name": "XenSource",
-          "vulinfoid": "changeset: blkback",
-          "url": "http://xenbits.xensource.com/linux-2.6.18-xen.hg?rev/77f831cbb91d"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2010-4247",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4247"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2010-4247",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4247"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA35093",
-          "url": "http://secunia.com/advisories/35093"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "45029",
-          "url": "http://www.securityfocus.com/bid/45029"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2011年01月21日]\\n  掲載\\n[2011年04月07日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-194.10.AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (kernel-2.6.18-194.10.AXS3) を追加\\n[2012年12月25日]\\n  影響を受けるシステム：VMware (VMSA-2011-0012) の情報を追加\\n  ベンダ情報：VMware (VMSA-2011-0012) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2011-01-21T16:09:36+09:00",
-    "datelastupdated": "2012-12-25T18:22:40+09:00",
-    "datepublic": "2011-01-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2011-001003",
+	"vulinfodata": {
+		"title": "Xen の do_block_io_op 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Xen の drivers/xen/blkback/blkback.c および drivers/xen/blktap/blktap.c 内にある do_block_io_op 関数には、サービス運用妨害 (DoS) 状態となる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "VMware",
+					"productname": "VMware ESX",
+					"cpe": {
+						"text": "cpe:/a:vmware:esx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.3",
+						"3.5",
+						"4.0",
+						"4.1"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (x86) ",
+						"3 (x86-64) "
+					]
+				},
+				{
+					"name": "シトリックス・システムズ",
+					"productname": "Xen",
+					"cpe": {
+						"text": "cpe:/a:citrix:xen",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.4.0 未満"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.5",
+					"vector": "AV:A/AC:L/Au:S/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "ゲスト OS ユーザにより、blkback または blktap back-end ドライバへの大量インデックス生成要求を介して、サービス運用妨害 (DoS) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "kernel-2.6.18-194.10.AXS3",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=1360"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2011:0004",
+					"url": "https://rhn.redhat.com/errata/RHSA-2011-0004.html"
+				},
+				{
+					"type": "vendor",
+					"name": "VMware Security Advisories",
+					"vulinfoid": "VMSA-2011-0012",
+					"url": "http://www.vmware.com/jp/support/support-resources/advisories/VMSA-2011-0012.html"
+				},
+				{
+					"type": "vendor",
+					"name": "XenSource",
+					"vulinfoid": "changeset: blkback/blktap",
+					"url": "http://xenbits.xensource.com/linux-2.6.18-xen.hg?rev/7070d34f251c"
+				},
+				{
+					"type": "vendor",
+					"name": "XenSource",
+					"vulinfoid": "changeset: blkback",
+					"url": "http://xenbits.xensource.com/linux-2.6.18-xen.hg?rev/77f831cbb91d"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2010-4247",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4247"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2010-4247",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4247"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA35093",
+					"url": "http://secunia.com/advisories/35093"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "45029",
+					"url": "http://www.securityfocus.com/bid/45029"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2011年01月21日]\\n  掲載\\n[2011年04月07日]\\n  影響を受けるシステム：ミラクル・リナックス (kernel-2.6.18-194.10.AXS3) の情報を追加\\n  ベンダ情報：ミラクル・リナックス (kernel-2.6.18-194.10.AXS3) を追加\\n[2012年12月25日]\\n  影響を受けるシステム：VMware (VMSA-2011-0012) の情報を追加\\n  ベンダ情報：VMware (VMSA-2011-0012) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2011-01-21T16:09:36+09:00",
+		"datelastupdated": "2012-12-25T18:22:40+09:00",
+		"datepublic": "2011-01-04T00:00:00+09:00"
+	}
 }

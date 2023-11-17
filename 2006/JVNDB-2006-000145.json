@@ -1,147 +1,147 @@
 {
-  "vulinfoid": "JVNDB-2006-000145",
-  "vulinfodata": {
-    "title": "Linux Kernel の複数の関数にカーネルメモリデータが漏洩する脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には、以下のソケットを利用する複数の関数において sockaddr_in.sin_zero を適切に初期化しない不備が存在します。  ・getsockname() 関数、getpeername() 関数、accept() 関数 (CVE-2006-1342) ・SO_ORIGINAL_DST オプション指定時の getsockopt() 関数 (CVE-2006-1343)  このため、IPv4 のソケットの名前をユーザ空間に返す際に、正規のデータと一緒にスタック上に存在するデータも返してしまう問題が存在します。  ローカルの攻撃者に悪用された場合、カーネルメモリ内の情報を取得される可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "2.1",
-          "vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0580",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0580.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0437",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0437.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0575",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0575.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2006:0579",
-          "url": "https://rhn.redhat.com/errata/RHSA-2006-0579.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0580",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0580J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0437",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0437J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0575",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0575J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2006:0579",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0579J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2006-1342",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1342"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2006-2071",
-          "url": "http://www.frsirt.com/english/advisories/2006/2071"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2006-1342",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1342"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA19357",
-          "url": "http://secunia.com/advisories/19357"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "17203",
-          "url": "http://www.securityfocus.com/bid/17203"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2006-03-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2006-000145",
+	"vulinfodata": {
+		"title": "Linux Kernel の複数の関数にカーネルメモリデータが漏洩する脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には、以下のソケットを利用する複数の関数において sockaddr_in.sin_zero を適切に初期化しない不備が存在します。  ・getsockname() 関数、getpeername() 関数、accept() 関数 (CVE-2006-1342) ・SO_ORIGINAL_DST オプション指定時の getsockopt() 関数 (CVE-2006-1343)  このため、IPv4 のソケットの名前をユーザ空間に返す際に、正規のデータと一緒にスタック上に存在するデータも返してしまう問題が存在します。  ローカルの攻撃者に悪用された場合、カーネルメモリ内の情報を取得される可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.1",
+					"vector": "AV:L/AC:L/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0580",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0580.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0437",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0437.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0575",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0575.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2006:0579",
+					"url": "https://rhn.redhat.com/errata/RHSA-2006-0579.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0580",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0580J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0437",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0437J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0575",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0575J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2006:0579",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0579J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2006-1342",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1342"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2006-2071",
+					"url": "http://www.frsirt.com/english/advisories/2006/2071"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2006-1342",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-1342"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA19357",
+					"url": "http://secunia.com/advisories/19357"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "17203",
+					"url": "http://www.securityfocus.com/bid/17203"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2006-03-23T00:00:00+09:00"
+	}
 }

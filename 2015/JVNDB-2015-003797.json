@@ -1,181 +1,181 @@
 {
-  "vulinfoid": "JVNDB-2015-003797",
-  "vulinfodata": {
-    "title": "Apache HTTP Server の server/protocol.c 内の read_request_line 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache HTTP Server の server/protocol.c 内の read_request_line 関数は、プロトコルの構造体メンバを初期化しないため、サービス運用妨害 (NULL ポインタデリファレンスおよびプロセスクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:apache:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.4.12"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 から 10.10.4",
-            "10.9.5"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "macOS Server (旧 OS X Server)",
-          "cpe": {
-            "text": "cpe:/o:apple:os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、INCLUDES フィルタを有効にし、かつローカルの URI を指定する ErrorDocument 400 のディレクティブを有するインストールへのメソッドを欠いたリクエストを送信されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびプロセスクラッシュ) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache httpd 2.4 vulnerabilities",
-          "vulinfoid": "Fixed in Apache httpd 2.4.16",
-          "url": "http://httpd.apache.org/security/vulnerabilities_24.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205219",
-          "url": "https://support.apple.com/en-us/HT205219"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205031",
-          "url": "http://support.apple.com/en-us/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205219",
-          "url": "http://support.apple.com/ja-jp/HT205219"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205031",
-          "url": "http://support.apple.com/ja-jp/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "ASF Bugzilla",
-          "vulinfoid": "Bug 57531",
-          "url": "https://bz.apache.org/bugzilla/show_bug.cgi?id=57531"
-        },
-        {
-          "type": "vendor",
-          "name": "Changes with Apache",
-          "vulinfoid": "Changes with Apache 2.4.13",
-          "url": "http://www.apache.org/dist/httpd/CHANGES_2.4"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "*) SECURITY: CVE-2015-0253 (cve.mitre.org)",
-          "url": "https://github.com/apache/httpd/commit/6a974059190b8a0c7e499f4ab12fe108127099cb"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory",
-          "vulinfoid": "TLSA-2015-17",
-          "url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-17j.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-0253",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0253"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#99970459",
-          "url": "http://jvn.jp/vu/JVNVU99970459/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-0253",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0253"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年07月22日]\\n  掲載\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年09月07日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-17) を追加\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-07-22T12:19:39+09:00",
-    "datelastupdated": "2015-10-30T16:37:17+09:00",
-    "datepublic": "2015-07-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-003797",
+	"vulinfodata": {
+		"title": "Apache HTTP Server の server/protocol.c 内の read_request_line 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache HTTP Server の server/protocol.c 内の read_request_line 関数は、プロトコルの構造体メンバを初期化しないため、サービス運用妨害 (NULL ポインタデリファレンスおよびプロセスクラッシュ) 状態にされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-476: NULL Pointer Dereference (NULL ポインタデリファレンス) と識別されています。 http://cwe.mitre.org/data/definitions/476.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:apache:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.4.12"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 から 10.10.4",
+						"10.9.5"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "macOS Server (旧 OS X Server)",
+					"cpe": {
+						"text": "cpe:/o:apple:os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0.3 未満 (OS X Yosemite v10.10.5 以降)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、INCLUDES フィルタを有効にし、かつローカルの URI を指定する ErrorDocument 400 のディレクティブを有するインストールへのメソッドを欠いたリクエストを送信されることで、サービス運用妨害 (NULL ポインタデリファレンスおよびプロセスクラッシュ) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache httpd 2.4 vulnerabilities",
+					"vulinfoid": "Fixed in Apache httpd 2.4.16",
+					"url": "http://httpd.apache.org/security/vulnerabilities_24.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-09-16-4 OS X Server 5.0.3",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00004.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205219",
+					"url": "https://support.apple.com/en-us/HT205219"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205031",
+					"url": "http://support.apple.com/en-us/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205219",
+					"url": "http://support.apple.com/ja-jp/HT205219"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205031",
+					"url": "http://support.apple.com/ja-jp/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "ASF Bugzilla",
+					"vulinfoid": "Bug 57531",
+					"url": "https://bz.apache.org/bugzilla/show_bug.cgi?id=57531"
+				},
+				{
+					"type": "vendor",
+					"name": "Changes with Apache",
+					"vulinfoid": "Changes with Apache 2.4.13",
+					"url": "http://www.apache.org/dist/httpd/CHANGES_2.4"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "*) SECURITY: CVE-2015-0253 (cve.mitre.org)",
+					"url": "https://github.com/apache/httpd/commit/6a974059190b8a0c7e499f4ab12fe108127099cb"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory",
+					"vulinfoid": "TLSA-2015-17",
+					"url": "http://www.turbolinux.co.jp/security/2015/TLSA-2015-17j.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-0253",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0253"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99970459",
+					"url": "http://jvn.jp/vu/JVNVU99970459/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-0253",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0253"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年07月22日]\\n  掲載\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年09月07日]\\n  ベンダ情報：ターボリナックス (TLSA-2015-17) を追加\\n[2015年10月05日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (APPLE-SA-2015-09-16-4 OS X Server 5.0.3) を追加\\n  ベンダ情報：アップル (HT205219) を追加\\n  参考情報：JVN (JVNVU#99970459) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-07-22T12:19:39+09:00",
+		"datelastupdated": "2015-10-30T16:37:17+09:00",
+		"datepublic": "2015-07-15T00:00:00+09:00"
+	}
 }

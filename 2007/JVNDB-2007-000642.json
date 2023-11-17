@@ -1,350 +1,350 @@
 {
-  "vulinfoid": "JVNDB-2007-000642",
-  "vulinfodata": {
-    "title": "MIT Kerberos 5 kadmind にバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "MIT Kerberos 5 kadmind には、RPC ライブラリに起因するバッファオーバーフローの脆弱性が存在します。  クライアントとサーバのネットワーク認証システムを提供する MIT Kerberos には ネットワークからデータベースを管理する kadmind デーモンがあります。この kadmind には、RPC ライブラリの RPCSEC_GSS 認証に関する処理にバッファオーバーフローの脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "MIT Kerberos",
-          "productname": "Kerberos",
-          "cpe": {
-            "text": "cpe:/a:mit:kerberos",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5-1.4 から 5-1.6.2 までのバージョン"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.4 から v10.4.10 のバージョン"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X Server",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "v10.4 から v10.4.10 のバージョン"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (x86) ",
-            "3 (x86-64) ",
-            "4.0 ",
-            "4.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 (sparc) ",
-            "10 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) ",
-            "9 (sparc) ",
-            "9 (x86) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) ",
-            "5 (server) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.0 ",
-            "5.0 (client) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5 (client) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって任意のコードを実行される可能性があります。  また、同様に 当該 RPC ライブラリを使用するプログラムも影響を受ける可能性があります。  なお、MIT krb5-1.4 より前のバージョンに関しては影響を受けないと報告されています。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダの提供する情報を元にアップデートしてください。  kadmind への通信を制限することを推奨します。初期設定では、ポート番号は 749/tcp となっています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Downloads",
-          "vulinfoid": "Security Update 2007-008 (10.3.9 Server)",
-          "url": "http://www.apple.com/support/downloads/securityupdate20070081039server.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Downloads",
-          "vulinfoid": "Security Update 2007-008 (10.3.9 Client)",
-          "url": "http://www.apple.com/support/downloads/securityupdate20070081039client.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "Mac OS X v10.4.11 and Security Update 2007-008",
-          "url": "http://docs.info.apple.com/article.html?artnum=307041-en"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "Mac OS X v10.4.11 およびセキュリティアップデート 2007-008",
-          "url": "http://docs.info.apple.com/article.html?artnum=307041-ja"
-        },
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "krb5-1.5-29",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=7"
-        },
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "nfs-utils-lib-1.0.8-7.2.z2",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=43"
-        },
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "krb5-1.6.1-17AXS3.1",
-          "url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=218"
-        },
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "1144",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1144"
-        },
-        {
-          "type": "vendor",
-          "name": "MIT krb5 Security Advisory",
-          "vulinfoid": "MITKerberos krb5-SA-2007-006",
-          "url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2007-006.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "250973",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=250973"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0858",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0858.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0913",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0913.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2007:0951",
-          "url": "https://rhn.redhat.com/errata/RHSA-2007-0951.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "103060",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103060-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": "103118",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103118-1"
-        },
-        {
-          "type": "vendor",
-          "name": "アップル ソフトウェアアップデート",
-          "vulinfoid": "セキュリティアップデート 2007-008 (10.3.9 Server)",
-          "url": "http://www.apple.com/jp/ftp-info/reference/securityupdate20070081039server.html"
-        },
-        {
-          "type": "vendor",
-          "name": "アップル ソフトウェアアップデート",
-          "vulinfoid": "セキュリティアップデート 2007-008 (10.3.9 Client)",
-          "url": "http://www.apple.com/jp/ftp-info/reference/securityupdate20070081039client.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0858",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0858J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0913",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0913J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2007:0951",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0951J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2007-3999",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3999"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2007-3051",
-          "url": "http://www.frsirt.com/english/advisories/2007/3051"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNTA07-319A",
-          "url": "http://jvn.jp/cert/JVNTA07-319A/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#883632",
-          "url": "http://jvn.jp/cert/JVNVU%23883632/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN Status Tracking Notes",
-          "vulinfoid": "TRTA07-319A",
-          "url": "http://jvn.jp/tr/TRTA07-319A/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2007-3999",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-3999"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA26676",
-          "url": "http://secunia.com/advisories/26676/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "25534",
-          "url": "http://www.securityfocus.com/bid/25534"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Cyber Security Alerts",
-          "vulinfoid": "SA07-319A",
-          "url": "http://www.us-cert.gov/cas/alerts/SA07-319A.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Technical Cyber Security Alert",
-          "vulinfoid": "TA07-319A",
-          "url": "http://www.us-cert.gov/cas/techalerts/TA07-319A.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#883632",
-          "url": "http://www.kb.cert.org/vuls/id/883632"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年09月10日]\\n  掲載\\n[2007年09月26日]\\n  影響を受けるシステム：レッドハット (RHSA-2007:0913) の情報追加。\\n  ベンダ情報: レッドハット (RHSA-2007:0913) 追加。\\n[2007年10月11日]\\n  ベンダ情報：レッドハット（RHSA-2007:0951）を追加しました。\\n[2007年10月17日]\\n  影響を受けるシステム：ミラクル・リナックス (1144) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (1144) 追加。\\n  ベンダ情報：サン・マイクロシステムズ（103118）を追加しました。\\n[2007年11月28日]\\n  影響を受けるシステム：アップル (Security Update 2007-008) の情報追加。\\n  影響を受けるシステム：ミラクル・リナックス (krb5-1.5-29, nfs-utils-lib-1.0.8-7.2.z2) の情報追加。\\n  ベンダ情報：アップル (Security Update 2007-008) 追加。\\n  ベンダ情報：ミラクル・リナックス (krb5-1.5-29, nfs-utils-lib-1.0.8-7.2.z2) 追加。\\n[2008年10月29日]\\n  ベンダ情報：ミラクル・リナックス（krb5-1.6.1-17AXS3.1）を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-09-10T16:21:15+09:00",
-    "datelastupdated": "2008-10-29T14:05:30+09:00",
-    "datepublic": "2007-09-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2007-000642",
+	"vulinfodata": {
+		"title": "MIT Kerberos 5 kadmind にバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "MIT Kerberos 5 kadmind には、RPC ライブラリに起因するバッファオーバーフローの脆弱性が存在します。  クライアントとサーバのネットワーク認証システムを提供する MIT Kerberos には ネットワークからデータベースを管理する kadmind デーモンがあります。この kadmind には、RPC ライブラリの RPCSEC_GSS 認証に関する処理にバッファオーバーフローの脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "MIT Kerberos",
+					"productname": "Kerberos",
+					"cpe": {
+						"text": "cpe:/a:mit:kerberos",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5-1.4 から 5-1.6.2 までのバージョン"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.4 から v10.4.10 のバージョン"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X Server",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v10.4 から v10.4.10 のバージョン"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (x86) ",
+						"3 (x86-64) ",
+						"4.0 ",
+						"4.0 (x86-64) "
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 (sparc) ",
+						"10 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) ",
+						"9 (sparc) ",
+						"9 (x86) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) ",
+						"5 (server) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.0 ",
+						"5.0 (client) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5 (client) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって任意のコードを実行される可能性があります。  また、同様に 当該 RPC ライブラリを使用するプログラムも影響を受ける可能性があります。  なお、MIT krb5-1.4 より前のバージョンに関しては影響を受けないと報告されています。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダの提供する情報を元にアップデートしてください。  kadmind への通信を制限することを推奨します。初期設定では、ポート番号は 749/tcp となっています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Downloads",
+					"vulinfoid": "Security Update 2007-008 (10.3.9 Server)",
+					"url": "http://www.apple.com/support/downloads/securityupdate20070081039server.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Downloads",
+					"vulinfoid": "Security Update 2007-008 (10.3.9 Client)",
+					"url": "http://www.apple.com/support/downloads/securityupdate20070081039client.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "Mac OS X v10.4.11 and Security Update 2007-008",
+					"url": "http://docs.info.apple.com/article.html?artnum=307041-en"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "Mac OS X v10.4.11 およびセキュリティアップデート 2007-008",
+					"url": "http://docs.info.apple.com/article.html?artnum=307041-ja"
+				},
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "krb5-1.5-29",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=7"
+				},
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "nfs-utils-lib-1.0.8-7.2.z2",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=43"
+				},
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "krb5-1.6.1-17AXS3.1",
+					"url": "https://tsn.miraclelinux.com/tsn_local/index.php?m=errata&a=detail&eid=218"
+				},
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "1144",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1144"
+				},
+				{
+					"type": "vendor",
+					"name": "MIT krb5 Security Advisory",
+					"vulinfoid": "MITKerberos krb5-SA-2007-006",
+					"url": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2007-006.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "250973",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=250973"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0858",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0858.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0913",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0913.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2007:0951",
+					"url": "https://rhn.redhat.com/errata/RHSA-2007-0951.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "103060",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103060-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": "103118",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-103118-1"
+				},
+				{
+					"type": "vendor",
+					"name": "アップル ソフトウェアアップデート",
+					"vulinfoid": "セキュリティアップデート 2007-008 (10.3.9 Server)",
+					"url": "http://www.apple.com/jp/ftp-info/reference/securityupdate20070081039server.html"
+				},
+				{
+					"type": "vendor",
+					"name": "アップル ソフトウェアアップデート",
+					"vulinfoid": "セキュリティアップデート 2007-008 (10.3.9 Client)",
+					"url": "http://www.apple.com/jp/ftp-info/reference/securityupdate20070081039client.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0858",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0858J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0913",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0913J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2007:0951",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2007-0951J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2007-3999",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3999"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2007-3051",
+					"url": "http://www.frsirt.com/english/advisories/2007/3051"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA07-319A",
+					"url": "http://jvn.jp/cert/JVNTA07-319A/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#883632",
+					"url": "http://jvn.jp/cert/JVNVU%23883632/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN Status Tracking Notes",
+					"vulinfoid": "TRTA07-319A",
+					"url": "http://jvn.jp/tr/TRTA07-319A/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2007-3999",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-3999"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA26676",
+					"url": "http://secunia.com/advisories/26676/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "25534",
+					"url": "http://www.securityfocus.com/bid/25534"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Cyber Security Alerts",
+					"vulinfoid": "SA07-319A",
+					"url": "http://www.us-cert.gov/cas/alerts/SA07-319A.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA07-319A",
+					"url": "http://www.us-cert.gov/cas/techalerts/TA07-319A.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#883632",
+					"url": "http://www.kb.cert.org/vuls/id/883632"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年09月10日]\\n  掲載\\n[2007年09月26日]\\n  影響を受けるシステム：レッドハット (RHSA-2007:0913) の情報追加。\\n  ベンダ情報: レッドハット (RHSA-2007:0913) 追加。\\n[2007年10月11日]\\n  ベンダ情報：レッドハット（RHSA-2007:0951）を追加しました。\\n[2007年10月17日]\\n  影響を受けるシステム：ミラクル・リナックス (1144) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (1144) 追加。\\n  ベンダ情報：サン・マイクロシステムズ（103118）を追加しました。\\n[2007年11月28日]\\n  影響を受けるシステム：アップル (Security Update 2007-008) の情報追加。\\n  影響を受けるシステム：ミラクル・リナックス (krb5-1.5-29, nfs-utils-lib-1.0.8-7.2.z2) の情報追加。\\n  ベンダ情報：アップル (Security Update 2007-008) 追加。\\n  ベンダ情報：ミラクル・リナックス (krb5-1.5-29, nfs-utils-lib-1.0.8-7.2.z2) 追加。\\n[2008年10月29日]\\n  ベンダ情報：ミラクル・リナックス（krb5-1.6.1-17AXS3.1）を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-09-10T16:21:15+09:00",
+		"datelastupdated": "2008-10-29T14:05:30+09:00",
+		"datepublic": "2007-09-04T00:00:00+09:00"
+	}
 }

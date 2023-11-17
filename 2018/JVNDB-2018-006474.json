@@ -1,179 +1,179 @@
 {
-  "vulinfoid": "JVNDB-2018-006474",
-  "vulinfodata": {
-    "title": "Ghostscript に -dSAFER オプションによる保護が回避される複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Ghostscript には -dSAFER オプションによる保護が回避される複数の脆弱性が存在し、この脆弱性を利用する遠隔の第三者によって、任意のコマンドを実行される可能性があります。  Artifex Software 社が提供している Ghostscript には PostScript による危険な動作を防ぐための -dSAFER オプションが存在します。PostScript には -dSAFER による保護機能が回避されてしまう複数の処理が存在し、攻撃者によって任意のコマンドを実行される可能性があります。この脆弱性は ImageMagick などの Ghostscript を活用しているアプリケーションにも影響します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Artifex Software",
-          "productname": "Ghostscript",
-          "cpe": {
-            "text": "cpe:/a:artifex:ghostscript",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9.23 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、Ghostscript もしくは Ghostscript を活用しているプログラムに悪意のあるファイルを読み込まされ、Ghostscript の権限で任意のコマンドを実行される可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 本脆弱性を修正した Ghostscript 9.25 が公開されています。 ※ 9月3日に公開された Ghostscript 9.24 に対して更に修正を加えたものです。  またワークアラウンドとして、以下の適用を検討してください。  [ワークアラウンドを実施する]  　　* ImageMagick の policy.xml で PS, EPS, PDF, XPS を無効にする  ImageMagick の初期設定では、PostScript の処理に Ghostscript を使用しています。ImageMagick では policy.xml の設定で PS, EPS, PDF, XPS コンテンツの処理を無効にすることが可能です。例えば、RedHat システムにおいては /etc/ImageMagick/policy.xml の <policymap> セクションに下記を追加することで、PS, EPS, PDF, XPS の処理が無効になります。      &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS2&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS3&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;EPS&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PDF&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;XPS&quot; /&gt;  policy.xml に相当するファイルの場所はプラットフォームにより異なります。使用しているシステムにおける設定ファイルの場所を確認してください。また上記は、ImageMagick においてのみ有効なワークアラウンドであることに注意してください。    　　* Ghostscript を削除する  対策済みバージョンが公開されるまで、システムから Ghostscript を削除してください。    　　* 修正パッチを適用して Ghostscript をコンパイルしなおす  Artifex Software 社は、Ghostscript の公開リポジトリ上で修正を行っています。 詳細はベンダ情報を参照してください。  http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=b575e1ec http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=8e9ce501 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=241d9111 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=c432131c http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=e01e77a3 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0edd3d6c http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=a054156d http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0d390118 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=c3476dde http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=b326a716 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=78911a01 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=5516c614 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=78911a01b6 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=5516c614dc33 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=79cccf641486 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=520bb0ea7519aa3e79db78aaf0589dae02103764"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Artifex Software, Inc.",
-          "vulinfoid": "How to Use Ghostscript",
-          "url": "https://www.ghostscript.com/doc/current/Use.htm#Safer"
-        },
-        {
-          "type": "vendor",
-          "name": "Artifex Software, Inc.",
-          "vulinfoid": "Version 9.24",
-          "url": "https://ghostscript.com/doc/9.24/History9.htm#Version9.24"
-        },
-        {
-          "type": "vendor",
-          "name": "Asianux Technical Support Network",
-          "vulinfoid": "サイバートラスト株式会社 の告知ページ",
-          "url": "https://tsn.miraclelinux.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "日本ワムネット株式会社",
-          "vulinfoid": "日本ワムネット株式会社 の告知ページ",
-          "url": "https://www.wamnet.jp/info/office/security/000408.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-16509",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16509"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "JPCERT-AT-2018-0035",
-          "url": "https://www.jpcert.or.jp/at/2018/at180035.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90390242",
-          "url": "https://jvn.jp/vu/JVNVU90390242/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-16509",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16509"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "Artifex Software, Inc. Information for VU#332928",
-          "url": "https://www.kb.cert.org/vuls/id/WDON-B3UK3T"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#332928",
-          "url": "https://www.kb.cert.org/vuls/id/332928"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Security Policy @ ImageMagick",
-          "url": "https://www.imagemagick.org/script/security-policy.php"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Configuration Files",
-          "url": "https://www.imagemagick.org/script/resources.php"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "ghostscript: multiple critical vulnerabilities, including remote command execution",
-          "url": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1640"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "More Ghostscript Issues: Should we disable PS coders in policy.xml by default?",
-          "url": "http://openwall.com/lists/oss-security/2018/08/21/2"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2018-08-23T11:42:58+09:00",
-          "description": "[2018年08月23日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2018-09-05T13:39:07+09:00",
-          "description": "[2018年09月05日]\\n  ベンダ情報：日本ワムネット株式会社 (日本ワムネット株式会社 の告知ページ) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2018-09-10T11:24:07+09:00",
-          "description": "[2018年09月10日]\\n  対策：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-16509) を追加\\n  参考情報：US-CERT Vulnerability Note (Artifex Software, Inc. Information for VU#332928) を追加\\n  参考情報：関連文書 (ghostscript: multiple critical vulnerabilities, including remote command execution) を追加"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2018-09-18T09:47:56+09:00",
-          "description": "[2018年09月18日]\\n  CVSS による深刻度：内容を更新\\n  対策：内容を更新\\n"
-        },
-        {
-          "historyno": "5",
-          "datetime": "2018-10-22T11:48:05+09:00",
-          "description": "[2018年10月22日]\\n  ベンダ情報：サイバートラスト株式会社 (サイバートラスト株式会社 の告知ページ) を追加"
-        },
-        {
-          "historyno": "6",
-          "datetime": "2019-07-25T15:16:16+09:00",
-          "description": "[2019年07月25日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16509) を追加\\n"
-        }
-      ]
-    },
-    "datefirstpublished": "2018-08-23T11:42:58+09:00",
-    "datelastupdated": "2019-07-25T15:17:25+09:00",
-    "datepublic": "2018-08-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2018-006474",
+	"vulinfodata": {
+		"title": "Ghostscript に -dSAFER オプションによる保護が回避される複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Ghostscript には -dSAFER オプションによる保護が回避される複数の脆弱性が存在し、この脆弱性を利用する遠隔の第三者によって、任意のコマンドを実行される可能性があります。  Artifex Software 社が提供している Ghostscript には PostScript による危険な動作を防ぐための -dSAFER オプションが存在します。PostScript には -dSAFER による保護機能が回避されてしまう複数の処理が存在し、攻撃者によって任意のコマンドを実行される可能性があります。この脆弱性は ImageMagick などの Ghostscript を活用しているアプリケーションにも影響します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Artifex Software",
+					"productname": "Ghostscript",
+					"cpe": {
+						"text": "cpe:/a:artifex:ghostscript",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9.23 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、Ghostscript もしくは Ghostscript を活用しているプログラムに悪意のあるファイルを読み込まされ、Ghostscript の権限で任意のコマンドを実行される可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 本脆弱性を修正した Ghostscript 9.25 が公開されています。 ※ 9月3日に公開された Ghostscript 9.24 に対して更に修正を加えたものです。  またワークアラウンドとして、以下の適用を検討してください。  [ワークアラウンドを実施する]  　　* ImageMagick の policy.xml で PS, EPS, PDF, XPS を無効にする  ImageMagick の初期設定では、PostScript の処理に Ghostscript を使用しています。ImageMagick では policy.xml の設定で PS, EPS, PDF, XPS コンテンツの処理を無効にすることが可能です。例えば、RedHat システムにおいては /etc/ImageMagick/policy.xml の <policymap> セクションに下記を追加することで、PS, EPS, PDF, XPS の処理が無効になります。      &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS2&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PS3&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;EPS&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;PDF&quot; /&gt;     &nbsp;&nbsp;&nbsp; &lt;policy domain=&quot;coder&quot; rights=&quot;none&quot; pattern=&quot;XPS&quot; /&gt;  policy.xml に相当するファイルの場所はプラットフォームにより異なります。使用しているシステムにおける設定ファイルの場所を確認してください。また上記は、ImageMagick においてのみ有効なワークアラウンドであることに注意してください。    　　* Ghostscript を削除する  対策済みバージョンが公開されるまで、システムから Ghostscript を削除してください。    　　* 修正パッチを適用して Ghostscript をコンパイルしなおす  Artifex Software 社は、Ghostscript の公開リポジトリ上で修正を行っています。 詳細はベンダ情報を参照してください。  http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=b575e1ec http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=8e9ce501 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=241d9111 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=c432131c http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=e01e77a3 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0edd3d6c http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=a054156d http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=0d390118 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=c3476dde http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=b326a716 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=78911a01 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=5516c614 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=78911a01b6 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=5516c614dc33 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=79cccf641486 http://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=520bb0ea7519aa3e79db78aaf0589dae02103764"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Artifex Software, Inc.",
+					"vulinfoid": "How to Use Ghostscript",
+					"url": "https://www.ghostscript.com/doc/current/Use.htm#Safer"
+				},
+				{
+					"type": "vendor",
+					"name": "Artifex Software, Inc.",
+					"vulinfoid": "Version 9.24",
+					"url": "https://ghostscript.com/doc/9.24/History9.htm#Version9.24"
+				},
+				{
+					"type": "vendor",
+					"name": "Asianux Technical Support Network",
+					"vulinfoid": "サイバートラスト株式会社 の告知ページ",
+					"url": "https://tsn.miraclelinux.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "日本ワムネット株式会社",
+					"vulinfoid": "日本ワムネット株式会社 の告知ページ",
+					"url": "https://www.wamnet.jp/info/office/security/000408.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-16509",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16509"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "JPCERT-AT-2018-0035",
+					"url": "https://www.jpcert.or.jp/at/2018/at180035.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90390242",
+					"url": "https://jvn.jp/vu/JVNVU90390242/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-16509",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-16509"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "Artifex Software, Inc. Information for VU#332928",
+					"url": "https://www.kb.cert.org/vuls/id/WDON-B3UK3T"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#332928",
+					"url": "https://www.kb.cert.org/vuls/id/332928"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Security Policy @ ImageMagick",
+					"url": "https://www.imagemagick.org/script/security-policy.php"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Configuration Files",
+					"url": "https://www.imagemagick.org/script/resources.php"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "ghostscript: multiple critical vulnerabilities, including remote command execution",
+					"url": "https://bugs.chromium.org/p/project-zero/issues/detail?id=1640"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "More Ghostscript Issues: Should we disable PS coders in policy.xml by default?",
+					"url": "http://openwall.com/lists/oss-security/2018/08/21/2"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2018-08-23T11:42:58+09:00",
+					"description": "[2018年08月23日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2018-09-05T13:39:07+09:00",
+					"description": "[2018年09月05日]\\n  ベンダ情報：日本ワムネット株式会社 (日本ワムネット株式会社 の告知ページ) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2018-09-10T11:24:07+09:00",
+					"description": "[2018年09月10日]\\n  対策：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE)(CVE-2018-16509) を追加\\n  参考情報：US-CERT Vulnerability Note (Artifex Software, Inc. Information for VU#332928) を追加\\n  参考情報：関連文書 (ghostscript: multiple critical vulnerabilities, including remote command execution) を追加"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2018-09-18T09:47:56+09:00",
+					"description": "[2018年09月18日]\\n  CVSS による深刻度：内容を更新\\n  対策：内容を更新\\n"
+				},
+				{
+					"historyno": "5",
+					"datetime": "2018-10-22T11:48:05+09:00",
+					"description": "[2018年10月22日]\\n  ベンダ情報：サイバートラスト株式会社 (サイバートラスト株式会社 の告知ページ) を追加"
+				},
+				{
+					"historyno": "6",
+					"datetime": "2019-07-25T15:16:16+09:00",
+					"description": "[2019年07月25日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2018-16509) を追加\\n"
+				}
+			]
+		},
+		"datefirstpublished": "2018-08-23T11:42:58+09:00",
+		"datelastupdated": "2019-07-25T15:17:25+09:00",
+		"datepublic": "2018-08-21T00:00:00+09:00"
+	}
 }

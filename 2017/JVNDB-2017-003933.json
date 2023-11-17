@@ -1,150 +1,150 @@
 {
-  "vulinfoid": "JVNDB-2017-003933",
-  "vulinfodata": {
-    "title": "ACTi 製の複数のカメラ製品に脆弱性",
-    "vulinfodescription": {
-      "overview": "報告者によると、ACTi が提供するカメラ製品のうち、ファームウェア バージョン A1D-500-V6.11.31-AC を使用している複数のシリーズに問題が存在するとのことです。  重要な機能に対する認証欠如の問題 (CWE-306) - CVE-2017-3184 これらの製品は、設定の初期化機能に対する適切なアクセス制限が行われていません。遠隔の第三者が http://x.x.x.x/setup/setup_maintain_firmware-default.html のような URL に直接アクセスすることで、製品の設定を初期化することが可能です。これにより当該機器に対するサービス運用妨害 (DoS) を引き起こしたり、脆弱なデフォルトパスワードの問題 (CVE-2017-3186) を使用したりすることが可能です。  GET リクエストに含まれるクエリ文字列による情報漏えい (CWE-598) - CVE-2017-3185 これらの製品のウェブインタフェースでは、ユーザ名やパスワードなど機微な情報を含む GET リクエストを使用します。そのため、ブラウザ履歴やリファラ、通信ログなど様々な履歴からこれらの機微な情報を取得することが可能です。  脆弱なデフォルトパスワード (CWE-521) - CVE-2017-3186 これらの製品の初期設定では、すべての機器で同一の認証情報を使用しています。初期設定のままで使用している場合、遠隔の第三者は管理者の認証情報でログインし、機器を完全に制御することが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ACTi Corporation",
-          "productname": "ACTi 製カメラファームウェア",
-          "cpe": {
-            "text": "cpe:/o:acti:camera_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン A1D-500-V6.11.31-AC を使用している D、B、I、E シリーズ"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、機器を工場出荷状態に初期化されたり、ユーザ名やパスワードなどの機微な情報を取得されたり、初期状態の認証情報を使用して当該機器に管理者としてログインされたりする可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2017年3月8日現在、対策方法は不明です。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ACTi Corporation",
-          "vulinfoid": "Product List",
-          "url": "https://www.acti.com/productselector/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3184",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3184"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3185",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3185"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2017-3186",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3186"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92233464",
-          "url": "http://jvn.jp/vu/JVNVU92233464/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3186",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3186"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3184",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3184"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2017-3185",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3185"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#355151",
-          "url": "http://www.kb.cert.org/vuls/id/355151"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-598",
-          "url": "https://cwe.mitre.org/data/definitions/598.html",
-          "title": "GET リクエストにおけるクエリ文字列からの情報漏えい"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-306",
-          "url": "https://cwe.mitre.org/data/definitions/306.html",
-          "title": "重要な機能に対する認証の欠如"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-521",
-          "url": "https://cwe.mitre.org/data/definitions/521.html",
-          "title": "脆弱なパスワードの要求"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年06月12日]\\n  掲載"
-        },
-        {
-          "historyno": "1",
-          "datetime": "2018-03-14T13:41:18+09:00",
-          "description": "[2018年03月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3184) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3185) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3186) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-06-12T15:09:19+09:00",
-    "datelastupdated": "2018-03-14T14:00:14+09:00",
-    "datepublic": "2017-03-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-003933",
+	"vulinfodata": {
+		"title": "ACTi 製の複数のカメラ製品に脆弱性",
+		"vulinfodescription": {
+			"overview": "報告者によると、ACTi が提供するカメラ製品のうち、ファームウェア バージョン A1D-500-V6.11.31-AC を使用している複数のシリーズに問題が存在するとのことです。  重要な機能に対する認証欠如の問題 (CWE-306) - CVE-2017-3184 これらの製品は、設定の初期化機能に対する適切なアクセス制限が行われていません。遠隔の第三者が http://x.x.x.x/setup/setup_maintain_firmware-default.html のような URL に直接アクセスすることで、製品の設定を初期化することが可能です。これにより当該機器に対するサービス運用妨害 (DoS) を引き起こしたり、脆弱なデフォルトパスワードの問題 (CVE-2017-3186) を使用したりすることが可能です。  GET リクエストに含まれるクエリ文字列による情報漏えい (CWE-598) - CVE-2017-3185 これらの製品のウェブインタフェースでは、ユーザ名やパスワードなど機微な情報を含む GET リクエストを使用します。そのため、ブラウザ履歴やリファラ、通信ログなど様々な履歴からこれらの機微な情報を取得することが可能です。  脆弱なデフォルトパスワード (CWE-521) - CVE-2017-3186 これらの製品の初期設定では、すべての機器で同一の認証情報を使用しています。初期設定のままで使用している場合、遠隔の第三者は管理者の認証情報でログインし、機器を完全に制御することが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ACTi Corporation",
+					"productname": "ACTi 製カメラファームウェア",
+					"cpe": {
+						"text": "cpe:/o:acti:camera_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン A1D-500-V6.11.31-AC を使用している D、B、I、E シリーズ"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、機器を工場出荷状態に初期化されたり、ユーザ名やパスワードなどの機微な情報を取得されたり、初期状態の認証情報を使用して当該機器に管理者としてログインされたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2017年3月8日現在、対策方法は不明です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ACTi Corporation",
+					"vulinfoid": "Product List",
+					"url": "https://www.acti.com/productselector/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3184",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3184"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3185",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3185"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-3186",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3186"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92233464",
+					"url": "http://jvn.jp/vu/JVNVU92233464/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3186",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3186"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3184",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3184"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2017-3185",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2017-3185"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#355151",
+					"url": "http://www.kb.cert.org/vuls/id/355151"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-598",
+					"url": "https://cwe.mitre.org/data/definitions/598.html",
+					"title": "GET リクエストにおけるクエリ文字列からの情報漏えい"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-306",
+					"url": "https://cwe.mitre.org/data/definitions/306.html",
+					"title": "重要な機能に対する認証の欠如"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-521",
+					"url": "https://cwe.mitre.org/data/definitions/521.html",
+					"title": "脆弱なパスワードの要求"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年06月12日]\\n  掲載"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2018-03-14T13:41:18+09:00",
+					"description": "[2018年03月14日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3184) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3185) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2017-3186) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2017-06-12T15:09:19+09:00",
+		"datelastupdated": "2018-03-14T14:00:14+09:00",
+		"datepublic": "2017-03-07T00:00:00+09:00"
+	}
 }

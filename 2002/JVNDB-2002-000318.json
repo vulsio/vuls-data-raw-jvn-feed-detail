@@ -1,176 +1,176 @@
 {
-  "vulinfoid": "JVNDB-2002-000318",
-  "vulinfodata": {
-    "title": "MySQL の COM_CHANGE_USER コマンドにおける任意のコードを実行される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL においてユーザ切り替えのために用いられる COM_CHANGE_USER コマンドには、パスワード認証の実装に不備が存在します。 MySQL は、COM_CHANGE_USER コマンドを用いて別アカウントへ切り替える際、入力されたパスワードの妥当性チェックを入力された文字数単位で行います。  このため、ローカルの攻撃者は 1 文字単位でのパスワード総当り攻撃を行うことにより、他のアカウント (root を含む) のパスワードの推測が容易にできる可能性があります 尚、COM_CHANGE_USER コマンドを利用した場合、パスワードの文字セットは最大で 32 文字に設定されているため、総当り攻撃は 32 回行う必要があります。 また、COM_CHANGE_USER コマンドには、文字列長が適切にチェックされない問題も存在します。この問題を利用することにより、ローカルの攻撃者は、16 文字以上のパスワードを送りつけることにより、スタック上の saved instruction pointer を上書きしバッファオーバーフローを発生させることにより、MySQL を実行しているユーザの権限にて任意のコードを実行することが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "MySQL AB",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:mysql:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.23.54 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.1 ",
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ550",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_550",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "mysql",
-          "url": "http://www.miraclelinux.com/support/update/data/mysql.html"
-        },
-        {
-          "type": "vendor",
-          "name": "MySQL",
-          "vulinfoid": "Top Page",
-          "url": "http://www.mysql.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2002:288",
-          "url": "http://rhn.redhat.com/errata/RHSA-2002-288.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "550 MySQL Security Update 0.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&amp;nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2003-7",
-          "url": "http://www.turbolinux.com/security/2003/TLSA-2003-7.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2002:288",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-288J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2003-7",
-          "url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-7j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2002-1375",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1375"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2002-1375",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1375"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6373",
-          "url": "http://www.securityfocus.com/bid/6373"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6375",
-          "url": "http://www.securityfocus.com/bid/6375"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2002-12-12T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2002-000318",
+	"vulinfodata": {
+		"title": "MySQL の COM_CHANGE_USER コマンドにおける任意のコードを実行される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  MySQL においてユーザ切り替えのために用いられる COM_CHANGE_USER コマンドには、パスワード認証の実装に不備が存在します。 MySQL は、COM_CHANGE_USER コマンドを用いて別アカウントへ切り替える際、入力されたパスワードの妥当性チェックを入力された文字数単位で行います。  このため、ローカルの攻撃者は 1 文字単位でのパスワード総当り攻撃を行うことにより、他のアカウント (root を含む) のパスワードの推測が容易にできる可能性があります 尚、COM_CHANGE_USER コマンドを利用した場合、パスワードの文字セットは最大で 32 文字に設定されているため、総当り攻撃は 32 回行う必要があります。 また、COM_CHANGE_USER コマンドには、文字列長が適切にチェックされない問題も存在します。この問題を利用することにより、ローカルの攻撃者は、16 文字以上のパスワードを送りつけることにより、スタック上の saved instruction pointer を上書きしバッファオーバーフローを発生させることにより、MySQL を実行しているユーザの権限にて任意のコードを実行することが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "MySQL AB",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:mysql:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.23.54 およびそれ以前"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1 ",
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ550",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_550",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "mysql",
+					"url": "http://www.miraclelinux.com/support/update/data/mysql.html"
+				},
+				{
+					"type": "vendor",
+					"name": "MySQL",
+					"vulinfoid": "Top Page",
+					"url": "http://www.mysql.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2002:288",
+					"url": "http://rhn.redhat.com/errata/RHSA-2002-288.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "550 MySQL Security Update 0.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&amp;nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2003-7",
+					"url": "http://www.turbolinux.com/security/2003/TLSA-2003-7.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2002:288",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-288J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2003-7",
+					"url": "http://www.turbolinux.co.jp/security/2003/TLSA-2003-7j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2002-1375",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1375"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2002-1375",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1375"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6373",
+					"url": "http://www.securityfocus.com/bid/6373"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6375",
+					"url": "http://www.securityfocus.com/bid/6375"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2002-12-12T00:00:00+09:00"
+	}
 }

@@ -1,116 +1,116 @@
 {
-  "vulinfoid": "JVNDB-2009-001086",
-  "vulinfodata": {
-    "title": "GE Fanuc Proficy HMI/SCADA iFIX の認証機能における脆弱性",
-    "vulinfodescription": {
-      "overview": "GE Fanuc iFIX は Human Machine Interface コンポーネントを持つ、Microsoft Windows CE、NT、2000、Server 2003、XP および Vista 上で動作する SCADA クライアント/サーバソフトウエアです。iFIX の認証に脆弱性が存在します。ユーザ名およびパスワードはクライアント側のローカルファイルにて保存されており、パスワードは強度の低いアルゴリズムで暗号化されています。GE Fanuc によると：  Attackers can gain copies of this file in two ways. The first way requires that an attacker have an interactive session with the computer containing the file, such as a direct login, or through a remote terminal session, VNC, or some other remote session providing access to a command shell. Using the shell, the attacker can simply copy the file and extract the passwords at some later point. Another way an attacker can gain access to this file is by intercepting the file over the network. This can occur if the file is shared between two computers using Microsoft WindowsR network sharing. In this case, an attacker may be able to recreate the file by using a network sniffer to monitor network traffic between them.   iFIX の認証はクライアント内で行われるため、攻撃者によって認証モジュールを改ざんおよび置換される可能性があります。GE Fanuc によると：  Authentication and authorization of users are implemented through certain program modules. These modules can be modified at the binary level to bypass user authentication. To exploit this type of attack, an attacker needs to be able to launch unauthorized applications from an interactive shell.  また、iFIX は Technical Cyber Security Alert TA09-020A にて公表されている “Microsoft Windows 自動実行機能の無効化における注意点” の影響を受ける可能性もあります。自動実行機能を利用して実行された任意のコードは iFIX Enviroment Protection を迂回し、結果として認証モジュールを改ざんおよび置換される可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "GE Fanuc",
-          "productname": "HMI/SCADA - iFIX",
-          "cpe": {
-            "text": "cpe:/a:ge_fanuc:ifix",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.0 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃者によって認証情報が含まれているファイルがアクセスされたり、またネットワークトラフィックを傍受される可能性があります。結果として、攻撃者による iFIX システムへの不正アクセスが可能となります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2009年2月13日現在対策方法はありません。  [ワークアラウンドを実施する] なお、GE Fanuc より以下の回避策を適用することで影響を軽減できる可能性が示されています。   　・iFix HMI/SCADA ネットワークを社内ネットワークから分離する 　・iFIX ローカルディレクトリを共有しない 　・iFix ノードを読み取り専用に設定する 　・\"Environment Protection\" を有効にする 　・Windows の自動実行機能を無効化する "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "GE Fanuc",
-          "vulinfoid": "Security Issue: CERT Reported Vulnerabilities in iFIX Security",
-          "url": "http://support.gefanuc.com/support/index?page=kbchannel&id=S:KB13253&actp=search"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2009-0216",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0216"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "48691",
-          "url": "http://xforce.iss.net/xforce/xfdb/48691"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#310355",
-          "url": "http://jvn.jp/cert/JVNVU310355/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2009-0216",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-0216"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "33739",
-          "url": "http://www.securityfocus.com/bid/33739"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Technical Cyber Security Alert",
-          "vulinfoid": "TA09-020A",
-          "url": "http://www.us-cert.gov/cas/techalerts/TA09-020A.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#310355",
-          "url": "http://www.kb.cert.org/vuls/id/310355"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-255",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
-          "title": "証明書・パスワードの管理"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2009年03月19日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2009-03-19T12:01:49+09:00",
-    "datelastupdated": "2009-03-19T12:01:49+09:00",
-    "datepublic": "2009-02-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2009-001086",
+	"vulinfodata": {
+		"title": "GE Fanuc Proficy HMI/SCADA iFIX の認証機能における脆弱性",
+		"vulinfodescription": {
+			"overview": "GE Fanuc iFIX は Human Machine Interface コンポーネントを持つ、Microsoft Windows CE、NT、2000、Server 2003、XP および Vista 上で動作する SCADA クライアント/サーバソフトウエアです。iFIX の認証に脆弱性が存在します。ユーザ名およびパスワードはクライアント側のローカルファイルにて保存されており、パスワードは強度の低いアルゴリズムで暗号化されています。GE Fanuc によると：  Attackers can gain copies of this file in two ways. The first way requires that an attacker have an interactive session with the computer containing the file, such as a direct login, or through a remote terminal session, VNC, or some other remote session providing access to a command shell. Using the shell, the attacker can simply copy the file and extract the passwords at some later point. Another way an attacker can gain access to this file is by intercepting the file over the network. This can occur if the file is shared between two computers using Microsoft WindowsR network sharing. In this case, an attacker may be able to recreate the file by using a network sniffer to monitor network traffic between them.   iFIX の認証はクライアント内で行われるため、攻撃者によって認証モジュールを改ざんおよび置換される可能性があります。GE Fanuc によると：  Authentication and authorization of users are implemented through certain program modules. These modules can be modified at the binary level to bypass user authentication. To exploit this type of attack, an attacker needs to be able to launch unauthorized applications from an interactive shell.  また、iFIX は Technical Cyber Security Alert TA09-020A にて公表されている “Microsoft Windows 自動実行機能の無効化における注意点” の影響を受ける可能性もあります。自動実行機能を利用して実行された任意のコードは iFIX Enviroment Protection を迂回し、結果として認証モジュールを改ざんおよび置換される可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "GE Fanuc",
+					"productname": "HMI/SCADA - iFIX",
+					"cpe": {
+						"text": "cpe:/a:ge_fanuc:ifix",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.0 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃者によって認証情報が含まれているファイルがアクセスされたり、またネットワークトラフィックを傍受される可能性があります。結果として、攻撃者による iFIX システムへの不正アクセスが可能となります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2009年2月13日現在対策方法はありません。  [ワークアラウンドを実施する] なお、GE Fanuc より以下の回避策を適用することで影響を軽減できる可能性が示されています。   　・iFix HMI/SCADA ネットワークを社内ネットワークから分離する 　・iFIX ローカルディレクトリを共有しない 　・iFix ノードを読み取り専用に設定する 　・\"Environment Protection\" を有効にする 　・Windows の自動実行機能を無効化する "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GE Fanuc",
+					"vulinfoid": "Security Issue: CERT Reported Vulnerabilities in iFIX Security",
+					"url": "http://support.gefanuc.com/support/index?page=kbchannel&id=S:KB13253&actp=search"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2009-0216",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0216"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "48691",
+					"url": "http://xforce.iss.net/xforce/xfdb/48691"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#310355",
+					"url": "http://jvn.jp/cert/JVNVU310355/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2009-0216",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-0216"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "33739",
+					"url": "http://www.securityfocus.com/bid/33739"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA09-020A",
+					"url": "http://www.us-cert.gov/cas/techalerts/TA09-020A.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#310355",
+					"url": "http://www.kb.cert.org/vuls/id/310355"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-255",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-255.html",
+					"title": "証明書・パスワードの管理"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2009年03月19日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2009-03-19T12:01:49+09:00",
+		"datelastupdated": "2009-03-19T12:01:49+09:00",
+		"datepublic": "2009-02-13T00:00:00+09:00"
+	}
 }

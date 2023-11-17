@@ -1,191 +1,191 @@
 {
-  "vulinfoid": "JVNDB-2013-001551",
-  "vulinfodata": {
-    "title": "PostgreSQL におけるサービス運用妨害 (サーバクラッシュ) の脆弱性",
-    "vulinfodescription": {
-      "overview": "PostgreSQL は、backend/utils/adt/enum.c 内の enum_recv 関数について適切に宣言しないため、間違った引数で呼び出され、サービス運用妨害 (サーバクラッシュ) 状態となる、または重要なプロセスメモリを読まれる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "PostgreSQL.org",
-          "productname": "PostgreSQL",
-          "cpe": {
-            "text": "cpe:/a:postgresql:postgresql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.3.23 未満の 8.3.x",
-            "8.4.16 未満の 8.4.x",
-            "9.0.12 未満の 9.0.x",
-            "9.1.8 未満の 9.1.x",
-            "9.2.3 未満の 9.2.x"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 5 server)",
-            "Desktop (v. 5 client)",
-            "Desktop (v. 6)",
-            "HPC Node (v. 6)",
-            "Server (v. 6)",
-            "Server AUS (v. 6.4)",
-            "Server EUS (v. 6.4.z)",
-            "Workstation (v. 6)"
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "RHEL Desktop Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:rhel_desktop_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(v. 5 client)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:L/Au:S/C:N/I:N/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "リモート認証されたユーザにより、配列のインデックスエラーおよび領域外メモリの読み込み (out-of-bounds read) を誘発する巧妙に細工された SQL コマンドを介して、サービス運用妨害 (サーバクラッシュ) 状態となる、または重要なプロセスメモリを読まれる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Debian Security Advisory",
-          "vulinfoid": "DSA-2630",
-          "url": "http://www.debian.org/security/2013/dsa-2630"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2013-2123",
-          "url": "http://lists.fedoraproject.org/pipermail/package-announce/2013-February/098586.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:0319",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00060.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2013:0318",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00059.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PostgreSQL Release Notes",
-          "vulinfoid": "Release 8.3.23",
-          "url": "http://www.postgresql.org/docs/8.3/static/release-8-3-23.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PostgreSQL Release Notes",
-          "vulinfoid": "Release 9.2.3",
-          "url": "http://www.postgresql.org/docs/9.2/static/release-9-2-3.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PostgreSQL Release Notes",
-          "vulinfoid": "Release 9.1.8",
-          "url": "http://www.postgresql.org/docs/9.1/static/release-9-1-8.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PostgreSQL Release Notes",
-          "vulinfoid": "Release 9.0.12",
-          "url": "http://www.postgresql.org/docs/9.0/static/release-9-0-12.html"
-        },
-        {
-          "type": "vendor",
-          "name": "PostgreSQL Release Notes",
-          "vulinfoid": "Release 8.4.16",
-          "url": "http://www.postgresql.org/docs/8.4/static/release-8-4-16.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 907892",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=907892"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2013:1475",
-          "url": "http://rhn.redhat.com/errata/RHSA-2013-1475.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "CVE-2013-0255 Array Index error vulnerability in PostgreSQL",
-          "url": "https://blogs.oracle.com/sunsecurity/entry/cve_2013_0255_array_index"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1717-1",
-          "url": "http://www.ubuntu.com/usn/USN-1717-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2013-0255",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0255"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2013-0255",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0255"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年02月15日]\\n  掲載\\n[2013年03月12日]\\n  ベンダ情報：Debian (DSA-2630) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2013:0319) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2013:0318) を追加\\n[2013年04月05日]\\n  ベンダ情報：オラクル (CVE-2013-0255 Array Index error vulnerability in PostgreSQL) を追加\\n[2014年02月18日]\\n  影響を受けるシステム：レッドハット (RHSA-2013:1475) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1475) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-02-15T16:48:08+09:00",
-    "datelastupdated": "2014-02-18T15:26:50+09:00",
-    "datepublic": "2013-02-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2013-001551",
+	"vulinfodata": {
+		"title": "PostgreSQL におけるサービス運用妨害 (サーバクラッシュ) の脆弱性",
+		"vulinfodescription": {
+			"overview": "PostgreSQL は、backend/utils/adt/enum.c 内の enum_recv 関数について適切に宣言しないため、間違った引数で呼び出され、サービス運用妨害 (サーバクラッシュ) 状態となる、または重要なプロセスメモリを読まれる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "PostgreSQL.org",
+					"productname": "PostgreSQL",
+					"cpe": {
+						"text": "cpe:/a:postgresql:postgresql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.3.23 未満の 8.3.x",
+						"8.4.16 未満の 8.4.x",
+						"9.0.12 未満の 9.0.x",
+						"9.1.8 未満の 9.1.x",
+						"9.2.3 未満の 9.2.x"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 5 server)",
+						"Desktop (v. 5 client)",
+						"Desktop (v. 6)",
+						"HPC Node (v. 6)",
+						"Server (v. 6)",
+						"Server AUS (v. 6.4)",
+						"Server EUS (v. 6.4.z)",
+						"Workstation (v. 6)"
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "RHEL Desktop Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:rhel_desktop_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(v. 5 client)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:L/Au:S/C:N/I:N/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "リモート認証されたユーザにより、配列のインデックスエラーおよび領域外メモリの読み込み (out-of-bounds read) を誘発する巧妙に細工された SQL コマンドを介して、サービス運用妨害 (サーバクラッシュ) 状態となる、または重要なプロセスメモリを読まれる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Debian Security Advisory",
+					"vulinfoid": "DSA-2630",
+					"url": "http://www.debian.org/security/2013/dsa-2630"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2013-2123",
+					"url": "http://lists.fedoraproject.org/pipermail/package-announce/2013-February/098586.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:0319",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00060.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2013:0318",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00059.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PostgreSQL Release Notes",
+					"vulinfoid": "Release 8.3.23",
+					"url": "http://www.postgresql.org/docs/8.3/static/release-8-3-23.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PostgreSQL Release Notes",
+					"vulinfoid": "Release 9.2.3",
+					"url": "http://www.postgresql.org/docs/9.2/static/release-9-2-3.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PostgreSQL Release Notes",
+					"vulinfoid": "Release 9.1.8",
+					"url": "http://www.postgresql.org/docs/9.1/static/release-9-1-8.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PostgreSQL Release Notes",
+					"vulinfoid": "Release 9.0.12",
+					"url": "http://www.postgresql.org/docs/9.0/static/release-9-0-12.html"
+				},
+				{
+					"type": "vendor",
+					"name": "PostgreSQL Release Notes",
+					"vulinfoid": "Release 8.4.16",
+					"url": "http://www.postgresql.org/docs/8.4/static/release-8-4-16.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 907892",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=907892"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2013:1475",
+					"url": "http://rhn.redhat.com/errata/RHSA-2013-1475.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "CVE-2013-0255 Array Index error vulnerability in PostgreSQL",
+					"url": "https://blogs.oracle.com/sunsecurity/entry/cve_2013_0255_array_index"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1717-1",
+					"url": "http://www.ubuntu.com/usn/USN-1717-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2013-0255",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0255"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2013-0255",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-0255"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年02月15日]\\n  掲載\\n[2013年03月12日]\\n  ベンダ情報：Debian (DSA-2630) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2013:0319) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2013:0318) を追加\\n[2013年04月05日]\\n  ベンダ情報：オラクル (CVE-2013-0255 Array Index error vulnerability in PostgreSQL) を追加\\n[2014年02月18日]\\n  影響を受けるシステム：レッドハット (RHSA-2013:1475) の情報を追加\\n  ベンダ情報：レッドハット (RHSA-2013:1475) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2013-02-15T16:48:08+09:00",
+		"datelastupdated": "2014-02-18T15:26:50+09:00",
+		"datepublic": "2013-02-07T00:00:00+09:00"
+	}
 }

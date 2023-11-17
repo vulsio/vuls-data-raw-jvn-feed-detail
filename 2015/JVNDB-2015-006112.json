@@ -1,103 +1,103 @@
 {
-  "vulinfoid": "JVNDB-2015-006112",
-  "vulinfodata": {
-    "title": "Lenovo Solution Center に権限昇格ほか複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Lenovo Solution Center には複数の脆弱性が存在し、攻撃者による SYSTEM 権限での任意のコード実行が可能です。  重要な情報に対するアクセス権の不適切な割り当て (CWE-732) Lenovo Solution Center を起動すると、SYSTEM 権限で動作するプロセス LSCTaskService が作成されます。このプロセスは 55555番ポートを使って HTTP daemon を実行することで、GET リクエストや POST リクエストによる LSCController.dll モジュール内のメソッドの実行を実現しています。LSCController.dll には安全ではないメソッドが多数含まれています。その1つである RunInstaller は、%APPDATA%\\LSC\\Local Store ディレクトリに置かれた任意のコードを実するよう設計されています。このディレクトリは、システムにログイン可能な全てのユーザに対して作成されるため、ユーザは、システムの管理者権限を持たなくても、このディレクトリへの書込みを行うことができます。この脆弱性を悪用することで、一般ユーザは SYSTEM 権限で任意のコードを実行することができます。  CWE-732: Incorrect Permission Assignment for Critical Resource http://cwe.mitre.org/data/definitions/732.html  ディレクトリトラバーサル (CWE-22) ディレクトリトラバーサルの脆弱性を悪用することで、攻撃者は、ユーザプロファイルが存在するドライブ上の任意の場所に存在するコードを実行することができます。脆弱なシステム上の予測可能な場所に攻撃者が任意のコードを設置することができれば、攻撃者は SYSTEM 権限で任意のコードを実行することができます。  CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') http://cwe.mitre.org/data/definitions/22.html  クロスサイトリクエストフォージェリ (CWE-352) Lenovo Solution Center の LSCTaskService にはクロスサイトリクエストフォージェリ (CSRF) の脆弱性が存在します。CSRF を悪用することで、攻撃者は悪性のあるいは細工されたウェブサイトを使い SYSTEM 権限でコードを実行することができます。  CWE-352: Cross-Site Request Forgery (CSRF) http://cwe.mitre.org/data/definitions/352.html  これらの脆弱性はいずれも、ユーザが Lenovo Solution Center を一度は起動していることが成立の条件になると考えられます。また Lenovo Solution Center を終了することで、LSCTaskService プロセスが停止すると考えられます。  Lenovo は次の見解を表明しています。  \"Lenovo was recently alerted by a cyber-security threat intelligence partner and The CERT/CC to a vulnerability report concerning its Lenovo Solution Center (LSC) application. We are urgently assessing the vulnerability report and will provide an update and applicable fixes as rapidly as possible. Additional information and updates will be posted to this Lenovo security advisory page (https://support.lenovo.com/us/en/product_security/len_4326) as they become available.\"  Lenovo は先日、サイバーセキュリティにおけるパートナーと CERT/CC から、Lenovo Solution Center (LSC) に関する脆弱性の連絡を受けました。我々は最優先で脆弱性の報告内容を精査しており、可能な限り早急に、更新および必要な修正を提供する所存です。更なる情報やアップデートは、適宜 Lenovo のセキュリティアドバイザリのページに掲載される予定です。  Lenovo のセキュリティアドバイザリのページ https://support.lenovo.com/us/en/product_security/len_4326 "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Lenovo",
-          "productname": "Lenovo Solution Center",
-          "cpe": {
-            "text": "cpe:/a:lenovo:solution_center",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "10",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
-        }
-      ],
-      "impactitem": {
-        "description": "Lenovo Solution Center を起動したユーザに細工された HTML ドキュメント (ウェブサイト、HTML メール、添付ファイルなど) を閲覧させることで、攻撃者は、SYSTEM 権限で任意のコードを実行することが可能です。また、システムにログイン可能なユーザ自身が SYSTEM 権限で任意のコードを実行することも可能です。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2015年12月7日現在、現実的な対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * 実行中の Lenovo Solution Center を終了する * Lenovo Solution Center をアンインストールする"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Lenovo Security Advisory",
-          "vulinfoid": "LEN-4326",
-          "url": "https://support.lenovo.com/jp/ja/product_security/len_4326"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94912021",
-          "url": "http://jvn.jp/vu/JVNVU94912021/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#294607",
-          "url": "http://www.kb.cert.org/vuls/id/294607"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "oemdrop",
-          "url": "http://rol.im/oemdrop/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-352",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
-          "title": "クロスサイトリクエストフォージェリ"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-22",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
-          "title": "パス・トラバーサル"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年12月08日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-12-08T16:58:02+09:00",
-    "datelastupdated": "2015-12-08T16:58:02+09:00",
-    "datepublic": "2015-12-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-006112",
+	"vulinfodata": {
+		"title": "Lenovo Solution Center に権限昇格ほか複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Lenovo Solution Center には複数の脆弱性が存在し、攻撃者による SYSTEM 権限での任意のコード実行が可能です。  重要な情報に対するアクセス権の不適切な割り当て (CWE-732) Lenovo Solution Center を起動すると、SYSTEM 権限で動作するプロセス LSCTaskService が作成されます。このプロセスは 55555番ポートを使って HTTP daemon を実行することで、GET リクエストや POST リクエストによる LSCController.dll モジュール内のメソッドの実行を実現しています。LSCController.dll には安全ではないメソッドが多数含まれています。その1つである RunInstaller は、%APPDATA%\\LSC\\Local Store ディレクトリに置かれた任意のコードを実するよう設計されています。このディレクトリは、システムにログイン可能な全てのユーザに対して作成されるため、ユーザは、システムの管理者権限を持たなくても、このディレクトリへの書込みを行うことができます。この脆弱性を悪用することで、一般ユーザは SYSTEM 権限で任意のコードを実行することができます。  CWE-732: Incorrect Permission Assignment for Critical Resource http://cwe.mitre.org/data/definitions/732.html  ディレクトリトラバーサル (CWE-22) ディレクトリトラバーサルの脆弱性を悪用することで、攻撃者は、ユーザプロファイルが存在するドライブ上の任意の場所に存在するコードを実行することができます。脆弱なシステム上の予測可能な場所に攻撃者が任意のコードを設置することができれば、攻撃者は SYSTEM 権限で任意のコードを実行することができます。  CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') http://cwe.mitre.org/data/definitions/22.html  クロスサイトリクエストフォージェリ (CWE-352) Lenovo Solution Center の LSCTaskService にはクロスサイトリクエストフォージェリ (CSRF) の脆弱性が存在します。CSRF を悪用することで、攻撃者は悪性のあるいは細工されたウェブサイトを使い SYSTEM 権限でコードを実行することができます。  CWE-352: Cross-Site Request Forgery (CSRF) http://cwe.mitre.org/data/definitions/352.html  これらの脆弱性はいずれも、ユーザが Lenovo Solution Center を一度は起動していることが成立の条件になると考えられます。また Lenovo Solution Center を終了することで、LSCTaskService プロセスが停止すると考えられます。  Lenovo は次の見解を表明しています。  \"Lenovo was recently alerted by a cyber-security threat intelligence partner and The CERT/CC to a vulnerability report concerning its Lenovo Solution Center (LSC) application. We are urgently assessing the vulnerability report and will provide an update and applicable fixes as rapidly as possible. Additional information and updates will be posted to this Lenovo security advisory page (https://support.lenovo.com/us/en/product_security/len_4326) as they become available.\"  Lenovo は先日、サイバーセキュリティにおけるパートナーと CERT/CC から、Lenovo Solution Center (LSC) に関する脆弱性の連絡を受けました。我々は最優先で脆弱性の報告内容を精査しており、可能な限り早急に、更新および必要な修正を提供する所存です。更なる情報やアップデートは、適宜 Lenovo のセキュリティアドバイザリのページに掲載される予定です。  Lenovo のセキュリティアドバイザリのページ https://support.lenovo.com/us/en/product_security/len_4326 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Lenovo",
+					"productname": "Lenovo Solution Center",
+					"cpe": {
+						"text": "cpe:/a:lenovo:solution_center",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "10",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+				}
+			],
+			"impactitem": {
+				"description": "Lenovo Solution Center を起動したユーザに細工された HTML ドキュメント (ウェブサイト、HTML メール、添付ファイルなど) を閲覧させることで、攻撃者は、SYSTEM 権限で任意のコードを実行することが可能です。また、システムにログイン可能なユーザ自身が SYSTEM 権限で任意のコードを実行することも可能です。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2015年12月7日現在、現実的な対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  * 実行中の Lenovo Solution Center を終了する * Lenovo Solution Center をアンインストールする"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Lenovo Security Advisory",
+					"vulinfoid": "LEN-4326",
+					"url": "https://support.lenovo.com/jp/ja/product_security/len_4326"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94912021",
+					"url": "http://jvn.jp/vu/JVNVU94912021/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#294607",
+					"url": "http://www.kb.cert.org/vuls/id/294607"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "oemdrop",
+					"url": "http://rol.im/oemdrop/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-352",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+					"title": "クロスサイトリクエストフォージェリ"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年12月08日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2015-12-08T16:58:02+09:00",
+		"datelastupdated": "2015-12-08T16:58:02+09:00",
+		"datepublic": "2015-12-04T00:00:00+09:00"
+	}
 }

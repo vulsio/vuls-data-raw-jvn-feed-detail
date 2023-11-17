@@ -1,123 +1,123 @@
 {
-  "vulinfoid": "JVNDB-2016-004542",
-  "vulinfodata": {
-    "title": "QEMU の hw/scsi/esp.c の esp_do_dma 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "QEMU (別名 Quick Emulator) の hw/scsi/esp.c の esp_do_dma 関数には、ESP/NCR53C9x コントローラのエミュレーションサポートを伴ってビルドされている場合、サービス運用妨害 (境界外書き込みおよび QEMU プロセスクラッシュ) 状態にされる、または QEMU ホスト上で任意コードを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-787: Out-of-bounds Write (境界外書き込み) と識別されています。 http://cwe.mitre.org/data/definitions/787.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "12.04 LTS",
-            "14.04 LTS",
-            "16.04 LTS"
-          ]
-        },
-        {
-          "name": "Fabrice Bellard",
-          "productname": "QEMU",
-          "cpe": {
-            "text": "cpe:/a:qemu:qemu",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "ローカルのゲスト OS 管理者により、ESP コマンドバッファに読み込まれる DMA に関する問題によって、サービス運用妨害 (境界外書き込みおよび QEMU プロセスクラッシュ) 状態にされる、または QEMU ホスト上で任意コードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "QEMU",
-          "vulinfoid": "scsi: esp: fix migration",
-          "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=cc96677469388bad3d66479379735cf75db069e3"
-        },
-        {
-          "type": "vendor",
-          "name": "QEMU",
-          "vulinfoid": "scsi: esp: make cmdbuf big enough for maximum CDB size",
-          "url": "http://git.qemu.org/?p=qemu.git;a=commit;h=926cde5f3e4d2504ed161ed0cb771ac7cad6fd11"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-3047-1",
-          "url": "http://www.ubuntu.com/usn/USN-3047-1/"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-3047-2",
-          "url": "http://www.ubuntu.com/usn/USN-3047-2/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2016-6351",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6351"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2016-6351",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6351"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2016年09月09日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2016-09-09T10:38:35+09:00",
-    "datelastupdated": "2016-09-09T10:38:35+09:00",
-    "datepublic": "2016-06-16T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2016-004542",
+	"vulinfodata": {
+		"title": "QEMU の hw/scsi/esp.c の esp_do_dma 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "QEMU (別名 Quick Emulator) の hw/scsi/esp.c の esp_do_dma 関数には、ESP/NCR53C9x コントローラのエミュレーションサポートを伴ってビルドされている場合、サービス運用妨害 (境界外書き込みおよび QEMU プロセスクラッシュ) 状態にされる、または QEMU ホスト上で任意コードを実行される脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-787: Out-of-bounds Write (境界外書き込み) と識別されています。 http://cwe.mitre.org/data/definitions/787.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"12.04 LTS",
+						"14.04 LTS",
+						"16.04 LTS"
+					]
+				},
+				{
+					"name": "Fabrice Bellard",
+					"productname": "QEMU",
+					"cpe": {
+						"text": "cpe:/a:qemu:qemu",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "ローカルのゲスト OS 管理者により、ESP コマンドバッファに読み込まれる DMA に関する問題によって、サービス運用妨害 (境界外書き込みおよび QEMU プロセスクラッシュ) 状態にされる、または QEMU ホスト上で任意コードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "QEMU",
+					"vulinfoid": "scsi: esp: fix migration",
+					"url": "http://git.qemu.org/?p=qemu.git;a=commit;h=cc96677469388bad3d66479379735cf75db069e3"
+				},
+				{
+					"type": "vendor",
+					"name": "QEMU",
+					"vulinfoid": "scsi: esp: make cmdbuf big enough for maximum CDB size",
+					"url": "http://git.qemu.org/?p=qemu.git;a=commit;h=926cde5f3e4d2504ed161ed0cb771ac7cad6fd11"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-3047-1",
+					"url": "http://www.ubuntu.com/usn/USN-3047-1/"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-3047-2",
+					"url": "http://www.ubuntu.com/usn/USN-3047-2/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2016-6351",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6351"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2016-6351",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-6351"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2016年09月09日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2016-09-09T10:38:35+09:00",
+		"datelastupdated": "2016-09-09T10:38:35+09:00",
+		"datepublic": "2016-06-16T00:00:00+09:00"
+	}
 }

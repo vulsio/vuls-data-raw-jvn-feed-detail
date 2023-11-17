@@ -1,250 +1,250 @@
 {
-  "vulinfoid": "JVNDB-2004-000106",
-  "vulinfodata": {
-    "title": "tcpdump の isakmp_id_print() 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "tcpdump には、isakmp_id_print() 関数において ISAKMP ID ペイロードのペイロード長の取り扱いに不備が存在し、キャプチャするパケット長を 325 byte 以上に設定している場合に細工された ISAKMP パケットを処理することで tcpdump がクラッシュする脆弱性が存在します。なお、本脆弱性は -v オプションを指定してパケットの冗長表示を有効にしている場合にのみ再現します。  また、本脆弱性は Rapid7 より配布されている Striker テストツールにより確認されている脆弱性です。その他いくつかの脆弱性が確認されています。詳細は JVNVU#725401 (JVN) をご確認ください。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "The Tcpdump Group",
-          "productname": "tcpdump",
-          "cpe": {
-            "text": "cpe:/a:tcpdump:tcpdump",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.8.1 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0 ",
-            "2.1 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Advanced Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_advanced_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Appliance Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_appliance_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0 (hosting) ",
-            "1.0 (workgroup) "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Desktop",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10 "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.1  ",
-            "6.5  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Workstation",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.0  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux Desktop",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux Advanced Workstation",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux_advanced_workstation",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者が細工した ISAKMP パケットを tcpdump が処理することで tcpdump がクラッシュし、結果としてサービス運用妨害 (DoS) 状態となる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "tcpdump (V2.x)",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1099"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2004:219",
-          "url": "https://rhn.redhat.com/errata/RHSA-2004-219.html"
-        },
-        {
-          "type": "vendor",
-          "name": "tcpdump-changes",
-          "vulinfoid": "3.8.2 tcpdump release",
-          "url": "http://www.tcpdump.org/tcpdump-changes.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2004-16",
-          "url": "http://www.turbolinux.com/security/2004/TLSA-2004-16.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2004:219",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-219J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2004-16",
-          "url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-16j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2004-0184",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0184"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "15679",
-          "url": "http://xforce.iss.net/xforce/xfdb/15679"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#725401",
-          "url": "http://jvn.jp/cert/JVNVU%23725401/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2004-0184",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0184"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "10004",
-          "url": "http://www.securityfocus.com/bid/10004"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1009593",
-          "url": "http://www.securitytracker.com/alerts/2004/Mar/1009593.html"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#492558",
-          "url": "http://www.kb.cert.org/vuls/id/492558"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載\\n[2007年08月07日]\\n  影響を受けるシステム：ミラクル・リナックス (tcpdump (V2.x)) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (tcpdump (V2.x)) 追加。"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-08-07T12:04:07+09:00",
-    "datepublic": "2004-03-30T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2004-000106",
+	"vulinfodata": {
+		"title": "tcpdump の isakmp_id_print() 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "tcpdump には、isakmp_id_print() 関数において ISAKMP ID ペイロードのペイロード長の取り扱いに不備が存在し、キャプチャするパケット長を 325 byte 以上に設定している場合に細工された ISAKMP パケットを処理することで tcpdump がクラッシュする脆弱性が存在します。なお、本脆弱性は -v オプションを指定してパケットの冗長表示を有効にしている場合にのみ再現します。  また、本脆弱性は Rapid7 より配布されている Striker テストツールにより確認されている脆弱性です。その他いくつかの脆弱性が確認されています。詳細は JVNVU#725401 (JVN) をご確認ください。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "The Tcpdump Group",
+					"productname": "tcpdump",
+					"cpe": {
+						"text": "cpe:/a:tcpdump:tcpdump",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.8.1 およびそれ以前"
+					]
+				},
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0 ",
+						"2.1 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Advanced Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_advanced_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Appliance Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_appliance_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0 (hosting) ",
+						"1.0 (workgroup) "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Desktop",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10 "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.1  ",
+						"6.5  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Workstation",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.0  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux Desktop",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux Advanced Workstation",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux_advanced_workstation",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者が細工した ISAKMP パケットを tcpdump が処理することで tcpdump がクラッシュし、結果としてサービス運用妨害 (DoS) 状態となる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "tcpdump (V2.x)",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=1099"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2004:219",
+					"url": "https://rhn.redhat.com/errata/RHSA-2004-219.html"
+				},
+				{
+					"type": "vendor",
+					"name": "tcpdump-changes",
+					"vulinfoid": "3.8.2 tcpdump release",
+					"url": "http://www.tcpdump.org/tcpdump-changes.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2004-16",
+					"url": "http://www.turbolinux.com/security/2004/TLSA-2004-16.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2004:219",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2004-219J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2004-16",
+					"url": "http://www.turbolinux.co.jp/security/2004/TLSA-2004-16j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2004-0184",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0184"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "15679",
+					"url": "http://xforce.iss.net/xforce/xfdb/15679"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#725401",
+					"url": "http://jvn.jp/cert/JVNVU%23725401/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2004-0184",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2004-0184"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "10004",
+					"url": "http://www.securityfocus.com/bid/10004"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1009593",
+					"url": "http://www.securitytracker.com/alerts/2004/Mar/1009593.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#492558",
+					"url": "http://www.kb.cert.org/vuls/id/492558"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載\\n[2007年08月07日]\\n  影響を受けるシステム：ミラクル・リナックス (tcpdump (V2.x)) の情報追加。\\n  ベンダ情報: ミラクル・リナックス (tcpdump (V2.x)) 追加。"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-08-07T12:04:07+09:00",
+		"datepublic": "2004-03-30T00:00:00+09:00"
+	}
 }

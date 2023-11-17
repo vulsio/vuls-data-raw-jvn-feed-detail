@@ -1,177 +1,177 @@
 {
-  "vulinfoid": "JVNDB-2014-003813",
-  "vulinfodata": {
-    "title": "OpenSSL の t1_lib.c 内の ssl_parse_serverhello_tlsext 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL の t1_lib.c 内の ssl_parse_serverhello_tlsext 関数には、マルチスレッドおよびセッション再開 (session resumption）が使用されている場合、競合状態により、サービス運用妨害 (メモリの上書きおよびクライアントのアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.0 以上 1.0.0n 未満",
-            "1.0.1 以上 1.0.1i 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "リモートの SSL サーバにより、lliptic Curve (EC) Supported Point Formats Extension データを送信されることで、サービス運用妨害 (メモリの上書きおよびクライアントのアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBMU03267",
-          "url": "http://marc.info/?l=bugtraq&m=142624590206005&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBMU03304",
-          "url": "http://marc.info/?l=bugtraq&amp;m=142791032306609&amp;w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBMU03216",
-          "url": "http://marc.info/?l=bugtraq&m=142350350616251&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBMU03261",
-          "url": "http://marc.info/?l=bugtraq&m=143290522027658&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBMU03263",
-          "url": "http://marc.info/?l=bugtraq&m=143290437727362&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBHF03293",
-          "url": "http://marc.info/?l=bugtraq&amp;m=142660345230545&amp;w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBMU03260",
-          "url": "http://marc.info/?l=bugtraq&m=142495837901899&w=2"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03611",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05150888"
-        },
-        {
-          "type": "vendor",
-          "name": "HPE Security Bulletin",
-          "vulinfoid": "HPSBMU03612",
-          "url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05158380"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1682293",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21682293"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM Support Document",
-          "vulinfoid": "1686997",
-          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21686997"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL",
-          "vulinfoid": "Fix race condition in ssl_parse_serverhello_tlsext",
-          "url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=fb0bc2b273bcc2d5401dd883fe869af4fc74bb21"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "Race condition in ssl_parse_serverhello_tlsext (CVE-2014-3509)",
-          "url": "http://www.openssl.org/news/secadv_20140806.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0197",
-          "url": "http://rhn.redhat.com/errata/RHSA-2015-0197.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisory",
-          "vulinfoid": "Huawei-SA-20141008-OpenSSL",
-          "url": "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-372998.htm"
-        },
-        {
-          "type": "vendor",
-          "name": "Tenable Network Security",
-          "vulinfoid": "[R1] OpenSSL Protocol Downgrade Vulnerability Affects Tenable Products",
-          "url": "http://www.tenable.com/security/tns-2014-06"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-3509",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3509"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-3509",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3509"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-362",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
-          "title": "競合状態"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年08月15日]\\n  掲載\\n[2014年09月29日]\\n  ベンダ情報： Tenable Network Security ([R1] OpenSSL Protocol Downgrade Vulnerability Affects Tenable Products) を追加\\n[2014年11月28日]\\n  ベンダ情報：IBM (1682293) を追加\\n  ベンダ情報：IBM (1686997) を追加\\n  ベンダ情報：Huawei (Huawei-SA-20141008-OpenSSL) を追加\\n[2015年06月15日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03293) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03216) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03260) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03267) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03304) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0197) を追加 \\n[2016年10月07日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03261) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03263) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03611) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03612) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-08-15T16:55:34+09:00",
-    "datelastupdated": "2016-10-07T11:49:13+09:00",
-    "datepublic": "2014-08-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-003813",
+	"vulinfodata": {
+		"title": "OpenSSL の t1_lib.c 内の ssl_parse_serverhello_tlsext 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL の t1_lib.c 内の ssl_parse_serverhello_tlsext 関数には、マルチスレッドおよびセッション再開 (session resumption）が使用されている場合、競合状態により、サービス運用妨害 (メモリの上書きおよびクライアントのアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.0 以上 1.0.0n 未満",
+						"1.0.1 以上 1.0.1i 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "リモートの SSL サーバにより、lliptic Curve (EC) Supported Point Formats Extension データを送信されることで、サービス運用妨害 (メモリの上書きおよびクライアントのアプリケーションクラッシュ) 状態にされるなど、不特定の影響を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBMU03267",
+					"url": "http://marc.info/?l=bugtraq&m=142624590206005&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBMU03304",
+					"url": "http://marc.info/?l=bugtraq&amp;m=142791032306609&amp;w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBMU03216",
+					"url": "http://marc.info/?l=bugtraq&m=142350350616251&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBMU03261",
+					"url": "http://marc.info/?l=bugtraq&m=143290522027658&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBMU03263",
+					"url": "http://marc.info/?l=bugtraq&m=143290437727362&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBHF03293",
+					"url": "http://marc.info/?l=bugtraq&amp;m=142660345230545&amp;w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBMU03260",
+					"url": "http://marc.info/?l=bugtraq&m=142495837901899&w=2"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03611",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05150888"
+				},
+				{
+					"type": "vendor",
+					"name": "HPE Security Bulletin",
+					"vulinfoid": "HPSBMU03612",
+					"url": "https://h20566.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05158380"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1682293",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21682293"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM Support Document",
+					"vulinfoid": "1686997",
+					"url": "http://www-01.ibm.com/support/docview.wss?uid=swg21686997"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL",
+					"vulinfoid": "Fix race condition in ssl_parse_serverhello_tlsext",
+					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=fb0bc2b273bcc2d5401dd883fe869af4fc74bb21"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "Race condition in ssl_parse_serverhello_tlsext (CVE-2014-3509)",
+					"url": "http://www.openssl.org/news/secadv_20140806.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0197",
+					"url": "http://rhn.redhat.com/errata/RHSA-2015-0197.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisory",
+					"vulinfoid": "Huawei-SA-20141008-OpenSSL",
+					"url": "http://www.huawei.com/en/security/psirt/security-bulletins/security-advisories/hw-372998.htm"
+				},
+				{
+					"type": "vendor",
+					"name": "Tenable Network Security",
+					"vulinfoid": "[R1] OpenSSL Protocol Downgrade Vulnerability Affects Tenable Products",
+					"url": "http://www.tenable.com/security/tns-2014-06"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-3509",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3509"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-3509",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3509"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-362",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+					"title": "競合状態"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年08月15日]\\n  掲載\\n[2014年09月29日]\\n  ベンダ情報： Tenable Network Security ([R1] OpenSSL Protocol Downgrade Vulnerability Affects Tenable Products) を追加\\n[2014年11月28日]\\n  ベンダ情報：IBM (1682293) を追加\\n  ベンダ情報：IBM (1686997) を追加\\n  ベンダ情報：Huawei (Huawei-SA-20141008-OpenSSL) を追加\\n[2015年06月15日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03293) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03216) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03260) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03267) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03304) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0197) を追加 \\n[2016年10月07日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03261) を追加\\n  ベンダ情報：ヒューレット・パッカード (HPSBMU03263) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03611) を追加\\n  ベンダ情報：ヒューレット・パッカード・エンタープライズ (HPSBMU03612) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-08-15T16:55:34+09:00",
+		"datelastupdated": "2016-10-07T11:49:13+09:00",
+		"datepublic": "2014-08-06T00:00:00+09:00"
+	}
 }

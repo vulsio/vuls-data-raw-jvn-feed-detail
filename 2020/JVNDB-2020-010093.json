@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2020-010093",
-  "vulinfodata": {
-    "title": "Treck 社製 TCP/IP スタックに複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Treck 社が提供する TCP/IP スタックには次の複数の脆弱性が存在します。  　* ヒープベースのバッファオーバーフロー(CWE-122) - CVE-2020-25066 　* 境界外書き込み (CWE-787) - CVE-2020-27337 　* 境界外読み取り (CWE-125) - CVE-2020-27338 　* 境界外読み取り (CWE-125) - CVE-2020-27336"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "TRECK",
-          "productname": "TCP/IP stack",
-          "cpe": {
-            "text": "cpe:/a:treck:tcp%2fip",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 6.0.1.67 およびそれ以前の下記のコンポーネント"
-          ]
-        },
-        {
-          "name": "日立",
-          "productname": "日立アドバンストサーバ HA8000V シリーズ",
-          "cpe": {
-            "text": "cpe:/a:hitachi:advanced_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "HA8000V シリーズ (CVE-2020-27337)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * Treck HTTP Server コンポーネントの脆弱性に起因し、遠隔の第三者によってサービス運用妨害 (DoS) 状態にされたり、任意のコードを実行されたりする - CVE-2020-25066 * IPv6 コンポーネントの脆弱性に起因し、遠隔の第三者によってサービス運用妨害 (DoS) 状態にされる - CVE-2020-27337 * DHCPv6 コンポーネントの脆弱性に起因し、第三者によってサービス運用妨害 (DoS) 状態にされる - CVE-2020-27338 * IPv6 コンポーネントの脆弱性に起因し、遠隔の第三者によって最大3バイトの情報を窃取される - CVE-2020-27336"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 　* Treck TCP/IP 6.0.1.68 以降のバージョン  [ワークアラウンド] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* HTTP ヘッダーに不正な長さのコンテントを含むパケットを、ファイヤーウォールで遮断する"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "TRECK",
-          "vulinfoid": "Treck is committed to delivering secure, high performing products.",
-          "url": "https://treck.com/vulnerability-response-information"
-        },
-        {
-          "type": "vendor",
-          "name": "サーバ・クライアント製品セキュリティ情報",
-          "vulinfoid": "hitachi-sec-2021-205",
-          "url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_205.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-25066",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25066"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27336",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27336"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27337",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27337"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27338",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27338"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-353-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-353-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94829658",
-          "url": "https://jvn.jp/vu/JVNVU94829658"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94736763",
-          "url": "https://jvn.jp/vu/JVNVU94736763"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-122",
-          "url": "https://cwe.mitre.org/data/definitions/122.html",
-          "title": "ヒープベースのバッファオーバーフロー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-787",
-          "url": "https://cwe.mitre.org/data/definitions/787.html",
-          "title": "境界外書き込み"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-125",
-          "url": "https://cwe.mitre.org/data/definitions/125.html",
-          "title": "境界外読み取り"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-12-22T14:48:02+09:00",
-          "description": "[2020年12月22日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-02-09T14:54:14+09:00",
-          "description": "[2021年02月09日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：サーバ・クライアント製品セキュリティ情報 (hitachi-sec-2021-205) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-12-22T14:48:02+09:00",
-    "datelastupdated": "2021-02-09T16:33:51+09:00",
-    "datepublic": "2020-12-21T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-010093",
+	"vulinfodata": {
+		"title": "Treck 社製 TCP/IP スタックに複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Treck 社が提供する TCP/IP スタックには次の複数の脆弱性が存在します。  　* ヒープベースのバッファオーバーフロー(CWE-122) - CVE-2020-25066 　* 境界外書き込み (CWE-787) - CVE-2020-27337 　* 境界外読み取り (CWE-125) - CVE-2020-27338 　* 境界外読み取り (CWE-125) - CVE-2020-27336"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "TRECK",
+					"productname": "TCP/IP stack",
+					"cpe": {
+						"text": "cpe:/a:treck:tcp%2fip",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 6.0.1.67 およびそれ以前の下記のコンポーネント"
+					]
+				},
+				{
+					"name": "日立",
+					"productname": "日立アドバンストサーバ HA8000V シリーズ",
+					"cpe": {
+						"text": "cpe:/a:hitachi:advanced_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"HA8000V シリーズ (CVE-2020-27337)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * Treck HTTP Server コンポーネントの脆弱性に起因し、遠隔の第三者によってサービス運用妨害 (DoS) 状態にされたり、任意のコードを実行されたりする - CVE-2020-25066 * IPv6 コンポーネントの脆弱性に起因し、遠隔の第三者によってサービス運用妨害 (DoS) 状態にされる - CVE-2020-27337 * DHCPv6 コンポーネントの脆弱性に起因し、第三者によってサービス運用妨害 (DoS) 状態にされる - CVE-2020-27338 * IPv6 コンポーネントの脆弱性に起因し、遠隔の第三者によって最大3バイトの情報を窃取される - CVE-2020-27336"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 　* Treck TCP/IP 6.0.1.68 以降のバージョン  [ワークアラウンド] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。 　* HTTP ヘッダーに不正な長さのコンテントを含むパケットを、ファイヤーウォールで遮断する"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "TRECK",
+					"vulinfoid": "Treck is committed to delivering secure, high performing products.",
+					"url": "https://treck.com/vulnerability-response-information"
+				},
+				{
+					"type": "vendor",
+					"name": "サーバ・クライアント製品セキュリティ情報",
+					"vulinfoid": "hitachi-sec-2021-205",
+					"url": "https://www.hitachi.co.jp/products/it/server/security/info/vulnerable/hitachi_sec_2021_205.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-25066",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25066"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27336",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27336"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27337",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27337"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27338",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27338"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-353-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-353-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94829658",
+					"url": "https://jvn.jp/vu/JVNVU94829658"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94736763",
+					"url": "https://jvn.jp/vu/JVNVU94736763"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-122",
+					"url": "https://cwe.mitre.org/data/definitions/122.html",
+					"title": "ヒープベースのバッファオーバーフロー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-12-22T14:48:02+09:00",
+					"description": "[2020年12月22日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-02-09T14:54:14+09:00",
+					"description": "[2021年02月09日]\\n  影響を受けるシステム：内容を更新\\n  ベンダ情報：サーバ・クライアント製品セキュリティ情報 (hitachi-sec-2021-205) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2020-12-22T14:48:02+09:00",
+		"datelastupdated": "2021-02-09T16:33:51+09:00",
+		"datepublic": "2020-12-21T00:00:00+09:00"
+	}
 }

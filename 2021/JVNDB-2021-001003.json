@@ -1,138 +1,138 @@
 {
-  "vulinfoid": "JVNDB-2021-001003",
-  "vulinfodata": {
-    "title": "GE 製 Reason RT43X Clocks シリーズに複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Reason RT43X Clocks シリーズは General Electric が提供する GNSS (Global Navigation Satellite System) 向け高精度クロックです。当該製品には、次の複数の脆弱性が存在します。  　* コード・インジェクション (CWE-94) - CVE-2020-25197 　* ハードコードされた暗号鍵の使用 (CWE-321) - CVE-2020-25193"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "General Electric Company",
-          "productname": "RT430 ファームウエア",
-          "cpe": {
-            "text": "cpe:/o:ge:rt430_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 08A06 より前のバージョン"
-          ]
-        },
-        {
-          "name": "General Electric Company",
-          "productname": "RT431 ファームウエア",
-          "cpe": {
-            "text": "cpe:/o:ge:rt431_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 08A06 より前のバージョン"
-          ]
-        },
-        {
-          "name": "General Electric Company",
-          "productname": "RT434 ファームウエア",
-          "cpe": {
-            "text": "cpe:/o:ge:rt434_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "バージョン 08A06 より前のバージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Critical",
-            "type": "Base"
-          },
-          "base": "9.8",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 認証された遠隔の第三者によって、任意のコードを実行される - CVE-2020-25197 　* 遠隔の第三者によって、傍受された HTTPS 通信のトラフィックを復号される - CVE-2020-25193 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性を修正したファームウエアバージョン 08A06 がリリースされています。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 第三者によって、当該製品が接続するローカルネットワークに到達されないよう、ネットワークおよび物理環境に強力なセキュリティ対策を実施する 　* 当該製品が持つ Web インタフェースにアクセスする HTTP/HTTPS 通信をブロックするため、80/TCP および 443/TCP をブロックする 　* 制御機器および制御システムに接続可能なネットワークを最小限に抑え、インターネットからアクセスできないことを確認する 　* セキュリティイベントを解析し、予期しないトラフィックや通信を早期に検出する "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "General Electric",
-          "vulinfoid": "Reason RT430/RT434 - GPS/GNSS Precision Clocks Software",
-          "url": "https://www.gegridsolutions.com/app/viewfiles.aspx?prod=RT430&type=7"
-        },
-        {
-          "type": "vendor",
-          "name": "General Electric",
-          "vulinfoid": "Reason RT43X - GPS/GNSS Precision Clocks Release Notes (PDF)",
-          "url": "https://www.gegridsolutions.com/products/software/reason%20rt43x%20fw%2008a06%20release%20notes.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-25193",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25193"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-25197",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25197"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-005-03",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-005-03"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90523924",
-          "url": "http://jvn.jp/cert/JVNVU90523924"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-94",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
-          "title": "コード・インジェクション"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-321",
-          "url": "https://cwe.mitre.org/data/definitions/321.html",
-          "title": "ハードコードされた暗号鍵の使用"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-01-07T16:38:40+09:00",
-          "description": "[2021年01月07日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2021-02-17T16:17:20+09:00",
-          "description": "[2021年02月17日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-005-03) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-01-07T16:38:40+09:00",
-    "datelastupdated": "2021-02-17T16:52:14+09:00",
-    "datepublic": "2021-01-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-001003",
+	"vulinfodata": {
+		"title": "GE 製 Reason RT43X Clocks シリーズに複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Reason RT43X Clocks シリーズは General Electric が提供する GNSS (Global Navigation Satellite System) 向け高精度クロックです。当該製品には、次の複数の脆弱性が存在します。  　* コード・インジェクション (CWE-94) - CVE-2020-25197 　* ハードコードされた暗号鍵の使用 (CWE-321) - CVE-2020-25193"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "General Electric Company",
+					"productname": "RT430 ファームウエア",
+					"cpe": {
+						"text": "cpe:/o:ge:rt430_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 08A06 より前のバージョン"
+					]
+				},
+				{
+					"name": "General Electric Company",
+					"productname": "RT431 ファームウエア",
+					"cpe": {
+						"text": "cpe:/o:ge:rt431_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 08A06 より前のバージョン"
+					]
+				},
+				{
+					"name": "General Electric Company",
+					"productname": "RT434 ファームウエア",
+					"cpe": {
+						"text": "cpe:/o:ge:rt434_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 08A06 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 認証された遠隔の第三者によって、任意のコードを実行される - CVE-2020-25197 　* 遠隔の第三者によって、傍受された HTTPS 通信のトラフィックを復号される - CVE-2020-25193 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性を修正したファームウエアバージョン 08A06 がリリースされています。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 第三者によって、当該製品が接続するローカルネットワークに到達されないよう、ネットワークおよび物理環境に強力なセキュリティ対策を実施する 　* 当該製品が持つ Web インタフェースにアクセスする HTTP/HTTPS 通信をブロックするため、80/TCP および 443/TCP をブロックする 　* 制御機器および制御システムに接続可能なネットワークを最小限に抑え、インターネットからアクセスできないことを確認する 　* セキュリティイベントを解析し、予期しないトラフィックや通信を早期に検出する "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "General Electric",
+					"vulinfoid": "Reason RT430/RT434 - GPS/GNSS Precision Clocks Software",
+					"url": "https://www.gegridsolutions.com/app/viewfiles.aspx?prod=RT430&type=7"
+				},
+				{
+					"type": "vendor",
+					"name": "General Electric",
+					"vulinfoid": "Reason RT43X - GPS/GNSS Precision Clocks Release Notes (PDF)",
+					"url": "https://www.gegridsolutions.com/products/software/reason%20rt43x%20fw%2008a06%20release%20notes.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-25193",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25193"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-25197",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25197"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-005-03",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-21-005-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90523924",
+					"url": "http://jvn.jp/cert/JVNVU90523924"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-94",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-94.html",
+					"title": "コード・インジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-321",
+					"url": "https://cwe.mitre.org/data/definitions/321.html",
+					"title": "ハードコードされた暗号鍵の使用"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-01-07T16:38:40+09:00",
+					"description": "[2021年01月07日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2021-02-17T16:17:20+09:00",
+					"description": "[2021年02月17日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-21-005-03) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2021-01-07T16:38:40+09:00",
+		"datelastupdated": "2021-02-17T16:52:14+09:00",
+		"datepublic": "2021-01-06T00:00:00+09:00"
+	}
 }

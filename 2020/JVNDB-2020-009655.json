@@ -1,123 +1,123 @@
 {
-  "vulinfoid": "JVNDB-2020-009655",
-  "vulinfodata": {
-    "title": "Rockwell Automation 製 FactoryTalk Linx に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "Rockwell Automation 社が提供する FactoryTalk Linx には、次の複数の脆弱性が存在します。  　* 不適切な入力確認 (CWE-20) - CVE-2020-27253 　* ヒープベースのバッファオーバーフロー (CWE-122) - CVE-2020-27251 　* ヒープベースのバッファオーバーフロー (CWE-122) - CVE-2020-27255"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Rockwell Automation",
-          "productname": "FactoryTalk Linx",
-          "cpe": {
-            "text": "cpe:/a:rockwellautomation:factorytalk_linx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 6.11 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.6",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * FactoryTalk Linx の入力／出力チェックルーチンに不備があり、遠隔の第三者によって、悪意のあるパケットを送信され、サービス運用妨害 (DoS) 状態にされる - CVE-2020-27253 * 遠隔の第三者によって、ポート範囲を指定するパラメータに悪意のある値を設定されたリクエストを送信され、任意のコードを実行される - CVE-2020-27251 * 遠隔の第三者によって、悪意のある属性設定リクエストを送信され、機微な情報を窃取される。また、この情報窃取により、ASLR (アドレス空間配置のランダム化) をバイパスされる - CVE-2020-27255 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートまたはパッチを適用する] 開発者が提供する情報をもとに、以下のバージョンにアップデートしてください。  　* FactoryTalk Linx Version 6.20  FactoryTalk Linx Version 6.10 または 6.11 を使用している場合は、開発者が提供する情報をもとにパッチを適用してください。 　* Patch Answer ID 1126433 (要ログイン)  [ワークアラウンドを実施する] 　* すべてのソフトウェアを「管理者」ではなく「ユーザー」として実行し、悪意のあるコードによる影響を最小限に抑える。 　* Microsoft AppLocker または他の同様のホワイトリストアプリケーションを導入し、不要なアプリケーションなどの実行を制限する。 　* Rockwell Automation 製品における AppLocker の使用に関する情報は、ナレッジベース ID 546989 (要ログイン) で入手できます。  　* ユーザー/サービスアカウントによる共有リソース (データベースなど) へのアクセスは、最小限の権限でのみ許可する。 　* ウイルス対策ソフトなどを使用し、信頼できるウェブサイト、添付ファイルのみを操作する。 　* すべての制御システム機器のネットワークへの接続を最小限にし、インターネットに直接接続しない。 　* 保護されていないインターネットにアクセス可能な制御システムのリスクの詳細については、ナレッジベース ID 494865 (要ログイン) を参照してください。  　* ファイアウォールを使用して制御システムネットワークを業務ネットワークから分離する。 　* リモートアクセスが必要な場合は、仮想プライベートネットワーク (VPN) を使用する。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Rockwell Automation",
-          "vulinfoid": "Patch Answer ID 1126433 (要ログイン)",
-          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1126433#__highlight"
-        },
-        {
-          "type": "vendor",
-          "name": "Rockwell Automation",
-          "vulinfoid": "ナレッジベース ID 546989 (要ログイン)",
-          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F546989"
-        },
-        {
-          "type": "vendor",
-          "name": "Rockwell Automation",
-          "vulinfoid": "ナレッジベース ID 494865 (要ログイン)",
-          "url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F494865"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27251",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27251"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27253",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27253"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-27255",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27255"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-20-329-01",
-          "url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-329-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98689901",
-          "url": "https://jvn.jp/vu/JVNVU98689901"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-122",
-          "url": "https://cwe.mitre.org/data/definitions/122.html",
-          "title": "ヒープベースのバッファオーバーフロー"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-11-26T15:22:08+09:00",
-          "description": "[2020年11月26日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-11-26T15:22:08+09:00",
-    "datelastupdated": "2020-11-26T15:22:08+09:00",
-    "datepublic": "2020-11-25T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-009655",
+	"vulinfodata": {
+		"title": "Rockwell Automation 製 FactoryTalk Linx に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Rockwell Automation 社が提供する FactoryTalk Linx には、次の複数の脆弱性が存在します。  　* 不適切な入力確認 (CWE-20) - CVE-2020-27253 　* ヒープベースのバッファオーバーフロー (CWE-122) - CVE-2020-27251 　* ヒープベースのバッファオーバーフロー (CWE-122) - CVE-2020-27255"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Rockwell Automation",
+					"productname": "FactoryTalk Linx",
+					"cpe": {
+						"text": "cpe:/a:rockwellautomation:factorytalk_linx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 6.11 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.6",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  * FactoryTalk Linx の入力／出力チェックルーチンに不備があり、遠隔の第三者によって、悪意のあるパケットを送信され、サービス運用妨害 (DoS) 状態にされる - CVE-2020-27253 * 遠隔の第三者によって、ポート範囲を指定するパラメータに悪意のある値を設定されたリクエストを送信され、任意のコードを実行される - CVE-2020-27251 * 遠隔の第三者によって、悪意のある属性設定リクエストを送信され、機微な情報を窃取される。また、この情報窃取により、ASLR (アドレス空間配置のランダム化) をバイパスされる - CVE-2020-27255 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートまたはパッチを適用する] 開発者が提供する情報をもとに、以下のバージョンにアップデートしてください。  　* FactoryTalk Linx Version 6.20  FactoryTalk Linx Version 6.10 または 6.11 を使用している場合は、開発者が提供する情報をもとにパッチを適用してください。 　* Patch Answer ID 1126433 (要ログイン)  [ワークアラウンドを実施する] 　* すべてのソフトウェアを「管理者」ではなく「ユーザー」として実行し、悪意のあるコードによる影響を最小限に抑える。 　* Microsoft AppLocker または他の同様のホワイトリストアプリケーションを導入し、不要なアプリケーションなどの実行を制限する。 　* Rockwell Automation 製品における AppLocker の使用に関する情報は、ナレッジベース ID 546989 (要ログイン) で入手できます。  　* ユーザー/サービスアカウントによる共有リソース (データベースなど) へのアクセスは、最小限の権限でのみ許可する。 　* ウイルス対策ソフトなどを使用し、信頼できるウェブサイト、添付ファイルのみを操作する。 　* すべての制御システム機器のネットワークへの接続を最小限にし、インターネットに直接接続しない。 　* 保護されていないインターネットにアクセス可能な制御システムのリスクの詳細については、ナレッジベース ID 494865 (要ログイン) を参照してください。  　* ファイアウォールを使用して制御システムネットワークを業務ネットワークから分離する。 　* リモートアクセスが必要な場合は、仮想プライベートネットワーク (VPN) を使用する。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Rockwell Automation",
+					"vulinfoid": "Patch Answer ID 1126433 (要ログイン)",
+					"url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F1126433#__highlight"
+				},
+				{
+					"type": "vendor",
+					"name": "Rockwell Automation",
+					"vulinfoid": "ナレッジベース ID 546989 (要ログイン)",
+					"url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F546989"
+				},
+				{
+					"type": "vendor",
+					"name": "Rockwell Automation",
+					"vulinfoid": "ナレッジベース ID 494865 (要ログイン)",
+					"url": "https://idp.rockwellautomation.com/adfs/ls/idpinitiatedsignon.aspx?RelayState=RPID%3Drockwellautomation.custhelp.com%26RelayState%3Danswers%2Fanswer_view%2Fa_id%2F494865"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27251",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27251"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27253",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27253"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-27255",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27255"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-20-329-01",
+					"url": "https://us-cert.cisa.gov/ics/advisories/icsa-20-329-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98689901",
+					"url": "https://jvn.jp/vu/JVNVU98689901"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-122",
+					"url": "https://cwe.mitre.org/data/definitions/122.html",
+					"title": "ヒープベースのバッファオーバーフロー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-11-26T15:22:08+09:00",
+					"description": "[2020年11月26日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2020-11-26T15:22:08+09:00",
+		"datelastupdated": "2020-11-26T15:22:08+09:00",
+		"datepublic": "2020-11-25T00:00:00+09:00"
+	}
 }

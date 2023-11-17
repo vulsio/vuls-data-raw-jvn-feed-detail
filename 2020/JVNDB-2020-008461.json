@@ -1,71 +1,71 @@
 {
-  "vulinfoid": "JVNDB-2020-008461",
-  "vulinfodata": {
-    "title": "CTKD を用いる Bluetooth BR/EDR および BLE 端末において鍵情報が上書きされる問題",
-    "vulinfodescription": {
-      "overview": "Bluetooth Basic Rate/Enhanced Data Rate (BR/EDR) と Bluetooth Low Energy (BLE) は本来互換性を持ちませんが、これらを両方ともサポートする機器においては、Cross-Transport Key Derivation (CTKD) を用いたペアリングを行うことにより、相互接続に必要な Long Term Key (LTK) や Link Key (LK) の生成・交換を同時に管理することができます。  CTKD によって生成された LTK や LK が、機器間の通信に割り込んだ攻撃者により上書き可能となる脆弱性 (CVE-2020-15802) が発見されました。この問題は \"BLURtooth\" と呼称されています。攻撃者はこの脆弱性を悪用して鍵情報を上書きし、認証されていない鍵の使用や、より強度の低い鍵の使用を強制することが可能です。  攻撃を成功させるためには、以下の条件が必要となります。  * 攻撃対象の機器が Bluetooth Core Specification 4.0 から 5.0 に基づいて CTKD を実装していること * 攻撃対象の機器が、JustWorks のような認証を必要としないペアリング方式あるいはペアリングの際にユーザによる操作を必要としない方式を利用していること   これらの条件を満たす脆弱な機器に対して攻撃者の機器がペアリングした場合、攻撃対象の機器が他の端末との通信のために生成した既存の LTK や LK が攻撃者により上書きされる可能性があります。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Bluetooth SIG, Inc.",
-          "productname": "(複数の製品)",
-          "cpe": {
-            "text": "cpe:/a:bluetooth:Bluetooth_SIG_multiple_product",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "攻撃者により機器内に保持されている LTK や LK が改ざんされ、認証されていない鍵や、より強度の低い鍵の使用を強制され、中間者攻撃 (Man-in-the-Middle 攻撃)が行われる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[Bluetooth SIG のガイダンスを参照する] Bluetooth 機器の開発者は、製品の更新に関するガイダンスとして Bluetooth SIG の \"Bluetooth SIG Statement Regarding the Exploiting Cross-Transport Key Derivation in Bluetooth Classic and Bluetooth Low Energy Vulnerability (BLURtooth)\" を参照してください。 Bluetooth SIG は製品開発者に対して、既存の鍵情報が認証されていない鍵やより強度の低い鍵に上書きされていないか検証するための処理を加えることを推奨しています。また、Bluetooth Core Specification 5.1 以降ではこの問題に対処するため CTKD に制約が加えられています。  [ファームウェアを最新の状態に保つ] Bluetooth 機器を利用しているユーザは、機器のベンダから提供されるファームウェアを常に最新の状態にしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Bluetooth SIG, Inc.",
-          "vulinfoid": "Bluetooth SIG Statement Regarding the Exploiting Cross-Transport Key Derivation in Bluetooth Classic and Bluetooth Low Energy Vulnerability (BLURtooth)",
-          "url": "https://www.bluetooth.com/learn-about-bluetooth/bluetooth-technology/bluetooth-security/blurtooth/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-15802",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15802"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#95246155",
-          "url": "http://jvn.jp/cert/JVNVU95246155"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#589825",
-          "url": "https://kb.cert.org/vuls/id/589825"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-09-14T15:38:15+09:00",
-          "description": "[2020年09月14日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-09-14T15:38:15+09:00",
-    "datelastupdated": "2020-09-14T15:38:15+09:00",
-    "datepublic": "2020-09-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-008461",
+	"vulinfodata": {
+		"title": "CTKD を用いる Bluetooth BR/EDR および BLE 端末において鍵情報が上書きされる問題",
+		"vulinfodescription": {
+			"overview": "Bluetooth Basic Rate/Enhanced Data Rate (BR/EDR) と Bluetooth Low Energy (BLE) は本来互換性を持ちませんが、これらを両方ともサポートする機器においては、Cross-Transport Key Derivation (CTKD) を用いたペアリングを行うことにより、相互接続に必要な Long Term Key (LTK) や Link Key (LK) の生成・交換を同時に管理することができます。  CTKD によって生成された LTK や LK が、機器間の通信に割り込んだ攻撃者により上書き可能となる脆弱性 (CVE-2020-15802) が発見されました。この問題は \"BLURtooth\" と呼称されています。攻撃者はこの脆弱性を悪用して鍵情報を上書きし、認証されていない鍵の使用や、より強度の低い鍵の使用を強制することが可能です。  攻撃を成功させるためには、以下の条件が必要となります。  * 攻撃対象の機器が Bluetooth Core Specification 4.0 から 5.0 に基づいて CTKD を実装していること * 攻撃対象の機器が、JustWorks のような認証を必要としないペアリング方式あるいはペアリングの際にユーザによる操作を必要としない方式を利用していること   これらの条件を満たす脆弱な機器に対して攻撃者の機器がペアリングした場合、攻撃対象の機器が他の端末との通信のために生成した既存の LTK や LK が攻撃者により上書きされる可能性があります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Bluetooth SIG, Inc.",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:bluetooth:Bluetooth_SIG_multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "攻撃者により機器内に保持されている LTK や LK が改ざんされ、認証されていない鍵や、より強度の低い鍵の使用を強制され、中間者攻撃 (Man-in-the-Middle 攻撃)が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[Bluetooth SIG のガイダンスを参照する] Bluetooth 機器の開発者は、製品の更新に関するガイダンスとして Bluetooth SIG の \"Bluetooth SIG Statement Regarding the Exploiting Cross-Transport Key Derivation in Bluetooth Classic and Bluetooth Low Energy Vulnerability (BLURtooth)\" を参照してください。 Bluetooth SIG は製品開発者に対して、既存の鍵情報が認証されていない鍵やより強度の低い鍵に上書きされていないか検証するための処理を加えることを推奨しています。また、Bluetooth Core Specification 5.1 以降ではこの問題に対処するため CTKD に制約が加えられています。  [ファームウェアを最新の状態に保つ] Bluetooth 機器を利用しているユーザは、機器のベンダから提供されるファームウェアを常に最新の状態にしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Bluetooth SIG, Inc.",
+					"vulinfoid": "Bluetooth SIG Statement Regarding the Exploiting Cross-Transport Key Derivation in Bluetooth Classic and Bluetooth Low Energy Vulnerability (BLURtooth)",
+					"url": "https://www.bluetooth.com/learn-about-bluetooth/bluetooth-technology/bluetooth-security/blurtooth/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-15802",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15802"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95246155",
+					"url": "http://jvn.jp/cert/JVNVU95246155"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#589825",
+					"url": "https://kb.cert.org/vuls/id/589825"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-09-14T15:38:15+09:00",
+					"description": "[2020年09月14日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2020-09-14T15:38:15+09:00",
+		"datelastupdated": "2020-09-14T15:38:15+09:00",
+		"datepublic": "2020-09-09T00:00:00+09:00"
+	}
 }

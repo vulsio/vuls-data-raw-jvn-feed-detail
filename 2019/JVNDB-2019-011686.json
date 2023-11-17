@@ -1,120 +1,120 @@
 {
-  "vulinfoid": "JVNDB-2019-011686",
-  "vulinfodata": {
-    "title": "三菱電機製 MELSEC-Qシリーズ CPU ユニットおよび MELSEC-L シリーズ CPU ユニットの FTP サーバ機能にリソース枯渇の脆弱性",
-    "vulinfodescription": {
-      "overview": "三菱電機株式会社が提供する MELSEC-Q シリーズ CPU ユニットおよび MELSEC-L シリーズ CPU ユニットの FTP サーバ機能には、リソース枯渇の脆弱性 (CWE-400) が存在します。当該製品の FTP サーバ機能がサービス運用妨害 (DoS) 状態となる可能性があります。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC-L シリーズ CPU ユニット",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec-l_series_cpu_unit",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "L02/06/26CPU, L26CPU-BT (シリアル番号の上位5桁が 21101 およびそれ以前)",
-            "L02/06/26CPU-CM, L26CPU-BT-CM (シリアル番号の上位5桁が 21101 およびそれ以前)",
-            "L02/06/26CPU-P, L26CPU-PBT (シリアル番号の上位5桁が 21101 およびそれ以前)"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC-Q シリーズ CPU ユニット",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec-q_series_cpu_unit",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Q03/04/06/13/26UDVCPU (シリアル番号の上位5桁が 21081 およびそれ以前)",
-            "Q03UDECPU, Q04/06/10/13/20/26/50/100UDEHCPU (シリアル番号の上位5桁が 21081 およびそれ以前)",
-            "Q04/06/13/26UDPVCPU (シリアル番号の上位5桁が 21081 およびそれ以前)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "当該製品の FTP サーバ機能がサービス運用妨害 (DoS) 状態になることで、FTP クライアントが FTP サーバに接続できなくなります。 開発者によると、本脆弱性の影響を受けるのは FTP サーバ機能のみとのことです。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに適切なアップデートを実施してください。 開発者によると、FTP クライアントから一定時間操作がない場合にコネクションを自動切断する機能を追加した、以下のバージョンをリリースしたとのことです。  * MELSEC-Q シリーズ CPU ユニット (シリアル No. の上 5桁が 21082 およびそれ以降) * MELSEC-L シリーズ CPU ユニット (シリアル No. の上 5桁が 21102 およびそれ以降)  [ワークアラウンドを実施する] 信頼できないネットワークやホストからの FTP リクエストをファイアウォールでブロックするなどの対策を実施することで、本脆弱性の影響を軽減できます。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "三菱電機",
-          "vulinfoid": "MELSEC-QシリーズCPU、およびMELSEC-LシリーズCPUにおけるFTPサーバ機能の脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2019-002.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-13555",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13555"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-19-311-01",
-          "url": "https://www.us-cert.gov/ics/advisories/icsa-19-311-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97094124",
-          "url": "http://jvn.jp/cert/JVNVU97094124"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-13555",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-13555"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2019-11-15T10:57:09+09:00",
-          "description": "[2019年11月15日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2019-12-02T15:17:54+09:00",
-          "description": "[2019年12月02日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-13555) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2019-11-15T10:57:09+09:00",
-    "datelastupdated": "2019-12-02T15:48:51+09:00",
-    "datepublic": "2019-11-14T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2019-011686",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC-Qシリーズ CPU ユニットおよび MELSEC-L シリーズ CPU ユニットの FTP サーバ機能にリソース枯渇の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC-Q シリーズ CPU ユニットおよび MELSEC-L シリーズ CPU ユニットの FTP サーバ機能には、リソース枯渇の脆弱性 (CWE-400) が存在します。当該製品の FTP サーバ機能がサービス運用妨害 (DoS) 状態となる可能性があります。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC-L シリーズ CPU ユニット",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec-l_series_cpu_unit",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"L02/06/26CPU, L26CPU-BT (シリアル番号の上位5桁が 21101 およびそれ以前)",
+						"L02/06/26CPU-CM, L26CPU-BT-CM (シリアル番号の上位5桁が 21101 およびそれ以前)",
+						"L02/06/26CPU-P, L26CPU-PBT (シリアル番号の上位5桁が 21101 およびそれ以前)"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC-Q シリーズ CPU ユニット",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec-q_series_cpu_unit",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Q03/04/06/13/26UDVCPU (シリアル番号の上位5桁が 21081 およびそれ以前)",
+						"Q03UDECPU, Q04/06/10/13/20/26/50/100UDEHCPU (シリアル番号の上位5桁が 21081 およびそれ以前)",
+						"Q04/06/13/26UDPVCPU (シリアル番号の上位5桁が 21081 およびそれ以前)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品の FTP サーバ機能がサービス運用妨害 (DoS) 状態になることで、FTP クライアントが FTP サーバに接続できなくなります。 開発者によると、本脆弱性の影響を受けるのは FTP サーバ機能のみとのことです。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに適切なアップデートを実施してください。 開発者によると、FTP クライアントから一定時間操作がない場合にコネクションを自動切断する機能を追加した、以下のバージョンをリリースしたとのことです。  * MELSEC-Q シリーズ CPU ユニット (シリアル No. の上 5桁が 21082 およびそれ以降) * MELSEC-L シリーズ CPU ユニット (シリアル No. の上 5桁が 21102 およびそれ以降)  [ワークアラウンドを実施する] 信頼できないネットワークやホストからの FTP リクエストをファイアウォールでブロックするなどの対策を実施することで、本脆弱性の影響を軽減できます。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機",
+					"vulinfoid": "MELSEC-QシリーズCPU、およびMELSEC-LシリーズCPUにおけるFTPサーバ機能の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2019-002.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-13555",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-13555"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-19-311-01",
+					"url": "https://www.us-cert.gov/ics/advisories/icsa-19-311-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97094124",
+					"url": "http://jvn.jp/cert/JVNVU97094124"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-13555",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-13555"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2019-11-15T10:57:09+09:00",
+					"description": "[2019年11月15日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2019-12-02T15:17:54+09:00",
+					"description": "[2019年12月02日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-13555) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2019-11-15T10:57:09+09:00",
+		"datelastupdated": "2019-12-02T15:48:51+09:00",
+		"datepublic": "2019-11-14T00:00:00+09:00"
+	}
 }

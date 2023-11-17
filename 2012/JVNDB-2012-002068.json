@@ -1,162 +1,162 @@
 {
-  "vulinfoid": "JVNDB-2012-002068",
-  "vulinfodata": {
-    "title": "curl および libcurl におけるデータインジェクション攻撃の脆弱性",
-    "vulinfodescription": {
-      "overview": "curl および libcurl は、URL からパス名を抽出する間、特殊な文字列に対する処理を適切に行わないため、データインジェクション攻撃を行われる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Haxx",
-          "productname": "cURL",
-          "cpe": {
-            "text": "cpe:/a:haxx:curl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.24.0 未満の 7.2x"
-          ]
-        },
-        {
-          "name": "Haxx",
-          "productname": "libcurl",
-          "cpe": {
-            "text": "cpe:/a:haxx:libcurl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.24.0 未満の 7.2x"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Hyperion",
-          "cpe": {
-            "text": "cpe:/a:oracle:hyperion",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Hyperion Essbase 11.1.2.2",
-            "の Hyperion Essbase 11.1.2.3"
-          ]
-        },
-        {
-          "name": "サイボウズ",
-          "productname": "サイボウズ ガルーン",
-          "cpe": {
-            "text": "cpe:/a:cybozu:garoon",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0.0 から 3.5.1"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、以下のプロトコルを用いた CRLF インジェクション攻撃が実証されており、巧妙に細工された URL を介して、データインジェクション攻撃を行われる可能性があります。  (1) IMAP (2) POP3 (3) SMTP"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT5281",
-          "url": "http://support.apple.com/kb/HT5281"
-        },
-        {
-          "type": "vendor",
-          "name": "Cybozu",
-          "vulinfoid": "curlの脆弱性【CY12-07-001】",
-          "url": "http://cs.cybozu.co.jp/information/20120730up02.php"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Advisory",
-          "vulinfoid": "curl URL sanitization vulnerability",
-          "url": "http://curl.haxx.se/docs/adv_20120124.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "July 2015 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "不具合情報公開サイト",
-          "vulinfoid": "001-005913",
-          "url": "https://support.cybozu.com/ja/article/5913"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2012-0036",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0036"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#692779",
-          "url": "http://jvn.jp/cert/JVNVU692779/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2012-0036",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0036"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-89",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
-          "title": "SQLインジェクション"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2012年04月17日]\\n  掲載\\n[2012年05月14日]\\n  ベンダ情報：アップル (HT5281) を追加\\n[2012年07月31日]\\n  影響を受けるシステム：サイボウズ (curlの脆弱性【CY12-07-001】) の情報を追加\\n  ベンダ情報：サイボウズ (curlの脆弱性【CY12-07-001】) を追加\\n  ベンダ情報：サイボウズ (001-005913) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2012-04-17T16:28:02+09:00",
-    "datelastupdated": "2015-07-29T17:36:31+09:00",
-    "datepublic": "2012-04-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2012-002068",
+	"vulinfodata": {
+		"title": "curl および libcurl におけるデータインジェクション攻撃の脆弱性",
+		"vulinfodescription": {
+			"overview": "curl および libcurl は、URL からパス名を抽出する間、特殊な文字列に対する処理を適切に行わないため、データインジェクション攻撃を行われる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Haxx",
+					"productname": "cURL",
+					"cpe": {
+						"text": "cpe:/a:haxx:curl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.24.0 未満の 7.2x"
+					]
+				},
+				{
+					"name": "Haxx",
+					"productname": "libcurl",
+					"cpe": {
+						"text": "cpe:/a:haxx:libcurl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.24.0 未満の 7.2x"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Hyperion",
+					"cpe": {
+						"text": "cpe:/a:oracle:hyperion",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Hyperion Essbase 11.1.2.2",
+						"の Hyperion Essbase 11.1.2.3"
+					]
+				},
+				{
+					"name": "サイボウズ",
+					"productname": "サイボウズ ガルーン",
+					"cpe": {
+						"text": "cpe:/a:cybozu:garoon",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0.0 から 3.5.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、以下のプロトコルを用いた CRLF インジェクション攻撃が実証されており、巧妙に細工された URL を介して、データインジェクション攻撃を行われる可能性があります。  (1) IMAP (2) POP3 (3) SMTP"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT5281",
+					"url": "http://support.apple.com/kb/HT5281"
+				},
+				{
+					"type": "vendor",
+					"name": "Cybozu",
+					"vulinfoid": "curlの脆弱性【CY12-07-001】",
+					"url": "http://cs.cybozu.co.jp/information/20120730up02.php"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Advisory",
+					"vulinfoid": "curl URL sanitization vulnerability",
+					"url": "http://curl.haxx.se/docs/adv_20120124.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "July 2015 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "不具合情報公開サイト",
+					"vulinfoid": "001-005913",
+					"url": "https://support.cybozu.com/ja/article/5913"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2012-0036",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0036"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#692779",
+					"url": "http://jvn.jp/cert/JVNVU692779/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2012-0036",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-0036"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2012年04月17日]\\n  掲載\\n[2012年05月14日]\\n  ベンダ情報：アップル (HT5281) を追加\\n[2012年07月31日]\\n  影響を受けるシステム：サイボウズ (curlの脆弱性【CY12-07-001】) の情報を追加\\n  ベンダ情報：サイボウズ (curlの脆弱性【CY12-07-001】) を追加\\n  ベンダ情報：サイボウズ (001-005913) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2012-04-17T16:28:02+09:00",
+		"datelastupdated": "2015-07-29T17:36:31+09:00",
+		"datepublic": "2012-04-13T00:00:00+09:00"
+	}
 }

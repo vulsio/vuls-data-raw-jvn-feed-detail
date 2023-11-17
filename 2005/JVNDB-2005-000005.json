@@ -1,144 +1,144 @@
 {
-  "vulinfoid": "JVNDB-2005-000005",
-  "vulinfodata": {
-    "title": "Linux Kernel の mlockall() 関数における RLIM_MEMLOCK の制限を回避される脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel 2.6.x には、以下の複数のセキュリティ上の問題が存在します。  ・プロセスを物理メモリにロックする mlockall() 関数に不備が存在するため、RLIM_MEMLOCK の制限を回避可能な問題 (CAN-2005-0179) (Linux Kernel 2.6.10 以前)  ・sg_scsi_ioctl() 関数には、整数の正負解釈に不備が複数存在するため、負の整数を引数として処理した場合に整数オーバーフローが発生する問題 (CAN-2005-0180) (Linux Kernel 2.6.10 以前)  ・AMD64 または Intel EM64T アーキテクチャ上で動作する場合に、OUTS 命令に不備が存在するため、不正に IO ポートに書き込むことが可能な問題 (CAN-2005-0204)  これらの問題を利用するローカルの攻撃者は、結果としてカーネルをクラッシュさせる、あるいはカーネルメモリ内の情報を奪取できる可能性があります。  尚、CAN-2005-0179 および CAN-2005-0204 の問題に関しては、Red Hat Enterprise Linux 3、MIRACLE LINUX V3.0/V3.0 for x86-64 に同梱されている Linux Kernel (2.4.x ベース) が影響を受けることが報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "サイバートラスト株式会社",
-          "productname": "Asianux Server",
-          "cpe": {
-            "text": "cpe:/o:misc:miraclelinux_asianux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.0 ",
-            "3.0 (x86-64) "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) ",
-            "4 (as) ",
-            "4 (es) ",
-            "4 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Low",
-            "type": "Base"
-          },
-          "base": "2.1",
-          "vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "MIRACLE LINUX アップデート情報",
-          "vulinfoid": "kernel",
-          "url": "http://www.miraclelinux.com/support/update/list.php?errata_id=290"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:293",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-293.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:092",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-092.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:663",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:293",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-293J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:092",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-092J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:663",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-663J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-0179",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0179"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-0179",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0179"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12198",
-          "url": "http://www.securityfocus.com/bid/12198"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12598",
-          "url": "http://www.securityfocus.com/bid/12598"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-01-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000005",
+	"vulinfodata": {
+		"title": "Linux Kernel の mlockall() 関数における RLIM_MEMLOCK の制限を回避される脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel 2.6.x には、以下の複数のセキュリティ上の問題が存在します。  ・プロセスを物理メモリにロックする mlockall() 関数に不備が存在するため、RLIM_MEMLOCK の制限を回避可能な問題 (CAN-2005-0179) (Linux Kernel 2.6.10 以前)  ・sg_scsi_ioctl() 関数には、整数の正負解釈に不備が複数存在するため、負の整数を引数として処理した場合に整数オーバーフローが発生する問題 (CAN-2005-0180) (Linux Kernel 2.6.10 以前)  ・AMD64 または Intel EM64T アーキテクチャ上で動作する場合に、OUTS 命令に不備が存在するため、不正に IO ポートに書き込むことが可能な問題 (CAN-2005-0204)  これらの問題を利用するローカルの攻撃者は、結果としてカーネルをクラッシュさせる、あるいはカーネルメモリ内の情報を奪取できる可能性があります。  尚、CAN-2005-0179 および CAN-2005-0204 の問題に関しては、Red Hat Enterprise Linux 3、MIRACLE LINUX V3.0/V3.0 for x86-64 に同梱されている Linux Kernel (2.4.x ベース) が影響を受けることが報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "サイバートラスト株式会社",
+					"productname": "Asianux Server",
+					"cpe": {
+						"text": "cpe:/o:misc:miraclelinux_asianux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0 ",
+						"3.0 (x86-64) "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) ",
+						"4 (as) ",
+						"4 (es) ",
+						"4 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.1",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "MIRACLE LINUX アップデート情報",
+					"vulinfoid": "kernel",
+					"url": "http://www.miraclelinux.com/support/update/list.php?errata_id=290"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:293",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-293.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:092",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-092.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:663",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:293",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-293J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:092",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-092J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:663",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-663J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-0179",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0179"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-0179",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0179"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12198",
+					"url": "http://www.securityfocus.com/bid/12198"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12598",
+					"url": "http://www.securityfocus.com/bid/12598"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-01-06T00:00:00+09:00"
+	}
 }

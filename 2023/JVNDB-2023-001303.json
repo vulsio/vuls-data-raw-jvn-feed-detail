@@ -1,150 +1,150 @@
 {
-  "vulinfoid": "JVNDB-2023-001303",
-  "vulinfodata": {
-    "title": "三菱電機製 MELSEC シリーズにおける認証情報の平文保存の脆弱性",
-    "vulinfodescription": {
-      "overview": "三菱電機株式会社が提供する MELSEC iQ-F、iQ-R、Q、L シリーズには、認証情報の平文保存（CWE-256、CVE-2023-0457）の脆弱性が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC iQ-F シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec_iq-f_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "FX5-ENET 全バージョン",
-            "FX5-ENET/IP 全バージョン",
-            "FX5S CPUユニット 全機種 全バージョン",
-            "FX5U(C) CPUユニット 全機種 全バージョン",
-            "FX5UJ CPUユニット 全機種 全バージョン"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC iQ-R シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "R00/01/02CPU 全バージョン",
-            "R04/08/16/32/120(EN)CPU 全バージョン",
-            "R08/16/32/120PCPU 全バージョン",
-            "R08/16/32/120PSFCPU 全バージョン",
-            "R08/16/32/120SFCPU 全バージョン",
-            "R12CCPU-V 全バージョン",
-            "RJ71EN71 全バージョン"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC-L シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec-l_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "L02/06/26CPU(-P)、L26CPU-(P)BT 全バージョン",
-            "LJ71E71-100 全バージョン"
-          ]
-        },
-        {
-          "name": "三菱電機",
-          "productname": "MELSEC-Q シリーズ",
-          "cpe": {
-            "text": "cpe:/a:mitsubishielectric:melsec-q_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Q03/04/06/13/26UDVCPU 全バージョン",
-            "Q03UDECPU、Q04/06/10/13/20/26/50/100UDEHCPU 全バージョン",
-            "Q04/06/13/26UDPVCPU 全バージョン",
-            "QJ71E71-100 全バージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "プロジェクトファイル内に平文で保存された認証情報を攻撃者に入手されることにより、当該製品の FTP サーバや Web サーバに不正にログインされる可能性があります。 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[ワークアラウンドを実施する] 次の軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* プロジェクトファイルの送受信や共有をする場合は、当該ファイルや通信データを暗号化する 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク（VPN）等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* MELSEC iQ-F、iQ-R シリーズにおいては、IP フィルタ機能（*1）を使用し、信頼できないホストからのアクセスをブロックする 　* 当該製品への物理的なアクセスを制限する  （*1）IP フィルタ機能については、開発者が提供する次のマニュアルを参照してください。  　* MELSEC iQ-F FX5 ユーザーズマニュアル（Ethernet 通信編）「12.1 IP フィルタ機能」 　* MELSEC iQ-R Ethernet ユーザーズマニュアル (応用編) の 1.13 セキュリティの「IP フィルタ」"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "三菱電機株式会社",
-          "vulinfoid": "MELSECシリーズにおける情報漏えいの脆弱性",
-          "url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-023.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2023-0457",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2023-0457"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-23-061-01",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-061-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#93891523",
-          "url": "http://jvn.jp/vu/JVNVU93891523/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2023-0457",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0457"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-256",
-          "url": "https://cwe.mitre.org/data/definitions/256.html",
-          "title": "認証情報の平文保存"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2023-03-03T11:39:20+09:00",
-          "description": "[2023年03月03日]   掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2023-06-21T12:17:20+09:00",
-          "description": "[2023年06月21日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-0457) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2023-03-03T13:39:00+09:00",
-    "datelastupdated": "2023-06-21T13:51:08+09:00",
-    "datepublic": "2023-03-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2023-001303",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC シリーズにおける認証情報の平文保存の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC iQ-F、iQ-R、Q、L シリーズには、認証情報の平文保存（CWE-256、CVE-2023-0457）の脆弱性が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC iQ-F シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec_iq-f_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"FX5-ENET 全バージョン",
+						"FX5-ENET/IP 全バージョン",
+						"FX5S CPUユニット 全機種 全バージョン",
+						"FX5U(C) CPUユニット 全機種 全バージョン",
+						"FX5UJ CPUユニット 全機種 全バージョン"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC iQ-R シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec_iq-r_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"R00/01/02CPU 全バージョン",
+						"R04/08/16/32/120(EN)CPU 全バージョン",
+						"R08/16/32/120PCPU 全バージョン",
+						"R08/16/32/120PSFCPU 全バージョン",
+						"R08/16/32/120SFCPU 全バージョン",
+						"R12CCPU-V 全バージョン",
+						"RJ71EN71 全バージョン"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC-L シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec-l_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"L02/06/26CPU(-P)、L26CPU-(P)BT 全バージョン",
+						"LJ71E71-100 全バージョン"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC-Q シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec-q_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Q03/04/06/13/26UDVCPU 全バージョン",
+						"Q03UDECPU、Q04/06/10/13/20/26/50/100UDEHCPU 全バージョン",
+						"Q04/06/13/26UDPVCPU 全バージョン",
+						"QJ71E71-100 全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "プロジェクトファイル内に平文で保存された認証情報を攻撃者に入手されることにより、当該製品の FTP サーバや Web サーバに不正にログインされる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 次の軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* プロジェクトファイルの送受信や共有をする場合は、当該ファイルや通信データを暗号化する 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク（VPN）等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* MELSEC iQ-F、iQ-R シリーズにおいては、IP フィルタ機能（*1）を使用し、信頼できないホストからのアクセスをブロックする 　* 当該製品への物理的なアクセスを制限する  （*1）IP フィルタ機能については、開発者が提供する次のマニュアルを参照してください。  　* MELSEC iQ-F FX5 ユーザーズマニュアル（Ethernet 通信編）「12.1 IP フィルタ機能」 　* MELSEC iQ-R Ethernet ユーザーズマニュアル (応用編) の 1.13 セキュリティの「IP フィルタ」"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSECシリーズにおける情報漏えいの脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2022-023.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-0457",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-0457"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-061-01",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-061-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93891523",
+					"url": "http://jvn.jp/vu/JVNVU93891523/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-0457",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-0457"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-256",
+					"url": "https://cwe.mitre.org/data/definitions/256.html",
+					"title": "認証情報の平文保存"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-03-03T11:39:20+09:00",
+					"description": "[2023年03月03日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-06-21T12:17:20+09:00",
+					"description": "[2023年06月21日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-0457) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2023-03-03T13:39:00+09:00",
+		"datelastupdated": "2023-06-21T13:51:08+09:00",
+		"datepublic": "2023-03-02T00:00:00+09:00"
+	}
 }

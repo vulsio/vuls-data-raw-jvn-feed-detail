@@ -1,145 +1,145 @@
 {
-  "vulinfoid": "JVNDB-2005-000196",
-  "vulinfodata": {
-    "title": "ImageMagick における不正な PSD ファイルによるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  ImageMagick は、X Window システム上で画像の表示や対話的な画像操作を行なうためのアプリケーションです。  ImageMagick 5.x/6.x には、特定の形式の画像ファイルを取り扱うことでサービス不能状態に陥る以下の複数の問題が存在します。  ・ImageMagick 5.5.7 以前における TIFF タグの取り扱いの不備により、無効なタグを含んだ TIFF 形式の画像ファイルを処理した場合、サービス不能状態に陥る問題 (CAN-2005-0759)  ・ImageMagick 5.5.7 以前における TIFF デコーダの不備により、意図的に作成された TIFF ファイルを処理した場合、サービス不能状態に陥る問題 (CAN-2005-0760)  ・PSD (Photoshop Document) 形式の画像ファイルの取り扱いの不備により、意図的に作成された PSD ファイルを処理した場合、サービス不能状態に陥る問題 (CAN-2005-0761)  ・ImageMagick 6.0.1 以前における SGI 形式の画像ファイルの取り扱いの不備により、バッファオーバーフローが発生する問題 (CAN-2005-0762)  これらの問題を利用するリモートの攻撃者は、意図的に作成した TIFF、PSD、または SGI 形式の画像ファイルを ImageMagick より開くように標的ユーザを誘導することにより、結果として ImageMagick をサービス不能状態に陥らせることが可能です。また、CAN-2005-0762 の問題を利用することにより、ImageMagick を実行する標的ユーザの権限で任意のコードを実行できる可能性があります。  尚、現時点では CAN-2005-0761 の問題の影響を受ける詳細なバージョンについては不明ですが、ImageMagick 6.2.0-8 以降においては解消されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ターボリナックス",
-          "productname": "Turbolinux Server",
-          "cpe": {
-            "text": "cpe:/o:turbolinux:turbolinux_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10  ",
-            "7  ",
-            "8  "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Enterprise Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:enterprise_linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.1 (as) ",
-            "2.1 (es) ",
-            "2.1 (ws) ",
-            "3 (as) ",
-            "3 (es) ",
-            "3 (ws) "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2005:070",
-          "url": "https://rhn.redhat.com/errata/RHSA-2005-070.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "Multiple vulnerabilities in ImageMagick",
-          "url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_imagemagick"
-        },
-        {
-          "type": "vendor",
-          "name": "Turbolinux Security Advisory (英語)",
-          "vulinfoid": "TLSA-2005-47",
-          "url": "http://www.turbolinux.com/security/2005/TLSA-2005-47.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2005:070",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-070J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "TLSA-2005-47",
-          "url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-47j.txt"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-0761",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0761"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-0761",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0761"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12873",
-          "url": "http://www.securityfocus.com/bid/12873"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12874",
-          "url": "http://www.securityfocus.com/bid/12874"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12875",
-          "url": "http://www.securityfocus.com/bid/12875"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "12876",
-          "url": "http://www.securityfocus.com/bid/12876"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載\\n[2012年06月26日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in ImageMagick) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2012-06-26T14:14:26+09:00",
-    "datepublic": "2005-03-23T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000196",
+	"vulinfodata": {
+		"title": "ImageMagick における不正な PSD ファイルによるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  ImageMagick は、X Window システム上で画像の表示や対話的な画像操作を行なうためのアプリケーションです。  ImageMagick 5.x/6.x には、特定の形式の画像ファイルを取り扱うことでサービス不能状態に陥る以下の複数の問題が存在します。  ・ImageMagick 5.5.7 以前における TIFF タグの取り扱いの不備により、無効なタグを含んだ TIFF 形式の画像ファイルを処理した場合、サービス不能状態に陥る問題 (CAN-2005-0759)  ・ImageMagick 5.5.7 以前における TIFF デコーダの不備により、意図的に作成された TIFF ファイルを処理した場合、サービス不能状態に陥る問題 (CAN-2005-0760)  ・PSD (Photoshop Document) 形式の画像ファイルの取り扱いの不備により、意図的に作成された PSD ファイルを処理した場合、サービス不能状態に陥る問題 (CAN-2005-0761)  ・ImageMagick 6.0.1 以前における SGI 形式の画像ファイルの取り扱いの不備により、バッファオーバーフローが発生する問題 (CAN-2005-0762)  これらの問題を利用するリモートの攻撃者は、意図的に作成した TIFF、PSD、または SGI 形式の画像ファイルを ImageMagick より開くように標的ユーザを誘導することにより、結果として ImageMagick をサービス不能状態に陥らせることが可能です。また、CAN-2005-0762 の問題を利用することにより、ImageMagick を実行する標的ユーザの権限で任意のコードを実行できる可能性があります。  尚、現時点では CAN-2005-0761 の問題の影響を受ける詳細なバージョンについては不明ですが、ImageMagick 6.2.0-8 以降においては解消されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ターボリナックス",
+					"productname": "Turbolinux Server",
+					"cpe": {
+						"text": "cpe:/o:turbolinux:turbolinux_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10  ",
+						"7  ",
+						"8  "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Enterprise Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:enterprise_linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1 (as) ",
+						"2.1 (es) ",
+						"2.1 (ws) ",
+						"3 (as) ",
+						"3 (es) ",
+						"3 (ws) "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2005:070",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-070.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "Multiple vulnerabilities in ImageMagick",
+					"url": "https://blogs.oracle.com/sunsecurity/entry/multiple_vulnerabilities_in_imagemagick"
+				},
+				{
+					"type": "vendor",
+					"name": "Turbolinux Security Advisory (英語)",
+					"vulinfoid": "TLSA-2005-47",
+					"url": "http://www.turbolinux.com/security/2005/TLSA-2005-47.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2005:070",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-070J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "TLSA-2005-47",
+					"url": "http://www.turbolinux.co.jp/security/2005/TLSA-2005-47j.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-0761",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0761"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-0761",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-0761"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12873",
+					"url": "http://www.securityfocus.com/bid/12873"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12874",
+					"url": "http://www.securityfocus.com/bid/12874"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12875",
+					"url": "http://www.securityfocus.com/bid/12875"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "12876",
+					"url": "http://www.securityfocus.com/bid/12876"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載\\n[2012年06月26日]\\n  ベンダ情報：オラクル (Multiple vulnerabilities in ImageMagick) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2012-06-26T14:14:26+09:00",
+		"datepublic": "2005-03-23T00:00:00+09:00"
+	}
 }

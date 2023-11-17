@@ -1,180 +1,180 @@
 {
-  "vulinfoid": "JVNDB-2021-005379",
-  "vulinfodata": {
-    "title": "複数の Hitachi Energy 製品における不適切なアクセス制御の脆弱性",
-    "vulinfodescription": {
-      "overview": "Hitachi Energy 社が提供する複数の製品には、不適切なアクセス制御の脆弱性（CWE-284、CVE-2021-35534）が存在します。  "
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "日立エナジー (旧 日立ABBパワーグリッド)",
-          "productname": "GMS600",
-          "cpe": {
-            "text": "cpe:/a:hitachi_abb_power_grids:gms600",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.2.0",
-            "Version 1.3.0",
-            "Version 1.3.1.0"
-          ]
-        },
-        {
-          "name": "日立エナジー (旧 日立ABBパワーグリッド)",
-          "productname": "PWC600",
-          "cpe": {
-            "text": "cpe:/a:hitachi_abb_power_grids:pwc600",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.0.1.0",
-            "Version 1.0.1.1",
-            "Version 1.0.1.3",
-            "Version 1.0.1.4",
-            "Version 1.1.0.0",
-            "Version 1.1.0.1"
-          ]
-        },
-        {
-          "name": "日立エナジー (旧 日立ABBパワーグリッド)",
-          "productname": "Relion 650 series",
-          "cpe": {
-            "text": "cpe:/a:hitachi_abb_power_grids:relion_650_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1.0 すべてのリビジョン",
-            "Version 1.1 すべてのリビジョン",
-            "Version 1.2 すべてのリビジョン",
-            "Version 1.3 すべてのリビジョン"
-          ]
-        },
-        {
-          "name": "日立エナジー (旧 日立ABBパワーグリッド)",
-          "productname": "Relion 670 series",
-          "cpe": {
-            "text": "cpe:/a:hitachi_abb_power_grids:relion_670_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2.0 すべてのリビジョン",
-            "Version 2.2.2 すべてのリビジョン",
-            "Version 2.2.3 リビジョン 2.2.3.4 およびそれ以前"
-          ]
-        },
-        {
-          "name": "日立エナジー (旧 日立ABBパワーグリッド)",
-          "productname": "Relion 670/650 series",
-          "cpe": {
-            "text": "cpe:/a:hitachi_abb_power_grids:relion_670_650_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2.1 すべてのリビジョン",
-            "Version 2.2.0 すべてのリビジョン",
-            "Version 2.2.4 すべてのリビジョン"
-          ]
-        },
-        {
-          "name": "日立エナジー (旧 日立ABBパワーグリッド)",
-          "productname": "Relion 670/650/SAM600-IO series",
-          "cpe": {
-            "text": "cpe:/a:hitachi_abb_power_grids:relion_670_650_sam600-io_series",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 2.2.1 すべてのリビジョン",
-            "Version 2.2.5 リビジョン 2.2.5.1 およびそれ以前"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔のユーザによって、独自の Open Data-base Connectivity（ODBC）プロトコル（TCP 2102）にアクセスする構成ツールを介して権限昇格され、デバイスを不正に変更されたり、永続的に無効化されたりする。   "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  　* Relion 670 series Version 2.2.3.5 　* Relion 670/650/SAM600-IO series Version 2.2.5.2 　* Relion 650 series Version 1.3.0.8 　* Relion 650 series Version 1.3 　 影響を受けるその他の製品およびバージョンについては、Hitachi Energy 社のアドバイザリに従ってワークアラウンドを実施してください。  [ワークアラウンドを実施する] 開発者は次のワークアラウンドの適用を推奨しています。  　* プロセス制御システムに対する担当者以外のアクセスを物理的に防ぐ 　* インターネットに直接接続しない 　* ファイアウォールで、公開ポートを最小限にして他のネットワークから分離する 　* プロセス制御システムをインターネット上の Web サイトの閲覧、インスタントメッセージ、電子メールの受信等に使用しない 　* 変電所内のデバイス構成に対してのみ、Open Data-base Connectivity（ODBC）プロトコルを制限する 　* ポータブルコンピュータやリムーバブルメディアはウィルススキャンをかけてから制御システムに接続する    "
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "CYBERSECURITY ADVISORY",
-          "vulinfoid": "Insufficient Security Control Vulnerability in Hitachi Energy PWC600 Product",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000060&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "CYBERSECURITY ADVISORY",
-          "vulinfoid": "Insufficient Security Control Vulnerability in Hitachi Energy GMS600 Product",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000059&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "vendor",
-          "name": "CYBERSECURITY ADVISORY",
-          "vulinfoid": "Insufficient Security Control Vulnerability in Hitachi Energy Relion 670/650/SAM600-IO series Products",
-          "url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000058&LanguageCode=en&DocumentPartId=&Action=Launch"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-35534",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-35534"
-        },
-        {
-          "type": "advisory",
-          "name": "ICS-CERT ADVISORY",
-          "vulinfoid": "ICSA-21-343-01",
-          "url": "https://www.cisa.gov/uscert/ics/advisories/icsa-21-343-01"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92249787",
-          "url": "https://jvn.jp/vu/JVNVU92249787/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-35534",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-35534"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-284",
-          "url": "https://cwe.mitre.org/data/definitions/284.html",
-          "title": "不適切なアクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2021-12-13T16:02:04+09:00",
-          "description": "[2021年12月13日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2021-12-13T18:18:09+09:00",
-    "datelastupdated": "2021-12-13T18:18:09+09:00",
-    "datepublic": "2021-12-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-005379",
+	"vulinfodata": {
+		"title": "複数の Hitachi Energy 製品における不適切なアクセス制御の脆弱性",
+		"vulinfodescription": {
+			"overview": "Hitachi Energy 社が提供する複数の製品には、不適切なアクセス制御の脆弱性（CWE-284、CVE-2021-35534）が存在します。  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日立エナジー (旧 日立ABBパワーグリッド)",
+					"productname": "GMS600",
+					"cpe": {
+						"text": "cpe:/a:hitachi_abb_power_grids:gms600",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.2.0",
+						"Version 1.3.0",
+						"Version 1.3.1.0"
+					]
+				},
+				{
+					"name": "日立エナジー (旧 日立ABBパワーグリッド)",
+					"productname": "PWC600",
+					"cpe": {
+						"text": "cpe:/a:hitachi_abb_power_grids:pwc600",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.0.1.0",
+						"Version 1.0.1.1",
+						"Version 1.0.1.3",
+						"Version 1.0.1.4",
+						"Version 1.1.0.0",
+						"Version 1.1.0.1"
+					]
+				},
+				{
+					"name": "日立エナジー (旧 日立ABBパワーグリッド)",
+					"productname": "Relion 650 series",
+					"cpe": {
+						"text": "cpe:/a:hitachi_abb_power_grids:relion_650_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1.0 すべてのリビジョン",
+						"Version 1.1 すべてのリビジョン",
+						"Version 1.2 すべてのリビジョン",
+						"Version 1.3 すべてのリビジョン"
+					]
+				},
+				{
+					"name": "日立エナジー (旧 日立ABBパワーグリッド)",
+					"productname": "Relion 670 series",
+					"cpe": {
+						"text": "cpe:/a:hitachi_abb_power_grids:relion_670_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2.0 すべてのリビジョン",
+						"Version 2.2.2 すべてのリビジョン",
+						"Version 2.2.3 リビジョン 2.2.3.4 およびそれ以前"
+					]
+				},
+				{
+					"name": "日立エナジー (旧 日立ABBパワーグリッド)",
+					"productname": "Relion 670/650 series",
+					"cpe": {
+						"text": "cpe:/a:hitachi_abb_power_grids:relion_670_650_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2.1 すべてのリビジョン",
+						"Version 2.2.0 すべてのリビジョン",
+						"Version 2.2.4 すべてのリビジョン"
+					]
+				},
+				{
+					"name": "日立エナジー (旧 日立ABBパワーグリッド)",
+					"productname": "Relion 670/650/SAM600-IO series",
+					"cpe": {
+						"text": "cpe:/a:hitachi_abb_power_grids:relion_670_650_sam600-io_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 2.2.1 すべてのリビジョン",
+						"Version 2.2.5 リビジョン 2.2.5.1 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔のユーザによって、独自の Open Data-base Connectivity（ODBC）プロトコル（TCP 2102）にアクセスする構成ツールを介して権限昇格され、デバイスを不正に変更されたり、永続的に無効化されたりする。   "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  　* Relion 670 series Version 2.2.3.5 　* Relion 670/650/SAM600-IO series Version 2.2.5.2 　* Relion 650 series Version 1.3.0.8 　* Relion 650 series Version 1.3 　 影響を受けるその他の製品およびバージョンについては、Hitachi Energy 社のアドバイザリに従ってワークアラウンドを実施してください。  [ワークアラウンドを実施する] 開発者は次のワークアラウンドの適用を推奨しています。  　* プロセス制御システムに対する担当者以外のアクセスを物理的に防ぐ 　* インターネットに直接接続しない 　* ファイアウォールで、公開ポートを最小限にして他のネットワークから分離する 　* プロセス制御システムをインターネット上の Web サイトの閲覧、インスタントメッセージ、電子メールの受信等に使用しない 　* 変電所内のデバイス構成に対してのみ、Open Data-base Connectivity（ODBC）プロトコルを制限する 　* ポータブルコンピュータやリムーバブルメディアはウィルススキャンをかけてから制御システムに接続する    "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "CYBERSECURITY ADVISORY",
+					"vulinfoid": "Insufficient Security Control Vulnerability in Hitachi Energy PWC600 Product",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000060&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "CYBERSECURITY ADVISORY",
+					"vulinfoid": "Insufficient Security Control Vulnerability in Hitachi Energy GMS600 Product",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000059&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "vendor",
+					"name": "CYBERSECURITY ADVISORY",
+					"vulinfoid": "Insufficient Security Control Vulnerability in Hitachi Energy Relion 670/650/SAM600-IO series Products",
+					"url": "https://search.abb.com/library/Download.aspx?DocumentID=8DBD000058&LanguageCode=en&DocumentPartId=&Action=Launch"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-35534",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-35534"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-21-343-01",
+					"url": "https://www.cisa.gov/uscert/ics/advisories/icsa-21-343-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92249787",
+					"url": "https://jvn.jp/vu/JVNVU92249787/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-35534",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-35534"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-284",
+					"url": "https://cwe.mitre.org/data/definitions/284.html",
+					"title": "不適切なアクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2021-12-13T16:02:04+09:00",
+					"description": "[2021年12月13日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2021-12-13T18:18:09+09:00",
+		"datelastupdated": "2021-12-13T18:18:09+09:00",
+		"datepublic": "2021-12-10T00:00:00+09:00"
+	}
 }

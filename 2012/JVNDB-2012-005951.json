@@ -1,169 +1,169 @@
 {
-  "vulinfoid": "JVNDB-2012-005951",
-  "vulinfodata": {
-    "title": "Qt の QSslSocket::sslErrors 関数における誤ったエラーを報告される脆弱性",
-    "vulinfodescription": {
-      "overview": "Qt の QSslSocket::sslErrors 関数は、openSSL の特定のバージョンを使用している場合、間違ったロケーションからメモリを読むことができる \"互換性のない構造のレイアウト (incompatible structure layout)\" を使用するため、証明書の検証が失敗した場合に Qt が誤ったエラーを報告し、ユーザが証明書を受け入れてしまう危険なセキュリティ上の意思決定を行う原因となる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Canonical",
-          "productname": "Ubuntu",
-          "cpe": {
-            "text": "cpe:/o:canonical:ubuntu",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.04 LTS",
-            "11.10",
-            "12.04 LTS",
-            "12.10"
-          ]
-        },
-        {
-          "name": "Digia",
-          "productname": "Qt",
-          "cpe": {
-            "text": "cpe:/a:digia:qt",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.6.5 未満",
-            "4.7.6 未満の 4.7.x",
-            "4.8.5 未満の 4.8.x"
-          ]
-        },
-        {
-          "name": "Novell",
-          "productname": "openSUSE",
-          "cpe": {
-            "text": "cpe:/o:novell:opensuse",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.4",
-            "12.1",
-            "12.2"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "4.3",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "証明書の検証が失敗した場合に Qt が誤ったエラーを報告することで、ユーザが証明書を受け入れてしまう危険なセキュリティ上の意思決定を行う原因となる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Code Review",
-          "vulinfoid": "Change I47fc2433: Fix binary incompatibility between openssl versions",
-          "url": "https://codereview.qt-project.org/#change,42461"
-        },
-        {
-          "type": "vendor",
-          "name": "Debian Bug report logs",
-          "vulinfoid": "#697582",
-          "url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=697582"
-        },
-        {
-          "type": "vendor",
-          "name": "openSUSE",
-          "vulinfoid": "openSUSE-SU-2013:0256",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00014.html"
-        },
-        {
-          "type": "vendor",
-          "name": "openSUSE",
-          "vulinfoid": "openSUSE-SU-2013:0211",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-01/msg00089.html"
-        },
-        {
-          "type": "vendor",
-          "name": "openSUSE",
-          "vulinfoid": "openSUSE-SU-2013:0204",
-          "url": "http://lists.opensuse.org/opensuse-updates/2013-01/msg00086.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Qt",
-          "vulinfoid": "Commit (4.8)",
-          "url": "http://qt.gitorious.org/qt/qt/commit/691e78e5061d4cbc0de212d23b06c5dffddf2098"
-        },
-        {
-          "type": "vendor",
-          "name": "Qt",
-          "vulinfoid": "Commit (4.7)",
-          "url": "http://qt.gitorious.org/qt/qt/commit/3b14dc93cf0ef06f1424d7d6319a1af4505faa53"
-        },
-        {
-          "type": "vendor",
-          "name": "Qt Project Security Advisory",
-          "vulinfoid": "QSslSocket may report incorrect errors when certificate",
-          "url": "http://lists.qt-project.org/pipermail/announce/2013-January/000020.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 891955",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=891955"
-        },
-        {
-          "type": "vendor",
-          "name": "Ubuntu Security Notice",
-          "vulinfoid": "USN-1723-1",
-          "url": "http://www.ubuntu.com/usn/USN-1723-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2012-6093",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6093"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2012-6093",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6093"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-310",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
-          "title": "暗号の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2013年02月27日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2013-02-27T15:13:13+09:00",
-    "datelastupdated": "2013-02-27T15:13:13+09:00",
-    "datepublic": "2012-12-12T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2012-005951",
+	"vulinfodata": {
+		"title": "Qt の QSslSocket::sslErrors 関数における誤ったエラーを報告される脆弱性",
+		"vulinfodescription": {
+			"overview": "Qt の QSslSocket::sslErrors 関数は、openSSL の特定のバージョンを使用している場合、間違ったロケーションからメモリを読むことができる \"互換性のない構造のレイアウト (incompatible structure layout)\" を使用するため、証明書の検証が失敗した場合に Qt が誤ったエラーを報告し、ユーザが証明書を受け入れてしまう危険なセキュリティ上の意思決定を行う原因となる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Canonical",
+					"productname": "Ubuntu",
+					"cpe": {
+						"text": "cpe:/o:canonical:ubuntu",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.04 LTS",
+						"11.10",
+						"12.04 LTS",
+						"12.10"
+					]
+				},
+				{
+					"name": "Digia",
+					"productname": "Qt",
+					"cpe": {
+						"text": "cpe:/a:digia:qt",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.6.5 未満",
+						"4.7.6 未満の 4.7.x",
+						"4.8.5 未満の 4.8.x"
+					]
+				},
+				{
+					"name": "Novell",
+					"productname": "openSUSE",
+					"cpe": {
+						"text": "cpe:/o:novell:opensuse",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.4",
+						"12.1",
+						"12.2"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "証明書の検証が失敗した場合に Qt が誤ったエラーを報告することで、ユーザが証明書を受け入れてしまう危険なセキュリティ上の意思決定を行う原因となる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Code Review",
+					"vulinfoid": "Change I47fc2433: Fix binary incompatibility between openssl versions",
+					"url": "https://codereview.qt-project.org/#change,42461"
+				},
+				{
+					"type": "vendor",
+					"name": "Debian Bug report logs",
+					"vulinfoid": "#697582",
+					"url": "http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=697582"
+				},
+				{
+					"type": "vendor",
+					"name": "openSUSE",
+					"vulinfoid": "openSUSE-SU-2013:0256",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-02/msg00014.html"
+				},
+				{
+					"type": "vendor",
+					"name": "openSUSE",
+					"vulinfoid": "openSUSE-SU-2013:0211",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-01/msg00089.html"
+				},
+				{
+					"type": "vendor",
+					"name": "openSUSE",
+					"vulinfoid": "openSUSE-SU-2013:0204",
+					"url": "http://lists.opensuse.org/opensuse-updates/2013-01/msg00086.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Qt",
+					"vulinfoid": "Commit (4.8)",
+					"url": "http://qt.gitorious.org/qt/qt/commit/691e78e5061d4cbc0de212d23b06c5dffddf2098"
+				},
+				{
+					"type": "vendor",
+					"name": "Qt",
+					"vulinfoid": "Commit (4.7)",
+					"url": "http://qt.gitorious.org/qt/qt/commit/3b14dc93cf0ef06f1424d7d6319a1af4505faa53"
+				},
+				{
+					"type": "vendor",
+					"name": "Qt Project Security Advisory",
+					"vulinfoid": "QSslSocket may report incorrect errors when certificate",
+					"url": "http://lists.qt-project.org/pipermail/announce/2013-January/000020.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 891955",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=891955"
+				},
+				{
+					"type": "vendor",
+					"name": "Ubuntu Security Notice",
+					"vulinfoid": "USN-1723-1",
+					"url": "http://www.ubuntu.com/usn/USN-1723-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2012-6093",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6093"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2012-6093",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-6093"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-310",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-310.html",
+					"title": "暗号の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2013年02月27日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2013-02-27T15:13:13+09:00",
+		"datelastupdated": "2013-02-27T15:13:13+09:00",
+		"datepublic": "2012-12-12T00:00:00+09:00"
+	}
 }

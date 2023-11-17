@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2020-000084",
-  "vulinfodata": {
-    "title": "Apache Struts 2 において任意のコードが実行可能な脆弱性 (S2-061)",
-    "vulinfodescription": {
-      "overview": "The Apache Software Foundation が提供する Apache Struts 2 には、不適切な入力確認 (CWE-20) に起因する任意のコードが実行可能な脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社エーアイセキュリティラボ 安西真人 氏"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache Struts",
-          "cpe": {
-            "text": "cpe:/a:apache:struts",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.0.0 から 2.5.25 まで"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "ESMPRO/ServerManager",
-          "cpe": {
-            "text": "cpe:/a:nec:esmpro_servermanager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.10 から 6.58",
-            "7.00 から 7.12"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "8.1",
-          "vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、任意のコードが実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減できます。 ・信頼できない入力値を OGNL の評価に用いない また、開発者は回避策適用に関し、<a href=\"https://struts.apache.org/security/#do-not-use-incoming-untrusted-user-input-in-forced-expression-evaluation\">Security Guide</a> を参照することを推奨しています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Struts Announcements",
-          "vulinfoid": "08 December 2020 - Potential RCE when using forced evaluation - CVE-2020-17530",
-          "url": "https://struts.apache.org/announce#a20201208"
-        },
-        {
-          "type": "vendor",
-          "name": "JVN",
-          "vulinfoid": "日本電気株式会社からの情報",
-          "url": "https://jvn.jp/jp/JVN43969166/6443/index.html"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV21-019",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv21-019.html"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV22-013",
-          "url": "https://jpn.nec.com/security-info/secinfo/nv22-013.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Security Bulletins",
-          "vulinfoid": "S2-061",
-          "url": "https://cwiki.apache.org/confluence/display/WW/S2-061"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-17530",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-17530"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 緊急報告",
-          "vulinfoid": "Apache Struts 2 の脆弱性 (S2-061) に関する注意喚起",
-          "url": "https://www.jpcert.or.jp/at/2020/at200046.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVN#43969166",
-          "url": "https://jvn.jp/jp/JVN43969166/index.html"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-12-11T15:05:35+09:00",
-          "description": "[2020年12月11日]\\n  掲載"
-        },
-        {
-          "historyno": "2",
-          "datetime": "2022-04-19T12:22:43+09:00",
-          "description": "[2022年04月19日]\\n  ベンダ情報：日本電気 (日本電気株式会社からの情報) を追加"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2022-08-09T12:13:45+09:00",
-          "description": "[2022年08月08日]\\n  ベンダ情報：日本電気 (NV21-019) を追加\\n"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2022-09-26T16:02:01+09:00",
-          "description": "[2022年09月26日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-013) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-12-11T12:05:38+09:00",
-    "datelastupdated": "2022-09-26T17:55:20+09:00",
-    "datepublic": "2020-12-11T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-000084",
+	"vulinfodata": {
+		"title": "Apache Struts 2 において任意のコードが実行可能な脆弱性 (S2-061)",
+		"vulinfodescription": {
+			"overview": "The Apache Software Foundation が提供する Apache Struts 2 には、不適切な入力確認 (CWE-20) に起因する任意のコードが実行可能な脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社エーアイセキュリティラボ 安西真人 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache Struts",
+					"cpe": {
+						"text": "cpe:/a:apache:struts",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.0.0 から 2.5.25 まで"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "ESMPRO/ServerManager",
+					"cpe": {
+						"text": "cpe:/a:nec:esmpro_servermanager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.10 から 6.58",
+						"7.00 から 7.12"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.1",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、任意のコードが実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減できます。 ・信頼できない入力値を OGNL の評価に用いない また、開発者は回避策適用に関し、<a href=\"https://struts.apache.org/security/#do-not-use-incoming-untrusted-user-input-in-forced-expression-evaluation\">Security Guide</a> を参照することを推奨しています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Struts Announcements",
+					"vulinfoid": "08 December 2020 - Potential RCE when using forced evaluation - CVE-2020-17530",
+					"url": "https://struts.apache.org/announce#a20201208"
+				},
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "日本電気株式会社からの情報",
+					"url": "https://jvn.jp/jp/JVN43969166/6443/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV21-019",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv21-019.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV22-013",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv22-013.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Security Bulletins",
+					"vulinfoid": "S2-061",
+					"url": "https://cwiki.apache.org/confluence/display/WW/S2-061"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-17530",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-17530"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 緊急報告",
+					"vulinfoid": "Apache Struts 2 の脆弱性 (S2-061) に関する注意喚起",
+					"url": "https://www.jpcert.or.jp/at/2020/at200046.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#43969166",
+					"url": "https://jvn.jp/jp/JVN43969166/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-12-11T15:05:35+09:00",
+					"description": "[2020年12月11日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2022-04-19T12:22:43+09:00",
+					"description": "[2022年04月19日]\\n  ベンダ情報：日本電気 (日本電気株式会社からの情報) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2022-08-09T12:13:45+09:00",
+					"description": "[2022年08月08日]\\n  ベンダ情報：日本電気 (NV21-019) を追加\\n"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2022-09-26T16:02:01+09:00",
+					"description": "[2022年09月26日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：日本電気 (NV22-013) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2020-12-11T12:05:38+09:00",
+		"datelastupdated": "2022-09-26T17:55:20+09:00",
+		"datepublic": "2020-12-11T00:00:00+09:00"
+	}
 }

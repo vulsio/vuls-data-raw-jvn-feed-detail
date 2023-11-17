@@ -1,127 +1,127 @@
 {
-  "vulinfoid": "JVNDB-2017-004101",
-  "vulinfodata": {
-    "title": "HPE SiteScope に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "HPE SiteScope には複数の脆弱性が存在します。  重要な機能に対する認証欠如の問題 (CWE-306) HPE SiteScope には、ファイルアクセス処理において認証不備の脆弱性が存在します。遠隔の第三者によってシステム上の任意のファイルを取得されるなどの可能性があります。報告者は、2012年に公開された Metasploit モジュール hp_sitescope_getfileinternal_access が、SiteScope 11.31.461 に対して使用可能であることを確認しているとのことです。  暗号化鍵がハードコードされている問題 (CWE-321) SiteScope に含まれている ss_pu.jar ライブラリには暗号化鍵がハードコードされており、SiteScope の設定ファイルに含まれている認証情報を復号されるなどの可能性があります。  不完全または危険な暗号化アルゴリズムの使用 (CWE-327) SiteScope は、設定ファイルに含まれる認証情報の保護などのため、独自にカスタマイズした暗号化関数 (例: ss_pu.jar に含まれる OldEncryptionHandler) を使用していることがあります。 報告者が調査したシステムでは、master.config 内に存在する _httpSecureKeyPassword や _httpSecureKeystorePassword などの項目が OldEncryptionHandler で暗号化されていたとのことです。  認証情報の不十分な保護 (CWE-522) SiteScope の設定管理ページでは、認証情報を平文の形で HTTP 経由で送信しています。  報告者はこれらの問題についてブログで公開しています。  　* ブログ 　　http://bytesdarkly.com/disclosures/2017/06/exploiting-hp-sitescope-from-zero-to-compromise.html  　* 重要な機能に対する認証欠如の問題 (CWE-306) 　　https://cwe.mitre.org/data/definitions/306.html  　* 暗号化鍵がハードコードされている問題 (CWE-321) 　　https://cwe.mitre.org/data/definitions/321.html  　* 不完全または危険な暗号化アルゴリズムの使用 (CWE-327) 　　https://cwe.mitre.org/data/definitions/327.html  　* 認証情報の不十分な保護 (CWE-522) 　　https://cwe.mitre.org/data/definitions/522.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ヒューレット・パッカード・エンタープライズ",
-          "productname": "SiteScope",
-          "cpe": {
-            "text": "cpe:/a:hp:sitescope",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.31.461"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.2",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "遠隔の第三者によって、HPE SiteScope を使用しているシステムの任意のファイルにアクセスされたり、SiteScope の認証情報を取得される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[古い API を無効にする] 開発者によると、当該製品の 11.24 IP7 およびそれ以降のバージョンでは、設定ファイル groups/master.config に _disableOldAPIs=true という設定を追加することで、認証なしでのサービス実行を無効にできるとのことです。  [キーマネージメント機能を有効にする] 開発者によると、  　　* ss_pu.jar にハードコードされている鍵は後方互換性および難読化のために使用されているもの 　　* 暗号化のためにはキーマネージメント機能が提供されている 　　* 暗号化に使われる鍵はキーマネージメント機能を有効にした際に生成される  とのことです。 キーマネージメント機能の詳細については、SiteScope Deployment Guide の Chapter 20: Configuring SiteScope to Use a Custom Key for Data Encryption を参照してください。  開発者によると、CWE-522 の脆弱性への対応は、2017年第3四半期リリース予定のアップデートで行われるとのことです。  CWE-522 https://cwe.mitre.org/data/definitions/522.html  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 　　* 当該製品へのアクセスは全て TLS/SSL 経由で行われるようにする 　　* 当該製品へのアクセスは信頼できるホストやネットワークからのみに制限する"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Hewlett Packard Enterprise Development LP",
-          "vulinfoid": "SiteScope",
-          "url": "https://saas.hpe.com/en-us/software/sitescope"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#97705299",
-          "url": "http://jvn.jp/cert/JVNVU97705299"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#768399",
-          "url": "https://www.kb.cert.org/vuls/id/768399"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "HP SiteScope SOAP Call getFileInternal Remote File Access",
-          "url": "https://www.rapid7.com/db/modules/auxiliary/scanner/http/hp_sitescope_getfileinternal_fileaccess"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "EXPLOITING HP SITESCOPE FROM ZERO TO COMPROMISE! ",
-          "url": "http://bytesdarkly.com/disclosures/2017/06/exploiting-hp-sitescope-from-zero-to-compromise.html"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "(0Day) HP SiteScope SOAP Call getFileInternal Remote Code Execution Vulnerability",
-          "url": "http://www.zerodayinitiative.com/advisories/ZDI-12-176/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-306",
-          "url": "https://cwe.mitre.org/data/definitions/306.html",
-          "title": "重要な機能に対する認証の欠如"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-327",
-          "url": "https://cwe.mitre.org/data/definitions/327.html",
-          "title": "不完全、または危険な暗号アルゴリズムの使用"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2017年06月16日]\\n  掲載\\n[2017年06月21日]\\n  影響を受けるシステム：製品名表記を訂正\\n  概要：製品名表記を訂正"
-        }
-      ]
-    },
-    "datefirstpublished": "2017-06-16T12:26:24+09:00",
-    "datelastupdated": "2017-06-21T13:49:16+09:00",
-    "datepublic": "2017-06-13T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2017-004101",
+	"vulinfodata": {
+		"title": "HPE SiteScope に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "HPE SiteScope には複数の脆弱性が存在します。  重要な機能に対する認証欠如の問題 (CWE-306) HPE SiteScope には、ファイルアクセス処理において認証不備の脆弱性が存在します。遠隔の第三者によってシステム上の任意のファイルを取得されるなどの可能性があります。報告者は、2012年に公開された Metasploit モジュール hp_sitescope_getfileinternal_access が、SiteScope 11.31.461 に対して使用可能であることを確認しているとのことです。  暗号化鍵がハードコードされている問題 (CWE-321) SiteScope に含まれている ss_pu.jar ライブラリには暗号化鍵がハードコードされており、SiteScope の設定ファイルに含まれている認証情報を復号されるなどの可能性があります。  不完全または危険な暗号化アルゴリズムの使用 (CWE-327) SiteScope は、設定ファイルに含まれる認証情報の保護などのため、独自にカスタマイズした暗号化関数 (例: ss_pu.jar に含まれる OldEncryptionHandler) を使用していることがあります。 報告者が調査したシステムでは、master.config 内に存在する _httpSecureKeyPassword や _httpSecureKeystorePassword などの項目が OldEncryptionHandler で暗号化されていたとのことです。  認証情報の不十分な保護 (CWE-522) SiteScope の設定管理ページでは、認証情報を平文の形で HTTP 経由で送信しています。  報告者はこれらの問題についてブログで公開しています。  　* ブログ 　　http://bytesdarkly.com/disclosures/2017/06/exploiting-hp-sitescope-from-zero-to-compromise.html  　* 重要な機能に対する認証欠如の問題 (CWE-306) 　　https://cwe.mitre.org/data/definitions/306.html  　* 暗号化鍵がハードコードされている問題 (CWE-321) 　　https://cwe.mitre.org/data/definitions/321.html  　* 不完全または危険な暗号化アルゴリズムの使用 (CWE-327) 　　https://cwe.mitre.org/data/definitions/327.html  　* 認証情報の不十分な保護 (CWE-522) 　　https://cwe.mitre.org/data/definitions/522.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ヒューレット・パッカード・エンタープライズ",
+					"productname": "SiteScope",
+					"cpe": {
+						"text": "cpe:/a:hp:sitescope",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.31.461"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "AV:N/AC:L/Au:N/C:C/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.2",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって、HPE SiteScope を使用しているシステムの任意のファイルにアクセスされたり、SiteScope の認証情報を取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[古い API を無効にする] 開発者によると、当該製品の 11.24 IP7 およびそれ以降のバージョンでは、設定ファイル groups/master.config に _disableOldAPIs=true という設定を追加することで、認証なしでのサービス実行を無効にできるとのことです。  [キーマネージメント機能を有効にする] 開発者によると、  　　* ss_pu.jar にハードコードされている鍵は後方互換性および難読化のために使用されているもの 　　* 暗号化のためにはキーマネージメント機能が提供されている 　　* 暗号化に使われる鍵はキーマネージメント機能を有効にした際に生成される  とのことです。 キーマネージメント機能の詳細については、SiteScope Deployment Guide の Chapter 20: Configuring SiteScope to Use a Custom Key for Data Encryption を参照してください。  開発者によると、CWE-522 の脆弱性への対応は、2017年第3四半期リリース予定のアップデートで行われるとのことです。  CWE-522 https://cwe.mitre.org/data/definitions/522.html  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。 　　* 当該製品へのアクセスは全て TLS/SSL 経由で行われるようにする 　　* 当該製品へのアクセスは信頼できるホストやネットワークからのみに制限する"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Hewlett Packard Enterprise Development LP",
+					"vulinfoid": "SiteScope",
+					"url": "https://saas.hpe.com/en-us/software/sitescope"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97705299",
+					"url": "http://jvn.jp/cert/JVNVU97705299"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#768399",
+					"url": "https://www.kb.cert.org/vuls/id/768399"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "HP SiteScope SOAP Call getFileInternal Remote File Access",
+					"url": "https://www.rapid7.com/db/modules/auxiliary/scanner/http/hp_sitescope_getfileinternal_fileaccess"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "EXPLOITING HP SITESCOPE FROM ZERO TO COMPROMISE! ",
+					"url": "http://bytesdarkly.com/disclosures/2017/06/exploiting-hp-sitescope-from-zero-to-compromise.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "(0Day) HP SiteScope SOAP Call getFileInternal Remote Code Execution Vulnerability",
+					"url": "http://www.zerodayinitiative.com/advisories/ZDI-12-176/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-306",
+					"url": "https://cwe.mitre.org/data/definitions/306.html",
+					"title": "重要な機能に対する認証の欠如"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-327",
+					"url": "https://cwe.mitre.org/data/definitions/327.html",
+					"title": "不完全、または危険な暗号アルゴリズムの使用"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2017年06月16日]\\n  掲載\\n[2017年06月21日]\\n  影響を受けるシステム：製品名表記を訂正\\n  概要：製品名表記を訂正"
+				}
+			]
+		},
+		"datefirstpublished": "2017-06-16T12:26:24+09:00",
+		"datelastupdated": "2017-06-21T13:49:16+09:00",
+		"datepublic": "2017-06-13T00:00:00+09:00"
+	}
 }

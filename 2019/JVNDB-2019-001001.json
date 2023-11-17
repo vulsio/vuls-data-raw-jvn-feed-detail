@@ -1,239 +1,239 @@
 {
-  "vulinfoid": "JVNDB-2019-001001",
-  "vulinfodata": {
-    "title": "Windows Kernel Transaction Manager (KTM) における競合状態に関する脆弱性",
-    "vulinfodescription": {
-      "overview": "Microsoft が提供する Windows Kernel Transaction Manager (KTM) には、競合状態に関する脆弱性が存在します。  Windows カーネルには、メモリ内のオブジェクトを正常に処理できない問題が存在します。本脆弱性を悪用することで、攻撃者はカーネルモードで任意のコードを実行し、プログラムのインストールや、データの閲覧、編集、削除、またはフルコントロールのユーザ権限をもつアカウントの新規作成を行うことが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 10",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_10",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for 32-bit Systems",
-            "for x64-based Systems",
-            "Version 1607 for 32-bit Systems",
-            "Version 1607 for x64-based Systems",
-            "Version 1703 for 32-bit Systems",
-            "Version 1703 for x64-based Systems",
-            "Version 1709 for 32-bit Systems",
-            "Version 1709 for 64-based Systems",
-            "Version 1709 for ARM64-based Systems",
-            "Version 1803 for 32-bit Systems",
-            "Version 1803 for ARM64-based Systems",
-            "Version 1803 for x64-based Systems",
-            "Version 1809 for 32-bit Systems",
-            "Version 1809 for ARM64-based Systems",
-            "Version 1809 for x64-based Systems"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 7",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_7",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for 32-bit Systems Service Pack 1",
-            "for x64-based Systems Service Pack 1"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows 8.1",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_8.1",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for 32-bit systems",
-            "for x64-based systems"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows RT",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_rt",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.1"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "Version 1709 (Server Core Installation)",
-            "Version 1803 (Server Core Installation)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2008",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2008",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "for 32-bit Systems Service Pack 2",
-            "for 32-bit Systems Service Pack 2 (Server Core installation)",
-            "for Itanium-Based Systems Service Pack 2",
-            "for x64-based Systems Service Pack 2",
-            "for x64-based Systems Service Pack 2 (Server Core installation)",
-            "R2 for Itanium-Based Systems Service Pack 1",
-            "R2 for x64-based Systems Service Pack 1",
-            "R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2012",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2012",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(Server Core installation)",
-            "R2",
-            "R2 (Server Core installation)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2016",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2016",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(Server Core installation)"
-          ]
-        },
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Windows Server 2019",
-          "cpe": {
-            "text": "cpe:/o:microsoft:windows_server_2019",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(Server Core installation)"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.2",
-          "vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.8",
-          "vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "Windows システムにログイン済みの攻撃者によって、悪意を持って細工されたアプリケーションを実行され、権限昇格やユーザアカウントの作成、プログラムのインストール、データの閲覧、編集、削除が行われる可能性があります。 カスペルスキー社の研究チームによると、本脆弱性を悪用することで、Chrome や Edge を含む Web ブラウザのサンドボックス機能を回避することも可能とのことです。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] Microsoft が提供する情報をもとに、最新版へアップデートしてください。 Microsoft は、2018年12月のセキュリティ更新プログラムにおいて、本脆弱性の修正を行っています。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Security Update Guide",
-          "vulinfoid": "CVE-2018-8611 | Windows Kernel Elevation of Privilege Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8611"
-        },
-        {
-          "type": "vendor",
-          "name": "セキュリティ更新プログラムガイド",
-          "vulinfoid": "CVE-2018-8611 | Windows カーネルの特権の昇格の脆弱性",
-          "url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2018-8611"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2018-8611",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8611"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#92038183",
-          "url": "https://jvn.jp/vu/JVNVU92038183/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2018-8611",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8611"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#289907",
-          "url": "https://www.kb.cert.org/vuls/id/289907/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Vulnerability detected in Kernel Transaction Manager",
-          "url": "https://usa.kaspersky.com/blog/cve-2018-8611-detected/16833/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Zero-day in Windows Kernel Transaction Manager (CVE-2018-8611)",
-          "url": "https://securelist.com/zero-day-in-windows-kernel-transaction-manager-cve-2018-8611/89253/"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-264",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-          "title": "認可・権限・アクセス制御"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2019-01-08T12:23:31+09:00",
-          "description": "[2019年01月08日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2019-01-08T12:23:31+09:00",
-    "datelastupdated": "2019-01-08T12:23:31+09:00",
-    "datepublic": "2019-01-04T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2019-001001",
+	"vulinfodata": {
+		"title": "Windows Kernel Transaction Manager (KTM) における競合状態に関する脆弱性",
+		"vulinfodescription": {
+			"overview": "Microsoft が提供する Windows Kernel Transaction Manager (KTM) には、競合状態に関する脆弱性が存在します。  Windows カーネルには、メモリ内のオブジェクトを正常に処理できない問題が存在します。本脆弱性を悪用することで、攻撃者はカーネルモードで任意のコードを実行し、プログラムのインストールや、データの閲覧、編集、削除、またはフルコントロールのユーザ権限をもつアカウントの新規作成を行うことが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 10",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_10",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for 32-bit Systems",
+						"for x64-based Systems",
+						"Version 1607 for 32-bit Systems",
+						"Version 1607 for x64-based Systems",
+						"Version 1703 for 32-bit Systems",
+						"Version 1703 for x64-based Systems",
+						"Version 1709 for 32-bit Systems",
+						"Version 1709 for 64-based Systems",
+						"Version 1709 for ARM64-based Systems",
+						"Version 1803 for 32-bit Systems",
+						"Version 1803 for ARM64-based Systems",
+						"Version 1803 for x64-based Systems",
+						"Version 1809 for 32-bit Systems",
+						"Version 1809 for ARM64-based Systems",
+						"Version 1809 for x64-based Systems"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 7",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_7",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for 32-bit Systems Service Pack 1",
+						"for x64-based Systems Service Pack 1"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 8.1",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_8.1",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for 32-bit systems",
+						"for x64-based systems"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows RT",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_rt",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.1"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 1709 (Server Core Installation)",
+						"Version 1803 (Server Core Installation)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2008",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2008",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for 32-bit Systems Service Pack 2",
+						"for 32-bit Systems Service Pack 2 (Server Core installation)",
+						"for Itanium-Based Systems Service Pack 2",
+						"for x64-based Systems Service Pack 2",
+						"for x64-based Systems Service Pack 2 (Server Core installation)",
+						"R2 for Itanium-Based Systems Service Pack 1",
+						"R2 for x64-based Systems Service Pack 1",
+						"R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2012",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2012",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(Server Core installation)",
+						"R2",
+						"R2 (Server Core installation)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2016",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2016",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(Server Core installation)"
+					]
+				},
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows Server 2019",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_server_2019",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(Server Core installation)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.2",
+					"vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "Windows システムにログイン済みの攻撃者によって、悪意を持って細工されたアプリケーションを実行され、権限昇格やユーザアカウントの作成、プログラムのインストール、データの閲覧、編集、削除が行われる可能性があります。 カスペルスキー社の研究チームによると、本脆弱性を悪用することで、Chrome や Edge を含む Web ブラウザのサンドボックス機能を回避することも可能とのことです。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] Microsoft が提供する情報をもとに、最新版へアップデートしてください。 Microsoft は、2018年12月のセキュリティ更新プログラムにおいて、本脆弱性の修正を行っています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Security Update Guide",
+					"vulinfoid": "CVE-2018-8611 | Windows Kernel Elevation of Privilege Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2018-8611"
+				},
+				{
+					"type": "vendor",
+					"name": "セキュリティ更新プログラムガイド",
+					"vulinfoid": "CVE-2018-8611 | Windows カーネルの特権の昇格の脆弱性",
+					"url": "https://portal.msrc.microsoft.com/ja-jp/security-guidance/advisory/CVE-2018-8611"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2018-8611",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8611"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92038183",
+					"url": "https://jvn.jp/vu/JVNVU92038183/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2018-8611",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2018-8611"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#289907",
+					"url": "https://www.kb.cert.org/vuls/id/289907/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Vulnerability detected in Kernel Transaction Manager",
+					"url": "https://usa.kaspersky.com/blog/cve-2018-8611-detected/16833/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Zero-day in Windows Kernel Transaction Manager (CVE-2018-8611)",
+					"url": "https://securelist.com/zero-day-in-windows-kernel-transaction-manager-cve-2018-8611/89253/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2019-01-08T12:23:31+09:00",
+					"description": "[2019年01月08日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2019-01-08T12:23:31+09:00",
+		"datelastupdated": "2019-01-08T12:23:31+09:00",
+		"datepublic": "2019-01-04T00:00:00+09:00"
+	}
 }

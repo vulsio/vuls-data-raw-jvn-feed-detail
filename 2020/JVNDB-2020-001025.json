@@ -1,89 +1,89 @@
 {
-  "vulinfoid": "JVNDB-2020-001025",
-  "vulinfodata": {
-    "title": "Microsoft Internet Explorer の JScript スクリプトエンジンにおけるメモリ破損の脆弱性",
-    "vulinfodescription": {
-      "overview": "Microsoft が提供する Internet Explorer の JScript スクリプトエンジンには、メモリ破損の脆弱性が存在します。  Microsoft が提供する Internet Explorer には VBScript や JScript といったスクリプト言語を実行するためのスクリプトエンジンが実装されています。スクリプトエンジンの JScript を扱うコンポーネントにおいて、メモリ破損の脆弱性が発見されました。Internet Explorer や JScript スクリプトエンジンを組み込んでいるアプリケーションが本脆弱性の影響を受けます。  なお、本脆弱性を悪用する攻撃が既に確認されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "マイクロソフト",
-          "productname": "Microsoft Internet Explorer",
-          "cpe": {
-            "text": "cpe:/a:microsoft:internet_explorer",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "impactitem": {
-        "description": "特別に細工された HTML ファイル (ウェブページやメールの添付文書)、PDF ファイル、Microsoft Office 文書、または Internet Explorer のスクリプトエンジンで作成されたコンテンツの挿入をサポートする文書をユーザが閲覧することで、任意のコードを実行される可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "2020年1月20日現在、対策方法は不明です。 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  [jscript.dll へのアクセスを制限する] jscript.dll は古いバージョンの JScript をサポートするためのライブラリです。このライブラリへのアクセスを制限することで、本脆弱性の悪用を防止することが可能です。 管理者権限でコマンドプロンプトを起動し、以下のコマンドを実行してください。  32bit システムの場合  * takeown /f %windir%\\system32\\jscript.dll 　cacls %windir%\\system32\\jscript.dll /E /P everyone:N  64bit システムの場合  * takeown /f %windir%\\syswow64\\jscript.dll 　cacls %windir%\\syswow64\\jscript.dll /E /P everyone:N 　takeown /f %windir%\\system32\\jscript.dll 　cacls %windir%\\system32\\jscript.dll /E /P everyone:N  開発者が提供しているアドバイザリ (<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200001\"target=\"blank\">ADV200001</a>) では、本緩和策を適用した場合の影響や上記の変更を元に戻す方法についても述べられています。あわせて参照してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Security Update Guide",
-          "vulinfoid": "ADV200001 | Microsoft Guidance on Scripting Engine Memory Corruption Vulnerability",
-          "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200001"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2020-0674",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0674"
-        },
-        {
-          "type": "advisory",
-          "name": "IPA 重要なセキュリティ情報",
-          "vulinfoid": "Microsoft Internet Explorer の脆弱性対策について(CVE-2020-0674)",
-          "url": "https://www.ipa.go.jp/security/ciadr/vul/20200120-ms.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JPCERT 注意喚起",
-          "vulinfoid": "Microsoft Internet Explorer の未修正の脆弱性 (CVE-2020-0674) に関する注意喚起",
-          "url": "https://www.jpcert.or.jp/at/2020/at200004.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#90794960",
-          "url": "https://jvn.jp/vu/JVNVU90794960/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2020-0674",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-0674"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#125336",
-          "url": "https://www.kb.cert.org/vuls/id/338824/"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2020-01-21T11:08:24+09:00",
-          "description": "[2020年01月21日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2020-01-21T11:08:24+09:00",
-    "datelastupdated": "2020-01-21T11:08:24+09:00",
-    "datepublic": "2020-01-17T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2020-001025",
+	"vulinfodata": {
+		"title": "Microsoft Internet Explorer の JScript スクリプトエンジンにおけるメモリ破損の脆弱性",
+		"vulinfodescription": {
+			"overview": "Microsoft が提供する Internet Explorer の JScript スクリプトエンジンには、メモリ破損の脆弱性が存在します。  Microsoft が提供する Internet Explorer には VBScript や JScript といったスクリプト言語を実行するためのスクリプトエンジンが実装されています。スクリプトエンジンの JScript を扱うコンポーネントにおいて、メモリ破損の脆弱性が発見されました。Internet Explorer や JScript スクリプトエンジンを組み込んでいるアプリケーションが本脆弱性の影響を受けます。  なお、本脆弱性を悪用する攻撃が既に確認されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Internet Explorer",
+					"cpe": {
+						"text": "cpe:/a:microsoft:internet_explorer",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "特別に細工された HTML ファイル (ウェブページやメールの添付文書)、PDF ファイル、Microsoft Office 文書、または Internet Explorer のスクリプトエンジンで作成されたコンテンツの挿入をサポートする文書をユーザが閲覧することで、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2020年1月20日現在、対策方法は不明です。 以下の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  [jscript.dll へのアクセスを制限する] jscript.dll は古いバージョンの JScript をサポートするためのライブラリです。このライブラリへのアクセスを制限することで、本脆弱性の悪用を防止することが可能です。 管理者権限でコマンドプロンプトを起動し、以下のコマンドを実行してください。  32bit システムの場合  * takeown /f %windir%\\system32\\jscript.dll 　cacls %windir%\\system32\\jscript.dll /E /P everyone:N  64bit システムの場合  * takeown /f %windir%\\syswow64\\jscript.dll 　cacls %windir%\\syswow64\\jscript.dll /E /P everyone:N 　takeown /f %windir%\\system32\\jscript.dll 　cacls %windir%\\system32\\jscript.dll /E /P everyone:N  開発者が提供しているアドバイザリ (<a href=\"https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200001\"target=\"blank\">ADV200001</a>) では、本緩和策を適用した場合の影響や上記の変更を元に戻す方法についても述べられています。あわせて参照してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Security Update Guide",
+					"vulinfoid": "ADV200001 | Microsoft Guidance on Scripting Engine Memory Corruption Vulnerability",
+					"url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200001"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2020-0674",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-0674"
+				},
+				{
+					"type": "advisory",
+					"name": "IPA 重要なセキュリティ情報",
+					"vulinfoid": "Microsoft Internet Explorer の脆弱性対策について(CVE-2020-0674)",
+					"url": "https://www.ipa.go.jp/security/ciadr/vul/20200120-ms.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JPCERT 注意喚起",
+					"vulinfoid": "Microsoft Internet Explorer の未修正の脆弱性 (CVE-2020-0674) に関する注意喚起",
+					"url": "https://www.jpcert.or.jp/at/2020/at200004.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90794960",
+					"url": "https://jvn.jp/vu/JVNVU90794960/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2020-0674",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2020-0674"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#125336",
+					"url": "https://www.kb.cert.org/vuls/id/338824/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2020-01-21T11:08:24+09:00",
+					"description": "[2020年01月21日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2020-01-21T11:08:24+09:00",
+		"datelastupdated": "2020-01-21T11:08:24+09:00",
+		"datepublic": "2020-01-17T00:00:00+09:00"
+	}
 }

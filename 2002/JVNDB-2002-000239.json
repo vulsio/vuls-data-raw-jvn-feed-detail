@@ -1,258 +1,258 @@
 {
-  "vulinfoid": "JVNDB-2002-000239",
-  "vulinfodata": {
-    "title": "Apache HTTP Server の mod_ssl におけるクロスサイトスクリプティングの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Apache HTTP Server には HTTP/1.1 の Host ヘッダフィールドの文字列の取り扱いに不備が存在します。   そのため、何らかの原因によりユーザからのリクエストを完了できなかった場合、エラーページを表示させます。UseCanonicalName ディレクティブを無効にしていた場合、エラーページに文字列のチェック以前に、ユーザから送信された Host 情報をそのまま挿入し表示してしまう問題が存在します。   HTTP/1.1 において、Host ヘッダフィールドには URI のネットワークロケーションが格納されています。  したがって、リモートの攻撃者は、任意の文字列を含む URL にアクセスするよう標的ユーザを誘導し、不正なスクリプトを含むエラーページを表示させることで、クロスサイトスクリプティング攻撃を行うことが可能です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:apache:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.3.26 およびそれ以前",
-            "2.0.42 およびそれ以前"
-          ]
-        },
-        {
-          "name": "IBM",
-          "productname": "IBM HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:ibm:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.3.12.6",
-            "1.3.19.3"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Application Server",
-          "cpe": {
-            "text": "cpe:/a:oracle:application_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.2.2 およびそれ以前",
-            "9.0.2.1 およびそれ以前",
-            "9.0.3 およびそれ以前"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Database",
-          "cpe": {
-            "text": "cpe:/a:oracle:database_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "8.1.7",
-            "9.0.1",
-            "9.2.0",
-            "9.2.0.7 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ4",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_4",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ550",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_550",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQXTR",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_xtr",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.00 ",
-            "11.04 ",
-            "11.11 ",
-            "11.20 ",
-            "11.22 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2  ",
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  ",
-            "8.0  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache Software Foundation",
-          "vulinfoid": "Top Page",
-          "url": "http://www.apache.org/"
-        },
-        {
-          "type": "vendor",
-          "name": "Critical Patch Updates and Security Alerts",
-          "vulinfoid": "October 2006",
-          "url": "http://www.oracle.com/technology/deploy/security/critical-patch-updates/cpuoct2006.html"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX0210-224",
-          "url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX0210-224"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX0210-224",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0210-224.html"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM APAR",
-          "vulinfoid": "PQ67079",
-          "url": "http://www-1.ibm.com/support/docview.wss?uid=swg24003724&rs=260"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Security Alert",
-          "vulinfoid": "#45",
-          "url": "http://otn.oracle.com/deploy/security/pdf/2002alert45rev4.pdf"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2002:222",
-          "url": "https://rhn.redhat.com/errata/RHSA-2002-222.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "4 Apache & SSL Security 2.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "550 Apache & SSL Security 0.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "XTR Apache & SSL Security 1.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "オラクル・セキュリティ・アラート",
-          "vulinfoid": "October 2006",
-          "url": "http://otn.oracle.co.jp/security/061020_76/top.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2002:222",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-222J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2002-1157",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1157"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2002-1157",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1157"
-        },
-        {
-          "type": "advisory",
-          "name": "SecuriTeam",
-          "vulinfoid": "6O0020K5PE",
-          "url": "http://www.securiteam.com/unixfocus/6O0020K5PE.html"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "5847",
-          "url": "http://www.securityfocus.com/bid/5847"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "6029",
-          "url": "http://www.securityfocus.com/bid/6029"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2002-10-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2002-000239",
+	"vulinfodata": {
+		"title": "Apache HTTP Server の mod_ssl におけるクロスサイトスクリプティングの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Apache HTTP Server には HTTP/1.1 の Host ヘッダフィールドの文字列の取り扱いに不備が存在します。   そのため、何らかの原因によりユーザからのリクエストを完了できなかった場合、エラーページを表示させます。UseCanonicalName ディレクティブを無効にしていた場合、エラーページに文字列のチェック以前に、ユーザから送信された Host 情報をそのまま挿入し表示してしまう問題が存在します。   HTTP/1.1 において、Host ヘッダフィールドには URI のネットワークロケーションが格納されています。  したがって、リモートの攻撃者は、任意の文字列を含む URL にアクセスするよう標的ユーザを誘導し、不正なスクリプトを含むエラーページを表示させることで、クロスサイトスクリプティング攻撃を行うことが可能です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:apache:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.3.26 およびそれ以前",
+						"2.0.42 およびそれ以前"
+					]
+				},
+				{
+					"name": "IBM",
+					"productname": "IBM HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:ibm:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.3.12.6",
+						"1.3.19.3"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Application Server",
+					"cpe": {
+						"text": "cpe:/a:oracle:application_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.2.2 およびそれ以前",
+						"9.0.2.1 およびそれ以前",
+						"9.0.3 およびそれ以前"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Database",
+					"cpe": {
+						"text": "cpe:/a:oracle:database_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"8.1.7",
+						"9.0.1",
+						"9.2.0",
+						"9.2.0.7 およびそれ以前"
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ4",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_4",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ550",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_550",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQXTR",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_xtr",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.00 ",
+						"11.04 ",
+						"11.11 ",
+						"11.20 ",
+						"11.22 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2  ",
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  ",
+						"8.0  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache Software Foundation",
+					"vulinfoid": "Top Page",
+					"url": "http://www.apache.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "Critical Patch Updates and Security Alerts",
+					"vulinfoid": "October 2006",
+					"url": "http://www.oracle.com/technology/deploy/security/critical-patch-updates/cpuoct2006.html"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX0210-224",
+					"url": "http://www1.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX0210-224"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX0210-224",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0210-224.html"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM APAR",
+					"vulinfoid": "PQ67079",
+					"url": "http://www-1.ibm.com/support/docview.wss?uid=swg24003724&rs=260"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Security Alert",
+					"vulinfoid": "#45",
+					"url": "http://otn.oracle.com/deploy/security/pdf/2002alert45rev4.pdf"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2002:222",
+					"url": "https://rhn.redhat.com/errata/RHSA-2002-222.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "4 Apache & SSL Security 2.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "550 Apache & SSL Security 0.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "XTR Apache & SSL Security 1.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "オラクル・セキュリティ・アラート",
+					"vulinfoid": "October 2006",
+					"url": "http://otn.oracle.co.jp/security/061020_76/top.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2002:222",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-222J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2002-1157",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1157"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2002-1157",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1157"
+				},
+				{
+					"type": "advisory",
+					"name": "SecuriTeam",
+					"vulinfoid": "6O0020K5PE",
+					"url": "http://www.securiteam.com/unixfocus/6O0020K5PE.html"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "5847",
+					"url": "http://www.securityfocus.com/bid/5847"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "6029",
+					"url": "http://www.securityfocus.com/bid/6029"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2002-10-02T00:00:00+09:00"
+	}
 }

@@ -1,268 +1,268 @@
 {
-  "vulinfoid": "JVNDB-2002-000238",
-  "vulinfodata": {
-    "title": "BIND の glibc リゾルバライブラリにおけるバッファオーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  ISC BIND に同梱されている DNS スタブリゾルバライブラリは、ホスト名の IP アドレスを特定する際の Web ブラウザの実装等に利用されています。この際 DNS リゾルバライブラリには、潜在的な DNS レスポンスの最大サイズより小さいバッファサイズが渡されます。   割り当てられたバッファサイズを超える DNS レスポンスを受け取る際の実装に問題が存在します。これは、取り扱うレスポンスサイズのチェックが適切に行われないため、呼び出しているアプリケーションは、実際のレスポンスサイズの終端を越えて読み込んでしまいます。このため、リンクしてビルドされているプログラムがクラッシュしてしまう可能性が存在します。   さらに、BIND 4 由来のリゾルバライブラリの glibc や libresolv においても同様の問題が存在し、glibc や libresolv をリンクしてビルドされているプログラムがクラッシュする可能性があります。また、C ライブラリの拡張セットである nss_ldap もこの問題の影響を受ける可能性が存在します。   この問題を利用する悪意ある DNS レスポンスの送信が可能なリモートの攻撃者は、アプリケーション、もしくはシステムをサービス不能状態に陥らせることが可能です。また、特定の環境下ではメモリに格納されている内容が漏洩してしまう可能性も存在します。   尚、named デーモン自体は、この問題の影響を受けることはありません。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "IBM",
-          "productname": "IBM AIX",
-          "cpe": {
-            "text": "cpe:/o:ibm:aix",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.3 ",
-            "5.1 "
-          ]
-        },
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "4.9.9 およびそれ以前",
-            "8.2.5 およびそれ以前"
-          ]
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ4",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_4",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQ550",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_550",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Cobalt RaQXTR",
-          "cpe": {
-            "text": "cpe:/h:sun:sun_cobalt_raq_xtr",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "サン・マイクロシステムズ",
-          "productname": "Sun Solaris",
-          "cpe": {
-            "text": "cpe:/o:sun:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.5.1 (sparc) ",
-            "2.5.1 (x86) ",
-            "2.6 (sparc) ",
-            "2.6 (x86) ",
-            "7.0 (sparc) ",
-            "7.0 (x86) ",
-            "8 (sparc) ",
-            "8 (x86) "
-          ]
-        },
-        {
-          "name": "ヒューレット・パッカード",
-          "productname": "HP-UX",
-          "cpe": {
-            "text": "cpe:/o:hp:hp-ux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 ",
-            "10.20 ",
-            "10.24 ",
-            "11.00 ",
-            "11.04 ",
-            "11.11 ",
-            "11.22 "
-          ]
-        },
-        {
-          "name": "レッドハット",
-          "productname": "Red Hat Linux",
-          "cpe": {
-            "text": "cpe:/o:redhat:linux",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "6.2  ",
-            "7.0  ",
-            "7.1  ",
-            "7.2  ",
-            "7.3  "
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBUX0208-209",
-          "url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX0208-209"
-        },
-        {
-          "type": "vendor",
-          "name": "HP セキュリティ報告",
-          "vulinfoid": "HPSBUX0208-209",
-          "url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0208-209.html"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM APAR",
-          "vulinfoid": "IY31886",
-          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY31886"
-        },
-        {
-          "type": "vendor",
-          "name": "IBM APAR",
-          "vulinfoid": "IY31889",
-          "url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY31889"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2002:133",
-          "url": "http://rhn.redhat.com/errata/RHSA-2002-133.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2002:175",
-          "url": "http://rhn.redhat.com/errata/RHSA-2002-175.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": " RHSA-2002:197",
-          "url": "http://rhn.redhat.com/errata/RHSA-2002-197.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification",
-          "vulinfoid": " 45463",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-45463-1"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Alert Notification 日本語版",
-          "vulinfoid": " 45463",
-          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-45463-3"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "Glibc Security Update 1.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "Glibc Security Update 2.0.1",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Sun Cobalt RaQ Patches",
-          "vulinfoid": "550 Glibc Security Update 0.0.2",
-          "url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&nav=patchpage"
-        },
-        {
-          "type": "vendor",
-          "name": "Vulnerability Note VU#738331",
-          "vulinfoid": "ISC Information for VU#738331",
-          "url": "http://www.kb.cert.org/vuls/id/AAMN-5D287U"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2002:133",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-133J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": "RHSA-2002:175",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-175J.html"
-        },
-        {
-          "type": "vendor",
-          "name": "レッドハット セキュリティーアップデート",
-          "vulinfoid": " RHSA-2002:197",
-          "url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-197J.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2002-1146",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1146"
-        },
-        {
-          "type": "advisory",
-          "name": "ISS X-Force Database",
-          "vulinfoid": "10295",
-          "url": "http://xforce.iss.net/xforce/xfdb/10295"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2002-1146",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1146"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#738331",
-          "url": "http://www.kb.cert.org/vuls/id/738331"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2002-10-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2002-000238",
+	"vulinfodata": {
+		"title": "BIND の glibc リゾルバライブラリにおけるバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  ISC BIND に同梱されている DNS スタブリゾルバライブラリは、ホスト名の IP アドレスを特定する際の Web ブラウザの実装等に利用されています。この際 DNS リゾルバライブラリには、潜在的な DNS レスポンスの最大サイズより小さいバッファサイズが渡されます。   割り当てられたバッファサイズを超える DNS レスポンスを受け取る際の実装に問題が存在します。これは、取り扱うレスポンスサイズのチェックが適切に行われないため、呼び出しているアプリケーションは、実際のレスポンスサイズの終端を越えて読み込んでしまいます。このため、リンクしてビルドされているプログラムがクラッシュしてしまう可能性が存在します。   さらに、BIND 4 由来のリゾルバライブラリの glibc や libresolv においても同様の問題が存在し、glibc や libresolv をリンクしてビルドされているプログラムがクラッシュする可能性があります。また、C ライブラリの拡張セットである nss_ldap もこの問題の影響を受ける可能性が存在します。   この問題を利用する悪意ある DNS レスポンスの送信が可能なリモートの攻撃者は、アプリケーション、もしくはシステムをサービス不能状態に陥らせることが可能です。また、特定の環境下ではメモリに格納されている内容が漏洩してしまう可能性も存在します。   尚、named デーモン自体は、この問題の影響を受けることはありません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "IBM",
+					"productname": "IBM AIX",
+					"cpe": {
+						"text": "cpe:/o:ibm:aix",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.3 ",
+						"5.1 "
+					]
+				},
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"4.9.9 およびそれ以前",
+						"8.2.5 およびそれ以前"
+					]
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ4",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_4",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQ550",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_550",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Cobalt RaQXTR",
+					"cpe": {
+						"text": "cpe:/h:sun:sun_cobalt_raq_xtr",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "サン・マイクロシステムズ",
+					"productname": "Sun Solaris",
+					"cpe": {
+						"text": "cpe:/o:sun:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.5.1 (sparc) ",
+						"2.5.1 (x86) ",
+						"2.6 (sparc) ",
+						"2.6 (x86) ",
+						"7.0 (sparc) ",
+						"7.0 (x86) ",
+						"8 (sparc) ",
+						"8 (x86) "
+					]
+				},
+				{
+					"name": "ヒューレット・パッカード",
+					"productname": "HP-UX",
+					"cpe": {
+						"text": "cpe:/o:hp:hp-ux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 ",
+						"10.20 ",
+						"10.24 ",
+						"11.00 ",
+						"11.04 ",
+						"11.11 ",
+						"11.22 "
+					]
+				},
+				{
+					"name": "レッドハット",
+					"productname": "Red Hat Linux",
+					"cpe": {
+						"text": "cpe:/o:redhat:linux",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"6.2  ",
+						"7.0  ",
+						"7.1  ",
+						"7.2  ",
+						"7.3  "
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBUX0208-209",
+					"url": "http://www2.itrc.hp.com/service/cki/docDisplay.do?docId=HPSBUX0208-209"
+				},
+				{
+					"type": "vendor",
+					"name": "HP セキュリティ報告",
+					"vulinfoid": "HPSBUX0208-209",
+					"url": "http://h50221.www5.hp.com/upassist/itrc_japan/assist2/secbltn/HP-UX/HPSBUX0208-209.html"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM APAR",
+					"vulinfoid": "IY31886",
+					"url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY31886"
+				},
+				{
+					"type": "vendor",
+					"name": "IBM APAR",
+					"vulinfoid": "IY31889",
+					"url": "http://www-1.ibm.com/support/docview.wss?uid=isg1IY31889"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2002:133",
+					"url": "http://rhn.redhat.com/errata/RHSA-2002-133.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2002:175",
+					"url": "http://rhn.redhat.com/errata/RHSA-2002-175.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": " RHSA-2002:197",
+					"url": "http://rhn.redhat.com/errata/RHSA-2002-197.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification",
+					"vulinfoid": " 45463",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-45463-1"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Alert Notification 日本語版",
+					"vulinfoid": " 45463",
+					"url": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-45463-3"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "Glibc Security Update 1.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raqxtr.eng&nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "Glibc Security Update 2.0.1",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq4.eng&nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Sun Cobalt RaQ Patches",
+					"vulinfoid": "550 Glibc Security Update 0.0.2",
+					"url": "http://sunsolve.sun.com/pub-cgi/show.pl?target=cobalt/raq550.eng&nav=patchpage"
+				},
+				{
+					"type": "vendor",
+					"name": "Vulnerability Note VU#738331",
+					"vulinfoid": "ISC Information for VU#738331",
+					"url": "http://www.kb.cert.org/vuls/id/AAMN-5D287U"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2002:133",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-133J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": "RHSA-2002:175",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-175J.html"
+				},
+				{
+					"type": "vendor",
+					"name": "レッドハット セキュリティーアップデート",
+					"vulinfoid": " RHSA-2002:197",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2002-197J.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2002-1146",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-1146"
+				},
+				{
+					"type": "advisory",
+					"name": "ISS X-Force Database",
+					"vulinfoid": "10295",
+					"url": "http://xforce.iss.net/xforce/xfdb/10295"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2002-1146",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-1146"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#738331",
+					"url": "http://www.kb.cert.org/vuls/id/738331"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2002-10-02T00:00:00+09:00"
+	}
 }

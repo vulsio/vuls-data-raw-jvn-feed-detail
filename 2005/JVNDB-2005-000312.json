@@ -1,115 +1,115 @@
 {
-  "vulinfoid": "JVNDB-2005-000312",
-  "vulinfodata": {
-    "title": "qmail の stralloc_readyplus 関数における整数オーバフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  qmail は、簡単な設定で利用可能なメール転送エージェント (MTA) で、SMTP を使用して他のシステム上の MTA とのメッセージ交換を行ないます 。  Qmail 1.03 以前には、以下複数のセキュリティ問題により、qmail-smtpd がクラッシュする問題が存在します。  ・他の SMTP サービスから過度に大きなデータを受信した場合に、stralloc_readyplus() 関数において、整数オーバーフローが発生する問題 (BID 13528)  ・過度に大きなデータをパラメータとして HELO コマンドに渡した場合に、commands() 関数において、符号付き整数エラーが発生する問題 (BID 13535)  ・過度に大きなデータをパラメータとして RCPT TO コマンドに渡した場合に、substdio_put() 関数において、符号付き整数エラーが発生する問題 (BID 13536)  これらの問題を利用するリモートの攻撃者は、SMTP サービスに接続して意図的なデータを送りつけることにより、qmail-smtpd のクラッシュを引き起こし、結果として SMTP サービスをサービス不能状態に陥らせる可能性があります。また、これらの問題を利用して任意のコードを実行する可能性もありますが、現時点では詳細は不明です。  尚、これらの問題は仮想メモリが 8 GB を超える 64 ビットアーキテクチャのシステム上で、4 GB 以上の仮想メモリを使用可能である場合に限り、再現することが発見者より報告されています。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Dan Bernstein",
-          "productname": "qmail",
-          "cpe": {
-            "text": "cpe:/a:dan_bernstein:qmail",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.03"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "qmail",
-          "vulinfoid": "Top Page",
-          "url": "http://cr.yp.to/qmail.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2005-1513",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1513"
-        },
-        {
-          "type": "advisory",
-          "name": "FrSIRT Advisories",
-          "vulinfoid": "FrSIRT/ADV-2005-0490",
-          "url": "http://www.frsirt.com/english/advisories/2005/0490"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2005-1513",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1513"
-        },
-        {
-          "type": "advisory",
-          "name": "Secunia Advisory",
-          "vulinfoid": "SA15533",
-          "url": "http://secunia.com/advisories/15533/"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13536",
-          "url": "http://www.securityfocus.com/bid/13536"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13535",
-          "url": "http://www.securityfocus.com/bid/13535"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityFocus",
-          "vulinfoid": "13528",
-          "url": "http://www.securityfocus.com/bid/13528"
-        },
-        {
-          "type": "advisory",
-          "name": "SecurityTracker",
-          "vulinfoid": "1013911",
-          "url": "http://securitytracker.com/alerts/2005/May/1013911.html"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年04月01日]   掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-04-01T00:00:00+09:00",
-    "datelastupdated": "2007-04-01T00:00:00+09:00",
-    "datepublic": "2005-05-06T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2005-000312",
+	"vulinfodata": {
+		"title": "qmail の stralloc_readyplus 関数における整数オーバフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  qmail は、簡単な設定で利用可能なメール転送エージェント (MTA) で、SMTP を使用して他のシステム上の MTA とのメッセージ交換を行ないます 。  Qmail 1.03 以前には、以下複数のセキュリティ問題により、qmail-smtpd がクラッシュする問題が存在します。  ・他の SMTP サービスから過度に大きなデータを受信した場合に、stralloc_readyplus() 関数において、整数オーバーフローが発生する問題 (BID 13528)  ・過度に大きなデータをパラメータとして HELO コマンドに渡した場合に、commands() 関数において、符号付き整数エラーが発生する問題 (BID 13535)  ・過度に大きなデータをパラメータとして RCPT TO コマンドに渡した場合に、substdio_put() 関数において、符号付き整数エラーが発生する問題 (BID 13536)  これらの問題を利用するリモートの攻撃者は、SMTP サービスに接続して意図的なデータを送りつけることにより、qmail-smtpd のクラッシュを引き起こし、結果として SMTP サービスをサービス不能状態に陥らせる可能性があります。また、これらの問題を利用して任意のコードを実行する可能性もありますが、現時点では詳細は不明です。  尚、これらの問題は仮想メモリが 8 GB を超える 64 ビットアーキテクチャのシステム上で、4 GB 以上の仮想メモリを使用可能である場合に限り、再現することが発見者より報告されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Dan Bernstein",
+					"productname": "qmail",
+					"cpe": {
+						"text": "cpe:/a:dan_bernstein:qmail",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.03"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性に伴う影響については、「概要」をご参照ください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報及び参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "qmail",
+					"vulinfoid": "Top Page",
+					"url": "http://cr.yp.to/qmail.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2005-1513",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1513"
+				},
+				{
+					"type": "advisory",
+					"name": "FrSIRT Advisories",
+					"vulinfoid": "FrSIRT/ADV-2005-0490",
+					"url": "http://www.frsirt.com/english/advisories/2005/0490"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2005-1513",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2005-1513"
+				},
+				{
+					"type": "advisory",
+					"name": "Secunia Advisory",
+					"vulinfoid": "SA15533",
+					"url": "http://secunia.com/advisories/15533/"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13536",
+					"url": "http://www.securityfocus.com/bid/13536"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13535",
+					"url": "http://www.securityfocus.com/bid/13535"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityFocus",
+					"vulinfoid": "13528",
+					"url": "http://www.securityfocus.com/bid/13528"
+				},
+				{
+					"type": "advisory",
+					"name": "SecurityTracker",
+					"vulinfoid": "1013911",
+					"url": "http://securitytracker.com/alerts/2005/May/1013911.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年04月01日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datepublic": "2005-05-06T00:00:00+09:00"
+	}
 }

@@ -1,176 +1,176 @@
 {
-  "vulinfoid": "JVNDB-2007-000565",
-  "vulinfodata": {
-    "title": "Atheros 社のワイヤレスネットワークドライバにおけるマネージメントフレームの取り扱いに関する脆弱性",
-    "vulinfodescription": {
-      "overview": "Atheros 社が提供しているワイヤレスネットワークドライバには、 802.11 マネージメントフレームの処理に問題があり、サービス運用妨害（DoS）攻撃を受ける脆弱性が存在します。  Atheros 社が提供している Microsoft Windows 向けのワイヤレスネットワークドライバは、フレームの取り扱い部分に脆弱性があります。  細工された802.11 マネージメントフレームを送信されることによりバッファオーバーフローが発生し、結果としてサービス運用妨害（DoS）攻撃を受ける可能性があります。 802.11b, 802.11g, 802.11n におけるマネージメントフレームは暗号化されておらず、またその送付に認証は必要ありません。さらに、WEP や WPA といった無線通信の暗号化を行っても本脆弱性の影響を受けることが判明しています。Linux や UNIX で使われている NDISWrapper や同様の技術で脆弱性のあるドライバーを使用している場合も、影響を受ける可能性があります。 なお、Atheros 社によると、Windows Vista 用ドライバは本脆弱性の影響を受けないとのことです。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Atheros",
-          "productname": "Atheros driver",
-          "cpe": {
-            "text": "cpe:/h:atheros:wireless_adapter_drivers",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "version 5.3.0 系 (Atheros 802.11 a/b/g)",
-            "version 6.0.3 系 (Atheros 802.11 a/b/g)"
-          ]
-        },
-        {
-          "name": "富士通",
-          "productname": "CELSIUSワークステーション",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:celsius_workstation",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV DESKTOP",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv_desktop",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV シンクライアント",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv_thin_client",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV-BIBLO",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv-biblo",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV-BIBLO LOOX",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv-biblo_loox",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV-DESKPOWER",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv-deskpower",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV-ESPRIMO",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv-esprimo",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV-LIFEBOOK",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv-lifebook",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "富士通",
-          "productname": "FMV-STYLISTIC",
-          "cpe": {
-            "text": "cpe:/h:fujitsu:fmv-stylistic",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "影響を受けるドライバを使用している無線装置の通信範囲内にいる遠隔の第三者によって、細工された 802.11 マネージメントフレームを送信されることにより、サービス運用妨害（DoS）攻撃を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "以下のバージョンのデバイスドライバに更新してください。  ・Atheros driver version 5.3.0.35 およびそれ以降 ・Atheros driver version 6.0.3.67 およびそれ以降  また、Atheros 社から OEM 提供を受け、自社ブランドとしてデバイスドライバを更新する場合もあります。詳しくは、各ベンダが提供する情報をご確認ください。  デバイスドライバの更新を行う間の暫定的な対処としては、影響を受けるデバイスドライバを用いている無線 LAN デバイスを Windows 上から無効にするなどして使用しないことを推奨いたします。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Atheros",
-          "vulinfoid": "Top Page",
-          "url": "http://www.atheros.com/"
-        },
-        {
-          "type": "vendor",
-          "name": "サポート技術情報",
-          "vulinfoid": "Atheros社製無線（ワイヤレス）LANドライバの脆弱性に関するお知らせ",
-          "url": "http://www.fmworld.net/biz/common/atheros/wlan/"
-        },
-        {
-          "type": "vendor",
-          "name": "富士通 公開脆弱性情報",
-          "vulinfoid": "VU#730169",
-          "url": "http://software.fujitsu.com/jp/security/vulnerabilities/vu730169.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2007-2927",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2927"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#730169",
-          "url": "http://jvn.jp/cert/JVNVU%23730169/index.html"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2007-2927",
-          "url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2927"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#730169",
-          "url": "http://www.kb.cert.org/vuls/id/730169"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2007年08月09日]\\n  掲載\\n[2007年11月29日]\\n  影響を受けるシステム：富士通 (VU#730169) の情報追加。\\n  ベンダ情報: 富士通の情報を追加しました。\\n  ・Atheros社製無線（ワイヤレス）LANドライバの脆弱性に関するお知らせ\\n  ・VU#730169"
-        }
-      ]
-    },
-    "datefirstpublished": "2007-08-09T16:52:17+09:00",
-    "datelastupdated": "2007-11-29T13:40:56+09:00",
-    "datepublic": "2007-08-02T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2007-000565",
+	"vulinfodata": {
+		"title": "Atheros 社のワイヤレスネットワークドライバにおけるマネージメントフレームの取り扱いに関する脆弱性",
+		"vulinfodescription": {
+			"overview": "Atheros 社が提供しているワイヤレスネットワークドライバには、 802.11 マネージメントフレームの処理に問題があり、サービス運用妨害（DoS）攻撃を受ける脆弱性が存在します。  Atheros 社が提供している Microsoft Windows 向けのワイヤレスネットワークドライバは、フレームの取り扱い部分に脆弱性があります。  細工された802.11 マネージメントフレームを送信されることによりバッファオーバーフローが発生し、結果としてサービス運用妨害（DoS）攻撃を受ける可能性があります。 802.11b, 802.11g, 802.11n におけるマネージメントフレームは暗号化されておらず、またその送付に認証は必要ありません。さらに、WEP や WPA といった無線通信の暗号化を行っても本脆弱性の影響を受けることが判明しています。Linux や UNIX で使われている NDISWrapper や同様の技術で脆弱性のあるドライバーを使用している場合も、影響を受ける可能性があります。 なお、Atheros 社によると、Windows Vista 用ドライバは本脆弱性の影響を受けないとのことです。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Atheros",
+					"productname": "Atheros driver",
+					"cpe": {
+						"text": "cpe:/h:atheros:wireless_adapter_drivers",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"version 5.3.0 系 (Atheros 802.11 a/b/g)",
+						"version 6.0.3 系 (Atheros 802.11 a/b/g)"
+					]
+				},
+				{
+					"name": "富士通",
+					"productname": "CELSIUSワークステーション",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:celsius_workstation",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV DESKTOP",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv_desktop",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV シンクライアント",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv_thin_client",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV-BIBLO",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv-biblo",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV-BIBLO LOOX",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv-biblo_loox",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV-DESKPOWER",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv-deskpower",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV-ESPRIMO",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv-esprimo",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV-LIFEBOOK",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv-lifebook",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "富士通",
+					"productname": "FMV-STYLISTIC",
+					"cpe": {
+						"text": "cpe:/h:fujitsu:fmv-stylistic",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "影響を受けるドライバを使用している無線装置の通信範囲内にいる遠隔の第三者によって、細工された 802.11 マネージメントフレームを送信されることにより、サービス運用妨害（DoS）攻撃を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "以下のバージョンのデバイスドライバに更新してください。  ・Atheros driver version 5.3.0.35 およびそれ以降 ・Atheros driver version 6.0.3.67 およびそれ以降  また、Atheros 社から OEM 提供を受け、自社ブランドとしてデバイスドライバを更新する場合もあります。詳しくは、各ベンダが提供する情報をご確認ください。  デバイスドライバの更新を行う間の暫定的な対処としては、影響を受けるデバイスドライバを用いている無線 LAN デバイスを Windows 上から無効にするなどして使用しないことを推奨いたします。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Atheros",
+					"vulinfoid": "Top Page",
+					"url": "http://www.atheros.com/"
+				},
+				{
+					"type": "vendor",
+					"name": "サポート技術情報",
+					"vulinfoid": "Atheros社製無線（ワイヤレス）LANドライバの脆弱性に関するお知らせ",
+					"url": "http://www.fmworld.net/biz/common/atheros/wlan/"
+				},
+				{
+					"type": "vendor",
+					"name": "富士通 公開脆弱性情報",
+					"vulinfoid": "VU#730169",
+					"url": "http://software.fujitsu.com/jp/security/vulnerabilities/vu730169.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2007-2927",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2927"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#730169",
+					"url": "http://jvn.jp/cert/JVNVU%23730169/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2007-2927",
+					"url": "http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2927"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#730169",
+					"url": "http://www.kb.cert.org/vuls/id/730169"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2007年08月09日]\\n  掲載\\n[2007年11月29日]\\n  影響を受けるシステム：富士通 (VU#730169) の情報追加。\\n  ベンダ情報: 富士通の情報を追加しました。\\n  ・Atheros社製無線（ワイヤレス）LANドライバの脆弱性に関するお知らせ\\n  ・VU#730169"
+				}
+			]
+		},
+		"datefirstpublished": "2007-08-09T16:52:17+09:00",
+		"datelastupdated": "2007-11-29T13:40:56+09:00",
+		"datepublic": "2007-08-02T00:00:00+09:00"
+	}
 }

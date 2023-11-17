@@ -1,283 +1,283 @@
 {
-  "vulinfoid": "JVNDB-2015-001011",
-  "vulinfodata": {
-    "title": "OpenSSL の d1_pkt.c の dtls1_buffer_record 関数におけるサービス運用妨害 (DoS) の脆弱性",
-    "vulinfodescription": {
-      "overview": "OpenSSL の d1_pkt.c の dtls1_buffer_record 関数には、メモリリークにより、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "OpenSSL Project",
-          "productname": "OpenSSL",
-          "cpe": {
-            "text": "cpe:/a:openssl:openssl",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "1.0.0p 未満の 1.0.0",
-            "1.0.1k 未満の 1.0.1"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Integrated Lights Out Manager",
-          "cpe": {
-            "text": "cpe:/o:oracle:integrated_lights_out_manager_firmware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "(Sun System Firmware) 8.7.2.b 未満",
-            "(Sun System Firmware) 9.4.2e 未満"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "MySQL",
-          "cpe": {
-            "text": "cpe:/a:oracle:mysql",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "5.6.22 およびそれ以前"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Communications Core Session Manager",
-          "cpe": {
-            "text": "cpe:/a:oracle:communications_core_session_manager",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "7.2.5",
-            "7.3.5"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Fusion Middleware",
-          "cpe": {
-            "text": "cpe:/a:oracle:fusion_middleware",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Mobile Security Suite MSS 3.0"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Solaris",
-          "cpe": {
-            "text": "cpe:/o:oracle:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.2"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Virtualization",
-          "cpe": {
-            "text": "cpe:/a:oracle:virtualization_secure_global_desktop",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "の Oracle Secure Global Desktop 4.63",
-            "の Oracle Secure Global Desktop 4.71",
-            "の Oracle Secure Global Desktop 5.1"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "第三者により、next eoch に多くの複製されたレコードを送られ、リプレー検出を失敗させられることで、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Cisco Security Advisory",
-          "vulinfoid": "cisco-sa-20150310-ssl",
-          "url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150310-ssl"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "A memory leak can occur in dtls1_buffer_record if either of the calls to ssl3_setup_buffers or pqueue_insert fail.",
-          "url": "https://github.com/openssl/openssl/commit/103b171d8fc282ef435f8de9afbf7782e312961f"
-        },
-        {
-          "type": "vendor",
-          "name": "HP Security Bulletin",
-          "vulinfoid": "HPSBHF03289",
-          "url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04602055"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV15-017",
-          "url": "http://jpn.nec.com/security-info/secinfo/nv15-017.html"
-        },
-        {
-          "type": "vendor",
-          "name": "OpenSSL Security Advisory",
-          "vulinfoid": "DTLS memory leak in dtls1_buffer_record (CVE-2015-0206)",
-          "url": "https://www.openssl.org/news/secadv_20150108.txt"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015verbose-2367954.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - April 2015 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2015verbose-2365613.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
-          "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - April 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Third Party Bulletin - January 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Security Advisory",
-          "vulinfoid": "RHSA-2015:0066",
-          "url": "https://rhn.redhat.com/errata/RHSA-2015-0066.html"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "October 2015 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/october_2015_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "April 2015 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/april_2015_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "July 2016 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "SECURITY BLOG",
-          "vulinfoid": "July 2015 Critical Patch Update Released",
-          "url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
-        },
-        {
-          "type": "vendor",
-          "name": "シスコ セキュリティアドバイザリ",
-          "vulinfoid": "cisco-sa-20150310-ssl",
-          "url": "http://www.cisco.com/cisco/web/support/JP/112/1128/1128755_cisco-sa-20150310-ssl-j.html"
-        },
-        {
-          "type": "vendor",
-          "name": "製品セキュリティ情報",
-          "vulinfoid": "株式会社バッファロー の告知ページ",
-          "url": "http://buffalo.jp/support_s/s20150327b.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2015-0206",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0206"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#98974537",
-          "url": "http://jvn.jp/cert/JVNVU98974537"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2015-0206",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0206"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-119",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-          "title": "バッファエラー"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2015年01月13日]\\n  掲載\\n[2015年02月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加\\n[2015年03月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：シスコシステムズ (cisco-sa-20150310-ssl) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0066) を追加\\n[2015年04月08日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03289) を追加\\n[2015年04月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2015 Critical Patch Update Released) を追加\\n[2015年06月26日]\\n  ベンダ情報：バッファロー (株式会社バッファロー の告知ページ) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加\\n[2015年10月27日]\\n  ベンダ情報：日本電気 (NV15-017) を追加\\n[2015年11月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2015 Critical Patch Update Released) を追加\\n[2016年08月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2015-01-13T16:49:56+09:00",
-    "datelastupdated": "2016-08-09T18:16:36+09:00",
-    "datepublic": "2015-01-07T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2015-001011",
+	"vulinfodata": {
+		"title": "OpenSSL の d1_pkt.c の dtls1_buffer_record 関数におけるサービス運用妨害 (DoS) の脆弱性",
+		"vulinfodescription": {
+			"overview": "OpenSSL の d1_pkt.c の dtls1_buffer_record 関数には、メモリリークにより、サービス運用妨害 (メモリ消費) 状態にされる脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.0p 未満の 1.0.0",
+						"1.0.1k 未満の 1.0.1"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Integrated Lights Out Manager",
+					"cpe": {
+						"text": "cpe:/o:oracle:integrated_lights_out_manager_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"(Sun System Firmware) 8.7.2.b 未満",
+						"(Sun System Firmware) 9.4.2e 未満"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "MySQL",
+					"cpe": {
+						"text": "cpe:/a:oracle:mysql",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"5.6.22 およびそれ以前"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Communications Core Session Manager",
+					"cpe": {
+						"text": "cpe:/a:oracle:communications_core_session_manager",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.2.5",
+						"7.3.5"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Fusion Middleware",
+					"cpe": {
+						"text": "cpe:/a:oracle:fusion_middleware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Mobile Security Suite MSS 3.0"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Solaris",
+					"cpe": {
+						"text": "cpe:/o:oracle:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.2"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Virtualization",
+					"cpe": {
+						"text": "cpe:/a:oracle:virtualization_secure_global_desktop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"の Oracle Secure Global Desktop 4.63",
+						"の Oracle Secure Global Desktop 4.71",
+						"の Oracle Secure Global Desktop 5.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "第三者により、next eoch に多くの複製されたレコードを送られ、リプレー検出を失敗させられることで、サービス運用妨害 (メモリ消費) 状態にされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Cisco Security Advisory",
+					"vulinfoid": "cisco-sa-20150310-ssl",
+					"url": "http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150310-ssl"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "A memory leak can occur in dtls1_buffer_record if either of the calls to ssl3_setup_buffers or pqueue_insert fail.",
+					"url": "https://github.com/openssl/openssl/commit/103b171d8fc282ef435f8de9afbf7782e312961f"
+				},
+				{
+					"type": "vendor",
+					"name": "HP Security Bulletin",
+					"vulinfoid": "HPSBHF03289",
+					"url": "http://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?lang=en&cc=us&objectID=c04602055"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV15-017",
+					"url": "http://jpn.nec.com/security-info/secinfo/nv15-017.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "DTLS memory leak in dtls1_buffer_record (CVE-2015-0206)",
+					"url": "https://www.openssl.org/news/secadv_20150108.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015verbose-2367954.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - April 2015 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuapr2015verbose-2365613.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2016",
+					"url": "http://www.oracle.com/technetwork/security-advisory/cpujul2016-2881720.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2016verbose-2881721.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - July 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2015-2367936.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpujul2015verbose-2367947.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - October 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuoct2015-2367953.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - April 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/cpuapr2015-2365600.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Third Party Bulletin - January 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Security Advisory",
+					"vulinfoid": "RHSA-2015:0066",
+					"url": "https://rhn.redhat.com/errata/RHSA-2015-0066.html"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "October 2015 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/october_2015_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "April 2015 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/april_2015_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "July 2016 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/july_2016_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "SECURITY BLOG",
+					"vulinfoid": "July 2015 Critical Patch Update Released",
+					"url": "https://blogs.oracle.com/security/entry/july_2015_critical_patch_update"
+				},
+				{
+					"type": "vendor",
+					"name": "シスコ セキュリティアドバイザリ",
+					"vulinfoid": "cisco-sa-20150310-ssl",
+					"url": "http://www.cisco.com/cisco/web/support/JP/112/1128/1128755_cisco-sa-20150310-ssl-j.html"
+				},
+				{
+					"type": "vendor",
+					"name": "製品セキュリティ情報",
+					"vulinfoid": "株式会社バッファロー の告知ページ",
+					"url": "http://buffalo.jp/support_s/s20150327b.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2015-0206",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0206"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98974537",
+					"url": "http://jvn.jp/cert/JVNVU98974537"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2015-0206",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-0206"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2015年01月13日]\\n  掲載\\n[2015年02月27日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加\\n[2015年03月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：シスコシステムズ (cisco-sa-20150310-ssl) を追加\\n  ベンダ情報：レッドハット (RHSA-2015:0066) を追加\\n[2015年04月08日]\\n  ベンダ情報：ヒューレット・パッカード (HPSBHF03289) を追加\\n[2015年04月20日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - April 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - April 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (April 2015 Critical Patch Update Released) を追加\\n[2015年06月26日]\\n  ベンダ情報：バッファロー (株式会社バッファロー の告知ページ) を追加\\n[2015年07月29日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2015 Critical Patch Update Released) を追加\\n[2015年10月27日]\\n  ベンダ情報：日本電気 (NV15-017) を追加\\n[2015年11月06日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - October 2015) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - October 2015 Risk Matrices) を追加\\n  ベンダ情報：オラクル (October 2015 Critical Patch Update Released) を追加\\n[2016年08月09日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Critical Patch Update Advisory - July 2016) を追加\\n  ベンダ情報：オラクル (Text Form of Oracle Critical Patch Update - July 2016 Risk Matrices) を追加\\n  ベンダ情報：オラクル (July 2016 Critical Patch Update Released) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2015-01-13T16:49:56+09:00",
+		"datelastupdated": "2016-08-09T18:16:36+09:00",
+		"datepublic": "2015-01-07T00:00:00+09:00"
+	}
 }

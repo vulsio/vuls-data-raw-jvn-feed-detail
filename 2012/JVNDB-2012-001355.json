@@ -1,152 +1,152 @@
 {
-  "vulinfoid": "JVNDB-2012-001355",
-  "vulinfodata": {
-    "title": "複数の DNS ネームサーバの実装に問題",
-    "vulinfodescription": {
-      "overview": "複数の DNS ネームサーバにおけるリソースレコードの取り扱いに関する問題が公表されました。  一定の条件のもとで、DNS キャッシュサーバが保持しているリソースレコードの保持期限を外部から延長させることができる問題が公表されています。  ISC の公開しているセキュリティアドバイザリ (https://www.isc.org/software/bind/advisories/cve-2012-1033) (Document Version: 2.0) では、以下のように記載されています。  \"To the best of our current knowledge, the extent of the exposure for users of BIND or other affected software is this: every resource record in the Domain Name System hierarchy has a time-to-live (TTL) value associated with it, intended to control how long the information in the resource record can be kept in cache by a non-authoritative server. Dr. Duan's paper discloses a method whereby information can be prolonged in the cache beyond the period supposedly allowed by the TTL value, causing affected resolvers to potentially return incorrect answers. It does not allow arbitrary insertion, removal, or alteration of resource record data.\""
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "ISC, Inc.",
-          "productname": "BIND",
-          "cpe": {
-            "text": "cpe:/a:isc:bind",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "9 から 9.8.1-P1"
-          ]
-        },
-        {
-          "name": "VMware",
-          "productname": "VMware ESX",
-          "cpe": {
-            "text": "cpe:/a:vmware:esx",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.5",
-            "4.0",
-            "4.1"
-          ]
-        },
-        {
-          "name": "日本電気",
-          "productname": "InfoCage",
-          "cpe": {
-            "text": "cpe:/a:nec:infocage",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "持ち出し制御 全バージョン"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "上位ドメインの権威サーバで削除されたドメイン情報が、キャッシュサーバ上では有効な情報として使用され続ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "アップデートする ISC から本問題に対応したアップデートが公開されました。 ISC が提供する情報をもとに、対策版である 9.6-ESV-R6、9.7.5、9.8.2、9.9.0 以降にアップデートしてください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ISC, Inc.",
-          "vulinfoid": "Ghost Domain Names: Revoked Yet Still Resolvable",
-          "url": "https://www.isc.org/software/bind/advisories/cve-2012-1033"
-        },
-        {
-          "type": "vendor",
-          "name": "NEC製品セキュリティ情報",
-          "vulinfoid": "NV12-006",
-          "url": "http://www.nec.co.jp/security-info/secinfo/nv12-006.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2012:0863",
-          "url": "http://lists.opensuse.org/opensuse-updates/2012-07/msg00024.html"
-        },
-        {
-          "type": "vendor",
-          "name": "opensuse-updates",
-          "vulinfoid": "openSUSE-SU-2012:0864",
-          "url": "http://lists.opensuse.org/opensuse-updates/2012-07/msg00025.html"
-        },
-        {
-          "type": "vendor",
-          "name": "VMware Security Advisories",
-          "vulinfoid": "VMSA-2012-0016",
-          "url": "http://www.vmware.com/security/advisories/VMSA-2012-0016.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2012-1033",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1033"
-        },
-        {
-          "type": "advisory",
-          "name": "JPRS",
-          "vulinfoid": "「ghost domain names（幽霊ドメイン名）」脆弱性について",
-          "url": "http://jprs.jp/tech/notice/2012-02-17-ghost-domain-names.html"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#542123",
-          "url": "http://jvn.jp/cert/JVNVU542123"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2012-1033",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-1033"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#542123",
-          "url": "http://www.kb.cert.org/vuls/id/542123"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-DesignError",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "設計上の問題"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2012年02月10日]\\n  掲載\\n[2012年02月13日]\\n  概要：内容を更新\\n[2012年05月31日]\\n  影響を受けるシステム：日本電気 (NV12-006) の情報を追加\\n  ベンダ情報：日本電気 (NV12-006) を追加\\n[2012年07月25日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:0863) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:0864) を追加\\n[2013年02月08日]\\n  対策：内容を更新\\n  影響を受けるシステム：VMware (VMSA-2012-0016) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0016) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2012-02-10T16:29:35+09:00",
-    "datelastupdated": "2013-02-08T16:14:52+09:00",
-    "datepublic": "2012-02-09T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2012-001355",
+	"vulinfodata": {
+		"title": "複数の DNS ネームサーバの実装に問題",
+		"vulinfodescription": {
+			"overview": "複数の DNS ネームサーバにおけるリソースレコードの取り扱いに関する問題が公表されました。  一定の条件のもとで、DNS キャッシュサーバが保持しているリソースレコードの保持期限を外部から延長させることができる問題が公表されています。  ISC の公開しているセキュリティアドバイザリ (https://www.isc.org/software/bind/advisories/cve-2012-1033) (Document Version: 2.0) では、以下のように記載されています。  \"To the best of our current knowledge, the extent of the exposure for users of BIND or other affected software is this: every resource record in the Domain Name System hierarchy has a time-to-live (TTL) value associated with it, intended to control how long the information in the resource record can be kept in cache by a non-authoritative server. Dr. Duan's paper discloses a method whereby information can be prolonged in the cache beyond the period supposedly allowed by the TTL value, causing affected resolvers to potentially return incorrect answers. It does not allow arbitrary insertion, removal, or alteration of resource record data.\""
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ISC, Inc.",
+					"productname": "BIND",
+					"cpe": {
+						"text": "cpe:/a:isc:bind",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"9 から 9.8.1-P1"
+					]
+				},
+				{
+					"name": "VMware",
+					"productname": "VMware ESX",
+					"cpe": {
+						"text": "cpe:/a:vmware:esx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.5",
+						"4.0",
+						"4.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "InfoCage",
+					"cpe": {
+						"text": "cpe:/a:nec:infocage",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"持ち出し制御 全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "上位ドメインの権威サーバで削除されたドメイン情報が、キャッシュサーバ上では有効な情報として使用され続ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "アップデートする ISC から本問題に対応したアップデートが公開されました。 ISC が提供する情報をもとに、対策版である 9.6-ESV-R6、9.7.5、9.8.2、9.9.0 以降にアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ISC, Inc.",
+					"vulinfoid": "Ghost Domain Names: Revoked Yet Still Resolvable",
+					"url": "https://www.isc.org/software/bind/advisories/cve-2012-1033"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV12-006",
+					"url": "http://www.nec.co.jp/security-info/secinfo/nv12-006.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2012:0863",
+					"url": "http://lists.opensuse.org/opensuse-updates/2012-07/msg00024.html"
+				},
+				{
+					"type": "vendor",
+					"name": "opensuse-updates",
+					"vulinfoid": "openSUSE-SU-2012:0864",
+					"url": "http://lists.opensuse.org/opensuse-updates/2012-07/msg00025.html"
+				},
+				{
+					"type": "vendor",
+					"name": "VMware Security Advisories",
+					"vulinfoid": "VMSA-2012-0016",
+					"url": "http://www.vmware.com/security/advisories/VMSA-2012-0016.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2012-1033",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1033"
+				},
+				{
+					"type": "advisory",
+					"name": "JPRS",
+					"vulinfoid": "「ghost domain names（幽霊ドメイン名）」脆弱性について",
+					"url": "http://jprs.jp/tech/notice/2012-02-17-ghost-domain-names.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#542123",
+					"url": "http://jvn.jp/cert/JVNVU542123"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2012-1033",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-1033"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#542123",
+					"url": "http://www.kb.cert.org/vuls/id/542123"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-DesignError",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "設計上の問題"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2012年02月10日]\\n  掲載\\n[2012年02月13日]\\n  概要：内容を更新\\n[2012年05月31日]\\n  影響を受けるシステム：日本電気 (NV12-006) の情報を追加\\n  ベンダ情報：日本電気 (NV12-006) を追加\\n[2012年07月25日]\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:0863) を追加\\n  ベンダ情報：openSUSE (openSUSE-SU-2012:0864) を追加\\n[2013年02月08日]\\n  対策：内容を更新\\n  影響を受けるシステム：VMware (VMSA-2012-0016) の情報を追加\\n  ベンダ情報：VMware (VMSA-2012-0016) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2012-02-10T16:29:35+09:00",
+		"datelastupdated": "2013-02-08T16:14:52+09:00",
+		"datepublic": "2012-02-09T00:00:00+09:00"
+	}
 }

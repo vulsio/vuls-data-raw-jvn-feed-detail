@@ -1,221 +1,221 @@
 {
-  "vulinfoid": "JVNDB-2019-002625",
-  "vulinfodata": {
-    "title": "WPA3 のプロトコルと実装に複数の脆弱性",
-    "vulinfodescription": {
-      "overview": "WPA3 プロトコルならびに hostapd と wpa_supplicant の実装には複数の脆弱性が存在し、遠隔の攻撃者によって、弱いパスワード情報や権限の取得、ならびにサービス運用妨害 (DoS) 攻撃が行われる可能性があります。これらの脆弱性は \"Dragonblood\" と呼称されています。  CERT/CC では引き続き WPA3 プロトコルの検証を行っています。今回発見された WPA3 の実装に関する脆弱性はプロトコルの仕様そのものに起因する可能性があります。  WPA3 は鍵交換プロトコルとして、 Simultaneous Authentication of Equals (SAE) を採用しています。これは \"Dragonfly Key Exchange\" とも呼ばれるもので、WPA2 における Pre-Shared Key (PSK) プロトコルの代替として機能しています。hostapd は WPA3 の認証処理におけるアクセスポイントおよび認証サーバの daemon です。また、wpa_supplicant は WPA authenticator (アクセスポイント) との鍵交換処理を実装した supplicant (クライアント) であり、WPA3 をサポートしています。hostapd と wpa_supplicant はともに Extensible Authentication Protocol Password (EAP-PWD) と SAE を実装していますが、下記の脆弱性を含んでいます。  楕円曲線暗号グループ (ECC groups) に対する SAE のキャッシュベースの攻撃 (SAE サイドチャネル攻撃) (CWE-208, CWE-524) - CVE-2019-9494 hostapd と wpa_supplicant における SAE 実装は、観測可能なタイミングの違いならびにキャッシュアクセスのパターンによるサイドチャネル攻撃に対して脆弱です。  楕円曲線暗号グループ (ECC groups) に対する EAP-PWD キャッシュベースの攻撃 (EAP-PWD サイドチャネル攻撃) (CWE-524) - CVE-2019-9495 hostapd と wpa_supplicant における SAE 実装は、キャッシュアクセスのパターンによるサイドチャネル攻撃に対して脆弱です。EAP-PWD をサポートしている hostapd と wpa_supplicant のバージョン 2.7 およびそれ以前が本脆弱性の影響を受けます。  SAE confirm 処理においてメッセージの検証が行われない問題 (CWE-642) - CVE-2019-9496 hostapd プロセスが hostapd/AP モードで動作している際の SAE confirm のメッセージ処理における検証に不備があり、不正な認証シーケンスによって hostapd プロセスが終了してしまう可能性があります。SAE をサポートしている hostapd の全てのバージョンが本脆弱性の影響を受けます。  EAP-PWD リフレクション攻撃 (EAP-pwd-Commit メッセージの検証不備) (CWE-301) - CVE-2019-9497 hostapd (EAP Server) ならびに wpa_supplicant (EAP Peer) における EAP-PWD 実装では、EAP-pwd-Commit メッセージのスカラ値と要素値の検証が行われません。  EAP-PWD Server における EAP-pwd-Commit メッセージの検証不備 (CWE-346) - CVE-2019-9498 hostapd (EAP Server) における EAP-PWD 実装では、ビルドに用いられた暗号ライブラリが EAP-pwd-Commit メッセージの要素値 (EC point) に対する検証処理を実装していない場合に、EAP-pwd-Commit メッセージのスカラ値と要素値の検証が行われません。  EAP-PWD Peer における EAP-pwd-Commit メッセージの検証不備 (CWE-346) - CVE-2019-9499 wpa_supplicant (EAP Peer) における EAP-PWD 実装では、ビルドに用いられた暗号ライブラリが EAP-pwd-Commit メッセージの要素値 (EC point) に対する検証処理を実装していない場合に、EAP-pwd-Commit メッセージのスカラ値と要素値の検証が行われません。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "（複数のベンダ）",
-          "productname": "（複数の製品）",
-          "cpe": {
-            "text": "cpe:/a:misc:multiple_vendors",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7",
-          "vector": "AV:A/AC:M/Au:S/C:C/I:C/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "6.7",
-          "vector": "CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:L"
-        }
-      ],
-      "impactitem": {
-        "description": "*サイドチャネル攻撃によって、パスワードの復元に使用可能な情報を取得される - CVE-2019-9494 *辞書攻撃により、弱いパスワードを取得される - CVE-2019-9495 本攻撃には、アプリケーションのインストールならびに実行を行うための権限が必要となります。また、メモリアクセスのパターン解析は共有キャッシュを観測することで可能です。hostapd/wpa_supplicant 2.7 およびそれ以降のバージョンは、CVE-2019-9494 のタイミング攻撃の影響は受けません *hostapd のプロセスを終了させられる (サービス運用妨害) - CVE-2019-9496 *EAP-PWD の認証を回避される - CVE-2019-9497 暗号ライブラリが EC point に対する検証処理を実装している場合、攻撃者はセッション鍵の取得や鍵交換を行うことができません *不正なスカラ/要素値をもつメッセージ使用してセッション鍵を取得され、認証を回避される - CVE-2019-9498, CVE-2019-9499 "
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "[アップデートする] wpa_supplicant と hostapd をバージョン 2.8 にアップデートしてください   その他の緩和策については下記を参照してください  *CVE-2019-9494 https://w1.fi/security/2019-1/ *CVE-2019-9495 https://w1.fi/security/2019-2/ *CVE-2019-9496 https://w1.fi/security/2019-3/ *CVE-2019-9497 https://w1.fi/security/2019-4/ *CVE-2019-9498 https://w1.fi/security/2019-4/ *CVE-2019-9499 https://w1.fi/security/2019-4/"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-9499",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9499"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-9494",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9494"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-9495",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9495"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-9496",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9496"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-9497",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9497"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2019-9498",
-          "url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9498"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#94228755",
-          "url": "https://jvn.jp/vu/JVNVU94228755/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-9494",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9494"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-9495",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9495"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-9496",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9496"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-9497",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9497"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-9498",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9498"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2019-9499",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9499"
-        },
-        {
-          "type": "advisory",
-          "name": "US-CERT Vulnerability Note",
-          "vulinfoid": "VU#871675",
-          "url": "https://www.kb.cert.org/vuls/id/871675/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "hostapd: IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator",
-          "url": "https://w1.fi/hostapd/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Dragonblood: Analysing WPA3's Dragonfly Handshake",
-          "url": "https://wpa3.mathyvanhoef.com/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "hostap - hostapd/wpa_supplicant ",
-          "url": "https://w1.fi/cgit/hostap/log/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Dragonblood: A Security Analysis of WPA3's SAE Handshake",
-          "url": "https://papers.mathyvanhoef.com/dragonblood.pdf"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "hostapd and wpa_supplicant security advisories ",
-          "url": "https://w1.fi/security/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Index of /security/2019-1",
-          "url": "https://w1.fi/security/2019-1/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Index of /security/2019-2",
-          "url": "https://w1.fi/security/2019-2/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Index of /security/2019-3",
-          "url": "https://w1.fi/security/2019-3/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Index of /security/2019-4",
-          "url": "https://w1.fi/security/2019-4/"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Linux WPA Supplicant (IEEE 802.1X, WPA, WPA2, RSN, IEEE 802.11i)",
-          "url": "https://w1.fi/wpa_supplicant/"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2019-04-16T14:41:40+09:00",
-          "description": "[2019年04月16日]\\n  掲載"
-        },
-        {
-          "historyno": "3",
-          "datetime": "2019-04-17T12:11:32+09:00",
-          "description": "[2019年04月17日]\\n  概要：内容を更新"
-        },
-        {
-          "historyno": "4",
-          "datetime": "2019-12-27T18:14:24+09:00",
-          "description": "[2019年12月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9494) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9495) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9496) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9497) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9498) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9499) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2019-04-16T17:07:35+09:00",
-    "datelastupdated": "2019-12-27T18:14:47+09:00",
-    "datepublic": "2019-04-15T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2019-002625",
+	"vulinfodata": {
+		"title": "WPA3 のプロトコルと実装に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "WPA3 プロトコルならびに hostapd と wpa_supplicant の実装には複数の脆弱性が存在し、遠隔の攻撃者によって、弱いパスワード情報や権限の取得、ならびにサービス運用妨害 (DoS) 攻撃が行われる可能性があります。これらの脆弱性は \"Dragonblood\" と呼称されています。  CERT/CC では引き続き WPA3 プロトコルの検証を行っています。今回発見された WPA3 の実装に関する脆弱性はプロトコルの仕様そのものに起因する可能性があります。  WPA3 は鍵交換プロトコルとして、 Simultaneous Authentication of Equals (SAE) を採用しています。これは \"Dragonfly Key Exchange\" とも呼ばれるもので、WPA2 における Pre-Shared Key (PSK) プロトコルの代替として機能しています。hostapd は WPA3 の認証処理におけるアクセスポイントおよび認証サーバの daemon です。また、wpa_supplicant は WPA authenticator (アクセスポイント) との鍵交換処理を実装した supplicant (クライアント) であり、WPA3 をサポートしています。hostapd と wpa_supplicant はともに Extensible Authentication Protocol Password (EAP-PWD) と SAE を実装していますが、下記の脆弱性を含んでいます。  楕円曲線暗号グループ (ECC groups) に対する SAE のキャッシュベースの攻撃 (SAE サイドチャネル攻撃) (CWE-208, CWE-524) - CVE-2019-9494 hostapd と wpa_supplicant における SAE 実装は、観測可能なタイミングの違いならびにキャッシュアクセスのパターンによるサイドチャネル攻撃に対して脆弱です。  楕円曲線暗号グループ (ECC groups) に対する EAP-PWD キャッシュベースの攻撃 (EAP-PWD サイドチャネル攻撃) (CWE-524) - CVE-2019-9495 hostapd と wpa_supplicant における SAE 実装は、キャッシュアクセスのパターンによるサイドチャネル攻撃に対して脆弱です。EAP-PWD をサポートしている hostapd と wpa_supplicant のバージョン 2.7 およびそれ以前が本脆弱性の影響を受けます。  SAE confirm 処理においてメッセージの検証が行われない問題 (CWE-642) - CVE-2019-9496 hostapd プロセスが hostapd/AP モードで動作している際の SAE confirm のメッセージ処理における検証に不備があり、不正な認証シーケンスによって hostapd プロセスが終了してしまう可能性があります。SAE をサポートしている hostapd の全てのバージョンが本脆弱性の影響を受けます。  EAP-PWD リフレクション攻撃 (EAP-pwd-Commit メッセージの検証不備) (CWE-301) - CVE-2019-9497 hostapd (EAP Server) ならびに wpa_supplicant (EAP Peer) における EAP-PWD 実装では、EAP-pwd-Commit メッセージのスカラ値と要素値の検証が行われません。  EAP-PWD Server における EAP-pwd-Commit メッセージの検証不備 (CWE-346) - CVE-2019-9498 hostapd (EAP Server) における EAP-PWD 実装では、ビルドに用いられた暗号ライブラリが EAP-pwd-Commit メッセージの要素値 (EC point) に対する検証処理を実装していない場合に、EAP-pwd-Commit メッセージのスカラ値と要素値の検証が行われません。  EAP-PWD Peer における EAP-pwd-Commit メッセージの検証不備 (CWE-346) - CVE-2019-9499 wpa_supplicant (EAP Peer) における EAP-PWD 実装では、ビルドに用いられた暗号ライブラリが EAP-pwd-Commit メッセージの要素値 (EC point) に対する検証処理を実装していない場合に、EAP-pwd-Commit メッセージのスカラ値と要素値の検証が行われません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7",
+					"vector": "AV:A/AC:M/Au:S/C:C/I:C/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.7",
+					"vector": "CVSS:3.0/AV:A/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "*サイドチャネル攻撃によって、パスワードの復元に使用可能な情報を取得される - CVE-2019-9494 *辞書攻撃により、弱いパスワードを取得される - CVE-2019-9495 本攻撃には、アプリケーションのインストールならびに実行を行うための権限が必要となります。また、メモリアクセスのパターン解析は共有キャッシュを観測することで可能です。hostapd/wpa_supplicant 2.7 およびそれ以降のバージョンは、CVE-2019-9494 のタイミング攻撃の影響は受けません *hostapd のプロセスを終了させられる (サービス運用妨害) - CVE-2019-9496 *EAP-PWD の認証を回避される - CVE-2019-9497 暗号ライブラリが EC point に対する検証処理を実装している場合、攻撃者はセッション鍵の取得や鍵交換を行うことができません *不正なスカラ/要素値をもつメッセージ使用してセッション鍵を取得され、認証を回避される - CVE-2019-9498, CVE-2019-9499 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] wpa_supplicant と hostapd をバージョン 2.8 にアップデートしてください   その他の緩和策については下記を参照してください  *CVE-2019-9494 https://w1.fi/security/2019-1/ *CVE-2019-9495 https://w1.fi/security/2019-2/ *CVE-2019-9496 https://w1.fi/security/2019-3/ *CVE-2019-9497 https://w1.fi/security/2019-4/ *CVE-2019-9498 https://w1.fi/security/2019-4/ *CVE-2019-9499 https://w1.fi/security/2019-4/"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-9499",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9499"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-9494",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9494"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-9495",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9495"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-9496",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9496"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-9497",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9497"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2019-9498",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9498"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94228755",
+					"url": "https://jvn.jp/vu/JVNVU94228755/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-9494",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9494"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-9495",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9495"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-9496",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9496"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-9497",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9497"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-9498",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9498"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2019-9499",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9499"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#871675",
+					"url": "https://www.kb.cert.org/vuls/id/871675/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "hostapd: IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator",
+					"url": "https://w1.fi/hostapd/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Dragonblood: Analysing WPA3's Dragonfly Handshake",
+					"url": "https://wpa3.mathyvanhoef.com/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "hostap - hostapd/wpa_supplicant ",
+					"url": "https://w1.fi/cgit/hostap/log/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Dragonblood: A Security Analysis of WPA3's SAE Handshake",
+					"url": "https://papers.mathyvanhoef.com/dragonblood.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "hostapd and wpa_supplicant security advisories ",
+					"url": "https://w1.fi/security/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Index of /security/2019-1",
+					"url": "https://w1.fi/security/2019-1/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Index of /security/2019-2",
+					"url": "https://w1.fi/security/2019-2/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Index of /security/2019-3",
+					"url": "https://w1.fi/security/2019-3/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Index of /security/2019-4",
+					"url": "https://w1.fi/security/2019-4/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Linux WPA Supplicant (IEEE 802.1X, WPA, WPA2, RSN, IEEE 802.11i)",
+					"url": "https://w1.fi/wpa_supplicant/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2019-04-16T14:41:40+09:00",
+					"description": "[2019年04月16日]\\n  掲載"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2019-04-17T12:11:32+09:00",
+					"description": "[2019年04月17日]\\n  概要：内容を更新"
+				},
+				{
+					"historyno": "4",
+					"datetime": "2019-12-27T18:14:24+09:00",
+					"description": "[2019年12月27日]\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9494) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9495) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9496) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9497) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9498) を追加\\n  参考情報：National Vulnerability Database (NVD) (CVE-2019-9499) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2019-04-16T17:07:35+09:00",
+		"datelastupdated": "2019-12-27T18:14:47+09:00",
+		"datepublic": "2019-04-15T00:00:00+09:00"
+	}
 }

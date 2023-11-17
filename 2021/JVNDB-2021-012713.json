@@ -1,183 +1,183 @@
 {
-  "vulinfoid": "JVNDB-2021-012713",
-  "vulinfodata": {
-    "title": "Apache HTTP Server の HTTP/2 プロトコル用プロトコルハンドラにおける NULL ポインタデリファレンスに関する脆弱性",
-    "vulinfodescription": {
-      "overview": "Apache HTTP Server の HTTP/2 プロトコル用 HTTP/2 プロトコルハンドラには、問題のヘッダが最初に受信またはフッタに表示された場合、HTTP/2 プロトコルハンドラで完全に初期化されないため、NULL ポインタデリファレンスに関する脆弱性が存在します。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Apache Software Foundation",
-          "productname": "Apache HTTP Server",
-          "cpe": {
-            "text": "cpe:/a:apache:http_server",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.4.47"
-          ]
-        },
-        {
-          "name": "Debian",
-          "productname": "Debian GNU/Linux",
-          "cpe": {
-            "text": "cpe:/o:debian:debian_linux",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "Fedora Project",
-          "productname": "Fedora",
-          "cpe": {
-            "text": "cpe:/o:fedoraproject:fedora",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "オラクル",
-          "productname": "Instantis EnterpriseTrack",
-          "cpe": {
-            "text": "cpe:/a:oracle:instantis_enterprisetrack",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Enterprise Manager Ops Center",
-          "cpe": {
-            "text": "cpe:/a:oracle:enterprise_manager_ops_center",
-            "version": "2.2"
-          }
-        },
-        {
-          "name": "オラクル",
-          "productname": "ZFS Storage Appliance Kit",
-          "cpe": {
-            "text": "cpe:/a:oracle:zfs_storage_appliance_kit",
-            "version": "2.2"
-          }
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        },
-        {
-          "version": "3.0",
-          "severity": {
-            "text": "High",
-            "type": "Base"
-          },
-          "base": "7.5",
-          "vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-        }
-      ],
-      "impactitem": {
-        "description": "初期化されたメモリで NULL ポインタデリファレンスを引き起こされて、子プロセスを確実にクラッシュされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apache httpd 2.4 vulnerabilities",
-          "vulinfoid": "Fixed in Apache httpd 2.4.48",
-          "url": "https://httpd.apache.org/security/vulnerabilities_24.html#2.4.48"
-        },
-        {
-          "type": "vendor",
-          "name": "Debian",
-          "vulinfoid": "[SECURITY] [DLA 2706-1] apache2 security update",
-          "url": "https://lists.debian.org/debian-lts-announce/2021/07/msg00006.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Debian Security Advisory",
-          "vulinfoid": "DSA-4937-1",
-          "url": "https://www.debian.org/security/2021/dsa-4937"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2021-181f29c392",
-          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/A73QJ4HPUMU26I6EULG6SCK67TUEXZYR/"
-        },
-        {
-          "type": "vendor",
-          "name": "Fedora Update Notification",
-          "vulinfoid": "FEDORA-2021-051639aad4",
-          "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2NKJ3ZA3FTSZ2QBBPKS6BYGAWYRABNQQ/"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Critical Patch Update",
-          "vulinfoid": "Oracle Critical Patch Update Advisory - October 2021",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Pony Mail",
-          "vulinfoid": "svn commit: r1890801 - /httpd/site/trunk/content/security/json/CVE-2021-31618.json",
-          "url": "https://lists.apache.org/thread/r14b66ef0f4f569fd515a3f96cd4eb58bd9a8ff525cc326bb0359664f@%3Ccvs.httpd.apache.org%3E"
-        },
-        {
-          "type": "vendor",
-          "name": "Pony Mail",
-          "vulinfoid": "svn commit: r1075782 - in /websites/staging/httpd/trunk/content: ./ security/json/CVE-2021-31618.json security/vulnerabilities_24.html",
-          "url": "https://lists.apache.org/thread/b5r9kgtbrmdnf38h824g623obd8n17bh"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2021-31618",
-          "url": "https://www.cve.org/CVERecord?id=CVE-2021-31618"
-        },
-        {
-          "type": "advisory",
-          "name": "JVN",
-          "vulinfoid": "JVNVU#96037838",
-          "url": "https://jvn.jp/vu/JVNVU96037838/"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2021-31618",
-          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31618"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-476",
-          "url": "http://cwe.mitre.org/data/definitions/476.html",
-          "title": "NULL ポインタデリファレンス"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "1",
-          "datetime": "2022-09-07T10:54:40+09:00",
-          "description": "[2022年09月07日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2022-09-07T10:54:40+09:00",
-    "datelastupdated": "2022-09-07T10:54:40+09:00",
-    "datepublic": "2021-06-01T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2021-012713",
+	"vulinfodata": {
+		"title": "Apache HTTP Server の HTTP/2 プロトコル用プロトコルハンドラにおける NULL ポインタデリファレンスに関する脆弱性",
+		"vulinfodescription": {
+			"overview": "Apache HTTP Server の HTTP/2 プロトコル用 HTTP/2 プロトコルハンドラには、問題のヘッダが最初に受信またはフッタに表示された場合、HTTP/2 プロトコルハンドラで完全に初期化されないため、NULL ポインタデリファレンスに関する脆弱性が存在します。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Apache Software Foundation",
+					"productname": "Apache HTTP Server",
+					"cpe": {
+						"text": "cpe:/a:apache:http_server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.4.47"
+					]
+				},
+				{
+					"name": "Debian",
+					"productname": "Debian GNU/Linux",
+					"cpe": {
+						"text": "cpe:/o:debian:debian_linux",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "Fedora Project",
+					"productname": "Fedora",
+					"cpe": {
+						"text": "cpe:/o:fedoraproject:fedora",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "オラクル",
+					"productname": "Instantis EnterpriseTrack",
+					"cpe": {
+						"text": "cpe:/a:oracle:instantis_enterprisetrack",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Enterprise Manager Ops Center",
+					"cpe": {
+						"text": "cpe:/a:oracle:enterprise_manager_ops_center",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "オラクル",
+					"productname": "ZFS Storage Appliance Kit",
+					"cpe": {
+						"text": "cpe:/a:oracle:zfs_storage_appliance_kit",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "初期化されたメモリで NULL ポインタデリファレンスを引き起こされて、子プロセスを確実にクラッシュされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apache httpd 2.4 vulnerabilities",
+					"vulinfoid": "Fixed in Apache httpd 2.4.48",
+					"url": "https://httpd.apache.org/security/vulnerabilities_24.html#2.4.48"
+				},
+				{
+					"type": "vendor",
+					"name": "Debian",
+					"vulinfoid": "[SECURITY] [DLA 2706-1] apache2 security update",
+					"url": "https://lists.debian.org/debian-lts-announce/2021/07/msg00006.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Debian Security Advisory",
+					"vulinfoid": "DSA-4937-1",
+					"url": "https://www.debian.org/security/2021/dsa-4937"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2021-181f29c392",
+					"url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/A73QJ4HPUMU26I6EULG6SCK67TUEXZYR/"
+				},
+				{
+					"type": "vendor",
+					"name": "Fedora Update Notification",
+					"vulinfoid": "FEDORA-2021-051639aad4",
+					"url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2NKJ3ZA3FTSZ2QBBPKS6BYGAWYRABNQQ/"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Critical Patch Update",
+					"vulinfoid": "Oracle Critical Patch Update Advisory - October 2021",
+					"url": "https://www.oracle.com/security-alerts/cpuoct2021.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Pony Mail",
+					"vulinfoid": "svn commit: r1890801 - /httpd/site/trunk/content/security/json/CVE-2021-31618.json",
+					"url": "https://lists.apache.org/thread/r14b66ef0f4f569fd515a3f96cd4eb58bd9a8ff525cc326bb0359664f@%3Ccvs.httpd.apache.org%3E"
+				},
+				{
+					"type": "vendor",
+					"name": "Pony Mail",
+					"vulinfoid": "svn commit: r1075782 - in /websites/staging/httpd/trunk/content: ./ security/json/CVE-2021-31618.json security/vulnerabilities_24.html",
+					"url": "https://lists.apache.org/thread/b5r9kgtbrmdnf38h824g623obd8n17bh"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2021-31618",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2021-31618"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96037838",
+					"url": "https://jvn.jp/vu/JVNVU96037838/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2021-31618",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2021-31618"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-476",
+					"url": "http://cwe.mitre.org/data/definitions/476.html",
+					"title": "NULL ポインタデリファレンス"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2022-09-07T10:54:40+09:00",
+					"description": "[2022年09月07日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2022-09-07T10:54:40+09:00",
+		"datelastupdated": "2022-09-07T10:54:40+09:00",
+		"datepublic": "2021-06-01T00:00:00+09:00"
+	}
 }

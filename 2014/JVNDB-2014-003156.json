@@ -1,157 +1,157 @@
 {
-  "vulinfoid": "JVNDB-2014-003156",
-  "vulinfodata": {
-    "title": "32-bit プラットフォーム上で稼動する Yann Collet LZ4 および Linux Kernel で使用される LZ4 アルゴリズムの実装における整数オーバーフローの脆弱性",
-    "vulinfodescription": {
-      "overview": "32-bit プラットフォーム上で稼動する Yann Collet LZ4 および Linux Kernel の lib/lz4/lz4_decompress.c 内の lz4_uncompress 関数で使用される LZ4 アルゴリズムの実装には、整数オーバーフローの脆弱性が存在します。  本脆弱性は、CVE-2014-4715 とは異なる脆弱性です。"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Linux",
-          "productname": "Linux Kernel",
-          "cpe": {
-            "text": "cpe:/o:linux:linux_kernel",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "3.15.2 未満"
-          ]
-        },
-        {
-          "name": "Yann Collet",
-          "productname": "LZ4",
-          "cpe": {
-            "text": "cpe:/a:yann_collet:lz4",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "r118 未満"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5",
-          "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-        }
-      ],
-      "impactitem": {
-        "description": "攻撃者により、API 制限に適合しないプログラムによって適切に処理されない巧妙に細工された Literal Run を介して、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "ChangeLog",
-          "vulinfoid": "ChangeLog-3.15.2",
-          "url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.15.2"
-        },
-        {
-          "type": "vendor",
-          "name": "GitHub",
-          "vulinfoid": "lz4: ensure length does not wrap",
-          "url": "https://github.com/torvalds/linux/commit/206204a1162b995e2185275167b22468c00d6b36"
-        },
-        {
-          "type": "vendor",
-          "name": "Google Code",
-          "vulinfoid": "Issue 52: Security: LZ4_uncompress can crash on invalid input #2",
-          "url": "https://code.google.com/p/lz4/issues/detail?id=52"
-        },
-        {
-          "type": "vendor",
-          "name": "Google Code",
-          "vulinfoid": "Revision: r118",
-          "url": "https://code.google.com/p/lz4/source/detail?r=118"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux Kernel",
-          "vulinfoid": "Linux Kernel Archives",
-          "url": "http://www.kernel.org"
-        },
-        {
-          "type": "vendor",
-          "name": "Linux kernel source tree",
-          "vulinfoid": "lz4: ensure length does not wrap",
-          "url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=206204a1162b995e2185275167b22468c00d6b36"
-        },
-        {
-          "type": "vendor",
-          "name": "Red Hat Bugzilla",
-          "vulinfoid": "Bug 1112436",
-          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1112436"
-        },
-        {
-          "type": "vendor",
-          "name": "Yann Collet",
-          "vulinfoid": "Debunking the LZ4 \"20 years old bug\" myth",
-          "url": "http://fastcompression.blogspot.fr/2014/06/debunking-lz4-20-years-old-bug-myth.html"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-4611",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4611"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-4611",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4611"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "Raising Lazarus - The 20 Year Old Bug that Went to Mars",
-          "url": "http://blog.securitymouse.com/2014/06/raising-lazarus-20-year-old-bug-that.html"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "LMS-2014-06-16-5",
-          "url": "https://www.securitymouse.com/lms-2014-06-16-5"
-        },
-        {
-          "type": "advisory",
-          "name": "関連文書",
-          "vulinfoid": "LMS-2014-06-16-6",
-          "url": "https://www.securitymouse.com/lms-2014-06-16-6"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-20",
-          "url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-          "title": "不適切な入力確認"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年07月07日]\\n  掲載"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-07-07T16:46:22+09:00",
-    "datelastupdated": "2014-07-07T16:46:22+09:00",
-    "datepublic": "2014-06-26T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-003156",
+	"vulinfodata": {
+		"title": "32-bit プラットフォーム上で稼動する Yann Collet LZ4 および Linux Kernel で使用される LZ4 アルゴリズムの実装における整数オーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "32-bit プラットフォーム上で稼動する Yann Collet LZ4 および Linux Kernel の lib/lz4/lz4_decompress.c 内の lz4_uncompress 関数で使用される LZ4 アルゴリズムの実装には、整数オーバーフローの脆弱性が存在します。  本脆弱性は、CVE-2014-4715 とは異なる脆弱性です。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Linux",
+					"productname": "Linux Kernel",
+					"cpe": {
+						"text": "cpe:/o:linux:linux_kernel",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.15.2 未満"
+					]
+				},
+				{
+					"name": "Yann Collet",
+					"productname": "LZ4",
+					"cpe": {
+						"text": "cpe:/a:yann_collet:lz4",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"r118 未満"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+				}
+			],
+			"impactitem": {
+				"description": "攻撃者により、API 制限に適合しないプログラムによって適切に処理されない巧妙に細工された Literal Run を介して、サービス運用妨害 (メモリ破損) 状態にされるなど、不特定の影響を受ける可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダより正式な対策が公開されています。ベンダ情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ChangeLog",
+					"vulinfoid": "ChangeLog-3.15.2",
+					"url": "https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.15.2"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "lz4: ensure length does not wrap",
+					"url": "https://github.com/torvalds/linux/commit/206204a1162b995e2185275167b22468c00d6b36"
+				},
+				{
+					"type": "vendor",
+					"name": "Google Code",
+					"vulinfoid": "Issue 52: Security: LZ4_uncompress can crash on invalid input #2",
+					"url": "https://code.google.com/p/lz4/issues/detail?id=52"
+				},
+				{
+					"type": "vendor",
+					"name": "Google Code",
+					"vulinfoid": "Revision: r118",
+					"url": "https://code.google.com/p/lz4/source/detail?r=118"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux Kernel",
+					"vulinfoid": "Linux Kernel Archives",
+					"url": "http://www.kernel.org"
+				},
+				{
+					"type": "vendor",
+					"name": "Linux kernel source tree",
+					"vulinfoid": "lz4: ensure length does not wrap",
+					"url": "http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=206204a1162b995e2185275167b22468c00d6b36"
+				},
+				{
+					"type": "vendor",
+					"name": "Red Hat Bugzilla",
+					"vulinfoid": "Bug 1112436",
+					"url": "https://bugzilla.redhat.com/show_bug.cgi?id=1112436"
+				},
+				{
+					"type": "vendor",
+					"name": "Yann Collet",
+					"vulinfoid": "Debunking the LZ4 \"20 years old bug\" myth",
+					"url": "http://fastcompression.blogspot.fr/2014/06/debunking-lz4-20-years-old-bug-myth.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-4611",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4611"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-4611",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-4611"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Raising Lazarus - The 20 Year Old Bug that Went to Mars",
+					"url": "http://blog.securitymouse.com/2014/06/raising-lazarus-20-year-old-bug-that.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "LMS-2014-06-16-5",
+					"url": "https://www.securitymouse.com/lms-2014-06-16-5"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "LMS-2014-06-16-6",
+					"url": "https://www.securitymouse.com/lms-2014-06-16-6"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-20",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
+					"title": "不適切な入力確認"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年07月07日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2014-07-07T16:46:22+09:00",
+		"datelastupdated": "2014-07-07T16:46:22+09:00",
+		"datepublic": "2014-06-26T00:00:00+09:00"
+	}
 }

@@ -1,151 +1,151 @@
 {
-  "vulinfoid": "JVNDB-2014-005969",
-  "vulinfodata": {
-    "title": "CPython の httplib ライブラリなどの HTTP クライアントにおける SSL サーバになりすまされる脆弱性",
-    "vulinfodescription": {
-      "overview": "CPython (別名 Python) の (1) httplib、(2) urllib、(3) urllib2、および (4) xmlrpclib ライブラリの HTTP クライアントは、HTTPS URL にアクセスする際、(a) トラストストア (trust store) に対して証明書をチェックしないため、あるいはサーバのホスト名が X.509 証明書のサブジェクトの (b) Common Name (CN) または (c) subjectAltName フィールドのドメイン名と一致することを検証しないため、SSL サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-295: Improper Certificate Validation (不正な証明書検証) と識別されています。 http://cwe.mitre.org/data/definitions/295.html"
-    },
-    "affected": {
-      "affecteditem": [
-        {
-          "name": "Python Software Foundation",
-          "productname": "Python",
-          "cpe": {
-            "text": "cpe:/a:python:python",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "2.7.9 未満の 2.x",
-            "3.4.3 未満の 3.x"
-          ]
-        },
-        {
-          "name": "アップル",
-          "productname": "Apple Mac OS X",
-          "cpe": {
-            "text": "cpe:/o:apple:mac_os_x",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "10.10 から 10.10.4"
-          ]
-        },
-        {
-          "name": "オラクル",
-          "productname": "Oracle Solaris",
-          "cpe": {
-            "text": "cpe:/o:oracle:solaris",
-            "version": "2.2"
-          },
-          "versionnumber": [
-            "11.2"
-          ]
-        }
-      ]
-    },
-    "impact": {
-      "cvss": [
-        {
-          "version": "2.0",
-          "severity": {
-            "text": "Medium",
-            "type": "Base"
-          },
-          "base": "5.8",
-          "vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
-        }
-      ],
-      "impactitem": {
-        "description": "中間者攻撃 (man-in-the-middle attack) により、任意の有効な証明書を介して、 SSL サーバになりすまされる可能性があります。"
-      }
-    },
-    "solution": {
-      "solutionitem": {
-        "description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
-      }
-    },
-    "related": {
-      "relateditem": [
-        {
-          "type": "vendor",
-          "name": "Apple Mailing Lists",
-          "vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
-          "url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple Security Updates",
-          "vulinfoid": "HT205031",
-          "url": "http://support.apple.com/en-us/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "Apple セキュリティアップデート",
-          "vulinfoid": "HT205031",
-          "url": "http://support.apple.com/ja-jp/HT205031"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Third Party Bulletin - January 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Oracle Technology Network",
-          "vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
-          "url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
-        },
-        {
-          "type": "vendor",
-          "name": "Python",
-          "vulinfoid": "PEP 476 - Enabling certificate verification by default for stdlib http clients",
-          "url": "https://www.python.org/dev/peps/pep-0476/"
-        },
-        {
-          "type": "vendor",
-          "name": "Python",
-          "vulinfoid": "Issue22417",
-          "url": "http://bugs.python.org/issue22417"
-        },
-        {
-          "type": "vendor",
-          "name": "Python",
-          "vulinfoid": "Python 2.7.9",
-          "url": "https://www.python.org/downloads/release/python-279/"
-        },
-        {
-          "type": "advisory",
-          "name": "Common Vulnerabilities and Exposures (CVE)",
-          "vulinfoid": "CVE-2014-9365",
-          "url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9365"
-        },
-        {
-          "type": "advisory",
-          "name": "National Vulnerability Database (NVD)",
-          "vulinfoid": "CVE-2014-9365",
-          "url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9365"
-        },
-        {
-          "type": "cwe",
-          "name": "JVNDB",
-          "vulinfoid": "CWE-Other",
-          "url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-          "title": "その他"
-        }
-      ]
-    },
-    "history": {
-      "historyitem": [
-        {
-          "historyno": "0",
-          "datetime": "2018-02-17T10:37:52+09:00",
-          "description": "[2014年12月15日]\\n  掲載\\n[2015年03月02日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
-        }
-      ]
-    },
-    "datefirstpublished": "2014-12-15T18:26:06+09:00",
-    "datelastupdated": "2015-10-30T16:37:12+09:00",
-    "datepublic": "2014-12-10T00:00:00+09:00"
-  }
+	"vulinfoid": "JVNDB-2014-005969",
+	"vulinfodata": {
+		"title": "CPython の httplib ライブラリなどの HTTP クライアントにおける SSL サーバになりすまされる脆弱性",
+		"vulinfodescription": {
+			"overview": "CPython (別名 Python) の (1) httplib、(2) urllib、(3) urllib2、および (4) xmlrpclib ライブラリの HTTP クライアントは、HTTPS URL にアクセスする際、(a) トラストストア (trust store) に対して証明書をチェックしないため、あるいはサーバのホスト名が X.509 証明書のサブジェクトの (b) Common Name (CN) または (c) subjectAltName フィールドのドメイン名と一致することを検証しないため、SSL サーバになりすまされる脆弱性が存在します。  補足情報 : CWE による脆弱性タイプは、CWE-295: Improper Certificate Validation (不正な証明書検証) と識別されています。 http://cwe.mitre.org/data/definitions/295.html"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Python Software Foundation",
+					"productname": "Python",
+					"cpe": {
+						"text": "cpe:/a:python:python",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.7.9 未満の 2.x",
+						"3.4.3 未満の 3.x"
+					]
+				},
+				{
+					"name": "アップル",
+					"productname": "Apple Mac OS X",
+					"cpe": {
+						"text": "cpe:/o:apple:mac_os_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"10.10 から 10.10.4"
+					]
+				},
+				{
+					"name": "オラクル",
+					"productname": "Oracle Solaris",
+					"cpe": {
+						"text": "cpe:/o:oracle:solaris",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"11.2"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "中間者攻撃 (man-in-the-middle attack) により、任意の有効な証明書を介して、 SSL サーバになりすまされる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Apple Mailing Lists",
+					"vulinfoid": "APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006",
+					"url": "http://lists.apple.com/archives/security-announce/2015/Aug/msg00001.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple Security Updates",
+					"vulinfoid": "HT205031",
+					"url": "http://support.apple.com/en-us/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "Apple セキュリティアップデート",
+					"vulinfoid": "HT205031",
+					"url": "http://support.apple.com/ja-jp/HT205031"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Third Party Bulletin - January 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinjan2015-2370101.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Oracle Technology Network",
+					"vulinfoid": "Oracle Solaris Third Party Bulletin - October 2015",
+					"url": "http://www.oracle.com/technetwork/topics/security/bulletinoct2015-2511968.html"
+				},
+				{
+					"type": "vendor",
+					"name": "Python",
+					"vulinfoid": "PEP 476 - Enabling certificate verification by default for stdlib http clients",
+					"url": "https://www.python.org/dev/peps/pep-0476/"
+				},
+				{
+					"type": "vendor",
+					"name": "Python",
+					"vulinfoid": "Issue22417",
+					"url": "http://bugs.python.org/issue22417"
+				},
+				{
+					"type": "vendor",
+					"name": "Python",
+					"vulinfoid": "Python 2.7.9",
+					"url": "https://www.python.org/downloads/release/python-279/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2014-9365",
+					"url": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9365"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2014-9365",
+					"url": "http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-9365"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "0",
+					"datetime": "2018-02-17T10:37:52+09:00",
+					"description": "[2014年12月15日]\\n  掲載\\n[2015年03月02日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：オラクル (Oracle Third Party Bulletin - January 2015) を追加\\n[2015年08月31日]\\n  影響を受けるシステム：ベンダ情報の追加に伴い内容を更新\\n  ベンダ情報：アップル (HT205031) を追加\\n  ベンダ情報：アップル (APPLE-SA-2015-08-13-2 OS X Yosemite v10.10.5 and Security Update 2015-006) を追加\\n[2015年10月30日]\\n  ベンダ情報：オラクル (Oracle Solaris Third Party Bulletin - October 2015) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2014-12-15T18:26:06+09:00",
+		"datelastupdated": "2015-10-30T16:37:12+09:00",
+		"datepublic": "2014-12-10T00:00:00+09:00"
+	}
 }
