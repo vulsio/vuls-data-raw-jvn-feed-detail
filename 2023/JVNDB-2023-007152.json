@@ -1,0 +1,173 @@
+{
+	"vulinfoid": "JVNDB-2023-007152",
+	"vulinfodata": {
+		"title": "CLUSTERPRO X における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "日本電気株式会社が提供する CLUSTERPRO X の WebManager/Cluster WebUI には、次の複数の脆弱性が存在します。  　* 権限チェックの欠如 (CWE-862) - CVE-2023-39544 　* 外部からアクセス可能なファイルに関する脆弱性 (CWE-552) - CVE-2023-39545 　* パスワードの代わりにパスワードハッシュを使用する認証 (CWE-836) - CVE-2023-39546 　* Capture-replay による認証回避 (CWE-294) - CVE-2023-39547 　* アップロードファイルの検証不備 (CWE-434) - CVE-2023-39548  これらの脆弱性情報は、次の方が開発者に報告し、製品利用者への周知を目的に、開発者がJPCERT/CCに報告し、JPCERT/CCが開発者との調整を行いました。 発見者: Videotron David Levard 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日本電気",
+					"productname": "CLUSTERPRO X",
+					"cpe": {
+						"text": "cpe:/a:nec:expresscluster_x",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0",
+						"2.0",
+						"2.1",
+						"3.0",
+						"3.1",
+						"3.2",
+						"3.3",
+						"4.0",
+						"4.1",
+						"4.2",
+						"4.3",
+						"5.0",
+						"5.1"
+					]
+				},
+				{
+					"name": "日本電気",
+					"productname": "CLUSTERPRO X SingleServerSafe",
+					"cpe": {
+						"text": "cpe:/a:nec:expresscluster_x_singleserversafe",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0",
+						"2.0",
+						"2.1",
+						"3.0",
+						"3.1",
+						"3.2",
+						"3.3",
+						"4.0",
+						"4.1",
+						"4.2",
+						"4.3",
+						"5.0",
+						"5.1"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 当該製品にログイン可能な攻撃者によって、任意のコマンドを実行される - CVE-2023-39544 　* 当該製品にログイン可能な攻撃者によって、認証情報を含むファイルをHTTP API経由で取得される - CVE-2023-39545 　* 遠隔の第三者によって Pass The Hash 攻撃を実行され、WebUI に管理者としてログイン試行される - CVE-2023-39546 　* 遠隔の第三者によって、構成ファイルなどを取得される - CVE-2023-39547 　* 遠隔の第三者によって、管理者権限で任意のスクリプトを実行される - CVE-2023-39548 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] CLUSTERPRO X 5.x については、開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正した次のバージョンをリリースしています。  　* CLUSTERPRO X 5.1.2 　* CLUSTERPRO X SingleServerSafe 5.1.2  [パッチを適用する] CLUSTERPRO X 3.x および CLUSTERPRO X 4.x については、開発者はユーザに向け、修正パッチを提供しています。  [ワークアラウンドを実施する] 以下の回避策を適用することで、本脆弱性の影響を回避することが可能です。 　* WebManager/Cluster WebUIの「WebManager サービスを有効にする」の設定を無効にする  WebManager サービスを無効化することができない場合は、次のいずれかの回避策を適用することで、本脆弱性の影響を軽減することができます。 　* ファイアウォールにより不要な通信を遮断する 　* WebManager の HTTP ポート (既定値: 29003) について、信頼できる管理クライアントのみに接続要求の受付を許可する 　* WebManager/Cluster WebUI の通信方式を HTTPS に設定する (CLUSTERPRO X 4.0 およびそれ以降)  詳細は、開発者が提供する情報を確認してください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "NV23-009",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv23-009.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39545",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39545"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39546",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39546"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39547",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39547"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39548",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39548"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-39544",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-39544"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98954968",
+					"url": "https://jvn.jp/vu/JVNVU98954968/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-294",
+					"url": "https://cwe.mitre.org/data/definitions/294.html",
+					"title": "Capture-replay による認証回避"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-836",
+					"url": "https://cwe.mitre.org/data/definitions/836.html",
+					"title": "パスワードの代わりにパスワードハッシュを使用する認証"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-552",
+					"url": "https://cwe.mitre.org/data/definitions/552.html",
+					"title": "外部からアクセス可能なファイルまたはディレクトリ"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-434",
+					"url": "https://cwe.mitre.org/data/definitions/434.html",
+					"title": "危険なタイプのファイルの無制限アップロード"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-862",
+					"url": "https://cwe.mitre.org/data/definitions/862.html",
+					"title": "認証の欠如"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-11-20T12:32:32+09:00",
+					"description": "[2023年11月20日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-11-20T12:32:32+09:00",
+		"datelastupdated": "2023-11-20T12:32:32+09:00",
+		"datepublic": "2023-11-17T00:00:00+09:00"
+	}
+}
