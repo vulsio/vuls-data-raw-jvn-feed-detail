@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2023-004217",
 	"vulinfodata": {
-		"title": "Rockwell Automation 製 Stratix 5800 および Stratix 5200 における権限昇格の問題 緊急",
+		"title": "Rockwell Automation 製 Stratix 5800 および Stratix 5200 における複数の脆弱性 緊急",
 		"vulinfodescription": {
-			"overview": "Rockwell Automation が提供する Stratix 5800 および Stratix 5200には、製品が利用する Cisco IOS XE Software に存在する下記の脆弱性に起因して、権限を昇格される問題が存在します。  　* 保護されていない代替チャネルの問題 (CWE-420) - CVE-2023-20198  なお、開発者によると、本脆弱性を悪用した攻撃が既に確認されているとのことです。   "
+			"overview": "Rockwell Automation が提供する Stratix 5800 および Stratix 5200 には、製品が利用する Cisco IOS XE Software に存在する下記の脆弱性に起因する問題が存在します。  　* 保護されていない代替チャネルの問題 (CWE-420) - CVE-2023-20198 　* OSコマンドインジェクション (CWE-78) - CVE-2023-20273  なお、開発者によると、本脆弱性を悪用した攻撃が既に確認されているとのことです。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -33,12 +33,12 @@
 		},
 		"impact": {
 			"impactitem": {
-				"description": "脆弱性を悪用された場合、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、特権レベル 15 のアクセス権を持つアカウントを作成され、当該製品を制御される  "
+				"description": "脆弱性を悪用された場合、次のような影響を受ける可能性があります。  　* 遠隔の第三者によって、特権レベル 15 のアクセス権を持つアカウントを作成され、当該製品を制御される - CVE-2023-20198 　* 高権限ユーザによって、root権限でコマンドを挿入される - CVE-2023-20273"
 			}
 		},
 		"solution": {
 			"solutionitem": {
-				"description": "[Stratix HTTPサーバを無効にする] 開発者は、インターネットに接続されているシステムにおいて Stratix HTTP サーバを無効化することを推奨しています。 詳細は開発者が提供する情報を確認してください。  また、Cisco Talos により、IoC情報および不正侵入検知システムSnortの検知ルールが<a href=\"https://blog.talosintelligence.com/active-exploitation-of-cisco-ios-xe-software/\"target=\"blank\">提供されています</a>。 "
+				"description": "[Stratix HTTP サーバを無効にする] 開発者は、インターネットに接続されているシステムにおいて Stratix HTTP サーバを無効化することを推奨しています。 詳細は開発者が提供する情報を確認してください。  また、Cisco Talos により、IoC 情報および不正侵入検知システム Snort の検知ルールが<a href=\"https://blog.talosintelligence.com/active-exploitation-of-cisco-ios-xe-software/\"target=\"blank\">提供されています</a>。 "
 			}
 		},
 		"related": {
@@ -54,6 +54,12 @@
 					"name": "Common Vulnerabilities and Exposures (CVE)",
 					"vulinfoid": "CVE-2023-20198",
 					"url": "https://www.cve.org/CVERecord?id=CVE-2023-20198"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-20273",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-20273"
 				},
 				{
 					"type": "advisory",
@@ -100,11 +106,16 @@
 					"historyno": "1",
 					"datetime": "2023-10-26T16:41:58+09:00",
 					"description": "[2023年10月26日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-11-27T15:38:51+09:00",
+					"description": "[2023年11月27日]\\n  タイトル：内容を更新\\n  概要：内容を更新\\n  想定される影響：内容を更新\\n  参考情報：Common Vulnerabilities and Exposures (CVE) (CVE-2023-20273) を追加"
 				}
 			]
 		},
 		"datefirstpublished": "2023-10-26T17:21:34+09:00",
-		"datelastupdated": "2023-10-26T17:21:34+09:00",
+		"datelastupdated": "2023-11-27T14:47:59+09:00",
 		"datepublic": "2023-10-25T00:00:00+09:00"
 	}
 }
