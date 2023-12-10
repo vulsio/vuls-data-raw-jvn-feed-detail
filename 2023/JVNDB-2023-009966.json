@@ -1,0 +1,97 @@
+{
+	"vulinfoid": "JVNDB-2023-009966",
+	"vulinfodata": {
+		"title": "FXC 製無線 LAN ルータ ｢AE1021PE｣ および ｢AE1021｣ における OS コマンドインジェクションの脆弱性 緊急",
+		"vulinfodescription": {
+			"overview": "FXC 株式会社が提供する ｢AE1021PE｣ および ｢AE1021｣ は、情報コンセント対応型無線 LAN ルータです。  ｢AE1021PE｣ および｢AE1021｣ には、OS コマンドインジェクション (CWE-78) の脆弱性が存在します。  なお、JPCERT/CCでは本脆弱性を悪用した通信を確認しています。  この脆弱性情報は、次の方が JPCERT/CC に報告し、 JPCERT/CC が開発者との調整を行いました。 報告者: 横浜国立大学 九鬼琉 氏、佐々木貴之 氏、吉岡克成 氏  また、この脆弱性情報は、ほぼ同時期に次の方が CISA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者:  The Akamai SIRT"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "FXC株式会社",
+					"productname": "無線LANルータ AE1021",
+					"cpe": {
+						"text": "cpe:/o:fxc:ae1021_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン 2.0.9 およびそれ以前"
+					]
+				},
+				{
+					"name": "FXC株式会社",
+					"productname": "無線LANルータ AE1021PE",
+					"cpe": {
+						"text": "cpe:/o:fxc:ae1021pe_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン 2.0.9 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品にログイン可能な攻撃者によって、任意の OS コマンドを実行される可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ファームウェアをアップデートし、適切な設定を行う] 開発者から本脆弱性の対策を行ったファームウェア 2.0.10 がリリースされています。 ファームウェアを 2.0.10 にアップデートした上で、次の設定を行ってください。  　* 「工場出荷時設定」をリセットし、管理画面ログイン用のパスワードを初期設定から変更する  詳細は、開発者が提供する情報を確認してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "FXC株式会社",
+					"vulinfoid": "AE1021/AE1021PE のファームウェア Ver2.0.10 公開のお知らせ",
+					"url": "https://www.fxc.jp/news/20231206"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-49897",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-49897"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92152057",
+					"url": "https://jvn.jp/vu/JVNVU92152057/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-12-07T14:15:25+09:00",
+					"description": "[2023年12月07日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-12-07T14:15:25+09:00",
+		"datelastupdated": "2023-12-07T14:15:25+09:00",
+		"datepublic": "2023-12-06T00:00:00+09:00"
+	}
+}
