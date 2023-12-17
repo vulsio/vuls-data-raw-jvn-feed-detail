@@ -1,0 +1,186 @@
+{
+	"vulinfoid": "JVNDB-2023-000123",
+	"vulinfodata": {
+		"title": "GROWI における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社WESEEKが提供する GROWI には、次の複数の脆弱性が存在します。 <ul><li>プレゼンテーション機能における格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-42436</li><li>アプリ設定 (/admin/app)、マークダウン設定 (/admin/markdown) における格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-45737</li><li>プロフィール画像の処理における格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-45740</li><li>ユーザー設定画面 (/me) におけるクロスサイトリクエストフォージェリ (CWE-352) - CVE-2023-46699</li><li>XSS Filter の挙動を悪用した格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-47215</li><li>img タグによる格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-49119</li><li>イベントハンドラにおける格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-49598</li><li>コメント機能における格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-49779</li><li>MathJax の処理に起因した格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-49807</li><li>アプリ設定 (/admin/app)、マークダウン設定 (/admin/markdown)、カスタマイズ (/admin/customize) における格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-50175</li><li>アプリ設定 (/admin/app) における Secret access key の平文表示 (CWE-312) - CVE-2023-50294</li><li>ユーザー管理 (/admin/users) における不適切な認可 (CWE-285) - CVE-2023-50332</li><li>セキュリティ設定 (/admin/security) における格納型クロスサイトスクリプティング (CWE-79) - CVE-2023-50339</li></ul> これらの脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 CVE-2023-42436 報告者: NTT-ME システムオペレーションセンタ 梶原 翔 氏 CVE-2023-45737 報告者: 筑波大学 高山 尚樹 氏 CVE-2023-45740 報告者: GMOサイバーセキュリティ byイエラエ株式会社 西谷 完太 氏 CVE-2023-46699 報告者: 齋藤徳秀 氏 CVE-2023-47215、CVE-2023-49779 報告者: 株式会社カンム 宮口直也 氏 CVE-2023-49119 報告者: 筑波大学 高山 尚樹 氏、NTT-ME システムオペレーションセンタ 板垣 卓 氏、株式会社Flatt Security 齋藤徳秀 氏 CVE-2023-49598 報告者: 株式会社カンム 宮口直也 氏、GMOサイバーセキュリティ byイエラエ株式会社 小田切祥 氏、藤井 翼 (@reinforchu) 氏、株式会社Flatt Security 森 瑛司 氏、株式会社ブロードバンドセキュリティ 志賀拓馬 氏、三井物産セキュアディレクション株式会社 東内 裕二 氏 CVE-2023-49807 報告者: 株式会社カンム 宮口直也 氏、筑波大学 高山 尚樹 氏 CVE-2023-50175 報告者: 株式会社Flatt Security 齋藤徳秀 氏、株式会社カンム 宮口直也 氏、三井物産セキュアディレクション株式会社 米山 俊嗣 氏 CVE-2023-50294、CVE-2023-50332、CVE-2023-50339 報告者: 株式会社Flatt Security 齋藤徳秀 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社WESEEK",
+					"productname": "GROWI",
+					"cpe": {
+						"text": "cpe:/a:weseek:growi",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v3.4.0 より前のバージョン (CVE-2023-42436)",
+						"v3.5.0 より前のバージョン (CVE-2023-45737)",
+						"v4.1.3 より前のバージョン (CVE-2023-45740)",
+						"v6.0.0 より前のバージョン (CVE-2023-46699、CVE-2023-47215、CVE-2023-49119、CVE-2023-49598、CVE-2023-49779、CVE-2023-49807、CVE-2023-50175)",
+						"v6.0.6 より前のバージョン (CVE-2023-50294、CVE-2023-50332)",
+						"v6.1.11 より前のバージョン (CVE-2023-50339)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul><li>当該製品を使用しているサイトにアクセスしたユーザのウェブブラウザ上で、任意のスクリプトを実行される - CVE-2023-42436、CVE-2023-45737、CVE-2023-45740、CVE-2023-47215、CVE-2023-49119、CVE-2023-49598、CVE-2023-49779、CVE-2023-49807、CVE-2023-50175、CVE-2023-50339</li><li>当該製品にログインした状態のユーザが、細工されたページにアクセスした場合、ユーザの意図しない設定変更が行われる - CVE-2023-46699</li><li>管理画面にアクセス可能な攻撃者によって、外部サービスの Secret access key を取得される - CVE-2023-50294</li><li>ユーザが意図せず自身のアカウントを削除または停止させられる - CVE-2023-50332</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 各脆弱性は次のバージョンで修正されています。  CVE-2023-42436 <ul><li>GROWI v3.4.0 およびそれ以降</ul></li> CVE-2023-45737 <ul><li>GROWI v3.5.0 およびそれ以降</ul></li> CVE-2023-45740 <ul><li>GROWI v4.1.3 およびそれ以降</ul></li> CVE-2023-46699、CVE-2023-47215、CVE-2023-49119、CVE-2023-49598、CVE-2023-49779、CVE-2023-49807、CVE-2023-50175 <ul><li>GROWI v6.0.0 およびそれ以降</ul></li> CVE-2023-50294、CVE-2023-50332 <ul><li>GROWI v6.0.6 およびそれ以降</ul></li> CVE-2023-50339 <ul><li>GROWI v6.1.11 およびそれ以降</ul></li>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "株式会社WESEEK",
+					"vulinfoid": "GROWI 脆弱性対応のお知らせ",
+					"url": "https://weseek.co.jp/ja/news/2023/11/21/growi-prevent-xss6/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-45737",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-45737"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-50175",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-50175"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-45740",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-45740"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-50294",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-50294"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-46699",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-46699"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-50332",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-50332"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-47215",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-47215"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-50339",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-50339"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-49119",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-49119"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-49598",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-49598"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-49779",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-49779"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-42436",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-42436"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-49807",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-49807"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#18715935",
+					"url": "https://jvn.jp/jp/JVN18715935/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-352",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+					"title": "クロスサイトリクエストフォージェリ"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-12-07T17:13:37+09:00",
+					"description": "[2023年12月13日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-12-13T14:17:36+09:00",
+		"datelastupdated": "2023-12-13T14:17:36+09:00",
+		"datepublic": "2023-12-13T00:00:00+09:00"
+	}
+}
