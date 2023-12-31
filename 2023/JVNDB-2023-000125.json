@@ -1,0 +1,133 @@
+{
+	"vulinfoid": "JVNDB-2023-000125",
+	"vulinfodata": {
+		"title": "バッファロー製 VR-S1000 における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社バッファローが提供する VR-S1000 には、次の複数の脆弱性が存在します。 <ul><li>OS コマンドインジェクション (CWE-78) - CVE-2023-45741</li><li>引数インジェクション (CWE-88) - CVE-2023-46681</li><li>ハードコードされた暗号鍵の使用 (CWE-321) - CVE-2023-46711</li><li>情報漏えい (CWE-200) - CVE-2023-51363</li></ul> CVE-2023-45741、CVE-2023-46681、CVE-2023-46711 この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: NeroTeam Security Labs Thomas J. Knudsen 氏、Samy Younsi 氏  CVE-2023-51363 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ラック 飯田 雅裕 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "バッファロー",
+					"productname": "VR-S1000 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:vr-s1000_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 2.37 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.2",
+					"vector": "AV:A/AC:L/Au:S/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul><li>Web 管理画面にログイン可能な攻撃者によって、任意の OS コマンドを実行される - CVE-2023-45741</li><li>当該製品のコマンドラインインターフェイスにアクセス可能な攻撃者によって、任意のコマンドを実行される - CVE-2023-46681</li><li>当該製品内の特定ユーザのパスワードを解析される - CVE-2023-46711</li><li>Web 管理画面にアクセス可能な攻撃者によって、機微な情報を窃取される - CVE-2023-51363</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "株式会社バッファローからの情報",
+					"url": "https://jvn.jp/jp/JVN23771490/407111/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "株式会社バッファロー",
+					"vulinfoid": "VR-S1000における複数の脆弱性とその対処方法",
+					"url": "https://www.buffalo.jp/news/detail/20231225-01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-45741",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-45741"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-46681",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-46681"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-46711",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-46711"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-51363",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-51363"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#23771490",
+					"url": "https://jvn.jp/jp/JVN23771490/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-12-21T11:15:18+09:00",
+					"description": "[2023年12月26日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2023-12-26T12:09:03+09:00",
+		"datelastupdated": "2023-12-26T12:09:03+09:00",
+		"datepublic": "2023-12-26T00:00:00+09:00"
+	}
+}
