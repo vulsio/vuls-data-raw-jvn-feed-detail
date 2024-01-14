@@ -1,0 +1,88 @@
+{
+	"vulinfoid": "JVNDB-2024-001003",
+	"vulinfodata": {
+		"title": "OpenSSL における POLY1305 MAC 実装不備の問題（Security Advisory [9th January 2024]）",
+		"vulinfodescription": {
+			"overview": "OpenSSL Projectより、<a href=\"https://www.openssl.org/news/secadv/20240109.txt\"target=\"blank\">OpenSSL Security Advisory [9th January 2024]</a>（\"POLY1305 MAC implementation corrupts vector registers on PowerPC (CVE-2023-6129\")） が公開されました。  深刻度 - 低 （Severity: Low） PowerISA 2.07 命令をサポートする PowerPC プロセッサ用の OpenSSL の POLY1305 MAC （メッセージ認証コード） 実装は、ベクトルレジスタに保存された値の復元処理に問題があり、アプリケーション内部状態の破損を招くことがあります。  なお、POLY1305 MAC アルゴリズムは FIPS に準拠していないため、FIPS プロバイダは本脆弱性を含むコードを実装しておらず、影響を受けません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.0 から 3.0.12",
+						"3.1.0 から 3.1.4",
+						"3.2.0"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "アプリケーションの内部状態が破損することにより種々の影響が生じます。最悪の場合、攻撃者によりアプリケーションが完全に制御される可能性がありますが、より可能性が高い影響としては、計算結果の誤りやサービス運用妨害（DoS）状態となることが挙げられます。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 2024 年 1 月 10 日現在、本脆弱性の修正を目的としたバージョンは提供されておらず、OpenSSL git リポジトリにて、以下の修正 commit が行われています。OpenSSL Project は、これらを次回のリリースで反映するとしています。  　* commit 5b139f95 （3.2系） 　* commit f3fc5808 （3.1系） 　* commit 050d263 （3.0系） "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "poly1305-ppc.pl: Fix vector register clobbering・openssl/openssl@5b139f9",
+					"url": "https://github.com/openssl/openssl/commit/5b139f95c9a47a55a0c54100f3837b1eee942b04"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "poly1305-ppc.pl: Fix vector register clobbering・openssl/openssl@f3fc580",
+					"url": "https://github.com/openssl/openssl/commit/f3fc5808fe9ff74042d639839610d03b8fdcc015"
+				},
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "poly1305-ppc.pl: Fix vector register clobbering・openssl/openssl@050d263",
+					"url": "https://github.com/openssl/openssl/commit/050d26383d4e264966fb83428e72d5d48f402d35"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Security Advisory",
+					"vulinfoid": "OpenSSL Security Advisory [9th January 2024]",
+					"url": "https://www.openssl.org/news/secadv/20240109.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-6129",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-6129"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#98269979",
+					"url": "https://jvn.jp/vu/JVNVU98269979/index.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-01-11T12:11:39+09:00",
+					"description": "[2024年01月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-01-11T12:11:39+09:00",
+		"datelastupdated": "2024-01-11T12:11:39+09:00",
+		"datepublic": "2024-01-10T00:00:00+09:00"
+	}
+}
