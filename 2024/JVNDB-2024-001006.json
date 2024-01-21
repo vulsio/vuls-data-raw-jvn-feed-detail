@@ -1,0 +1,88 @@
+{
+	"vulinfoid": "JVNDB-2024-001006",
+	"vulinfodata": {
+		"title": "OpenSSL における不正な RSA 公開鍵のチェックに時間を要する問題 (Security Advisory [15th January 2024])",
+		"vulinfodescription": {
+			"overview": "OpenSSL Project より、<a href=\"https://www.openssl.org/news/secadv/20240115.txt\" target=\"blank\">Security Advisory [15th January 2024]</a> (\"Excessive time spent checking invalid RSA public keys (CVE-2023-6237)\") が公開されました。  深刻度 - 低 (Severity: Low) RSA の modulus である n が大きすぎる素数の積で構成された、RSA 公開鍵を EVP_PKEY_public_check() 関数でチェックする際に、時間を要する問題があります。  なお、OpenSSL 3.0 および 3.1 の FIPS プロバイダーは本脆弱性の影響を受け、OpenSSL SSL/TLS 実装は本脆弱性の影響を受けません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.0 から 3.0.12",
+						"3.1.0 から 3.1.4",
+						"3.2.0"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "EVP_PKEY_public_check() 関数を呼び出し、信頼できないソースから取得した RSA キーをチェックするアプリケーションは、サービス運用妨害（DoS）状態となる可能性があります。 EVP_PKEY_public_check() 関数は、OpenSSL pkey コマンドラインアプリケーションからのみ呼び出され、信頼できないデータに対して、「-pubin」および「-check」オプションを使用するアプリケーションも影響を受けます。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 2024 年 1 月 16 日現在、本脆弱性の修正を目的としたバージョンは提供されておらず、OpenSSL git リポジトリにて、以下の修正 commit が行われています。OpenSSL Project は、これらを次回のリリースで反映するとしています。  　* commit 0b0f7abf（3.2 系） 　* commit a830f551（3.1 系） 　* commit 18c02492（3.0 系）  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [15th January 2024]",
+					"url": "https://www.openssl.org/news/secadv/20240115.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Limit the execution time of RSA public key check ・ openssl/openssl@0b0f7ab",
+					"url": "https://github.com/openssl/openssl/commit/0b0f7abfb37350794a4b8960fafc292cd5d1b84d"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Limit the execution time of RSA public key check ・ openssl/openssl@a830f55",
+					"url": "https://github.com/openssl/openssl/commit/a830f551557d3d66a84bbb18a5b889c640c36294"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "Limit the execution time of RSA public key check ・ openssl/openssl@18c0249",
+					"url": "https://github.com/openssl/openssl/commit/18c02492138d1eb8b6548cb26e7b625fb2414a2a"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-6237",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-6237"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90782686",
+					"url": "https://jvn.jp/vu/JVNVU90782686/index.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-01-17T10:47:01+09:00",
+					"description": "[2024年01月17日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-01-17T11:04:35+09:00",
+		"datelastupdated": "2024-01-17T11:04:35+09:00",
+		"datepublic": "2024-01-16T00:00:00+09:00"
+	}
+}

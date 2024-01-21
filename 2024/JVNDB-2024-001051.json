@@ -1,0 +1,89 @@
+{
+	"vulinfoid": "JVNDB-2024-001051",
+	"vulinfodata": {
+		"title": "GPU カーネル実装に情報漏えいの脆弱性 (LeftoverLocals)",
+		"vulinfodescription": {
+			"overview": "GPU カーネル実装において、情報漏えいの脆弱性が報告されています。  画像処理や機械学習などにおいては単純な数値演算を大量に行う必要があり、専用の GPU を搭載したシステムではこのような処理を CPU の代わりに高速に実行することが可能です。 GPU を使った処理は、以下のような流れで実行されます:  　* CPU 側のメモリから GPU が使用するメモリにデータをコピーする 　* GPU 上で並列実行されるユーザープログラム（「GPU カーネル」と呼ぶ）がデータを処理する 　* 最後に処理結果のデータを CPU 側のメモリにコピーする  GPU カーネルの実行後に、GPU が使用したメモリ領域が初期化されない場合、残されている処理結果のデータを、次に実行される GPU カーネルが読み取ることが可能になります (CVE-2023-4969)。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "本脆弱性の影響を受ける GPU カーネル実装を使用しているシステムにおいて、GPU で処理されたデータを他のユーザプロセスから読み取られる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[GPU を使用するソフトウェア開発者向けの対策] ソフトウェア開発に使用する GPU 関連のライブラリを最新版にアップデートしてください。 また、GPU ベンダが提供する情報をもとに、GPU を使用する処理を実装する際にはデータが適切に保護されることを確認してください。  [GPU システムのユーザ向けの対策] GPU 関連のライブラリやソフトウェアを最新版にアップデートしてください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "（関連製品）",
+					"vulinfoid": "GPU Memory Leaks (AMD-SB-6010)",
+					"url": "https://www.amd.com/en/resources/product-security/bulletin/amd-sb-6010.html"
+				},
+				{
+					"type": "vendor",
+					"name": "（関連製品）",
+					"vulinfoid": "GPU - Leftover locals - local memory data leak",
+					"url": "https://www.imaginationtech.com/gpu-driver-vulnerabilities/#jan24"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-4969",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-4969"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97951800",
+					"url": "https://jvn.jp/vu/JVNVU97951800/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#446598",
+					"url": "https://www.kb.cert.org/vuls/id/446598"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "LeftoverLocals: Listening to LLM responses through leaked GPU local memory",
+					"url": "https://blog.trailofbits.com/2024/01/16/leftoverlocals-listening-to-llm-responses-through-leaked-gpu-local-memory/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Khronos Group Working with Trail of Bits for Increased API Security",
+					"url": "https://www.khronos.org/news/permalink/khronos-group-working-with-trail-of-bits-for-increased-api-security"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-01-19T12:13:07+09:00",
+					"description": "[2024年01月19日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-01-19T14:31:29+09:00",
+		"datelastupdated": "2024-01-19T14:31:29+09:00",
+		"datepublic": "2024-01-18T00:00:00+09:00"
+	}
+}
