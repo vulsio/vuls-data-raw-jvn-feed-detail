@@ -24,34 +24,45 @@
 			]
 		},
 		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+				}
+			],
 			"impactitem": {
 				"description": "DH_generate_key() 関数や DH_check_pub_key() 関数を使用するアプリケーションにおいて、チェック対象のキーやパラメータが信頼できないソースから取得されたものである場合、サービス運用妨害 (DoS) 状態となる可能性があります。 "
 			}
 		},
 		"solution": {
 			"solutionitem": {
-				"description": "[アップデートする] 開発者による本脆弱性公開時点では、深刻度が低であるため、2023 年 11 月 9 日現在、本脆弱性の修正のみを目的とした修正は提供されておらず、OpenSSL git リポジトリにて、以下の commit を提供しています。次回のリリースで今回のパッチを反映する予定とのことです。  　* commit ddeb4b6c6d527e54ce9a99cba785c0f7776e54b6 (3.1 系ユーザ向け) 　* commit db925ae2e65d0d925adef429afc37f75bd1c2017 (3.0 系ユーザ向け) 　* commit 710fee740904b6290fef0dd5536fbcedbc38ff0c (1.1.1系 プレミアムサポートユーザ向け) 　* commit 34efaef6c103d636ab507a0cc34dca4d3aecc055 (1.0.2 系プレミアムサポートユーザ向け)  "
+				"description": "[アップデートする] 開発者による本脆弱性公開時点では、深刻度が低であるため、OpenSSL git リポジトリにて、commit のみを提供していましたが、現地時間 2024 年 1 月 30 日に本脆弱性を修正した以下のバージョンがリリースされました。  　* OpenSSL 3.1.5 　* OpenSSL 3.0.13 プレミアムサポートカスタマ向けには以下の commit で修正されているとのことです。 　* commit 710fee740904b6290fef0dd5536fbcedbc38ff0c （1.1.1 系プレミアムサポートユーザ向け） 　* commit 34efaef6c103d636ab507a0cc34dca4d3aecc055 （1.0.2 系プレミアムサポートユーザ向け）"
 			}
 		},
 		"related": {
 			"relateditem": [
 				{
 					"type": "vendor",
-					"name": "Git",
-					"vulinfoid": "git.openssl.org: 3.1.5 git commit",
-					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ddeb4b6c6d527e54ce9a99cba785c0f7776e54b6"
-				},
-				{
-					"type": "vendor",
-					"name": "Git",
-					"vulinfoid": "git.openssl.org: 3.0.13 git commit",
-					"url": "https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db925ae2e65d0d925adef429afc37f75bd1c2017"
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [6th November 2023]",
+					"url": "https://www.openssl.org/news/secadv/20231106.txt"
 				},
 				{
 					"type": "vendor",
 					"name": "OpenSSL Project",
-					"vulinfoid": "OpenSSL Security Advisory [6th November 2023]",
-					"url": "https://www.openssl.org/news/secadv/20231106.txt"
+					"vulinfoid": "OpenSSL 3.0 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-3.0-notes.html"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.1 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-3.1-notes.html"
 				},
 				{
 					"type": "advisory",
@@ -76,6 +87,19 @@
 					"name": "JVN",
 					"vulinfoid": "JVNVU#98271228",
 					"url": "https://jvn.jp/vu/JVNVU98271228/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-5678",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-5678"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-754",
+					"url": "https://cwe.mitre.org/data/definitions/754.html",
+					"title": "例外的な状態における不適切なチェック"
 				}
 			]
 		},
@@ -90,11 +114,16 @@
 					"historyno": "2",
 					"datetime": "2023-12-21T10:31:27+09:00",
 					"description": "[2023年12月21日]\\n  参考情報：JVN (JVNVU#98271228) を追加\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-348-10) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2024-02-06T13:30:20+09:00",
+					"description": "[2024年02月06日]\\n  ベンダ情報：内容を更新\\n  対策：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-5678) を追加\\n  CVSS による深刻度の内容を更新しました"
 				}
 			]
 		},
 		"datefirstpublished": "2023-11-10T11:02:18+09:00",
-		"datelastupdated": "2023-12-21T15:07:20+09:00",
+		"datelastupdated": "2024-02-06T13:35:35+09:00",
 		"datepublic": "2023-11-09T00:00:00+09:00"
 	}
 }

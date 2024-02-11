@@ -1,0 +1,97 @@
+{
+	"vulinfoid": "JVNDB-2024-001162",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC WS シリーズ Ethernet インタフェースユニットにおける Capture-replay による認証回避の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC WS シリーズ Ethernet インタフェースユニットには、Capture-replay による認証回避の脆弱性 (CWE-294、CVE-2023-6374) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC WS シリーズ",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:melsec_ws_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"WS0-GETH00200 全てのシリアル番号"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.9",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって Capture-replay 攻撃による認証回避をされ、当該ユニットに不正にログインされる可能性があります。その結果、ユニット内のプログラムやパラメータの閲覧および改ざんをされる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 次の軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品の通信を、仮想プライベートネットワーク (VPN) 等を使用し暗号化する 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* 当該製品および当該製品に接続された LAN 内にあるパソコンやネットワーク機器への物理的なアクセスを制限する  詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-019.pdf\"target=\"blank\">開発者が提供する情報</a>を確認してください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELSEC WS シリーズ Ethernet インタフェースユニットにおける認証回避の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-019.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-6374",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-6374"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-24-030-03",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-24-030-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99497477",
+					"url": "https://jvn.jp/vu/JVNVU99497477/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-294",
+					"url": "https://cwe.mitre.org/data/definitions/294.html",
+					"title": "Capture-replay による認証回避"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-01-31T15:26:29+09:00",
+					"description": "[2024年01月31日]   掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2024-02-02T12:28:32+09:00",
+					"description": "[2024年02月02日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-24-030-03) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2024-01-31T15:45:17+09:00",
+		"datelastupdated": "2024-02-02T13:49:18+09:00",
+		"datepublic": "2024-01-30T00:00:00+09:00"
+	}
+}

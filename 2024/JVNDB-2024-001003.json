@@ -23,34 +23,45 @@
 			]
 		},
 		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.5",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:H"
+				}
+			],
 			"impactitem": {
 				"description": "アプリケーションの内部状態が破損することにより種々の影響が生じます。最悪の場合、攻撃者によりアプリケーションが完全に制御される可能性がありますが、より可能性が高い影響としては、計算結果の誤りやサービス運用妨害（DoS）状態となることが挙げられます。 "
 			}
 		},
 		"solution": {
 			"solutionitem": {
-				"description": "[アップデートする] 2024 年 1 月 10 日現在、本脆弱性の修正を目的としたバージョンは提供されておらず、OpenSSL git リポジトリにて、以下の修正 commit が行われています。OpenSSL Project は、これらを次回のリリースで反映するとしています。  　* commit 5b139f95 （3.2系） 　* commit f3fc5808 （3.1系） 　* commit 050d263 （3.0系） "
+				"description": "[アップデートする] 開発者による本脆弱性公開時点では、深刻度が低であるため、OpenSSL git リポジトリにて、commit のみを提供していましたが、現地時間 2024 年 1 月 30 日に本脆弱性を修正した以下のバージョンがリリースされました。  　* OpenSSL 3.2.1 　* OpenSSL 3.1.5 　* OpenSSL 3.0.13"
 			}
 		},
 		"related": {
 			"relateditem": [
 				{
 					"type": "vendor",
-					"name": "GitHub",
-					"vulinfoid": "poly1305-ppc.pl: Fix vector register clobbering・openssl/openssl@5b139f9",
-					"url": "https://github.com/openssl/openssl/commit/5b139f95c9a47a55a0c54100f3837b1eee942b04"
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.0 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-3.0-notes.html"
 				},
 				{
 					"type": "vendor",
-					"name": "GitHub",
-					"vulinfoid": "poly1305-ppc.pl: Fix vector register clobbering・openssl/openssl@f3fc580",
-					"url": "https://github.com/openssl/openssl/commit/f3fc5808fe9ff74042d639839610d03b8fdcc015"
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.1 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-3.1-notes.html"
 				},
 				{
 					"type": "vendor",
-					"name": "GitHub",
-					"vulinfoid": "poly1305-ppc.pl: Fix vector register clobbering・openssl/openssl@050d263",
-					"url": "https://github.com/openssl/openssl/commit/050d26383d4e264966fb83428e72d5d48f402d35"
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.2 Series Release Notes",
+					"url": "https://www.openssl.org/news/openssl-3.2-notes.html"
 				},
 				{
 					"type": "vendor",
@@ -69,6 +80,19 @@
 					"name": "JVN",
 					"vulinfoid": "JVNVU#98269979",
 					"url": "https://jvn.jp/vu/JVNVU98269979/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-6129",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-6129"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
 				}
 			]
 		},
@@ -78,11 +102,16 @@
 					"historyno": "1",
 					"datetime": "2024-01-11T12:11:39+09:00",
 					"description": "[2024年01月11日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2024-02-06T13:50:39+09:00",
+					"description": "[2024年02月06日]\\n  ベンダ情報：内容を更新\\n  対策：内容を更新\\n  参考情報：National Vulnerability Database (NVD) (CVE-2023-6129) を追加\\n  CVSS による深刻度：内容を更新"
 				}
 			]
 		},
 		"datefirstpublished": "2024-01-11T12:11:39+09:00",
-		"datelastupdated": "2024-01-11T12:11:39+09:00",
+		"datelastupdated": "2024-02-06T13:52:16+09:00",
 		"datepublic": "2024-01-10T00:00:00+09:00"
 	}
 }

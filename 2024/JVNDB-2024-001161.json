@@ -1,0 +1,175 @@
+{
+	"vulinfoid": "JVNDB-2024-001161",
+	"vulinfodata": {
+		"title": "シャープ製クラウド連携エネルギーコントローラ (機器連携コントローラ) における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "シャープ株式会社が提供するクラウド連携エネルギーコントローラ (機器連携コントローラ) には、次の複数の脆弱性が存在します。  　* 認証不備の脆弱性 (CWE-287）- CVE-2024-23783 　* アクセス制御の不備 (CWE-284）- CVE-2024-23784 　* クロスサイトリクエストフォージェリ (CWE-352）- CVE-2024-23785 　* 格納型クロスサイトスクリプティング (CWE-79）- CVE-2024-23786 　* パストラバーサル (CWE-22）- CVE-2024-23787 　* サーバーサイドリクエストフォージェリ (CWE-918）- CVE-2024-23788 　* OSコマンドインジェクション (CWE-78）- CVE-2024-23789  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: GMO サイバーセキュリティ by イエラエ株式会社 馬場 将次 氏 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シャープ株式会社",
+					"productname": "JH-RV11",
+					"cpe": {
+						"text": "cpe:/o:sharp:jh-rv11",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. B0.1.9.1 およびそれ以前"
+					]
+				},
+				{
+					"name": "シャープ株式会社",
+					"productname": "JH-RVB1",
+					"cpe": {
+						"text": "cpe:/o:sharp:jh-rvb1",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. B0.1.9.1 およびそれ以前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.6",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "CVE-2024-23783 当該製品にアクセス可能な第三者によって、ベーシック認証を必要とせずアクセスされる  CVE-2024-23784 当該製品にアクセス可能な第三者によって、管理画面に表示されるユーザー名およびハッシュ化されたパスワードを取得される  CVE-2024-23785 当該製品にアクセス可能な第三者によって、当該製品の設定が変更される  CVE-2024-23786 当該製品の管理画面にアクセスしているユーザーのウェブブラウザ上で任意のスクリプトが実行される  CVE-2024-23787 当該製品にアクセス可能な第三者によって、当該製品上の任意のファイルを取得される  CVE-2024-23788 当該製品にアクセス可能な第三者によって、当該製品から任意のHTTPリクエスト（GET）を送信される  CVE-2024-23789 当該製品にアクセス可能な第三者によって、当該製品上で任意のコマンドを実行される "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] クラウド連携エネルギーコントローラ (機器連携コントローラ) を Ver. B0.2.0.0 にアップデートしてください。 クラウド連携エネルギーコントローラ (機器連携コントローラ) がインターネットに接続されている環境において、自動アップデートが適用されます。  [ワークアラウンドを実施する] 次の回避策もしくは軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品を直接インターネットに接続せず、ルーター等で保護されたネットワーク内で使用する 　* 無線LANルーターを使用している場合は、強固な暗号化方式の設定をする 　* 管理用パスワードを初期状態から変更する 　* ファームウェアを常に最新の状態に保つ 　 詳しくは、開発者が提供する情報を確認してください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "シャープ株式会社",
+					"vulinfoid": "弊社製 HEMS におけるセキュリティ脆弱性について",
+					"url": "https://jp.sharp/support/taiyo/info/JVNVU94591337_jp.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23786",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23786"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23787",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23787"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23788",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23788"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23789",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23789"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23783",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23783"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23784",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23784"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23785",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23785"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94591337",
+					"url": "https://jvn.jp/vu/JVNVU94591337/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-352",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+					"title": "クロスサイトリクエストフォージェリ"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-918",
+					"url": "https://cwe.mitre.org/data/definitions/918.html",
+					"title": "サーバサイドのリクエストフォージェリ"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-284",
+					"url": "https://cwe.mitre.org/data/definitions/284.html",
+					"title": "不適切なアクセス制御"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-287",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+					"title": "不適切な認証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-01-31T15:03:25+09:00",
+					"description": "[2024年01月31日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-01-31T15:32:56+09:00",
+		"datelastupdated": "2024-01-31T15:32:56+09:00",
+		"datepublic": "2024-01-30T00:00:00+09:00"
+	}
+}
