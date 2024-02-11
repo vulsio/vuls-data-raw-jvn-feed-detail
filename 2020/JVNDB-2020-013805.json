@@ -3,19 +3,19 @@
 	"vulinfodata": {
 		"title": "Zeroshell における OS コマンドインジェクションの脆弱性",
 		"vulinfodescription": {
-			"overview": "Zeroshell には、OS コマンドインジェクションの脆弱性が存在します。"
+			"overview": "Zeroshell.org が提供していた Linux ディストリビューションである Zeroshell の Web インターフェースには、OS コマンドインジェクション (CWE-78) の脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: MYTコンサルティング株式会社 日留川　紀彦 氏"
 		},
 		"affected": {
 			"affecteditem": [
 				{
-					"name": "zeroshell",
-					"productname": "zeroshell",
+					"name": "Zeroshell.org",
+					"productname": "Zeroshell",
 					"cpe": {
-						"text": "cpe:/a:zeroshell:zeroshell",
+						"text": "cpe:/o:zeroshell:zeroshell",
 						"version": "2.2"
 					},
 					"versionnumber": [
-						"3.9.3"
+						"3.9.3 およびそれ以前のバージョン"
 					]
 				}
 			]
@@ -25,11 +25,11 @@
 				{
 					"version": "2.0",
 					"severity": {
-						"text": "Critical",
+						"text": "High",
 						"type": "Base"
 					},
-					"base": "10",
-					"vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C"
+					"base": "7.5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
 				},
 				{
 					"version": "3.0",
@@ -42,27 +42,27 @@
 				}
 			],
 			"impactitem": {
-				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
+				"description": "細工された HTTP リクエストを処理することにより、任意の OS コマンドを実行される可能性があります。"
 			}
 		},
 		"solution": {
 			"solutionitem": {
-				"description": "ベンダ情報および参考情報を参照して適切な対策を実施してください。"
+				"description": "[製品の使用を停止する] 開発者によると、当該製品は2021年にサポートと開発プロジェクトが終了しており、使用停止を推奨するとのことです。"
 			}
 		},
 		"related": {
 			"relateditem": [
 				{
-					"type": "vendor",
-					"name": "zeroshell",
-					"vulinfoid": "Top Page",
-					"url": "https://zeroshell.org/"
-				},
-				{
 					"type": "advisory",
 					"name": "Common Vulnerabilities and Exposures (CVE)",
 					"vulinfoid": "CVE-2020-29390",
 					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-29390"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#44033918",
+					"url": "https://jvn.jp/jp/JVN44033918/index.html"
 				},
 				{
 					"type": "advisory",
@@ -73,8 +73,8 @@
 				{
 					"type": "advisory",
 					"name": "関連文書",
-					"vulinfoid": "ZeroShell Linux Router 3.9.3 OS Command Injection vulnerability(CVE-2020-29390)",
-					"url": "https://blog.quake.so/post/zeroshell_linux_router_rce/"
+					"vulinfoid": "Zeroshell 3.6.0/3.7.0 Net Services - Remote Code Execution",
+					"url": "https://www.exploit-db.com/exploits/41040"
 				},
 				{
 					"type": "cwe",
@@ -91,11 +91,16 @@
 					"historyno": "1",
 					"datetime": "2021-07-13T17:18:21+09:00",
 					"description": "[2021年07月13日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2024-02-06T19:40:28+09:00",
+					"description": "[2024年02月07日]\\n  概要：内容を更新\\n  CVSS による深刻度：内容を更新\\n  影響を受けるシステム：内容を更新\\n  想定される影響：内容を更新\\n  対策：内容を更新\\n  ベンダ情報：内容を削除\\n  CWE による脆弱性タイプ一覧：内容を更新\\n  参考情報：JVN (JVN#44033918) を追加、内容を更新"
 				}
 			]
 		},
 		"datefirstpublished": "2021-07-13T17:18:21+09:00",
-		"datelastupdated": "2021-07-13T17:18:21+09:00",
+		"datelastupdated": "2024-02-07T12:10:23+09:00",
 		"datepublic": "2020-11-29T00:00:00+09:00"
 	}
 }
