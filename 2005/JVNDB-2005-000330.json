@@ -3,7 +3,7 @@
 	"vulinfodata": {
 		"title": "Linux Kernel の ip_vs_conn_flush() 関数におけるサービス運用妨害 (DoS) の脆弱性",
 		"vulinfodescription": {
-			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には、以下の複数のセキュリティ上の問題が存在します。   1) 無線 LAN アクセスポイントを実装する ROSE (Radionet Open Source Environment) 機能において、rose_rt_ioctl() 関数で ndigis 引数の境界チェックを適切に行わないため out-of-bounds エラーを生じる問題が存在します。(CVE-2005-3273)   現時点では詳細は不明ですが、攻撃者に悪用された場合、システムがサービス不能状態に陥る可能性があります。   2) SMP (対称型マルチプロセッサ) を構成しているシステムにおいて、IPVS 機能における ip_vs_conn_flush() 関数で競合状態が発生し、Null ポインタデリファレンスが発生する問題が存在します。(CVE-2005-3274)   ローカルの攻撃者に悪用された場合、カーネルクラッシュが生じ、システムがサービス不能状態に陥る可能性があります。"
+			"overview": "------------ 本脆弱性情報は、同時期に公開された複数の脆弱性について、まとめて解説したものです。タイトル以外の他の脆弱性情報の内容が含まれていますので予めご了承ください。 ------------  Linux Kernel には、以下の複数のセキュリティ上の問題が存在します。  1) 無線 LAN アクセスポイントを実装する ROSE (Radionet Open Source Environment) 機能において、rose_rt_ioctl() 関数で ndigis 引数の境界チェックを適切に行わないため out-of-bounds エラーを生じる問題が存在します。(CVE-2005-3273)  現時点では詳細は不明ですが、攻撃者に悪用された場合、システムがサービス不能状態に陥る可能性があります。  2) SMP (対称型マルチプロセッサ) を構成しているシステムにおいて、IPVS 機能における ip_vs_conn_flush() 関数で競合状態が発生し、Null ポインタデリファレンスが発生する問題が存在します。(CVE-2005-3274)  ローカルの攻撃者に悪用された場合、カーネルクラッシュが生じ、システムがサービス不能状態に陥る可能性があります。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -15,13 +15,13 @@
 						"version": "2.2"
 					},
 					"versionnumber": [
-						"2.1 (as) ",
-						"3 (as) ",
-						"3 (es) ",
-						"3 (ws) ",
-						"4 (as) ",
-						"4 (es) ",
-						"4 (ws) "
+						"2.1 (as)",
+						"3 (as)",
+						"3 (es)",
+						"3 (ws)",
+						"4 (as)",
+						"4 (es)",
+						"4 (ws)"
 					]
 				}
 			]
@@ -36,6 +36,15 @@
 					},
 					"base": "1.2",
 					"vector": "AV:L/AC:H/Au:N/C:N/I:N/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.7",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H"
 				}
 			],
 			"impactitem": {
@@ -52,14 +61,14 @@
 				{
 					"type": "vendor",
 					"name": "Red Hat Security Advisory",
-					"vulinfoid": "RHSA-2005:663",
-					"url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
+					"vulinfoid": "RHSA-2005:514",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-514.html"
 				},
 				{
 					"type": "vendor",
 					"name": "Red Hat Security Advisory",
-					"vulinfoid": "RHSA-2005:514",
-					"url": "https://rhn.redhat.com/errata/RHSA-2005-514.html"
+					"vulinfoid": "RHSA-2005:663",
+					"url": "https://rhn.redhat.com/errata/RHSA-2005-663.html"
 				},
 				{
 					"type": "vendor",
@@ -70,8 +79,8 @@
 				{
 					"type": "vendor",
 					"name": "レッドハット セキュリティーアップデート",
-					"vulinfoid": "RHSA-2006:0190",
-					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
+					"vulinfoid": "RHSA-2005:514",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-514J.html"
 				},
 				{
 					"type": "vendor",
@@ -82,8 +91,8 @@
 				{
 					"type": "vendor",
 					"name": "レッドハット セキュリティーアップデート",
-					"vulinfoid": "RHSA-2005:514",
-					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2005-514J.html"
+					"vulinfoid": "RHSA-2006:0190",
+					"url": "http://www.jp.redhat.com/support/errata/RHSA/RHSA-2006-0190J.html"
 				},
 				{
 					"type": "advisory",
@@ -100,14 +109,21 @@
 				{
 					"type": "advisory",
 					"name": "SecurityFocus",
-					"vulinfoid": "15528",
-					"url": "http://www.securityfocus.com/bid/15528"
+					"vulinfoid": "13886",
+					"url": "http://www.securityfocus.com/bid/13886"
 				},
 				{
 					"type": "advisory",
 					"name": "SecurityFocus",
-					"vulinfoid": "13886",
-					"url": "http://www.securityfocus.com/bid/13886"
+					"vulinfoid": "15528",
+					"url": "http://www.securityfocus.com/bid/15528"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-476",
+					"url": "http://cwe.mitre.org/data/definitions/476.html",
+					"title": "NULL ポインタデリファレンス"
 				}
 			]
 		},
@@ -117,11 +133,16 @@
 					"historyno": "0",
 					"datetime": "2018-02-17T10:37:52+09:00",
 					"description": "[2007年04月01日]   掲載"
+				},
+				{
+					"historyno": "1",
+					"datetime": "2024-02-22T15:02:39+09:00",
+					"description": "[2024年02月22日]\\n　CVSS による深刻度: 内容を更新\\n　CWE による脆弱性タイプ一覧：内容を更新"
 				}
 			]
 		},
 		"datefirstpublished": "2007-04-01T00:00:00+09:00",
-		"datelastupdated": "2007-04-01T00:00:00+09:00",
+		"datelastupdated": "2024-02-22T15:28:58+09:00",
 		"datepublic": "2005-05-16T00:00:00+09:00"
 	}
 }
