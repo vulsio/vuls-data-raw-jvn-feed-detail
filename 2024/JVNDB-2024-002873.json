@@ -1,0 +1,90 @@
+{
+	"vulinfoid": "JVNDB-2024-002873",
+	"vulinfodata": {
+		"title": "複数の三菱電機製 FA 製品の Ethernet 機能におけるサービス運用妨害（DoS）の脆弱性",
+		"vulinfodescription": {
+			"overview": "複数の三菱電機製 FA 製品の Ethernet 機能には、不十分なリソースプールに起因するサービス運用妨害（DoS）の脆弱性（CWE-410、CVE-2023-7033）が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC iQ-F シリーズ",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:melsec_iq-f_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"FX5S-xMy/z (x=30,40,60, y=T,R, z=ES,ESS)、全バージョン",
+						"FX5U-xMy/z (x=32,64,80, y=T,R, z=ES,DS,ESS,DSS)、全バージョン",
+						"FX5UC-32MT/DS-TS, FX5UC-32MT/DSS-TS, FX5UC-32MR/DS-TS、全バージョン",
+						"FX5UC-xMT/z (x=32,64,96, z=D,DSS)、全バージョン",
+						"FX5UJ-xMy/z (x=24,40,60, y=T,R, z=ES,DS,ESS,DSS)、全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "TCP SYN Flood 攻撃により、当該製品の Ethernet 通信を一定時間サービス運用妨害（DoS）状態にされる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 開発者は、以下を実施することを推奨しています。  　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク（VPN）等を使用し、不正アクセスを防止する 　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* IP フィルタ機能（※１）を使用し、信頼できないホストからのアクセスをブロックする 　* 当該製品および当該製品が接続された LAN への物理的なアクセスを制限する （※1）IP フィルタ機能については、次のマニュアルを参照 　　MELSEC iQ-F FX5ユーザーズマニュアル(通信編) 「13.1 IP フィルタ機能」 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機",
+					"vulinfoid": "複数のFA製品のEthernet機能におけるサービス拒否（DoS）の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-023.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-7033",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-7033"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96145466",
+					"url": "https://jvn.jp/vu/JVNVU96145466"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-410",
+					"url": "https://cwe.mitre.org/data/definitions/410.html",
+					"title": "不十分なリソースプール"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-02-28T10:52:37+09:00",
+					"description": "[2024年02月28日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-02-28T11:45:03+09:00",
+		"datelastupdated": "2024-02-28T11:45:03+09:00",
+		"datepublic": "2024-02-27T00:00:00+09:00"
+	}
+}

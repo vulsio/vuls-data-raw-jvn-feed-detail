@@ -1,0 +1,106 @@
+{
+	"vulinfoid": "JVNDB-2024-000025",
+	"vulinfodata": {
+		"title": "RevoWorks 製品における保護メカニズムの不具合の脆弱性",
+		"vulinfodescription": {
+			"overview": "ジェイズ・コミュニケーション株式会社が提供する RevoWorks SCVX および RevoWorks Browser は、クライアント端末のローカル環境から分離した環境上でブラウザを実行する機能を提供します。 当該製品では分離環境とローカル環境間のファイル交換は原則不可とされていますが、オプション機能である VirusChecker または ThreatChecker を使用し、ポリシー設定を変更することによって、VirusChecker または ThreatChecker でウィルスチェックしたファイルをローカル環境にダウンロードすることを許可できます。  しかし、当該製品には、マルウェアを含むデータを特定のファイル形式 (eml、dmg、vhd、iso、msi) で分離環境に保存した場合、VirusChecker および ThreatChecker でマルウェアを検出できない脆弱性 (CWE-693) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が IPA に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ジェイズ・コミュニケーション株式会社",
+					"productname": "RevoWorks Browser",
+					"cpe": {
+						"text": "cpe:/a:jscom:revoworks_browser",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.2.95 より前のバージョン"
+					]
+				},
+				{
+					"name": "ジェイズ・コミュニケーション株式会社",
+					"productname": "RevoWorks SCVX",
+					"cpe": {
+						"text": "cpe:/a:jscom:revoworks_scvx",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"scvimage4.10.21_1013 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Low",
+						"type": "Base"
+					},
+					"base": "2.7",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:C/C:N/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "マルウェアを含むデータを特定のファイル形式で保存した場合、マルウェアが分離環境外に持ち出される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 本脆弱性を修正した次のバージョンがリリースされています。<ul><li>RevoWorks SCVX scvimage4.10.21_1013</li><li>RevoWorks Browser 2.2.95</li></ul> [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を回避することが可能です。<ul><li>VirusChecker オプションおよび ThreatChecker オプションを利用しない</li></ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ジェイズ・コミュニケーション株式会社",
+					"vulinfoid": "【重要】RevoWorks製品におけるVirusChecker/ThreatChecker処理の脆弱性について",
+					"url": "https://jscom.jp/news-20240229/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-25091",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-25091"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#35928117",
+					"url": "https://jvn.jp/jp/JVN35928117/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-02-27T10:27:52+09:00",
+					"description": "[2024年02月29日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-02-29T14:21:20+09:00",
+		"datelastupdated": "2024-02-29T14:21:20+09:00",
+		"datepublic": "2024-02-29T00:00:00+09:00"
+	}
+}

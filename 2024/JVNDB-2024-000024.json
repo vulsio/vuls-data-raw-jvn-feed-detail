@@ -1,0 +1,98 @@
+{
+	"vulinfoid": "JVNDB-2024-000024",
+	"vulinfodata": {
+		"title": "OET-213H-BTS1 における不適切な初期設定",
+		"vulinfodescription": {
+			"overview": "Uniview 社が開発し、アツミ電氣株式会社が提供する OET-213H-BTS1 は、顔認証や温度測定の機能を提供する機器です。当該製品の初期設定では、認証なしで API を実行可能です (CWE-1188)。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "アツミ電氣株式会社",
+					"productname": "OET-213H-BTS1",
+					"cpe": {
+						"text": "cpe:/a:misc:atsumi_electric_oet-213h-bts1",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.8",
+					"vector": "AV:A/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.3",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品を初期設定のまま使用している場合、同一サブネット内からのアクセスにより、認証なしに当該製品の設定や操作が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[設定を更新する] セキュリティ関連の設定で、HTTP 認証を有効にできます。(初期設定では無効になっています。) 詳細は、下記「ベンダ情報」を確認してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "アツミ電氣株式会社",
+					"vulinfoid": "顔認証手首温度測定システム OET-213H-BTS1の脆弱性",
+					"url": "https://www.atsumi.co.jp/info-20240229.html"
+				},
+				{
+					"type": "vendor",
+					"name": "アツミ電氣株式会社",
+					"vulinfoid": "OET-213H-BTS1 セキュリティ設定変更手順 (PDF)",
+					"url": "https://www.atsumi.co.jp/pdf/oet-213h-bts1.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-25972",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-25972"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#77203800",
+					"url": "https://jvn.jp/jp/JVN77203800/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-02-27T19:09:06+09:00",
+					"description": "[2024年02月29日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-02-29T14:16:20+09:00",
+		"datelastupdated": "2024-02-29T14:16:20+09:00",
+		"datepublic": "2024-02-29T00:00:00+09:00"
+	}
+}
