@@ -1,0 +1,102 @@
+{
+	"vulinfoid": "JVNDB-2024-000028",
+	"vulinfodata": {
+		"title": "SKYSEA Client View における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Sky 株式会社が提供する SKYSEA Client View は、IT 資産管理用ツールです。 SKYSEA Client View には、次の複数の脆弱性が存在します。 <ul><li>特定フォルダにおけるアクセス制限不備 (CWE-284) - CVE-2024-21805</li><li>常駐プロセスにおけるアクセス制限不備 (CWE-284) - CVE-2024-24964</li></ul> CVE-2024-21805 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社ラック 北原　憲 氏  CVE-2024-24964 この脆弱性情報は、下記の方が製品開発者に直接報告し、製品開発者との調整を経て、製品利用者への周知を目的に JVN での公表に至りました。 報告者: GMOサイバーセキュリティ byイエラエ株式会社 ルスラン サイフィエフ 氏、デニス ファウストヴ 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Ｓｋｙ株式会社",
+					"productname": "SKYSEA Client View",
+					"cpe": {
+						"text": "cpe:/a:skygroup:skysea_client_view",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.11.220 から Ver.19.2 より前のバージョン（CVE-2024-24964）",
+						"Ver.16.100 から Ver.19.2 より前のバージョン（CVE-2024-21805）"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "AV:L/AC:L/Au:S/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、当該製品の Windows クライアントがインストールされた PC にログイン可能なユーザによって、次のような影響を受ける可能性があります。<ul><li>任意のファイルを特定のフォルダに配置される。配置されたファイルが細工された DLL ファイルの場合、結果として SYSTEM 権限で任意のコードを実行される - CVE-2024-21805</li><li>SYSTEM 権限で任意のプロセスを実行される - CVE-2024-24964</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 当該脆弱性は、SKYSEA Client View Ver.19.2 で修正されています。  [パッチを適用する] 開発者は、SKYSEA Client View Ver.17.0 から Ver.19.101 までのユーザ向けに修正パッチを提供しています。 詳しくは、開発者が提供する情報を確認してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Ｓｋｙ株式会社",
+					"vulinfoid": "【重要】特定フォルダにおけるアクセス制限不備の脆弱性（CVE-2024-21805）/ 常駐プロセスにおけるアクセス制限不備の脆弱性（CVE-2024-24964）について",
+					"url": "https://www.skyseaclientview.net/news/240307_01/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-24964",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-24964"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-21805",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-21805"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#54451757",
+					"url": "https://jvn.jp/jp/JVN54451757/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-264",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
+					"title": "認可・権限・アクセス制御"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-02-29T10:39:23+09:00",
+					"description": "[2024年03月07日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-03-07T15:41:08+09:00",
+		"datelastupdated": "2024-03-07T15:41:08+09:00",
+		"datepublic": "2024-03-07T00:00:00+09:00"
+	}
+}

@@ -1,0 +1,104 @@
+{
+	"vulinfoid": "JVNDB-2024-000030",
+	"vulinfodata": {
+		"title": "a-blog cms におけるディレクトリトラバーサルの脆弱性",
+		"vulinfodescription": {
+			"overview": "有限会社アップルップルが提供する a-blog cms は、コンテンツ管理システム (CMS) です。 a-blog cms には、ディレクトリトラバーサル (CWE-22) の脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方が IPA に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: GMOサイバーセキュリティ byイエラエ株式会社 石井 健太郎 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "有限会社アップルップル",
+					"productname": "a-blog cms",
+					"cpe": {
+						"text": "cpe:/a:appleple:a-blog_cms",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver.2.10.51 およびそれ以前のバージョン (Ver.2.10.x系)",
+						"Ver.2.11.59 およびそれ以前のバージョン (Ver.2.11.x系)",
+						"Ver.3.0.30 およびそれ以前のバージョン (Ver.3.0.x系)",
+						"Ver.3.1.9 およびそれ以前のバージョン (Ver.3.1.x系)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:L/Au:S/C:C/I:N/A:N"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品にログイン可能な「編集者」権限以上のユーザによって、パスワードファイルを含むサーバ上の任意のファイルを窃取される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  [ワークアラウンドを実施する] 下記ファイルを削除することで本脆弱性の影響を回避することが可能です。<ul><li>php/ACMS/POST/PingWeblogUpdate.php</li></ul>詳しくは開発者が提供する情報をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "有限会社アップルップルからの情報",
+					"url": "https://jvn.jp/jp/JVN48443978/225065/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "有限会社アップルップル",
+					"vulinfoid": "JVNで報告されたVer. 3.1系の脆弱性への対応について",
+					"url": "https://developer.a-blogcms.jp/blog/news/JVN-48443978.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-27279",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-27279"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#48443978",
+					"url": "https://jvn.jp/jp/JVN48443978/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-03-06T15:53:16+09:00",
+					"description": "[2024年03月08日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-03-08T12:06:42+09:00",
+		"datelastupdated": "2024-03-08T12:06:42+09:00",
+		"datepublic": "2024-03-08T00:00:00+09:00"
+	}
+}
