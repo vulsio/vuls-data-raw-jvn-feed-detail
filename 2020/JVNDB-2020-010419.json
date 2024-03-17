@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2020-010419",
 	"vulinfodata": {
-		"title": "HashiCorp Vault および Vault Enterprise における認証に関する脆弱性",
+		"title": "HashiCorp Vault および Vault Enterprise におけるスプーフィングによる認証回避に関する脆弱性",
 		"vulinfodescription": {
-			"overview": "HashiCorp Vault および Vault Enterprise には、認証に関する脆弱性が存在します。 "
+			"overview": "HashiCorp Vault および Vault Enterprise には、スプーフィングによる認証回避に関する脆弱性、およびデータの信頼性についての不十分な検証に関する脆弱性が存在します。  "
 		},
 		"affected": {
 			"affecteditem": [
@@ -34,15 +34,15 @@
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "Critical",
+						"text": "High",
 						"type": "Base"
 					},
-					"base": "9.8",
-					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+					"base": "8.2",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:N"
 				}
 			],
 			"impactitem": {
-				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。 "
+				"description": "情報を取得される、および情報を改ざんされる可能性があります。 "
 			}
 		},
 		"solution": {
@@ -79,9 +79,16 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-287",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
-					"title": "不適切な認証"
+					"vulinfoid": "CWE-290",
+					"url": "https://cwe.mitre.org/data/definitions/290.html",
+					"title": "スプーフィングによる認証回避"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-345",
+					"url": "https://cwe.mitre.org/data/definitions/345.html",
+					"title": "データの信頼性についての不十分な検証"
 				}
 			]
 		},
