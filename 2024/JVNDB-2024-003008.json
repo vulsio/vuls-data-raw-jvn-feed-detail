@@ -1,0 +1,86 @@
+{
+	"vulinfoid": "JVNDB-2024-003008",
+	"vulinfodata": {
+		"title": "Sangoma Technologies 製 CG/MG family driver cg6kwin2k.sys における IOCTL に対する不十分なアクセス制御の脆弱性",
+		"vulinfodescription": {
+			"overview": "Sangoma Technologies が提供する CG/MG family driver cg6kwin2k.sys には、IOCTL に対する不十分なアクセス制御の脆弱性（CWE-782）が存在します。  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: Broadcom Carbon Black 春山敬宏 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Sangoma",
+					"productname": "cg6kwin2k.sys",
+					"cpe": {
+						"text": "cpe:/o:sangoma:cg6kwin2k.sys",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.1.7.0 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.1",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "管理者権限を持たないユーザが特定の IOCTL リクエストを行うことで、任意のハードウェアポートや物理アドレスに対する I/O が可能となり、結果としてファームウェアの消去や改ざんをされる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。 開発者は、以下にて本脆弱性を修正した CG/MG family driver を提供しています。  　* Sangoma NaturalAccess Development Environment Release 9.0.9（NA-9.0.9-Server-2019_2022-80.amd64.exe）に含まれている cg6kwin2k.sys 2.1.7.0 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Sangoma",
+					"vulinfoid": "Natural Access Software Download",
+					"url": "https://sangomakb.atlassian.net/wiki/spaces/DVC/pages/45351279/Natural+Access+Software+Download"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-29216",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-29216"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90671953",
+					"url": "https://jvn.jp/vu/JVNVU90671953/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-782",
+					"url": "https://cwe.mitre.org/data/definitions/782.html",
+					"title": "不十分なアクセス制御による IOCTL の公開"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-03-22T12:09:01+09:00",
+					"description": "[2024年03月22日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-03-22T12:58:31+09:00",
+		"datelastupdated": "2024-03-22T12:58:31+09:00",
+		"datepublic": "2024-03-21T00:00:00+09:00"
+	}
+}
