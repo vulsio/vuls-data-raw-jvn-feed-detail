@@ -1,21 +1,131 @@
 {
 	"vulinfoid": "JVNDB-2023-025113",
 	"vulinfodata": {
-		"title": "University at Buffalo の ls210d ファームウェアにおける脆弱性",
+		"title": "バッファロー製 LinkStation 200 シリーズにおける任意コード実行の脆弱性",
 		"vulinfodescription": {
-			"overview": "University at Buffalo の ls210d ファームウェアには、不特定の脆弱性が存在します。"
+			"overview": "株式会社バッファローが提供する LinkStation 200 シリーズは、ネットワーク対応 HDD（NAS）です。 LinkStation 200 シリーズには、ファームウェアアップデート時にダウンロードしたデータの完全性検証が十分に行われないことにより、システム上で不正なコードを実行させられる脆弱性（CWE-354、CVE-2023-51073）が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 "
 		},
 		"affected": {
 			"affecteditem": [
 				{
-					"name": "University at Buffalo",
-					"productname": "ls210d ファームウェア",
+					"name": "バッファロー",
+					"productname": "LS210D ファームウェア",
 					"cpe": {
-						"text": "cpe:/o:buffalo:ls210d_firmware",
+						"text": "cpe:/o:buffalo_inc:ls210d_firmware",
 						"version": "2.2"
 					},
 					"versionnumber": [
-						"1.78-0.03"
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS210DC ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls210dc_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS210DG ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls210dg_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS210DN ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls210dn_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS210DNB ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls210dnb_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS220D ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls220d_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS220DB ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls220db_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS220DC ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls220dc_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS220DG ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls220dg_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS220DN ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls220dn_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "バッファロー",
+					"productname": "LS220DNB ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:buffalo_inc:ls220dnb_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver. 1.80 およびそれ以前のバージョン"
 					]
 				}
 			]
@@ -25,29 +135,41 @@
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "High",
+						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "8.1",
-					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H"
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:R/S:U/C:N/I:H/A:N"
 				}
 			],
 			"impactitem": {
-				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
+				"description": "中間者攻撃 (man-in-the-middle attack) を実行可能な攻撃者によって、root ユーザの権限で任意のコードを実行される可能性があります。  [分析結果のコメント] 不正なファームウェアデータをダウンロードおよび実行させられることを一次被害として評価しています。"
 			}
 		},
 		"solution": {
 			"solutionitem": {
-				"description": "参考情報を参照して適切な対策を実施してください。"
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版にアップデートしてください。 "
 			}
 		},
 		"related": {
 			"relateditem": [
 				{
+					"type": "vendor",
+					"name": "株式会社バッファロー",
+					"vulinfoid": "株式会社バッファロー の告知ページ",
+					"url": "https://www.buffalo.jp/news/detail/20240321-01.html"
+				},
+				{
 					"type": "advisory",
 					"name": "Common Vulnerabilities and Exposures (CVE)",
 					"vulinfoid": "CVE-2023-51073",
 					"url": "https://www.cve.org/CVERecord?id=CVE-2023-51073"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90953541",
+					"url": "https://jvn.jp/vu/JVNVU90953541/index.html"
 				},
 				{
 					"type": "advisory",
@@ -70,9 +192,9 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-noinfo",
-					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
-					"title": "情報不足"
+					"vulinfoid": "CWE-354",
+					"url": "https://cwe.mitre.org/data/definitions/354.html",
+					"title": "データの整合性検証不備"
 				}
 			]
 		},
@@ -82,11 +204,16 @@
 					"historyno": "1",
 					"datetime": "2024-02-02T13:53:07+09:00",
 					"description": "[2024年02月02日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2024-03-25T16:33:09+09:00",
+					"description": "[2024年03月25日]\\n  JVNVU の内容に合わせて全体を更新"
 				}
 			]
 		},
 		"datefirstpublished": "2024-02-02T13:53:07+09:00",
-		"datelastupdated": "2024-02-02T13:53:07+09:00",
+		"datelastupdated": "2024-03-25T16:39:59+09:00",
 		"datepublic": "2023-12-18T00:00:00+09:00"
 	}
 }

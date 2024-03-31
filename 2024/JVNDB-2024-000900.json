@@ -1,0 +1,89 @@
+{
+	"vulinfoid": "JVNDB-2024-000900",
+	"vulinfodata": {
+		"title": "「解凍レンジ」における任意の実行ファイル読み込みに関する脆弱性",
+		"vulinfodescription": {
+			"overview": "sira.jp (届出当時の記載による) が提供する「解凍レンジ」 &lt;http://sira.jp/soft/&gt; は、圧縮されたファイルを展開するためのツールです。 「解凍レンジ」には、展開したファイルをエクスプローラーで表示する際の実行ファイル検索パスに問題があり、展開したファイルと同じフォルダに存在している実行ファイルを読み込んでしまう脆弱性 (CWE-427) が存在します。  この案件は、2023年12月20日に開催された公表判定委員会による判定にて、平成29年経済産業省告示第19号および、情報セキュリティ早期警戒パートナーシップガイドラインにおける、次のすべての条件を満たすことを確認したため、JVN で公表することが適当と判定されました。IPA は、その判定を踏まえ、脆弱性情報を公表すると判断しました。  1. 当該案件が調整不能であること 2. 脆弱性の存在が認められると判断できること 3. IPA が公表しない限り、当該脆弱性情報を知り得ない製品利用者がいるおそれがあること 4. 製品開発者や製品利用者の状況等を総合的に勘案して、公表が適当でないと判断する理由・事情がないこと"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "sira.jp",
+					"productname": "解凍レンジ",
+					"cpe": {
+						"text": "cpe:/a:misc:sira.jp_easyrange",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Ver 1.41"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "プログラムを実行している権限で、任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[「解凍レンジ」 Ver 1.41の使用中止を検討してください] 製品開発者と連絡が取れないため、本脆弱性の対策状況は不明です。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28131",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28131"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#13113728",
+					"url": "https://jvn.jp/jp/JVN13113728/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-03-25T14:08:54+09:00",
+					"description": "[2024年03月25日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-03-25T15:02:32+09:00",
+		"datelastupdated": "2024-03-25T15:02:32+09:00",
+		"datepublic": "2024-03-25T00:00:00+09:00"
+	}
+}
