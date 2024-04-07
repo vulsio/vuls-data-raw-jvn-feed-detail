@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2018-013853",
 	"vulinfodata": {
-		"title": "ENSLTP における認可・権限・アクセス制御に関する脆弱性",
+		"title": "ENSLTP における Time-of-check Time-of-use (TOCTOU) 競合状態の脆弱性",
 		"vulinfodescription": {
-			"overview": "ENSLTP には、認可・権限・アクセス制御に関する脆弱性、および競合状態に関する脆弱性が存在します。"
+			"overview": "ENSLTP には、Time-of-check Time-of-use (TOCTOU) 競合状態の脆弱性が存在します。 "
 		},
 		"affected": {
 			"affecteditem": [
@@ -39,12 +39,12 @@
 						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "4.7",
-					"vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N"
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:L"
 				}
 			],
 			"impactitem": {
-				"description": "情報を改ざんされる可能性があります。"
+				"description": "情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。 "
 			}
 		},
 		"solution": {
@@ -75,16 +75,9 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-362",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
-					"title": "競合状態"
-				},
-				{
-					"type": "cwe",
-					"name": "JVNDB",
-					"vulinfoid": "CWE-264",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-264.html",
-					"title": "認可・権限・アクセス制御"
+					"vulinfoid": "CWE-367",
+					"url": "https://cwe.mitre.org/data/definitions/367.html",
+					"title": "Time-of-check Time-of-use (TOCTOU) 競合状態"
 				}
 			]
 		},
