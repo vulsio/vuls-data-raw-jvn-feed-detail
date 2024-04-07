@@ -1,0 +1,647 @@
+{
+	"vulinfoid": "JVNDB-2024-000037",
+	"vulinfodata": {
+		"title": "NEC Atermシリーズにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "日本電気株式会社が提供するAtermシリーズには、次の複数の脆弱性が存在します。<ul><li>不適切なアクセス権限付加（CWE-732）- CVE-2024-28005</li><li>認証情報の情報漏えい（CWE-497）- CVE-2024-28006</li><li>不適切なアクセス権限付加（CWE-732）- CVE-2024-28007</li><li>利用可能なデバッグ機能（CWE-489）- CVE-2024-28008</li><li>脆弱なパスワードの使用（CWE-1391）- CVE-2024-28009、CVE-2024-28012</li><li>ハードコードされた認証情報の使用（CWE-798）- CVE-2024-28010</li><li>ドキュメント化されていない機能（CWE-1242）- CVE-2024-28011</li><li>セッション管理不備（CWE-613）- CVE-2024-28013</li><li>バッファオーバーフロー（CWE-120）- CVE-2024-28014</li><li>Web管理画面におけるOSコマンドインジェクション（CWE-78）- CVE-2024-28015</li><li>機器情報の情報漏えい（CWE-497）- CVE-2024-28016</li></ul> 本脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方々がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 CVE-2024-28005、CVE-2024-28008 報告者：嘉代　稜 氏、佐藤　勝彦 氏、横浜国立大学 佐々木貴之 氏、吉岡克成 氏  CVE-2024-28006、CVE-2024-28007、CVE-2024-28009、CVE-2024-28010、CVE-2024-28011、CVE-2024-28012 報告者：嘉代　稜 氏、佐藤　勝彦 氏  CVE-2024-28013 報告者：横浜国立大学 森井裕大 氏、乃万誉也 氏、佐々木貴之 氏、吉岡克成 氏  CVE-2024-28014、CVE-2024-28015、CVE-2024-28016 報告者：横浜国立大学 佐々木貴之 氏、吉岡克成 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "日本電気",
+					"productname": "Aterm CR2500P",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_cr2500p",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm MR01LN",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_mr01ln",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm MR02LN",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_mr02ln",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm W1200EX(-MS)",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_w1200ex(-ms)",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm W300P",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_w300p_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WF1200HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wf1200hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WF1200HP2",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wf1200hp2",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WF300HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wf300hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WF300HP2",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wf300hp2_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WF800HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wf800hp_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1200HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1200hp_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1200HP2",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1200hp2_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1200HP3",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1200hp3_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1200HS",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1200hs_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1200HS2",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1200hs2_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1200HS3",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1200hs3_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1400HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1400hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1800HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1800hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1800HP2",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1800hp2",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1800HP3",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1800hp3_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1800HP4",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1800hp4_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1810HP(JE)",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1810hp(je)",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1810HP(MF)",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1810hp(mf)",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1900HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1900hp_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG1900HP2",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg1900hp2_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG2200HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg2200hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG300HP",
+					"cpe": {
+						"text": "cpe:/h:nec:aterm_wg300hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WG600HP",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wg600hp",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WM3400RN",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwm3400rn",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WM3450RN",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwm3450rn",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WM3500R",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wm3500r",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WM3600R",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwm3600r",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WM3800R",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wm3800r",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR1200H",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr1200h",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR4100N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr4100n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR4500N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr4500n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR6600H",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr6600h",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR6650S",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr6650s",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR6670S",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr6670s",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR7800H",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr7800h",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR7850S",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr7850s",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR7870S",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr7870s",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8100N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8100n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8150N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8150n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8160N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8160n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8165N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8165n_firmware",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8166N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8166n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8170N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8170n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8175N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8175n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8200N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8200n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8300N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8300n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8370N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8370n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8400N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8400n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8500N",
+					"cpe": {
+						"text": "cpe:/o:nec:aterm_wr8500n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8600N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8600n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8700N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8700n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR8750N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr8750n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR9300N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr9300n",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "日本電気",
+					"productname": "Aterm WR9500N",
+					"cpe": {
+						"text": "cpe:/h:nec:atermwr9500n",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、攻撃者によって、次のような影響を受ける可能性があります。<ul><li>当該機器にTelnetでログインされた場合、機器の設定を変更され、root権限でシェルを実行される（CVE-2024-28005）</li><li>機微な情報を窃取される（CVE-2024-28006）</li><li>当該機器のTelnetを有効化されログインされた場合、root権限でシェルを実行される（CVE-2024-28007）</li><li>当該機器にTelnetでログインされた場合、デバッグ機能を使用される（CVE-2024-28008）</li><li>ID、パスワードを推測され、Telnetにログインされる（CVE-2024-28009、CVE-2024-28010、CVE-2024-28012）</li><li>Telnetに無制限でアクセスされる（CVE-2024-28011）</li><li>当該機器にログインせずに、機器の設定を変更される（CVE-2024-28013）</li><li>任意のコードを実行される（CVE-2024-28014）</li><li>当該機器のWeb管理画面にログイン後、任意のコマンドを実行される（CVE-2024-28015）</li><li>機器の型番等の情報を窃取される（CVE-2024-28016）</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。  [ワークアラウンドを実施する] 開発者は、ワークアラウンドの適用も推奨しています。  [現行製品の利用を停止し、後続製品に乗り換える] 開発者によると、一部製品はすでにサポートが終了しているとのことです。後続製品への乗り換え等を検討してください。  詳細は、開発者が提供する情報をご確認ください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "JVN",
+					"vulinfoid": "日本電気株式会社からの情報",
+					"url": "https://jvn.jp/jp/JVN82074338/6443/index.html"
+				},
+				{
+					"type": "vendor",
+					"name": "NEC製品セキュリティ情報",
+					"vulinfoid": "Atermにおける複数の脆弱性",
+					"url": "https://jpn.nec.com/security-info/secinfo/nv24-001.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28005",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28005"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28013",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28013"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28006",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28006"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28014",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28014"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28007",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28007"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28015",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28015"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28008",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28008"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28016",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-280016"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28009",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28009"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28010",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28010"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28011",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28011"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28012",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28012"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#82074338",
+					"url": "https://jvn.jp/jp/JVN82074338/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-287",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-287.html",
+					"title": "不適切な認証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-04-01T14:28:09+09:00",
+					"description": "[2024年04月05日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-04-05T12:20:42+09:00",
+		"datelastupdated": "2024-04-05T12:20:42+09:00",
+		"datepublic": "2024-04-05T00:00:00+09:00"
+	}
+}

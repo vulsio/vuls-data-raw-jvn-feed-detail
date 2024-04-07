@@ -1,0 +1,97 @@
+{
+	"vulinfoid": "JVNDB-2024-003051",
+	"vulinfodata": {
+		"title": "フルノシステムズ製マネージド・スイッチ ACERA 9010（MS モード以外で使用時）における初期パスワードに関する脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社フルノシステムズが提供するマネージド・スイッチ ACERA 9010 の工場出荷時設定では、パスワードが設定されておらず（CWE-258）、リモートアクセス機能が有効になっています。当該製品を MS モード以外で、パスワードおよびリモートアクセス機能を工場出荷時設定のまま使用している場合に、本脆弱性の影響を受けます。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社フルノシステムズ",
+					"productname": "ACERA 9010-08",
+					"cpe": {
+						"text": "cpe:/o:misc:furuno_systems_acera_9010-08",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v02.04 およびそれ以前のファームウェアバージョン"
+					]
+				},
+				{
+					"name": "株式会社フルノシステムズ",
+					"productname": "ACERA 9010-24",
+					"cpe": {
+						"text": "cpe:/o:misc:furuno_systems_acera_9010-24",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v02.04 およびそれ以前のファームウェアバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品にパスワードなしにログインされ、ネットワーク設定やユーザ情報等を窃取されたり変更されたりする可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "当該製品のパスワードを出荷時設定のまま変更せずに使用している場合、CLI コマンドを使用してパスワードを設定してください。  詳細は、開発者が提供する情報を確認してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "株式会社フルノシステムズ",
+					"vulinfoid": "【重要】マネージド・スイッチ ACERA 9010 を MS モード以外でご使用のお客様へ、パスワード設定/リモートアクセス設定変更のお願い",
+					"url": "https://www.furunosystems.co.jp/news/info/vulner20240401.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28744",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28744"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99285099",
+					"url": "https://jvn.jp/vu/JVNVU99285099/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-258",
+					"url": "https://cwe.mitre.org/data/definitions/258.html",
+					"title": "設定ファイル内の空のパスワード"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-04-02T17:14:12+09:00",
+					"description": "[2024年04月02日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-04-02T17:43:05+09:00",
+		"datelastupdated": "2024-04-02T17:43:05+09:00",
+		"datepublic": "2024-04-01T00:00:00+09:00"
+	}
+}

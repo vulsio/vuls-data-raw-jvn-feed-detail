@@ -1,0 +1,132 @@
+{
+	"vulinfoid": "JVNDB-2024-003068",
+	"vulinfodata": {
+		"title": "Cente ミドルウェアにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "DMG MORI Digital 株式会社が開発し、NEXT 株式会社が提供する Cente ミドルウェア TCP/IP ネットワークシリーズの一部製品には、次の複数の脆弱性が存在します。  　* IPv6 NDP パケットのオプション長のチェック不足による境界外読み取り（CWE-125） 　* IPv6 ヘッダのオプション長のチェック不足による境界外読み取り（CWE-125） 　* 予測可能な ID の使用（CWE-340）  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "NEXT株式会社",
+					"productname": "Cente IPv6",
+					"cpe": {
+						"text": "cpe:/a:misc:next_cente_ipv6",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"SNMPv2 Ver.2.30 およびそれ以前 (CVE-2024-23911、CVE-2024-28894、CVE-2024-28957)",
+						"SNMPv3 Ver.2.30 およびそれ以前 (CVE-2024-23911、CVE-2024-28894、CVE-2024-28957)",
+						"Ver.1.51 およびそれ以前 (CVE-2024-23911、CVE-2024-28894、CVE-2024-28957)"
+					]
+				},
+				{
+					"name": "NEXT株式会社",
+					"productname": "Cente TCP/IPv4",
+					"cpe": {
+						"text": "cpe:/a:misc:next_cente_tcp%2Fipv4",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"SNMPv2 Ver.2.30 およびそれ以前 (CVE-2024-28957)",
+						"SNMPv3 Ver.2.30 およびそれ以前 (CVE-2024-28957)",
+						"Ver.1.41 およびそれ以前 (CVE-2024-28957)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、第三者によって、次のような影響を受ける可能性があります。  　* 細工されたパケットを送信されることにより、当該機器を停止させられる（CVE-2024-23911、CVE-2024-28894） 　* 当該製品が送信するパケットのヘッダに含まれる一部の ID を予測され、通信を妨害される（CVE-2024-28957） "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "NEXT株式会社",
+					"vulinfoid": "【脆弱性情報】不正な IPv6 パケットを受信すると誤動作する可能性がある",
+					"url": "https://www.cente.jp/obstacle/4960/"
+				},
+				{
+					"type": "vendor",
+					"name": "NEXT株式会社",
+					"vulinfoid": "【脆弱性情報】DHCPv6 のトランザクション ID などが予測可能である",
+					"url": "https://www.cente.jp/obstacle/4963/"
+				},
+				{
+					"type": "vendor",
+					"name": "NEXT株式会社",
+					"vulinfoid": "【脆弱性情報】UDP,TCP の送信元ポート番号などが予測可能である",
+					"url": "https://www.cente.jp/obstacle/4956/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28957",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28957"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-23911",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-23911"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28894",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28894"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#94016877",
+					"url": "https://jvn.jp/vu/JVNVU94016877/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-340",
+					"url": "https://cwe.mitre.org/data/definitions/340.html",
+					"title": "予測可能な数字や識別子の生成"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-04-05T14:36:43+09:00",
+					"description": "[2024年04月05日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-04-05T14:53:14+09:00",
+		"datelastupdated": "2024-04-05T14:53:14+09:00",
+		"datepublic": "2024-04-04T00:00:00+09:00"
+	}
+}
