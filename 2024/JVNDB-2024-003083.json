@@ -1,0 +1,71 @@
+{
+	"vulinfoid": "JVNDB-2024-003083",
+	"vulinfodata": {
+		"title": "OpenSSL におけるサービス運用妨害 (DoS) の脆弱性 (Security Advisory [8th April 2024])",
+		"vulinfodescription": {
+			"overview": "深刻度 - 低 (Severity: Low) OpenSSL において、 TLSv1.3 セッションの処理時にメモリを多量に消費し、サービス運用妨害 (DoS) 状態となる問題 (CVE-2024-2511) が報告されています。本脆弱性は SSL_OP_NO_TICKET オプションが使用されている場合に発生する可能性があり、early_data が設定され、anti-replay 機能が有効になっている場合は発生しません。  また、本脆弱性は TLSv1.3 をサポートする TLS サーバーのみ影響を受け、TLS クライアントは影響を受けず、また OpenSSL の FIPS モジュールも影響を受けません。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.1.1",
+						"3.0",
+						"3.1",
+						"3.2"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "大量のメモリを消費させられ、サービス運用妨害 (DoS) 状態となる可能性があります。   "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする]  2024 年 4 月 9 日現在、修正版は提供されていませんが、本脆弱性は下記バージョンにおいて修正される予定です。  　* OpenSSL 3.2.2 (3.2 系ユーザ向け) 　* OpenSSL 3.1.6 (3.1 系ユーザ向け) 　* OpenSSL 3.0.14 (3.0 系ユーザ向け) 　* OpenSSL 1.1.1y (1.1.1 プレミアムサポートカスタマ向け)  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [8th April 2024]",
+					"url": "https://www.openssl.org/news/secadv/20240408.txt"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-2511",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-2511"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96443143",
+					"url": "https://jvn.jp/vu/JVNVU96443143/index.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-04-10T10:45:45+09:00",
+					"description": "[2024年04月10日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-04-10T11:20:54+09:00",
+		"datelastupdated": "2024-04-10T11:20:54+09:00",
+		"datepublic": "2024-04-09T00:00:00+09:00"
+	}
+}
