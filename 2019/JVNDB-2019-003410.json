@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2019-003410",
 	"vulinfodata": {
-		"title": "Linux Kernel におけるバッファエラーの脆弱性",
+		"title": "Linux Kernel における競合状態に関する脆弱性",
 		"vulinfodescription": {
-			"overview": "Linux Kernel には、バッファエラーの脆弱性が存在します。"
+			"overview": "Linux Kernel には、競合状態に関する脆弱性、有効期限後のメモリの解放の欠如に関する脆弱性が存在します。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -48,12 +48,12 @@
 						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "5.5",
-					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H"
+					"base": "6.1",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:H"
 				}
 			],
 			"impactitem": {
-				"description": "サービス運用妨害 (DoS) 状態にされる可能性があります。"
+				"description": "情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
 			}
 		},
 		"solution": {
@@ -90,9 +90,16 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-119",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-					"title": "バッファエラー"
+					"vulinfoid": "CWE-362",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-362.html",
+					"title": "競合状態"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-401",
+					"url": "https://cwe.mitre.org/data/definitions/401.html",
+					"title": "有効期限後のメモリの解放の欠如"
 				}
 			]
 		},
