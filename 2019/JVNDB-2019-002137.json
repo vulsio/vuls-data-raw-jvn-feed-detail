@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2019-002137",
 	"vulinfodata": {
-		"title": "AdvanceCOMP における整数オーバーフローの脆弱性",
+		"title": "AdvanceCOMP における境界外読み取りに関する脆弱性",
 		"vulinfodescription": {
-			"overview": "AdvanceCOMP には、整数オーバーフローの脆弱性が存在します。 "
+			"overview": "AdvanceCOMP には、境界外読み取りに関する脆弱性、整数オーバーフローの脆弱性が存在します。 "
 		},
 		"affected": {
 			"affecteditem": [
@@ -36,21 +36,21 @@
 						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "4.3",
-					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
 				},
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "Medium",
+						"text": "High",
 						"type": "Base"
 					},
-					"base": "5.5",
-					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
 				}
 			],
 			"impactitem": {
-				"description": "サービス運用妨害 (DoS) 状態にされる可能性があります。"
+				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
 			}
 		},
 		"solution": {
@@ -83,6 +83,13 @@
 					"name": "National Vulnerability Database (NVD)",
 					"vulinfoid": "CVE-2019-9210",
 					"url": "https://nvd.nist.gov/vuln/detail/CVE-2019-9210"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
 				},
 				{
 					"type": "cwe",

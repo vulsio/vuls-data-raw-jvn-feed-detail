@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2020-002368",
 	"vulinfodata": {
-		"title": "WebKitGTK として使用される WebKit および WPE WebKit における入力確認に関する脆弱性",
+		"title": "WebKitGTK として使用される WebKit および WPE WebKit における解放済みメモリの使用に関する脆弱性",
 		"vulinfodescription": {
-			"overview": "WebKitGTK として使用される WebKit および WPE WebKit には、入力確認に関する脆弱性が存在します。 "
+			"overview": "WebKitGTK として使用される WebKit および WPE WebKit には、解放済みメモリの使用に関する脆弱性が存在します。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -36,24 +36,24 @@
 				{
 					"version": "2.0",
 					"severity": {
-						"text": "Medium",
-						"type": "Base"
-					},
-					"base": "5",
-					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
-				},
-				{
-					"version": "3.0",
-					"severity": {
 						"text": "High",
 						"type": "Base"
 					},
 					"base": "7.5",
-					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
 				}
 			],
 			"impactitem": {
-				"description": "サービス運用妨害 (DoS) 状態にされる可能性があります。"
+				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
 			}
 		},
 		"solution": {
@@ -96,9 +96,9 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-20",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-					"title": "不適切な入力確認"
+					"vulinfoid": "CWE-416",
+					"url": "https://cwe.mitre.org/data/definitions/416.html",
+					"title": "解放済みメモリの使用"
 				}
 			]
 		},

@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2019-002092",
 	"vulinfodata": {
-		"title": "Wireshark におけるバッファエラーの脆弱性",
+		"title": "Wireshark における境界条件の判定に関する脆弱性",
 		"vulinfodescription": {
-			"overview": "Wireshark には、バッファエラーの脆弱性が存在します。"
+			"overview": "Wireshark には、境界条件の判定に関する脆弱性、境界外書き込みに関する脆弱性が存在します。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -37,17 +37,17 @@
 						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "5",
-					"vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P"
+					"base": "4.3",
+					"vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P"
 				},
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "High",
+						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "7.5",
-					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+					"base": "5.5",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
 				}
 			],
 			"impactitem": {
@@ -106,9 +106,16 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-119",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-					"title": "バッファエラー"
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-193",
+					"url": "https://cwe.mitre.org/data/definitions/193.html",
+					"title": "境界条件の判定"
 				}
 			]
 		},

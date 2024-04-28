@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2019-002348",
 	"vulinfodata": {
-		"title": "PHP におけるバッファエラーの脆弱性",
+		"title": "PHP における初期化されていないリソースの使用に関する脆弱性",
 		"vulinfodescription": {
-			"overview": "PHP には、バッファエラーの脆弱性が存在します。"
+			"overview": "PHP には、初期化されていないリソースの使用に関する脆弱性、リソースの初期化の不備に関する脆弱性が存在します。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -43,24 +43,24 @@
 				{
 					"version": "2.0",
 					"severity": {
-						"text": "High",
+						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "7.5",
-					"vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P"
+					"base": "5",
+					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
 				},
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "Critical",
+						"text": "High",
 						"type": "Base"
 					},
-					"base": "9.8",
-					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
 				}
 			],
 			"impactitem": {
-				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
+				"description": "情報を取得される可能性があります。"
 			}
 		},
 		"solution": {
@@ -109,9 +109,16 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-119",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
-					"title": "バッファエラー"
+					"vulinfoid": "CWE-909",
+					"url": "https://cwe.mitre.org/data/definitions/909.html",
+					"title": "リソースの初期化の不備"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-908",
+					"url": "http://cwe.mitre.org/data/definitions/908.html",
+					"title": "初期化されていないリソースの使用"
 				}
 			]
 		},

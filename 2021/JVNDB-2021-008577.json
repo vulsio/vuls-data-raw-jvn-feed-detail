@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2021-008577",
 	"vulinfodata": {
-		"title": "Autodesk DWG アプリケーションにおける誤った領域へのリソースの漏えいに関する脆弱性",
+		"title": "Autodesk DWG アプリケーションにおける境界外書き込みに関する脆弱性",
 		"vulinfodescription": {
-			"overview": "Autodesk DWG アプリケーションには、誤った領域へのリソースの漏えいに関する脆弱性が存在します。"
+			"overview": "Autodesk DWG アプリケーションには、境界外書き込みに関する脆弱性が存在します。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -97,21 +97,21 @@
 						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "4.3",
-					"vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N"
+					"base": "6.8",
+					"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P"
 				},
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "Medium",
+						"text": "High",
 						"type": "Base"
 					},
-					"base": "5.5",
-					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N"
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
 				}
 			],
 			"impactitem": {
-				"description": "情報を改ざんされる可能性があります。"
+				"description": "情報を取得される、情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。"
 			}
 		},
 		"solution": {
@@ -148,9 +148,9 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-668",
-					"url": "https://cwe.mitre.org/data/definitions/668.html",
-					"title": "誤った領域へのリソースの漏えい"
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
 				}
 			]
 		},
