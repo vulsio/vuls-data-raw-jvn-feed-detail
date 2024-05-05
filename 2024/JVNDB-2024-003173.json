@@ -1,0 +1,80 @@
+{
+	"vulinfoid": "JVNDB-2024-003173",
+	"vulinfodata": {
+		"title": "R プログラミング言語の実装において、安全でないデータのデシリアライゼーションが発生する問題（CVE-2024-27322）",
+		"vulinfodescription": {
+			"overview": "R プログラミング言語ではデータのシリアライズやデシリアライズがサポートされており、シリアライズされたデータは R Data Serialization（RDS）と呼ばれる形式で .rds ファイルや .rdx ファイルとして保存されます。また、R は遅延評価もサポートしており、Promise クラスを実装し必要なタイミングで呼び出すことにより実現できます。この Promise クラスのオブジェクトには、評価時に実行される式と、式の結果が格納される値とが含まれ、PROMSXMP と呼ばれる RDS 形式でシリアライズすることが可能です。  R 1.4.0 から 4.4.0 より前のバージョンでは、RDS 形式によりシリアライズされた Promise クラスのオブジェクトが eval() 関数により読み込まれる際、そのオブジェクト内の値が未評価の状態で参照されると、オブジェクト内の式が直ちに（適切な遅延評価の実行タイミングより前に）実行されてしまう問題があります。そのため、攻撃者は悪意のあるコードを式として含む Promise クラスオブジェクトを .rds ファイルや .rdx ファイルにシリアライズし、それらのファイルをロードさせることにより、システム内で任意のコードをデシリアライズさせ、実行させることが可能になります。  この問題に対して、CVE-2024-27322 が採番されています。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "R Project",
+					"productname": "R",
+					"cpe": {
+						"text": "cpe:/a:r_project:r",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.4.0 から 4.4.0 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "システム上で任意のコードが実行される可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] R プロジェクトは、この脆弱性を修正した R 4.4.0 を提供しています。バージョン 4.4.0 では、シリアライズされたデータ内の Promise オブジェクトの使用が制限され、適切な遅延評価のタイミングで使用されるように修正されています。  [信頼できないデータをデシリアライズしない] .rds や .rdx、.rdb ファイルをコンテナまたはサンドボックス環境で使用するなど、信頼できないデータを含むファイルを読み込ませないよう留意してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "R Programing Language",
+					"vulinfoid": "The Comprehensive R Archive Network",
+					"url": "https://cran.r-project.org/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-27322",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-27322"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96606632",
+					"url": "https://jvn.jp/vu/JVNVU96606632/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#238194",
+					"url": "https://kb.cert.org/vuls/id/238194"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "R-BITRARY CODE EXECUTION: VULNERABILITY IN R’S DESERIALIZATION",
+					"url": "https://hiddenlayer.com/research/r-bitrary-code-execution/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-05-02T11:43:26+09:00",
+					"description": "[2024年05月02日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-05-02T11:43:26+09:00",
+		"datelastupdated": "2024-05-02T11:43:26+09:00",
+		"datepublic": "2024-05-01T00:00:00+09:00"
+	}
+}
