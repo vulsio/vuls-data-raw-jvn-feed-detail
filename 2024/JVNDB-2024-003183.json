@@ -1,0 +1,71 @@
+{
+	"vulinfoid": "JVNDB-2024-003183",
+	"vulinfodata": {
+		"title": "DHCP のオプション 121 を利用した VPN のカプセル化回避の問題",
+		"vulinfodescription": {
+			"overview": "DHCP のオプション 121 をサポートする環境で VPN 接続する場合、トラフィックの宛先を強制的に変更し、VPN トンネル外に送信することでカプセル化を回避することができる問題 (CVE-2024-3661) が報告されています。 本問題の報告者は、この問題を「TunnelVision」と呼んでいます。  DHCP RFC 3442 では、ネットワーク管理者がクライアントのルーティングテーブルにスタティックルートを指定できる「オプション 121 クラスレススタティックルート」を定義しています。このオプション 121 をサポートする環境において、VPN クライアントと同じローカルネットワーク上の攻撃者は、本オプションを悪用しルーティングテーブルを操作して、VPN クライアントのトラフィックを VPN 以外の不正なネットワークに強制的に送信する可能性があります (CVE-2024-3661：TunnelVision)。その後、VPN 宛のトラフィックをローカルネットワークにリダイレクトし、VPN を完全にバイパスできます。報告者はこの攻撃を「Decloaking攻撃」と呼んでいます。 この際、クライアント側からは VPN に接続され続けているように見えます。  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "VPN を使用していない状態となります。 VPN 上で平文通信を行う想定の場合は、攻撃者によってすべての通信内容を取得される可能性があります。また、通信が暗号化されている場合でも、VPN 接続では入手できないはずの宛先 IP アドレスおよび送信元 IP アドレスの情報を取得される可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[VPN 実装者が実施できる対策] ネットワーク名前空間を利用する  Linux 環境では、VPN を使用するすべてのアプリケーションに対して、物理インターフェイスを含む別の名前空間にトラフィックを送信する前にネットワーク名前空間を使用する機能が存在します。この機能を利用することで本問題の影響を回避することができます。 詳細は、<a href=\"https://www.wireguard.com/netns/#the-new-namespace-solution\"target=\"blank\">WireGuard’s documentation</a> を参照してください。  [VPN ユーザーが実施できる対策] ワークアラウンドを実施する  　* 信頼できないネットワークを使用しない 　* ホットスポット (携帯端末によって制御される一時的な Wi-Fi ネットワーク) を利用する "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-3661",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-3661"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#94876636",
+					"url": "https://jvn.jp/ta/JVNTA94876636/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "TunnelVision",
+					"url": "https://www.leviathansecurity.com/research/tunnelvision"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Routing & Network Namespaces",
+					"url": "https://www.wireguard.com/netns/#the-new-namespace-solution"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-05-13T14:02:47+09:00",
+					"description": "[2024年05月13日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-05-13T14:58:01+09:00",
+		"datelastupdated": "2024-05-13T14:58:01+09:00",
+		"datepublic": "2024-05-10T00:00:00+09:00"
+	}
+}

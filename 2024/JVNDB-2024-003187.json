@@ -1,0 +1,142 @@
+{
+	"vulinfoid": "JVNDB-2024-003187",
+	"vulinfodata": {
+		"title": "フィールドロジック製 DataCube における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社フィールドロジックが提供する DataCube には、次の複数の脆弱性が存在します。  　* リクエストの直接送信 (CWE-425) - CVE-2024-25830 　 　* 反射型クロスサイトスクリプティング (CWE-79) - CVE-2024-25831 　 　* アップロードするファイルの検証不備 (CWE-434) - CVE-2024-25832 　 　* SQLインジェクション (CWE-89) - CVE-2024-25833  CVE-2024-25830、CVE-2024-25831、CVE-2024-25832、CVE-2024-25833 この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者：NeroTeam Security Labs Thomas J. Knudsen 氏、Samy Younsi 氏  CVE-2024-25832 この脆弱性情報は、上記報告に基づく調整中に、下記の方から JPCERT/CC に報告がありました。 報告者：CV3TR4CK 氏 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社フィールドロジック",
+					"productname": "DataCube3 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:f-logic:datacube3_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"すべてのバージョン"
+					]
+				},
+				{
+					"name": "株式会社フィールドロジック",
+					"productname": "DataCube4 ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:f-logic:datacube4_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"バージョン 1.0.1.50 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。  　* 当該製品にログインすることなく管理者パスワードを取得される (CVE-2024-25830) 　* 当該製品にログインしているユーザーが細工された Web ページにアクセスすると、ユーザーのウェブブラウザ上で任意のスクリプトを実行される (CVE-2024-25831) 　* ユーザによって危険なファイルをアップロードされ、結果として当該製品上でコードを実行される (CVE-2024-25832) 　* 当該製品にログインすることなく任意の SQL クエリを実行される (CVE-2024-25833) "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ベンダに問い合わせる] 出荷済み製品の対策については、ベンダにお問い合わせください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "株式会社フィールドロジック",
+					"vulinfoid": "DataCube3・DataCube4 の脆弱性についてご報告と注意喚起",
+					"url": "https://www.f-logic.jp/info/2024/0507.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-25830",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-25830"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-25831",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-25831"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-25832",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-25832"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-25833",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-25833"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95350607",
+					"url": "https://jvn.jp/vu/JVNVU95350607/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "F-logic DataCube3 vulnerability report.",
+					"url": "https://neroteam.com/blog/f-logic-datacube3-vulnerability-report"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-425",
+					"url": "https://cwe.mitre.org/data/definitions/425.html",
+					"title": "リクエストの直接送信"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-434",
+					"url": "https://cwe.mitre.org/data/definitions/434.html",
+					"title": "危険なタイプのファイルの無制限アップロード"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-05-16T15:40:51+09:00",
+					"description": "[2024年05月16日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-05-16T16:21:11+09:00",
+		"datelastupdated": "2024-05-16T16:21:11+09:00",
+		"datepublic": "2024-05-15T00:00:00+09:00"
+	}
+}
