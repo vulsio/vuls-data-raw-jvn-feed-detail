@@ -1,0 +1,97 @@
+{
+	"vulinfoid": "JVNDB-2024-003242",
+	"vulinfodata": {
+		"title": "オムロン製マシンオートメーションコントローラ NJ/NX にデータの真正性検証が不十分な脆弱性",
+		"vulinfodescription": {
+			"overview": "オムロン株式会社が提供するマシンオートメーションコントローラ NJ/NX シリーズには、データの真正性検証が不十分な脆弱性 (CWE-345) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "オムロン株式会社",
+					"productname": "マシンオートメーションコントローラ NJ シリーズ",
+					"cpe": {
+						"text": "cpe:/a:omron:machine_automation_controller_nj_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"CPU ユニット 全バージョン"
+					]
+				},
+				{
+					"name": "オムロン株式会社",
+					"productname": "マシンオートメーションコントローラ NX シリーズ",
+					"cpe": {
+						"text": "cpe:/a:omron:machine_automation_controller_nx_series",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"CPU ユニット 全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.8",
+					"vector": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "製品内のユーザプログラムが改ざんされた場合に、その改ざんを検知できない可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ ｢ユーザプログラム復元情報無し転送機能｣ (*1) を使用する] (*1) ｢ユーザプログラム復元情報無し転送機能｣ については、開発者が提供する次のマニュアルを参照してください。  　* NJ/NX シリーズ CPU ユニット ユーザーズマニュアルソフトウェア編（SBCA-467）  [ワークアラウンドを実施する] 開発者は、以下の軽減策または回避策を適用することを推奨しています。  　* ネットワーク接続を最小限に抑え、信頼できないデバイスからのアクセスを制限する 　* ファイアウォール等の導入による IT ネットワークからの分離（未使用通信ポートの遮断、通信ホストの制限）  詳しくは、<a href=\"https://www.fa.omron.co.jp/product/security/assets/pdf/ja/OMSR-2024-004_ja.pdf\" target=\"blank\">開発者が提供する情報</a>を確認してください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "オムロン株式会社",
+					"vulinfoid": "マシンオートメーションコントローラ NJ/NX のデータ真正性の検証が不十分な脆弱性",
+					"url": "https://www.fa.omron.co.jp/product/security/assets/pdf/ja/OMSR-2024-004_ja.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-33687",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-33687"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92504444",
+					"url": "https://jvn.jp/vu/JVNVU92504444/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-345",
+					"url": "https://cwe.mitre.org/data/definitions/345.html",
+					"title": "データの信頼性についての不十分な検証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-05-28T10:28:40+09:00",
+					"description": "[2024年05月28日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-05-28T11:59:40+09:00",
+		"datelastupdated": "2024-05-28T11:59:40+09:00",
+		"datepublic": "2024-05-27T00:00:00+09:00"
+	}
+}

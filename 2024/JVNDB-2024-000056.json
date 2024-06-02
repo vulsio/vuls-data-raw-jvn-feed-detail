@@ -1,0 +1,86 @@
+{
+	"vulinfoid": "JVNDB-2024-000056",
+	"vulinfodata": {
+		"title": "awkblogにおけるOSコマンドインジェクションの脆弱性",
+		"vulinfodescription": {
+			"overview": "Keisuke Nakayamaが提供するawkblogには、OSコマンドインジェクション（CWE-78）の脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：株式会社ラック / ニューリジェンセキュリティ株式会社 山崎 圭吾 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Keisuke Nakayama",
+					"productname": "awkblog",
+					"cpe": {
+						"text": "cpe:/a:misc:keisuke_nakayama_awkblog",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v0.0.1（commit hash:7b761b192d0e0dc3eef0f30630e00ece01c8d552）およびそれ以前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "悪意ある第三者によって細工されたHTTPリクエストを送信され、当該製品を実行するマシン上において、当該製品の権限で任意のOSコマンドを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[パッチを適用する] 開発者が提供する情報をもとにパッチを適用してください。 開発者は本脆弱性の対策として次のパッチをリリースしています。<ul><li>awkblog v0.0.2（commit hash:13f62021258f7256f1567c4bb5fa6bddcfccde72）</li></ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitHub",
+					"vulinfoid": "Command Injection Vulnerability in awkblog",
+					"url": "https://github.com/yammerjp/awkblog/issues/1"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36360",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36360"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#80506242",
+					"url": "https://jvn.jp/jp/JVN80506242/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-78",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-78.html",
+					"title": "OSコマンドインジェクション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-05-27T10:03:23+09:00",
+					"description": "[2024年05月30日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-05-30T14:15:56+09:00",
+		"datelastupdated": "2024-05-30T14:15:56+09:00",
+		"datepublic": "2024-05-30T00:00:00+09:00"
+	}
+}
