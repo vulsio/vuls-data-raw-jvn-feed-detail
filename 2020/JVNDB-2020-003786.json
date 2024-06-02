@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2020-003786",
 	"vulinfodata": {
-		"title": "Linux Kernel における入力確認に関する脆弱性",
+		"title": "Linux Kernel における NULL ポインタデリファレンスに関する脆弱性",
 		"vulinfodescription": {
-			"overview": "Linux Kernel には、入力確認に関する脆弱性が存在します。  ベンダは、本脆弱性を CID-a246b4d54770 として公開しています。"
+			"overview": "Linux Kernel には、NULL ポインタデリファレンスに関する脆弱性が存在します。  ベンダは、本脆弱性を CID-a246b4d54770 として公開しています。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -28,8 +28,8 @@
 						"text": "Medium",
 						"type": "Base"
 					},
-					"base": "5",
-					"vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N"
+					"base": "5.6",
+					"vector": "AV:L/AC:L/Au:N/C:N/I:P/A:C"
 				},
 				{
 					"version": "3.0",
@@ -37,12 +37,12 @@
 						"text": "High",
 						"type": "Base"
 					},
-					"base": "7.5",
-					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+					"base": "7.1",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H"
 				}
 			],
 			"impactitem": {
-				"description": "情報を改ざんされる可能性があります。"
+				"description": "情報を改ざんされる、およびサービス運用妨害 (DoS) 状態にされる可能性があります。 "
 			}
 		},
 		"solution": {
@@ -91,9 +91,9 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-20",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-20.html",
-					"title": "不適切な入力確認"
+					"vulinfoid": "CWE-476",
+					"url": "http://cwe.mitre.org/data/definitions/476.html",
+					"title": "NULL ポインタデリファレンス"
 				}
 			]
 		},
