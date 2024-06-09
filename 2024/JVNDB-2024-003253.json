@@ -1,0 +1,245 @@
+{
+	"vulinfoid": "JVNDB-2024-003253",
+	"vulinfodata": {
+		"title": "シャープ製および東芝テック製の複合機（MFP）における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "シャープ株式会社および東芝テック株式会社が提供する複数の複合機（MFP）には、次の複数の脆弱性が存在します。  　* スタックベースのバッファオーバーフロー（CWE-121） - CVE-2024-28038 　* 不適切なアクセス権限付加（CWE-732） - CVE-2024-28955 　* 重要な情報の平文保存（CWE-312） - CVE-2024-29146 　* パスワードの平文保存（CWE-256） - CVE-2024-29978 　* 復元可能な形式でのパスワード保存（CWE-257） - CVE-2024-32151 　* パストラバーサル（CWE-22） - CVE-2024-33605 　* アクセス制限不備（CWE-284） - CVE-2024-33610、CVE-2024-33616 　* ネゴシエーション中の安全性の低いアルゴリズムの選択（CWE-767） - CVE-2024-34162 　* ハードコードされた認証情報の使用（CWE-798） - CVE-2024-35244、CVE-2024-36248 　* クロスサイトスクリプティング（CWE-79） - CVE-2024-36249 　* 境界外読み取り（CWE-125） - CVE-2024-36251、CVE-2024-36254  次の脆弱性に関しては、Pierre Barre 氏が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行い公表に至りました。 CVE-2024-28038、CVE-2024-28955、CVE-2024-29146、CVE-2024-29978、CVE-2024-32151、CVE-2024-33605、CVE-2024-33610、CVE-2024-33616、CVE-2024-34162、CVE-2024-35244、CVE-2024-36248、CVE-2024-36251、CVE-2024-36254  次の脆弱性に関しては、開発者が複数の発見者から直接報告を受け調整し、製品利用者への周知を目的に開発者が JPCERT/CC に報告し、公表に至りました。 CVE-2024-33610、CVE-2024-36249、CVE-2024-36251、CVE-2024-36254"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シャープ株式会社",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:sharp:multiple_product",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "東芝テック",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:toshibatec:multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.1",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性によって異なりますが、次のような可能性があります。  　* 複合機の管理ページに対し細工されたリクエストを送信することで、複合機がサービス運用妨害 (DoS) 状態となる 　* 複合機内のファイルが閲覧可能となり、プログラム中の情報を参照される 　* 複合機の一部の情報に対し意図しない権限でアクセスが可能となる 　* 複合機の管理ページにおいて、任意のスクリプトが実行される 　* 複合機ファームウェア上で任意のコードが実行される  詳しくは、各開発者が提供する情報を確認してください。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 各製品開発者が提供する情報をもとに、ファームウェアをアップデートしてください。  [ワークアラウンドを実施する] 次の軽減策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 複合機をインターネットに直接接続せず、ファイアウォールやルーター等で保護されたネットワーク内で使用する 　* パスワードを設定することで、複合機の Web ページへのアクセスを制限する（*1） 　* 複合機の管理者パスワードを工場出荷時の初期値から変更し、適切に管理する  （*1）日本市場向け製品においては、この機能は工場出荷値で有効と設定されているが、日本市場向け以外の製品では無効と設定されている  対策方法の詳細については、［ベンダ情報］に掲載の各製品開発者が提供している情報を参照してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "シャープ株式会社",
+					"vulinfoid": "シャープ株式会社 の告知ページ",
+					"url": "https://jp.sharp/business/print/information/info_security_2024-05.html"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝テック",
+					"vulinfoid": "東芝テック株式会社 の告知ページ",
+					"url": "https://www.toshibatec.co.jp/information/20240531_02.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28955",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28955"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-35244",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-35244"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-29146",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-29146"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36248",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36248"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-29978",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-29978"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36249",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36249"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-32151",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-32151"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36251",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36251"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-33605",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-33605"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36254",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36254"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-33610",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-33610"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-33616",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-33616"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-28038",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-28038"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-34162",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-34162"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93051062",
+					"url": "https://jvn.jp/vu/JVNVU93051062/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-121",
+					"url": "https://cwe.mitre.org/data/definitions/121.html",
+					"title": "スタックベースのバッファオーバーフロー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-798",
+					"url": "https://cwe.mitre.org/data/definitions/798.html",
+					"title": "ハードコードされた認証情報の使用"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-767",
+					"url": "https://cwe.mitre.org/data/definitions/767.html",
+					"title": "公開メソッドによる重要な内部変数へのアクセス"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-732",
+					"url": "https://cwe.mitre.org/data/definitions/732.html",
+					"title": "重要なリソースに対する不適切なパーミッションの割り当て"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-312",
+					"url": "https://cwe.mitre.org/data/definitions/312.html",
+					"title": "重要な情報の平文保存"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-256",
+					"url": "https://cwe.mitre.org/data/definitions/256.html",
+					"title": "認証情報の平文保存"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-284",
+					"url": "https://cwe.mitre.org/data/definitions/284.html",
+					"title": "不適切なアクセス制御"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-257",
+					"url": "https://cwe.mitre.org/data/definitions/257.html",
+					"title": "復元可能な形式でのパスワード保存"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-06-03T11:52:26+09:00",
+					"description": "[2024年06月03日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-06-03T13:38:44+09:00",
+		"datelastupdated": "2024-06-03T13:38:44+09:00",
+		"datepublic": "2024-05-31T00:00:00+09:00"
+	}
+}
