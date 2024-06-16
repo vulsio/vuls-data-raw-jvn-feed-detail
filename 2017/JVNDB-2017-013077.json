@@ -1,9 +1,9 @@
 {
 	"vulinfoid": "JVNDB-2017-013077",
 	"vulinfodata": {
-		"title": "Android の Upstream カーネルにおける情報漏えいに関する脆弱性",
+		"title": "Android の Upstream カーネルにおける境界外読み取りに関する脆弱性",
 		"vulinfodescription": {
-			"overview": "Android の Upstream カーネルには、情報漏えいに関する脆弱性が存在します。  本脆弱性は、Android ID: A-70526974 として公開されています。"
+			"overview": "Android の Upstream カーネルには、境界外読み取りに関する脆弱性が存在します。  本脆弱性は、Android ID: A-70526974 として公開されています。"
 		},
 		"affected": {
 			"affecteditem": [
@@ -30,24 +30,24 @@
 				{
 					"version": "2.0",
 					"severity": {
-						"text": "Medium",
+						"text": "Low",
 						"type": "Base"
 					},
-					"base": "5",
-					"vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N"
+					"base": "3.6",
+					"vector": "AV:L/AC:L/Au:N/C:P/I:N/A:P"
 				},
 				{
 					"version": "3.0",
 					"severity": {
-						"text": "Medium",
+						"text": "High",
 						"type": "Base"
 					},
-					"base": "5.3",
-					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+					"base": "7.1",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H"
 				}
 			],
 			"impactitem": {
-				"description": "情報を取得される可能性があります。"
+				"description": "情報を取得される、およびサービス運用妨害 (DoS) 状態にされる可能性があります。 "
 			}
 		},
 		"solution": {
@@ -90,9 +90,9 @@
 				{
 					"type": "cwe",
 					"name": "JVNDB",
-					"vulinfoid": "CWE-200",
-					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
-					"title": "情報漏えい"
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
 				}
 			]
 		},
