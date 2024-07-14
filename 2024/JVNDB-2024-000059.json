@@ -1,0 +1,137 @@
+{
+	"vulinfoid": "JVNDB-2024-000059",
+	"vulinfodata": {
+		"title": "複数のWebmin製品における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "Webminが提供する複数の製品には、次の複数の脆弱性が存在します。<ul><li>sysinfo.cgiにクロスサイトスクリプティング（CWE-79）（CVE-2024-36450）</li><li>session_login.cgiにクロスサイトスクリプティング（CWE-79）（CVE-2024-36453）</li><li>ajaxtermモジュールに不十分な許可や権限の不適切な取扱い（CWE-280）（CVE-2024-36451）</li><li>ajaxtermモジュールにクロスサイトリクエストフォージェリ（CWE-352）（CVE-2024-36452）</li></ul>CVE-2024-36450、CVE-2024-36451、CVE-2024-36452 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：三井物産セキュアディレクション株式会社 米山 俊嗣 氏  CVE-2024-36453 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：株式会社STNet 森山 響 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Webmin Project",
+					"productname": "Usermin",
+					"cpe": {
+						"text": "cpe:/a:webmin:usermin",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.820より前のバージョン(CVE-2024-36453)"
+					]
+				},
+				{
+					"name": "Webmin Project",
+					"productname": "Webmin",
+					"cpe": {
+						"text": "cpe:/a:webmin:webmin",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.910より前のバージョン(CVE-2024-36450)",
+						"1.970より前のバージョン(CVE-2024-36453)",
+						"2.003より前のバージョン(CVE-2024-36451、CVE-2024-36452)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "脆弱性を悪用された場合、次のような影響を受ける可能性があります。<ul><li>当該製品を使用しているサイトにアクセスしたユーザのウェブブラウザ上で、任意のスクリプトを実行される（CVE-2024-36450、CVE-2024-36453）</li><li>権限を持たないユーザによって、コンソールセッションを乗っ取られる（CVE-2024-36451）</li><li>当該製品にログインした状態のユーザが、細工されたページにアクセスした場合、意図しない操作をさせられる（CVE-2024-36452）</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Usermin",
+					"vulinfoid": "Usermin",
+					"url": "https://webmin.com/usermin/"
+				},
+				{
+					"type": "vendor",
+					"name": "Webmin",
+					"vulinfoid": "Webmin",
+					"url": "https://webmin.com/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36450",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36450"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36451",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36451"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36452",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36452"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-36453",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-36453"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#81442045",
+					"url": "https://jvn.jp/jp/JVN81442045/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-352",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-352.html",
+					"title": "クロスサイトリクエストフォージェリ"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-07-05T09:41:12+09:00",
+					"description": "[2024年07月09日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-07-09T12:17:55+09:00",
+		"datelastupdated": "2024-07-09T12:17:55+09:00",
+		"datepublic": "2024-07-09T00:00:00+09:00"
+	}
+}
