@@ -1,0 +1,98 @@
+{
+	"vulinfoid": "JVNDB-2024-000075",
+	"vulinfodata": {
+		"title": "ORCにおけるスタックベースのバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "GStreamerが提供するORCは、通常、GStreamerのプラグイン開発に利用されます。ORCのorcparse.cに、スタックベースのバッファオーバーフロー（CWE-121）の脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：NTTセキュリティホールディングス株式会社 川古谷　裕平 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "GStreamer",
+					"productname": "ORC",
+					"cpe": {
+						"text": "cpe:/a:gstreamer_project:orc",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"0.4.39より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "ORCコンパイラを利用して開発を行う際に細工されたファイルを処理した場合、ビルド環境で任意のコードが実行される可能性があります。これにより、開発用のマシンまたはCIビルド環境が侵害される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ソフトウェアを最新版にアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "GitLab",
+					"vulinfoid": "commit fb7db9ae: Use vasprintf() if available for error messages and otherwise vsnprintf()",
+					"url": "https://gitlab.freedesktop.org/gstreamer/orc/-/commit/fb7db9ae3e8ac271651d1884a3611d30bac04a98"
+				},
+				{
+					"type": "vendor",
+					"name": "GStreamer",
+					"vulinfoid": "Library of Optimized Inner Loops Runtime Compiler",
+					"url": "https://gstreamer.freedesktop.org/modules/orc.html"
+				},
+				{
+					"type": "vendor",
+					"name": "GStreamer",
+					"vulinfoid": "Orc 0.4.39 bug-fix release",
+					"url": "https://gstreamer.freedesktop.org/news/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-40897",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-40897"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#02030803",
+					"url": "https://jvn.jp/jp/JVN02030803/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-07-22T16:48:44+09:00",
+					"description": "[2024年07月26日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-07-26T12:08:18+09:00",
+		"datelastupdated": "2024-07-26T12:08:18+09:00",
+		"datepublic": "2024-07-26T00:00:00+09:00"
+	}
+}

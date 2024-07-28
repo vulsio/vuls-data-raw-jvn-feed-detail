@@ -1,0 +1,92 @@
+{
+	"vulinfoid": "JVNDB-2024-004559",
+	"vulinfodata": {
+		"title": "三菱電機製 MELIPC シリーズ MI5122-VW における「スマートデバイス通信ゲートウェイ」のインストール先フォルダに不適切なアクセス許可設定",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELIPC シリーズ MI5122-VW には、「スマートデバイス通信ゲートウェイ」がプリインストールされています。 このソフトウェアに関連するフォルダのアクセス許可には Everyone も含まれているため、一般ユーザ権限で当該フォルダ内のファイルを変更可能です (CWE-276、<a href=\"https://www.cve.org/CVERecord?id=CVE-2024-3904\"target=\"blank\">CVE-2024-3904</a>) 。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、 JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELIPC シリーズ MI5122-VW",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:melipc_series_mi5122-vw",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェアバージョン \"05\" から \"07\" まで"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該機器にログインしたユーザによって特定のフォルダに悪意のあるプログラムを設置された場合、「スマートデバイス通信ゲートウェイ」の実行権限で悪意のあるプログラムが実行される可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 対象となるフォルダのアクセス許可から Everyone を削除してください。 詳細は、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2024-003.pdf\"target=\"blank\">開発者が提供する情報</a> を参照してください。  [後続製品への移行を検討する] 開発者は、本脆弱性の対策をした次の製品・バージョンを提供しています。 　* MELIPC シリーズ MI5122-VW ファームウェアバージョン \"08\" およびそれ以降  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "MELIPC シリーズ MI5122-VW における悪意のあるプログラムが実行される脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2024-003.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-3904",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-3904"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-24-191-02",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-24-191-02"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91215350",
+					"url": "https://jvn.jp/vu/JVNVU91215350/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-276",
+					"url": "https://cwe.mitre.org/data/definitions/276.html",
+					"title": "不適切なデフォルトパーミッション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-07-22T17:30:19+09:00",
+					"description": "[2024年07月22日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-07-22T17:40:51+09:00",
+		"datelastupdated": "2024-07-22T17:40:51+09:00",
+		"datepublic": "2024-07-19T00:00:00+09:00"
+	}
+}
