@@ -1,0 +1,92 @@
+{
+	"vulinfoid": "JVNDB-2024-000076",
+	"vulinfodata": {
+		"title": "SDoPにおけるスタックベースのバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "SDoPには、入力データの取り扱い不備に起因するスタックベースのバッファオーバーフロー(CWE-121)の脆弱性が存在します。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：NTTセキュリティホールディングス株式会社 川古谷　裕平 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Philip Hazel",
+					"productname": "SDoP",
+					"cpe": {
+						"text": "cpe:/a:misc:philip_hazel_sdop",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.11 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品のユーザが、特別に細工されたXMLファイルを処理するよう誘導された場合、ユーザの環境で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 開発者は、本脆弱性を修正するコミットをバージョン1.11として追加しました。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Philip Hazel",
+					"vulinfoid": "GitHub SDoP",
+					"url": "https://github.com/PhilipHazel/SDoP"
+				},
+				{
+					"type": "vendor",
+					"name": "Philip Hazel",
+					"vulinfoid": "commit ff83d85: Prevent stack smashing if revisionflag is given a stupidly long value",
+					"url": "https://github.com/PhilipHazel/SDoP/commit/ff83d851b4b39ff2fd37ab2ab14365649515b023"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-41881",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-41881"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#16420523",
+					"url": "https://jvn.jp/jp/JVN16420523/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-07-26T11:55:09+09:00",
+					"description": "[2024年07月29日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-07-29T12:10:30+09:00",
+		"datelastupdated": "2024-07-29T12:10:30+09:00",
+		"datepublic": "2024-07-29T00:00:00+09:00"
+	}
+}
