@@ -1,0 +1,98 @@
+{
+	"vulinfoid": "JVNDB-2023-003744",
+	"vulinfodata": {
+		"title": "三菱電機製複数の FA エンジニアリングソフトウェア製品におけるインストール時の不適切なファイルアクセス権設定の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する複数の FA エンジニアリングソフトウェア製品には、デフォルト以外のインストールフォルダに当該製品がインストールされている場合、インストール時のファイルアクセス権の設定が不適切な脆弱性（CWE-276、CVE-2023-4088）が存在します。 なお、該当製品がデフォルトのインストールフォルダにインストールされている場合には、本脆弱性の影響を受けません。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.3",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "本脆弱性が悪用された場合、悪意のあるプログラムが実行され、当該製品内部の情報を取得、改ざん、削除されたり、当該製品がサービス運用妨害（DoS）状態にされたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 開発者は以下の回避策ないし軽減策を推奨しています。  　* デフォルトのインストールフォルダにインストールする（*1） 　* インストールフォルダの変更が必要な場合には、管理者権限を持ったユーザのみに変更権限が与えられたフォルダを、インストールフォルダとして指定する 　* 当該製品を使用する端末を LAN 内で使用し、信頼できないネットワークやホスト、ユーザからのリモートログインをブロックする 　* 当該製品を使用する端末をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク（VPN）等で不正アクセスを防止したうえで、信頼できるユーザのみにリモートログインを許可する 　* 信頼できないファイルを開いたり、信頼できないリンクをクリックしない  （*1）この回避策が有効とならない製品およびバージョンが一部存在します。  詳しくは、開発者が提供する情報を確認してください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "複数のFAエンジニアリングソフトウェア製品における悪意のあるプログラムが実行される脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2023-010.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2023-4088",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2023-4088"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-23-269-03",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-23-269-03"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96447193",
+					"url": "https://jvn.jp/vu/JVNVU96447193/"
+				},
+				{
+					"type": "advisory",
+					"name": "National Vulnerability Database (NVD)",
+					"vulinfoid": "CVE-2023-4088",
+					"url": "https://nvd.nist.gov/vuln/detail/CVE-2023-4088"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2023-09-21T13:52:18+09:00",
+					"description": "[2023年09月21日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2023-09-28T11:45:57+09:00",
+					"description": "[2023年09月28日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-23-269-03) を追加"
+				},
+				{
+					"historyno": "3",
+					"datetime": "2024-07-05T14:06:45+09:00",
+					"description": "[2024年07月05日]\\n  概要：内容を更新\\n  影響を受けるシステム：内容を更新\\n  対策：内容を更新"
+				}
+			]
+		},
+		"datefirstpublished": "2023-09-21T13:52:18+09:00",
+		"datelastupdated": "2024-07-05T15:01:43+09:00",
+		"datepublic": "2023-09-20T00:00:00+09:00"
+	}
+}
