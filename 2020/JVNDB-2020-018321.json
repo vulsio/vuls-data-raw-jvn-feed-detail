@@ -1,0 +1,95 @@
+{
+	"vulinfoid": "JVNDB-2020-018321",
+	"vulinfodata": {
+		"title": "NETGEAR 製の複数製品にバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "NETGEAR 製の複数製品にはバッファオーバーフローの脆弱性があります。  多くの NETGEAR 製品では、製品の管理機能を提供する目的で、httpd プロセスで動作する Web サーバが組み込まれています。複数の Netgear 製品で動作する Web サーバにおいて、upgrade_check.cgi ハンドラの処理中に攻撃者が任意長のヘッダサイズを指定することが可能なため、スタックベースのバッファオーバーフローが発生する脆弱性が発見されました。  本脆弱性は以下の諸問題のため、影響が深刻化するおそれがあります。  1. 当該製品では httpd が root 権限で動作している 2. NETGEAR 製品では、バッファオーバーフロー対策に用いられる Stack cookie (カナリア値) が使用されていないものが多い 3. 本脆弱性の攻撃には認証を必要としない 4. CSRF 対策のトークンがチェックされる前の段階で本脆弱性の攻撃が可能 5. 機器の情報が /currentsetting.htm ページを閲覧するだけで取得できるため、攻撃者にとって攻撃対象の選定が容易  なお、一部の当該機器を対象とした、本脆弱性の実証コードが公開されています。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ネットギア",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/o:netgear:multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "遠隔の攻撃者によって、root 権限で任意のコードを実行されるおそれがあります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 当該製品の一部については、<a href=\"https://kb.netgear.com/ja/000061982/\" target=blank>開発者からアップデートが提供されています</a>。開発者が提供する情報をもとに最新版にアップデートしてください。  [ワークアラウンドを実施する] 開発者から本脆弱性に対する回避策が提示されています。開発者によるサポート情報の「暫定回避策」を参照してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ネットギアジャパン合同会社",
+					"vulinfoid": "セキュリティアドバイザリー",
+					"url": "https://kb.netgear.com/ja/000061982/"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96632139",
+					"url": "https://jvn.jp/vu/JVNVU96632139/"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#576779",
+					"url": "https://kb.cert.org/vuls/id/576779"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "GRIMM",
+					"url": "https://blog.grimm-co.com/2020/06/soho-device-exploitation.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "grimm-co / NotQuite0DayFriday - Github",
+					"url": "https://github.com/grimm-co/NotQuite0DayFriday/tree/master/2020.06.15-netgear"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Netgear devices affected by - Google Sheets",
+					"url": "https://docs.google.com/spreadsheets/d/1Tzq97rRisoZwKNQ1pUYE6phwl4LL7KnZxc828n-hXW0/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "CERT/CC Blog",
+					"url": "https://insights.sei.cmu.edu/cert/2019/10/its-time-to-retire-your-unsupported-things.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "ZDI-20-712 | Zero Day Initiative",
+					"url": "https://www.zerodayinitiative.com/advisories/ZDI-20-712/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-08-22T11:14:47+09:00",
+					"description": "[2024年08月22日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-08-22T12:07:33+09:00",
+		"datelastupdated": "2024-08-22T12:07:33+09:00",
+		"datepublic": "2020-06-29T00:00:00+09:00"
+	}
+}

@@ -1,0 +1,71 @@
+{
+	"vulinfoid": "JVNDB-2020-018322",
+	"vulinfodata": {
+		"title": "勾配降下法を使用する機械学習モデルに、誤った識別をさせるような入力を作成することが可能な問題",
+		"vulinfodescription": {
+			"overview": "勾配降下法を用いて学習させたモデルを用いた分類を行う場合に、任意の分類結果が得られるような入力を意図的に作成することが可能です。これは、<a href=\"https://arxiv.org/ftp/arxiv/papers/1911/1911.11034.pdf\" target=\"blank\">Kumar et al.</a> による攻撃分類では、perturbation attacks や adversarial examples in the physical domain に該当します。  攻撃対象のシステムに対して、攻撃者がデータの入力や出力の確認などを行うことができる余地が大きいほど、攻撃が成功する可能性は大きくなります。 また、学習プロセスに関する情報（教師データ、学習結果、学習モデル、テストデータなど）があれば、攻撃はより容易に行えるようになります。  現状では、<a href=\"https://github.com/Trusted-AI/adversarial-robustness-toolbox/tree/main/notebooks\" target=\"blank\">数秒</a>で攻撃できるものから何週間も必要になるものまで様々な事例が知られています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "本件はアルゴリズムの脆弱性であり、攻撃対象となるシステムにおいて機械学習の仕組みがどのように使われているかによって影響は異なります。 以下に、現在知られている中から典型的な事例を3つ挙げます。  　* 音声からテキストへの自動変換システムに対し、<a href=\"https://arxiv.org/abs/1801.01944\" target=\"blank\">任意の結果に誤変換させることが可能であることを実証</a> 　* 写真データを使った顔認識システムに対し、照明操作、眼鏡着用、写真データ加工などによって<a href=\"https://dl.acm.org/doi/10.1145/2976749.2978392\" target=\"blank\">意図的に誤認識させることが可能であることを実証</a> 　* 2019 年 3 月に発表された<a href=\"https://keenlab.tencent.com/en/2019/03/29/Tencent-Keen-Security-Lab-Experimental-Security-Research-of-Tesla-Autopilot/\" target=\"blank\">論文</a>では、車線認識機能を持つ Tesla Autopilot に対し、実験用走行環境ではあるが、路面に貼られたステッカーによって意図的に車線変更させる実験に成功。また、2020 年 1 月に発表された<a href=\"https://eprint.iacr.org/2020/085\" target=\"blank\">論文</a>では、同様の手法がドローンなどによる路面への投影によっても可能であることを実証 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "以下の2項目を実施することを推奨します。  [1. 攻撃に使われる入力に対し適切な結果を返すように学習させる] 攻撃として想定される入力をあらかじめ学習させておくことで、攻撃に対する耐性をある程度高めることができます。 この目的に使用できるライブラリとしては例えば、<a href=\"https://www.cleverhans.io/\" target=\"blank\">Cleverhans</a>、<a href=\"https://github.com/bethgelab/foolbox\" target=\"blank\">Foolbox</a>、<a href=\"https://github.com/Trusted-AI/adversarial-robustness-toolbox\" target=\"blank\">ART:Adversarial Robustness Toolkit</a> があります。  [2. 多層防御を実践する] 機械学習ツールを使ったコンポーネントが外部からの攻撃の影響を受けにくくなるよう、システム構成を工夫してください。機械学習ツールをセキュリティ目的で使用する場合には外部からの攻撃を受ける可能性が高くなるので、この考え方は特に重要です。 機械学習の機能を持ったセキュリテイ関連ツールを評価する際に着目すべき観点についてまとめた <a href=\"https://insights.sei.cmu.edu/library/machine-learning-in-cybersecurity-a-guide/\" target=\"blank\">CMU/SEI-2019-TR-005</a> も参考にしてください。  また、機械学習への攻撃に対して、入力データを前処理する方法や損失関数に関する情報を隠蔽する方法など、複数の対策手法が提案されていますが、それら個々の対策手法に対し、対策を回避する形の攻撃が可能であるとする<a href=\"https://arxiv.org/abs/2002.08347\" target=\"blank\">研究結果</a>が公開されています。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#99619336",
+					"url": "https://jvn.jp/vu/JVNVU99619336/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#425163",
+					"url": "https://www.kb.cert.org/vuls/id/425163/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Towards the Science of Security and Privacy in Machine Learning",
+					"url": "https://arxiv.org/abs/1611.03814"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Wild Patterns: Ten Years After the Rise of Adversarial Machine Learning",
+					"url": "https://arxiv.org/abs/1712.03141"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-08-22T17:34:48+09:00",
+					"description": "[2024年08月22日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-08-23T11:44:27+09:00",
+		"datelastupdated": "2024-08-23T11:44:27+09:00",
+		"datepublic": "2020-03-25T00:00:00+09:00"
+	}
+}
