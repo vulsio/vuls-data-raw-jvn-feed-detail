@@ -1,0 +1,97 @@
+{
+	"vulinfoid": "JVNDB-2024-000086",
+	"vulinfodata": {
+		"title": "複数のセーフィー製品におけるサーバ証明書の検証不備の脆弱性",
+		"vulinfodescription": {
+			"overview": "セーフィー株式会社が提供する複数の製品には、サーバ証明書検証不備の脆弱性（CWE-295）が存在します。 また、当該製品はポート11029/tcpやBluetooth経由で操作する機能がありますが、その通信内容はAES暗号化されています。当該製品のユーザーは、機器固有の情報にもとづき、当該機器との通信用暗号鍵をクラウドサーバーから入手可能です。したがって、機器固有の情報を入手したユーザーは、（自分が所有している機器でなくとも）当該機器を直接操作することが可能となります。  この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：三井物産セキュアディレクション株式会社 塚本 泰三 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "セーフィー株式会社",
+					"productname": "QBiC CLOUD CC-2L",
+					"cpe": {
+						"text": "cpe:/a:misc:safie_qbic_cloud_cc-2l",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.1.30およびそれ以前のバージョン"
+					]
+				},
+				{
+					"name": "セーフィー株式会社",
+					"productname": "Safie One",
+					"cpe": {
+						"text": "cpe:/a:misc:safie_safie_one",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.8.2およびそれ以前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.2",
+					"vector": "CVSS:3.0/AV:A/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "中間者攻撃（man-in-the-middle attack）によって、第三者に通信内容を傍受されたり、改ざんされたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。  なお、対象製品の修正とともに、クラウドサーバー側においても、本件を悪用した攻撃手法への対策が2024年7月24日に行われています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "セーフィー株式会社",
+					"vulinfoid": "セキュリティアップデートのお知らせ",
+					"url": "https://safie.jp/information/post_6933/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-39771",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-39771"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#83440451",
+					"url": "https://jvn.jp/jp/JVN83440451/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-08-19T15:03:05+09:00",
+					"description": "[2024年08月22日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-08-22T12:07:14+09:00",
+		"datelastupdated": "2024-08-22T12:07:14+09:00",
+		"datepublic": "2024-08-22T00:00:00+09:00"
+	}
+}

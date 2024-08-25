@@ -1,0 +1,65 @@
+{
+	"vulinfoid": "JVNDB-2023-027200",
+	"vulinfodata": {
+		"title": "UEFI 実装に組み込まれた画像処理ライブラリにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "UEFI 実装に用いられる複数の画像処理ライブラリに、種々の脆弱性が発見されています。  多くの UEFI 実装では、ブート処理の初期段階において EFI システムパーティション (ESP) に保存されているブートロゴ画像を読み込み、画面に表示させています。この画像処理を行うライブラリは複数のベンダにより開発され様々な UEFI 実装に組み込まれていますが、それらの画像処理ライブラリに複数の脆弱性が発見されています。  本脆弱性を悪用する攻撃手法は発見者により「<a href=\"https://binarly.io/posts/finding_logofail_the_dangers_of_image_parsing_during_system_boot/\"target=\"blank\">LogoFAIL</a>」と呼称されています。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "当該ライブラリが用いられる UEFI 実装により脆弱性の影響は様々ですが、脆弱性が悪用された場合、ESP パーティションまたはファームウェアに対する管理権限を持つローカルの攻撃者によって、次のような影響を受ける可能性が考えられます。  　* UEFI のセキュリティ機能 (Secure Boot) を無効化される 　* UEFI Boot Order または指定されたブートパーティションを変更される 　* 不要なソフトウェアを実行され、OS への侵害が行われる "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "使用しているシステムのベンダが提供する情報を注視し、最新の UEFI ファームウェアを適用してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90984676",
+					"url": "https://jvn.jp/vu/JVNVU90984676/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#811862",
+					"url": "https://www.kb.cert.org/vuls/id/811862"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Finding LogoFAIL: The Dangers of Image Parsing During System Boot",
+					"url": "https://binarly.io/posts/finding_logofail_the_dangers_of_image_parsing_during_system_boot/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-08-22T11:23:46+09:00",
+					"description": "[2024年08月22日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-08-22T11:24:08+09:00",
+		"datelastupdated": "2024-08-22T11:24:08+09:00",
+		"datepublic": "2023-12-12T00:00:00+09:00"
+	}
+}
