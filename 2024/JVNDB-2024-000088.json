@@ -1,0 +1,162 @@
+{
+	"vulinfoid": "JVNDB-2024-000088",
+	"vulinfodata": {
+		"title": "エレコム製無線LANルーターおよび無線アクセスポイントにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "エレコム株式会社が提供する無線LANルーターおよび無線アクセスポイントには、次の複数の脆弱性が存在します。 <ul><li>easysetup.cgiおよびmenu.cgiの入力値処理の不備に起因するクロスサイトスクリプティング（CWE-79）- CVE-2024-34577、CVE-2024-42412</li><li>Telnet機能における認証の欠如（CWE-306）- CVE-2024-39300</li><li>common.cgiの入力値処理の不備に起因するスタックベースのバッファオーバーフロー（CWE-121）- CVE-2024-43689</li></ul>  CVE-2024-34577 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：GMOサイバーセキュリティ byイエラエ株式会社 石井 健太郎 氏  CVE-2024-39300 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：笹部哲郎 氏  CVE-2024-42412、CVE-2024-43689 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づき下記の方がIPAに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：株式会社Flatt Security RyotaK 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "エレコム株式会社",
+					"productname": "WAB-I1750-PS",
+					"cpe": {
+						"text": "cpe:/a:elecom:wab-i1750-ps",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.5.10およびそれ以前のバージョン(CVE-2024-39300)(CVE-2024-42412、CVE-2024-43689)"
+					]
+				},
+				{
+					"name": "エレコム株式会社",
+					"productname": "WAB-S1167-PS",
+					"cpe": {
+						"text": "cpe:/a:elecom:wab-s1167-ps",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.5.6およびそれ以前のバージョン(CVE-2024-42412、CVE-2024-43689)"
+					]
+				},
+				{
+					"name": "エレコム株式会社",
+					"productname": "WRC-X3000GS2-B ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:elecom:wrc-x3000gs2-b_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.08およびそれ以前のバージョン(CVE-2024-34577)"
+					]
+				},
+				{
+					"name": "エレコム株式会社",
+					"productname": "WRC-X3000GS2-W ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:elecom:wrc-x3000gs2-w_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.08およびそれ以前のバージョン(CVE-2024-34577)"
+					]
+				},
+				{
+					"name": "エレコム株式会社",
+					"productname": "WRC-X3000GS2A-B ファームウェア",
+					"cpe": {
+						"text": "cpe:/o:elecom:wrc-x3000gs2a-b_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v1.08およびそれ以前のバージョン(CVE-2024-34577)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 <ul><li>当該製品にログインした状態のユーザが細工されたウェブページにアクセスした場合、ユーザのウェブブラウザ上で任意のスクリプトを実行される（CVE-2024-34577、CVE-2024-42412）</li><li>Telnet機能を有効にしている場合、遠隔の第三者によって認証無しでログインされ、当該製品の設定を変更される（CVE-2024-39300）</li><li>細工されたHTTPリクエストを処理することで、任意のコードを実行される（CVE-2024-43689）</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "エレコム株式会社",
+					"vulinfoid": "無線LANルーターなど一部のネットワーク製品のセキュリティ向上のためのファームウェアアップデート実施のお知らせ",
+					"url": "https://www.elecom.co.jp/news/security/20240827-01/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-34577",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-34577"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-39300",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-39300"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-42412",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-42412"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-43689",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-43689"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#24885537",
+					"url": "https://jvn.jp/jp/JVN24885537/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-119",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-119.html",
+					"title": "バッファエラー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-08-20T15:49:23+09:00",
+					"description": "[2024年08月27日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-08-27T12:28:40+09:00",
+		"datelastupdated": "2024-08-27T12:28:40+09:00",
+		"datepublic": "2024-08-27T00:00:00+09:00"
+	}
+}

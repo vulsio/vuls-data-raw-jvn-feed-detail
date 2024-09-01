@@ -1,0 +1,92 @@
+{
+	"vulinfoid": "JVNDB-2024-006787",
+	"vulinfodata": {
+		"title": "xfpt におけるスタックベースのバッファオーバーフローの脆弱性",
+		"vulinfodescription": {
+			"overview": "xfpt には、入力データの取り扱い不備に起因するスタックベースのバッファオーバーフロー（CWE-121）の脆弱性が存在します。  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者： NTT セキュリティホールディングス株式会社 川古谷 裕平 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "Philip Hazel",
+					"productname": "xfpt",
+					"cpe": {
+						"text": "cpe:/a:misc:philip_hazel_xfpt",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.01 より前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7",
+					"vector": "CVSS:3.0/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "当該製品のユーザが、特別に細工されたファイルを処理するよう誘導された場合、ユーザの環境で任意のコードを実行される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 ソースコードリポジトリ上では本脆弱性の修正はすでにコミットされており、次のバージョン 1.01 がリリースされる際にはこの修正内容も取り込まれる予定です。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Philip Hazel",
+					"vulinfoid": "GitHub xfpt",
+					"url": "https://github.com/PhilipHazel/xfpt"
+				},
+				{
+					"type": "vendor",
+					"name": "Philip Hazel",
+					"vulinfoid": "Commit a690304: Diagnose error if macro expansion makes a line too long for its buffer",
+					"url": "https://github.com/PhilipHazel/xfpt/commit/a690304bbd3fd19e9dfdad50dcc87ad829f744e4"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-43700",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-43700"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#96498690",
+					"url": "https://jvn.jp/vu/JVNVU96498690/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-121",
+					"url": "https://cwe.mitre.org/data/definitions/121.html",
+					"title": "スタックベースのバッファオーバーフロー"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-08-29T10:52:58+09:00",
+					"description": "[2024年08月29日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-08-29T12:22:32+09:00",
+		"datelastupdated": "2024-08-29T12:22:32+09:00",
+		"datepublic": "2024-08-28T00:00:00+09:00"
+	}
+}
