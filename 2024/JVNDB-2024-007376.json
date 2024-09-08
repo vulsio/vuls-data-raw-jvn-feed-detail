@@ -1,0 +1,102 @@
+{
+	"vulinfoid": "JVNDB-2024-007376",
+	"vulinfodata": {
+		"title": "OpenSSL におけるサービス運用妨害 (DoS) の脆弱性 (Security Advisory [3rd September 2024])",
+		"vulinfodescription": {
+			"overview": "OpenSSL Project より、<a href=\"https://openssl-library.org/news/secadv/20240903.txt\"target=\"blank\">OpenSSL Security Advisory [3rd September 2024]</a> （\"Possible denial of service in X.509 name checks (CVE-2024-6119)\"）が公開されました。  深刻度−中 (Severity：Moderate) OpenSSL を用いるアプリケーションにおいて X.509 サーバ証明書の検証を行う際、Subject Alternative Name フィールド内の otherName の検証時に誤ったメモリアドレスを参照してアクセスエラーが生じる問題 (CWE-843、CVE-2024-6119) が報告されています。  なお本脆弱性は、証明書チェーンの検証には影響を与えません。一般的に TLS サーバがクライアント証明書を要求することは少なく、要求する場合においても識別子に対する名前のチェックは行われないため、影響は限定的となります。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0",
+						"3.1",
+						"3.2",
+						"3.3"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "アプリケーションプログラムが予期せず終了し、サービス運用妨害 (DoS) 状態となる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者は本脆弱性を修正した以下バージョンをリリースしました。  　* OpenSSL 3.3.2 (3.3系ユーザ向け) 　* OpenSSL 3.2.3 (3.2系ユーザ向け) 　* OpenSSL 3.1.7 (3.1系ユーザ向け) 　* OpenSSL 3.0.15 (3.0系ユーザ向け)  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.1 Series Release Notes",
+					"url": "https://openssl-library.org/news/openssl-3.1-notes/"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.0 Series Release Notes",
+					"url": "https://openssl-library.org/news/openssl-3.0-notes/"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [3rd September 2024]",
+					"url": "https://openssl-library.org/news/secadv/20240903.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.3 Series Release Notes",
+					"url": "https://openssl-library.org/news/openssl-3.3-notes/"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL 3.2 Series Release Notes",
+					"url": "https://openssl-library.org/news/openssl-3.2-notes/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-6119",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-6119"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91755094",
+					"url": "https://jvn.jp/vu/JVNVU91755094/"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-843",
+					"url": "https://cwe.mitre.org/data/definitions/843.html",
+					"title": "型の取り違え"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-06T10:36:19+09:00",
+					"description": "[2024年09月06日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-06T11:10:49+09:00",
+		"datelastupdated": "2024-09-06T11:10:49+09:00",
+		"datepublic": "2024-09-05T00:00:00+09:00"
+	}
+}
