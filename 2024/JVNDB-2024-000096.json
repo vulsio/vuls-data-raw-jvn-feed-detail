@@ -1,0 +1,97 @@
+{
+	"vulinfoid": "JVNDB-2024-000096",
+	"vulinfodata": {
+		"title": "Pgpool-IIにおける情報漏えいの脆弱性",
+		"vulinfodescription": {
+			"overview": "Pgpool-IIは、PostgreSQLのクラスタ管理ツールです。Pgpool-IIのクエリキャッシュ機能には、情報漏えい（CWE-213）の脆弱性があります。  この脆弱性情報は、製品利用者への周知を目的に、開発者がIPAに報告し、JPCERT/CCが開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "PgPool Global Development Group",
+					"productname": "Pgpool-II",
+					"cpe": {
+						"text": "cpe:/a:pgpool:pgpool-ii",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.2系のすべてのバージョン",
+						"3.3系のすべてのバージョン",
+						"3.4系のすべてのバージョン",
+						"3.5系のすべてのバージョン",
+						"3.6系のすべてのバージョン",
+						"3.7系のすべてのバージョン",
+						"4.0系のすべてのバージョン",
+						"4.1.0から4.1.21までのバージョン（4.1系）",
+						"4.2.0から4.2.18までのバージョン（4.2系）",
+						"4.3.0から4.3.11までのバージョン（4.3系）",
+						"4.4.0から4.4.8までのバージョン（4.4系）",
+						"4.5.0から4.5.3までのバージョン（4.5系）"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "4.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "データベースユーザがクエリキャッシュにアクセスすることにより、本来そのユーザに取得が許可されていないテーブルのデータを取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は次のバージョンで修正されています。<ul><li>Pgpool-II 4.5.4（4.5系）</li><li>Pgpool-II 4.4.9（4.4系）</li><li>Pgpool-II 4.3.12（4.3系）</li><li>Pgpool-II 4.2.19（4.2系）</li><li>Pgpool-II 4.1.22（4.1系）</li></ul>Pgpool-II 3.2系から 4.0系まではサポートが終了しているため、修正版はリリースされません。 Pgpool-II 4.0系およびそれ以前のバージョンを使用している場合は、Pgpool-II 4.1系以降の最新バージョンへのアップグレードを検討してください。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を回避することが可能です。<ul><li>クエリキャッシュの利用を止める（memory_cache_enabled = off）</li></ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "PgPool Global Development Group",
+					"vulinfoid": "Pgpool Wiki",
+					"url": "https://www.pgpool.net/mediawiki/index.php/Main_Page#News"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-45624",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-45624"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#67456481",
+					"url": "https://jvn.jp/jp/JVN67456481/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-200",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-200.html",
+					"title": "情報漏えい"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-04T15:52:18+09:00",
+					"description": "[2024年09月09日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-09T14:16:29+09:00",
+		"datelastupdated": "2024-09-09T14:16:29+09:00",
+		"datepublic": "2024-09-09T00:00:00+09:00"
+	}
+}

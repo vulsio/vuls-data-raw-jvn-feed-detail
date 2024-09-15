@@ -1,0 +1,59 @@
+{
+	"vulinfoid": "JVNDB-2023-027251",
+	"vulinfodata": {
+		"title": "SSH 接続の安全性を低下させる攻撃手法 Terrapin Attack について",
+		"vulinfodescription": {
+			"overview": "SSH 接続においてハンドシェイク中にシーケンス番号の操作を可能とする攻撃手法「Terrapin Attack」が報告されています。  通常、SSH 接続時のハンドシェイク処理では、シーケンス番号順にパケットがやり取りされ、途中のパケットが削除された状態で次のパケットを受信すると、シーケンス番号が一致しないことが検出され、接続が中断されます。 Terrapin Attack では、SSH 接続のハンドシェイク通信を傍受および改ざん可能な攻撃者によりハンドシェイク中に IGNORE メッセージが挿入されると、シーケンス番号の不整合が正常に検出できなくなります。その結果、サーバから送信される EXT_INFO メッセージを削除することも可能になります。EXT_INFO メッセージは SSH のセキュリティを向上させる拡張機能を含むため、EXT_INFO が削除されることにより、SSH の安全性を低下させられる可能性があります。  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "EXT_INFO メッセージが削除されることにより SSH 接続のセキュリティ機能が無効化され、安全性が低下する。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 使用する SSH 実装のアップデート情報を注視し、パッチやアップデートを適用してください。  [暗号方式を変更する] SSH 実装で利用している暗号方式を、本手法の影響を受けない、AES-GCM などのアルゴリズムに変更してください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#95077890",
+					"url": "https://jvn.jp/ta/JVNTA95077890/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Terrapin Attack",
+					"url": "https://terrapin-attack.com/"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:35+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:35+09:00",
+		"datelastupdated": "2024-09-11T18:11:35+09:00",
+		"datepublic": "2023-12-26T00:00:00+09:00"
+	}
+}
