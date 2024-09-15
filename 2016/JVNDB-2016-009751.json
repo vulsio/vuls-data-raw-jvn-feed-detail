@@ -1,0 +1,119 @@
+{
+	"vulinfoid": "JVNDB-2016-009751",
+	"vulinfodata": {
+		"title": "Mirai 等のマルウェアで構築されたボットネットによる DDoS 攻撃の脅威",
+		"vulinfodescription": {
+			"overview": "近年、IoT 機器を使用した大規模なボットネットが構築され、分散型サービス運用妨害 (DDoS) 攻撃に使用されています。システムやネットワークの保護のために、IoT 機器および接続されているハードウェアを保護することが重要です。  2016 年 9 月 20 日、<a href=\"https://krebsonsecurity.com/\" target=\"blank\">Krebs on Security</a> が最大で 620Gbps を超える<a href=\"https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/\" target=\"blank\">大規模な DDoS 攻撃を受けました</a> 。この DDoS 攻撃は、Mirai と呼ばれるマルウェアに感染した IoT 機器によって構築されたボットネットから行われました。Mirai は、脆弱な IoT 機器を定期的にスキャンして感染し、ボットネットに取り込みます。Mirai は初期設定で使われることの多いユーザ名・パスワードの組み合わせ 62　組からなるリストを使用して、脆弱な機器をスキャンします。多くの IoT 機器は保護が全くされていない、または不十分なため、この短いリストでも<a href=\"https://news.sophos.com/en-us/category/serious-security/\" target=\"blank\">数十万の機器</a>へのアクセスが可能になります。Mirai の作者を名乗る人物によると、<a href=\"https://www.pcworld.com/article/410530/iot-malware-behind-record-ddos-attack-is-now-available-to-all-hackers.html\" target=\"blank\">38 万を超える IoT 機器</a>が Mirai に感染し、Krebs on Security に対する攻撃に使用されたとのことです。  9 月下旬には、フランスのウェブホスト OVH に対して、Mirai を使用した<a href=\"https://arstechnica.com/information-technology/2016/09/botnet-of-145k-cameras-reportedly-deliver-internets-biggest-ddos-ever/\" target=\"blank\">最大で 1.5Tbps</a> にもなる DDoS 攻撃が行われました。  Mirai の影響を受けた IoT 機器は主に、<a href=\"https://www.darkreading.com/cyberattacks-data-breaches/iot-ddos-attack-code-released\" target=\"blank\">家庭用ルータ、ネットワークカメラ、デジタルビデオレコーダでした</a>。9 月末には Mirai のソースコードが公開されたため、他の DDoS 攻撃に広く使用される可能性があります。  10 月初旬、Krebs on Security は、IoT ボットネットによる攻撃を引き起こす、<a href=\"https://krebsonsecurity.com/2016/10/source-code-for-iot-botnet-mirai-released/\" target=\"blank\">Mirai とは別系統のマルウェア</a>について言及しています。この別系統のマルウェアはまだソースコードが明らかになっていませんが、Bashlite と呼ばれています。Bashlite も Mirai 同様、初期設定で使われることの多いユーザ名・パスワードを使用してシステムに感染します。セキュリティ企業 Level 3 Communications は、Bashlite に感染したおよそ 100 万もの IoT 機器</a>からなるボットネットが構築されている可能性があると述べています。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "Mirai のソースコードがインターネット上に公開されたことで、今後より多くのボットネットが構築され、DDoS 攻撃が行われる可能性があります。Mirai および Bashlite はともに、認証情報が初期設定のままで使用されている IoT 機器に容易に感染します。このようなボットネットによって組織の通信が著しく侵害されたり、大きな金銭的被害を受けたりする可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "DDoS 攻撃への対策を行ってください。DDoS 攻撃に関する更なる情報は、US-CERT の <a href=\"https://www.cisa.gov/sites/default/files/publications/DDoS%20Quick%20Guide.pdf\" target=\"blank\">DDoS Quick Guide (PDF)</a> や、<a href=\"https://www.cisa.gov/news-events/alerts/2014/01/17/udp-based-amplification-attacks\" target=\"blank\">US-CERT Alert (TA14-017A)</a> をご確認ください。  [感染した機器への対応] 感染した IoT 機器から Mirai を駆除するために、機器の管理者およびユーザは、次の対応を実施してください。  <ol> <li>機器をネットワークから切り離す</li> <li>ネットワークから切り離したまま、機器を再起動する (Mirai はメモリにのみ存在するため、機器を再起動することで削除されます)</li> <li>機器のパスワードを初期設定から強固なパスワードに変更する (強固なパスワードについて詳しくは <a href=\"https://www.cisa.gov/news-events/news/choosing-and-protecting-passwords\" target=\"blank\">US-CERT Security Tip (ST04-002)</a> をご確認ください)</li> <li>強固なパスワードに変更されているのを確認してから、ネットワークに再接続する (パスワードを変更せずに再接続すると、またすぐに Mirai に感染してしまいます)</li> </ol>  [感染を防ぐための回避策] マルウェア感染から IoT 機器を保護するために、機器の管理者およびユーザは、次の対策の実施を検討してください。 <ul> <li>初期設定のパスワードから強固なパスワードに変更し、変更が反映されていることを確認する</li> <li>常に最新のパッチを適用する</li> <li>どうしても必要な状況でない限り UPnP (ユニバーサルプラグアンドプレイ) 機能を無効化する</li> <li>セキュリティ上安全であることに定評がある開発者の製品を使用する</li> <li>家庭や職場で使用されている機器の機能を理解する。パスワードは初期設定から変更し、信頼できない Wi-Fi は使用しない</li> <li>個人で使用するすべての医療機器の機能を理解する (データの送受信や遠隔操作が可能な機器はマルウェアに感染する可能性があります)</li> <li><a href=\"https://isc.sans.edu/diary/What+is+happening+on+2323TCP/21563\" target=\"blank\">2323/TCP および 23/TCP</a> を監視する (これらのポートを使って、IoT 機器に Telnet 接続する事例が報告されています)</li> <li>48101 番ポート宛ての不審な通信を監視する (感染した機器は、定期的に 48101 番ポートを使用して通信を行います)</li> </ul>  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ALERT",
+					"vulinfoid": "ICS-ALERT-16-286-01",
+					"url": "https://www.cisa.gov/news-events/ics-alerts/ics-alert-16-286-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#95530271",
+					"url": "https://jvn.jp/ta/JVNTA95530271/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Security Tip",
+					"vulinfoid": "Choosing and Protecting Passwords",
+					"url": "https://www.cisa.gov/news-events/news/choosing-and-protecting-passwords"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA14-017A",
+					"url": "https://www.cisa.gov/news-events/alerts/2014/01/17/udp-based-amplification-attacks"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "What is happening on 2323/TCP?",
+					"url": "https://isc.sans.edu/diary/What+is+happening+on+2323TCP/21563"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "KrebsOnSecurity Hit With Record DDoS",
+					"url": "https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Mirai “internet of things” malware from Krebs DDoS attack goes open source",
+					"url": "https://news.sophos.com/en-us/category/serious-security/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Smart device malware behind record DDoS attack is now available to all hackers",
+					"url": "https://www.pcworld.com/article/410530/iot-malware-behind-record-ddos-attack-is-now-available-to-all-hackers.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Record-breaking DDoS reportedly delivered by >145k hacked cameras",
+					"url": "https://arstechnica.com/information-technology/2016/09/botnet-of-145k-cameras-reportedly-deliver-internets-biggest-ddos-ever/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "IoT DDoS Attack Code Released",
+					"url": "https://www.darkreading.com/cyberattacks-data-breaches/iot-ddos-attack-code-released"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Source Code for IoT Botnet ‘Mirai’ Released",
+					"url": "https://krebsonsecurity.com/2016/10/source-code-for-iot-botnet-mirai-released/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "DDoS Quick Guide",
+					"url": "https://www.cisa.gov/sites/default/files/publications/DDoS%20Quick%20Guide.pdf"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:35+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:35+09:00",
+		"datelastupdated": "2024-09-11T18:11:35+09:00",
+		"datepublic": "2016-11-04T00:00:00+09:00"
+	}
+}

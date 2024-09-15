@@ -1,0 +1,89 @@
+{
+	"vulinfoid": "JVNDB-2016-009752",
+	"vulinfodata": {
+		"title": "WPAD と名前衝突の問題",
+		"vulinfodescription": {
+			"overview": "Web Proxy Auto-Discovery (WPAD) に関する DNS クエリが社内ネットワークで解決されずに、インターネット上のネームサーバに送られる状況が観測されています。新 gTLD プログラムが開始され新たな gTLD が新設されていることから、WPAD に関する DNS クエリが外部に漏れることで名前衝突の問題が発生する可能性があります。  第三者が、関連するドメイン名の登録と WPAD に関する応答を行う環境を用意することにより、中間者攻撃 (Man-In-The-Middle attack) が行われる可能性があります。  WPAD は、社内ネットワーク上のシステムにプロキシ設定を配布するためのプロトコルです。ネットワークに接続するデバイスを個別に設定しなくても、WPAD が有効になっていれば、一定の規則に従って自動的にネットワーク上のプロキシ設定ファイルにアクセスします。  Windows システムや Internet Explorer では、初期設定で WPAD の使用が有効になっています。Mac や Linux システムでは、Safari、Chrome、Firefox は WPAD に対応していますが、初期設定では無効になっています。  新 gTLD プログラムが開始され、新たな gTLD の新設が行われています。社内ネットワークでこのような gTLD が独自に使われていた場合、一定の条件のもとで (例えば社内ネットワークで使われていた PC を自宅に持ち帰ってインターネット環境に接続したり、社外に移動してインターネット環境に接続するなど)、WPAD に関する DNS クエリがインターネット上の DNS サーバに送られてしまうことがあります。 このような DNS クエリ「漏れ」が発生している場合、第三者が、該当ドメインのドメイン登録と DNS クエリに対して応答する環境を用意することにより、中間者攻撃 (Man-In-The-Middle attack) を行う可能性があります。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "WPAD に関する DNS クエリが外部に送信されている場合、第三者によって中間者攻撃 (Man-In-The-Middle attack) が行われる可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "US-CERT は以下の事項について検討することを推奨しています。  　* 社内ネットワークで WPAD 機能を使用しない場合、デバイス設定時に WPAD を無効にする 　* 社内ネットワークで使用するシステムのホスト名についても、インターネット上の DNS を起点とする FQDN を使用する 　* 社内ネットワークで使用している独自 TLD に関するクエリは社内のネームサーバで適切に応答する 　* wpad.dat ファイルの取得リクエストが社外に送信されないよう、ファイアウォールやプロキシを設定し、ログを監視する 　* WPAD に関してどのようなトラフィックが発生するかを確認し、可能であれば関連する DNS ドメインを登録・管理する 　* 名前衝突により重大な問題が発生する場合、ICANN に報告する (<a href=\"https://forms.icann.org/en/help/name-collision/report-problems\"target=\"blank\">https://forms.icann.org/en/help/name-collision/report-problems</a>) "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#91048063",
+					"url": "https://jvn.jp/ta/JVNTA91048063/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Technical Cyber Security Alert",
+					"vulinfoid": "TA15-240A",
+					"url": "https://www.us-cert.gov/ncas/alerts/TA15-240A"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "2016 IEEE Symposium on Security and Privacy",
+					"url": "http://www.ieee-security.org/TC/SP2016/papers/0824a675.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "ICANN",
+					"url": "https://www.icann.org/resources/pages/name-collision-2013-12-06-en"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "ICANN new gTLDs",
+					"url": "https://newgtlds.icann.org/en/about/program"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Verisign Technology News",
+					"url": "https://www.verisign.com/en_US/internet-technology-news/cert-alert/index.xhtml"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Verisign White Paper",
+					"url": "https://www.verisign.com/assets/Enterprise_Remediation_for_WPAD_Name_Collision_Vulnerability.pdf"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:35+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:35+09:00",
+		"datelastupdated": "2024-09-11T18:11:35+09:00",
+		"datepublic": "2016-05-24T00:00:00+09:00"
+	}
+}

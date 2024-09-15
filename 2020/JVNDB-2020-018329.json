@@ -1,0 +1,83 @@
+{
+	"vulinfoid": "JVNDB-2020-018329",
+	"vulinfodata": {
+		"title": "産業用ロボット制御用のソフトウェアシステムにおける問題",
+		"vulinfodescription": {
+			"overview": "トレンドマイクロ社とミラノ工科大学の研究チームにより、産業用ロボット制御用ソフトウェアのセキュリティに関する調査レポートが公開されました。 産業用ロボットの運用環境では、多数のロボットとこれらを制御するための制御用 PC がネットワークで接続され、各ロボット上で動作するモーションサーバと呼ばれるプログラムと制御用 PC が通信しつつ所定の作業を行います。このような環境で使用される通信プロトコルやコマンドは、多くの場合、産業用ロボットの開発元が独自に設計・実装しています。 研究チームでは複数の開発元が提供しているソフトウェア環境を調査し、悪意ある攻撃者が同一ネットワークに接続した場合の対策を考慮していないといったシステム設計上の問題や、ネットワーク経由で受け取ったデータが適切な範囲の値であるかどうかを検証する、いわゆる入力値検証機能が実装されていないなどといったプログラム品質上の問題を発見しています。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "産業用ロボットと制御用 PC を接続するネットワークに悪意ある攻撃者がアクセスした場合、機微な情報を取得されたり、産業用ロボットを操作されたりする可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "調査レポートでは、次のような対策を提案しています。  短期的な対策 　* 外部からのネットワーク経由の攻撃を防ぐため、産業用ロボットとその制御用 PC が接続するネットワークを、その他のシステムから切り離した形で構成する 　* 悪意ある攻撃者が産業用ロボットとその制御用 PC が接続するネットワークにアクセスした場合に備え、不正なトラフィックを検知する仕組みや個々のノードを保護する手段を導入する 　* 産業用ロボットを制御するプログラムの品質向上のため、定期的なコードレビューなどを含む適切なソースコード管理を実施する  中期的な対策 　* 制御プログラムの開発者による入力値検証や認証処理の実装を支援するセキュリティライブラリを提供する 　* 制御プログラムの開発者がそのまま使っても問題ない程度にセキュリティ上の考慮がなされたモーションサーバーの参照実装を提供する 　* 定期的なソースコードレビューで脆弱性が発見されたら修正用パッチを提供する体制を整える  長期的な対策 　* 次世代の産業用ロボット制御システムでは、設計段階からセキュリティを考慮する 　* 制御プログラムの実行環境に権限管理の仕組みを導入し、制御プログラムで適切な権限管理を行う 　* 制御用プログラムのコード署名やその検証を行う仕組みを導入し、不正なプログラムの実行を防ぐ  また、ROS-Industrial consortium も、本件に関して<a href=\"https://rosindustrial.org/news/2020/6/23/how-to-securely-control-your-robot-with-ros-industrial\" target=\"blank\">ブログ記事</a>を公開しています。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Canonical",
+					"vulinfoid": "Securing ROS robotic platforms",
+					"url": "https://ubuntu.com/engage/securing-ros-on-robotics-platforms-whitepaper"
+				},
+				{
+					"type": "vendor",
+					"name": "Open Source Robotic Foundation",
+					"vulinfoid": "Security - ROS Wiki",
+					"url": "https://wiki.ros.org/Security"
+				},
+				{
+					"type": "vendor",
+					"name": "ROS-Industrial",
+					"vulinfoid": "How to securely control your robot with ROS-Industrial",
+					"url": "https://rosindustrial.org/news/2020/6/23/how-to-securely-control-your-robot-with-ros-industrial"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ALERT",
+					"vulinfoid": "ICS-ALERT-20-217-01",
+					"url": "https://www.cisa.gov/news-events/ics-alerts/ics-alert-20-217-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#98870234",
+					"url": "https://jvn.jp/ta/JVNTA98870234/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Unveiling the Hidden Risks of Industrial Automation Programming)",
+					"url": "https://www.trendmicro.com/vinfo/ph/security/news/internet-of-things/unveiling-the-hidden-risks-of-industrial-automation-programming"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:35+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:35+09:00",
+		"datelastupdated": "2024-09-11T18:11:35+09:00",
+		"datepublic": "2020-08-21T00:00:00+09:00"
+	}
+}

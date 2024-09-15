@@ -1,0 +1,98 @@
+{
+	"vulinfoid": "JVNDB-2017-015264",
+	"vulinfodata": {
+		"title": "Windows 8 およびそれ以降のバージョンにおいて、アドレス空間配置のランダム化が適切に行われない脆弱性",
+		"vulinfodescription": {
+			"overview": "Microsoft Windows 8 では、システム全体への ASLR 強制の実装方法が変更されました。この変更により、十分なエントロピーを持って ASLR 強制の動作を行わせるためには system-wide bottom-up ASLR を有効にすることが必要となりました。 EMET や Windows Defender Exploit Guard でシステム全体への ASLR 強制を有効に設定した場合には bottom-up ASLR が有効にされないため、ASLR を有効にしていない実行ファイルのメモリ上への再配置ランダム化が適切に行われません。   <b>アドレス空間配置のランダム化 (ASLR, Address Space Layout Randomization)</b>  Windows Vista では、<a href=\"https://blogs.technet.microsoft.com/srd/2010/12/08/on-the-effectiveness-of-dep-and-aslr/\"target=\"blank\">メモリ上のコードを使った攻撃への対策</a>として ASLR という機能が追加されました。実行モジュールをメモリ上に読み込む位置を予測不可能にすることで、ROP (Return-oriented programming) などのように、特定のメモリアドレスにあるコードを悪用した攻撃が成功する確率を減らすものです。 ただし、実行ファイルを作成する際にオプション <a href=\"https://msdn.microsoft.com/en-us/library/bb384887.aspx\"target=\"blank\">/DYNAMICBASE</a> をつけてリンクされていなければ、ASLR 機能は有効にはなりません。  <b>EMET と Windows Defender Exploit Guard</b>  ASLR やその他の脆弱性緩和手法を有効にしていないアプリケーションを保護するために、Microsoft EMET がリリースされました。EMET の GUI (グラフィカルユーザインターフェース) では、脆弱性緩和手法をシステム全体に適用したりアプリケーションごとに適用したりといった設定を行うことが可能です。 システム全体への適用では、Windows OS 自体に実装された脆弱性緩和手法を有効にします。アプリケーションごとの適用では、EMET のライブラリが当該アプリケーション固有のプロセス空間にロードされます。 Windows 10 の Fall Creators Update からは、EMET の機能は <a href=\"https://blogs.technet.microsoft.com/mmpc/2017/10/23/windows-defender-exploit-guard-reduce-the-attack-surface-against-next-generation-malware/\"target=\"blank\">Windows Defender Exploit Guard</a> に受け継がれました。  <b>ASLR の強制と Windows 8</b>  EMET と Windows Defender Exploit Guard は、/DYNAMICBASE オプション付きでリンクされていないコードに対しても強制的に ASLR を有効にすることができます。これは、アプリケーションごとに、もしくはシステム全体に対して設定することができます。Windows 8 より前のバージョンでは、システム全体に ASLR を強制するかどうかはレジストリキー HKLM\\SYSTEM\\CurrentControlSet\\Control\\SessionManager\\Memory Management\\MoveImages の値で制御します。このレジストリキーの値を 0xFFFFFFFF に設定することで、Windows はリロケーションテーブルを持つ実行ファイルのロード時に ASLR を適用するようになります。これによって、システムの再起動ごとに、また異なるシステム間において、ロードされるメモリ位置が変化するようになります。 Windows 8 からは、システム全体に ASLR を強制する実装方法が変更されました。Windows 8 からは、システム全体への ASLR 強制はレジストリキー HKLM\\System\\CurrentControlSet\\Control\\Session Manager\\Kernel\\MitigationOptions の値で制御されます。また、システム全体への ASLR 適用時には、じゅうぶんなエントロピーを持った状態で ASLR の強制を行うために、システム全体に対して <a href=\"https://blogs.technet.microsoft.com/srd/2013/12/11/software-defense-mitigating-common-exploitation-techniques/\"target=\"blank\">bottom-up ASLR</a> が適用されている必要があります。  <b>問題点</b>  EMET と Windows Defender Exploit Guard では、システム全体に対する ASLR を有効にする際、bottom-up ASLR を有効にしていません。 Windows Defender Exploit Guard では、bottom-up ASLR の設定をシステム全体に適用するオプションが設けられていますが、GUI の初期設定値 \"On by default\" ではレジストリ値の適切な変更を行いません。この結果、/DYNAMICBASE オプション付きでリンクされていないプログラムには、エントロピーが不十分なまま ASLR が適用されることになり、このようなプログラムの再配置先は予測可能になってしまいます。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "Microsoft Windows 8",
+					"cpe": {
+						"text": "cpe:/o:microsoft:windows_8",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"およびそれ以降の Windows システム"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "EMET もしくは Windows Defender Exploit Guard を使用して ASLR の強制を有効にしているシステムにおいて、アプリケーションが予測可能なメモリ位置に再配置される可能性があります。結果として、ROP (Return-oriented programming) などのように、特定のメモリアドレスにあるコードを悪用する攻撃が容易になる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "2017 年 11 月 20 日現在、対策方法は不明です。  [ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本脆弱性の影響を軽減することが可能です。  　* システム全体に ASLR の強制を適用する場合、システム全体の bottom-up ASLR も合わせて有効にする 　 Windows 8 およびそれ以降のシステムでは、次のレジストリ値をインポートすることで、システム全体の bottom-up ASLR ならびに ASLR の強制を有効にできます。  　　Windows Registry Editor Version 5.00  　　[HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\kernel] 　　\"MitigationOptions\"=hex:00,01,01,00,00,00,00,00,00,00,00,00,00,00,00,00  上記レジストリ値をインポートした場合、既存の設定を上書きすることに注意が必要です。上記レジストリ値のうち、1つめの 01 が ASLR 強制の指定、2つめの 01 が bottom-up ASLR の指定を表します。 また過去には、古いタイプの AMD/ATI ビデオカードのドライバを使用している環境でシステム全体への ASLR 強制を有効にすると、<a href=\"https://insights.sei.cmu.edu/cert/2012/06/amd-video-drivers-prevent-the-use-of-the-most-secure-setting-for-microsofts-exploit-mitigation-exper.html\"target=\"blank\">問題</a>が発生することがありました。この問題は、2012年6月にリリースされた Catalyst 12.6 ドライバによって修正されています。   "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "Windows Defender Exploit Guard: Reduce the attack surface against next-generation malware",
+					"url": "https://blogs.technet.microsoft.com/mmpc/2017/10/23/windows-defender-exploit-guard-reduce-the-attack-surface-against-next-generation-malware/"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "On the effectiveness of DEP and ASLR",
+					"url": "https://blogs.technet.microsoft.com/srd/2010/12/08/on-the-effectiveness-of-dep-and-aslr/"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "/DYNAMICBASE (Use address space layout randomization)",
+					"url": "https://msdn.microsoft.com/en-us/library/bb384887.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft",
+					"vulinfoid": "Software defense: mitigating common exploitation techniques",
+					"url": "https://blogs.technet.microsoft.com/srd/2013/12/11/software-defense-mitigating-common-exploitation-techniques/"
+				},
+				{
+					"type": "advisory",
+					"name": "CERT/CC blog",
+					"vulinfoid": "AMD Video Drivers Prevent the Use of the Most Secure Setting for Microsoft's Exploit Mitigation Experience Toolkit (EMET)",
+					"url": "https://insights.sei.cmu.edu/cert/2012/06/amd-video-drivers-prevent-the-use-of-the-most-secure-setting-for-microsofts-exploit-mitigation-exper.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91363799",
+					"url": "https://jvn.jp/vu/JVNVU91363799/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90967793",
+					"url": "https://jvn.jp/vu/JVNVU90967793/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#817544",
+					"url": "https://www.kb.cert.org/vuls/id/817544"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:36+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:36+09:00",
+		"datelastupdated": "2024-09-11T18:11:36+09:00",
+		"datepublic": "2017-11-20T00:00:00+09:00"
+	}
+}

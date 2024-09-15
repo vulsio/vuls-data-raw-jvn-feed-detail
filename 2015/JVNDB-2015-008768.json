@@ -1,0 +1,83 @@
+{
+	"vulinfoid": "JVNDB-2015-008768",
+	"vulinfodata": {
+		"title": "Microsoft Windows における証明書に関する問題",
+		"vulinfodescription": {
+			"overview": "マイクロソフト ターミナル サービス ライセンス証明機関 (CA) により発行された X.509 デジタル証明書がコード署名に使われていることが、マルウエア \"Flame\" の解析において発見されました。  Mircosoft は、問題となる証明書を無効にするアップデートを公開しました。   MSRC blog では、次のように述べられています。  　　\"We identified that an older cryptography algorithm could be exploited and then be used to sign code as if it originated from Microsoft. Specifically, our Terminal Server Licensing Service, which allowed customers to authorize Remote Desktop services in their enterprise, used that older algorithm and provided certificates with the ability to sign code, thus permitting code to be signed as if it came from Microsoft.\"  また、Security Research & Defense blog では、次のように述べられています。  　　\"What we found is that certificates issued by our Terminal Services licensing certification authority, which are intended to only be used for license server verification, could also be used to sign code as Microsoft. Specifically, when an enterprise customer requests a Terminal Services activation license, the certificate issued by Microsoft in response to the request allows code signing without accessing Microsoft’s internal PKI infrastructure.\"  問題となる証明書は、次の通りです。詳細は、Security Research & Defense blog で提供されています。  　　Certificate: Microsoft Enforced Licensing Intermediate PCA 　　Issued by: Microsoft Root Authority 　　Thumbprint: 2a 83 e9 02 05 91 a5 5f c6 dd ad 3f b1 02 79 4c 52 b2 4e 70  　　Certificate: Microsoft Enforced Licensing Intermediate PCA 　　Issued by: Microsoft Root Authority 　　Thumbprint: 3a 85 00 44 d8 a1 95 cd 40 1a 68 0c 01 2c b0 a3 b5 f8 dc 08  　　Certificate: Microsoft Enforced Licensing Registration Authority CA (SHA1) 　　Issued by: Microsoft Root Certificate Authority 　　Thumbprint: fa 66 60 a9 4a b4 5f 6a 88 c0 d7 87 4d 89 a8 63 d7 4d ee 97  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "マイクロソフト",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:microsoft:multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "Microsoft が署名したように見せかけたコード署名が行われる可能性があります。  Microsoft によると、Flame のいくつかのコンポーネントがマイクロソフト製品かのように見える署名がされていることを確認しているとのことです。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[影響を受ける証明書を無効にする] 以下のいずれかを適用することで、証明書を無効にしてください。  　* アップデートを適用する 　* 証明書の <a href=\"http://technet.microsoft.com/ja-jp/library/cc754431%28v=ws.10%29.aspx\"target=\"blank\">MMC スナップイン</a>または <a href=\"http://technet.microsoft.com/ja-jp/library/cc732443%28v=ws.10%29.aspx\"target=\"blank\">Certutil</a> コマンドを使用する  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Microsoft Ignite",
+					"vulinfoid": "Add the Certificates Snap-in to an MMC",
+					"url": "http://technet.microsoft.com/ja-jp/library/cc754431%28v=ws.10%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Ignite",
+					"vulinfoid": "Certutil",
+					"url": "http://technet.microsoft.com/ja-jp/library/cc732443%28v=ws.10%29.aspx"
+				},
+				{
+					"type": "vendor",
+					"name": "Microsoft Security Advisory",
+					"vulinfoid": "(2718704) -- Unauthorized Digital Certificates Could Allow Spoofing",
+					"url": "https://technet.microsoft.com/en-us/security/advisory/2718704"
+				},
+				{
+					"type": "vendor",
+					"name": "マイクロソフト セキュリティ アドバイザリ",
+					"vulinfoid": "(2718704) -- 承認されていないデジタル証明書により、なりすましが行われる",
+					"url": "http://technet.microsoft.com/ja-jp/security/advisory/2718704"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA12-156A",
+					"url": "https://jvn.jp/ta/JVNTA12-156A/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "TA12-156Aに対する富士通の情報",
+					"url": "http://software.fujitsu.com/jp/security/vulnerabilities/2012.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:36+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:36+09:00",
+		"datelastupdated": "2024-09-11T18:11:36+09:00",
+		"datepublic": "2015-10-21T00:00:00+09:00"
+	}
+}

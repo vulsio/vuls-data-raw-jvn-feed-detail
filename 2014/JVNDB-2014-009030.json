@@ -1,0 +1,68 @@
+{
+	"vulinfoid": "JVNDB-2014-009030",
+	"vulinfodata": {
+		"title": "Apple iOS に対する攻撃手法 Masque Attack",
+		"vulinfodescription": {
+			"overview": "Masque Attack と呼ばれる攻撃手法により、特定の条件のもとで、正規の Apple iOS アプリがマルウェアに置き換えられる可能性があります。  FireEye の研究者により、Masque Attack と呼ばれる攻撃手法が発見され、FireEye 社のブログで公開されています。  Apple iOS には、同一の bundle identifier を持つアプリをインストールする際、コード署名証明書が同一でなくてもインストールされてしまう問題があります。 Masque Attack ではこの問題を悪用し、既存アプリと同じ bundle identifier を持ったアプリを、Apple が提供する App Store や自社向けアプリを提供するための provisioning system 以外からインストールさせます。結果として、アプリが管理しているデータは削除されずに残されたまま、既存アプリの本体がインストールされたアプリに置き換えられます。  なお、Mobile Safari などプリインストールされているアプリは、影響を受けないとのことです。  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "アップル",
+					"productname": "iOS",
+					"cpe": {
+						"text": "cpe:/o:apple:iphone_os",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"7.1.1、7.1.2、8.0、8.1、8.1.1 beta"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "この攻撃手法でインストールされたアプリにより次のような影響を受けることが想定されます。  <ul> <li>元のアプリに見せかけたログイン画面を提示することにより、認証情報などを取得される</li> <li>元のアプリが管理していたデータにアクセスされる</li> <li>デバイスの活動を監視される</li> <li>デバイスの root 権限を取得される</li> <li>本物のアプリと見分けがつかない</li> </ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "Masque Attack 対策として、次の事項を推奨します。  <ol> <li>Apple の公式 App Store や自社が提供しているもの以外からアプリをインストールしない</li> <li>web ページ閲覧中に出てくるポップアップで「インストール」ボタンを押さない</li> <li>アプリを起動したときに信頼できない開発者である旨の警告が出たときは、「信頼しない (Don't Trust)」をクリックし、当該アプリをすぐにアンインストールする</li> </ol>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "富士通",
+					"vulinfoid": "TA14-317Aに対する富士通の情報",
+					"url": "https://www.fujitsu.com/jp/products/software/resources/condition/security/vulnerabilities/2014/"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ALERT",
+					"vulinfoid": "TA14-317A",
+					"url": "https://www.cisa.gov/news-events/alerts/2014/11/13/apple-ios-masque-attack-technique"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA14-317A",
+					"url": "https://jvn.jp/ta/JVNTA14-317A/index.html"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T18:11:35+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T18:11:35+09:00",
+		"datelastupdated": "2024-09-11T18:11:35+09:00",
+		"datepublic": "2014-11-14T00:00:00+09:00"
+	}
+}

@@ -1,0 +1,65 @@
+{
+	"vulinfoid": "JVNDB-2020-018327",
+	"vulinfodata": {
+		"title": "改ざんチェックのない CBC モードで暗号化された実行ファイルにおいて任意のコードを埋め込まれる問題",
+		"vulinfodescription": {
+			"overview": "NTT、兵庫県立大学および NEC の研究チームにより、改ざんチェックが行われずに CBC モードによって暗号化されているバイナリ実行ファイルに任意コードを埋め込まれる問題が発見されました。この問題は研究チームにより ACNS 2020 において公表されました。  詳細については、<a href=\"https://jvn.jp/ta/JVNTA94494000/\" target=blank>JVNTA#94494000</a> を参照してください。  本文書は、NTT 技術企画部門の藤田倫太朗氏、兵庫県立大学 暗号・情報セキュリティ研究グループの五十部孝典氏、NEC セキュリティ研究所の峯松一彦氏、および JPCERT/CC が共同で執筆しました。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "（複数のベンダ）",
+					"productname": "（複数の製品）",
+					"cpe": {
+						"text": "cpe:/a:misc:multiple_vendors",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "攻撃コードは適切な箇所に挿入される必要があり、攻撃者は 2<sup>-10</sup> 〜 2<sup>-18</sup> 程度の確率で挿入個所を推測する必要がありますが、攻撃が成功した場合には以下のような影響があります。  <ul> <li>改ざんされたことに気づかずに実行ファイルを復号して実行した場合、ファイルを実行する権限において、予期しないアプリケーションの実行や、開放したポートからの任意コマンドの待ち受けなど、任意のコードを介してあらゆる操作が実行される可能性があります</li> </ul> "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アプリケーション・システムが実施できる対策] 1. 対策として、アプリケーション側で「改ざん検知機能を付ける」ことが有効です。具体的には暗号化/復号時に以下の対策を行うことで攻撃を防ぐことが可能です。  ・暗号化時 暗号化時と異なる鍵 K' を用い、以下のように (C || IV) の MAC 値 T をとることで、安全な改ざん検知の値を算出できます。  T = MAC (K', C || IV)  なお、<a href=\"https://www.cryptrec.go.jp/list.html\" target=blank>電子政府推奨の暗号リスト</a>によると MAC のアルゴリズムは CMAC と HMAC が推奨されています。 この際の、(C || IV, T) を暗号文として保持しておきます。  ・復号時 復号の際には、T = MAC (K', C||IV) を再度計算して、保存してある T と一致しているか確認します。計算した T が一致している場合のみ復号を行い平文を求めます。攻撃者により C が改ざんされていると、計算した T の値と保存しているTの値が異なるため改ざんを検知でき、攻撃を防ぐことができます。攻撃者は K' を知らないため、改ざんした C' に対する正しい MAC 値 T = MAC (K', C'||IV) を計算することができません。この対策を行うことで理論的安全性が保証されます。  2. 暗号前後でメッセージの長さが同一でなければならないような制約や仕様がある場合には、XTS モードを利用することが有効策となります。  [ユーザが実施できる対策] 利用するアプリケーションが CBC モードを利用しており、改ざんチェック機能が付いていない場合でも、オプションにより暗号方式やモードを選択できる場合があります。この場合は、CBC や CFB 以外のモードを選択することが有効です。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNTA#94494000",
+					"url": "https://jvn.jp/ta/JVNTA94494000/"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "ACE in Chains: How Risky Is CBC Encryption of Binary Executable Files? | SpringerLink",
+					"url": "https://link.springer.com/chapter/10.1007/978-3-030-57808-4_10"
+				},
+				{
+					"type": "advisory",
+					"name": "関連文書",
+					"vulinfoid": "Cryptology ePrint Archive: Report 2020/1159 - ACE in Chains : How Risky is CBC Encryption of Binary Executable Files ?",
+					"url": "https://eprint.iacr.org/2020/1159"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-11T16:57:25+09:00",
+					"description": "[2024年09月11日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-11T16:57:25+09:00",
+		"datelastupdated": "2024-09-11T16:57:25+09:00",
+		"datepublic": "2020-11-25T00:00:00+09:00"
+	}
+}
