@@ -1,0 +1,108 @@
+{
+	"vulinfoid": "JVNDB-2017-015265",
+	"vulinfodata": {
+		"title": "AssetView for MacOS の「ファイル転送Webサービス」に複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "株式会社ハンモックが提供する AssetView for MacOS のサーバ側モジュールである「ファイル転送Webサービス」には、次の複数の脆弱性が存在します。 　* ディレクトリトラバーサルの脆弱性 (CWE-22) - CVE-2017-2240 　* SQL インジェクションの脆弱性 (CWE-89) - CVE-2017-2241  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: 株式会社リクルートテクノロジーズ　RECRUIT RED TEAM　西村宗晃 氏 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "株式会社ハンモック",
+					"productname": "AssetView",
+					"cpe": {
+						"text": "cpe:/a:hammock:assetview",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"for MacOS Ver.9.2.0 以前の全てのバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "2.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.5",
+					"vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P"
+				},
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "6.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、次のような影響を受ける可能性があります。 　* 当該サーバにアクセス可能な攻撃者によって、任意のファイルを取得される - CVE-2017-2240 　* 当該サーバにアクセス可能な攻撃者によって、当該サーバのデータベース上で任意の SQL 文を実行される - CVE-2017-2241 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[パッチを適用する] 開発者が提供する <a href=\"https://www.hammock.jp/assetview/info/170714.html\"target=\"blank\">情報</a> をもとに、セキュリティ対策パッチ（AssetView ファイル転送WebサービスHotfix）を適用してください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HAMMOCK",
+					"vulinfoid": "AssetView for MacOS サーバーに2件の脆弱性",
+					"url": "https://www.hammock.jp/assetview/info/170714.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-2240",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2240"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2017-2241",
+					"url": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-2241"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93377948",
+					"url": "https://jvn.jp/vu/JVNVU93377948/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-89",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-89.html",
+					"title": "SQLインジェクション"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-20T18:09:20+09:00",
+					"description": "[2024年09月20日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-20T18:09:20+09:00",
+		"datelastupdated": "2024-09-20T18:09:20+09:00",
+		"datepublic": "2017-07-14T00:00:00+09:00"
+	}
+}
