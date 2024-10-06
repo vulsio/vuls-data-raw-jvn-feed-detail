@@ -1,0 +1,86 @@
+{
+	"vulinfoid": "JVNDB-2024-000107",
+	"vulinfodata": {
+		"title": "RevoWorksクラウドにおける意図しないプロセス実行が可能となる脆弱性",
+		"vulinfodescription": {
+			"overview": "ジェイズ・コミュニケーション株式会社が提供するRevoWorksクラウドは、クライアントPC上にローカル環境から分離した環境（以下、「分離環境」）を構築します。分離環境内では、ウェブブラウザを実行するとともに、許可されていないプロセスを検知し実行を抑制する機能が提供されていますが、許可されていないプロセスを検知する機能に不備があります（CWE-863）。  この脆弱性情報は、製品利用者への周知を&#12140;的に、開発者がIPAに報告し、JPCERT/CCが開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ジェイズ・コミュニケーション株式会社",
+					"productname": "RevoWorksクラウドクライアント",
+					"cpe": {
+						"text": "cpe:/a:jscom:revoworks_cloudclient",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.0.91およびそれ以前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "分離環境内で、意図しないプロセスが実行される可能性があります。 なお、分離環境内でマルウェアを実行してしまったとしてもローカル環境への干渉はできませんが、分離環境内で扱う情報が外部に漏えいしたり、レジストリ改ざんなどによって分離環境の動作が妨害される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、RevoWorksクラウドクライアントを最新版にアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ジェイズ・コミュニケーション株式会社",
+					"vulinfoid": "【重要】RevoWorksクラウドにおける意図しないプロセス実行が可能となる脆弱性について",
+					"url": "https://jscom.jp/news-20240918/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-47560",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-47560"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#39280069",
+					"url": "https://jvn.jp/jp/JVN39280069/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-09-26T18:39:21+09:00",
+					"description": "[2024年09月30日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-09-30T12:38:36+09:00",
+		"datelastupdated": "2024-09-30T12:38:36+09:00",
+		"datepublic": "2024-09-30T00:00:00+09:00"
+	}
+}
