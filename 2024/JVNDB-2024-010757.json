@@ -1,0 +1,116 @@
+{
+	"vulinfoid": "JVNDB-2024-010757",
+	"vulinfodata": {
+		"title": "OpenSSL における境界外書き込みの脆弱性 (OpenSSL Security Advisory [16th October 2024])",
+		"vulinfodescription": {
+			"overview": "OpenSSL Projectより、<a href=\"https://openssl-library.org/news/secadv/20241016.txt\"target=\"blank\">OpenSSL Security Advisory [16th October 2024]</a> (\"Low-level invalid GF(2^m) parameters lead to OOB memory access (CVE-2024-9143)\") が公開されました。  深刻度 - 低 (Severity：Low) OpenSSL において、信頼できない値を用いて低レベルの GF(2^m) 楕円曲線 API を使用すると、メモリの境界外読み取りまたは書き込みが発生する問題 (CWE-787、CVE-2024-9143) が報告されています。 ただし、楕円曲線暗号を使用するプロトコルでは、いわゆる「名前付きの曲線」のみがサポートされるか、もしくは曲線パラメータを指定できる場合においても、本脆弱性を悪用できるような問題のある入力値を表現できないバイナリ曲線のエンコーディングが指定されています。そのため、本脆弱性が悪用可能となるようなアプリケーションが稼働している可能性は低いと指摘されていることに留意してください。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.0.2zl より前の 1.0.2 系バージョン",
+						"1.1.1zb より前の 1.1.1 系バージョン",
+						"3.0.16 より前の 3.0.0 系バージョン",
+						"3.1.8 より前の 3.1.0 系バージョン",
+						"3.2.4 より前の 3.2.0 系バージョン",
+						"3.3.3 より前の 3.3.0 系バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "アプリケーションのクラッシュあるいはリモートコード実行が行われる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 2024 年 10 月 18 日現在、開発者は本脆弱性の深刻度を低と評価しており、OpenSSL の git リポジトリにて修正は行われていますが、本脆弱性への対応のみを目的とした修正バージョンは提供されていません。次回のリリースで今回の修正を反映する予定とのことです。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.0.16 git commit 72ae83ad",
+					"url": "https://github.com/openssl/openssl/commit/72ae83ad214d2eef262461365a1975707f862712"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": " github.openssl.org: 1.1.1zb git commit 8efc0cba（要ログイン）",
+					"url": "https://github.openssl.org/openssl/extended-releases/commit/8efc0cbaa8ebba8e116f7b81a876a4123594d86a"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.openssl.org: 1.0.2zl git commit 99472514130（要ログイン）",
+					"url": "https://github.openssl.org/openssl/extended-releases/commit/9d576994cec2b7aa37a91740ea7e680810957e41"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [16th October 2024]",
+					"url": "https://openssl-library.org/news/secadv/20241016.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.3.3 git commit c0d3e4d3",
+					"url": "https://github.com/openssl/openssl/commit/c0d3e4d32d2805f49bec30547f225bc4d092e1f4"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.2.4 git commit bc7e04d7",
+					"url": "https://github.com/openssl/openssl/commit/bc7e04d7c8d509fb78fc0e285aa948fb0da04700"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.1.8 git commit fdf67233",
+					"url": "https://github.com/openssl/openssl/commit/fdf6723362ca51bd883295efe206cb5b1cfa5154"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-9143",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-9143"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#90424473",
+					"url": "https://jvn.jp/vu/JVNVU90424473/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-787",
+					"url": "https://cwe.mitre.org/data/definitions/787.html",
+					"title": "境界外書き込み"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-10-21T16:53:35+09:00",
+					"description": "[2024年10月21日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-10-21T17:29:52+09:00",
+		"datelastupdated": "2024-10-21T17:29:52+09:00",
+		"datepublic": "2024-10-18T00:00:00+09:00"
+	}
+}

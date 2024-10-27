@@ -1,0 +1,103 @@
+{
+	"vulinfoid": "JVNDB-2024-010932",
+	"vulinfodata": {
+		"title": "三菱電機製 GENESIS64 および MC Works64 におけるインストール時の不適切なファイルアクセス権設定の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機製 GENESIS64 および MC Works64 には、インストール時の不適切なファイルアクセス権設定の脆弱性 (CWE-276、CVE-2024-7587) が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "GENESIS64",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:genesis64",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Version 10.97.3 およびそれ以前の全バージョン"
+					]
+				},
+				{
+					"name": "三菱電機",
+					"productname": "MC Works64",
+					"cpe": {
+						"text": "cpe:/a:mitsubishielectric:mc_works64",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"全バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "該当製品のインストーラに同梱されている GenBroker32 が、GENESIS64 または MC Works64 と同一の PC にインストールされている場合、攻撃者によって C:\\ProgramData\\ICONICS にアクセスされると、当該フォルダに保存されている機密情報やデータが漏えいまたは改ざんされたり、システムがサービス運用妨害 (DoS) 状態となったりする可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] <b>GENESIS64 Version 10.97.3 のユーザ向け：</b> GenBroker32 をアンインストールした上で、GENESIS64 にセキュリティパッチを適用し、GenBroker32 を再インストールしてください。 セキュリティパッチは、ICONICS 社運営の Webサイト <a href=\"https://iconics.force.com/community\"target=\"blank\">ICONICS Community Portal</a> からダウンロードできます。  <b>GENESIS64 Version 10.97.2 およびそれ以前 (MC Works64を含む) のユーザ向け：</b> GENESIS64 Version 10.97.3 に製品をアップグレードし、上記の手順に従い GenBroker32 を再インストールしてください。  [ワークアラウンドを実施する] GENESIS64 のセキュリティパッチの適用や GENESIS64 Version 10.97.3 へのアップグレードが難しい場合には、次の回避策および軽減策を適用してください。  <b>回避策：</b> GenBroker32 をインストールした PCのC:\\ProgramData\\ICONICS およびその配下にある全てのフォルダの権限から \"Everyone\" を手動で削除してください。配下にあるフォルダも含めて、一括で権限を削除する場合は以下の手順を実施してください。  　1. PC の C:\\ProgramData\\ICONICS のフォルダを右クリックしてプロパティ画面を開く 　2. セキュリティタブを開く 　3. 詳細設定をクリックする 　4. アクセス許可の変更をクリックする 　5. \"Everyone\" を選択して、「子オブジェクトのアクセス許可エントリすべてを、このオブジェクトから継承可能なアクセス許可エントリで置き換える」のチェックボックスにチェックを入れる 　6. 削除をクリックする 　 <b>軽減策：</b> 　* 該当製品がインストールされた PC を LAN 内で使用し、信頼できないネットワークやホスト、ユーザからのリモートログインをブロックする 　* 該当製品がインストールされた PC をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用し、信頼できるユーザのみにリモートログインを許可する 　* 当該製品がインストールされた PC、および同 PC が接続されているネットワークへの物理的なアクセスを制限する 　 詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2024-008.pdf\"target=\"blank\">開発者が提供する情報</a>を確認してください。   "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機株式会社",
+					"vulinfoid": "GENESIS64 および MC Works64 における情報の漏えい、改ざんおよびサービス拒否 (DoS) の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2024-008.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-7587",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-7587"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-24-296-01",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-24-296-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95548104",
+					"url": "http://jvn.jp/vu/JVNVU95548104/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-276",
+					"url": "https://cwe.mitre.org/data/definitions/276.html",
+					"title": "不適切なデフォルトパーミッション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-10-23T10:56:57+09:00",
+					"description": "[2024年10月23日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-10-23T11:38:32+09:00",
+		"datelastupdated": "2024-10-23T11:38:32+09:00",
+		"datepublic": "2024-10-22T00:00:00+09:00"
+	}
+}
