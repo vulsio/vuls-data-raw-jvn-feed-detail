@@ -1,0 +1,108 @@
+{
+	"vulinfoid": "JVNDB-2024-011744",
+	"vulinfodata": {
+		"title": "センチュリー・システムズ製 FutureNet NXR シリーズにおける REST-API 機能が意図せず有効化される問題",
+		"vulinfodescription": {
+			"overview": "センチュリー・システムズ株式会社が提供するルータである FutureNet NXR シリーズには、http-server（GUI）機能もしくは WEB 認証機能を有効にした状態で機器を起動した場合、REST-API 機能が自動的に有効となる問題（CWE-684）が存在します。 工場出荷時設定では http-server（GUI）機能が有効となっているため、明示的に http-server（GUI）機能および WEB 認証機能を無効に設定していない場合には REST-API 機能は有効となります。 なお、REST-API 機能で使用するユーザ名およびパスワードは、明示的に設定していなければ、工場出荷時設定のものが使われます。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "センチュリー・システムズ",
+					"productname": "FutureNet NXR-G050 シリーズ",
+					"cpe": {
+						"text": "cpe:/o:centurysys:futurenet_nxr-g050",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェア Version 21.12.5 から 21.12.11 より前"
+					]
+				},
+				{
+					"name": "センチュリー・システムズ",
+					"productname": "FutureNet NXR-G060 シリーズ",
+					"cpe": {
+						"text": "cpe:/o:centurysys:futurenet_nxr-g060",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェア Version 21.15.6C1 より前"
+					]
+				},
+				{
+					"name": "センチュリー・システムズ",
+					"productname": "FutureNet NXR-G110 シリーズ",
+					"cpe": {
+						"text": "cpe:/o:centurysys:futurenet_nxr-g110",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"ファームウェア Version 21.15.7 から 21.15.9 より前"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.8",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "第三者に REST-API 機能を使用され、当該製品の設定情報を窃取されたり、設定を変更されたりする可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、ファームウェアを最新版へアップデートしてください。  [ワークアラウンドを実施する] 開発者は、本脆弱性の影響を回避する方法を提供しています。 詳細は、開発者が提供する情報をご確認ください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "センチュリー・システムズ株式会社",
+					"vulinfoid": "センチュリー・システムズ株式会社 の告知ページ",
+					"url": "https://www.centurysys.co.jp/backnumber/nxr_common/20241031-01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-50357",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-50357"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95001899",
+					"url": "https://jvn.jp/vu/JVNVU95001899/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-684",
+					"url": "https://cwe.mitre.org/data/definitions/684.html",
+					"title": "指定された機能の不適切な提供"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-11-01T12:00:00+09:00",
+					"description": "[2024年11月01日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-11-01T12:00:00+09:00",
+		"datelastupdated": "2024-11-01T12:00:00+09:00",
+		"datepublic": "2024-10-31T00:00:00+09:00"
+	}
+}

@@ -1,0 +1,180 @@
+{
+	"vulinfoid": "JVNDB-2024-011256",
+	"vulinfodata": {
+		"title": "シャープ製および東芝テック製複合機（MFP）における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "シャープ株式会社および東芝テック株式会社が提供する複数の複合機（MFP）には、次の複数の脆弱性が存在します。  <ul> <li>領域外メモリ参照（CWE-125） <ul> <li>CVE-2024-42420</li> <li>デバイス Web ページにおけるキーワード検索の入力データ判定処理、SOAP 通信におけるリクエストパラメタの解析処理および実行処理に不備があり、領域外メモリ参照が発生する可能性がある</li> </ul> </li> <li>領域外メモリ参照（CWE-125） <ul> <li>CVE-2024-43424</li> <li>HTTP リクエストのヘッダ解析処理に不備があり、領域外メモリ参照が発生する可能性がある</li> </ul> </li> <li>領域外メモリ参照（CWE-125） <ul> <li>CVE-2024-45829</li> <li>デバイス Web ページからのデータダウンロード処理において、HTTP リクエストのクエリパラメタ解析処理に不備があり、領域外メモリ参照が発生する可能性がある</li> </ul> </li> <li>パストラバーサル（CWE-22） <ul> <li>CVE-2024-45842</li> <li>HTTP PUT リクエストの URI 判定処理に不備があり、意図しないファイルへのアクセスが可能</li> </ul> </li> <li>設定登録 API のアクセス制限不備（CWE-749） <ul> <li>CVE-2024-47005</li> <li>管理者のみに使用を制限する想定の設定登録 API を管理者権限を持っていないユーザが実行可能</li> </ul> </li> <li>認証処理の不備（CWE-288） <ul> <li>CVE-2024-47406</li> <li>HTTP リクエストの認証判定処理に不備があり、認証機能を回避される可能性がある</li> </ul> </li> <li>HTTP リクエストのクエリパラメタ解析処理の不備（CWE-644） <ul> <li>CVE-2024-47549</li> <li>デバイス Web ページからの設定情報ダウンロード処理において、HTTP リクエストのクエリパラメタ解析処理に不備があり、HTTP レスポンスのヘッダに入力データが不適切な形で混入する&nbsp;</li> </ul> </li> <li>反射型クロスサイトスクリプティング（CWE-79） <ul> <li>CVE-2024-47801</li> <li>HTTP リクエストのクエリパラメタの判定処理の不備に起因するクロスサイトスクリプティングの脆弱性</li> </ul> </li> <li>格納型クロスサイトスクリプティング（CWE-79） <ul> <li>CVE-2024-48870</li> <li>デバイス Web ページの URI 情報登録における入力値判定処理の不備に起因するクロスサイトスクリプティングの脆弱性</li> </ul> </li> </ul>  この脆弱性情報は、製品利用者への周知を目的に、シャープ株式会社が JPCERT/CC に報告し、JPCERT/CC がシャープ株式会社との調整を行いました。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "シャープ株式会社",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:sharp:multiple_product",
+						"version": "2.2"
+					}
+				},
+				{
+					"name": "東芝テック",
+					"productname": "(複数の製品)",
+					"cpe": {
+						"text": "cpe:/a:toshibatec:multiple_product",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Critical",
+						"type": "Base"
+					},
+					"base": "9.1",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性によって異なりますが、次のような可能性があります。  　* 細工された HTTP リクエストを処理することで、当該製品がハングアップする （CVE-2024-42420、CVE-2024-43424、CVE-2024-45829） 　* 細工された HTTP リクエストを処理することで、当該製品の内部のファイルにアクセスされる （CVE-2024-45842） 　* 管理者権限を持っていないユーザによって設定登録 API が使用される （CVE-2024-47005） 　* 当該製品の Web ページの認証機構を迂回してアクセスされる （CVE-2024-47406） 　* 当該製品を示す細工された URL にアクセスした場合、Web ブラウザ上で任意のスクリプトを実行される （CVE-2024-47549、CVE-2024-47801） 　* 当該製品に対し管理者権限を持ったユーザが細工した入力を行うことで、当該製品にアクセスした他ユーザのウェブブラウザ上で任意のスクリプトを実行される （CVE-2024-48870）"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 各製品開発者が提供する情報をもとに、ファームウェアをアップデートしてください。 詳しくは、[ベンダ情報] に掲載の各製品開発者が提供する情報を参照してください。  [ワークアラウンドを実施する] 以下の対応を行うことにより、本脆弱性の影響を軽減することが可能です。  　* 複合機をインターネットに直接接続せず、ファイアウォールやルーター等で保護されたネットワーク内で使用する 　* パスワードを設定し複合機の Web ページへのアクセスを制限する（本機能は工場出荷時設定で有効になっており、初期パスワードはマニュアルに記載されています） 　* 複合機の管理者パスワードを工場出荷時の初期値から変更し、適切に管理する "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "シャープ株式会社",
+					"vulinfoid": "シャープ株式会社 の告知ページ",
+					"url": "https://jp.sharp/business/print/information/info_security_2024-10.html"
+				},
+				{
+					"type": "vendor",
+					"name": "東芝テック",
+					"vulinfoid": "東芝テック株式会社 の告知ページ",
+					"url": "https://www.toshibatec.co.jp/information/20241025_01.html"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-42420",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-42420"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-48870",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-48870"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-43424",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-43424"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-45829",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-45829"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-45842",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-45842"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-47005",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-47005"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-47406",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-47406"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-47549",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-47549"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-47801",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-47801"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#95063136",
+					"url": "https://jvn.jp/vu/JVNVU95063136/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-644",
+					"url": "https://cwe.mitre.org/data/definitions/644.html",
+					"title": "HTTP ヘッダのスクリプト構文の不適切な無効化"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-79",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-79.html",
+					"title": "クロスサイトスクリプティング"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-22",
+					"url": "https://jvndb.jvn.jp/ja/cwe/CWE-22.html",
+					"title": "パス・トラバーサル"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-749",
+					"url": "https://cwe.mitre.org/data/definitions/749.html",
+					"title": "危険なメソッドや機能の公開"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-288",
+					"url": "https://cwe.mitre.org/data/definitions/288.html",
+					"title": "代替パスまたはチャネルを使用した認証回避"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-10-28T16:25:18+09:00",
+					"description": "[2024年10月28日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-10-28T16:25:18+09:00",
+		"datelastupdated": "2024-10-28T16:25:18+09:00",
+		"datepublic": "2024-10-25T00:00:00+09:00"
+	}
+}
