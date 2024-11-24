@@ -1,0 +1,98 @@
+{
+	"vulinfoid": "JVNDB-2024-013035",
+	"vulinfodata": {
+		"title": "三菱電機製 MELSEC iQ-F における指定されたタイプの入力に対する不適切な検証の脆弱性",
+		"vulinfodescription": {
+			"overview": "三菱電機株式会社が提供する MELSEC iQ-F Ethernet ユニットおよび EtherNet/IP ユニットの Ethernet ポートには、指定されたタイプの入力に対する不適切な検証（CWE-1287、CVE-2024-8403）の脆弱性が存在します。  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "三菱電機",
+					"productname": "MELSEC iQ-F シリーズ",
+					"cpe": {
+						"text": "cpe:/o:mitsubishielectric:melsec_iq-f_firmware",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"FX5-ENET 1.100 およびそれ以降",
+						"FX5-ENET/IP 1.100〜1.104"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.5",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "遠隔の第三者によって細工された不正な SLMP パケットを受信すると、当該ユニットの Ethernet 通信が、サービス運用妨害（DoS）状態になる可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "FX5-ENET の該当バージョンを使用している場合：  [ワークアラウンドを実施する] 次の回避策を適用することで、本脆弱性の影響を軽減することが可能です。  　* 当該製品を LAN 内で使用し、信頼できないネットワークやホストからのアクセスをファイアウォールでブロックする 　* 当該製品、当該製品と同一のネットワーク内に配置されたパソコンおよびネットワーク機器への物理的なアクセスを制限する 　* 当該製品をインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等を使用し、不正アクセスを防止する 　* 当該製品の IP フィルタ機能（*1）を使用し、信頼できないホストからのアクセスをブロックする  （*1）IP フィルタ機能については、以下のマニュアルを参照してください。 　* MELSEC iQ-F FX5ユーザーズマニュアル(通信編) 「13.1 IPフィルタ機能」   FX5-ENET/IP の該当バージョンを使用している場合：  [アップデートする] <a href=\"https://www.mitsubishielectric.co.jp/fa/download/index.html\"target=\"blank\">ダウンロード | 三菱電機FA</a> から、対策済みバージョン（1.106 およびそれ以降）のファームウェアアップデート情報ファイルをダウンロードし、 アップデートしてください。  ファームウェアアップデートの方法等詳細は、開発者が提供する次のマニュアルを参照してください。 　* MELSEC iQ-F FX5ユーザーズマニュアル(応用編) 「9ファームウェアアップデート機能」   詳しくは、<a href=\"https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2024-009.pdf\"target=\"blank\">開発者が提供する情報</a>を確認してください。 "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "三菱電機",
+					"vulinfoid": "MELSEC iQ-F EthernetユニットおよびEtherNet/IPユニットのEthernet ポートにおけるサービス拒否(DoS)の脆弱性",
+					"url": "https://www.mitsubishielectric.co.jp/psirt/vulnerability/pdf/2024-009.pdf"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-8403",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-8403"
+				},
+				{
+					"type": "advisory",
+					"name": "ICS-CERT ADVISORY",
+					"vulinfoid": "ICSA-24-324-01",
+					"url": "https://www.cisa.gov/news-events/ics-advisories/icsa-24-324-01"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97790713",
+					"url": "https://jvn.jp/vu/JVNVU97790713/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-1287",
+					"url": "https://cwe.mitre.org/data/definitions/1287.html",
+					"title": "指定されたタイプの入力に対する不適切な検証"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-11-20T11:20:15+09:00",
+					"description": "[2024年11月20日]\\n  掲載"
+				},
+				{
+					"historyno": "2",
+					"datetime": "2024-11-21T11:30:07+09:00",
+					"description": "[2024年11月21日]\\n  参考情報：ICS-CERT ADVISORY (ICSA-24-324-01) を追加"
+				}
+			]
+		},
+		"datefirstpublished": "2024-11-20T11:20:15+09:00",
+		"datelastupdated": "2024-11-21T11:51:50+09:00",
+		"datepublic": "2024-11-19T00:00:00+09:00"
+	}
+}

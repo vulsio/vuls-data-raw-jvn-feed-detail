@@ -1,0 +1,99 @@
+{
+	"vulinfoid": "JVNDB-2024-013260",
+	"vulinfodata": {
+		"title": "Edgecross 基本ソフトウェア Windows 版における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "一般社団法人 Edgecross コンソーシアムが提供する Edgecross 基本ソフトウェア Windows 版には、次の複数の脆弱性が存在します。  　* インストール時の不適切なファイルアクセス権設定（CWE-276）− CVE-2024-4229 　* ファイル名やパスの外部制御（CWE-73）− CVE-2024-4230  この脆弱性情報は、製品利用者への周知を目的に、開発者が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "一般社団法人 Edgecross コンソーシアム",
+					"productname": "Edgecross 基本ソフトウェア Windows版 ECP-BS1-W",
+					"cpe": {
+						"text": "cpe:/a:misc:edgecross_ecp-bs1-w",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.00 以降"
+					]
+				},
+				{
+					"name": "一般社団法人 Edgecross コンソーシアム",
+					"productname": "開発者用 Edgecross 基本ソフトウェア Windows版 ECP-BS1-W-D",
+					"cpe": {
+						"text": "cpe:/a:misc:edgecross_ecp-bs1-w-d",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"1.00 以降"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "システム上で悪意のあるプログラムが実行され、情報を取得および改ざんされたり、サービス運用妨害（DoS）状態にされたりする可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 開発者は、リスクを最小限に抑えるため、以下の回避策の適用を推奨しています。  　* CVE-2024-4229 　　- 当該製品をデフォルトのインストールフォルダへインストールするか、インストールフォルダの変更が必要な場合には、管理者権限を持ったユーザのみに変更権限が与えられたフォルダを、インストールフォルダとして指定する  　* CVE-2024-4230 　　- リアルタイムフローデザイナのプログラム実行フィードバック設定にてプログラムを指定する場合には、信頼できるファイルを指定する  　* CVE-2024-4229、CVE-2024-4230 　　- 当該製品を使用するパソコンをインターネットに接続する場合には、ファイアウォールや仮想プライベートネットワーク (VPN) 等で不正アクセスを防止したうえで、信頼できるユーザのみにリモートログインを許可する 　　- 当該製品を使用するパソコンを LAN 内で使用し、信頼できないネットワークやホスト、ユーザからのリモートログインをブロックする 　　- 信頼できないファイル（特にプロジェクトファイル）を開いたり、信頼できないリンクをクリックしないようにする "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "Edgecross Consortium",
+					"vulinfoid": "各種ダウンロード",
+					"url": "https://www.edgecross.org/ext/ja/data-download/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-4229",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-4229"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-4230",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-4230"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#92857077",
+					"url": "https://jvn.jp/vu/JVNVU92857077/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-73",
+					"url": "https://cwe.mitre.org/data/definitions/73.html",
+					"title": "ファイル名やパス名の外部制御"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-276",
+					"url": "https://cwe.mitre.org/data/definitions/276.html",
+					"title": "不適切なデフォルトパーミッション"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-11-22T10:08:46+09:00",
+					"description": "[2024年11月22日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-11-22T10:36:33+09:00",
+		"datelastupdated": "2024-11-22T10:36:33+09:00",
+		"datepublic": "2024-11-21T00:00:00+09:00"
+	}
+}
