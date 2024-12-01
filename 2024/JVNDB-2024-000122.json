@@ -1,0 +1,113 @@
+{
+	"vulinfoid": "JVNDB-2024-000122",
+	"vulinfodata": {
+		"title": "HAProxyにおけるHTTPリクエストスマグリングの脆弱性",
+		"vulinfodescription": {
+			"overview": "HAProxy Projectが提供するHAProxyのHTTP/3の実装には、不正な形式のHTTPヘッダーを受け入れる問題があり、この不正なヘッダーを含むリクエストをHTTP/1.1に準拠していないバックエンドサーバーへ転送した場合、HTTPリクエストスマグリング（CWE-444）攻撃に悪用される可能性があります。  この脆弱性情報は、下記の方が製品開発者に直接報告し、製品開発者との調整を経て、製品利用者への周知を目的に JVN での公表に至りました。 報告者: 株式会社ＦＦＲＩセキュリティ 茂木裕貴 氏"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "HAProxy Technologies",
+					"productname": "HAProxy",
+					"cpe": {
+						"text": "cpe:/a:haproxy:haproxy",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"2.6系 2.6.18およびそれ以前のバージョン",
+						"2.8系 2.8.10およびそれ以前のバージョン",
+						"2.9系 2.9.9およびそれ以前のバージョン",
+						"3.0系 3.0.2およびそれ以前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "Medium",
+						"type": "Base"
+					},
+					"base": "5.3",
+					"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+				}
+			],
+			"impactitem": {
+				"description": "本製品がACL（Access Control List）によってアクセス制限しているパスにアクセスされ、結果として機微な情報を取得される可能性があります。"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版へアップデートしてください。 本脆弱性は次のバージョンで修正されているとのことです。<ul><li>HAProxy バージョン 2.6.19</li><li>HAProxy バージョン 2.8.11</li><li>HAProxy バージョン 2.9.10</li><li>HAProxy バージョン 3.0.3</li></ul>"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "HAProxy",
+					"vulinfoid": "Repositories - haproxy-2.9.git/commit",
+					"url": "https://git.haproxy.org/?p=haproxy-2.9.git;a=commit;h=4bcaece344c8738dac1ab5bd8cc81e2a22701d71"
+				},
+				{
+					"type": "vendor",
+					"name": "HAProxy",
+					"vulinfoid": "Repositories - haproxy-3.0.git/commit",
+					"url": "https://git.haproxy.org/?p=haproxy-3.0.git;a=commit;h=95a607c4b3af09be2a495b9c2872ea252ccff603"
+				},
+				{
+					"type": "vendor",
+					"name": "HAProxy",
+					"vulinfoid": "HAProxy - The Reliable, High Perf. TCP/HTTP Load Balancer",
+					"url": "https://www.haproxy.org/"
+				},
+				{
+					"type": "vendor",
+					"name": "HAProxy",
+					"vulinfoid": "Repositories - haproxy-2.6.git/commit",
+					"url": "https://git.haproxy.org/?p=haproxy-2.6.git;a=commit;h=1afca10150ac3e4e2224055cc31b6f1e4a70efe2"
+				},
+				{
+					"type": "vendor",
+					"name": "HAProxy",
+					"vulinfoid": "Repositories - haproxy-2.8.git/commit",
+					"url": "https://git.haproxy.org/?p=haproxy-2.8.git;a=commit;h=01c1056a44823c5ffb8f74660b32c099d9b5355b"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-53008",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-53008"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#88385716",
+					"url": "https://jvn.jp/jp/JVN88385716/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-11-25T10:22:29+09:00",
+					"description": "[2023年11月27日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-11-27T12:08:26+09:00",
+		"datelastupdated": "2024-11-27T12:08:26+09:00",
+		"datepublic": "2024-11-27T00:00:00+09:00"
+	}
+}

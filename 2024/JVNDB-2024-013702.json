@@ -1,0 +1,149 @@
+{
+	"vulinfoid": "JVNDB-2024-013702",
+	"vulinfodata": {
+		"title": "富士電機製複数製品における複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "富士電機株式会社が提供する遠隔監視ソフトウェア TELLUS および TELLUS Lite、表示器の作画ソフトウェア V-SFT に含まれているシミュレータモジュールおよび遠隔監視ソフトウェア V-Server および V-Server Lite には、次の複数の脆弱性が存在します。  　* V-SFT、TELLUS、TELLLUS Lite における複数のスタックベースのバッファオーバーフロー (CWE-121) - CVE-2024-38309 　* TELLUS、TELLUS Liteにおける境界外読み取り (CWE-125) - CVE-2024-38389 　* V-Server、V-Server Liteにおける境界外読み取り (CWE-125) - CVE-2024-38658  この脆弱性情報は、下記の方が JPCERT/CC に報告し、JPCERT/CC が開発者との調整を行いました。 報告者: Michael Heinzl 氏  "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "富士電機",
+					"productname": "TELLUS",
+					"cpe": {
+						"text": "cpe:/a:fujielectric:tellus",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v4.0.19.0 およびそれ以前 (CVE-2024-38309、CVE-2024-38389)"
+					]
+				},
+				{
+					"name": "富士電機",
+					"productname": "TELLUS Lite",
+					"cpe": {
+						"text": "cpe:/a:fujielectric:tellus_lite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v4.0.19.0 およびそれ以前 (CVE-2024-38309、CVE-2024-38389)"
+					]
+				},
+				{
+					"name": "富士電機",
+					"productname": "V-Server",
+					"cpe": {
+						"text": "cpe:/a:fujielectric:v-server",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v4.0.19.0 およびそれ以前 (CVE-2024-38658)"
+					]
+				},
+				{
+					"name": "富士電機",
+					"productname": "V-Server Lite",
+					"cpe": {
+						"text": "cpe:/a:fujielectric:v-server_lite",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v4.0.19.0 およびそれ以前 (CVE-2024-38658)"
+					]
+				},
+				{
+					"name": "富士電機",
+					"productname": "V-SFT",
+					"cpe": {
+						"text": "cpe:/a:fujielectric:v-sft",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"v6.2.2.0 およびそれ以前 (CVE-2024-38309)"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "7.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "細工されたファイルを開くことで、情報が漏えいしたり任意のコードが実行されたりする可能性があります。  "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。  "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "富士電機株式会社／発紘電機株式会社",
+					"vulinfoid": "TELLUS and V-Server 改善情報 バージョン4.0.20.0 (2450Q01、2450Q02、2450S03)",
+					"url": "https://hakko-elec.co.jp/site/download/03tellus_inf/index.php"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-38389",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-38389"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-38658",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-38658"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-38309",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-38309"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#97531313",
+					"url": "https://jvn.jp/vu/JVNVU97531313/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-121",
+					"url": "https://cwe.mitre.org/data/definitions/121.html",
+					"title": "スタックベースのバッファオーバーフロー"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-125",
+					"url": "https://cwe.mitre.org/data/definitions/125.html",
+					"title": "境界外読み取り"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-11-29T12:18:02+09:00",
+					"description": "[2024年11月29日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-11-29T12:36:47+09:00",
+		"datelastupdated": "2024-11-29T12:36:47+09:00",
+		"datepublic": "2024-11-28T00:00:00+09:00"
+	}
+}
