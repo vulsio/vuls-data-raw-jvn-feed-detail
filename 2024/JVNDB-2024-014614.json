@@ -1,0 +1,71 @@
+{
+	"vulinfoid": "JVNDB-2024-014614",
+	"vulinfodata": {
+		"title": "PDQ Deploy のサービス実行中に資格情報が窃取される問題",
+		"vulinfodescription": {
+			"overview": "PDQ Deploy の「Deploy User」 Run Mode でネットワーク内の対象マシンにソフトウェアやアップデートを展開する場合、PDQ Deploy は「Deploy User」として指定されたアカウントの資格情報を用いて対象デバイスに接続し、サービスを実行します。その際、PDQ Deploy はアカウントの資格情報を一時的にデバイス上に保存しますが、そのタイミングで対象デバイス上でパスワードダンプツールなどを使用されると、一時保存された資格情報が窃取される可能性があります。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "PDQ.com Corporation",
+					"productname": "PDQ Deploy",
+					"cpe": {
+						"text": "cpe:/a:misc:pdq_pdq_deploy",
+						"version": "2.2"
+					}
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "窃取された資格情報がドメインユーザのアカウントであった場合、Active Directory を介してネットワーク内の他のデバイスへの横展開につながるおそれがあります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[ワークアラウンドを実施する] 次のワークアラウンドを実施することで、本問題の影響を軽減することが可能です。実施の際は <a href=\"https://help.pdq.com/hc/en-us/articles/115002510472-PDQ-Deploy-Inventory-Credentials-Explained\"target=\"blank\">PDQ が公開している情報</a>も参照してください。  　* Windows LAPS 等を用いて各エンドポイントに固有のローカル管理者ユーザーとパスワードを使用する 　* エンドポイントで実行したいコマンドに必要な権限のみを持つ認証情報を選択する 　* ドメインコントローラへのアクション以外にドメイン管理者の認証情報を使用しない "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "PDQ.com Corporation",
+					"vulinfoid": "Adding and Using Multiple Credentials in PDQ Deploy & Inventory",
+					"url": "https://help.pdq.com/hc/en-us/articles/360033877651-Adding-and-Using-Multiple-Credentials-in-PDQ-Deploy-Inventory"
+				},
+				{
+					"type": "vendor",
+					"name": "PDQ.com Corporation",
+					"vulinfoid": "PDQ Deploy Run Modes",
+					"url": "https://help.pdq.com/hc/en-us/articles/360040746372-PDQ-Deploy-Run-Modes"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#93812400",
+					"url": "https://jvn.jp/vu/JVNVU93812400/index.html"
+				},
+				{
+					"type": "advisory",
+					"name": "US-CERT Vulnerability Note",
+					"vulinfoid": "VU#164934",
+					"url": "https://kb.cert.org/vuls/id/164934"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2024-12-13T11:06:01+09:00",
+					"description": "[2024年12月13日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2024-12-13T12:20:37+09:00",
+		"datelastupdated": "2024-12-13T12:20:37+09:00",
+		"datepublic": "2024-12-12T00:00:00+09:00"
+	}
+}
