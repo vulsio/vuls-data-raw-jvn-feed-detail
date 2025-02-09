@@ -1,0 +1,116 @@
+{
+	"vulinfoid": "JVNDB-2025-000008",
+	"vulinfodata": {
+		"title": "Defense Platform Home Editionにおける複数の脆弱性",
+		"vulinfodescription": {
+			"overview": "ハミングヘッズ株式会社が提供するDefense Platform Home Editionには、次の複数の脆弱性が存在します。<ul><li>特定プロセスにおけるメッセージ処理の不備（CWE-422）- CVE-2025-20094</li><li>不適切な権限管理（CWE-250）- CVE-2025-22890</li><li>特定プロセスにおけるメッセージ処理の不備（CWE-422）- CVE-2025-22894</li><li>DeviceIoControlにおけるバッファオーバーフロー（CWE-120）- CVE-2025-23236</li><li>DeviceIoControlにおけるNULLポインタ参照（CWE-476）- CVE-2025-24483</li><li>DPprd.sysおよびDPavd.sysにおける引数インジェクション（CWE-88）- CVE-2025-24845</li></ul>  CVE-2025-20094、CVE-2025-22890、CVE-2025-22894、CVE-2025-23236、CVE-2025-24483 この脆弱性情報は、下記の方がJPCERT/CCに報告し、JPCERT/CCが開発者との調整を行いました。 報告者：三井物産セキュアディレクション株式会社 塚本 泰三 氏  CVE-2025-24845 この脆弱性情報は、情報セキュリティ早期警戒パートナーシップに基づきIPAに報告され、JPCERT/CCが開発者との調整を行いました。"
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "ハミングヘッズ株式会社",
+					"productname": "Defense Platform",
+					"cpe": {
+						"text": "cpe:/a:misc:humming_heads_defense_platform",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"Home Edition Ver.3.9.51.x およびそれ以前のバージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"cvss": [
+				{
+					"version": "3.0",
+					"severity": {
+						"text": "High",
+						"type": "Base"
+					},
+					"base": "8.8",
+					"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H"
+				}
+			],
+			"impactitem": {
+				"description": "想定される影響は各脆弱性により異なりますが、当該製品が動作するWindowsシステムにアクセス可能な攻撃者によって、次のような影響を受ける可能性があります。<ul><li>当該製品が動作するWindowsシステムの特定プロセスに細工したメッセージを送信された場合、SYSTEM権限で任意のコードを実行される（CVE-2025-20094）</li><li>特定の操作を実行することで、当該製品が動作するWindowsシステムのSYSTEM権限を取得される（CVE-2025-22890、CVE-2025-23236）</li><li>当該製品が動作するWindowsシステムの特定プロセスに細工したメッセージを送信された場合、当該システム内の任意のファイルを改ざんされる。結果として、SYSTEM権限で任意のDLLを実行される（CVE-2025-22894）</li><li>当該製品が動作するWindowsシステムに細工したデータを入力した場合、ブルースクリーン（BSOD）エラーが引き起こされ、サービス運用妨害（DoS）状態を引き起こされる（CVE-2025-24483、CVE-2025-24845）</li></ul>"
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者が提供する情報をもとに、最新版にアップデートしてください。"
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "ハミングヘッズ株式会社",
+					"vulinfoid": "DeP ホームエディションのご購入：ハミングヘッズ",
+					"url": "https://www.hummingheads.co.jp/dep/storelist/"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2025-22890",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2025-22890"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2025-22894",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2025-22894"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2025-23236",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2025-23236"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2025-24483",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2025-24483"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2025-24845",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2025-24845"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2025-20094",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2025-20094"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVN#66673020",
+					"url": "https://jvn.jp/jp/JVN66673020/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-Other",
+					"url": "https://www.ipa.go.jp/security/vuln/scap/cwe.html",
+					"title": "その他"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2025-02-04T11:41:02+09:00",
+					"description": "[2025年2月5日]\\n  掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2025-02-05T12:07:00+09:00",
+		"datelastupdated": "2025-02-05T12:07:00+09:00",
+		"datepublic": "2025-02-05T00:00:00+09:00"
+	}
+}
