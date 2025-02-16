@@ -1,0 +1,95 @@
+{
+	"vulinfoid": "JVNDB-2025-001531",
+	"vulinfodata": {
+		"title": "OpenSSL における、RFC7250 ハンドシェイクによる認証の失敗を検知できない問題 (OpenSSL Security Advisory [11th February 2025])",
+		"vulinfodescription": {
+			"overview": "OpenSSL Project より、<a href=\"https://openssl-library.org/news/secadv/20250211.txt\" target=\"blank\">OpenSSL Security Advisory [11th February 2025]</a>) (\"RFC7250 handshakes with unauthenticated servers don't abort as expected (CVE-2024-12797)\") が公開されました。  深刻度−高 (Severity：High) 当該バージョンの OpenSSL には、RFC7250 で定義された Raw Public Key (RPK) を用いてサーバ認証を行う際に、認証の失敗をクライアント側で検知できない脆弱性が存在します (CWE-392、CVE-2024-12797)。 RPK はサーバ、クライアントともにデフォルトで無効化されているため、双方において RPK が明示的に有効化され、かつ SSL_VERIFY_PEER モードの設定によりサーバ認証が強制されている場合にのみ、本脆弱性の影響を受けます。 ただし、クライアント側で SSL_get_verify_result() を呼び出して認証の失敗を検知する実装を行っている場合は、本脆弱性の影響を回避することが可能です。 "
+		},
+		"affected": {
+			"affecteditem": [
+				{
+					"name": "OpenSSL Project",
+					"productname": "OpenSSL",
+					"cpe": {
+						"text": "cpe:/a:openssl:openssl",
+						"version": "2.2"
+					},
+					"versionnumber": [
+						"3.2.4 より前の 3.2 系バージョン",
+						"3.3.3 より前の 3.3 系バージョン",
+						"3.4.1 より前の 3.4 系バージョン"
+					]
+				}
+			]
+		},
+		"impact": {
+			"impactitem": {
+				"description": "サーバー認証の失敗がクライアント側で検知されないことにより、中間者攻撃を受ける可能性があります。 "
+			}
+		},
+		"solution": {
+			"solutionitem": {
+				"description": "[アップデートする] 開発者により、本脆弱性を修正した以下バージョンがリリースされています。  　* OpenSSL 3.4.1 (3.4 系ユーザー向け) 　* OpenSSL 3.3.3 (3.3 系ユーザー向け) 　* OpenSSL 3.2.4 (3.2 系ユーザー向け) "
+			}
+		},
+		"related": {
+			"relateditem": [
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.2.4 git commit 798779d",
+					"url": "https://github.com/openssl/openssl/commit/798779d43494549b611233f92652f0da5328fbe7"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "OpenSSL Security Advisory [11th February 2025]",
+					"url": "https://openssl-library.org/news/secadv/20250211.txt"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.4.1 git commit 738d4f9",
+					"url": "https://github.com/openssl/openssl/commit/738d4f9fdeaad57660dcba50a619fafced3fd5e9"
+				},
+				{
+					"type": "vendor",
+					"name": "OpenSSL Project",
+					"vulinfoid": "github.com: 3.3.3 git commit 87ebd20",
+					"url": "https://github.com/openssl/openssl/commit/87ebd203feffcf92ad5889df92f90bb0ee10a699"
+				},
+				{
+					"type": "advisory",
+					"name": "Common Vulnerabilities and Exposures (CVE)",
+					"vulinfoid": "CVE-2024-12797",
+					"url": "https://www.cve.org/CVERecord?id=CVE-2024-12797"
+				},
+				{
+					"type": "advisory",
+					"name": "JVN",
+					"vulinfoid": "JVNVU#91390536",
+					"url": "https://jvn.jp/vu/JVNVU91390536/index.html"
+				},
+				{
+					"type": "cwe",
+					"name": "JVNDB",
+					"vulinfoid": "CWE-392",
+					"url": "https://cwe.mitre.org/data/definitions/392.html",
+					"title": "エラー状態のレポートの欠如"
+				}
+			]
+		},
+		"history": {
+			"historyitem": [
+				{
+					"historyno": "1",
+					"datetime": "2025-02-14T15:47:12+09:00",
+					"description": "[2025年02月14日]   掲載"
+				}
+			]
+		},
+		"datefirstpublished": "2025-02-14T16:21:47+09:00",
+		"datelastupdated": "2025-02-14T16:21:47+09:00",
+		"datepublic": "2025-02-13T00:00:00+09:00"
+	}
+}
